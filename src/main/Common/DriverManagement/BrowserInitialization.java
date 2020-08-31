@@ -1,7 +1,7 @@
-package DriverManagement;
+package Common.DriverManagement;
 
-import DriverManagement.BrowserDriver.*;
-import DriverManagement.DriverManager;
+
+import Common.DriverManagement.BrowserDriver.*;
 
 public class BrowserInitialization {
         public static DriverManager getBrowser(String browserName){

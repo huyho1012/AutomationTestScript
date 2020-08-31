@@ -1,6 +1,7 @@
-package DriverManagement.BrowserDriver;
+package Common.DriverManagement.BrowserDriver;
 
-import DriverManagement.DriverManager;
+
+import Common.DriverManagement.DriverManager;
 
 public class OperaDriverManager extends DriverManager {
     @Override

@@ -1,22 +1,25 @@
-package HandleFunction;
+package Common.HandleFunction;
 
+import com.google.inject.internal.cglib.core.$Local;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.security.Key;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public abstract class AbstractPage {
-    protected Alert alert;
-    protected WebDriverWait explicitWait;
-    protected WebElement element;
-    protected List<WebElement> elements;
-    protected Select select;
-    protected JavascriptExecutor jsExecutor;
-
+    private Actions action;
+    private WebDriverWait explicitWait;
+    private Alert alert;
+    private Select select;
+    private WebElement element;
+    private List<WebElement> elements;
+    private JavascriptExecutor jsExecutor;
     public void openURL(WebDriver driver, String url) {
         driver.get(url);
         driver.manage().window().maximize();
@@ -178,25 +181,97 @@ public abstract class AbstractPage {
         }
     }
     public void checkItemOnCheckBox(WebDriver driver, String locator){
+        element = findElement(driver, locator);
         if(!element.isSelected()){
-            clickToElement(driver,locator);
+           element.click();
         }
     }
     public void uncheckItemOnCheckBox(WebDriver driver, String locator){
-        if(element.isSelected()){
-            clickToElement(driver,locator);
+        element = findElement(driver, locator);
+        if(element.isSelected()) {
+            element.click();
         }
     }
     public int countElementNumber(WebDriver driver, String locator){
         elements = findElements(driver,locator);
         return elements.size();
     }
-    public void switchToIframe(){
-
+    public void switchToIframeOrFrame(WebDriver driver, String locator){
+        element = findElement(driver, locator);
+        driver.switchTo().frame(element);
+    }
+    public void switchToDefaultContent(WebDriver driver){
+       driver.switchTo().defaultContent();
     }
 
+    public void doubleClickToElement(WebDriver driver, String locator){
+        element = findElement(driver,locator);
+        action = new Actions(driver);
+        action.doubleClick(element).perform();
+    }
 
-
+    public void hoverToElement(WebDriver driver, String locator){
+        element = findElement(driver,locator);
+        action = new Actions(driver);
+        action.moveToElement(element).perform();
+    }
+    public void sendKeyBoardToElement(WebDriver driver, String locator, Keys key){
+        element = findElement(driver, locator);
+        action = new Actions(driver);
+        action.sendKeys(element,key);
+    }
+    public void rightClickToElement(WebDriver driver, String locator){
+        element = findElement(driver,locator);
+        action = new Actions(driver);
+        action.contextClick(element).perform();
+    }
+    public Object executeForBrowser(WebDriver driver, String javaSript) {
+        jsExecutor = (JavascriptExecutor) driver;
+        return jsExecutor.executeScript(javaSript);
+    }
+    public boolean verifyTextInInnerText(WebDriver driver,String textExpected) {
+        jsExecutor = (JavascriptExecutor)driver;
+        String textActual = (String) jsExecutor.executeScript("return document.documentElement.innerText.match('" + textExpected + "')[0]");
+        return textActual.equals(textExpected);
+    }
+    public void negativeToURLByJS(WebDriver driver, String urlPage){
+        jsExecutor = (JavascriptExecutor)driver;
+        jsExecutor.executeScript("window.location = '" + urlPage + "'");
+    }
+    public void scrollToBottomPage() {
+        jsExecutor.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+    }
+    public void highlightElement(WebDriver driver, String locator) {
+        element = findElement(driver,locator);
+        String originalStyle = element.getAttribute("style");
+        jsExecutor.executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style", "border: 5px solid red; border-style: dashed;");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        jsExecutor.executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style", originalStyle);
+    }
+    public void clickToElementByJS(WebDriver driver, String locator){
+        element = findElement(driver,locator);
+        jsExecutor = (JavascriptExecutor)driver;
+        jsExecutor.executeScript("arguments[0].click();",element);
+    }
+    public void scrollIntoElementByJS(WebDriver driver, String locator){
+        element = findElement(driver,locator);
+        jsExecutor = (JavascriptExecutor)driver;
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);",element);
+    }
+    public void sendKeyToElementByJS(WebDriver driver, String locator, String value){
+        element = findElement(driver,locator);
+        jsExecutor = (JavascriptExecutor)driver;
+        jsExecutor.executeScript("arguments[0].setAttribute('value','"+value+"')",element);
+    }
+    public void removeAttributeOfElementByJS(WebDriver driver, String locator, String attributeName){
+        element = findElement(driver,locator);
+        jsExecutor = (JavascriptExecutor)driver;
+        jsExecutor.executeScript("arguments[0].removeAttribute('"+attributeName+"')",element);
+    }
     public void waitElementToVisible(WebDriver driver, String locator){
         explicitWait = new WebDriverWait(driver, 30);
         explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
@@ -213,8 +288,6 @@ public abstract class AbstractPage {
         explicitWait = new WebDriverWait(driver, 30);
         explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(locator)));
     }
-
-
 
 }
 
