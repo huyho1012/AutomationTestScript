@@ -1,9 +1,11 @@
-package Shared.Login;
+package Project.Shared.Login;
 
 public class LoginUI {
     public static final String FORGOT_LINK = "//a[@class='forgotpw']";
     public static final String VI_ICON = "//span[text()= 'Tiếng Việt']";
     public static final String ENG_ICON = "//span[text()= 'English']";
+    public static final String GOOGLE_PLAY = "//a[@id = 'download-app-android']";
+    public static final String APP_STORE = "//a[@id = 'download-app-ios']";
 
     public static final String USER_NAME = "//input[@name = 'identity']";
     public static final String PASSWORD = "//input[@name = 'password']";
@@ -12,7 +14,9 @@ public class LoginUI {
 
     public static final String LOGIN_BUTTON ="//button[(text() = 'Đăng nhập')]";
 
-    public static final String VALIDATE_USER_NAME_ERROR_MESSAGE = "//input[@name = 'identity']/following-sibling::div";
-    public static final String VALIDATE_PASS_WORD_ERROR_MESSAGE = "//input[@name = 'password']/following-sibling::div";
+    public static final String VALIDATE_USERNAME_ERROR_MESSAGE = "//input[@name = 'identity']/following-sibling::div";
+    public static final String VALIDATE_PASSWORD_ERROR_MESSAGE = "//input[@name = 'password']/following-sibling::div";
+    public static final String VALIDATE_CAPTCHA_ERROR_MESSAGE = "//input[@name = 'password']/following-sibling::div";
 
+    public static final String CAPTCHA_CODE_IMAGE = "";
 }

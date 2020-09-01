@@ -1,13 +1,12 @@
 package Common.HandleFunction;
 
-import com.google.inject.internal.cglib.core.$Local;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.security.Key;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -20,6 +19,13 @@ public abstract class AbstractPage {
     private WebElement element;
     private List<WebElement> elements;
     private JavascriptExecutor jsExecutor;
+    public void setTimeDelay(long time){
+        try {
+            Thread.sleep(time*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
     public void openURL(WebDriver driver, String url) {
         driver.get(url);
         driver.manage().window().maximize();
@@ -67,6 +73,14 @@ public abstract class AbstractPage {
         explicitWait = new WebDriverWait(driver, 30);
         explicitWait.until(ExpectedConditions.alertIsPresent());
     }
+    public void openNewWindow(WebDriver driver, String urlLink){
+        jsExecutor =(JavascriptExecutor) driver;
+        jsExecutor.executeScript("window.open()");
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
+        openURL(driver,urlLink);
+    }
+
     public void switchWindowByID(WebDriver driver, String parentID) {
         Set<String> allWindow = driver.getWindowHandles();
         for (String current : allWindow) {
@@ -102,16 +116,30 @@ public abstract class AbstractPage {
     public List<WebElement> findElements(WebDriver driver, String locator) {
         return driver.findElements(By.xpath(locator));
     }
+    public String castToObject(String locator, String... values){
+        return  String.format(locator, values);
+    }
     public void clickToElement(WebDriver driver, String locator) {
         element = findElement(driver, locator);
+        element.click();
     }
     public void sendKeyToElement(WebDriver driver, String locator, String valueName) {
         element = findElement(driver, locator);
         element.clear();
         element.sendKeys(valueName);
     }
+
+    public void sendKeyToElement(WebDriver driver, String locator, String valueName, String...values) {
+        element = findElement(driver, castToObject(locator,values));
+        element.clear();
+        element.sendKeys(valueName);
+    }
     public String getTextElement(WebDriver driver, String locator) {
         element = findElement(driver, locator);
+        return element.getText();
+    }
+    public String getTextElement(WebDriver driver, String locator, String... values) {
+        element = findElement(driver, castToObject(locator, values));
         return element.getText();
     }
     public String getAttributeValue(WebDriver driver, String locator, String valueAttribute) {
@@ -276,6 +304,10 @@ public abstract class AbstractPage {
         explicitWait = new WebDriverWait(driver, 30);
         explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
     }
+    public void waitElementToVisible(WebDriver driver, String locator, String... values){
+        explicitWait = new WebDriverWait(driver, 30);
+        explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(castToObject(locator,values))));
+    }
     public void waitForElementToPresence(WebDriver driver, String locator){
         explicitWait = new WebDriverWait(driver, 30);
         explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
@@ -287,6 +319,9 @@ public abstract class AbstractPage {
     public void waitForElementInvisible(WebDriver driver, String locator){
         explicitWait = new WebDriverWait(driver, 30);
         explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(locator)));
+    }
+    public void waitForPageLoading(WebDriver driver){
+        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
     }
 
 }

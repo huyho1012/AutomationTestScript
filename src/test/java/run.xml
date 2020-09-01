@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="All Test Suite" paralle  ="false">
+    <test name="Test with firefox">
+        <parameter name="browser" value="Chrome"></parameter>
+        <classes>
+            <!--            <class name="testcases.newsfeed.StartIngApp.LoginTestCase.Validation"></class>-->
+            <!--            <class name="testcases.newsfeed.StartIngApp.LoginTestCase.IntegrationTest"></class>-->
+            <!--            <class name="testcases.newsfeed.StartIngApp.SignUpTestCase.Validation"></class>-->
+            <!--            <class name="testcases.newsfeed.StartIngApp.SignUpTestCase.IntegrationTest"></class>-->
+            <!--            <class name="testcases.newsfeed.PostFunction.CheckRedirectCorrectLink"></class>-->
+            <!--            <class name="LikePost"></class>-->
+            <!--            <class name= "testcases.newsfeed.StartIngApp.LoginTestCase.IntegrationTest"></class>&ndash;&gt;-->
+            <class name= "Testcase.TestRegister"></class>
+        </classes>
+    </test>
+
+</suite>
