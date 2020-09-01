@@ -52,4 +52,8 @@ public class ForgotPassword extends AbstractPage {
         waitForElementClickable(driver,ForgotPasswordUI.BACK_FIND_ACCOUNT_BUTTON);
         clickToElement(driver, ForgotPasswordUI.BACK_FIND_ACCOUNT_BUTTON);
     }
+    public void enterDataOnDynamicFieldOnChangePass(WebDriver driver, String nameField, String data){
+        waitElementToVisible(driver,ForgotPasswordUI.DYNAMIC_FIELD_ON_FORGOT_FORM, nameField);
+        sendKeyToElement(driver, ForgotPasswordUI.DYNAMIC_FIELD_ON_FORGOT_FORM,nameField, data);
+    }
 }
