@@ -1,6 +1,6 @@
-package DriverManagement.BrowserDriver;
+package Common.DriverManagement.BrowserDriver;
 
-import DriverManagement.DriverManager;
+import Common.DriverManagement.DriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.firefox.FirefoxDriver;
 

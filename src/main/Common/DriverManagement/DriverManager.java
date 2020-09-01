@@ -1,6 +1,6 @@
-package DriverManagement;
+package Common.DriverManagement;
 
-import HandleFunction.AbstractPage;
+import Common.HandleFunction.AbstractPage;
 import org.openqa.selenium.WebDriver;
 
 public abstract class DriverManager extends AbstractPage {

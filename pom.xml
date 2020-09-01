@@ -31,13 +31,6 @@
 
         <!--Thư viện TestNG-->
         <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.3.0</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
             <version>2.11.2</version>
@@ -116,7 +109,7 @@
             <groupId>de.sven-jacobs</groupId>
             <artifactId>loremipsum</artifactId>
             <version>1.0</version>
-            <scope>test</scope>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.thedeanda</groupId>
