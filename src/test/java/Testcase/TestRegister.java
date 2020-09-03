@@ -123,7 +123,24 @@ public class TestRegister extends AbstractTest {
         verifyBusinessBackend.clickVerifyButton(driver);
         verifyBusinessBackend.clickConfirmButtonOnPopup(driver);
 
-        verifyBusinessBackend.goToBussinessPage(driver,URL_BUSI);
+        // Tạo tài khoản thanh toán
+        verifyBusinessBackend.goToWalletLoginPage(driver);
+        walletLoginPage = PageGeneration.createWalletLoginPage(driver);
+        walletLoginPage.enterUsernameToLoginWallet(driver,"");
+        walletLoginPage.enterPasswordToLoginWallet(driver,"");
+        walletLoginPage.enterCaptchaToLoginWallet(driver,"");
+        walletLoginPage.clickToButtonLoginForWallet(driver);
+
+        walletOverviewPage = PageGeneration.createWalletOverview(driver);
+        walletOverviewPage.clickButtonCreateWallet(driver);
+        walletOverviewPage.enterPaymentAccountName(driver,"");
+        walletOverviewPage.chooseCurrencyOfAccount(driver);
+        walletOverviewPage.clickCreateAccountButton(driver);
+
+        walletHomePage = PageGeneration.createWalletHomepage(driver);
+
+        // Tạo Trang Tour
+        walletHomePage.goToBussinessPage(driver,URL_BUSI);
         busiOverviewPage = PageGeneration.createBusinessOverviewPage(driver);
         busiOverviewPage.clickToAccountManagementButton(driver);
         busiDashboardPage = PageGeneration.createBusiDashboard(driver);
@@ -135,12 +152,66 @@ public class TestRegister extends AbstractTest {
         busiPageManagementPage.clickToCreatePage(driver);
         busiPageManagementPage.clickToTourPageDetail(driver);
         tourDashboardPage = PageGeneration.createTourDashboardPage(driver);
-        tourDasboardPage.clickCreateTopic(driver);
-        tourDasboardPage.chooseTopicImage();
-        tourDasboardPage.chooseLanguageOfTopic(driver);
-        tourDasboardPage.enterTopicName(driver,"");
-        tourDasboardPage.enterTopicDescription(driver,"");
-        tourDasboardPage.clickToSaveButton(driver);
-        tourDashboardPage.clickToTCrea
+        // Cập nhật Tour information
+        tourGeneralSetting.enterPrepaymentAmount(driver,"");
+        tourGeneralSetting.enterCancellationAmount(driver,"");
+        tourGeneralSetting.enterDayAllowToCancel(driver,"");
+        tourGeneralSetting.clickToSaveButton(driver);
+
+        tourGeneralSetting.clickToSettingVAT(driver);
+        tourGeneralSetting.chooseOptionVAT(driver);
+        tourGeneralSetting.clickToSaveButton(driver);
+
+        tourGeneralSetting.clickToSettingAge(driver);
+        tourGeneralSetting.enterValueOfAdultAge(driver,"");
+        tourGeneralSetting.enterValueOfChildAge(driver,"");
+        tourGeneralSetting.enterValueOfYoungChildAge(driver,"");
+        tourGeneralSetting.clickToSaveButton(driver);
+
+        tourGeneralSetting.clickToSettingOrderNoti(driver);
+        tourGeneralSetting.clickToEnableAllowNotiOrder(driver);
+        tourGeneralSetting.enterValueOnEmailAddress(driver,"");
+        tourGeneralSetting.enterValueOnPhone(driver,"");
+        tourGeneralSetting.clickToSaveButton(driver);
+
+        // Tạo Topic
+        tourGeneralSetting.clickToTopicTourOnMenu(driver);
+        tourTopicPage = PageGeneration.createTourTopicListPage(driver);
+        tourTopicPage.clickCreateTopic(driver);
+        tourTopicPage.chooseTopicImage();
+        tourTopicPage.chooseLanguageOfTopic(driver);
+        tourTopicPage.enterTopicName(driver,"");
+        tourTopicPage.enterTopicDescription(driver,"");
+        tourTopicPage.clickToSaveButton(driver);
+
+        // Tạo Tour
+        tourTopicPage.clickToTourOnMenu(driver);
+        tourListPage = PageGeneration.createTourListPage(driver);
+        tourListPage.clickToCreateTour(driver);
+        tourListPage.enterTourName(driver,"");
+        tourListPage.chooseTourType(driver);
+        tourListPage.chooseTourTopic(driver);
+        tourListPage.clickSaveButtonToCreateTour(driver);
+
+        tourDetailPage = PageGeneration.createTourDetailDetails(driver);
+        tourDetailPage.clickToTourInfoTab(driver);
+        tourDetailPage.enterValueToSKUField(driver, skuCode);
+        tourDetailPage.enterValueOfTotalTour(driver, totalDay);
+        tourDetailPage.enterValueOfPriceBasic(driver, basicPrice);
+        tourDetailPage.enterValueOfTimeAllowBooking(driver, timeAllowBooking);
+        tourDetailPage.enterValueOfTAddress(driver, timeAllowBooking);
+        tourDetailPage.chooseCountry(driver);
+        tourDetailPage.chooseCityState(driver);
+        tourDetailPage.chooseWard(driver);
+        tourDetailPage.enterValueOfShortDesc(driver, shortDesc);
+        tourDetailPage.enterValueOPrivateRegulations(driver, regulation);
+        tourDetailPage.enterValueOPolicy(driver, policy);
+        tourDetailPage.enterValueOInstallmentPolicy(driver, installmentPolicy);
+        tourDetailPage.chooseTourLogo(driver);
+        tourDetailPage.chooseTourCover(driver);
+        tourDetailPage.chooseTourGallery(driver);
+        tourDetailPage.clickToButtonSave;
+        tourDetailPage.clickToPartOnNav(driver);
+
     }
 }
