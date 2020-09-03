@@ -7,7 +7,7 @@ import org.testng.Reporter;
 
 import java.util.Random;
 
-public abstract class AbstractTest {
+public abstract class AbstractTest extends AbstractPage {
 
     protected final Log log;
     protected AbstractTest(){

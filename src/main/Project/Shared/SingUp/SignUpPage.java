@@ -32,7 +32,7 @@ public class SignUpPage extends AbstractPage {
         return getTextElement(driver, SignUpUI.ERROR_MESSAGE_OF_TEXT_FIELD,nameField);
     }
 
-    public void clickSignUpButton(){
+    public void clickSignUpButton(WebDriver driver){
         waitForElementClickable(driver, SignUpUI.SIGNUP_BUTTON);
         clickToElement(driver, SignUpUI.SIGNUP_BUTTON);
     }
@@ -48,8 +48,8 @@ public class SignUpPage extends AbstractPage {
     }
 
     public String getTitleOfVerifyForm(WebDriver driver){
-        waitElementToVisible(driver, SignUpUI.TITLE_REGISTER_FORM);
-        return getTextElement(driver, SignUpUI.TITLE_REGISTER_FORM);
+        waitElementToVisible(driver, SignUpUI.TITLE_FORM_VERIFY_ACCOUNT);
+        return getTextElement(driver, SignUpUI.TITLE_FORM_VERIFY_ACCOUNT);
     }
 
     public String getVerifyCodeByEmail(String email){
