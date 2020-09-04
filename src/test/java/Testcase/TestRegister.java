@@ -5,6 +5,7 @@ import Common.DriverManagement.DriverManager;
 import Common.HandleFunction.AbstractTest;
 import Common.HandleFunction.PageGeneration;
 import Interfaces.Business.BusinessDashboardPage;
+import Project.Business.Tour.Management.TourInfoTab;
 import Project.Backend.BackendHomePage;
 import Project.Backend.BackendVerifyBusinessManagement;
 import Project.Business.Business.BusinessInfoPage;
@@ -12,6 +13,7 @@ import Project.Business.Business.BusinessOverviewPage;
 import Project.Business.Business.BusinessPageManagement;
 import Project.Business.Business.BusinessVerificationPage;
 import Project.Business.Tour.*;
+import Project.Business.Tour.Management.TourManagementPage;
 import Project.Newsfeed.Newsfeed.NewsfeedHomePage;
 import Project.Newsfeed.PersonalWall.PersonalAboutPage;
 import Project.Newsfeed.UserSetting.GeneralAccountSetting;
@@ -23,7 +25,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import sun.jvm.hotspot.debugger.Page;
 
 public class TestRegister extends AbstractTest {
     DriverManager driverManager;
@@ -43,6 +44,7 @@ public class TestRegister extends AbstractTest {
     TourTopicPage tourTopicPage;
     TourManagementPage tourManagementPage;
     TourDetailPage tourDetailPage;
+    TourInfoTab tourInformationTab;
 
 
     WalletOverviewPage walletOverviewPage;
@@ -177,6 +179,8 @@ public class TestRegister extends AbstractTest {
         generalAccSetting.clickToItemOnSettingMenu(driver,"ic-business-c");
         businessOverviewPage = PageGeneration.createBusinessOverviewPage(driver);
         verifyTrue(businessOverviewPage.checkBusinessOverviewWithNewAccount(driver));
+
+        log.info("Step 7.1 - Create new business - Click button Create new bussiness");
         businessOverviewPage.clickToCreateNewBusiness(driver);
         businessOverviewPage.chooseTypeOfBusiness(driver, "");
         businessOverviewPage.enterBusinessName(driver,"");
@@ -298,26 +302,28 @@ public class TestRegister extends AbstractTest {
         tourManagementPage.chooseTourTopic(driver);
         tourManagementPage.clickSaveButtonToCreateTour(driver);
 
-        tourInfoTab = PageGeneration.createTourInfoPage(driver);
-        tourInfoTab.clickToTourInfoTab(driver);
-        tourInfoTab.enterValueToSKUField(driver, "");
-        tourInfoTab.enterValueOfTotalTour(driver, "");
-        tourInfoTab.enterValueOfPriceBasic(driver,"");
-        tourInfoTab.enterValueOfTimeAllowBooking(driver,"");
-        tourInfoTab.enterValueOfTAddress(driver,"");
-        tourInfoTab.chooseCountry(driver);
-        tourInfoTab.chooseCityState(driver);
-        tourInfoTab.chooseWard(driver);
-        tourInfoTab.enterValueOfShortDesc(driver, "");
-        tourInfoTab.enterValueOPrivateRegulations(driver, "");
-        tourInfoTab.enterValueOPolicy(driver, "");
-        tourInfoTab.enterValueOInstallmentPolicy(driver, "");
-        tourInfoTab.chooseTourLogo(driver);
-        tourInfoTab.chooseTourCover(driver);
-        tourInfoTab.chooseTourGallery(driver);
-        tourInfoTab.clickToButtonSaveTour();
-        tourInfoTab.clickToPartOnNav(driver);
 
+        // Tab Tour info
+        tourInformationTab = PageGeneration.createTourInfoTab(driver);
+        tourInformationTab.enterValueToSKUField(driver, "");
+        tourInformationTab.enterValueOfTotalTour(driver, "");
+        tourInformationTab.enterValueOfPriceBasic(driver,"");
+        tourInformationTab.enterValueOfTimeAllowBooking(driver,"");
+        tourInformationTab.enterValueOfTAddress(driver,"");
+        tourInformationTab.chooseCountry(driver,"");
+        tourInformationTab.chooseCityState(driver,"");
+        tourInformationTab.chooseWard(driver,"");
+        tourInformationTab.enterValueOfShortDesc(driver, "");
+        tourInformationTab.enterValueOPrivateRegulations(driver, "");
+        tourInformationTab.enterValueOPolicy(driver, "");
+        tourInformationTab.enterValueOInstallmentPolicy(driver, "");
+        tourInformationTab.chooseTourLogo(driver);
+        tourInformationTab.chooseTourCover(driver);
+        tourInformationTab.chooseTourGallery(driver);
+        tourInformationTab.clickToButtonSaveTour();
+        tourInformationTab.clickToPartOnNav(driver);
+
+        // Tab Tour part
         tourPartTab = PageGeneration.createTourPartTab(driver);
         tourPartTab.clickToCreateNewPartButton();
         tourPartTab.enterValueToPartNameField(driver, partName);
@@ -333,6 +339,8 @@ public class TestRegister extends AbstractTest {
         tourPartTab.clickToButtonSavePart(driver);
         tourPartTab.clickToPriceOnTourNavigationMenu(driver);
 
+
+        // Tab Tour part
         tourPriceTab = PageGeneration.createTourPriceTab(driver);
         tourPriceTab.clickToCreateNewPrice(driver);
         tourPriceTab.chooseStartDateOfPrice(driver);
@@ -343,6 +351,8 @@ public class TestRegister extends AbstractTest {
         tourPriceTab.clickToSavePriceButton(driver);
         tourPriceTab.clickToSchedulerSetting(driver);
 
+
+        // Tab Tour scheduler
         tourScheduler = PageGeneration.createTourScheduler(driver);
         tourScheduler.chooseDateToOpenSaleTour(driver);
 

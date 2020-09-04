@@ -1,4 +1,4 @@
-package Project.Business.Tour;
+package Project.Business.Tour.Management;
 
 import org.openqa.selenium.WebDriver;
 

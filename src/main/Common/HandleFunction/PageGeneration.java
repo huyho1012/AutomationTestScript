@@ -1,6 +1,7 @@
 package Common.HandleFunction;
 
 import Interfaces.Business.BusinessDashboardPage;
+import Project.Business.Tour.Management.TourInfoTab;
 import Project.Backend.BackendHomePage;
 import Project.Backend.BackendVerifyBusinessManagement;
 import Project.Business.Business.BusinessInfoPage;
@@ -8,6 +9,7 @@ import Project.Business.Business.BusinessOverviewPage;
 import Project.Business.Business.BusinessPageManagement;
 import Project.Business.Business.BusinessVerificationPage;
 import Project.Business.Tour.*;
+import Project.Business.Tour.Management.TourManagementPage;
 import Project.Newsfeed.Newsfeed.NewsfeedHomePage;
 import Project.Newsfeed.PersonalWall.PersonalAboutPage;
 import Project.Newsfeed.UserSetting.GeneralAccountSetting;
@@ -100,5 +102,9 @@ public class PageGeneration {
 
     public static WalletHomePage createWalletHomepage(WebDriver driver) {
         return new WalletHomePage(driver);
+    }
+
+    public static TourInfoTab createTourInfoTab(WebDriver driver) {
+        return new TourInfoTab(driver);
     }
 }
