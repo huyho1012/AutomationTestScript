@@ -43,4 +43,6 @@ public class HomePageUI {
     public static final String FRIEND_REQUEST_DENY_BUTTON = "//div[contains(@class,'friend-requests')]//button[contains(@data-bind,'onRemoveRequest')]";
     public static final String FRIEND_REQUEST_VIEW_MORE = "//div[contains(@class,'friend-requests')]//a[contains(@data-bind,'seeAllLink')]";
 
+    public static final String FORM_UPDATE_NEW_INFO = "";
+    public static final String FORM_UPDATE_NEW_INFO_TITLE = "";
 }

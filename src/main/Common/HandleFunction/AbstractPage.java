@@ -123,6 +123,10 @@ public abstract class AbstractPage {
         element = findElement(driver, locator);
         element.click();
     }
+    public void clickToElement(WebDriver driver, String locator, String...values) {
+        element = findElement(driver, castToObject(locator, values));
+        element.click();
+    }
     public void sendKeyToElement(WebDriver driver, String locator, String valueName) {
         element = findElement(driver, locator);
         element.clear();
@@ -315,6 +319,10 @@ public abstract class AbstractPage {
     public void waitForElementClickable(WebDriver driver, String locator){
         explicitWait = new WebDriverWait(driver, 30);
         explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+    }
+    public void waitForElementClickable(WebDriver driver, String locator, String...values){
+        explicitWait = new WebDriverWait(driver, 30);
+        explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath(castToObject(locator,values))));
     }
     public void waitForElementInvisible(WebDriver driver, String locator){
         explicitWait = new WebDriverWait(driver, 30);

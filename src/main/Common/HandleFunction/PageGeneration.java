@@ -1,8 +1,20 @@
 package Common.HandleFunction;
 
-import Interfaces.Newsfeed.Homepage.NewsfeedHomePage;
+import Interfaces.Business.BusinessDashboardPage;
+import Project.Backend.BackendHomePage;
+import Project.Backend.BackendVerifyBusinessManagement;
+import Project.Business.Business.BusinessInfoPage;
+import Project.Business.Business.BusinessOverviewPage;
+import Project.Business.Business.BusinessPageManagement;
+import Project.Business.Business.BusinessVerificationPage;
+import Project.Business.Tour.*;
+import Project.Newsfeed.Newsfeed.NewsfeedHomePage;
+import Project.Newsfeed.PersonalWall.PersonalAboutPage;
+import Project.Newsfeed.UserSetting.GeneralAccountSetting;
 import Project.Shared.Login.LoginPage;
 import Project.Shared.SingUp.SignUpPage;
+import Project.Wallet.WalletHomePage;
+import Project.Wallet.WalletOverviewPage;
 import org.openqa.selenium.WebDriver;
 
 public class PageGeneration {
@@ -16,5 +28,77 @@ public class PageGeneration {
 
     public static NewsfeedHomePage createNewsfeedHomepage(WebDriver driver) {
         return new NewsfeedHomePage(driver);
+    }
+
+    public static PersonalAboutPage createPerTAboutPage(WebDriver driver) {
+        return new PersonalAboutPage(driver);
+    }
+
+    public static GeneralAccountSetting createGeneralAccountSettingPage(WebDriver driver) {
+        return new GeneralAccountSetting(driver);
+    }
+
+    public static BusinessOverviewPage createBusinessOverviewPage(WebDriver driver) {
+        return new BusinessOverviewPage(driver);
+    }
+
+    public static BusinessDashboardPage createBusiDashboardPage(WebDriver driver) {
+        return new BusinessDashboardPage(driver);
+    }
+
+    public static BusinessVerificationPage createVerifyBusinessTypeEnterpriseForm(WebDriver driver) {
+        return new BusinessVerificationPage(driver);
+    }
+
+    public static BusinessInfoPage createBusinessInfoPage(WebDriver driver) {
+        return new BusinessInfoPage(driver);
+    }
+
+    public static LoginPage createLoginBackEndPage(WebDriver driver) {
+        return new LoginPage(driver);
+    }
+
+    public static BackendHomePage createBackendHomepage(WebDriver driver) {
+        return new BackendHomePage(driver);
+    }
+
+    public static BackendVerifyBusinessManagement createVerifyBusinessManagement(WebDriver driver) {
+        return new BackendVerifyBusinessManagement(driver);
+    }
+
+    public static LoginPage createWalletLoginPage(WebDriver driver) {
+        return new LoginPage(driver);
+    }
+
+    public static WalletOverviewPage createWalletOverviewPage(WebDriver driver) {
+        return new WalletOverviewPage(driver);
+    }
+
+    public static BusinessPageManagement clickToPageListManagement(WebDriver driver) {
+        return new BusinessPageManagement(driver);
+    }
+
+    public static TourDashboardPage createTourDashboardPage(WebDriver driver) {
+        return new TourDashboardPage(driver);
+    }
+
+    public static TourGeneralSettingPage createTourGeneralSettingPage(WebDriver driver) {
+        return new TourGeneralSettingPage(driver);
+    }
+
+    public static TourTopicPage createTourTopicListPage(WebDriver driver) {
+        return new TourTopicPage(driver);
+    }
+
+    public static TourManagementPage createTourManagementPage(WebDriver driver) {
+        return new TourManagementPage(driver);
+    }
+
+    public static TourDetailPage createTourDetailPage(WebDriver driver) {
+        return new TourDetailPage(driver);
+    }
+
+    public static WalletHomePage createWalletHomepage(WebDriver driver) {
+        return new WalletHomePage(driver);
     }
 }
