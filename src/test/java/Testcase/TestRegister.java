@@ -318,23 +318,22 @@ public class TestRegister extends AbstractTest {
         tourInfoTab.clickToButtonSaveTour();
         tourInfoTab.clickToPartOnNav(driver);
 
-        tourInfoTab.clickToCreateNewPartButton();
         tourPartTab = PageGeneration.createTourPartTab(driver);
+        tourPartTab.clickToCreateNewPartButton();
         tourPartTab.enterValueToPartNameField(driver, partName);
-        tourDetailPage.enterValueDateOfPart(driver, dayOfPart);
-        tourDetailPage.enterValueOfPartTime(driver,timePart);
-        tourDetailPage.enterValueOfAddress(driver, address);
-        tourDetailPage.chooseCountry(driver);
-        tourDetailPage.chooseCityState(driver);
-        tourDetailPage.chooseWard(driver);
-        tourDetailPage.enterValueOfPartShortDescription(driver,"");
-        tourDetailPage.chooseTransportItem(driver);
-        tourDetailPage.choosePartLogo(driver);
-        tourDetailPage.clickToButtonSavePart(driver);
-        tourDetailPage.clickToPriceOnTourNavigationMenu(driver);
+        tourPartTab.enterValueDateOfPart(driver, dayOfPart);
+        tourPartTab.enterValueOfPartTime(driver,timePart);
+        tourPartTab.enterValueOfAddress(driver, address);
+        tourPartTab.chooseCountry(driver);
+        tourPartTab.chooseCityState(driver);
+        tourPartTab.chooseWard(driver);
+        tourPartTab.enterValueOfPartShortDescription(driver,"");
+        tourPartTab.chooseTransportItem(driver);
+        tourPartTab.choosePartLogo(driver);
+        tourPartTab.clickToButtonSavePart(driver);
+        tourPartTab.clickToPriceOnTourNavigationMenu(driver);
 
         tourPriceTab = PageGeneration.createTourPriceTab(driver);
-
         tourPriceTab.clickToCreateNewPrice(driver);
         tourPriceTab.chooseStartDateOfPrice(driver);
         tourPriceTab.enterValueOfAdultPrice(driver,"");
@@ -342,8 +341,12 @@ public class TestRegister extends AbstractTest {
         tourPriceTab.enterValueOfYoungChildPrice(driver, "");
         tourPriceTab.enterValueOfInfantPrice(driver,"");
         tourPriceTab.clickToSavePriceButton(driver);
+        tourPriceTab.clickToSchedulerSetting(driver);
 
+        tourScheduler = PageGeneration.createTourScheduler(driver);
+        tourScheduler.chooseDateToOpenSaleTour(driver);
 
+        tourScheduler.clickToServiceSetting(driver);
 
     }
 }
