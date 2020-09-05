@@ -1,11 +1,16 @@
 package Common.HandleFunction;
 
+import Common.GlobalVariables;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -212,6 +217,21 @@ public abstract class AbstractPage {
             }
         }
     }
+    public void selectItemInCustomDropdown(WebDriver driver, String customDropdown, String itemOnDropdown, String expectedValue, String... values){
+        waitForElementClickable(driver, castToObject(customDropdown,values));
+        clickToElement(driver,castToObject(customDropdown,values));
+        explicitWait = new WebDriverWait(driver, 30);
+        explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(castToObject(itemOnDropdown,values))));
+        elements = findElements(driver,castToObject(itemOnDropdown,values));
+        for(WebElement item: elements){
+            if(item.getText().contains(expectedValue)){
+                jsExecutor = (JavascriptExecutor) driver;
+                jsExecutor.executeScript("arguments[0].scrollIntoView(true);",item);
+                item.click();
+                break;
+            }
+        }
+    }
     public void checkItemOnCheckBox(WebDriver driver, String locator){
         element = findElement(driver, locator);
         if(!element.isSelected()){
@@ -332,6 +352,81 @@ public abstract class AbstractPage {
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
     }
 
+    public void uploadOneFileBySendKey(WebDriver driver, String locator, String fileName){
+        waitElementToVisible(driver,locator);
+        sendKeyToElement(driver,locator,fileName);
+    }
+    public void uploadMultipleFileBySendKey(WebDriver driver,String locator, String... fileNames){
+        String fullFileName = "";
+        for(String file : fileNames){
+            fullFileName = fullFileName + GlobalVariables.UPLOAD_FOLDER+ file+ "\n";
+        }
+        fullFileName = fullFileName.trim();
+        waitElementToVisible(driver,locator);
+        sendKeyToElement(driver,locator,fullFileName);
+    }
+    public void uploadFileByRobot(WebDriver driver, String... fileNames){
+        String fullFileName = "";
+        for(String file : fileNames){
+            fullFileName = fullFileName + GlobalVariables.UPLOAD_FOLDER+ file+ "\n";
+        }
+        fullFileName = fullFileName.trim();
+        StringSelection select = new StringSelection(fullFileName);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(select,null);
+        try {
+            Robot robot = new Robot();
+            setTimeDelay(1);
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyRelease(KeyEvent.VK_V);
+            setTimeDelay(1);
+
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
+
+    }
+    public void uploadMultipleFileByAutoIT(WebDriver driver, String... fileNames){
+        String fullFileName = "";
+        for(String file : fileNames){
+            fullFileName = fullFileName + "\"" + GlobalVariables.UPLOAD_FOLDER + file + "\"" +" ";
+        }
+        fullFileName = fullFileName.trim();
+        if (driver.toString().contains("firefox")){
+            try {
+                Runtime.getRuntime().exec(new String[] {GlobalVariables.UPLOAD_MULTI_FILE_CHROME, fullFileName});
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else if (driver.toString().contains("chrome")){
+            try {
+                Runtime.getRuntime().exec(new String[] {GlobalVariables.UPLOAD_MULTI_FILE_FIREFOX, fullFileName});
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        setTimeDelay(3);
+    }
+    public void uploadOneFileByAutoIT(WebDriver driver, String fileName){
+        if (driver.toString().contains("firefox")){
+            try {
+                Runtime.getRuntime().exec(new String[] {GlobalVariables.UPLOAD_ONE_FILE_FIREFOX, fileName});
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else if (driver.toString().contains("chrome")){
+            try {
+                Runtime.getRuntime().exec(new String[] {GlobalVariables.UPLOAD_ONE_FILE_CHROME, fileName});
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        setTimeDelay(3);
+    }
 }
 
 

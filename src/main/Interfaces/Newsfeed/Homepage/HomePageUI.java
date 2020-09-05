@@ -16,7 +16,8 @@ public class HomePageUI {
     public static final String MY_ACCOUNT_EDIT_PROFILE_BUTTON= "//div[contains(@class, 'card-your-info')]//a[contains(text(),'Chỉnh sửa trang cá nhân')]";
     public static final String MY_ACCOUNT_TAB_MENU= "//div[contains(@class, 'card-your-info')]//i[contains(@class,'%s')]";
 
-    public static final String FOOTER_LANGUAGE = "//div[@id='sidebar-right']//span[contains(@data-bind,'changeLanguage')]";
+    public static final String FOOTER_VI_LANGUAGE = "//div[@id='sidebar-right']//span[contains(text(),'Tiếng Việt')]";
+    public static final String FOOTER_ENG_LANGUAGE = "//div[@id='sidebar-right']//span[contains(text(),'English')]";
     public static final String FOOTER_CURRENCY = "//div[@id='sidebar-right']//span[contains(@data-bind,'text: currency')]";
     public static final String FOOTER_CHANGE_CURRENCY = "//div[@id='sidebar-right']//a[contains(@data-bind,'onChangeCurrency')]";
     public static final String FOOTER_NAV_LINK = "//div[@id='sidebar-right']//a[contains(@data-bind,'href: %s')]";
@@ -43,6 +44,14 @@ public class HomePageUI {
     public static final String FRIEND_REQUEST_DENY_BUTTON = "//div[contains(@class,'friend-requests')]//button[contains(@data-bind,'onRemoveRequest')]";
     public static final String FRIEND_REQUEST_VIEW_MORE = "//div[contains(@class,'friend-requests')]//a[contains(@data-bind,'seeAllLink')]";
 
-    public static final String FORM_UPDATE_NEW_INFO = "";
-    public static final String FORM_UPDATE_NEW_INFO_TITLE = "";
+    public static final String FORM_UPDATE_NEW_INFO = "//form[@class='form-verify-account-info']";
+    public static final String FORM_UPDATE_NEW_INFO_TITLE = "//h3[@class = 'text-success']";
+
+
+    public static final String DYNAMIC_BIRTHDAY_DROPDOWN = "//select[@name = '%s']/following-sibling::div//input" ;
+    public static final String DYNAMIC_BIRTHDAY_ITEM = "//select[@name = '%s']/following-sibling::div//div[contains(@class,'selectize-dropdown')]//div[contains(@class,'option')][@data-value ='%s']";
+    public static final String COUNTRY_DROPDOWN = "//select[@name = 'nv211']/following-sibling::div//input";
+    public static final String COUNTRY_ITEM = "//select[@name = 'nv211']/following-sibling::div//div[contains(@class,'selectize-dropdown')]//div[contains(@class,'option')][@data-value ='%s']";
+    public static final String GENDER_OPTION = "//input[@type ='radio'][@id = '%s']/following-sibling::label";
+    public static final String UPDATE_INFO_BUTTON = "//button[contains(@data-bind,'onSaveInfo')]";
 }

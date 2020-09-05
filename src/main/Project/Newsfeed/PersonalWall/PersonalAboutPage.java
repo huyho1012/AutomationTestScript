@@ -1,6 +1,7 @@
 package Project.Newsfeed.PersonalWall;
 
 import Common.HandleFunction.AbstractPage;
+import Interfaces.Newsfeed.PersonaWall.PersonalUI;
 import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
 
@@ -10,15 +11,15 @@ public class PersonalAboutPage extends HeaderPage {
         driver = webDriver;
     }
 
-    public Object getEmailIsDisplayOnIntroduceWidget() {
-        return  null;
+    public String getEmailIsDisplayOnIntroduceWidget() {
+        return getTextElement(driver, PersonalUI.WIDGET_INTRO_EMAIL);
     }
 
     public Object getBirthdayDisplayOnIntroduceWidget() {
-        return  null;
+        return getTextElement(driver, PersonalUI.WIDGET_INTRO_BIRTHDAY);
     }
 
     public Object getGenderDisplayOnIntroduceWidget() {
-        return  null;
+        return getTextElement(driver, PersonalUI.WIDGET_INTRO_GENDER);
     }
 }

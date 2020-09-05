@@ -1,12 +1,13 @@
 package Project.Shared.SingUp;
 
 import Common.HandleFunction.AbstractPage;
+import Common.HandleFunction.AbstractTest;
 import org.openqa.selenium.WebDriver;
 
 import java.util.ArrayList;
 
 
-public class SignUpPage extends AbstractPage {
+public class SignUpPage extends AbstractTest {
     WebDriver driver;
     public SignUpPage(WebDriver webDriver){
         driver = webDriver;
@@ -17,9 +18,9 @@ public class SignUpPage extends AbstractPage {
         return getTextElement(driver, SignUpUI.TITLE_REGISTER_FORM);
     }
 
-    public void enterDataValueToDynamicOnFormSignUp(WebDriver driver, String value, String nameField){
-        waitElementToVisible(driver, SignUpUI.TEXT_FIELD_DYNAMIC,nameField);
-        sendKeyToElement(driver, SignUpUI.TEXT_FIELD_DYNAMIC,value,nameField);
+    public void enterDataValueToDynamicOnFormSignUp(WebDriver driver, String nameField , String dataValue){
+        waitElementToVisible(driver, SignUpUI.TEXT_FIELD_DYNAMIC, nameField);
+        sendKeyToElement(driver, SignUpUI.TEXT_FIELD_DYNAMIC, dataValue, nameField);
     }
 
     public void choosePhoneCode(WebDriver driver, String phoneName){
@@ -58,7 +59,7 @@ public class SignUpPage extends AbstractPage {
         waitElementToVisible(driver, SignUpUI.SEARCH_EMAIL_FIELD);
         sendKeyToElement(driver, SignUpUI.SEARCH_EMAIL_FIELD, email);
         clickToElement(driver, SignUpUI.BUTTON_SEARCH_EMAIL);
-        clickToElement(driver, SignUpUI.EMAIL_VERIFY);
+        clickToElement(driver, SignUpUI.EMAIL_VERIFY,getEmailWithoutDomain(email));
         switchToIframeOrFrame(driver, SignUpUI.IFRAME_EMAIL);
         String code = getTextElement(driver, SignUpUI.VERIFY_CODE);
         driver.close();

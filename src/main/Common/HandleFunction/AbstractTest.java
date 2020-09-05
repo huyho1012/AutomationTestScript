@@ -2,6 +2,7 @@ package Common.HandleFunction;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.joda.time.DateTime;
 import org.testng.Assert;
 import org.testng.Reporter;
 
@@ -18,7 +19,16 @@ public abstract class AbstractTest extends AbstractPage {
         String userName = "huyho";
         String domainEmail = "@mailinator.com";
         Random random = new Random();
-        return userName + random.nextInt(2000) + domainEmail;
+        return userName + random.nextInt(2000000) + domainEmail;
+    }
+    protected String getEmailWithoutDomain(String email) {
+        String[] splits = email.split("@");
+        System.out.println(splits[0]);
+        return splits[0];
+    }
+
+    protected String getFullName(String firstName, String lastName) {
+        return lastName.trim() + " " + firstName.trim();
     }
     private boolean checkTrue(boolean condition) {
         boolean pass = true;
@@ -80,5 +90,35 @@ public abstract class AbstractTest extends AbstractPage {
 
     protected boolean verifyEquals(Object actual, Object expected) {
         return checkEquals(actual, expected);
+    }
+
+    protected String getCurrentDay() {
+        DateTime nowUTC = new DateTime();
+        int day = nowUTC.getDayOfMonth();
+        if (day < 10) {
+            String dayValue = "0" + day;
+            return dayValue;
+        }
+        return day + "";
+    }
+    protected String getCurrentMonth() {
+        DateTime now = new DateTime();
+        int month = now.getMonthOfYear();
+        if (month < 10) {
+            String monthValue = "0" + month;
+            return monthValue;
+        }
+        return month + "";
+    }
+    protected String getCurrentYear() {
+        DateTime now = new DateTime();
+        return now.getYear() + "";
+    }
+    protected String getToday() {
+        return getCurrentDay() + "/" + getCurrentMonth() + "/" + getCurrentYear();
+    }
+
+    protected String getBirthdayOnHaLo(String day, String month, String year){
+        return day+ "-" + month + "-" + year;
     }
 }

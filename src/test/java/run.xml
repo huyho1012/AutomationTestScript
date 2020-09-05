@@ -8,7 +8,9 @@
             <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
         </listeners>
         <parameter name="browser" value="Chrome"></parameter>
-        <classes></classes>
+        <classes>
+            <class name="Testcase.TestRegister"></class>
+        </classes>
     </test>
 
 </suite>

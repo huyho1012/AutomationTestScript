@@ -15,9 +15,9 @@ public class SignUpUI {
     // Mailinator
     public static final String SEARCH_EMAIL_FIELD = "//input[@id = 'addOverlay']";
     public static final String BUTTON_SEARCH_EMAIL = "//button[@id = 'go-to-public']";
-    public static final String EMAIL_VERIFY =  "//a[contains(text(),'Xác thực tài khoản Hahalolo')]";
+    public static final String EMAIL_VERIFY =  "//tr[contains(@id,'%s')][1]/td[3]";
     public static final String IFRAME_EMAIL = "//iframe[@id='msg_body']" ;
-    public static final String VERIFY_CODE = "//p[contains(text(),'Bạn có thể được yêu cầu nhập mã xác nhận này:')]/following-sibling::h2";
+    public static final String VERIFY_CODE = "//td/h2";
 
     public static final String VERIFY_CODE_FIELD = "//input[@name ='code']";
     public static final String VERIFY_ACCOUNT_BUTTON = "//button[contains(@data-bind,'verifyAcc')]";
