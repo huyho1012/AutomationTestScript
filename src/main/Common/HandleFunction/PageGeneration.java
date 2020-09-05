@@ -41,7 +41,7 @@ public class PageGeneration {
         return new BusinessOverviewPage(driver);
     }
 
-    public static BusinessDashboardPage createBusiDashboardPage(WebDriver driver) {
+    public static BusinessDashboardPage createBusinessDashboardPage(WebDriver driver) {
         return new BusinessDashboardPage(driver);
     }
 

@@ -1,8 +1,10 @@
 package Project.Business.Business;
 
+import Common.HandleFunction.AbstractPage;
+import Interfaces.Business.BusinessDashboardPageUI;
 import org.openqa.selenium.WebDriver;
 
-public class BusinessDashboardPage {
+public class BusinessDashboardPage extends AbstractPage {
 
     WebDriver driver;
     public BusinessDashboardPage(WebDriver webDriver){
@@ -14,6 +16,8 @@ public class BusinessDashboardPage {
     }
 
     public void clickToVerifyBusiness(WebDriver driver) {
+        waitForElementClickable(driver, BusinessDashboardPageUI.SEND_VERIFY_BUTTON);
+        clickToElement(driver,BusinessDashboardPageUI.SEND_VERIFY_BUTTON );
     }
 
     public void clickToBusinessInfoTab(WebDriver driver) {

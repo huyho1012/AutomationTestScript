@@ -9,13 +9,42 @@ public class DataHelper {
         return new DataHelper();
     }
 
-    public String getFirstName(){
-        return faker.address().firstName();
+    public String getCompanyName(){
+        return  faker.company().name();
     }
+
+    public String getCompanyPhone() {
+        return faker.phoneNumber().phoneNumber();
+    }
+
+    public String getCompanyEmail(){
+        return  faker.internet().emailAddress();
+    }
+
+    public String getTaxCode(){
+        return faker.commerce().promotionCode(10);
+    }
+
+
+    public String getFullAddress(){
+        return faker.address().fullAddress();
+    }
+
+    public String getZipCode(){
+        return faker.address().zipCode();
+    }
+    // Tên người dùng
+    public String getFirstName(){
+        return faker.name().firstName();
+    }
+
     public String getLastName(){
         return faker.address().firstName();
     }
-    public String getUseName(){
-        return faker.address().firstName();
+
+    public String getFullName(){
+        return faker.name().fullName();
     }
+
+
 }

@@ -13,10 +13,7 @@ public class GeneralAccountSetting extends HeaderPage {
 
     public boolean checkAccountSettingPageIsDisplay() {
 
-        if(getTextElement(driver,AccountSettingUI.TITLE_PAGE,"setting_general").contains("THIẾT LẬP TÀI KHOẢN CHUNG")){
-            return true;
-        }
-      return false;
+        return getTextElement(driver, AccountSettingUI.TITLE_PAGE, "setting_general").contains("THIẾT LẬP TÀI KHOẢN CHUNG");
     }
 
     public String getFullNameIsDisplay() {

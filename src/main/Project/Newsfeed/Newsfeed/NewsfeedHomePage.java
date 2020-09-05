@@ -9,13 +9,20 @@ public class NewsfeedHomePage extends HeaderPage {
         driver = webDriver;
     }
 
-    public boolean formFirstUpdateInfoIsDisplay(WebDriver driver) {
-        System.out.println("dã vào đây");
-        return checkIsElementIsDisplay(driver, HomePageUI.FORM_UPDATE_NEW_INFO);
+    public boolean formFirstUpdateInfoIsDisplay() {
+        waitElementToVisible(driver,HomePageUI.UPDATE_INFO_BUTTON);
+        if(checkIsElementIsDisplay(driver, HomePageUI.FORM_UPDATE_NEW_INFO)){
+            System.out.println(checkIsElementIsDisplay(driver, HomePageUI.FORM_UPDATE_NEW_INFO));
+            return true;
+        }else {
+            System.out.println(checkIsElementIsDisplay(driver, HomePageUI.FORM_UPDATE_NEW_INFO));
+            return false;
+        }
+
     }
 
     public String getTitleOfFormFirstUpdateInfo() {
-        System.out.println("dã vào đây");
+        System.out.println(getTextElement(driver, HomePageUI.FORM_UPDATE_NEW_INFO_TITLE));
         return getTextElement(driver, HomePageUI.FORM_UPDATE_NEW_INFO_TITLE);
     }
 

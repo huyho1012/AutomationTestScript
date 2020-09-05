@@ -44,8 +44,8 @@ public class HomePageUI {
     public static final String FRIEND_REQUEST_DENY_BUTTON = "//div[contains(@class,'friend-requests')]//button[contains(@data-bind,'onRemoveRequest')]";
     public static final String FRIEND_REQUEST_VIEW_MORE = "//div[contains(@class,'friend-requests')]//a[contains(@data-bind,'seeAllLink')]";
 
-    public static final String FORM_UPDATE_NEW_INFO = "//form[@class='form-verify-account-info']";
-    public static final String FORM_UPDATE_NEW_INFO_TITLE = "//h3[@class = 'text-success']";
+    public static final String FORM_UPDATE_NEW_INFO = "//div[@class='modal-content']//form[@class= 'form-verify-account-info']";
+    public static final String FORM_UPDATE_NEW_INFO_TITLE = "//div[@class='modal-content']//h3[@class = 'text-success']";
 
 
     public static final String DYNAMIC_BIRTHDAY_DROPDOWN = "//select[@name = '%s']/following-sibling::div//input" ;
