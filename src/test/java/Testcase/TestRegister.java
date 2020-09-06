@@ -280,65 +280,160 @@ public class TestRegister extends AbstractTest {
         log.info("Step 8.1 - Verify business - Check status verification of business");
         verifyEquals(businessDashboardPage.getStatusVerifyOfBusiness(),"Đang chờ xác minh thông tin kinh doanh");
 
-        log.info("Step 8.1 - Verify business - Click to Business Info");
+        log.info("Step 8.1 - Verify business - Go to Business Information page");
         businessDashboardPage.clickItemOnBusinessNavMenu(driver,"menu-settings-info");
         businessInfoPage = PageGeneration.createBusinessInfoPage(driver);
 
+        log.info("Step 8.1 - Verify business - Check Business Information page display success");
         verifyTrue(businessInfoPage.checkBusinessInfoPageIsDisplay());
+
+        log.info("Step 8.1 - Verify business - Verify owner name display correct");
         verifyEquals(businessInfoPage.getOwnerNameIsDisplay(driver),ownerName);
+
+        log.info("Step 8.1 - Verify business - Verify owner mail display correct");
         verifyEquals(businessInfoPage.getOwnerEmailIsDisplay(driver),ownerEmail);
 
+        log.info("Step 9.1 - Confirm business verification - Go to Backend login page");
         businessInfoPage.negativeToURLByJS(driver,backendURL);
         loginPage = PageGeneration.createLoginBackEndPage(driver);
+
         String adminAccount = "balo_04@mailinator.com";
         String adminPassword = "123456";
 
+        log.info("Step 9.2 - Confirm business verification - Backend Login - Enter a Admin username");
         loginPage.enterUserNameToLogin(driver,adminAccount);
 
+        log.info("Step 9.2 - Confirm business verification - Backend Login - Enter a Admin password");
         loginPage.enterPasswordToLogin(driver,adminPassword);
 
+        log.info("Step 9.3 - Confirm business verification - Backend Login - Enter a captcha code");
         loginPage.enterCaptchaCodeToLogin(driver,"");
         loginPage.setTimeDelay(20);
 
+        log.info("Step 9.3 - Confirm business verification - Backend Login - Click Login button");
         loginPage.clickToLoginButton(driver);
         backendHomePage = PageGeneration.createBackendHomepage(driver);
-        backendHomePage.clickToVerifyBusinessMenu(driver);
-//
-//        verifyBusinessManagementPage = PageGeneration.createVerifyBusinessManagement(driver);
-//        verifyBusinessManagementPage.enterEmailBusinessForSearch(driver, "");
-//        verifyBusinessManagementPage.clickToFilterButton(driver);
-//        verifyBusinessManagementPage.clickVerifyButton(driver);
-//        verifyBusinessManagementPage.clickConfirmButtonOnPopup(driver);
-//
-//        // Tạo tài khoản thanh toán
-//        verifyBusinessManagementPage.goToWalletLoginPage(driver);
-//        loginPage = PageGeneration.createWalletLoginPage(driver);
-//        loginPage.enterUserNameToLogin(driver,"");
-//        loginPage.enterPasswordToLogin(driver,"");
-//        loginPage.enterCaptchaCodeToLogin(driver,"");
-//        loginPage.clickToLoginButton(driver);
-//
-//        walletOverviewPage = PageGeneration.createWalletOverviewPage(driver);
-//        walletOverviewPage.clickButtonCreateWallet(driver);
-//        walletOverviewPage.enterPaymentAccountName(driver,"");
-//        walletOverviewPage.chooseCurrencyOfAccount(driver);
-//        walletOverviewPage.clickCreateAccountButton(driver);
-//
-//        walletHomePage = PageGeneration.createWalletHomepage(driver);
-//
-//        // Tạo Trang Tour
-//        walletHomePage.openURL(driver,businessURL);
-//        businessOverviewPage = PageGeneration.createBusinessOverviewPage(driver);
-//        businessOverviewPage.clickToAccountManagementButton(driver);
-//        businessDashboardPage = PageGeneration.createBusiDashboardPage(driver);
-//        businessDashboardPage.clickToPageItemOnMenu(driver);
-//        businessPageList = PageGeneration.clickToPageListManagement(driver);
-//        businessPageList.clickButtonCreateNewPage(driver);
-//        businessPageList.choosePageType(driver);
-//        businessPageList.enterPageNameToCreate(driver,"");
-//        businessPageList.clickToCreatePage(driver);
-//        businessPageList.clickPageManagementLinkToGoDetail(driver);
-//        tourDashboardPage = PageGeneration.createTourDashboardPage(driver);
+
+        log.info("Step 9.3 - Confirm business verification - Backend Login - Click Login button");
+        verifyTrue(backendHomePage.checkBusinessHomePageIsDisplaySuccess());
+
+        log.info("Step 9.3 - Confirm business verification - Backend Homepage - Check language system and change to Vi");
+        backendHomePage.changeLanguageOfSystemToVi(driver);
+
+        log.info("Step 9.3 - Confirm business verification - Backend Homepage - Go to business verification management");
+        backendHomePage.clickToItemOnNavbarMenu(driver,"Xác minh doanh nghiệp");
+        verifyBusinessManagementPage = PageGeneration.createVerifyBusinessManagement(driver);
+
+        log.info("Step 9.3 - Confirm business verification - Backend Business verification management - Check page is displayed");
+        verifyTrue(verifyBusinessManagementPage.checkPageIsDisplaySuccess());
+
+        log.info("Step 9.3 - Confirm business verification - Backend Business verification management  - Enter keyword for searching");
+        verifyBusinessManagementPage.enterEmailBusinessForSearch(driver, ownerEmail);
+
+        log.info("Step 9.3 - Confirm business verification - Backend Business verification management  - Click button Filter");
+        verifyBusinessManagementPage.clickToFilterButton(driver);
+
+        log.info("Step 9.3 - Confirm business verification - Backend Business verification management  - Click button Verify for redirect business");
+        verifyBusinessManagementPage.clickVerifyButton(driver);
+        verifyBusinessManagementPage.clickConfirmButtonOnPopup(driver);
+
+        log.info("Step 9.3 - Confirm business verification - Backend Business verification management  - Click button Verify for redirect business");
+        verifyEquals(verifyBusinessManagementPage.getStatusOfBusinessVerification(),"");
+
+        log.info("Step 10.1 - Create Payment account - Login Wallet  - Open new tab and go to Login Wallet Page");
+        String walletURL ="";
+        verifyBusinessManagementPage.negativeToURLByJS(driver,walletURL);
+        loginPage = PageGeneration.createWalletLoginPage(driver);
+
+        log.info("Step 10.1 - Create Payment account - Login Wallet  - Check page is display success");
+        verifyTrue(loginPage.checkWalletLoginPageIsDisplay());
+
+        log.info("Step 10.1 - Create Payment account - Login Wallet  - Enter username");
+        loginPage.enterUserNameToLogin(driver,"");
+
+        log.info("Step 10.1 - Create Payment account - Login Wallet  - Enter password");
+        loginPage.enterPasswordToLogin(driver,"");
+
+        log.info("Step 10.1 - Create Payment account - Login Wallet  - Enter captcha code");
+        loginPage.enterCaptchaCodeToLogin(driver,"");
+
+        log.info("Step 10.1 - Create Payment account - Login Wallet  - Enter captcha code");
+        loginPage.clickToLoginButton(driver);
+        walletOverviewPage = PageGeneration.createWalletOverviewPage(driver);
+
+        log.info("Step 11.1 - Create Payment account - Overview Wallet page  - Check page is displayed successfully");
+        verifyTrue(walletOverviewPage.checkPageIsDisplayedSuccessfully());
+
+        log.info("Step 11.1 - Create Payment account - Overview Wallet page  - Click button Create payment account");
+        walletOverviewPage.clickButtonCreateWallet(driver);
+
+        log.info("Step 11.1 - Create Payment account - Overview Wallet page  - Check create payment popup is displayed successfully");
+        verifyTrue(walletOverviewPage.checkCreatePaymentAccountPopupIsDisplay());
+
+        log.info("Step 11.1 - Create Payment account - Create payment account popup  - Enter payment account name");
+        walletOverviewPage.enterPaymentAccountName(driver,"");
+
+        log.info("Step 11.1 - Create Payment account - Create payment account popup  - Choose default used currency");
+        walletOverviewPage.chooseCurrencyOfAccount(driver);
+
+        log.info("Step 11.1 - Create Payment account - Create payment account popup  - Click button Finish to create payment account");
+        walletOverviewPage.clickCreateAccountButton(driver);
+        walletHomePage = PageGeneration.createWalletHomepage(driver);
+
+        log.info("Step 11.1 - Create Payment account - Wallet homepage - Check payment account created successfully ");
+        verifyTrue(walletHomePage.checkPageIsDisplaySuccessfully());
+        verifyEquals(walletHomePage.getNameOfPaymentAccountDíplayOnPage(),"");
+
+
+        log.info("Step 12.1 - Create Page Tour - Overview Business page - Go to Business page");
+        walletHomePage.openURL(driver,businessURL);
+        businessOverviewPage = PageGeneration.createBusinessOverviewPage(driver);
+
+        log.info("Step 12.1 - Create Page Tour - Overview Business page - Verify page is display");
+        verifyTrue(businessOverviewPage.checkOverViewPageWithHaveBusiness());
+
+        log.info("Step 12.1 - Create Page Tour - Overview Business page - Click to button Business Management");
+        businessOverviewPage.clickToAccountManagementButton(driver);
+        businessDashboardPage = PageGeneration.createBusinessDashboardPage(driver);
+
+        log.info("Step 12.1 - Create Page Tour - Dashboard Business page - Verify page is displayed successfully");
+        verifyTrue(businessDashboardPage.checkPageIsDisplaySuccessfully());
+
+        log.info("Step 12.1 - Create Page Tour - Dashboard Business page - Check verify business status");
+        verifyEquals(businessDashboardPage.getStatusVerifyOfBusiness(),"");
+
+        log.info("Step 12.1 - Create Page Tour - Dashboard Business page - Check business have no page");
+        verifyEquals(businessDashboardPage.getContentTitleOfSectionNoPage(),"");
+
+        log.info("Step 12.1 - Create Page Tour - Dashboard Business page - Click button Create page now");
+        businessDashboardPage.clickCreatePageNowButton();
+        businessPageList = PageGeneration.openCreatePagePopup(driver);
+
+        log.info("Step 12.1 - Create Page Tour - Create new page popup - Check popup display");
+        verifyTrue(businessPageList.checkPopupCreatePageDisplay());
+
+        log.info("Step 12.1 - Create Page Tour - Create new page popup - Choose page type");
+        businessPageList.choosePageType(driver);
+
+        log.info("Step 12.1 - Create Page Tour - Create new page popup - Enter page name");
+        businessPageList.enterPageNameToCreate(driver,"");
+
+        log.info("Step 12.1 - Create Page Tour - Create new page popup - Click button to create page");
+        businessPageList.clickToCreatePage(driver);
+
+        log.info("Step 12.1 - Create Page Tour - Business page management - Check page display success");
+        verifyTrue(businessPageList.checkPageDisplaySuccess());
+
+        log.info("Step 12.1 - Create Page Tour - Business page management - Verify page created success");
+        verifyTrue(businessPageList.checkCreatedPageSuccess());
+
+        log.info("Step 12.1 - Create Page Tour - Business page management - Verify page information");
+        verifyTrue(businessPageList.getOwnerOfDirectPage());
+        String pageID = businessPageList.getPageIdOfDirectPage();
+
+        log.info("Step 12.1 - Create Page Tour - Business page management - Go to page detai");
+         businessPageList.clickPageManagementLinkToGoDetail(driver);
+        tourDashboardPage = PageGeneration.createTourDashboardPage(driver);
 //
 //        tourDashboardPage.gotoTourGeneralSettingPage();
 //        tourGeneralSettingPage = PageGeneration.createTourGeneralSettingPage(driver);

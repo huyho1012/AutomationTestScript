@@ -24,8 +24,14 @@ public class BusinessDashboardPage extends HeaderPage {
         clickToElement(driver,BusinessDashboardPageUI.SEND_VERIFY_BUTTON );
     }
 
+    public boolean checkPageIsDisplaySuccessfully() {
+        return true;
+    }
 
+    public void clickCreatePageNowButton() {
+    }
 
-    public void clickToPageItemOnMenu(WebDriver driver) {
+    public Object getContentTitleOfSectionNoPage() {
+        return null;
     }
 }

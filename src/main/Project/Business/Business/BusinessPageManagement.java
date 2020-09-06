@@ -22,4 +22,24 @@ public class BusinessPageManagement {
 
     public void clickPageManagementLinkToGoDetail(WebDriver driver) {
     }
+
+    public boolean checkPageDisplaySuccess() {
+        return true;
+    }
+
+    public boolean checkPopupCreatePageDisplay() {
+        return true;
+    }
+
+    public boolean checkCreatedPageSuccess() {
+        return true;
+    }
+
+    public boolean getOwnerOfDirectPage() {
+        return true;
+    }
+
+    public String getPageIdOfDirectPage() {
+        return null;
+    }
 }

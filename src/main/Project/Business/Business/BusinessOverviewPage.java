@@ -44,4 +44,8 @@ public class BusinessOverviewPage extends AbstractTest {
 
     public void clickToAccountManagementButton(WebDriver driver) {
     }
+
+    public boolean checkOverViewPageWithHaveBusiness() {
+        return true;
+    }
 }

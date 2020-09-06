@@ -103,4 +103,8 @@ public class LoginPage extends AbstractPage {
         waitForElementClickable(driver,LoginUI.LOGIN_BUTTON);
         clickToElement(driver, LoginUI.LOGIN_BUTTON);
     }
+
+    public boolean checkWalletLoginPageIsDisplay() {
+        return true;
+    }
 }

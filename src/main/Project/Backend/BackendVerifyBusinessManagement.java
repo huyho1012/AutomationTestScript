@@ -1,8 +1,9 @@
 package Project.Backend;
 
+import Common.HandleFunction.AbstractPage;
 import org.openqa.selenium.WebDriver;
 
-public class BackendVerifyBusinessManagement {
+public class BackendVerifyBusinessManagement extends AbstractPage {
     WebDriver driver;
     public BackendVerifyBusinessManagement(WebDriver webDriver){
         driver = webDriver;
@@ -21,5 +22,13 @@ public class BackendVerifyBusinessManagement {
     }
 
     public void goToWalletLoginPage(WebDriver driver) {
+    }
+
+    public boolean checkPageIsDisplaySuccess() {
+        return true;
+    }
+
+    public Object getStatusOfBusinessVerification() {
+        return null;
     }
 }

@@ -19,4 +19,12 @@ public class WalletOverviewPage {
 
     public void clickCreateAccountButton(WebDriver driver) {
     }
+
+    public boolean checkPageIsDisplayedSuccessfully() {
+        return true;
+    }
+
+    public boolean checkCreatePaymentAccountPopupIsDisplay() {
+        return true;
+    }
 }

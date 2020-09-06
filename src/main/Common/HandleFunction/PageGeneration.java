@@ -104,4 +104,8 @@ public class PageGeneration {
     public static TourInfoTab createTourInfoTab(WebDriver driver) {
         return new TourInfoTab(driver);
     }
+
+    public static BusinessPageManagement openCreatePagePopup(WebDriver driver) {
+        return  new BusinessPageManagement(driver);
+    }
 }

@@ -309,8 +309,18 @@ public abstract class AbstractPage {
         jsExecutor = (JavascriptExecutor)driver;
         jsExecutor.executeScript("arguments[0].click();",element);
     }
+    public void clickToElementByJS(WebDriver driver, String locator, String...values){
+        element = findElement(driver,castToObject(locator, values));
+        jsExecutor = (JavascriptExecutor)driver;
+        jsExecutor.executeScript("arguments[0].click();",element);
+    }
     public void scrollIntoElementByJS(WebDriver driver, String locator){
         element = findElement(driver,locator);
+        jsExecutor = (JavascriptExecutor)driver;
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);",element);
+    }
+    public void scrollIntoElementByJS(WebDriver driver, String locator, String...values){
+        element = findElement(driver,castToObject(locator,values));
         jsExecutor = (JavascriptExecutor)driver;
         jsExecutor.executeScript("arguments[0].scrollIntoView(true);",element);
     }

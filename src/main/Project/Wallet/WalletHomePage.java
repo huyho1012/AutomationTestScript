@@ -9,6 +9,11 @@ public class WalletHomePage extends AbstractPage {
         driver = webDriver;
     }
 
-    public void goToBusinessPage(WebDriver driver) {
+    public boolean checkPageIsDisplaySuccessfully() {
+        return true;
+    }
+
+    public Object getNameOfPaymentAccountDíplayOnPage() {
+        return null;
     }
 }
