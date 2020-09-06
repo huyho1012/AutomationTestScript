@@ -7,7 +7,7 @@ public class BrowserInitialization {
     public static DriverManager getBrowser(String browserName){
         DriverManager driverManager;
         switch (browserName){
-            case "Chrome":
+            case "chrome":
                 driverManager = new ChromeDriverManager();
                 break;
             case "firefox":

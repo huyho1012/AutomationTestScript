@@ -43,6 +43,7 @@ public class NewsfeedHomePage extends HeaderPage {
     public void updateGenderOfUser(WebDriver driver, String valueGender) {
         waitForElementClickable(driver,HomePageUI.GENDER_OPTION,valueGender);
         clickToElement(driver, HomePageUI.GENDER_OPTION,valueGender);
+        setTimeDelay(1);
     }
     public String getGenderOfUser(WebDriver driver, String valueGender) {
         return getTextElement(driver,HomePageUI.GENDER_OPTION,valueGender);
@@ -52,6 +53,7 @@ public class NewsfeedHomePage extends HeaderPage {
         waitForElementClickable(driver,HomePageUI.COUNTRY_DROPDOWN);
         clickToElement(driver, HomePageUI.COUNTRY_DROPDOWN);
         clickToElement(driver, HomePageUI.COUNTRY_ITEM,countryName);
+        setTimeDelay(1);
     }
 
     public void clickToButtonConfirmForUpdateInfo(WebDriver driver) {
@@ -71,5 +73,15 @@ public class NewsfeedHomePage extends HeaderPage {
     public void clickToEditProfile(WebDriver driver) {
         waitForElementClickable(driver,HomePageUI.MY_ACCOUNT_EDIT_PROFILE_BUTTON);
         clickToElement(driver, HomePageUI.MY_ACCOUNT_EDIT_PROFILE_BUTTON);
+    }
+
+    public boolean checkNewsfeedDisplay(WebDriver driver) {
+        waitElementToVisible(driver,HomePageUI.UPDATE_INFO_BUTTON);
+        boolean s1 = getCurrentURL(driver).contains("https://www.hahalolo.com/");
+        boolean s2 = getPageTitle(driver).contains("Bảng tin | Hahalolo");
+        System.out.println(s1);
+        System.out.println("HAhaha");
+        System.out.println(s2);
+        return getCurrentURL(driver).contains("https://www.hahalolo.com") && getPageTitle(driver).contains("Bảng tin | Hahalolo");
     }
 }

@@ -398,13 +398,13 @@ public abstract class AbstractPage {
         fullFileName = fullFileName.trim();
         if (driver.toString().contains("firefox")){
             try {
-                Runtime.getRuntime().exec(new String[] {GlobalVariables.UPLOAD_MULTI_FILE_CHROME, fullFileName});
+                Runtime.getRuntime().exec(new String[] {GlobalVariables.UPLOAD_MULTI_FILE_FIREFOX, fullFileName});
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else if (driver.toString().contains("chrome")){
             try {
-                Runtime.getRuntime().exec(new String[] {GlobalVariables.UPLOAD_MULTI_FILE_FIREFOX, fullFileName});
+                Runtime.getRuntime().exec(new String[] {GlobalVariables.UPLOAD_MULTI_FILE_CHROME, fullFileName});
             } catch (IOException e) {
                 e.printStackTrace();
             }

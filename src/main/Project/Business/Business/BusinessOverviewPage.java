@@ -38,8 +38,8 @@ public class BusinessOverviewPage extends AbstractTest {
     }
 
     public void clickButtonToCreateBusiness(WebDriver driver) {
-        waitForElementClickable(driver, BusinessOverviewUI.FINISH_CREATE_BUSI_BUTTON);
-        clickToElement(driver, BusinessOverviewUI.FINISH_CREATE_BUSI_BUTTON);
+        waitForElementClickable(driver, BusinessOverviewUI.FINISH_CREATE_BUSINESS_BUTTON);
+        clickToElement(driver, BusinessOverviewUI.FINISH_CREATE_BUSINESS_BUTTON);
     }
 
     public void clickToAccountManagementButton(WebDriver driver) {

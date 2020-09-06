@@ -51,8 +51,8 @@ public class TestRegister extends AbstractTest {
     LoginPage loginPage;
     SignUpPage signUpPage;
     String firstName, lastName, email, password, confirmPass, birthday , gender;
-    String newsfeedURL = "https://test-newsfeed.hahalolo.com/auth/signin";
-    String businessURL = "https://test-business.hahalolo.com/";
+    String newsfeedURL = "https://hahalolo.com/auth/signin";
+    String businessURL = "https://business.hahalolo.com/";
     String backendURL = "https://test-backend.hahalolo.com/";
     String fullName;
 
@@ -117,8 +117,8 @@ public class TestRegister extends AbstractTest {
         newsfeedHomePage = PageGeneration.createNewsfeedHomepage(driver);
         log.info("Step 4 - Check newsfeed Homepage is display successfully");
         newsfeedHomePage.setTimeDelay(5);
-        verifyEquals(newsfeedHomePage.getCurrentURL(driver),"https://test-newsfeed.hahalolo.com/");
-        verifyEquals(newsfeedHomePage.getPageTitle(driver),"Bảng tin | Hahalolo");
+        verifyTrue(newsfeedHomePage.checkNewsfeedDisplay(driver));
+
 
         log.info("Step 5 - Update information on first time login");
         log.info("Step 5.1 - Update information - Verify form update information is display");
@@ -134,7 +134,7 @@ public class TestRegister extends AbstractTest {
         gender = newsfeedHomePage.getGenderOfUser(driver,"male");
 
         log.info("Step 5.4 - Update information - Update nationality");
-        newsfeedHomePage.updateNationalOfUser(driver,"VN");
+        newsfeedHomePage.updateNationalOfUser(driver,"AX");
 
         log.info("Step 5.5 - Update information - Click to confirm button");
         newsfeedHomePage.clickToButtonConfirmForUpdateInfo(driver);
@@ -198,15 +198,15 @@ public class TestRegister extends AbstractTest {
         businessOverviewPage.enterValueToUpdateOwnerName(driver, ownerName);
 
         log.info("Step 7.6 - Create new business - Update owner email");
-        String businessEmail = "huyho1210@gmail.com";
-        businessOverviewPage.enterValueToUpdateBusinessEmail(driver,businessEmail);
+        String ownerEmail = "huyho1210@gmail.com";
+        businessOverviewPage.enterValueToUpdateBusinessEmail(driver,ownerEmail);
 
         log.info("Step 7.7 - Create new business - Click create business");
         businessOverviewPage.clickButtonToCreateBusiness(driver);
         businessDashboardPage = PageGeneration.createBusinessDashboardPage(driver);
 
         log.info("Step 8.1 - Verify business - Check status verification of business");
-//        verifyEquals(businessDashboardPage.getStatusVerifyOfBusiness(),"");
+        verifyEquals(businessDashboardPage.getStatusVerifyOfBusiness(),"Xác minh tài khoản kinh doanh của bạn");
 
         log.info("Step 8.2 - Send business verification - Click button verify business");
         businessDashboardPage.clickToVerifyBusiness(driver);
@@ -239,11 +239,13 @@ public class TestRegister extends AbstractTest {
         businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv107",repName);
 
         log.info("Step 8.9 - Send business verification - Enter Registration address");
-        String registrationAddress= data.getFullAddress();
+        String registrationAddress= "Hahalolo";
         businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv110",registrationAddress);
 
         log.info("Step 8.9 - Send business verification - Search with Registration address");
         businessVerifyPage.clickEnterToSearchAddress(driver);
+        verifyTrue(businessVerifyPage.checkFormChooseLocationIsDisplay());
+        businessVerifyPage.chooseLocation(driver, "400/8b Ung Văn Khiêm, Phường 25, Bình Thạnh, Thành phố Hồ Chí Minh, Vietnam");
 
         log.info("Step 8.9 - Send business verification - Enter zipcode");
         String zipCode=  data.getZipCode();
@@ -261,27 +263,46 @@ public class TestRegister extends AbstractTest {
         String businessScope= "Buôn bán văn phòng phẩm";
         businessVerifyPage.enterValueToBusinessScopeTextarea(driver,businessScope);
 
-//        log.info("Step 8.9 - Send business verification - Upload Documents - Business verification papers");
-//        businessVerifyPage.clickToUploadDocumentVerify(driver);
+        log.info("Step 8.9 - Send business verification - Upload Documents - Business verification papers");
+        String fileUploadImage2 = "image2.jpg";
+        businessVerifyPage.clickToUploadDocumentVerify(driver, fileUploadImage2);
 
         log.info("Step 8.9 - Send business verification - Click send verify request");
         businessVerifyPage.clickToSendRequestVerify(driver);
 
-//        businessVerifyPage.clickToBackBusinessManagementPage(driver);
-//        businessDashboardPage = PageGeneration.createBusiDashboardPage(driver);
-//        businessDashboardPage.clickToBusinessInfoTab(driver);
-//        businessInfoPage = PageGeneration.createBusinessInfoPage(driver);
-//        verifyEquals(businessInfoPage.getOwnerNameIsDisplay(driver),"");
-//        verifyEquals(businessInfoPage.getOwnerEmailIsDisplay(driver),"");
-//
-//        businessInfoPage.openBackendLoginPage(driver);
-//        loginPage = PageGeneration.createLoginBackEndPage(driver);
-//        loginPage.enterUserNameToLogin(driver,"");
-//        loginPage.enterPasswordToLogin(driver,"");
-//        loginPage.enterCaptchaCodeToLogin(driver,"");
-//        loginPage.clickToLoginButton(driver);
-//        backendHomePage = PageGeneration.createBackendHomepage(driver);
-//        backendHomePage.clickToVerifyBusinessMenu(driver);
+        log.info("Step 8.9 - Send business verification - Verify request sent successfully");
+        verifyEquals(businessVerifyPage.getTitleOfFormSendRequestSuccess(),"Yêu cầu xác minh doanh nghiệp đã được gửi");
+
+        log.info("Step 8.9 - Send business verification - Verify request sent successfully");
+        businessVerifyPage.clickToBackBusinessManagementPage(driver);
+        businessDashboardPage = PageGeneration.createBusinessDashboardPage(driver);
+
+        log.info("Step 8.1 - Verify business - Check status verification of business");
+        verifyEquals(businessDashboardPage.getStatusVerifyOfBusiness(),"Đang chờ xác minh thông tin kinh doanh");
+
+        log.info("Step 8.1 - Verify business - Click to Business Info");
+        businessDashboardPage.clickItemOnBusinessNavMenu(driver,"menu-settings-info");
+        businessInfoPage = PageGeneration.createBusinessInfoPage(driver);
+
+        verifyTrue(businessInfoPage.checkBusinessInfoPageIsDisplay());
+        verifyEquals(businessInfoPage.getOwnerNameIsDisplay(driver),ownerName);
+        verifyEquals(businessInfoPage.getOwnerEmailIsDisplay(driver),ownerEmail);
+
+        businessInfoPage.negativeToURLByJS(driver,backendURL);
+        loginPage = PageGeneration.createLoginBackEndPage(driver);
+        String adminAccount = "balo_04@mailinator.com";
+        String adminPassword = "123456";
+
+        loginPage.enterUserNameToLogin(driver,adminAccount);
+
+        loginPage.enterPasswordToLogin(driver,adminPassword);
+
+        loginPage.enterCaptchaCodeToLogin(driver,"");
+        loginPage.setTimeDelay(20);
+
+        loginPage.clickToLoginButton(driver);
+        backendHomePage = PageGeneration.createBackendHomepage(driver);
+        backendHomePage.clickToVerifyBusinessMenu(driver);
 //
 //        verifyBusinessManagementPage = PageGeneration.createVerifyBusinessManagement(driver);
 //        verifyBusinessManagementPage.enterEmailBusinessForSearch(driver, "");

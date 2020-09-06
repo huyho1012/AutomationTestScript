@@ -50,7 +50,7 @@ public class HomePageUI {
 
     public static final String DYNAMIC_BIRTHDAY_DROPDOWN = "//select[@name = '%s']/following-sibling::div//input" ;
     public static final String DYNAMIC_BIRTHDAY_ITEM = "//select[@name = '%s']/following-sibling::div//div[contains(@class,'selectize-dropdown')]//div[contains(@class,'option')][@data-value ='%s']";
-    public static final String COUNTRY_DROPDOWN = "//select[@name = 'nv211']/following-sibling::div//input";
+    public static final String COUNTRY_DROPDOWN = "//select[@name = 'nv211']/following-sibling::div";
     public static final String COUNTRY_ITEM = "//select[@name = 'nv211']/following-sibling::div//div[contains(@class,'selectize-dropdown')]//div[contains(@class,'option')][@data-value ='%s']";
     public static final String GENDER_OPTION = "//input[@type ='radio'][@id = '%s']/following-sibling::label";
     public static final String UPDATE_INFO_BUTTON = "//button[contains(@data-bind,'onSaveInfo')]";

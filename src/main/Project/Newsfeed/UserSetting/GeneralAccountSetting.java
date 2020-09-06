@@ -17,6 +17,7 @@ public class GeneralAccountSetting extends HeaderPage {
     }
 
     public String getFullNameIsDisplay() {
+        waitElementToVisible(driver, AccountSettingUI.FULL_NAME);
         return getTextElement(driver, AccountSettingUI.FULL_NAME);
     }
 }

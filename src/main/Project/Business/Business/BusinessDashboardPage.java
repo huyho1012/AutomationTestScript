@@ -2,9 +2,11 @@ package Project.Business.Business;
 
 import Common.HandleFunction.AbstractPage;
 import Interfaces.Business.BusinessDashboardPageUI;
+import Interfaces.Business.BusinessVerificationUI;
+import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
 
-public class BusinessDashboardPage extends AbstractPage {
+public class BusinessDashboardPage extends HeaderPage {
 
     WebDriver driver;
     public BusinessDashboardPage(WebDriver webDriver){
@@ -12,7 +14,9 @@ public class BusinessDashboardPage extends AbstractPage {
     }
 
     public String getStatusVerifyOfBusiness() {
-        return null;
+        waitForPageLoading(driver);
+        waitElementToVisible(driver,BusinessDashboardPageUI.DASHBOARD_BUSINESS_PAGE);
+        return getTextElement(driver, BusinessDashboardPageUI.TITLE_CONTENT_VERIFY_BUSINESS);
     }
 
     public void clickToVerifyBusiness(WebDriver driver) {
@@ -20,8 +24,7 @@ public class BusinessDashboardPage extends AbstractPage {
         clickToElement(driver,BusinessDashboardPageUI.SEND_VERIFY_BUTTON );
     }
 
-    public void clickToBusinessInfoTab(WebDriver driver) {
-    }
+
 
     public void clickToPageItemOnMenu(WebDriver driver) {
     }
