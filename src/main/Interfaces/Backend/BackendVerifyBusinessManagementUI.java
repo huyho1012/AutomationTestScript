@@ -13,4 +13,9 @@ public class BackendVerifyBusinessManagementUI {
 
     public static final String BUTTON_FILTER = "//button[contains(@data-bind,'businessVerifyCollection.collection().onFilter')]";
     public static final String BUTTON_VERIFY_BUSINESS = "//a[contains(text(),'%s')]/following-sibling::div//span[contains(@data-bind,'bv105')][contains(text(),'%s')]/parent::div/following-sibling::div//span[contains(@data-bind,'bv106')][contains(text(),'%s')]/parent::div/following-sibling::div//span[contains(@data-bind,'approve')]";
+    public static final String CONFIRM_VERIFY_POPUP = "//div[contains(@class,'modal__confirm')]";
+    public static final String CONFIRM_BUTTON = "//button[contains(@data-bind,'onConfirm')]";
+
+
+    public static final String STATUS_VERIFICATION_OF_DIRECT_BUSINESS ="//a[contains(text(),'%s')]/following-sibling::div//span[contains(@data-bind,'bv105')][contains(text(),'%s')]/parent::div/following-sibling::div//span[contains(@data-bind,'bv106')][contains(text(),'%s')]/ancestor::td/following-sibling::td[@data-title ='Status']/span";
 }

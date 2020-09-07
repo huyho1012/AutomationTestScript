@@ -60,7 +60,7 @@ public class TestRegister extends AbstractTest {
     String companyName ,otherCompanyName, abbCompanyName, taxCodeCompany, representativeName, registrationAddress, zipCode, companyPhone, companyEmail ,businessScope;
     String fileUploadImage2 = "image2.jpg";
     // Define payment account properties
-
+    String paymentAccountName;
     // Define tour info properties
 
     @Parameters("browser")
@@ -106,6 +106,7 @@ public class TestRegister extends AbstractTest {
         companyPhone= data.getCompanyPhone();
         companyEmail= data.getCompanyEmail();
         businessScope= "Buôn bán văn phòng phẩm";
+        paymentAccountName = "Test Payment Account";
     }
     @Test
     public void TC01_Booking_and_Payment_Workflow(){
@@ -288,11 +289,11 @@ public class TestRegister extends AbstractTest {
         loginPage.enterPasswordToLogin(driver, GlobalVariables.ADMIN_PASSWORD);
         log.info("Step 6.1.5 - Confirm business verification - Backend Login - Enter captcha code");
         loginPage.enterCaptchaCodeToLogin(driver,"");
-        loginPage.setTimeDelay(20);
+        loginPage.setTimeDelay(15);
         log.info("Step 6.1.6 - Confirm business verification - Backend Login - Click Login button");
         loginPage.clickToLoginButton(driver);
         backendHomePage = PageGeneration.createBackendHomepage(driver);
-        loginPage.setTimeDelay(2);
+        setTimeDelay(2);
         log.info("Step 6.2 - Confirm business verification - Backend Homepage");
         log.info("Step 6.2.1 - Confirm business verification - Backend Homepage - Check page display success");
         verifyTrue(backendHomePage.checkBusinessHomePageIsDisplaySuccess());
@@ -302,128 +303,117 @@ public class TestRegister extends AbstractTest {
         backendHomePage.clickToItemOnNavbarMenu(driver,"Xác minh doanh nghiệp");
         verifyBusinessManagementPage = PageGeneration.createVerifyBusinessManagement(driver);
         verifyBusinessManagementPage.setTimeDelay(2);
-        log.info("Step 6.3 - Confirm business verification");
-        log.info("Step 6.3.1 - Confirm business verification - Business verification management - Check page is displayed");
+        log.info("Step 6.3 - Confirm verification");
+        log.info("Step 6.3.1 - Confirm verification - Business verification management - Check page is displayed");
         verifyTrue(verifyBusinessManagementPage.checkPageIsDisplaySuccess());
-        log.info("Step 6.3.2 - Confirm business verification - Business verification management - Enter keyword for searching");
+        log.info("Step 6.3.2 - Confirm verification - Business verification management - Enter keyword for searching");
         verifyBusinessManagementPage.enterEmailBusinessForSearch(driver, ownerEmail);
-        log.info("Step 6.3.3 - Confirm business verification - Business verification management - Enter start date");
+        log.info("Step 6.3.3 - Confirm verification - Business verification management - Enter start date");
         verifyBusinessManagementPage.chooseStartDateForFilter(driver, getToday());
-        log.info("Step 6.3.4 - Confirm business verification - Business verification management - Enter end date");
+        log.info("Step 6.3.4 - Confirm verification - Business verification management - Enter end date");
         verifyBusinessManagementPage.chooseEndDateForFilter(driver, getToday());
-        log.info("Step 6.3.5 - Confirm business verification - Business verification management - Choose business type filter");
+        log.info("Step 6.3.5 - Confirm verification - Business verification management - Choose business type filter");
         verifyBusinessManagementPage.chooseTypeBusiness(driver, "Doanh nghiệp");
-        log.info("Step 6.3.6 - Confirm business verification - Business verification management - Choose status verification");
+        verifyBusinessManagementPage.setTimeDelay(1);
+        log.info("Step 6.3.6 - Confirm verification - Business verification management - Choose status verification");
         verifyBusinessManagementPage.chooseStatusVerification(driver, "Đang chờ xác minh");
-        log.info("Step 6.3.7 - Confirm business verification - Business verification management - Click button Filter");
+        log.info("Step 6.3.7 - Confirm verification - Business verification management - Click button Filter");
         verifyBusinessManagementPage.clickToFilterButton(driver);
+        log.info("Step 6.3.8 - Confirm verification - Business verification management - Check business display correct with filter");
 
-        log.info("Step 9.3 - Confirm business verification - Backend Business verification management  - Click button Verify for redirect business");
+        log.info("Step 6.3.9 - Confirm verification - Business verification management  - Click button Verify for redirect business");
         verifyBusinessManagementPage.clickVerifyButton(driver, businessName, ownerName,ownerEmail);
-
-        log.info("Step 9.3 - Confirm business verification - Backend Business verification management  - Click button Verify for redirect business");
-
+        log.info("Step 6.3.10 - Confirm verification - Business verification management  - Click button confirm verify business");
         verifyBusinessManagementPage.clickConfirmButtonOnPopup(driver);
-
-        log.info("Step 9.3 - Confirm business verification - Backend Business verification management  - Click button Verify for redirect business");
-        verifyEquals(verifyBusinessManagementPage.getStatusOfBusinessVerification(),"");
-
-        log.info("Step 10.1 - Create Payment account - Login Wallet  - Open new tab and go to Login Wallet Page");
+        log.info("Step 6.3.11 - Confirm verification - Business verification management  - Check business verify success");
+        verifyEquals(verifyBusinessManagementPage.getStatusOfBusinessVerification(),"Đã xác minh");
+        log.info("Step 10.1 - Create Payment account - Login Wallet");
+        log.info("Step 10.1.1 - Create Payment account - Login Wallet - Go to Login Wallet");
         verifyBusinessManagementPage.negativeToURLByJS(driver,GlobalVariables.walletURL);
         loginPage = PageGeneration.createWalletLoginPage(driver);
-
-        log.info("Step 10.1 - Create Payment account - Login Wallet  - Check page is display success");
+        setTimeDelay(1);
+        log.info("Step 10.1.2 - Create Payment account - Login Wallet - Check page display success");
         verifyTrue(loginPage.checkWalletLoginPageIsDisplay());
-
-        log.info("Step 10.1 - Create Payment account - Login Wallet  - Enter username");
-        loginPage.enterUserNameToLogin(driver,"");
-
-        log.info("Step 10.1 - Create Payment account - Login Wallet  - Enter password");
-        loginPage.enterPasswordToLogin(driver,"");
-
-        log.info("Step 10.1 - Create Payment account - Login Wallet  - Enter captcha code");
+        log.info("Step 10.1.3 - Create Payment account - Login Wallet  - Enter email address");
+        loginPage.enterUserNameToLogin(driver,emailUser);
+        log.info("Step 10.1.4 - Create Payment account - Login Wallet  - Enter password");
+        loginPage.enterPasswordToLogin(driver,passwordUser);
+        log.info("Step 10.1.5 - Create Payment account - Login Wallet  - Enter captcha code");
         loginPage.enterCaptchaCodeToLogin(driver,"");
-
-        log.info("Step 10.1 - Create Payment account - Login Wallet  - Enter captcha code");
+        setTimeDelay(15);
+        log.info("Step 10.1.6 - Create Payment account - Login Wallet  - Click Login button");
         loginPage.clickToLoginButton(driver);
         walletOverviewPage = PageGeneration.createWalletOverviewPage(driver);
-
-        log.info("Step 11.1 - Create Payment account - Overview Wallet page  - Check page is displayed successfully");
+        walletOverviewPage.setTimeDelay(2);
+        log.info("Step 10.2 - Create Payment account - Overview Wallet page");
+        log.info("Step 10.2.1 - Create Payment account - Overview Wallet page - Check page display success");
         verifyTrue(walletOverviewPage.checkPageIsDisplayedSuccessfully());
-
-        log.info("Step 11.1 - Create Payment account - Overview Wallet page  - Click button Create payment account");
-        walletOverviewPage.clickButtonCreateWallet(driver);
-
-        log.info("Step 11.1 - Create Payment account - Overview Wallet page  - Check create payment popup is displayed successfully");
+        log.info("Step 10.2.2 - Create Payment account - Overview Wallet page  - Click button Create payment account");
+        walletOverviewPage.clickCreateBusinessPaymentAccount(driver);
+        log.info("Step 10.3 - Create Payment account - Create Payment Account popup");
+        log.info("Step 10.3.1 - Create Payment account - Create Payment Account popup - Check popup display success");
         verifyTrue(walletOverviewPage.checkCreatePaymentAccountPopupIsDisplay());
-
-        log.info("Step 11.1 - Create Payment account - Create payment account popup  - Enter payment account name");
-        walletOverviewPage.enterPaymentAccountName(driver,"");
-
-        log.info("Step 11.1 - Create Payment account - Create payment account popup  - Choose default used currency");
-        walletOverviewPage.chooseCurrencyOfAccount(driver);
-
-        log.info("Step 11.1 - Create Payment account - Create payment account popup  - Click button Finish to create payment account");
-        walletOverviewPage.clickCreateAccountButton(driver);
+        log.info("Step 10.3.2 - Create Payment account - Create payment account popup  - Enter payment account name");
+        walletOverviewPage.enterPaymentAccountName(driver,paymentAccountName);
+        log.info("Step 10.3.3 - Create Payment account - Create payment account popup  - Choose default used currency");
+        walletOverviewPage.chooseCurrencyOfAccount(driver,"VND - Vietnamese Dong");
+        log.info("Step 10.3.4 - Create Payment account - Create payment account popup  - Click button Finish to create payment account");
+        walletOverviewPage.clickToFinishButtonToCreatePaymentAccount(driver);
         walletHomePage = PageGeneration.createWalletHomepage(driver);
-
-        log.info("Step 11.1 - Create Payment account - Wallet homepage - Check payment account created successfully ");
+        log.info("Step 10.4 - Create Payment account - Wallet homepage");
+        log.info("Step 10.4.1 - Create Payment account - Wallet homepage - Check page display success");
         verifyTrue(walletHomePage.checkPageIsDisplaySuccessfully());
-        verifyEquals(walletHomePage.getNameOfPaymentAccountDíplayOnPage(),"");
-
-
-        log.info("Step 12.1 - Create Page Tour - Overview Business page - Go to Business page");
+        log.info("Step 10.4.2 - Create Payment account - Wallet homepage - Check payment Account is created successfully");
+        verifyEquals(walletHomePage.getNameOfPaymentAccountDíplayOnPage(),paymentAccountName);
+        log.info("Step 11.1 - Create Page Tour - Overview Business page");
+        log.info("Step 11.1.1 - Create Page Tour - Overview Business page - Back to Business page");
         walletHomePage.openURL(driver,GlobalVariables.businessURL);
         businessOverviewPage = PageGeneration.createBusinessOverviewPage(driver);
-
-        log.info("Step 12.1 - Create Page Tour - Overview Business page - Verify page is display");
+        setTimeDelay(2);
+        log.info("Step 11.1.2 - Create Page Tour - Overview Business page - Check page display success");
         verifyTrue(businessOverviewPage.checkOverViewPageWithHaveBusiness());
-
-        log.info("Step 12.1 - Create Page Tour - Overview Business page - Click to button Business Management");
+        log.info("Step 11.1.3 - Create Page Tour - Overview Business page - Click to button Business Management");
         businessOverviewPage.clickToAccountManagementButton(driver);
         businessDashboardPage = PageGeneration.createBusinessDashboardPage(driver);
-
-        log.info("Step 12.1 - Create Page Tour - Dashboard Business page - Verify page is displayed successfully");
+        setTimeDelay(2);
+        log.info("Step 11.2 - Create Page Tour - Dashboard Business page");
+        log.info("Step 11.2.1 - Create Page Tour - Dashboard Business page - Check page display success");
         verifyTrue(businessDashboardPage.checkPageIsDisplaySuccessfully());
-
-        log.info("Step 12.1 - Create Page Tour - Dashboard Business page - Check verify business status");
+        log.info("Step 11.2.2 - Create Page Tour - Dashboard Business page - Check verify business status");
         verifyEquals(businessDashboardPage.getStatusVerifyOfBusiness(),"");
-
-        log.info("Step 12.1 - Create Page Tour - Dashboard Business page - Check business have no page");
+        log.info("Step 11.2.3 - Create Page Tour - Dashboard Business page - Check business have no page");
         verifyEquals(businessDashboardPage.getContentTitleOfSectionNoPage(),"");
-
-        log.info("Step 12.1 - Create Page Tour - Dashboard Business page - Click button Create page now");
+        log.info("Step 11.2.4 - Create Page Tour - Dashboard Business page - Click button Create page now");
         businessDashboardPage.clickCreatePageNowButton();
         businessPageList = PageGeneration.openCreatePagePopup(driver);
-
-        log.info("Step 12.1 - Create Page Tour - Create new page popup - Check popup display");
+        log.info("Step 11.3 - Create Page Tour - Create new page popup");
+        log.info("Step 11.3.1 - Create Page Tour - Create new page popup - Check popup display");
         verifyTrue(businessPageList.checkPopupCreatePageDisplay());
-
-        log.info("Step 12.1 - Create Page Tour - Create new page popup - Choose page type");
+        log.info("Step 11.3.2 - Create Page Tour - Create new page popup - Choose page type");
         businessPageList.choosePageType(driver);
-
-        log.info("Step 12.1 - Create Page Tour - Create new page popup - Enter page name");
-        businessPageList.enterPageNameToCreate(driver,"");
-
-        log.info("Step 12.1 - Create Page Tour - Create new page popup - Click button to create page");
+        log.info("Step 11.3.3 - Create Page Tour - Create new page popup - Enter page name");
+        businessPageList.enterPageNameToCreate(driver,pageTourName);
+        log.info("Step 11.3.4 - Create Page Tour - Create new page popup - Click button to create page");
         businessPageList.clickToCreatePage(driver);
-
-        log.info("Step 12.1 - Create Page Tour - Business page management - Check page display success");
+        setTimeDelay(2);
+        log.info("Step 12.1 - Create Tour - Business page management");
+        log.info("Step 12.1.1 - Create Tour - Business page management - Check page display success");
         verifyTrue(businessPageList.checkPageDisplaySuccess());
-
-        log.info("Step 12.1 - Create Page Tour - Business page management - Verify page created success");
+        log.info("Step 12.1.2 -  Create Tour - Business page management - Verify page created success");
         verifyTrue(businessPageList.checkCreatedPageSuccess());
-
-        log.info("Step 12.1 - Create Page Tour - Business page management - Verify page information");
+        log.info("Step 12.1.3 - Create Page Tour - Business page management - Verify page information");
         verifyTrue(businessPageList.getOwnerOfDirectPage());
         String pageID = businessPageList.getPageIdOfDirectPage();
-
-        log.info("Step 12.1 - Create Page Tour - Business page management - Go to page detail");
-         businessPageList.clickPageManagementLinkToGoDetail(driver);
+        log.info("Step 12.1.4 - Create Page Tour - Business page management - Go to page detail");
+        businessPageList.clickPageManagementLinkToGoDetail(driver);
         tourDashboardPage = PageGeneration.createTourDashboardPage(driver);
-//
-//        tourDashboardPage.gotoTourGeneralSettingPage();
-//        tourGeneralSettingPage = PageGeneration.createTourGeneralSettingPage(driver);
+        log.info("Step 12.2 - Create Page Tour - Tour Dashboard");
+        log.info("Step 12.2.1 - Create Page Tour - TTour Dashboard - Check page display success");
+        verifyTrue(tourDashboardPage.checkPageIsDisplay());
+        log.info("Step 12.2.2 - Create Page Tour - TTour Dashboard - Click Setting General on Nav-bar menu");
+        tourDashboardPage.gotoTourGeneralSettingPage();
+        tourGeneralSettingPage = PageGeneration.createTourGeneralSettingPage(driver);
+        setTimeDelay(2);
 //        // Cập nhật Tour information
 //        tourGeneralSettingPage.enterPrepaymentAmount(driver,"");
 //        tourGeneralSettingPage.enterCancellationAmount(driver,"");

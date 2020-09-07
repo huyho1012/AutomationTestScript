@@ -209,6 +209,7 @@ public abstract class AbstractPage {
     public void selectItemInCustomDropdown(WebDriver driver, String customDropdown, String itemOnDropdown, String expectedValue){
         waitForElementClickable(driver, customDropdown);
         clickToElement(driver,customDropdown);
+        setTimeDelay(1);
         explicitWait = new WebDriverWait(driver, 30);
         explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(itemOnDropdown)));
         elements = findElements(driver,itemOnDropdown);
@@ -217,6 +218,7 @@ public abstract class AbstractPage {
                 jsExecutor = (JavascriptExecutor) driver;
                 jsExecutor.executeScript("arguments[0].scrollIntoView(true);",item);
                 item.click();
+                setTimeDelay(1);
                 break;
             }
         }

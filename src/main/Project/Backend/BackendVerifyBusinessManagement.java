@@ -42,6 +42,9 @@ public class BackendVerifyBusinessManagement extends AbstractPage {
     }
 
     public void clickConfirmButtonOnPopup(WebDriver driver) {
+        waitElementToVisible(driver,BackendVerifyBusinessManagementUI.CONFIRM_VERIFY_POPUP);
+        waitForElementClickable(driver, BackendVerifyBusinessManagementUI.CONFIRM_BUTTON);
+        clickToElement(driver, BackendVerifyBusinessManagementUI.CONFIRM_BUTTON);
     }
 
     public void goToWalletLoginPage(WebDriver driver) {
@@ -51,7 +54,7 @@ public class BackendVerifyBusinessManagement extends AbstractPage {
         return true;
     }
 
-    public Object getStatusOfBusinessVerification() {
-        return null;
+    public String getStatusOfBusinessVerification() {
+        return getTextElement(driver,BackendVerifyBusinessManagementUI.STATUS_VERIFICATION_OF_DIRECT_BUSINESS);
     }
 }

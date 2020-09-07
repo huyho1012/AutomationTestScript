@@ -10,4 +10,8 @@ public class TourDashboardPage {
 
     public void gotoTourGeneralSettingPage() {
     }
+
+    public boolean checkPageIsDisplay() {
+        return true;
+    }
 }
