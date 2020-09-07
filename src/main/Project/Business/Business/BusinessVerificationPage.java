@@ -48,6 +48,7 @@ public class BusinessVerificationPage extends AbstractPage {
         waitElementToVisible(driver, BusinessVerificationUI.FORM_NOTIFICATION_SENT_REQUEST);
         waitElementToVisible(driver, BusinessVerificationUI.BACK_TO_BUSINESS_DASHBOARD_BUTTON);
         clickToElement(driver, BusinessVerificationUI.BACK_TO_BUSINESS_DASHBOARD_BUTTON);
+        setTimeDelay(1);
     }
 
     public void enterValueToZipCodeField(WebDriver driver, String zipCode) {
@@ -71,12 +72,17 @@ public class BusinessVerificationPage extends AbstractPage {
         waitElementToVisible(driver, LOCATION_PLACE_MODEL.EXPECTED_LOCATION,expectedAddress);
         clickToElement(driver, LOCATION_PLACE_MODEL.EXPECTED_LOCATION,expectedAddress);
         clickToElement(driver, LOCATION_PLACE_MODEL.ADD_LOCATION_BUTTON);
-        setTimeDelay(3);
+        setTimeDelay(5);
     }
 
     public String getTitleOfFormSendRequestSuccess() {
         waitForPageLoading(driver);
         waitElementToVisible(driver, BusinessVerificationUI.FORM_NOTIFICATION_SENT_REQUEST);
         return getTextElement(driver, BusinessVerificationUI.TITLE_FORM_NOTIFICATION_SENT_REQUEST);
+    }
+
+    public String getTitleOfFormVerificationRequest() {
+        waitElementToVisible(driver,BusinessVerificationUI.FORM_ENTERPRISE_VERIFICATION);
+        return getTextElement(driver, BusinessVerificationUI.TITLE_FORM_ENTERPRISE_VERIFICATION);
     }
 }

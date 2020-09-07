@@ -3,9 +3,9 @@ package Testcase;
 import Common.DriverManagement.BrowserInitialization;
 import Common.DriverManagement.DriverManager;
 import Common.DummyData.DataHelper;
+import Common.GlobalVariables;
 import Common.HandleFunction.AbstractTest;
 import Common.HandleFunction.PageGeneration;
-import Interfaces.Business.BusinessDashboardPageUI;
 import Project.Business.Business.*;
 import Project.Business.Tour.Management.TourInfoTab;
 import Project.Backend.BackendHomePage;
@@ -15,18 +15,22 @@ import Project.Business.Tour.Management.TourManagementPage;
 import Project.Newsfeed.Newsfeed.NewsfeedHomePage;
 import Project.Newsfeed.PersonalWall.PersonalAboutPage;
 import Project.Newsfeed.UserSetting.GeneralAccountSetting;
-import Project.Shared.Login.LoginPage;
+import Interfaces.Newsfeed.StartApp.Login.LoginPage;
 import Project.Shared.SingUp.SignUpPage;
 import Project.Wallet.WalletHomePage;
 import Project.Wallet.WalletOverviewPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class TestRegister extends AbstractTest {
     DriverManager driverManager;
+    DataHelper data = new DataHelper();
     WebDriver driver;
+
+    // Object model
     NewsfeedHomePage newsfeedHomePage;
     PersonalAboutPage perAboutPage;
     GeneralAccountSetting generalAccSetting;
@@ -43,306 +47,289 @@ public class TestRegister extends AbstractTest {
     TourManagementPage tourManagementPage;
     TourDetailPage tourDetailPage;
     TourInfoTab tourInformationTab;
-
-    DataHelper data = new DataHelper();
-
     WalletOverviewPage walletOverviewPage;
     WalletHomePage walletHomePage;
     LoginPage loginPage;
     SignUpPage signUpPage;
-    String firstName, lastName, email, password, confirmPass, birthday , gender;
-    String newsfeedURL = "https://hahalolo.com/auth/signin";
-    String businessURL = "https://business.hahalolo.com/";
-    String backendURL = "https://test-backend.hahalolo.com/";
-    String fullName;
+
+    // Define user properties
+    String firstNameUser, lastNameUser, emailUser, passwordUser, confirmPassUser, birthdayUser , genderUser, fullName;
+    // Define business properties
+    String businessName, ownerName,ownerEmail;
+    // Define business verification properties
+    String companyName ,otherCompanyName, abbCompanyName, taxCodeCompany, representativeName, registrationAddress, zipCode, companyPhone, companyEmail ,businessScope;
+    String fileUploadImage2 = "image2.jpg";
+    // Define payment account properties
+
+    // Define tour info properties
 
     @Parameters("browser")
     @BeforeClass
     public void preconditionStep(String browserName) {
         log.info("Precondition - Step 1 - Create Browser Driver ");
         driverManager = BrowserInitialization.getBrowser(browserName);
-
         log.info("Precondition - Step 2 - Open browser and go to Newsfeed login");
-        driver = driverManager.getDriver(newsfeedURL);
+        driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
         loginPage = PageGeneration.createLoginPage(driver);
-
-        log.info("Precondition - Change system language To Ví");
-        loginPage.clickToChangeToVI(driver);
+        log.info("Precondition - Step 3 - Check and confirm Newsfeed page display success");
+        log.info("Precondition - Step 3.1 - Check and confirm Newsfeed page display success - Verify url page");
+        verifyEquals(loginPage.getCurrentURL(driver),"https://test-newsfeed.hahalolo.com/auth/signin");
+        log.info("Precondition - Step 3.2 - Check and confirm Newsfeed page display success - Verify icon Google play display");
+        verifyTrue(loginPage.checkGooglePlayIconIsDisplay(driver));
+        log.info("Precondition - Step 3.2 - Check and confirm Newsfeed page display success - Verify icon App store display");
+        verifyTrue(loginPage.checkAppStoreIconIsDisplay(driver));
+        log.info("Precondition - Step 4 - Change system language To Ví");
+        log.info("Precondition - Step 4.1 - Change system language To Ví - Select action change VI");
+        loginPage.clickToChangeLanguageToVI(driver);
         signUpPage = PageGeneration.createFormRegister(driver);
+        log.info("Precondition - Step 4.2 - Change system language To Ví - Check Halo slogan");
+        verifyTrue(signUpPage.checkContentOfHaLoStartApp(driver));
+    }
+    @BeforeTest
+    public void generateDataForTesting(){
+        firstNameUser = data.getFirstName();
+        lastNameUser = data.getLastName();
+        emailUser = randomVirtualEmail();
+        passwordUser = "1234567";
+        confirmPassUser = "1234567";
 
+        businessName= data.getCompanyName();
+        ownerName= data.getFullName();
+        ownerEmail = randomVirtualEmail();
+        companyName=  data.getCompanyName();
+        otherCompanyName= data.getCompanyName();
+        abbCompanyName= data.getCompanyName();
+        taxCodeCompany= data.getTaxCode();
+        representativeName = data.getFullName();
+        registrationAddress= "Hahalolo";
+        zipCode=  data.getZipCode();
+        companyPhone= data.getCompanyPhone();
+        companyEmail= data.getCompanyEmail();
+        businessScope= "Buôn bán văn phòng phẩm";
     }
     @Test
-    public void Test(){
-        email = randomVirtualEmail();
-        password = "1234567";
-        confirmPass = "1234567";
-        firstName = data.getFirstName();
-        lastName = data.getLastName();
-
+    public void TC01_Booking_and_Payment_Workflow(){
         log.info("Step 1 - Check title of form Signup");
         verifyEquals(signUpPage.getTitleOfFormSignUp(driver),"Tham gia Hahalolo ngay!");
-
-        log.info("Step 2.1 - Enter first name");
-        signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv104", firstName);
-
-        log.info("Step 2.2 - Enter last name");
-        signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv103", lastName);
-
-        log.info("Step 2.3 - Enter email");
-        signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv108", email);
-
-        log.info("Step 2.4 - Enter password");
-        signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv109", password);
-
-        log.info("Step 2.5 - Enter confirm password");
-        signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"repeatPassword", confirmPass);
-
-        log.info("Step 2.6 - Click to sign up new account - Go to verify account form");
+        log.info("Step 2 - Sign up new account");
+        log.info("Step 2.1 - Sign up new account - Enter first name");
+        signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv104", firstNameUser);
+        log.info("Step 2.2 - Sign up new account - Enter last name");
+        signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv103", lastNameUser);
+        log.info("Step 2.3 - Sign up new account - Enter email");
+        signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv108", emailUser);
+        log.info("Step 2.4 - Sign up new account - Enter password");
+        signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv109", passwordUser);
+        log.info("Step 2.5 - Sign up new account - Enter confirm password");
+        signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"repeatPassword", confirmPassUser);
+        log.info("Step 2.6 - Sign up new account - Click to sign up new account");
         signUpPage.clickSignUpButton();
-
-        log.info("Step 3.1 - Verify title of Verify account form");
+        signUpPage.setTimeDelay(4);
+        log.info("Step 3 - Verify new account");
+        log.info("Step 3.1 - Verify new account - Check page display success");
+        verifyEquals(signUpPage.getPageTitle(driver),"Kích hoạt tài khoản | Hahalolo");
+        verifyTrue(signUpPage.checkVerifyPageDisplay());
+        log.info("Step 3.2 - Verify new account - Check type of verify account");
         verifyTrue(signUpPage.getTitleOfVerifyForm().endsWith("email"));
-
-        log.info("Step 3.2 - Verify account display on verify account form with email register on before step");
-        verifyEquals(signUpPage.getUserAccountToDisplay(),email);
-
-        log.info("Step 3.3 - Get code on email register");
-        String code = signUpPage.getVerifyCodeByEmail(email);
-
-        log.info("Step 3.4 - Paste code on email register to verify code field");
+        log.info("Step 3.3 - Verify new account - Check registered email display on form");
+        verifyEquals(signUpPage.getUserAccountToDisplay(),emailUser);
+        log.info("Step 3.4 - Verify new account - Get code on Mailinator");
+        String code = signUpPage.getVerifyCodeByEmail(emailUser);
+        log.info("Step 3.5 - Verify new account - Paste code to verify code field");
         signUpPage.enterVerifyCodeToVerifyAccount(driver,code);
-
-        log.info("Step 3.5 - Click to verify button");
+        log.info("Step 3.6 - Verify new account - Click Verify button");
         signUpPage.clickToVerifyAccount(driver);
         newsfeedHomePage = PageGeneration.createNewsfeedHomepage(driver);
-        log.info("Step 4 - Check newsfeed Homepage is display successfully");
         newsfeedHomePage.setTimeDelay(5);
-        verifyTrue(newsfeedHomePage.checkNewsfeedDisplay(driver));
-
-
-        log.info("Step 5 - Update information on first time login");
-        log.info("Step 5.1 - Update information - Verify form update information is display");
+        log.info("Step 4 - Newsfeed Homepage");
+        log.info("Step 4.1 - Newsfeed Homepage - Check page display success");
+//        verifyTrue(newsfeedHomePage.checkNewsfeedDisplay(driver));
+        verifyEquals(newsfeedHomePage.getCurrentURL(driver),"https://test-newsfeed.hahalolo.com/");
+        verifyEquals(newsfeedHomePage.getPageTitle(driver),"Bảng tin | Hahalolo");
+        log.info("Step 4.2 - Newsfeed Homepage - Update info");
+        log.info("Step 4.2.1 - Newsfeed Homepage - Update info - Check Update info popup display");
         verifyTrue(newsfeedHomePage.formFirstUpdateInfoIsDisplay());
         verifyEquals(newsfeedHomePage.getTitleOfFormFirstUpdateInfo(),"Xác minh tài khoản thành công!");
-
-        log.info("Step 5.2 - Update information - Update birthday");
+        log.info("Step 4.2.1 - Newsfeed Homepage - Update info - Update birthday");
         newsfeedHomePage.updateBirthdayOfUser(driver,"12","10","1992");
-        birthday = getBirthdayOnHaLo("12","10","1992");
-
-        log.info("Step 5.3 - Update information - Update gender");
+        birthdayUser = getBirthdayOnHaLo("12","10","1992");
+        log.info("Step 4.2.2 - Newsfeed Homepage - Update info - Update gender");
         newsfeedHomePage.updateGenderOfUser(driver,"male");
-        gender = newsfeedHomePage.getGenderOfUser(driver,"male");
-
-        log.info("Step 5.4 - Update information - Update nationality");
-        newsfeedHomePage.updateNationalOfUser(driver,"AX");
-
-        log.info("Step 5.5 - Update information - Click to confirm button");
+        genderUser = newsfeedHomePage.getGenderOfUser(driver,"male");
+        log.info("Step 4.2.3 - Newsfeed Homepage - Update info - Update nationality");
+        newsfeedHomePage.updateNationalOfUser(driver,"VN");
+        log.info("Step 4.2.4 - Newsfeed Homepage - Update info - Click to confirm button");
         newsfeedHomePage.clickToButtonConfirmForUpdateInfo(driver);
-
-        log.info("Step 6 - Verify information of account");
-        log.info("Step 6.1 - Verify information of account - Change language system to Vi");
+        log.info("Step 4.3 - Newsfeed Homepage - Verify information");
+        log.info("Step 4.3.1 - Newsfeed Homepage - Verify information - Change language system before checking");
         newsfeedHomePage.changeLanguageNewsfeedToVI(driver);
-
-        log.info("Step 6.2 - Verify information of account - Get full name on My account");
+        log.info("Step 4.3.2 - Newsfeed Homepage - Verify information - Verify full name My account widget display correct");
         fullName = newsfeedHomePage.getFullNameDisplayOnMyAccount(driver);
-
-        log.info("Step 6.3 - Verify information of account - Verify full name register with full on display on My account");
-        verifyEquals(fullName,getFullName(firstName,lastName));
-
-        log.info("Step 6.4 - Verify information of account - Go to personal About");
-        newsfeedHomePage.setTimeDelay(2);
+        verifyEquals(fullName, getFullName(firstNameUser,lastNameUser));
+        log.info("Step 4.3.3 - Newsfeed Homepage - Verify information - Go to personal About page");
         newsfeedHomePage.clickToEditProfile(driver);
         perAboutPage = PageGeneration.createPerTAboutPage(driver);
-
-        log.info("Step 6.5 - Verify information of account - Verify email on Introduce widget with registered email");
-        verifyEquals(perAboutPage.getEmailIsDisplayOnIntroduceWidget(),email);
-
-        log.info("Step 6.6 - Verify information of account - Verify birthday on Introduce widget with updated birthday on step Update Information");
-        verifyEquals(perAboutPage.getBirthdayDisplayOnIntroduceWidget(),birthday);
-
-        log.info("Step 6.7 - Verify information of account - Verify gender on Introduce widget with updated gender on step Update Information");
-        verifyEquals(perAboutPage.getGenderDisplayOnIntroduceWidget(),gender);
-
-        log.info("Step 6.8 - Verify information of account - Click to Account setting");
+        perAboutPage.setTimeDelay(4);
+        log.info("Step 4.3.4 - Newsfeed Homepage - Verify information - Verify Personal About page display");
+        verifyTrue(perAboutPage.checkPageIsDisplay());
+        verifyEquals(perAboutPage.getPageTitle(driver),"Giới thiệu - Trang cá nhân | Hahalolo");
+        log.info("Step 4.3.5- Newsfeed Homepage - Verify information - Verify email on Introduce widget display correct");
+        verifyEquals(perAboutPage.getEmailIsDisplayOnIntroduceWidget(),emailUser);
+        log.info("Step 4.3.6 - Newsfeed Homepage - Verify information - Verify birthday on Introduce widget display correct");
+        verifyEquals(perAboutPage.getBirthdayDisplayOnIntroduceWidget(),birthdayUser);
+        log.info("Step 4.3.7 - Newsfeed Homepage - Verify information - Verify gender on Introduce widget display correct");
+        verifyEquals(perAboutPage.getGenderDisplayOnIntroduceWidget(),genderUser);
+        log.info("Step 4.3.8 - Newsfeed Homepage - Verify information - Go to Account Setting page");
         perAboutPage.clickToItemOnSettingMenu(driver,"ic-cog-c");
         generalAccSetting = PageGeneration.createGeneralAccountSettingPage(driver);
-
-        log.info("Step 6.9 - Verify account information - Click to Account setting");
-        generalAccSetting.setTimeDelay(5);
+        generalAccSetting.setTimeDelay(4);
+        log.info("Step 4.3.8 - Newsfeed Homepage - Verify information - Verify Account Setting page display");
         verifyTrue(generalAccSetting.checkAccountSettingPageIsDisplay());
         verifyEquals(generalAccSetting.getPageTitle(driver),"Cài đặt tài khoản | Hahalolo");
-        log.info("Step 6.10 - Verify account information - Verify full name display On Setting Account with Full name on Register step and My account");
-        verifyEquals(generalAccSetting.getFullNameIsDisplay(),getFullName(firstName,lastName));
+        log.info("Step 4.3.9 - Newsfeed Homepage - Verify information - Verify FullName on Update FullName function display correct");
+        log.info("Step 4.3.9.1 - Newsfeed Homepage - Verify information - Verify FullName on Update FullName with full name user input");
+        verifyEquals(generalAccSetting.getFullNameIsDisplay(),getFullName(firstNameUser,lastNameUser));
+        log.info("Step 4.3.9.2 - Newsfeed Homepage - Verify information - Verify FullName on Update FullName with full name on My Account widget");
         verifyEquals(generalAccSetting.getFullNameIsDisplay(),fullName);
-
-        log.info("Step 7 - Create new business");
-        log.info("Step 7.1 - Create new business - Go to business Page");
+        log.info("Step 5 - Business Homepage");
+        log.info("Step 5.1 - Business Homepage - Go to business Page");
         generalAccSetting.clickToItemOnSettingMenu(driver,"ic-business-c");
-        generalAccSetting.setTimeDelay(2);
         businessOverviewPage = PageGeneration.createBusinessOverviewPage(driver);
         businessOverviewPage.switchWindowByTitle(driver,"Hahalolo - Business Account");
-//        verifyTrue(businessOverviewPage.checkBusinessOverviewWithNewAccount(driver));
-
-        log.info("Step 7.2 - Create new business - Click button Create new business");
+        generalAccSetting.setTimeDelay(2);
+        log.info("Step 5.2.1 - Business Homepage - Overview Business page - Check page with case new account display");
+        verifyEquals(businessOverviewPage.getPageTitle(driver),"Hahalolo - Business Account");
+        verifyTrue(businessOverviewPage.checkBusinessOverviewWithNewAccount(driver));
+        log.info("Step 5.2.2 - Business Homepage - Overview Business page - Click button Create new business");
         businessOverviewPage.clickToCreateNewBusiness(driver);
-
-        log.info("Step 7.3 - Create new business - Choose business type - Enterprise");
+        log.info("Step 5.3.1 - Business Homepage - Create Business popup - Check popup display");
+        verifyTrue(businessOverviewPage.checkCreateBusinessPopupDisplay());
+        log.info("Step 5.3.2 - Business Homepage - Create Business popup - Choose type Enterprise");
         businessOverviewPage.chooseTypeOfBusiness(driver, "type-business");
-
-        log.info("Step 7.4 - Create new business - Enter business name");
-        String businessName= "Hahalolo Company";
+        log.info("Step 5.3.3 - Business Homepage - Create Business popup - Enter business name");
         businessOverviewPage.enterBusinessName(driver, businessName);
-
-        log.info("Step 7.5 - Create new business - Update owner name");
-        String ownerName= "Hồ Doãn Quốc Huy";
+        log.info("Step 5.3.4 - Business Homepage - Create Business popup - Update new owner name");
         businessOverviewPage.enterValueToUpdateOwnerName(driver, ownerName);
-
-        log.info("Step 7.6 - Create new business - Update owner email");
-        String ownerEmail = "huyho1210@gmail.com";
+        log.info("Step 5.3.5 - Business Homepage - Create Business popup - Update new owner email");
         businessOverviewPage.enterValueToUpdateBusinessEmail(driver,ownerEmail);
-
-        log.info("Step 7.7 - Create new business - Click create business");
+        log.info("Step 5.3.6 - Business Homepage - Create Business popup - Click button finish for creating new business");
         businessOverviewPage.clickButtonToCreateBusiness(driver);
         businessDashboardPage = PageGeneration.createBusinessDashboardPage(driver);
-
-        log.info("Step 8.1 - Verify business - Check status verification of business");
+        log.info("Step 5.4 - Business Homepage - Verify business information");
+        log.info("Step 5.4.1 - Business Homepage - Verify business information - Check new business is created successfully");
+//        verifyTrue(businessDashboardPage.checkTitleCreateBusinessSuccess());
+        log.info("Step 5.4.2 - Business Homepage - Verify business information - Check status verification");
         verifyEquals(businessDashboardPage.getStatusVerifyOfBusiness(),"Xác minh tài khoản kinh doanh của bạn");
-
-        log.info("Step 8.2 - Send business verification - Click button verify business");
+        log.info("Step 5.4.2 - Business Homepage - Verify business information - Click button verify business");
         businessDashboardPage.clickToVerifyBusiness(driver);
         businessVerifyPage = PageGeneration.createVerifyBusinessTypeEnterpriseForm(driver);
-
-        log.info("Step 8.3 - Send business verification - Check Enterprise verification request display success");
-//        verifyEquals(businessDashboardPage.getTitleOfFormVerificationRequest(),"");
-
-        log.info("Step 8.4 - Send business verification - Enter company name");
-        String companyName=  data.getCompanyName();
-        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv102",companyName);
-
-        log.info("Step 8.5 - Send business verification - Enter other company name");
-        String otherName= data.getCompanyName();
-        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv103",otherName);
-
-        log.info("Step 8.6 - Send business verification - Enter Abbreviated company name");
-        String abbName= data.getCompanyName();
-        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv104",abbName);
-
-        log.info("Step 8.7 - Send business verification - Enter Tax code");
-        String taxCode= data.getTaxCode();
-        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv105",taxCode);
-
-        log.info("Step 8.8 - Send business verification - Choose Registration date");
+        log.info("Step 5.5 - Business Homepage - Send business verification");
+        log.info("Step 5.5.1 - Business Homepage - Send business verification - Check Enterprise verification request display success");
+        verifyEquals(businessVerifyPage.getTitleOfFormVerificationRequest(),"XÁC MINH THÔNG TIN KINH DOANH DOANH NGHIỆP");
+        log.info("Step 5.5.2 - Business Homepage - Send business verification - Enter company name");
+        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv102", companyName);
+        log.info("Step 5.5.3 - Business Homepage - Send business verification - Enter other company name");
+        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv103", otherCompanyName);
+        log.info("Step 5.5.4 - Business Homepage - Send business verification - Enter Abbreviated company name");
+        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv104",abbCompanyName);
+        log.info("Step 5.5.5 - Business Homepage - Send business verification - Enter Tax code");
+        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv105",taxCodeCompany);
+        log.info("Step 5.5.6 - Business Homepage - Send business verification - Choose Registration date");
         businessVerifyPage.chooseRegistrationDate(driver,"10","8","2018");
-
-        log.info("Step 8.9 - Send business verification - Enter Representative name");
-        String repName= data.getFullName();
-        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv107",repName);
-
-        log.info("Step 8.9 - Send business verification - Enter Registration address");
-        String registrationAddress= "Hahalolo";
+        log.info("Step 5.5.7 - Business Homepage - Send business verification - Enter Representative name");
+        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv107", representativeName);
+        log.info("Step 5.5.8 - Business Homepage - Send business verification - Enter Registration address");
         businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv110",registrationAddress);
-
-        log.info("Step 8.9 - Send business verification - Search with Registration address");
+        log.info("Step 5.5.9 - Business Homepage - Send business verification - Click search Registration address");
         businessVerifyPage.clickEnterToSearchAddress(driver);
+        log.info("Step 5.5.10.1- Business Homepage - Send business verification - Choose place popup - Check popup display");
         verifyTrue(businessVerifyPage.checkFormChooseLocationIsDisplay());
+        log.info("Step 5.5.10.2 - Business Homepage - Send business verification - Choose place popup - Choose a place");
         businessVerifyPage.chooseLocation(driver, "400/8b Ung Văn Khiêm, Phường 25, Bình Thạnh, Thành phố Hồ Chí Minh, Vietnam");
-
-        log.info("Step 8.9 - Send business verification - Enter zipcode");
-        String zipCode=  data.getZipCode();
+        log.info("Step 5.5.11 - Business Homepage - Send business verification - Enter zipcode");
         businessVerifyPage.enterValueToZipCodeField(driver,zipCode);
-
-        log.info("Step 8.9 - Send business verification - Enter company phone");
-        String companyPhone= data.getCompanyPhone();
-        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv109",companyPhone);
-
-        log.info("Step 8.9 - Send business verification - Enter company email");
-        String companyEmail= data.getCompanyEmail();
-        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv108",companyEmail);
-
-        log.info("Step 8.9 - Send business verification - Enter business scope");
-        String businessScope= "Buôn bán văn phòng phẩm";
+        log.info("Step 5.5.12 - Business Homepage - Send business verification - Enter company phone");
+        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv109", companyPhone);
+        log.info("Step 5.5.13 - Business Homepage - Send business verification - Enter company email");
+        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv108", companyEmail);
+        log.info("Step 5.5.14 - Business Homepage - Send business verification - Enter business scope");
         businessVerifyPage.enterValueToBusinessScopeTextarea(driver,businessScope);
-
-        log.info("Step 8.9 - Send business verification - Upload Documents - Business verification papers");
-        String fileUploadImage2 = "image2.jpg";
+        log.info("Step 5.5.15 - Business Homepage - Send business verification - Business verification papers");
         businessVerifyPage.clickToUploadDocumentVerify(driver, fileUploadImage2);
-
-        log.info("Step 8.9 - Send business verification - Click send verify request");
+        log.info("Step 5.5.16 - Business Homepage - Send business verification - Click send verify request");
         businessVerifyPage.clickToSendRequestVerify(driver);
-
-        log.info("Step 8.9 - Send business verification - Verify request sent successfully");
+        log.info("Step 5.5.17 - Business Homepage - Send business verification - Check verify business is sent successfully");
         verifyEquals(businessVerifyPage.getTitleOfFormSendRequestSuccess(),"Yêu cầu xác minh doanh nghiệp đã được gửi");
-
-        log.info("Step 8.9 - Send business verification - Verify request sent successfully");
+        log.info("Step 5.5.18 - Business Homepage - Send business verification - Click button to go back Business Management");
         businessVerifyPage.clickToBackBusinessManagementPage(driver);
         businessDashboardPage = PageGeneration.createBusinessDashboardPage(driver);
-
-        log.info("Step 8.1 - Verify business - Check status verification of business");
+        log.info("Step 5.6 - Business Homepage - Check business information");
+        log.info("Step 5.6.1 - Business Homepage - Check business information - Check status verification");
         verifyEquals(businessDashboardPage.getStatusVerifyOfBusiness(),"Đang chờ xác minh thông tin kinh doanh");
-
-        log.info("Step 8.1 - Verify business - Go to Business Information page");
+        log.info("Step 5.6.2 - Business Homepage - Check business information - Go to Business Info");
         businessDashboardPage.clickItemOnBusinessNavMenu(driver,"menu-settings-info");
         businessInfoPage = PageGeneration.createBusinessInfoPage(driver);
-
-        log.info("Step 8.1 - Verify business - Check Business Information page display success");
+        log.info("Step 5.6.3 - Business Homepage - Check business information - Check page display success");
         verifyTrue(businessInfoPage.checkBusinessInfoPageIsDisplay());
-
-        log.info("Step 8.1 - Verify business - Verify owner name display correct");
+        log.info("Step 5.6.4 - Business Homepage - Check business information - Check owner name display success");
         verifyEquals(businessInfoPage.getOwnerNameIsDisplay(driver),ownerName);
-
-        log.info("Step 8.1 - Verify business - Verify owner mail display correct");
+        log.info("Step 5.6.5 - Business Homepage - Check business information - Check owner email display success");
         verifyEquals(businessInfoPage.getOwnerEmailIsDisplay(driver),ownerEmail);
-
-        log.info("Step 9.1 - Confirm business verification - Go to Backend login page");
-        businessInfoPage.negativeToURLByJS(driver,backendURL);
+        log.info("Step 6 - Confirm business verification");
+        log.info("Step 6.1 - Confirm business verification - Backend Login");
+        log.info("Step 6.1.1 - Confirm business verification - Backend Login - Go to Backend Login");
+        businessInfoPage.openURL(driver,GlobalVariables.backendURL);
         loginPage = PageGeneration.createLoginBackEndPage(driver);
-
-        String adminAccount = "balo_04@mailinator.com";
-        String adminPassword = "123456";
-
-        log.info("Step 9.2 - Confirm business verification - Backend Login - Enter a Admin username");
-        loginPage.enterUserNameToLogin(driver,adminAccount);
-
-        log.info("Step 9.2 - Confirm business verification - Backend Login - Enter a Admin password");
-        loginPage.enterPasswordToLogin(driver,adminPassword);
-
-        log.info("Step 9.3 - Confirm business verification - Backend Login - Enter a captcha code");
+        log.info("Step 6.1.2 - Confirm business verification - Backend Login - Go to Backend Login");
+        verifyTrue(loginPage.checkBackendLoginPageDisplay());
+        log.info("Step 6.1.3 - Confirm business verification - Backend Login - Enter admin account");
+        loginPage.enterUserNameToLogin(driver,GlobalVariables.ADMIN_ACCOUNT);
+        log.info("Step 6.1.4 - Confirm business verification - Backend Login - Enter admin password");
+        loginPage.enterPasswordToLogin(driver, GlobalVariables.ADMIN_PASSWORD);
+        log.info("Step 6.1.5 - Confirm business verification - Backend Login - Enter captcha code");
         loginPage.enterCaptchaCodeToLogin(driver,"");
         loginPage.setTimeDelay(20);
-
-        log.info("Step 9.3 - Confirm business verification - Backend Login - Click Login button");
+        log.info("Step 6.1.6 - Confirm business verification - Backend Login - Click Login button");
         loginPage.clickToLoginButton(driver);
         backendHomePage = PageGeneration.createBackendHomepage(driver);
-
-        log.info("Step 9.3 - Confirm business verification - Backend Login - Click Login button");
+        loginPage.setTimeDelay(2);
+        log.info("Step 6.2 - Confirm business verification - Backend Homepage");
+        log.info("Step 6.2.1 - Confirm business verification - Backend Homepage - Check page display success");
         verifyTrue(backendHomePage.checkBusinessHomePageIsDisplaySuccess());
-
-        log.info("Step 9.3 - Confirm business verification - Backend Homepage - Check language system and change to Vi");
+        log.info("Step 6.2.2 - Confirm business verification - Backend Homepage - Check language system and change to Vi");
         backendHomePage.changeLanguageOfSystemToVi(driver);
-
-        log.info("Step 9.3 - Confirm business verification - Backend Homepage - Go to business verification management");
+        log.info("Step 6.2.3 - Confirm business verification - Backend Homepage - Go to business verification management");
         backendHomePage.clickToItemOnNavbarMenu(driver,"Xác minh doanh nghiệp");
         verifyBusinessManagementPage = PageGeneration.createVerifyBusinessManagement(driver);
-
-        log.info("Step 9.3 - Confirm business verification - Backend Business verification management - Check page is displayed");
+        verifyBusinessManagementPage.setTimeDelay(2);
+        log.info("Step 6.3 - Confirm business verification");
+        log.info("Step 6.3.1 - Confirm business verification - Business verification management - Check page is displayed");
         verifyTrue(verifyBusinessManagementPage.checkPageIsDisplaySuccess());
-
-        log.info("Step 9.3 - Confirm business verification - Backend Business verification management  - Enter keyword for searching");
+        log.info("Step 6.3.2 - Confirm business verification - Business verification management - Enter keyword for searching");
         verifyBusinessManagementPage.enterEmailBusinessForSearch(driver, ownerEmail);
-
-        log.info("Step 9.3 - Confirm business verification - Backend Business verification management  - Click button Filter");
+        log.info("Step 6.3.3 - Confirm business verification - Business verification management - Enter start date");
+        verifyBusinessManagementPage.chooseStartDateForFilter(driver, getToday());
+        log.info("Step 6.3.4 - Confirm business verification - Business verification management - Enter end date");
+        verifyBusinessManagementPage.chooseEndDateForFilter(driver, getToday());
+        log.info("Step 6.3.5 - Confirm business verification - Business verification management - Choose business type filter");
+        verifyBusinessManagementPage.chooseTypeBusiness(driver, "Doanh nghiệp");
+        log.info("Step 6.3.6 - Confirm business verification - Business verification management - Choose status verification");
+        verifyBusinessManagementPage.chooseStatusVerification(driver, "Đang chờ xác minh");
+        log.info("Step 6.3.7 - Confirm business verification - Business verification management - Click button Filter");
         verifyBusinessManagementPage.clickToFilterButton(driver);
 
         log.info("Step 9.3 - Confirm business verification - Backend Business verification management  - Click button Verify for redirect business");
-        verifyBusinessManagementPage.clickVerifyButton(driver);
+        verifyBusinessManagementPage.clickVerifyButton(driver, businessName, ownerName,ownerEmail);
+
+        log.info("Step 9.3 - Confirm business verification - Backend Business verification management  - Click button Verify for redirect business");
+
         verifyBusinessManagementPage.clickConfirmButtonOnPopup(driver);
 
         log.info("Step 9.3 - Confirm business verification - Backend Business verification management  - Click button Verify for redirect business");
         verifyEquals(verifyBusinessManagementPage.getStatusOfBusinessVerification(),"");
 
         log.info("Step 10.1 - Create Payment account - Login Wallet  - Open new tab and go to Login Wallet Page");
-        String walletURL ="";
-        verifyBusinessManagementPage.negativeToURLByJS(driver,walletURL);
+        verifyBusinessManagementPage.negativeToURLByJS(driver,GlobalVariables.walletURL);
         loginPage = PageGeneration.createWalletLoginPage(driver);
 
         log.info("Step 10.1 - Create Payment account - Login Wallet  - Check page is display success");
@@ -386,7 +373,7 @@ public class TestRegister extends AbstractTest {
 
 
         log.info("Step 12.1 - Create Page Tour - Overview Business page - Go to Business page");
-        walletHomePage.openURL(driver,businessURL);
+        walletHomePage.openURL(driver,GlobalVariables.businessURL);
         businessOverviewPage = PageGeneration.createBusinessOverviewPage(driver);
 
         log.info("Step 12.1 - Create Page Tour - Overview Business page - Verify page is display");
@@ -431,7 +418,7 @@ public class TestRegister extends AbstractTest {
         verifyTrue(businessPageList.getOwnerOfDirectPage());
         String pageID = businessPageList.getPageIdOfDirectPage();
 
-        log.info("Step 12.1 - Create Page Tour - Business page management - Go to page detai");
+        log.info("Step 12.1 - Create Page Tour - Business page management - Go to page detail");
          businessPageList.clickPageManagementLinkToGoDetail(driver);
         tourDashboardPage = PageGeneration.createTourDashboardPage(driver);
 //

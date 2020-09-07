@@ -1,16 +1,17 @@
-package Project.Shared.Login;
+package Interfaces.Newsfeed.StartApp.Login;
 
-import Common.HandleFunction.AbstractPage;
+import Interfaces.Newsfeed.StartApp.CommonStartApp;
+import Project.Shared.Login.LoginUI;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage extends AbstractPage {
+public class LoginPage extends CommonStartApp {
     WebDriver driver;
     public LoginPage(WebDriver webDriver){
         driver = webDriver;
     }
 
     public void clickToLoginButton(WebDriver driver){
-        waitForElementClickable(driver,LoginUI.LOGIN_BUTTON);
+        waitForElementClickable(driver, LoginUI.LOGIN_BUTTON);
         clickToElement(driver, LoginUI.LOGIN_BUTTON);
     }
 
@@ -59,17 +60,9 @@ public class LoginPage extends AbstractPage {
         return getTextElement(driver, LoginUI.VALIDATE_CAPTCHA_ERROR_MESSAGE);
     }
 
-    public void clickToAppStoreLink(WebDriver driver){
-        waitForElementClickable(driver, LoginUI.APP_STORE);
-        clickToElement(driver, LoginUI.APP_STORE);
-    }
 
-    public void clickToCHPlayLink(WebDriver driver){
-        waitForElementClickable(driver, LoginUI.GOOGLE_PLAY);
-        clickToElement(driver, LoginUI.GOOGLE_PLAY);
-    }
 
-    public void clickToChangeToVI(WebDriver driver){
+    public void clickToChangeLanguageToVI(WebDriver driver){
         waitForPageLoading(driver);
         if(getAttributeValue(driver,LoginUI.VI_ICON,"class").contains("active")){
             clickToElement(driver,LoginUI.VI_ICON);
@@ -105,6 +98,11 @@ public class LoginPage extends AbstractPage {
     }
 
     public boolean checkWalletLoginPageIsDisplay() {
+        waitForPageLoading(driver);
+        return true;
+    }
+
+    public boolean checkBackendLoginPageDisplay() {
         return true;
     }
 }

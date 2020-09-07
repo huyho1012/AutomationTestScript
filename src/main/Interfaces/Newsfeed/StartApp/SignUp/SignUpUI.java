@@ -1,4 +1,4 @@
-package Project.Shared.SingUp;
+package Interfaces.Newsfeed.StartApp.SignUp;
 
 public class SignUpUI {
     public static final String TITLE_REGISTER_FORM = "//div[@class = 'form-signup-header']/div";
@@ -22,4 +22,5 @@ public class SignUpUI {
     public static final String VERIFY_CODE_FIELD = "//input[@name ='code']";
     public static final String VERIFY_ACCOUNT_BUTTON = "//button[contains(@data-bind,'verifyAcc')]";
     public static final String BUTTON_RESEND_CODE = "//button[@id = 'btnResendCode']" ;
+    public static final String VERIFY_ACCOUNT_FORM_PAGE = "//div[contains(@data-bind,'active-confirm-code')]";
 }

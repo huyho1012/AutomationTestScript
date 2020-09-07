@@ -24,6 +24,7 @@ public class BusinessDashboardPage extends HeaderPage {
         clickToElement(driver,BusinessDashboardPageUI.SEND_VERIFY_BUTTON );
     }
 
+
     public boolean checkPageIsDisplaySuccessfully() {
         return true;
     }
@@ -33,5 +34,9 @@ public class BusinessDashboardPage extends HeaderPage {
 
     public Object getContentTitleOfSectionNoPage() {
         return null;
+    }
+
+    public boolean checkTitleCreateBusinessSuccess() {
+        return getTextElement(driver, BusinessDashboardPageUI.TITLE_CREATE_NEW_BUSINESS_SUCCESS).equalsIgnoreCase("Chúc mừng bạn đã tạo tài khoản doanh nghiệp!");
     }
 }

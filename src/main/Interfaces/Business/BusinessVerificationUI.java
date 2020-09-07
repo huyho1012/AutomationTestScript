@@ -20,4 +20,6 @@ public class BusinessVerificationUI {
     public static final String BACK_TO_BUSINESS_DASHBOARD_BUTTON = "//a[contains(@data-bind,'backPage')]";
 
     public static final String BUSINESS_NAVBAR_INFO = "//div[contains(@class,'business-navbar-info')]";
+    public static final String TITLE_FORM_ENTERPRISE_VERIFICATION = "//div[@id = 'form-update-enterprise-info']/h6" ;
+    public static final String FORM_ENTERPRISE_VERIFICATION = "//div[@id = 'form-update-enterprise-info']";
 }

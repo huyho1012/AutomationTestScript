@@ -1,6 +1,5 @@
 package Common.HandleFunction;
 
-import Interfaces.Business.BusinessDashboardPageUI;
 import Project.Business.Business.*;
 import Project.Business.Tour.Management.TourInfoTab;
 import Project.Backend.BackendHomePage;
@@ -10,7 +9,7 @@ import Project.Business.Tour.Management.TourManagementPage;
 import Project.Newsfeed.Newsfeed.NewsfeedHomePage;
 import Project.Newsfeed.PersonalWall.PersonalAboutPage;
 import Project.Newsfeed.UserSetting.GeneralAccountSetting;
-import Project.Shared.Login.LoginPage;
+import Interfaces.Newsfeed.StartApp.Login.LoginPage;
 import Project.Shared.SingUp.SignUpPage;
 import Project.Wallet.WalletHomePage;
 import Project.Wallet.WalletOverviewPage;

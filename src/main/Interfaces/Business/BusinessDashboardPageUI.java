@@ -8,4 +8,5 @@ public class BusinessDashboardPageUI {
     public static final String DASHBOARD_BUSINESS_PAGE =  "//main[@class ='pt-3 business-dashboard']";
     public static final String TITLE_CONTENT_VERIFY_BUSINESS = "//div[@id ='load-page-container']//div[contains(@class,'list-group-item')][position()= '1']//h5" ;
 
+    public static final String TITLE_CREATE_NEW_BUSINESS_SUCCESS = "//main[contains(@class ,'business-dashboard')]//h4";
 }

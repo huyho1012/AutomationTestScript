@@ -4,8 +4,7 @@ public class LoginUI {
     public static final String FORGOT_LINK = "//a[@class='forgotpw']";
     public static final String VI_ICON = "//span[text()= 'Tiếng Việt']";
     public static final String ENG_ICON = "//span[text()= 'English']";
-    public static final String GOOGLE_PLAY = "//a[@id = 'download-app-android']";
-    public static final String APP_STORE = "//a[@id = 'download-app-ios']";
+
 
     public static final String USER_NAME = "//input[@name = 'identity']";
     public static final String PASSWORD = "//input[@name = 'password']";

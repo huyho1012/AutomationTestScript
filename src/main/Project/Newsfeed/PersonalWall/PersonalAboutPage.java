@@ -22,4 +22,8 @@ public class PersonalAboutPage extends HeaderPage {
     public Object getGenderDisplayOnIntroduceWidget() {
         return getTextElement(driver, PersonalUI.WIDGET_INTRO_GENDER);
     }
+
+    public boolean checkPageIsDisplay() {
+        return true;
+    }
 }

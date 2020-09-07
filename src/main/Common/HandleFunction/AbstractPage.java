@@ -159,6 +159,10 @@ public abstract class AbstractPage {
         element = findElement(driver, locator);
         return  element.isDisplayed();
     }
+    public boolean checkIsElementIsDisplay(WebDriver driver, String locator, String...values){
+        element = findElement(driver, castToObject(locator, values));
+        return  element.isDisplayed();
+    }
     public boolean checkIsElementIsEnable(WebDriver driver, String locator){
         element = findElement(driver, locator);
         return  element.isDisplayed();

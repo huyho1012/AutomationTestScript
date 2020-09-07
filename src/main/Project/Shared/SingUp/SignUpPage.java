@@ -1,13 +1,13 @@
 package Project.Shared.SingUp;
 
-import Common.HandleFunction.AbstractPage;
-import Common.HandleFunction.AbstractTest;
+import Interfaces.Newsfeed.StartApp.CommonStartApp;
+import Interfaces.Newsfeed.StartApp.SignUp.SignUpUI;
 import org.openqa.selenium.WebDriver;
 
 import java.util.ArrayList;
 
 
-public class SignUpPage extends AbstractTest {
+public class SignUpPage extends CommonStartApp {
     WebDriver driver;
     public SignUpPage(WebDriver webDriver){
         driver = webDriver;
@@ -77,8 +77,13 @@ public class SignUpPage extends AbstractTest {
         clickToElement(driver, SignUpUI.VERIFY_ACCOUNT_BUTTON);
     }
 
-    public void clickToResendCode(WebDriver driver){
+    public void clickToResendCodeOnVerificationPage(WebDriver driver){
         waitForElementClickable(driver, SignUpUI.BUTTON_RESEND_CODE);
         clickToElement(driver,SignUpUI.BUTTON_RESEND_CODE);
+    }
+
+
+    public boolean checkVerifyPageDisplay() {
+        return checkIsElementIsDisplay(driver, SignUpUI.VERIFY_ACCOUNT_FORM_PAGE);
     }
 }

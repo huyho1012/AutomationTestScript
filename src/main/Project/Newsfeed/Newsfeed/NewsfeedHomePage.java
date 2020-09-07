@@ -79,9 +79,6 @@ public class NewsfeedHomePage extends HeaderPage {
         waitElementToVisible(driver,HomePageUI.UPDATE_INFO_BUTTON);
         boolean s1 = getCurrentURL(driver).contains("https://www.hahalolo.com/");
         boolean s2 = getPageTitle(driver).contains("Bảng tin | Hahalolo");
-        System.out.println(s1);
-        System.out.println("HAhaha");
-        System.out.println(s2);
         return getCurrentURL(driver).contains("https://www.hahalolo.com") && getPageTitle(driver).contains("Bảng tin | Hahalolo");
     }
 }
