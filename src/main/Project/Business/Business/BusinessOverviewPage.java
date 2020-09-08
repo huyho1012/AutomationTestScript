@@ -11,11 +11,18 @@ public class BusinessOverviewPage extends AbstractTest {
     }
 
     public boolean checkBusinessOverviewWithNewAccount(WebDriver driver) {
-        return checkIsElementIsDisplay(driver, BusinessOverviewUI.CREATE_NEW_BUSINESS_ACCOUNT_BUTTON)
+        return checkElementDisplay(driver, BusinessOverviewUI.CREATE_NEW_BUSINESS_ACCOUNT_BUTTON)
                 && getTextElement(driver, BusinessOverviewUI.TITLE_OVERVIEW_BUSINESS).equalsIgnoreCase("Tạo tài khoản kinh doanh")
                 && getTextElement(driver, BusinessOverviewUI.CONTENT_OVERVIEW_BUSINESS).equalsIgnoreCase("Bạn chưa sở hữu tài khoản kinh doanh, khởi tạo ngay để bắt đầu quá trình hoạt động kinh doanh trên Hahalolo cho doanh nghiệp của bạn. Với một tài khoản kinh doanh trên Hahalolo, bạn có thể điều hành, quản lý và phát triển doanh nghiệp một cách toàn diện.");
     }
 
+    public boolean checkOverViewPageWithHaveBusiness() {
+        if(checkElementDisplay(driver, BusinessOverviewUI.BUTTON_BUSI_MANAGEMENT)
+            &&  getTextElement(driver,BusinessOverviewUI.TITLE_OVERVIEW_BUSINESS).equalsIgnoreCase("Quản lý tài khoản")){
+            return true;
+        } else
+            return false;
+    }
     public void clickToCreateNewBusiness(WebDriver driver) {
         waitForElementClickable(driver, BusinessOverviewUI.CREATE_NEW_BUSINESS_ACCOUNT_BUTTON);
         clickToElement(driver, BusinessOverviewUI.CREATE_NEW_BUSINESS_ACCOUNT_BUTTON);
@@ -46,13 +53,13 @@ public class BusinessOverviewPage extends AbstractTest {
     }
 
     public void clickToAccountManagementButton(WebDriver driver) {
+        waitForElementClickable(driver, BusinessOverviewUI.BUTTON_BUSI_MANAGEMENT);
+        clickToElement(driver, BusinessOverviewUI.BUTTON_BUSI_MANAGEMENT);
+        setTimeDelay(1);
     }
 
-    public boolean checkOverViewPageWithHaveBusiness() {
-        return true;
-    }
 
     public boolean checkCreateBusinessPopupDisplay() {
-        return checkIsElementIsDisplay(driver, BusinessOverviewUI.POP_UP_CREATE_BUSINESS,"show");
+        return checkElementDisplay(driver, BusinessOverviewUI.POP_UP_CREATE_BUSINESS,"show");
     }
 }

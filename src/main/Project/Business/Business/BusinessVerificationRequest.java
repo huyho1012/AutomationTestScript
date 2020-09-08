@@ -5,10 +5,10 @@ import Interfaces.Business.BusinessVerificationUI;
 import Interfaces.Common.LOCATION_PLACE_MODEL;
 import org.openqa.selenium.WebDriver;
 
-public class BusinessVerificationPage extends AbstractPage {
+public class BusinessVerificationRequest extends AbstractPage {
     WebDriver driver;
 
-    public BusinessVerificationPage(WebDriver webDriver) {
+    public BusinessVerificationRequest(WebDriver webDriver) {
         driver = webDriver;
     }
 
@@ -63,9 +63,9 @@ public class BusinessVerificationPage extends AbstractPage {
 
     public boolean checkFormChooseLocationIsDisplay() {
         waitElementToVisible(driver, LOCATION_PLACE_MODEL.TITLE_FORM);
-        return checkIsElementIsDisplay(driver, LOCATION_PLACE_MODEL.ADD_LOCATION_BUTTON) &&
-                checkIsElementIsDisplay(driver, LOCATION_PLACE_MODEL.MAP_CONTENT) &&
-                checkIsElementIsDisplay(driver, LOCATION_PLACE_MODEL.TITLE_FORM);
+        return checkElementDisplay(driver, LOCATION_PLACE_MODEL.ADD_LOCATION_BUTTON) &&
+                checkElementDisplay(driver, LOCATION_PLACE_MODEL.MAP_CONTENT) &&
+                checkElementDisplay(driver, LOCATION_PLACE_MODEL.TITLE_FORM);
     }
 
     public void chooseLocation(WebDriver driver, String expectedAddress) {

@@ -1,6 +1,7 @@
 package Project.Newsfeed.PersonalWall;
 
 import Common.HandleFunction.AbstractPage;
+import Interfaces.Newsfeed.PersonaWall.PersonalHeadCoverUI;
 import Interfaces.Newsfeed.PersonaWall.PersonalUI;
 import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
@@ -23,7 +24,11 @@ public class PersonalAboutPage extends HeaderPage {
         return getTextElement(driver, PersonalUI.WIDGET_INTRO_GENDER);
     }
 
-    public boolean checkPageIsDisplay() {
-        return true;
+    public boolean checkPageIsDisplay(String fullName) {
+        if(getPageTitle(driver).equalsIgnoreCase("Giới thiệu - Trang cá nhân | Hahalolo")
+                && getTextElement(driver, PersonalHeadCoverUI.HEADER_COVER_FULLNAME).equalsIgnoreCase(fullName)){
+            return true;
+        }
+        return false;
     }
 }

@@ -84,6 +84,9 @@ public class SignUpPage extends CommonStartApp {
 
 
     public boolean checkVerifyPageDisplay() {
-        return checkIsElementIsDisplay(driver, SignUpUI.VERIFY_ACCOUNT_FORM_PAGE);
+        if(checkElementDisplay(driver, SignUpUI.VERIFY_ACCOUNT_FORM_PAGE) && getPageTitle(driver).equals("Kích hoạt tài khoản | Hahalolo")){
+            return true;
+        }
+        else return false;
     }
 }

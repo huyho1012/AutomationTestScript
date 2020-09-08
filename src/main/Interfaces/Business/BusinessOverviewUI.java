@@ -10,4 +10,5 @@ public class BusinessOverviewUI {
     public static final String TITLE_OVERVIEW_BUSINESS = "//div[@class='business-dashboard-cover__content']//h1";
     public static final String CONTENT_OVERVIEW_BUSINESS = "//div[@class='business-dashboard-cover__content']//p[1]";
     public static final String POP_UP_CREATE_BUSINESS = "//div[@id = 'modal__create-business'][contains(@class,'%s')]";
+    public static final String BUTTON_BUSI_MANAGEMENT = "//a[text()='Quản lý tài khoản']";
 }

@@ -155,11 +155,12 @@ public abstract class AbstractPage {
         element = findElement(driver, locator);
         return element.getAttribute(valueAttribute);
     }
-    public boolean checkIsElementIsDisplay(WebDriver driver, String locator){
+    public boolean checkElementDisplay(WebDriver driver, String locator){
+        waitElementToVisible(driver,locator);
         element = findElement(driver, locator);
         return  element.isDisplayed();
     }
-    public boolean checkIsElementIsDisplay(WebDriver driver, String locator, String...values){
+    public boolean checkElementDisplay(WebDriver driver, String locator, String...values){
         element = findElement(driver, castToObject(locator, values));
         return  element.isDisplayed();
     }

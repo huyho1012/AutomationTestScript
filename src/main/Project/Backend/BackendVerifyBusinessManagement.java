@@ -1,7 +1,7 @@
 package Project.Backend;
 
 import Common.HandleFunction.AbstractPage;
-import Interfaces.Backend.BackendVerifyBusinessManagementUI;
+import Interfaces.Backend.BackendVerifyBusiManagementUI;
 import org.openqa.selenium.WebDriver;
 
 public class BackendVerifyBusinessManagement extends AbstractPage {
@@ -11,40 +11,46 @@ public class BackendVerifyBusinessManagement extends AbstractPage {
     }
 
     public void enterEmailBusinessForSearch(WebDriver driver, String ownerBusinessEmail) {
-        waitElementToVisible(driver, BackendVerifyBusinessManagementUI.SEARCH_BUSINESS_FIELD);
-        sendKeyToElement(driver, BackendVerifyBusinessManagementUI.SEARCH_BUSINESS_FIELD,ownerBusinessEmail);
+        waitElementToVisible(driver, BackendVerifyBusiManagementUI.SEARCH_BUSINESS_FIELD);
+        sendKeyToElement(driver, BackendVerifyBusiManagementUI.SEARCH_BUSINESS_FIELD,ownerBusinessEmail);
+        setTimeDelay(1);
     }
 
     public void chooseStartDateForFilter(WebDriver driver, String startDate){
-        waitElementToVisible(driver, BackendVerifyBusinessManagementUI.START_DATE_FIELD);
-        sendKeyToElement(driver, BackendVerifyBusinessManagementUI.START_DATE_FIELD,startDate);
-
+        waitElementToVisible(driver, BackendVerifyBusiManagementUI.START_DATE_FIELD);
+        sendKeyToElement(driver, BackendVerifyBusiManagementUI.START_DATE_FIELD, startDate);
+        setTimeDelay(1);
     }
     public void chooseEndDateForFilter(WebDriver driver, String endDate){
-        waitElementToVisible(driver, BackendVerifyBusinessManagementUI.END_DATE_FIELD);
-        sendKeyToElement(driver, BackendVerifyBusinessManagementUI.END_DATE_FIELD, endDate);
+        waitElementToVisible(driver, BackendVerifyBusiManagementUI.END_DATE_FIELD);
+        sendKeyToElement(driver, BackendVerifyBusiManagementUI.END_DATE_FIELD, endDate);
+        setTimeDelay(1);
     }
     public void chooseTypeBusiness(WebDriver driver, String typeBusiness){
-        selectItemInCustomDropdown(driver,BackendVerifyBusinessManagementUI.TYPE_BUSINESS_DROPDOWN, BackendVerifyBusinessManagementUI.TYPE_BUSINESS_ITEM, typeBusiness);
+        selectItemInCustomDropdown(driver, BackendVerifyBusiManagementUI.BUSI_TYPE_DROPDOWN, BackendVerifyBusiManagementUI.BUSI_TYPE_ITEM, typeBusiness);
+        setTimeDelay(1);
     }
     public void chooseStatusVerification(WebDriver driver, String statusVerification){
-        selectItemInCustomDropdown(driver, BackendVerifyBusinessManagementUI.STATUS_VERIFICATION_DROPDOWN, BackendVerifyBusinessManagementUI.STATUS_VERIFICATION_ITEM, statusVerification);
+        selectItemInCustomDropdown(driver, BackendVerifyBusiManagementUI.STATUS_VERIFY_DROPDOWN, BackendVerifyBusiManagementUI.STATUS_VERIFY_ITEM, statusVerification);
+        setTimeDelay(1);
     }
     public void clickToFilterButton(WebDriver driver) {
-        waitForElementClickable(driver, BackendVerifyBusinessManagementUI.BUTTON_FILTER);
-        clickToElement(driver, BackendVerifyBusinessManagementUI.BUTTON_FILTER);
+        waitForElementClickable(driver, BackendVerifyBusiManagementUI.BUTTON_FILTER);
+        clickToElement(driver, BackendVerifyBusiManagementUI.BUTTON_FILTER);
         setTimeDelay(2);
     }
 
     public void clickVerifyButton(WebDriver driver, String businessName, String ownerName, String ownerEmail) {
-        waitForElementClickable(driver, BackendVerifyBusinessManagementUI.BUTTON_VERIFY_BUSINESS,businessName,ownerName, ownerEmail);
-        clickToElement(driver, BackendVerifyBusinessManagementUI.BUTTON_VERIFY_BUSINESS,businessName,ownerName, ownerEmail);
+        waitForElementClickable(driver, BackendVerifyBusiManagementUI.BUTTON_VERIFY,businessName,ownerName, ownerEmail);
+        clickToElement(driver, BackendVerifyBusiManagementUI.BUTTON_VERIFY,businessName,ownerName, ownerEmail);
+        setTimeDelay(1);
     }
 
     public void clickConfirmButtonOnPopup(WebDriver driver) {
-        waitElementToVisible(driver,BackendVerifyBusinessManagementUI.CONFIRM_VERIFY_POPUP);
-        waitForElementClickable(driver, BackendVerifyBusinessManagementUI.CONFIRM_BUTTON);
-        clickToElement(driver, BackendVerifyBusinessManagementUI.CONFIRM_BUTTON);
+        waitElementToVisible(driver, BackendVerifyBusiManagementUI.POPUP_CONFIRM_VERIFICATION);
+        waitForElementClickable(driver, BackendVerifyBusiManagementUI.BUTTON_CONFIRM);
+        clickToElement(driver, BackendVerifyBusiManagementUI.BUTTON_CONFIRM);
+        setTimeDelay(1);
     }
 
     public void goToWalletLoginPage(WebDriver driver) {
@@ -55,6 +61,6 @@ public class BackendVerifyBusinessManagement extends AbstractPage {
     }
 
     public String getStatusOfBusinessVerification() {
-        return getTextElement(driver,BackendVerifyBusinessManagementUI.STATUS_VERIFICATION_OF_DIRECT_BUSINESS);
+        return getTextElement(driver, BackendVerifyBusiManagementUI.STATUS_VERIFICATION_OF_DIRECT_BUSINESS);
     }
 }

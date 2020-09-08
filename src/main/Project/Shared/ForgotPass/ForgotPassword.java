@@ -1,7 +1,6 @@
 package Project.Shared.ForgotPass;
 
 import Common.HandleFunction.AbstractPage;
-import Common.HandleFunction.AbstractTest;
 import org.openqa.selenium.WebDriver;
 
 public class ForgotPassword extends AbstractPage {
@@ -31,7 +30,7 @@ public class ForgotPassword extends AbstractPage {
     }
 
     public boolean checkMessageNoResultAccount(WebDriver driver){
-        return checkIsElementIsDisplay(driver,ForgotPasswordUI.NO_RESULT);
+        return checkElementDisplay(driver,ForgotPasswordUI.NO_RESULT);
     }
 
     public String getHeaderNoResultAccount(WebDriver driver){

@@ -26,14 +26,25 @@ public class BusinessDashboardPage extends HeaderPage {
 
 
     public boolean checkPageIsDisplaySuccessfully() {
-        return true;
+       waitElementToVisible(driver, BusinessDashboardPageUI.DASBOARD_PAGE);
+       if(getTextElement(driver, BusinessDashboardPageUI.DASBOARD_TITLE).equalsIgnoreCase("Quản lý tài khoản kinh doanh")
+           && checkElementDisplay(driver, BusinessDashboardPageUI.FORM_BUSI_INFO) && checkElementDisplay(driver, BusinessDashboardPageUI.FORM_BUSI_PAGE)
+           && checkElementDisplay(driver, BusinessDashboardPageUI.FORM_BUSI_STAFF)){
+           return true;
+       }
+       else return false;
     }
 
     public void clickCreatePageNowButton() {
+        waitElementToVisible(driver, BusinessDashboardPageUI.DASBOARD_PAGE);
+        waitForElementClickable(driver, BusinessDashboardPageUI.BUTTON_CREATE_PAGE_NOW);
+        clickToElement(driver, BusinessDashboardPageUI.BUTTON_CREATE_PAGE_NOW);
+        setTimeDelay(1);
     }
 
-    public Object getContentTitleOfSectionNoPage() {
-        return null;
+    public String getContentTitleOfSectionNoPage() {
+        waitElementToVisible(driver, BusinessDashboardPageUI.DASBOARD_PAGE);
+        return getTextElement(driver, BusinessDashboardPageUI.PAGE_SECTION_TITLE);
     }
 
     public boolean checkTitleCreateBusinessSuccess() {

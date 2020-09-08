@@ -1,6 +1,6 @@
 package Interfaces.Wallet;
 
-public class WalletHomePageUI {
+public class WalletHomepageUI {
     public static final String MENU_WALLET = "//div[@id='js_menu_wallet']" ;
     public static final String AVAILABLE_COLLUM = "//h4[contains(@data-bind,'nn302')]";
     public static final String WAITING_COLLUM = "//h4[contains(@data-bind,'nn304')]";

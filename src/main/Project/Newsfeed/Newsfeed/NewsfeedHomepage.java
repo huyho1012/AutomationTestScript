@@ -1,43 +1,32 @@
 package Project.Newsfeed.Newsfeed;
 
 import Interfaces.Newsfeed.Homepage.HomePageUI;
+import Interfaces.Wallet.WalletOverviewUI;
 import org.openqa.selenium.WebDriver;
 
-public class NewsfeedHomePage extends HeaderPage {
+public class NewsfeedHomepage extends HeaderPage {
     WebDriver driver;
-    public NewsfeedHomePage(WebDriver webDriver){
+    public NewsfeedHomepage(WebDriver webDriver){
         driver = webDriver;
     }
 
     public boolean formFirstUpdateInfoIsDisplay() {
         waitElementToVisible(driver,HomePageUI.UPDATE_INFO_BUTTON);
-        if(checkIsElementIsDisplay(driver, HomePageUI.FORM_UPDATE_NEW_INFO)){
-            System.out.println(checkIsElementIsDisplay(driver, HomePageUI.FORM_UPDATE_NEW_INFO));
-            return true;
-        }else {
-            System.out.println(checkIsElementIsDisplay(driver, HomePageUI.FORM_UPDATE_NEW_INFO));
+        if(checkElementDisplay(driver, HomePageUI.FORM_UPDATE_NEW_INFO)) return true;
             return false;
-        }
-
     }
 
     public String getTitleOfFormFirstUpdateInfo() {
-        System.out.println(getTextElement(driver, HomePageUI.FORM_UPDATE_NEW_INFO_TITLE));
         return getTextElement(driver, HomePageUI.FORM_UPDATE_NEW_INFO_TITLE);
     }
 
     public void updateBirthdayOfUser(WebDriver driver, String dayItem, String monthItem, String yearItem) {
-        waitForElementClickable(driver,HomePageUI.DYNAMIC_BIRTHDAY_DROPDOWN,"day");
-        clickToElement(driver, HomePageUI.DYNAMIC_BIRTHDAY_DROPDOWN ,"day");
-        clickToElement(driver, HomePageUI.DYNAMIC_BIRTHDAY_ITEM,"day",dayItem);
+        selectItemInCustomDropdown(driver,HomePageUI.DYNAMIC_BIRTHDAY_DROPDOWN, HomePageUI.DYNAMIC_BIRTHDAY_ITEM,dayItem,"day");
         setTimeDelay(1);
-        waitForElementClickable(driver,HomePageUI.DYNAMIC_BIRTHDAY_DROPDOWN,"month");
-        clickToElement(driver, HomePageUI.DYNAMIC_BIRTHDAY_DROPDOWN,"month");
-        clickToElement(driver, HomePageUI.DYNAMIC_BIRTHDAY_ITEM,"month",monthItem);
+        selectItemInCustomDropdown(driver,HomePageUI.DYNAMIC_BIRTHDAY_DROPDOWN, HomePageUI.DYNAMIC_BIRTHDAY_ITEM,monthItem,"month");
         setTimeDelay(1);
-        waitForElementClickable(driver,HomePageUI.DYNAMIC_BIRTHDAY_DROPDOWN,"year");
-        clickToElement(driver, HomePageUI.DYNAMIC_BIRTHDAY_DROPDOWN,"year");
-        clickToElement(driver, HomePageUI.DYNAMIC_BIRTHDAY_ITEM,"year",yearItem);
+        selectItemInCustomDropdown(driver,HomePageUI.DYNAMIC_BIRTHDAY_DROPDOWN, HomePageUI.DYNAMIC_BIRTHDAY_ITEM,yearItem,"year");
+        setTimeDelay(1);
     }
 
     public void updateGenderOfUser(WebDriver driver, String valueGender) {
@@ -59,11 +48,13 @@ public class NewsfeedHomePage extends HeaderPage {
     public void clickToButtonConfirmForUpdateInfo(WebDriver driver) {
         waitForElementClickable(driver,HomePageUI.UPDATE_INFO_BUTTON);
         clickToElement(driver, HomePageUI.UPDATE_INFO_BUTTON);
+        setTimeDelay(1);
     }
 
     public void changeLanguageNewsfeedToVI(WebDriver driver) {
         waitForElementClickable(driver,HomePageUI.FOOTER_VI_LANGUAGE);
         clickToElement(driver, HomePageUI.FOOTER_VI_LANGUAGE);
+        setTimeDelay(1);
     }
 
     public String getFullNameDisplayOnMyAccount(WebDriver driver) {
@@ -73,12 +64,23 @@ public class NewsfeedHomePage extends HeaderPage {
     public void clickToEditProfile(WebDriver driver) {
         waitForElementClickable(driver,HomePageUI.MY_ACCOUNT_EDIT_PROFILE_BUTTON);
         clickToElement(driver, HomePageUI.MY_ACCOUNT_EDIT_PROFILE_BUTTON);
+        setTimeDelay(1);
     }
 
-    public boolean checkNewsfeedDisplay(WebDriver driver) {
-        waitElementToVisible(driver,HomePageUI.UPDATE_INFO_BUTTON);
-        boolean s1 = getCurrentURL(driver).contains("https://www.hahalolo.com/");
-        boolean s2 = getPageTitle(driver).contains("Bảng tin | Hahalolo");
-        return getCurrentURL(driver).contains("https://www.hahalolo.com") && getPageTitle(driver).contains("Bảng tin | Hahalolo");
+    public boolean checkNewsfeedDisplay(WebDriver driver){
+        waitForPageLoading(driver);
+        if(getCurrentURL(driver).equals("https://www.hahalolo.com") && getPageTitle(driver).equalsIgnoreCase("Bảng tin | Hahalolo")){
+            return true;
+        }else
+            return false;
+    }
+
+    public boolean checkNewsfeedDisplayOnFirstTime(WebDriver driver) {
+        waitForPageLoading(driver);
+        if(checkNewsfeedDisplay(driver) && checkElementDisplay(driver, HomePageUI.FORM_UPDATE_NEW_INFO)){
+            return true;
+        }
+        else
+            return false;
     }
 }

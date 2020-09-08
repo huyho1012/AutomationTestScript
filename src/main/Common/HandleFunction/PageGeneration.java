@@ -6,7 +6,7 @@ import Project.Backend.BackendHomePage;
 import Project.Backend.BackendVerifyBusinessManagement;
 import Project.Business.Tour.*;
 import Project.Business.Tour.Management.TourManagementPage;
-import Project.Newsfeed.Newsfeed.NewsfeedHomePage;
+import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
 import Project.Newsfeed.PersonalWall.PersonalAboutPage;
 import Project.Newsfeed.UserSetting.GeneralAccountSetting;
 import Interfaces.Newsfeed.StartApp.Login.LoginPage;
@@ -24,8 +24,8 @@ public class PageGeneration {
         return new SignUpPage(driver);
     }
 
-    public static NewsfeedHomePage createNewsfeedHomepage(WebDriver driver) {
-        return new NewsfeedHomePage(driver);
+    public static NewsfeedHomepage createNewsfeedHomepage(WebDriver driver) {
+        return new NewsfeedHomepage(driver);
     }
 
     public static PersonalAboutPage createPerTAboutPage(WebDriver driver) {
@@ -44,8 +44,8 @@ public class PageGeneration {
         return new BusinessDashboardPage(driver);
     }
 
-    public static BusinessVerificationPage createVerifyBusinessTypeEnterpriseForm(WebDriver driver) {
-        return new BusinessVerificationPage(driver);
+    public static BusinessVerificationRequest createVerifyBusinessTypeEnterpriseForm(WebDriver driver) {
+        return new BusinessVerificationRequest(driver);
     }
 
     public static BusinessInfoPage createBusinessInfoPage(WebDriver driver) {
