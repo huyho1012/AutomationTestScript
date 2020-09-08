@@ -22,4 +22,8 @@ public class TourManagementPage {
 
     public void clickSaveButtonToCreateTour(WebDriver driver) {
     }
+
+    public boolean checkPageWithCaseNoTourDisplay() {
+        return true;
+    }
 }

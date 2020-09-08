@@ -55,7 +55,7 @@ public class TestRegister extends AbstractTest {
     // Define user properties
     String firstNameUser, lastNameUser, emailUser, passwordUser, confirmPassUser, birthdayUser , genderUser, fullName;
     // Define business properties
-    String businessName, ownerName,ownerEmail;
+    String businessName, ownerName,ownerEmail, ownerPhone;
     // Define business verification properties
     String companyName ,otherCompanyName, abbCompanyName, taxCodeCompany, representativeName, registrationAddress, zipCode, companyPhone, companyEmail ,businessScope;
     String fileUploadImage2 = "image2.jpg";
@@ -145,9 +145,10 @@ public class TestRegister extends AbstractTest {
         newsfeedHomePage.setTimeDelay(5);
         log.info("Step 3. - Update info - Newsfeed Homepage");
         log.info("Step 3.1 - Newsfeed Homepage - Update info - Check newsfeed on first time login");
-        verifyTrue(newsfeedHomePage.checkNewsfeedDisplayOnFirstTime(driver));
+        setTimeDelay(3);
+//        verifyTrue(newsfeedHomePage.checkNewsfeedDisplayOnFirstTime(driver));
         log.info("Step 4.1.2 - Newsfeed Homepage - Update info - Check title popup");
-        verifyEquals(newsfeedHomePage.getTitleOfFormFirstUpdateInfo(),"Xác minh tài khoản thành công!");
+//        verifyEquals(newsfeedHomePage.getTitleOfFormFirstUpdateInfo(),"Xác minh tài khoản thành công!");
         log.info("Step 4.1.3 - Newsfeed Homepage - Update info - Update birthday");
         newsfeedHomePage.updateBirthdayOfUser(driver,"12","10","1992");
         birthdayUser = getBirthdayOnHaLo("12","10","1992");
@@ -323,7 +324,8 @@ public class TestRegister extends AbstractTest {
         log.info("Step 6.3.10 - Confirm verification - Business verification management  - Click button confirm verify business");
         verifyBusinessManagementPage.clickConfirmButtonOnPopup(driver);
         log.info("Step 6.3.11 - Confirm verification - Business verification management  - Check business verify success");
-        verifyEquals(verifyBusinessManagementPage.getStatusOfBusinessVerification(),"Đã xác minh");
+        setTimeDelay(1);
+        verifyEquals(verifyBusinessManagementPage.getStatusOfBusinessVerification(driver,businessName,ownerName,ownerEmail),"Đã xác minh");
         log.info("Step 10.1 - Create Payment account - Login Wallet");
         log.info("Step 10.1.1 - Create Payment account - Login Wallet - Go to Login Wallet");
         verifyBusinessManagementPage.negativeToURLByJS(driver,GlobalVariables.walletURL);
@@ -418,12 +420,12 @@ public class TestRegister extends AbstractTest {
         log.info("Step 13.1.2 - Update Tour General Information - Cancel Prepayment Policy - Enter Prepayment amount");
         tourGeneralSettingPage.enterDataValueToTextFieldOnPrepaymentTab(driver,"sn305","prepayValue");
         log.info("Step 13.1.3 - Update Tour General Information - Cancel Prepayment Policy - Enter Cancellation amount");
-        tourGeneralSettingPage.enterCancellationAmount(driver,"");
+        tourGeneralSettingPage.enterDataValueToTextFieldOnPrepaymentTab(driver,"sn306","cancelAmount");
         log.info("Step 13.1.4 - Update Tour General Information - Cancel Prepayment Policy - Enter Day allow cancellation");
-        tourGeneralSettingPage.enterDayAllowToCancel(driver,"");
-        log.info("Step 13.1.5 - Update Tour General Information - Cancel Prepayment Policy - Click save button to save Cancellation and prepayment policy");
+        tourGeneralSettingPage.enterDataValueToTextFieldOnPrepaymentTab(driver,"sn307","dayAllowCancel");
+        log.info("Step 13.1.5 - Update Tour General Information - Cancel Prepayment Policy - Click save button");
         tourGeneralSettingPage.clickToSaveButton(driver);
-        log.info("Step 13.1.6 - Update Tour General Information - Cancel Prepayment Policy - Click Setting VAT");
+        log.info("Step 13.1.6 - Update General Information - Click Setting VAT");
         tourGeneralSettingPage.clickToItemOnTourInformationNav(driver, "vat");
         log.info("Step 13.2 - Update Tour General Information - Setting VAT - Check page display");
         verifyTrue(tourGeneralSettingPage.checkVATSettingPageDisplay(driver));
@@ -432,50 +434,70 @@ public class TestRegister extends AbstractTest {
         log.info("Step 13.2 - Update Tour General Information - Setting VAT - Click to save button");
         tourGeneralSettingPage.clickToSaveButton(driver);
         log.info("Step 13.2 - Update Tour General Information - Click to Age setting");
-        tourGeneralSettingPage.clickToSettingAge(driver);
+        tourGeneralSettingPage.clickToItemOnTourInformationNav(driver, "age");
         log.info("Step 13.2 - Update Tour General Information - Age Setting - Check tab display");
         verifyTrue(tourGeneralSettingPage.checkAgeSettingPageDisplay(driver));
         log.info("Step 13.2 - Update Tour General Information - Age Setting - Enter Adult age");
-        tourGeneralSettingPage.enterValueOfAdultAge(driver,"");
+        tourGeneralSettingPage.enterDataValueToTextFieldOnAgeSettingTab(driver,"sn351","12");
         log.info("Step 13.2 - Update Tour General Information - Age Setting - Enter Child age");
-        tourGeneralSettingPage.enterValueOfChildAge(driver,"");
+        tourGeneralSettingPage.enterDataValueToTextFieldOnAgeSettingTab(driver,"sn352","6");
         log.info("Step 13.2 - Update Tour General Information - Age Setting - Enter Young Child age");
-        tourGeneralSettingPage.enterValueOfYoungChildAge(driver,"");
-        log.info("Step 13.2 - Update Tour General Information - Age Setting - Click to save button");
+        tourGeneralSettingPage.enterDataValueToTextFieldOnAgeSettingTab(driver,"sn354","2");
+        log.info("Step 13.2 - General Info - Age Setting - Click to save button");
         tourGeneralSettingPage.clickToSaveButton(driver);
-        log.info("Step 13.2 - Update Tour General Information - Notification order setting - Click to Notification order setting");
-        tourGeneralSettingPage.clickToSettingOrderNoti(driver);
-        log.info("Step 13.2 - Update Tour General Information - Notification order setting - Check tab display");
+        log.info("Step 13.2 - General Info - Click Noti order setting");
+        tourGeneralSettingPage.clickToItemOnTourInformationNav(driver, "mail");
+        log.info("Step 13.2 - General Info - Noti order setting - Check tab display");
         verifyTrue(tourGeneralSettingPage.checkNotiForOrderSettingPageDisplay(driver));
-        log.info("Step 13.2 - Update Tour General Information - Notification order setting - Enable");
-//        tourGeneralSettingPage.clickToEnableAllowNotiOrder(driver);
-//        tourGeneralSettingPage.enterValueOnEmailAddress(driver,"");
-//        tourGeneralSettingPage.enterValueOnPhone(driver,"");
-//        tourGeneralSettingPage.clickToSaveButton(driver);
+        log.info("Step 13.2. General Info - Noti order setting - Enable setting");
+        tourGeneralSettingPage.clickToEnableMode(driver);
+        log.info("Step 13.2. General Info - Noti order setting - Enter email");
+        tourGeneralSettingPage.enterDataValueToTextFieldOnNotiOrder(driver,"sv453",ownerEmail);
+        log.info("Step 13.2. General Info - Noti order setting - Enter phone");
+        tourGeneralSettingPage.enterDataValueToTextFieldOnNotiOrder(driver,"sv454",ownerPhone);
+        log.info("Step 13.2. General Info - Noti order setting - Click button save");
+        tourGeneralSettingPage.clickToSaveButton(driver);
 //
-//        // Tạo Topic
-//        tourGeneralSettingPage.clickToTopicTourOnMenu(driver);
-//        tourTopicPage = PageGeneration.createTourTopicListPage(driver);
-//        tourTopicPage.clickCreateTopic(driver);
-//        tourTopicPage.chooseTopicImage();
-//        tourTopicPage.chooseLanguageOfTopic(driver);
-//        tourTopicPage.enterTopicName(driver,"");
-//        tourTopicPage.enterTopicDescription(driver,"");
-//        tourTopicPage.clickToSaveButton(driver);
-//
-//        // Tạo Tour
-//        tourTopicPage.clickToTourOnMenu(driver);
-//        tourManagementPage = PageGeneration.createTourManagementPage(driver);
-//        tourManagementPage.clickToCreateTour(driver);
-//        tourManagementPage.enterValueOfTourName(driver,"");
-//        tourManagementPage.chooseTourType(driver);
-//        tourManagementPage.chooseTourTopic(driver);
-//        tourManagementPage.clickSaveButtonToCreateTour(driver);
-//
-//
-//        // Tab Tour info
-//        tourInformationTab = PageGeneration.createTourInfoTab(driver);
-//
+        log.info("Step 13.2. Tour topic - Go to Topic page");
+        tourGeneralSettingPage.clickItemOnTourNavMenu(driver,"Topics");
+        tourTopicPage = PageGeneration.createTourTopicListPage(driver);
+        log.info("Step 13.2. Tour topic - Check page display with case no topic");
+        verifyTrue(tourTopicPage.checkPageWithCaseNoTopicDisplay());
+        log.info("Step 13.2. Tour topic - Click create topic");
+        tourTopicPage.clickCreateTopic(driver);
+        log.info("Step 13.2. Tour topic - Check create topic display");
+        verifyTrue(tourTopicPage.checkPopupCreateTopicDisplay());
+        log.info("Step 13.2. Tour topic - Choose topic image");
+        tourTopicPage.chooseTopicImage();
+        log.info("Step 13.2. Tour topic - Choose topic language");
+        tourTopicPage.chooseLanguageOfTopic(driver);
+        log.info("Step 13.2. Tour topic - Enter topic name");
+        tourTopicPage.enterTopicName(driver,"Topic name");
+        log.info("Step 13.2. Tour topic - Enter topic description");
+        tourTopicPage.enterTopicDescription(driver,"Topic description");
+        log.info("Step 13.2. Tour topic - Enter topic description");
+        tourTopicPage.clickToSaveButton(driver);
+        log.info("Step 13.2. Tour topic - Verify topic created success");
+        verifyTrue(tourTopicPage.checkCreatedTopicDisplay(driver));
+        log.info("Step 13.2. Tour - Go to Tour management");
+        tourTopicPage.clickItemOnTourNavMenu(driver,"Tours");
+        tourManagementPage = PageGeneration.createTourManagementPage(driver);
+        log.info("Step 13.2. Tour - Check page display with case no topic");
+        verifyTrue(tourManagementPage.checkPageWithCaseNoTourDisplay());
+        log.info("Step 13.2. Tour - Click button create tour");
+        tourManagementPage.clickToCreateTour(driver);
+        log.info("Step 13.2. Tour topic - Check create tour popup display");
+        verifyTrue(tourTopicPage.checkPopupCreateTourDisplay());
+        log.info("Step 13.2. Tour - Enter tour name");
+        tourManagementPage.enterValueOfTourName(driver,"");
+        log.info("Step 13.2. Tour - Choose tour type");
+        tourManagementPage.chooseTourType(driver);
+        log.info("Step 13.2. Tour - Choose tour topic");
+        tourManagementPage.chooseTourTopic(driver);
+        log.info("Step 13.2. Tour - Click Create button");
+        tourManagementPage.clickSaveButtonToCreateTour(driver);
+        tourInformationTab = PageGeneration.createTourInfoTab(driver);
+        log.info("Step 13.2. Tour info - Complete update infor");
 //        log.info("Update data on Tour information tab");
 //        log.info("Update data on Tour information tab - Enter sku code");
 //        String skuCode = "";

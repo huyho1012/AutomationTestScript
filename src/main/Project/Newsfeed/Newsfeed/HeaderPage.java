@@ -2,6 +2,7 @@ package Project.Newsfeed.Newsfeed;
 
 import Common.HandleFunction.AbstractPage;
 import Interfaces.Business.BusinessVerificationUI;
+import Interfaces.Business.Tour.TourDashboardPageUI;
 import Interfaces.Newsfeed.Homepage.HeaderPageUI;
 import org.openqa.selenium.WebDriver;
 
@@ -19,5 +20,9 @@ public class HeaderPage extends AbstractPage {
         waitForPageLoading(driver);
         waitElementToVisible(driver, BusinessVerificationUI.BUSINESS_NAVBAR_INFO);
         clickToElement(driver, HeaderPageUI.BUSINESS_NAVBAR_MENU , businessItem);
+    }
+
+    public void clickItemOnTourNavMenu(WebDriver driver, String itemMenu) {
+        clickToElementByJS(driver, TourDashboardPageUI.ITEM_ON_TOUR_BUSINESS,itemMenu);
     }
 }

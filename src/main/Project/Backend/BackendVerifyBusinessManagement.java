@@ -28,15 +28,14 @@ public class BackendVerifyBusinessManagement extends AbstractPage {
     }
     public void chooseTypeBusiness(WebDriver driver, String typeBusiness){
         selectItemInCustomDropdown(driver, BackendVerifyBusiManagementUI.BUSI_TYPE_DROPDOWN, BackendVerifyBusiManagementUI.BUSI_TYPE_ITEM, typeBusiness);
-        setTimeDelay(1);
+        setTimeDelay(2);
     }
     public void chooseStatusVerification(WebDriver driver, String statusVerification){
         selectItemInCustomDropdown(driver, BackendVerifyBusiManagementUI.STATUS_VERIFY_DROPDOWN, BackendVerifyBusiManagementUI.STATUS_VERIFY_ITEM, statusVerification);
-        setTimeDelay(1);
+        setTimeDelay(2);
     }
     public void clickToFilterButton(WebDriver driver) {
-        waitForElementClickable(driver, BackendVerifyBusiManagementUI.BUTTON_FILTER);
-        clickToElement(driver, BackendVerifyBusiManagementUI.BUTTON_FILTER);
+        clickToElementByJS(driver, BackendVerifyBusiManagementUI.BUTTON_FILTER);
         setTimeDelay(2);
     }
 
@@ -60,7 +59,7 @@ public class BackendVerifyBusinessManagement extends AbstractPage {
         return true;
     }
 
-    public String getStatusOfBusinessVerification() {
-        return getTextElement(driver, BackendVerifyBusiManagementUI.STATUS_VERIFICATION_OF_DIRECT_BUSINESS);
+    public String getStatusOfBusinessVerification(WebDriver driver, String businessName, String ownerName, String ownerEmail) {
+        return getTextElement(driver, BackendVerifyBusiManagementUI.STATUS_VERIFICATION_OF_DIRECT_BUSINESS,businessName,ownerName,ownerEmail);
     }
 }

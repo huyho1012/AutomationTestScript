@@ -155,6 +155,10 @@ public abstract class AbstractPage {
         element = findElement(driver, locator);
         return element.getAttribute(valueAttribute);
     }
+    public String getAttributeValue(WebDriver driver, String locator, String valueAttribute, String...values) {
+        element = findElement(driver, castToObject(locator, values));
+        return element.getAttribute(valueAttribute);
+    }
     public boolean checkElementDisplay(WebDriver driver, String locator){
         waitElementToVisible(driver,locator);
         element = findElement(driver, locator);
@@ -208,6 +212,7 @@ public abstract class AbstractPage {
         return select.isMultiple();
     }
     public void selectItemInCustomDropdown(WebDriver driver, String customDropdown, String itemOnDropdown, String expectedValue){
+        element = findElement(driver, customDropdown);
         waitForElementClickable(driver, customDropdown);
         clickToElement(driver,customDropdown);
         setTimeDelay(1);
@@ -217,7 +222,6 @@ public abstract class AbstractPage {
         for(WebElement item: elements){
             if(item.getText().contains(expectedValue)){
                 jsExecutor = (JavascriptExecutor) driver;
-                jsExecutor.executeScript("arguments[0].scrollIntoView(true);",item);
                 item.click();
                 setTimeDelay(1);
                 break;

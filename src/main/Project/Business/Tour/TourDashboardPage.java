@@ -1,19 +1,17 @@
 package Project.Business.Tour;
 
-import Common.HandleFunction.AbstractPage;
 import Interfaces.Business.Tour.TourDashboardPageUI;
+import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
 
-public class TourDashboardPage extends AbstractPage {
+public class TourDashboardPage extends HeaderPage {
     WebDriver driver;
 
     public TourDashboardPage(WebDriver webDriver){
         driver = webDriver;
     }
 
-    public void clickItemOnTourNavMenu(WebDriver driver, String itemMenu) {
-        clickToElementByJS(driver, TourDashboardPageUI.ITEM_ON_TOUR_BUSINESS,itemMenu);
-    }
+
 
     public String getPageNameOnTourDashboard(WebDriver driver) {
         waitElementToVisible(driver,TourDashboardPageUI.TOUR_DASHBOARD_PAGE);
