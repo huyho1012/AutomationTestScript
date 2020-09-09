@@ -25,6 +25,7 @@ public class PersonalAboutPage extends HeaderPage {
     }
 
     public boolean checkPageIsDisplay(String fullName) {
+        waitElementToVisible(driver, PersonalHeadCoverUI.PERSONAL_PAGE);
         if(getPageTitle(driver).equalsIgnoreCase("Giới thiệu - Trang cá nhân | Hahalolo")
                 && getTextElement(driver, PersonalHeadCoverUI.HEADER_COVER_FULLNAME).equalsIgnoreCase(fullName)){
             return true;

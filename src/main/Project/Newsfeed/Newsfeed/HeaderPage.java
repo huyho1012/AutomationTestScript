@@ -14,6 +14,7 @@ public class HeaderPage extends AbstractPage {
         setTimeDelay(1);
         waitForElementClickable(driver, HeaderPageUI.SETTING_ITEM, nameItem);
         clickToElement(driver, HeaderPageUI.SETTING_ITEM,nameItem);
+        setTimeDelay(1);
     }
 
     public void clickItemOnBusinessNavMenu(WebDriver driver, String businessItem) {

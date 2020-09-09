@@ -19,6 +19,7 @@ public class TourDashboardPage extends HeaderPage {
     }
 
     public boolean checkPageIsDisplay(WebDriver driver , String tourPageName) {
-        return getPageNameOnTourDashboard(driver).contains(tourPageName) && getPageTitle(driver).contains("Hahalolo - Tour Dashboard");
+        switchWindowByTitle(driver,"Hahalolo - Tour Dashboard");
+        return getPageNameOnTourDashboard(driver).contains(tourPageName);
     }
 }

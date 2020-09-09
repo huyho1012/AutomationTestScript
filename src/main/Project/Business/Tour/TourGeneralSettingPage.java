@@ -105,6 +105,6 @@ public class TourGeneralSettingPage extends HeaderPage {
 
     public void enterDataValueToTextFieldOnPrepaymentTab(WebDriver driver, String nameField, String valueData) {
         waitElementToVisible(driver, TourGeneralSettingPageUI.DYNAMIC_TEXT_FIELD,nameField);
-        sendKeyToElement(driver,TourGeneralSettingPageUI.DYNAMIC_TEXT_FIELD,nameField,valueData);
+        sendKeyToElement(driver,TourGeneralSettingPageUI.DYNAMIC_TEXT_FIELD,valueData,nameField);
     }
 }

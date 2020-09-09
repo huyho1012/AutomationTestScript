@@ -105,4 +105,8 @@ public class LoginPage extends CommonStartApp {
     public boolean checkBackendLoginPageDisplay() {
         return true;
     }
+
+    public boolean checkNewsfeedLoginPageDisplay(WebDriver driver) {
+        return true;
+    }
 }

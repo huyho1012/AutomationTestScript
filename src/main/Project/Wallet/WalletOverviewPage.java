@@ -22,7 +22,7 @@ public class WalletOverviewPage extends AbstractPage {
         selectItemInCustomDropdown(driver, WalletOverviewUI.CURRENCY_DROPDOWN, WalletOverviewUI.CURRENCY_ITEM, currencyName);
     }
 
-    public void clickCreateBusinessPaymentAccount(WebDriver drive ) {
+    public void clickCreateBusinessPaymentAccount(WebDriver driver ) {
         waitForElementClickable(driver,WalletOverviewUI.BUTTON_CREATE_BUSI_PAYMENT_ACCOUNT);
         clickToElement(driver,WalletOverviewUI.BUTTON_CREATE_BUSI_PAYMENT_ACCOUNT);
     }
@@ -32,7 +32,8 @@ public class WalletOverviewPage extends AbstractPage {
     }
 
     public boolean checkCreatePaymentAccountPopupIsDisplay() {
-        if(getAttributeValue(driver,WalletOverviewUI.POPUP_CREATE_PAYMENT_ACCOUNT,"style").contains("display: none")) {
+        System.out.println(getAttributeValue(driver,WalletOverviewUI.POPUP_CREATE_PAYMENT_ACCOUNT,"style"));
+        if(getAttributeValue(driver,WalletOverviewUI.POPUP_CREATE_PAYMENT_ACCOUNT,"style").contains("display: block")) {
             return true;
         }else
         return false;
