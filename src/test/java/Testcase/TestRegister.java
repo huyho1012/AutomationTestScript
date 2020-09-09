@@ -235,30 +235,30 @@ public class TestRegister extends AbstractTest {
         businessDashboardPage = PageGeneration.createBusinessDashboardPage(driver);
     }
     @Test
-    public void TC06_Check_Business_Info_And_Send_Request() {
+    public void TC06_Send_Enterprise_Verification_Request() {
         log.info("Step 1.Check new business is created");
 //        verifyTrue(businessDashboardPage.checkTitleCreateBusinessSuccess());
         log.info("Step 2.Check status verification");
-        verifyEquals(businessDashboardPage.getStatusVerifyOfBusiness(),"Xác minh tài khoản kinh doanh của bạn");
+        verifyEquals(businessDashboardPage.getStatusVerifyOfBusiness(), "Xác minh tài khoản kinh doanh của bạn");
         log.info("Step 3.Click button verify business");
         businessDashboardPage.clickToVerifyBusiness(driver);
         businessVerifyPage = PageGeneration.createVerifyBusinessTypeEnterpriseForm(driver);
         log.info("Step 4.Check Enterprise verification request display success");
-        verifyEquals(businessVerifyPage.getTitleOfFormVerificationRequest(),"XÁC MINH THÔNG TIN KINH DOANH DOANH NGHIỆP");
+        verifyEquals(businessVerifyPage.getTitleOfFormVerificationRequest(), "XÁC MINH THÔNG TIN KINH DOANH DOANH NGHIỆP");
         log.info("Step 5.Enter company name");
-        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv102", companyName);
+        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver, "bv102", companyName);
         log.info("Step 6.Enter other company name");
-        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv103", otherCompanyName);
+        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver, "bv103", otherCompanyName);
         log.info("Step 7.Enter Abbreviated company name");
-        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv104",abbCompanyName);
+        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver, "bv104", abbCompanyName);
         log.info("Step 8.Enter Tax code");
-        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv105",taxCodeCompany);
+        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver, "bv105", taxCodeCompany);
         log.info("Step 9.Choose Registration date");
-        businessVerifyPage.chooseRegistrationDate(driver,"10","8","2018");
+        businessVerifyPage.chooseRegistrationDate(driver, "10", "8", "2018");
         log.info("Step 10.Enter Representative name");
-        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv107", representativeName);
+        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver, "bv107", representativeName);
         log.info("Step 11.Enter Registration address");
-        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv110",registrationAddress);
+        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver, "bv110", registrationAddress);
         log.info("Step 12.Click search Registration address");
         businessVerifyPage.clickEnterToSearchAddress(driver);
         log.info("Step 13.Check popup Choose Place display");
@@ -266,341 +266,333 @@ public class TestRegister extends AbstractTest {
         log.info("Step 14.Choose a place");
         businessVerifyPage.chooseLocation(driver, "400/8b Ung Văn Khiêm, Phường 25, Bình Thạnh, Thành phố Hồ Chí Minh, Vietnam");
         log.info("Step 15.Enter zipcode");
-        businessVerifyPage.enterValueToZipCodeField(driver,zipCode);
+        businessVerifyPage.enterValueToZipCodeField(driver, zipCode);
         log.info("Step 16.Enter company phone");
-        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv109", companyPhone);
+        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver, "bv109", companyPhone);
         log.info("Step 17.Enter company email");
-        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver,"bv108", companyEmail);
+        businessVerifyPage.enterValueToDynamicFieldOfVerifyForm(driver, "bv108", companyEmail);
         log.info("Step 18.Enter business scope");
-        businessVerifyPage.enterValueToBusinessScopeTextarea(driver,businessScope);
+        businessVerifyPage.enterValueToBusinessScopeTextarea(driver, businessScope);
         log.info("Step 19.Upload Business verification papers");
         businessVerifyPage.clickToUploadDocumentVerify(driver, fileUploadImage2);
         log.info("Step 20.Click send verify request");
         businessVerifyPage.clickToSendRequestVerify(driver);
-        log.info("Step 5.5.17 - Business Homepage - Send business verification - Check verify business is sent successfully");
-        verifyEquals(businessVerifyPage.getTitleOfFormSendRequestSuccess(),"Yêu cầu xác minh doanh nghiệp đã được gửi");
-        log.info("Step 5.5.18 - Business Homepage - Send business verification - Click button to go back Business Management");
+    }
+    @Test
+    public void TC07_Check_Business_Info() {
+        log.info("Step 1. Check verificication request has already sent");
+        verifyEquals(businessVerifyPage.getTitleOfFormSendRequestSuccess(), "Yêu cầu xác minh doanh nghiệp đã được gửi");
+        log.info("Step 2. Click button to go back Business Management");
         businessVerifyPage.clickToBackBusinessManagementPage(driver);
-        businessDashboardPage = PageGeneration.createBusinessDashboardPage(driver);
-        log.info("Step 5.6 - Business Homepage - Check business information");
-        log.info("Step 5.6.1 - Business Homepage - Check business information - Check status verification");
-        verifyEquals(businessDashboardPage.getStatusVerifyOfBusiness(),"Đang chờ xác minh thông tin kinh doanh");
-        log.info("Step 5.6.2 - Business Homepage - Check business information - Go to Business Info");
-        businessDashboardPage.clickItemOnBusinessNavMenu(driver,"menu-settings-info");
+        log.info("Step 3. Check status verification");
+        verifyEquals(businessDashboardPage.getStatusVerifyOfBusiness(), "Đang chờ xác minh thông tin kinh doanh");
+        log.info("Step 4. Go to Business Info");
+        businessDashboardPage.clickItemOnBusinessNavMenu(driver, "menu-settings-info");
         businessInfoPage = PageGeneration.createBusinessInfoPage(driver);
-        log.info("Step 5.6.3 - Business Homepage - Check business information - Check page display success");
+        log.info("Step 5. Check display of Businessi info page");
         verifyTrue(businessInfoPage.checkBusinessInfoPageIsDisplay());
-        log.info("Step 5.6.4 - Business Homepage - Check business information - Check owner name display success");
-        verifyEquals(businessInfoPage.getOwnerNameIsDisplay(driver),ownerName);
-        log.info("Step 5.6.5 - Business Homepage - Check business information - Check owner email display success");
-        verifyEquals(businessInfoPage.getOwnerEmailIsDisplay(driver),ownerEmail);
-        log.info("Step 6 - Confirm business verification");
-        log.info("Step 6.1 - Confirm business verification - Backend Login");
-        log.info("Step 6.1.1 - Confirm business verification - Backend Login - Go to Backend Login");
+        log.info("Step 6. Check owner name display success");
+        verifyEquals(businessInfoPage.getOwnerNameIsDisplay(driver), ownerName);
+        log.info("Step 7. Check owner email display success");
+        verifyEquals(businessInfoPage.getOwnerEmailIsDisplay(driver), ownerEmail);
+    }
+    @Test
+    public void TC08_Backend_Confirm_Business_Verification() {
+        log.info("Step 1. Go to Backend Login");
         businessInfoPage.openURL(driver,GlobalVariables.backendURL);
         loginPage = PageGeneration.createLoginBackEndPage(driver);
-        log.info("Step 6.1.2 - Confirm business verification - Backend Login - Go to Backend Login");
+        log.info("Step 2. Check Backend Login display");
         verifyTrue(loginPage.checkBackendLoginPageDisplay());
-        log.info("Step 6.1.3 - Confirm business verification - Backend Login - Enter admin account");
+        log.info("Step 3. Enter admin account");
         loginPage.enterUserNameToLogin(driver,GlobalVariables.ADMIN_ACCOUNT);
-        log.info("Step 6.1.4 - Confirm business verification - Backend Login - Enter admin password");
+        log.info("Step 4. Enter admin password");
         loginPage.enterPasswordToLogin(driver, GlobalVariables.ADMIN_PASSWORD);
-        log.info("Step 6.1.5 - Confirm business verification - Backend Login - Enter captcha code");
+        log.info("Step 5. Enter captcha code");
         loginPage.enterCaptchaCodeToLogin(driver,"");
-        loginPage.setTimeDelay(15);
-        log.info("Step 6.1.6 - Confirm business verification - Backend Login - Click Login button");
+        setTimeDelay(15);
+        log.info("Step 6. Click Login button");
         loginPage.clickToLoginButton(driver);
         backendHomePage = PageGeneration.createBackendHomepage(driver);
         setTimeDelay(2);
-        log.info("Step 6.2 - Confirm business verification - Backend Homepage");
-        log.info("Step 6.2.1 - Confirm business verification - Backend Homepage - Check page display success");
+        log.info("Step 7.Check Backend homepage display");
         verifyTrue(backendHomePage.checkBusinessHomePageIsDisplaySuccess());
-        log.info("Step 6.2.2 - Confirm business verification - Backend Homepage - Check language system and change to Vi");
+        log.info("Step 8. Change language system to Vi");
         backendHomePage.changeLanguageOfSystemToVi(driver);
-        log.info("Step 6.2.3 - Confirm business verification - Backend Homepage - Go to business verification management");
+        log.info("Step 9. Go to business verification management");
         backendHomePage.clickToItemOnNavbarMenu(driver,"Xác minh doanh nghiệp");
         verifyBusinessManagementPage = PageGeneration.createVerifyBusinessManagement(driver);
-        verifyBusinessManagementPage.setTimeDelay(2);
-        log.info("Step 6.3 - Confirm verification");
-        log.info("Step 6.3.1 - Confirm verification - Business verification management - Check page is displayed");
+        setTimeDelay(2);
+        log.info("Step 10. Check Business verification management page display");
         verifyTrue(verifyBusinessManagementPage.checkPageIsDisplaySuccess());
-        log.info("Step 6.3.2 - Confirm verification - Business verification management - Enter keyword for searching");
+        log.info("Step 11. Enter keyword for searching");
         verifyBusinessManagementPage.enterEmailBusinessForSearch(driver, ownerEmail);
-        log.info("Step 6.3.3 - Confirm verification - Business verification management - Enter start date");
+        log.info("Step 12. Choose start date");
         verifyBusinessManagementPage.chooseStartDateForFilter(driver, getToday());
-        log.info("Step 6.3.4 - Confirm verification - Business verification management - Enter end date");
+        log.info("Step 13. Choose end date");
         verifyBusinessManagementPage.chooseEndDateForFilter(driver, getToday());
-        log.info("Step 6.3.5 - Confirm verification - Business verification management - Choose business type filter");
+        log.info("Step 14. Choose business type");
         verifyBusinessManagementPage.chooseTypeBusiness(driver, "Doanh nghiệp");
-        setTimeDelay(3);
-        log.info("Step 6.3.6 - Confirm verification - Business verification management - Choose status verification");
+        log.info("Step 15. Choose status verification");
         verifyBusinessManagementPage.chooseStatusVerification(driver, "Đang chờ xác minh");
-        log.info("Step 6.3.7 - Confirm verification - Business verification management - Click button Filter");
-        setTimeDelay(3);
+        log.info("Step 16. Click button Filter");
         verifyBusinessManagementPage.clickToFilterButton(driver);
-        log.info("Step 6.3.8 - Confirm verification - Business verification management - Check business display correct with filter");
+        log.info("Step 17. Check business display correct with filter");
 
-        log.info("Step 6.3.9 - Confirm verification - Business verification management  - Click button Verify for redirect business");
+        log.info("Step 18. Click button Verify for redirect business");
         verifyBusinessManagementPage.clickVerifyButton(driver, businessName, ownerName,ownerEmail);
-        log.info("Step 6.3.10 - Confirm verification - Business verification management  - Click button confirm verify business");
+        log.info("Step 19. Check popup Confirm verification business display");
         verifyBusinessManagementPage.clickConfirmButtonOnPopup(driver);
-        log.info("Step 6.3.11 - Confirm verification - Business verification management  - Check business verify success");
-        setTimeDelay(1);
+        log.info("Step 20. Click button confirm");
+        verifyBusinessManagementPage.clickConfirmButtonOnPopup(driver);
+        log.info("Step 21. Check business verify success");
         verifyEquals(verifyBusinessManagementPage.getStatusOfBusinessVerification(driver,businessName,ownerName,ownerEmail),"Đã xác minh");
-        log.info("Step 10.1 - Create Payment account - Login Wallet");
-        log.info("Step 10.1.1 - Create Payment account - Login Wallet - Go to Login Wallet");
+    }
+    @Test
+    public void TC09_Wallet_Create_Payment_Account_Type_Business() {
+        log.info("Step 1. Go to Login Wallet");
         verifyBusinessManagementPage.negativeToURLByJS(driver,GlobalVariables.walletURL);
         loginPage = PageGeneration.createWalletLoginPage(driver);
-        setTimeDelay(1);
-        log.info("Step 10.1.2 - Create Payment account - Login Wallet - Check page display success");
+        log.info("Step 2. Check Login wallet page display");
         verifyTrue(loginPage.checkWalletLoginPageIsDisplay());
-        log.info("Step 10.1.3 - Create Payment account - Login Wallet  - Enter email address");
+        log.info("Step 3. Enter email address");
         loginPage.enterUserNameToLogin(driver,emailUser);
-        log.info("Step 10.1.4 - Create Payment account - Login Wallet  - Enter password");
+        log.info("Step 4. Enter password");
         loginPage.enterPasswordToLogin(driver,passwordUser);
-        log.info("Step 10.1.5 - Create Payment account - Login Wallet  - Enter captcha code");
+        log.info("Step 5. Enter captcha code");
         loginPage.enterCaptchaCodeToLogin(driver,"");
         setTimeDelay(15);
-        log.info("Step 10.1.6 - Create Payment account - Login Wallet  - Click Login button");
+        log.info("Step 6.Click Login button");
         loginPage.clickToLoginButton(driver);
         walletOverviewPage = PageGeneration.createWalletOverviewPage(driver);
-        setTimeDelay(2);
-        log.info("Step 10.2 - Create Payment account - Overview Wallet page");
-        log.info("Step 10.2.1 - Create Payment account - Overview Wallet page - Check page display success");
+        log.info("Step 7 Check Wallet overview page display success");
         verifyTrue(walletOverviewPage.checkPageIsDisplayedSuccessfully());
-        log.info("Step 10.2.2 - Create Payment account - Overview Wallet page  - Click button Create payment account");
+        log.info("Step 8. Click button Create payment account");
         walletOverviewPage.clickCreateBusinessPaymentAccount(driver);
-        log.info("Step 10.3 - Create Payment account - Create Payment Account popup");
-        log.info("Step 10.3.1 - Create Payment account - Create Payment Account popup - Check popup display success");
+        log.info("Step 9. Check popup Create new business display");
         verifyTrue(walletOverviewPage.checkCreatePaymentAccountPopupIsDisplay());
-        log.info("Step 10.3.2 - Create Payment account - Create payment account popup  - Enter payment account name");
+        log.info("Step 10. Enter payment account name");
         walletOverviewPage.enterPaymentAccountName(driver,paymentAccountName);
-        log.info("Step 10.3.3 - Create Payment account - Create payment account popup  - Choose default used currency");
+        log.info("Step 11. Choose currency");
         walletOverviewPage.chooseCurrencyOfAccount(driver,"VND - Vietnamese Dong");
-        log.info("Step 10.3.4 - Create Payment account - Create payment account popup  - Click button Finish to create payment account");
+        log.info("Step 12. Click button Finish to create payment account");
         walletOverviewPage.clickToFinishButton(driver);
         walletHomePage = PageGeneration.createWalletHomepage(driver);
-        log.info("Step 10.4 - Create Payment account - Wallet homepage");
-        log.info("Step 10.4.1 - Create Payment account - Wallet homepage - Check page display success");
+        log.info("Step 13. Check Wallet homepage display success");
         verifyTrue(walletHomePage.checkBusinessPaymentAccountPageDisplay());
-        log.info("Step 10.4.2 - Create Payment account - Wallet homepage - Check payment Account is created successfully");
+        log.info("Step 14.Check payment Account is created successfully");
         verifyEquals(walletHomePage.getPaymentAccName(),paymentAccountName);
-        log.info("Step 11.1 - Create Page Tour - Overview Business page");
-        log.info("Step 11.1.1 - Create Page Tour - Overview Business page - Back to Business page");
+    }
+    @Test
+    public void TC09_Business_Create_Page_Tour() {
+        log.info("Step 1. Back to Business page");
         walletHomePage.openURL(driver, GlobalVariables.businessURL);
         businessOverviewPage = PageGeneration.createBusinessOverviewPage(driver);
-        setTimeDelay(2);
-        log.info("Step 11.1.2 - Create Page Tour - Overview Business page - Check page display success");
+        log.info("Step 2. Check Overview Business page display");
         verifyTrue(businessOverviewPage.checkOverViewPageWithHaveBusiness());
-        log.info("Step 11.1.3 - Create Page Tour - Overview Business page - Click to button Business Management");
+        log.info("Step 3. Click to button Business Management");
         businessOverviewPage.clickToAccountManagementButton(driver);
         businessDashboardPage = PageGeneration.createBusinessDashboardPage(driver);
-        setTimeDelay(2);
-        log.info("Step 11.2 - Create Page Tour - Dashboard Business page");
-        log.info("Step 11.2.1 - Create Page Tour - Dashboard Business page - Check page display success");
+        log.info("Step 4. Check Dashboard Business page display success");
         verifyTrue(businessDashboardPage.checkPageIsDisplaySuccessfully());
-        log.info("Step 11.2.2 - Create Page Tour - Dashboard Business page - Check verify business status");
-        verifyEquals(businessDashboardPage.getStatusVerifyOfBusiness(),"Thông tin kinh doanh");
-        log.info("Step 11.2.3 - Create Page Tour - Dashboard Business page - Check business have no page");
-        verifyEquals(businessDashboardPage.getContentTitleOfSectionNoPage(),"Tạo trang đầu tiên của bạn");
-        log.info("Step 11.2.4 - Create Page Tour - Dashboard Business page - Click button Create page now");
+        log.info("Step 5. Check verify business status");
+        verifyEquals(businessDashboardPage.getStatusVerifyOfBusiness(), "Thông tin kinh doanh");
+        log.info("Step 6. Check business have no page");
+        verifyEquals(businessDashboardPage.getContentTitleOfSectionNoPage(), "Tạo trang đầu tiên của bạn");
+        log.info("Step 7. Click button Create page now");
         businessDashboardPage.clickCreatePageNowButton();
         businessPageList = PageGeneration.openCreatePagePopup(driver);
-        log.info("Step 11.3 - Create Page Tour - Create new page popup");
-        log.info("Step 11.3.1 - Create Page Tour - Create new page popup - Check popup display");
+        log.info("Step 8. Check Create new page popup display");
         verifyTrue(businessPageList.checkPopupCreatePageDisplay());
-        log.info("Step 11.3.2 - Create Page Tour - Create new page popup - Choose page type");
+        log.info("Step 9. Choose page type");
         businessPageList.choosePageType(driver, "H001");
-        log.info("Step 11.3.3 - Create Page Tour - Create new page popup - Enter page name");
-        businessPageList.enterPageNameToCreate(driver ,pageTourName);
-        log.info("Step 11.3.4 - Create Page Tour - Create new page popup - Click button to create page");
+        log.info("Step 10. Enter page name");
+        businessPageList.enterPageNameToCreate(driver, pageTourName);
+        log.info("Step 11. Click button to create page");
         businessPageList.clickToCreatePage(driver);
-        setTimeDelay(2);
-        log.info("Step 11.3.4 - Go to BusiPage Management");
-        businessPageList.clickItemOnBusinessNavMenu(driver,"menu-settings-pages");
-        log.info("Step 12.1 - BusiPage management");
-        log.info("Step 12.1.1. BusiPage management - Check page display success");
+        log.info("Step 12. Go to BusiPage Management");
+        businessPageList.clickItemOnBusinessNavMenu(driver, "menu-settings-pages");
+        log.info("Step 13. Check Business page managemennt display");
         verifyTrue(businessPageList.checkPageDisplaySuccess(driver));
-        log.info("Step 12.1.2. BusiPage management - Verify page created success");
-        verifyTrue(businessPageList.checkCreatedPageSuccess(driver,pageTourName));
-        log.info("Step 12.1.3. BusiPage management - Verify page information");
-        verifyEquals(businessPageList.getOwnerOfDirectPage(driver,pageTourName), emailUser);
+        log.info("Step 14. Check page have been created successfully");
+        verifyTrue(businessPageList.checkCreatedPageSuccess(driver, pageTourName));
+        log.info("Step 15. Verify page information");
+        verifyEquals(businessPageList.getOwnerOfDirectPage(driver, pageTourName), emailUser);
         String pageID = businessPageList.getPageIdOfDirectPage(driver, pageTourName);
-        log.info("Step 12.1.4 - Tour Dashboard - Go to page detail");
+        log.info("Step 16. Go to Tour Dashboard");
         businessPageList.clickPageManagementLinkToGoDetail(driver,pageTourName);
         tourDashboardPage = PageGeneration.createTourDashboardPage(driver);
-        setTimeDelay(2);
-        log.info("Step 12.2 - Create Page Tour - Tour Dashboard");
-        log.info("Step 12.2.1 - Create Page Tour - Tour Dashboard - Check page display success");
+
+    }
+    @Test
+    public void TC10_Update_Prepayment_Cancellation_On_Tour_General_Information() {
+        log.info("Step 1. Check Tour Dashboard page display");
         verifyTrue(tourDashboardPage.checkPageIsDisplay(driver, pageTourName));
-        log.info("Step 12.2.2 - Create Page Tour - Tour Dashboard - Click Setting General on Nav-bar menu");
-        tourDashboardPage.clickItemOnTourNavMenu(driver,"Thông tin");
+        log.info("Step 2. Click to Setting General");
+        tourDashboardPage.clickItemOnTourNavMenu(driver, "Thông tin");
         tourGeneralSettingPage = PageGeneration.createTourGeneralSettingPage(driver);
-        setTimeDelay(2);
-        log.info("Step 13.1 - Update Tour General Information - Cancel Prepayment Policy");
-        log.info("Step 13.1.1 - Update Tour General Information - Cancel Prepayment Policy - Check page display success");
+        log.info("Step 3.Check Prepaymend And Cancellation policy display");
         verifyTrue(tourGeneralSettingPage.checkTabPrepaymentAmountDisplay());
-        log.info("Step 13.1.2 - Update Tour General Information - Cancel Prepayment Policy - Enter Prepayment amount");
-        tourGeneralSettingPage.enterDataValueToTextFieldOnPrepaymentTab(driver,"sn305","prepayValue");
-        log.info("Step 13.1.3 - Update Tour General Information - Cancel Prepayment Policy - Enter Cancellation amount");
-        tourGeneralSettingPage.enterDataValueToTextFieldOnPrepaymentTab(driver,"sn306","cancelAmount");
-        log.info("Step 13.1.4 - Update Tour General Information - Cancel Prepayment Policy - Enter Day allow cancellation");
-        tourGeneralSettingPage.enterDataValueToTextFieldOnPrepaymentTab(driver,"sn307","dayAllowCancel");
-        log.info("Step 13.1.5 - Update Tour General Information - Cancel Prepayment Policy - Click save button");
+        log.info("Step 4. Enter Prepayment amount");
+        tourGeneralSettingPage.enterDataValueToTextFieldOnPrepaymentTab(driver, "sn305", "prepayValue");
+        log.info("Step 5. Enter Cancellation amount");
+        tourGeneralSettingPage.enterDataValueToTextFieldOnPrepaymentTab(driver, "sn306", "cancelAmount");
+        log.info("Step 6. Enter Day allow cancellation");
+        tourGeneralSettingPage.enterDataValueToTextFieldOnPrepaymentTab(driver, "sn307", "dayAllowCancel");
+        log.info("Step 7. Click save button");
         tourGeneralSettingPage.clickToSaveButton(driver);
-        log.info("Step 13.1.6 - Update General Information - Click Setting VAT");
+    }
+    @Test
+    public void TC11_Update_VAT_On_Tour_General_Information() {
+        log.info("Step 1. Click Setting VAT");
         tourGeneralSettingPage.clickToItemOnTourInformationNav(driver, "vat");
-        log.info("Step 13.2 - Update Tour General Information - Setting VAT - Check page display");
+        log.info("Step 2. Check Setting VAT tab display");
         verifyTrue(tourGeneralSettingPage.checkVATSettingPageDisplay(driver));
-        log.info("Step 13.2 - Update Tour General Information - Setting VAT - Choose optiom VAT");
-        tourGeneralSettingPage.chooseOptionVAT(driver,"1");
-        log.info("Step 13.2 - Update Tour General Information - Setting VAT - Click to save button");
+        log.info("Step 3. Choose option VAT");
+        tourGeneralSettingPage.chooseOptionVAT(driver, "1");
+        log.info("Step 4. Click to save button");
         tourGeneralSettingPage.clickToSaveButton(driver);
-        log.info("Step 13.2 - Update Tour General Information - Click to Age setting");
+    },
+    @Test
+    public void TC13_Update_Age_Setting_On_Tour_General_Information() {
+        log.info("Step 1. Click to Age setting");
         tourGeneralSettingPage.clickToItemOnTourInformationNav(driver, "age");
-        log.info("Step 13.2 - Update Tour General Information - Age Setting - Check tab display");
+        log.info("Step 2. Check Age setting tab display");
         verifyTrue(tourGeneralSettingPage.checkAgeSettingPageDisplay(driver));
-        log.info("Step 13.2 - Update Tour General Information - Age Setting - Enter Adult age");
-        tourGeneralSettingPage.enterDataValueToTextFieldOnAgeSettingTab(driver,"sn351","12");
-        log.info("Step 13.2 - Update Tour General Information - Age Setting - Enter Child age");
-        tourGeneralSettingPage.enterDataValueToTextFieldOnAgeSettingTab(driver,"sn352","6");
-        log.info("Step 13.2 - Update Tour General Information - Age Setting - Enter Young Child age");
-        tourGeneralSettingPage.enterDataValueToTextFieldOnAgeSettingTab(driver,"sn354","2");
-        log.info("Step 13.2 - General Info - Age Setting - Click to save button");
+        log.info("Step 3. Enter Adult age");
+        tourGeneralSettingPage.enterDataValueToTextFieldOnAgeSettingTab(driver, "sn351", "12");
+        log.info("Step 4. Enter Child age");
+        tourGeneralSettingPage.enterDataValueToTextFieldOnAgeSettingTab(driver, "sn352", "6");
+        log.info("Step 5. Enter Young Child age");
+        tourGeneralSettingPage.enterDataValueToTextFieldOnAgeSettingTab(driver, "sn354", "2");
+        log.info("Step 6. Click to save button");
         tourGeneralSettingPage.clickToSaveButton(driver);
-        log.info("Step 13.2 - General Info - Click Noti order setting");
+    },
+    @Test
+    public void TC14_Update_Noti_Order_Setting_On_Tour_General_Information() {
+        log.info("Step 1. Click Noti order setting");
         tourGeneralSettingPage.clickToItemOnTourInformationNav(driver, "mail");
-        log.info("Step 13.2 - General Info - Noti order setting - Check tab display");
+        log.info("Step 2.Check  Noti order tab display");
         verifyTrue(tourGeneralSettingPage.checkNotiForOrderSettingPageDisplay(driver));
-        log.info("Step 13.2. General Info - Noti order setting - Enable setting");
+        log.info("Step 3. Enable setting");
         tourGeneralSettingPage.clickToEnableMode(driver);
-        log.info("Step 13.2. General Info - Noti order setting - Enter email");
-        tourGeneralSettingPage.enterDataValueToTextFieldOnNotiOrder(driver,"sv453",ownerEmail);
-        log.info("Step 13.2. General Info - Noti order setting - Enter phone");
-        tourGeneralSettingPage.enterDataValueToTextFieldOnNotiOrder(driver,"sv454",ownerPhone);
-        log.info("Step 13.2. General Info - Noti order setting - Click button save");
+        log.info("Step 4. Enter email");
+        tourGeneralSettingPage.enterDataValueToTextFieldOnNotiOrder(driver, "sv453", ownerEmail);
+        log.info("Step 5. Enter phone");
+        tourGeneralSettingPage.enterDataValueToTextFieldOnNotiOrder(driver, "sv454", ownerPhone);
+        log.info("Step 6. Click button save");
         tourGeneralSettingPage.clickToSaveButton(driver);
-//
-        log.info("Step 13.2. Tour topic - Go to Topic page");
-        tourGeneralSettingPage.clickItemOnTourNavMenu(driver,"Topics");
+    }
+    @Test
+    public void TC15_Create_New_Topic() {
+        log.info("Step 1. Go to Topic page");
+        tourGeneralSettingPage.clickItemOnTourNavMenu(driver, "Topics");
         tourTopicPage = PageGeneration.createTourTopicListPage(driver);
-        log.info("Step 13.2. Tour topic - Check page display with case no topic");
+        log.info("Step 2. Check Topic page case no topic");
         verifyTrue(tourTopicPage.checkPageWithCaseNoTopicDisplay());
-        log.info("Step 13.2. Tour topic - Click create topic");
+        log.info("Step 3. Click create topic");
         tourTopicPage.clickCreateTopic(driver);
-        log.info("Step 13.2. Tour topic - Check create topic display");
+        log.info("Step 4. Check popup Create topic display");
         verifyTrue(tourTopicPage.checkPopupCreateTopicDisplay());
-        log.info("Step 13.2. Tour topic - Choose topic image");
+        log.info("Step 5. Choose topic image");
         tourTopicPage.chooseTopicImage();
-        log.info("Step 13.2. Tour topic - Choose topic language");
+        log.info("Step 6. Choose topic language");
         tourTopicPage.chooseLanguageOfTopic(driver);
-        log.info("Step 13.2. Tour topic - Enter topic name");
-        tourTopicPage.enterTopicName(driver,"Topic name");
-        log.info("Step 13.2. Tour topic - Enter topic description");
-        tourTopicPage.enterTopicDescription(driver,"Topic description");
-        log.info("Step 13.2. Tour topic - Enter topic description");
+        log.info("Step 7. Enter topic name");
+        tourTopicPage.enterTopicName(driver, "Topic name");
+        log.info("Step 8. Enter topic description");
+        tourTopicPage.enterTopicDescription(driver, "Topic description");
+        log.info("Step 9. Click Save Button");
         tourTopicPage.clickToSaveButton(driver);
-        log.info("Step 13.2. Tour topic - Verify topic created success");
+        log.info("Step 10. Verify topic have been created successfully");
         verifyTrue(tourTopicPage.checkCreatedTopicDisplay(driver));
-        log.info("Step 13.2. Tour - Go to Tour management");
+    }
+    @Test
+    public void TC15_Create_New_Tour() {
+        log.info("Step 1. Go to Tour management");
         tourTopicPage.clickItemOnTourNavMenu(driver,"Tours");
         tourManagementPage = PageGeneration.createTourManagementPage(driver);
-        log.info("Step 13.2. Tour - Check page display with case no topic");
+        log.info("Step 2. Check Tour management with case no Tour");
         verifyTrue(tourManagementPage.checkPageWithCaseNoTourDisplay());
-        log.info("Step 13.2. Tour - Click button create tour");
+        log.info("Step 3. Click button create tour");
         tourManagementPage.clickToCreateTour(driver);
-        log.info("Step 13.2. Tour topic - Check create tour popup display");
+        log.info("Step 4. Check popup Create tour display");
         verifyTrue(tourTopicPage.checkPopupCreateTourDisplay());
-        log.info("Step 13.2. Tour - Enter tour name");
+        log.info("Step 5. Enter tour name");
         tourManagementPage.enterValueOfTourName(driver,"");
-        log.info("Step 13.2. Tour - Choose tour type");
+        log.info("Step 6. Choose tour type");
         tourManagementPage.chooseTourType(driver);
-        log.info("Step 13.2. Tour - Choose tour topic");
+        log.info("Step 7. Choose tour topic");
         tourManagementPage.chooseTourTopic(driver);
-        log.info("Step 13.2. Tour - Click Create button");
+        log.info("Step 8. Click Create button");
         tourManagementPage.clickSaveButtonToCreateTour(driver);
         tourInformationTab = PageGeneration.createTourInfoTab(driver);
-        log.info("Step 13.2. Tour info - Complete update infor");
-//        log.info("Update data on Tour information tab");
-//        log.info("Update data on Tour information tab - Enter sku code");
-//        String skuCode = "";
-//        tourInformationTab.enterValueOfTourToDynamicFieldOnInformationTab(driver, "tv102",skuCode);
-//
-//        log.info("Update data on Tour information tab - Enter Total day of Tour");
-//        String totalDay = "";
-//        tourInformationTab.enterValueOfTourToDynamicFieldOnInformationTab(driver, "tn123",totalDay);
-//
-//        log.info("Update data on Tour information tab - Enter Basic Price of Tour");
-//        String basicPrice = "";
-//        tourInformationTab.enterValueOfTourToDynamicFieldOnInformationTab(driver,"tn133", basicPrice);
-//
-//        log.info("Update data on Tour information tab - Enter Allow booking date of Tour");
-//        String allowBookingDate = "";
-//        tourInformationTab.enterValueOfTourToDynamicFieldOnInformationTab(driver,"tn130", allowBookingDate);
-//
-//        log.info("Update data on Tour information tab - Enter Address start Tour");
-//        String addresss = "";
-//        tourInformationTab.enterValueOfTourToDynamicFieldOnInformationTab(driver,"address", addresss);
-//
-//        log.info("Update data on Tour information tab - Update country");
-//        String countryName = "";
-//        tourInformationTab.chooseItemOnDropdownOnUpdateLocation(driver,"country",countryName);
-//
-//        log.info("Update data on Tour information tab - Update city/State");
-//        String cityName = "";
-//        tourInformationTab.chooseItemOnDropdownOnUpdateLocation(driver,"city",cityName);
-//
-//        log.info("Update data on Tour information tab - Update District/ County");
-//        String districtName = "";
-//        tourInformationTab.chooseItemOnDropdownOnUpdateLocation(driver,"region",districtName);
-//
-//        log.info("Update data on Tour information tab - Enter Short description");
-//        String shortDescription = "";
-//        tourInformationTab.enterValueOfShortDesc(driver, shortDescription);
-//
-//        log.info("Update data on Tour information tab - Enter Private regulations");
-//        String privateRegulations = "";
-//        tourInformationTab.enterValueOfTourToDynamicSummerNoteOnInformationTab(driver, "tv152", privateRegulations);
-//
-//        log.info("Update data on Tour information tab - Enter Policy");
-//        String policy = "";
-//        tourInformationTab.enterValueOfTourToDynamicSummerNoteOnInformationTab(driver, "tv153", policy);
-//
-//        log.info("Update data on Tour information tab - Enter Installment policy");
-//        String policyInstallment = "";
-//        tourInformationTab.enterValueOfTourToDynamicSummerNoteOnInformationTab(driver, "tv155", policyInstallment);
-//
-//
-//        log.info("Update data on Tour information tab - Choose Tour Logo");
-//        tourInformationTab.chooseImageToUpdateTourInfo(driver,"uploadLogo");
-//
-//        log.info("Update data on Tour information tab - Choose Tour Cover");
-//        tourInformationTab.chooseImageToUpdateTourInfo(driver, "uploadCover");
-//
-//        log.info("Update data on Tour information tab - Choose Tour Gallery");
-//        tourInformationTab.chooseImageToUpdateTourInfo(driver, "uploadGalleries");
-//
-//        log.info("Update data on Tour information tab - Click to Save Tour button");
-//        tourInformationTab.clickToButtonSaveTour();
-//
-//        log.info("Update data on Tour information tab - Click to Part Tour tab");
-//        tourInformationTab.clickToItemOfNavigationMenu(driver);
-//
-//        // Tab Tour part
-//        tourPartTab = PageGeneration.createTourPartTab(driver);
-//        tourPartTab.clickToCreateNewPartButton();
-//        tourPartTab.enterValueToPartNameField(driver, partName);
-//        tourPartTab.enterValueDateOfPart(driver, dayOfPart);
-//        tourPartTab.enterValueOfPartTime(driver,timePart);
-//        tourPartTab.enterValueOfAddress(driver, address);
-//        tourPartTab.chooseCountry(driver);
-//        tourPartTab.chooseCityState(driver);
-//        tourPartTab.chooseWard(driver);
-//        tourPartTab.enterValueOfPartShortDescription(driver,"");
-//        tourPartTab.chooseTransportItem(driver);
-//        tourPartTab.choosePartLogo(driver);
-//        tourPartTab.clickToButtonSavePart(driver);
-//        tourPartTab.clickToPriceOnTourNavigationMenu(driver);
+    }
+    @Test
+    public void TC15_Update_Tour_Information() {
+        log.info("Step 1. Check Tab Tour of Tour Detail display");
+        verifyTrue(tourInformationTab.checkTourDetaiTabInfoDisplay());
+        log.info("Step 2. Enter sku code");
+        String skuCode = "";
+        tourInformationTab.enterValueOfTourToDynamicFieldOnInformationTab(driver, "tv102", skuCode);
+        log.info("Step 3. Enter Total day of Tour");
+        String totalDay = "";
+        tourInformationTab.enterValueOfTourToDynamicFieldOnInformationTab(driver, "tn123", totalDay);
+        log.info("Step 4. Enter Basic Price of Tour");
+        String basicPrice = "";
+        tourInformationTab.enterValueOfTourToDynamicFieldOnInformationTab(driver, "tn133", basicPrice);
+        log.info("Step 5. Enter Allow booking date of Tour");
+        String allowBookingDate = "";
+        tourInformationTab.enterValueOfTourToDynamicFieldOnInformationTab(driver, "tn130", allowBookingDate);
+        log.info("Step 6. Enter Address");
+        String addresss = "";
+        tourInformationTab.enterValueOfTourToDynamicFieldOnInformationTab(driver, "address", addresss);
+        log.info("Step 7. Choose country");
+        String countryName = "";
+        tourInformationTab.chooseItemOnDropdownOnUpdateLocation(driver, "country", countryName);
+        log.info("Step 8. Choose City/State");
+        String cityName = "";
+        tourInformationTab.chooseItemOnDropdownOnUpdateLocation(driver, "city", cityName);
+        log.info("Step 9. Choose District/ County");
+        String districtName = "";
+        tourInformationTab.chooseItemOnDropdownOnUpdateLocation(driver, "region", districtName);
+        log.info("Step 10. Enter Short description");
+        String shortDescription = "";
+        tourInformationTab.enterValueOfShortDesc(driver, shortDescription);
+        log.info("Step 11. Enter Private regulations");
+        String privateRegulations = "";
+        tourInformationTab.enterValueOfTourToDynamicSummerNoteOnInformationTab(driver, "tv152", privateRegulations);
+        log.info("Step 12. Enter Policy");
+        String policy = "";
+        tourInformationTab.enterValueOfTourToDynamicSummerNoteOnInformationTab(driver, "tv153", policy);
+        log.info("Step 13. Enter Installment policy");
+        String policyInstallment = "";
+        tourInformationTab.enterValueOfTourToDynamicSummerNoteOnInformationTab(driver, "tv155", policyInstallment);
+        log.info("Step 14. Choose Tour Logo");
+        tourInformationTab.chooseImageToUpdateTourInfo(driver, "uploadLogo");
+        log.info("Step 15. Choose Tour Cover");
+        tourInformationTab.chooseImageToUpdateTourInfo(driver, "uploadCover");
+        log.info("Step 16 .Choose Tour Gallery");
+        tourInformationTab.chooseImageToUpdateTourInfo(driver, "uploadGalleries");
+        log.info("Step 17. Click to Save Tour button");
+        tourInformationTab.clickToButtonSaveTour();
+    }
+    @Test
+    public void TC15_Create_Part_Of_Tour(){
+        log.info("Step 1. Click to Part Tour tab");
+        tourInformationTab.clickToItemOfNavigationMenu(driver);
+        tourInformationTab.clickToCreateNewPartButton();
+        tourPartTab.enterValueToPartNameField(driver, partName);
+        tourPartTab.enterValueDateOfPart(driver, dayOfPart);
+        tourPartTab.enterValueOfPartTime(driver,timePart);
+        tourPartTab.enterValueOfAddress(driver, address);
+        tourPartTab.chooseCountry(driver);
+        tourPartTab.chooseCityState(driver);
+        tourPartTab.chooseWard(driver);
+        tourPartTab.enterValueOfPartShortDescription(driver,"");
+        tourPartTab.chooseTransportItem(driver);
+        tourPartTab.choosePartLogo(driver);
+        tourPartTab.clickToButtonSavePart(driver);
+        tourPartTab.clickToPriceOnTourNavigationMenu(driver);
 //
 //
 //        // Tab Tour part

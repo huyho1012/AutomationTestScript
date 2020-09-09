@@ -60,4 +60,7 @@ public class TourInfoTab extends AbstractPage {
 
     public void clickToItemOfNavigationMenu(WebDriver driver) {
     }
+
+    public boolean checkTourDetaiTabInfoDisplay() {
+    }
 }
