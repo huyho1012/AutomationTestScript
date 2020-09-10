@@ -1,8 +1,8 @@
 package Project.Business.Business;
 
 import Common.HandleFunction.AbstractPage;
-import Interfaces.Business.BusinessVerificationUI;
-import Interfaces.Common.LOCATION_PLACE_MODEL;
+import Interfaces.Business.Business.BusinessVerificationUI;
+import Interfaces.Shared.LOCATION_PLACE_MODEL;
 import org.openqa.selenium.WebDriver;
 
 public class BusinessVerificationRequest extends AbstractPage {
@@ -75,7 +75,7 @@ public class BusinessVerificationRequest extends AbstractPage {
         setTimeDelay(5);
     }
 
-    public String getTitleOfFormSendRequestSuccess() {
+    public String getTitleOfFormSendRequestSuccess(WebDriver driver) {
         waitForPageLoading(driver);
         waitElementToVisible(driver, BusinessVerificationUI.FORM_NOTIFICATION_SENT_REQUEST);
         return getTextElement(driver, BusinessVerificationUI.TITLE_FORM_NOTIFICATION_SENT_REQUEST);

@@ -65,4 +65,9 @@ public class BusinessPageManagement extends HeaderPage {
         System.out.println("Ownern of page: " + getTextElement(driver, BusinessPageManagementUI.ID_OF_PAGE_NAME,pageName));
         return getTextElement(driver,BusinessPageManagementUI.ID_OF_PAGE_NAME,pageName);
     }
+
+    public void clickToCreatePageToDisplayPopupCreatePage() {
+        waitForElementClickable(driver, BusinessPageManagementUI.BUTTON_OPEN_CREATE_PAGE_POPUP);
+        clickToElement(driver, BusinessPageManagementUI.BUTTON_OPEN_CREATE_PAGE_POPUP);
+    }
 }

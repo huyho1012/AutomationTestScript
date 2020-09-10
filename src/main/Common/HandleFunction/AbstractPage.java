@@ -439,9 +439,9 @@ public abstract class AbstractPage {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if (driver.toString().contains("chrome")){
+        } else if (driver.toString().contains("chrome")) {
             try {
-                Runtime.getRuntime().exec(new String[] {GlobalVariables.UPLOAD_ONE_FILE_CHROME, fileName});
+                Runtime.getRuntime().exec(new String[]{GlobalVariables.UPLOAD_ONE_FILE_CHROME, fileName});
             } catch (IOException e) {
                 e.printStackTrace();
             }

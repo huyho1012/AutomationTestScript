@@ -1,7 +1,7 @@
 package Project.Newsfeed.Newsfeed;
 
 import Common.HandleFunction.AbstractPage;
-import Interfaces.Business.BusinessVerificationUI;
+import Interfaces.Business.Business.BusinessVerificationUI;
 import Interfaces.Business.Tour.TourDashboardPageUI;
 import Interfaces.Newsfeed.Homepage.HeaderPageUI;
 import org.openqa.selenium.WebDriver;

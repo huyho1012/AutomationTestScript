@@ -1,8 +1,6 @@
 package Project.Business.Business;
 
-import Common.HandleFunction.AbstractPage;
-import Interfaces.Business.BusinessDashboardPageUI;
-import Interfaces.Business.BusinessVerificationUI;
+import Interfaces.Business.Business.BusinessDashboardPageUI;
 import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
 

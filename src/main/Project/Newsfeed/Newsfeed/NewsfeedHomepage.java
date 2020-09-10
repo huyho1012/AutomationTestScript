@@ -1,5 +1,6 @@
 package Project.Newsfeed.Newsfeed;
 
+import Interfaces.Newsfeed.Homepage.HeaderPageUI;
 import Interfaces.Newsfeed.Homepage.HomePageUI;
 import Interfaces.Wallet.WalletOverviewUI;
 import org.openqa.selenium.WebDriver;
@@ -67,17 +68,16 @@ public class NewsfeedHomepage extends HeaderPage {
         setTimeDelay(1);
     }
 
-    public boolean checkNewsfeedDisplay(WebDriver driver){
-        waitForPageLoading(driver);
-        if(getCurrentURL(driver).equals("https://www.hahalolo.com") && getPageTitle(driver).equalsIgnoreCase("Bảng tin | Hahalolo")){
+    public boolean checkNewsfeedDisplay(){
+        waitElementToVisible(driver, HeaderPageUI.MAIN_SEARCH);
+        if(getCurrentURL(driver).equals("https://test-newsfeed.hahalolo.com/") && getPageTitle(driver).equalsIgnoreCase("Bảng tin | Hahalolo")){
             return true;
         }else
             return false;
     }
 
     public boolean checkNewsfeedDisplayOnFirstTime(WebDriver driver) {
-        waitForPageLoading(driver);
-        if(checkNewsfeedDisplay(driver) && checkElementDisplay(driver, HomePageUI.FORM_UPDATE_NEW_INFO)){
+        if(checkNewsfeedDisplay() && checkElementDisplay(driver, HomePageUI.FORM_UPDATE_NEW_INFO)){
             return true;
         }
         else

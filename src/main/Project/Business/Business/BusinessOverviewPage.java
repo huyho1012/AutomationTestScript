@@ -1,7 +1,7 @@
 package Project.Business.Business;
 
 import Common.HandleFunction.AbstractTest;
-import Interfaces.Business.BusinessOverviewUI;
+import Interfaces.Business.Business.BusinessOverviewUI;
 import org.openqa.selenium.WebDriver;
 
 public class BusinessOverviewPage extends AbstractTest {
@@ -11,6 +11,7 @@ public class BusinessOverviewPage extends AbstractTest {
     }
 
     public boolean checkBusinessOverviewWithNewAccount(WebDriver driver) {
+        waitElementToVisible(driver, BusinessOverviewUI.OVERVIEW_DASHBOARD);
         return checkElementDisplay(driver, BusinessOverviewUI.CREATE_NEW_BUSINESS_ACCOUNT_BUTTON)
                 && getTextElement(driver, BusinessOverviewUI.TITLE_OVERVIEW_BUSINESS).equalsIgnoreCase("Tạo tài khoản kinh doanh")
                 && getTextElement(driver, BusinessOverviewUI.CONTENT_OVERVIEW_BUSINESS).equalsIgnoreCase("Bạn chưa sở hữu tài khoản kinh doanh, khởi tạo ngay để bắt đầu quá trình hoạt động kinh doanh trên Hahalolo cho doanh nghiệp của bạn. Với một tài khoản kinh doanh trên Hahalolo, bạn có thể điều hành, quản lý và phát triển doanh nghiệp một cách toàn diện.");

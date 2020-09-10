@@ -12,7 +12,7 @@
 <body>
 <h1>Test with firefox</h1>
 <p>
-  Test duration: 255.020s
+  Test duration: 71.092s
 </p>
 
 
@@ -25,25 +25,25 @@
             
 <tr>
   <td class="method">
-                  TC01_Booking_and_Payment_Workflow
+                  TC15_Create_New_Topic
       </td>
   <td class="duration">
-    243.871s
+    36.594s
   </td>
   <td class="result">
         
     
         
 
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name = &apos;prepayValue&apos;]&quot;}<br/>
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@data-bind,&apos;onCreateAlbum&apos;)]/ancestor::div[@id =&apos;media-album-area&apos;]/following-sibling::div//div[@class=&apos;media-list&apos;]/div[@class = &apos;media-list__item&apos;][1]&quot;}<br/>
 &nbsp; (Session info: chrome=85.0.4183.83)<br/>
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html<br/>
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;<br/>
 System info: host: &apos;ADMIN&apos;, ip: &apos;10.0.2.120&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.2&apos;<br/>
 Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60620}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
-Session ID: be5cd4ff7e93002aedf67eda76bea53f<br/>
-*** Element info: {Using=xpath, value=//input[@name = &apos;prepayValue&apos;]}</b></a><br />
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:61437}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 4f64e8562bb942994e6a651f5d7afd40<br/>
+*** Element info: {Using=xpath, value=//div[contains(@data-bind,&apos;onCreateAlbum&apos;)]/ancestor::div[@id =&apos;media-album-area&apos;]/following-sibling::div//div[@class=&apos;media-list&apos;]/div[@class = &apos;media-list__item&apos;][1]}</b></a><br />
     <div class="stackTrace" id="exception-0">
               java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
               java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)<br />
@@ -61,9 +61,10 @@ Session ID: be5cd4ff7e93002aedf67eda76bea53f<br/>
               org.openqa.selenium.By$ByXPath.findElement(By.java:353)<br />
               org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)<br />
               Common.HandleFunction.AbstractPage.findElement(AbstractPage.java:119)<br />
-              Common.HandleFunction.AbstractPage.sendKeyToElement(AbstractPage.java:142)<br />
-              Project.Business.Tour.TourGeneralSettingPage.enterDataValueToTextFieldOnPrepaymentTab(TourGeneralSettingPage.java:108)<br />
-              Testcase.TestRegister.TC01_Booking_and_Payment_Workflow(TestRegister.java:423)<br />
+              Common.HandleFunction.AbstractPage.clickToElement(AbstractPage.java:128)<br />
+              Project.Shared.Management.MediaManagement.selectOneImageOnMedia(MediaManagement.java:21)<br />
+              Project.Business.Tour.Topic.TourTopicPage.chooseTopicImage(TourTopicPage.java:26)<br />
+              Testcase.TestRegister.TC15_Create_New_Topic(TestRegister.java:535)<br />
               java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
               java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
               java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
@@ -93,6 +94,111 @@ Session ID: be5cd4ff7e93002aedf67eda76bea53f<br/>
       </table>
 
 
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">Testcase.TestRegister</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  TC05_Login_To_Newsfeed
+      </td>
+  <td class="duration">
+    3.326s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  TC10_CreateNewPage
+      </td>
+  <td class="duration">
+    12.782s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  TC11_Update_Prepayment_Cancellation_On_Tour_General_Information
+      </td>
+  <td class="duration">
+    4.720s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  TC12_Update_VAT_On_Tour_General_Information
+      </td>
+  <td class="duration">
+    0.228s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  TC13_Update_Age_Setting_On_Tour_General_Information
+      </td>
+  <td class="duration">
+    0.399s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  TC14_Update_Noti_Order_Setting_On_Tour_General_Information
+      </td>
+  <td class="duration">
+    1.399s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  TC15_Create_New_Tour
+      </td>
+  <td class="duration">
+    1.719s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+      </table>
   
 </body>
 </html>

@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Test with firefox"
-           tests="1"
+           tests="8"
            failures="1"
            errors="0"
            skipped="0"
-           time="243.871">
+           time="61.167">
   <properties />
-            <testcase name="TC01_Booking_and_Payment_Workflow" time="243.871" classname="Testcase.TestRegister">
+            <testcase name="TC15_Create_New_Topic" time="36.594" classname="Testcase.TestRegister">
                 <failure type="org.openqa.selenium.NoSuchElementException"
-                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name = &apos;prepayValue&apos;]&quot;}
+                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@data-bind,&apos;onCreateAlbum&apos;)]/ancestor::div[@id =&apos;media-album-area&apos;]/following-sibling::div//div[@class=&apos;media-list&apos;]/div[@class = &apos;media-list__item&apos;][1]&quot;}
   (Session info: chrome=85.0.4183.83)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;ADMIN&apos;, ip: &apos;10.0.2.120&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60620}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: be5cd4ff7e93002aedf67eda76bea53f
-*** Element info: {Using=xpath, value=//input[@name = &apos;prepayValue&apos;]}"
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:61437}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 4f64e8562bb942994e6a651f5d7afd40
+*** Element info: {Using=xpath, value=//div[contains(@data-bind,&apos;onCreateAlbum&apos;)]/ancestor::div[@id =&apos;media-album-area&apos;]/following-sibling::div//div[@class=&apos;media-list&apos;]/div[@class = &apos;media-list__item&apos;][1]}"
               >
-<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name = 'prepayValue']"}
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[contains(@data-bind,'onCreateAlbum')]/ancestor::div[@id ='media-album-area']/following-sibling::div//div[@class='media-list']/div[@class = 'media-list__item'][1]"}
   (Session info: chrome=85.0.4183.83)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'ADMIN', ip: '10.0.2.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60620}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: be5cd4ff7e93002aedf67eda76bea53f
-*** Element info: {Using=xpath, value=//input[@name = 'prepayValue']}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:61437}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 4f64e8562bb942994e6a651f5d7afd40
+*** Element info: {Using=xpath, value=//div[contains(@data-bind,'onCreateAlbum')]/ancestor::div[@id ='media-album-area']/following-sibling::div//div[@class='media-list']/div[@class = 'media-list__item'][1]}
   java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
   java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
   java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -43,9 +43,10 @@ Session ID: be5cd4ff7e93002aedf67eda76bea53f
   org.openqa.selenium.By$ByXPath.findElement(By.java:353)
   org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
   Common.HandleFunction.AbstractPage.findElement(AbstractPage.java:119)
-  Common.HandleFunction.AbstractPage.sendKeyToElement(AbstractPage.java:142)
-  Project.Business.Tour.TourGeneralSettingPage.enterDataValueToTextFieldOnPrepaymentTab(TourGeneralSettingPage.java:108)
-  Testcase.TestRegister.TC01_Booking_and_Payment_Workflow(TestRegister.java:423)
+  Common.HandleFunction.AbstractPage.clickToElement(AbstractPage.java:128)
+  Project.Shared.Management.MediaManagement.selectOneImageOnMedia(MediaManagement.java:21)
+  Project.Business.Tour.Topic.TourTopicPage.chooseTopicImage(TourTopicPage.java:26)
+  Testcase.TestRegister.TC15_Create_New_Topic(TestRegister.java:535)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -75,5 +76,12 @@ Session ID: be5cd4ff7e93002aedf67eda76bea53f
           </testcase>
   
   
-  
+            <testcase name="TC10_CreateNewPage" time="12.782" classname="Testcase.TestRegister" />
+                <testcase name="TC13_Update_Age_Setting_On_Tour_General_Information" time="0.399" classname="Testcase.TestRegister" />
+                <testcase name="TC14_Update_Noti_Order_Setting_On_Tour_General_Information" time="1.399" classname="Testcase.TestRegister" />
+                <testcase name="TC15_Create_New_Tour" time="1.719" classname="Testcase.TestRegister" />
+                <testcase name="TC11_Update_Prepayment_Cancellation_On_Tour_General_Information" time="4.720" classname="Testcase.TestRegister" />
+                <testcase name="TC12_Update_VAT_On_Tour_General_Information" time="0.228" classname="Testcase.TestRegister" />
+                <testcase name="TC05_Login_To_Newsfeed" time="3.326" classname="Testcase.TestRegister" />
+      
 </testsuite>

@@ -23,7 +23,6 @@ public abstract class AbstractTest extends AbstractPage {
     }
     protected String getEmailWithoutDomain(String email) {
         String[] splits = email.split("@");
-        System.out.println(splits[0]);
         return splits[0];
     }
 

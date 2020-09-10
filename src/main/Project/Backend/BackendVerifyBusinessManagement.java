@@ -62,4 +62,8 @@ public class BackendVerifyBusinessManagement extends AbstractPage {
     public String getStatusOfBusinessVerification(WebDriver driver, String businessName, String ownerName, String ownerEmail) {
         return getTextElement(driver, BackendVerifyBusiManagementUI.STATUS_VERIFICATION_OF_DIRECT_BUSINESS,businessName,ownerName,ownerEmail);
     }
+
+    public boolean checkConfirmPopupDisplay(WebDriver driver) {
+        return checkElementDisplay(driver, BackendVerifyBusiManagementUI.POPUP_CONFIRM_VERIFICATION);
+    }
 }
