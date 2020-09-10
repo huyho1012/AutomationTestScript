@@ -17,4 +17,5 @@ public class TourInfoUI {
     public static final String UPLOAD_GALLERY_BUTTON = "//button[contains(@data-bind,'uploadGalleries')]";
 
 
+    public static final String UPLOAD_BUTTON = "//button[contains(@data-bind,'%s')]";
 }

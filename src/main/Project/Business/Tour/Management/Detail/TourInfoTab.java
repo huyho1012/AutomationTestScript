@@ -3,10 +3,12 @@ package Project.Business.Tour.Management.Detail;
 import Interfaces.Business.Tour.Management.Detail.TourInfoUI;
 import Interfaces.Shared.MediaManagementUI;
 import Project.Business.Tour.Management.TourCommon;
+import Project.Shared.Management.MediaManagement;
 import org.openqa.selenium.WebDriver;
 
 public class TourInfoTab extends TourCommon {
     WebDriver driver;
+    MediaManagement media;
     public TourInfoTab(WebDriver webDriver){
         driver = webDriver;
     }
@@ -21,14 +23,29 @@ public class TourInfoTab extends TourCommon {
         sendKeyToElement(driver, TourInfoUI.DYNAMIC_TEXT_AREA, valueData,nameTextarea);
     }
 
-    public void chooseImageToUpdateTourInfo(WebDriver driver, String nameFunctionUpload) {
-        clickToElement(driver, TourInfoUI.UPLOAD_COVER_BUTTON, nameFunctionUpload);
-        if(nameFunctionUpload=="" || nameFunctionUpload == ""){
-            chooseImageOnMediaManagement(driver,1);
-        }
-        else {
-            chooseImageOnMediaManagement(driver,10);
-        }
+    public void updateLogo(WebDriver driver, String nameFunctionUpload) {
+        media = new MediaManagement(driver);
+        String fileImage ="";
+        clickToElement(driver, TourInfoUI.UPLOAD_BUTTON, "uploadLogo");
+        waitElementToVisible(driver,MediaManagementUI.MEDIA_MANAGEMENT_POPUP);
+        media.uploadImageFromLocalToMedia(driver, fileImage);
+        media.selectOneImageOnMedia(driver);
+    }
+    public void updateCover(WebDriver driver, String nameFunctionUpload) {
+        media = new MediaManagement(driver);
+        String fileImage ="";
+        clickToElement(driver, TourInfoUI.UPLOAD_BUTTON, "uploadCover");
+        waitElementToVisible(driver,MediaManagementUI.MEDIA_MANAGEMENT_POPUP);
+        media.uploadImageFromLocalToMedia(driver, fileImage);
+        media.selectOneImageOnMedia(driver);
+    }
+    public void updateTourGallery(WebDriver driver, String nameFunctionUpload) {
+        media = new MediaManagement(driver);
+        String fileImage ="";
+        clickToElement(driver, TourInfoUI.UPLOAD_BUTTON, "uploadGalleries");
+        waitElementToVisible(driver,MediaManagementUI.MEDIA_MANAGEMENT_POPUP);
+        media.uploadImageFromLocalToMedia(driver, fileImage);
+        media.selectMoreImageOnMedia(driver);
     }
 
     public void chooseImageOnMediaManagement(WebDriver driver, int number) {
@@ -54,8 +71,6 @@ public class TourInfoTab extends TourCommon {
         waitForElementClickable(driver, TourInfoUI.SAVE_TOUR_BUTTON);
         clickToElement(driver, TourInfoUI.SAVE_TOUR_BUTTON);
     }
-
-
 
     public boolean checkTourDetaiTabInfoDisplay() {
         return true;

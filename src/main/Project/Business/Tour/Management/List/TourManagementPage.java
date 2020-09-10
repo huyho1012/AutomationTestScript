@@ -11,32 +11,41 @@ public class TourManagementPage extends TourCommon {
     }
 
 
-    public void enterValueOfTourName(WebDriver driver, String s) {
+    public void enterValueOfTourName(WebDriver driver, String tourName) {
+        waitElementToVisible(driver, TourManagementUI.TOUR_NAME_FIELD);
+        sendKeyToElement(driver, TourManagementUI.TOUR_NAME_FIELD,tourName);
     }
 
-    public void chooseTourType(WebDriver driver) {
+    public void chooseTourType(WebDriver driver, String tourType) {
+        waitElementToVisible(driver, TourManagementUI.POPUP_CREATE_NEW_TOUR);
+        selectItemInDropdownByText(driver, TourManagementUI.TOUR_TYPE_DROP_DOWN,tourType);
     }
 
-    public void chooseTourTopic(WebDriver driver) {
+    public void chooseTourTopic(WebDriver driver ,String tourTopic) {
+        waitElementToVisible(driver, TourManagementUI.POPUP_CREATE_NEW_TOUR);
+        selectItemInDropdownByText(driver, TourManagementUI.TOUR_TOPIC_DROP_DOWN,tourTopic);
     }
 
     public void clickSaveButtonToCreateTour(WebDriver driver) {
+        waitElementToVisible(driver, TourManagementUI.BUTTON_START_CREATE_TOUR);
+        clickToElement(driver, TourManagementUI.BUTTON_START_CREATE_TOUR);
     }
 
     public boolean checkPageWithCaseNoTourDisplay() {
         return true;
     }
 
-    public void clickButtonStartCreateNewTour(WebDriver driver) {
+    public void clickStartCreateTourButtonOnCenterListPage(WebDriver driver) {
         waitElementToVisible(driver, TourManagementUI.BUTTON_START_CREATE_TOUR);
         clickToElement(driver, TourManagementUI.BUTTON_START_CREATE_TOUR);
     }
-    public void clickButtonCreateTour(WebDriver driver){
-        waitForElementClickable(driver,TourManagementUI.BUTTON_CREATE_TOUR);
-        clickToElement(driver,TourManagementUI.BUTTON_CREATE_TOUR);
+    public void clickToButtonSaveOnPopup(WebDriver driver){
+        waitForElementClickable(driver,TourManagementUI.BUTTON_SAVE);
+        clickToElement(driver,TourManagementUI.BUTTON_SAVE);
     }
 
     public boolean checkPopupCreateTourDisplay() {
-        return checkElementDisplay()
+        waitElementToVisible(driver, TourManagementUI.POPUP_CREATE_NEW_TOUR);
+        return getTextElement(driver, TourManagementUI.POPUP_CREATE_TOUR_TITLE).contentEquals("Tạo Tour mới");
     }
 }

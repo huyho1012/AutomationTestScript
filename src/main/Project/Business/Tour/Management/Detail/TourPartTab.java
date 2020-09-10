@@ -1,20 +1,30 @@
 package Project.Business.Tour.Management.Detail;
 
+import Interfaces.Business.Tour.Management.Detail.TourInfoUI;
 import Interfaces.Business.Tour.Management.Detail.TourPartUI;
+import Interfaces.Shared.MediaManagementUI;
 import Project.Business.Tour.Management.TourCommon;
+import Project.Shared.Management.MediaManagement;
 import org.openqa.selenium.WebDriver;
 
 public class TourPartTab extends TourCommon {
+    MediaManagement media;
     WebDriver driver;
     public TourPartTab(WebDriver webDriver){
         driver = webDriver;
     }
 
     public boolean checkPartTabDisplaySuccess() {
-        return true;
+        waitElementToVisible(driver,TourPartUI.TOUR_PART);
+        return checkElementDisplay(driver, TourPartUI.TOUR_PART);
     }
-
+    public boolean checkPartDetailDisplay(){
+        waitElementToVisible(driver,TourPartUI.TOUR_PART_DETAIL);
+        return checkElementDisplay(driver, TourPartUI.BUTTON_SAVE_PART);
+    }
     public void clickToCreateNewPartButton() {
+        waitForElementClickable(driver,TourPartUI.BUTTON_CREATE_NEW_PART);
+        clickToElement(driver, TourPartUI.BUTTON_CREATE_NEW_PART);
     }
     public void enterValueToDynamicFieldOnPartTab(WebDriver driver, String nameField, String valueData) {
         waitElementToVisible(driver, TourPartUI.DYNAMIC_FIELD, nameField);
@@ -31,13 +41,24 @@ public class TourPartTab extends TourCommon {
         setTimeDelay(1);
     }
 
-    public void chooseTransportItem(WebDriver driver) {
+    public void chooseNewTransportItem(WebDriver driver, String itemTransport) {
+        waitForElementClickable(driver, TourPartUI.TRANSPORT_ITEM, itemTransport);
+        clickToElement(driver, TourPartUI.TRANSPORT_ITEM, itemTransport);
+        setTimeDelay(1);
     }
 
     public void choosePartLogo(WebDriver driver) {
+        media = new MediaManagement(driver);
+        String fileImage ="";
+        clickToElement(driver, TourPartUI.UPLOAD_BUTTON, "click:uploadCover");
+        waitElementToVisible(driver, MediaManagementUI.MEDIA_MANAGEMENT_POPUP);
+        media.uploadImageFromLocalToMedia(driver, fileImage);
+        media.selectOneImageOnMedia(driver);
     }
 
     public void clickToButtonSavePart(WebDriver driver) {
+        waitForElementClickable(driver, TourPartUI.BUTTON_SAVE_PART);
+        clickToElement(driver, TourPartUI.BUTTON_SAVE_PART);
     }
 
     public boolean checkPartHasBeenCreatedSuccessfully() {
