@@ -1,6 +1,6 @@
 package Project.Shared.Management;
 
-import Common.HandleFunction.AbstractPage;
+import Common.HelperFunction.AbstractPage;
 import Interfaces.Shared.MediaManagementUI;
 import org.openqa.selenium.WebDriver;
 
@@ -18,8 +18,10 @@ public class MediaManagement extends AbstractPage {
     }
     public void selectOneImageOnMedia(WebDriver driver){
         waitElementToVisible(driver,MediaManagementUI.MEDIA_MANAGEMENT_POPUP);
-        clickToElement(driver, MediaManagementUI.ROOT_IMAGE,"1");
+        clickToElement(driver, MediaManagementUI.ROOT_IMAGE);
+        waitForElementClickable(driver,MediaManagementUI.SELECT_BUTTON);
         clickToElement(driver,MediaManagementUI.SELECT_BUTTON);
+        setTimeDelay(1);
     }
     public void selectMoreImageOnMedia(WebDriver driver){
         waitElementToVisible(driver,MediaManagementUI.MEDIA_MANAGEMENT_POPUP);

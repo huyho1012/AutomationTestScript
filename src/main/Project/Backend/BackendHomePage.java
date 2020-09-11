@@ -1,7 +1,7 @@
 package Project.Backend;
 
-import Common.HandleFunction.AbstractPage;
-import Interfaces.Backend.BackEndCommonUI;
+import Common.HelperFunction.AbstractPage;
+import Interfaces.hahalolo_backend.BackEndCommonUI;
 import org.openqa.selenium.WebDriver;
 
 public class BackendHomePage extends AbstractPage {

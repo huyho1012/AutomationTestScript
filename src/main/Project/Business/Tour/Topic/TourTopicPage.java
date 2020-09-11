@@ -1,6 +1,8 @@
 package Project.Business.Tour.Topic;
 
-import Interfaces.Business.Tour.Topic.TourTopicPageUI;
+import Interfaces.Shared.MediaManagementUI;
+import Interfaces.hahalolo_business.Tour.Topic.TourTopicPageUI;
+import Project.Business.Tour.Management.TourCommon;
 import Project.Newsfeed.Newsfeed.HeaderPage;
 import Project.Shared.Management.MediaManagement;
 import org.openqa.selenium.WebDriver;
@@ -23,7 +25,10 @@ public class TourTopicPage extends HeaderPage {
         waitForElementClickable(driver,TourTopicPageUI.BUTTON_ADD_TOPIC_IMAGE);
         clickToElement(driver,TourTopicPageUI.BUTTON_ADD_TOPIC_IMAGE);
         media.uploadImageFromLocalToMedia(driver,fileName);
+        waitForElementInvisible(driver, MediaManagementUI.PROCESSING_BAR);
+        setTimeDelay(10);
         media.selectOneImageOnMedia(driver);
+        setTimeDelay(1);
     }
 
     public void chooseLanguageOfTopic(WebDriver driver , String langName) {
@@ -33,16 +38,19 @@ public class TourTopicPage extends HeaderPage {
     public void enterTopicName(WebDriver driver, String topicName) {
         waitForElementClickable(driver, TourTopicPageUI.TOPIC_NAME_FIELD);
         sendKeyToElement(driver, TourTopicPageUI.TOPIC_NAME_FIELD, topicName);
+        setTimeDelay(1);
     }
 
     public void enterTopicDescription(WebDriver driver, String descTopic) {
         waitForElementClickable(driver, TourTopicPageUI.TOPIC_DESCRIPTION_TEXT_AREA);
         sendKeyToElement(driver, TourTopicPageUI.TOPIC_DESCRIPTION_TEXT_AREA, descTopic);
+        setTimeDelay(1);
     }
 
     public void clickToSaveButton(WebDriver driver) {
         waitForElementClickable(driver, TourTopicPageUI.BUTTON_SAVE_TOPIC);
         clickToElement(driver, TourTopicPageUI.BUTTON_SAVE_TOPIC);
+        setTimeDelay(1);
     }
 
     public boolean checkPageWithCaseNoTopicDisplay() {
@@ -50,7 +58,7 @@ public class TourTopicPage extends HeaderPage {
     }
 
     public boolean checkCreatedTopicDisplay(WebDriver driver) {
-        return true;
+        return checkElementDisplay(driver, TourTopicPageUI.DISPLAYED_TOPIC_NAME);
     }
 
     public boolean checkPopupCreateTopicDisplay() {

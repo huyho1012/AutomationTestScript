@@ -1,7 +1,6 @@
 package Project.Business.Tour.Management.Detail;
 
-import Interfaces.Business.Tour.Management.Detail.TourInfoUI;
-import Interfaces.Business.Tour.Management.Detail.TourPartUI;
+import Interfaces.hahalolo_business.Tour.Management.Detail.TourPartUI;
 import Interfaces.Shared.MediaManagementUI;
 import Project.Business.Tour.Management.TourCommon;
 import Project.Shared.Management.MediaManagement;
@@ -47,13 +46,15 @@ public class TourPartTab extends TourCommon {
         setTimeDelay(1);
     }
 
-    public void choosePartLogo(WebDriver driver) {
+    public void choosePartLogo(WebDriver driver, String fileImage) {
         media = new MediaManagement(driver);
-        String fileImage ="";
-        clickToElement(driver, TourPartUI.UPLOAD_BUTTON, "click:uploadCover");
+        clickToElementByJS(driver, TourPartUI.UPLOAD_BUTTON, "click:uploadCover");
         waitElementToVisible(driver, MediaManagementUI.MEDIA_MANAGEMENT_POPUP);
         media.uploadImageFromLocalToMedia(driver, fileImage);
+        waitForElementInvisible(driver, MediaManagementUI.PROCESSING_BAR);
+        setTimeDelay(10);
         media.selectOneImageOnMedia(driver);
+        setTimeDelay(1);
     }
 
     public void clickToButtonSavePart(WebDriver driver) {

@@ -1,6 +1,6 @@
 package Project.Business.Tour.Management.Detail;
 
-import Interfaces.Business.Tour.Management.Detail.TourInfoUI;
+import Interfaces.hahalolo_business.Tour.Management.Detail.TourInfoUI;
 import Interfaces.Shared.MediaManagementUI;
 import Project.Business.Tour.Management.TourCommon;
 import Project.Shared.Management.MediaManagement;
@@ -23,33 +23,35 @@ public class TourInfoTab extends TourCommon {
         sendKeyToElement(driver, TourInfoUI.DYNAMIC_TEXT_AREA, valueData,nameTextarea);
     }
 
-    public void updateLogo(WebDriver driver, String nameFunctionUpload) {
+    public void updateLogo(WebDriver driver, String fileImage) {
         media = new MediaManagement(driver);
-        String fileImage ="";
-        clickToElement(driver, TourInfoUI.UPLOAD_BUTTON, "uploadLogo");
+        clickToElementByJS(driver, TourInfoUI.UPLOAD_BUTTON, "uploadLogo");
         waitElementToVisible(driver,MediaManagementUI.MEDIA_MANAGEMENT_POPUP);
         media.uploadImageFromLocalToMedia(driver, fileImage);
+        waitForElementInvisible(driver, MediaManagementUI.PROCESSING_BAR);
+        setTimeDelay(10);
         media.selectOneImageOnMedia(driver);
+        setTimeDelay(1);
     }
-    public void updateCover(WebDriver driver, String nameFunctionUpload) {
+    public void updateCover(WebDriver driver, String fileImage) {
         media = new MediaManagement(driver);
-        String fileImage ="";
-        clickToElement(driver, TourInfoUI.UPLOAD_BUTTON, "uploadCover");
+        clickToElementByJS(driver, TourInfoUI.UPLOAD_BUTTON, "uploadCover");
         waitElementToVisible(driver,MediaManagementUI.MEDIA_MANAGEMENT_POPUP);
         media.uploadImageFromLocalToMedia(driver, fileImage);
+        waitForElementInvisible(driver, MediaManagementUI.PROCESSING_BAR);
+        setTimeDelay(10);
         media.selectOneImageOnMedia(driver);
+        setTimeDelay(1);
     }
-    public void updateTourGallery(WebDriver driver, String nameFunctionUpload) {
+    public void updateTourGallery(WebDriver driver, String fileImage) {
         media = new MediaManagement(driver);
-        String fileImage ="";
-        clickToElement(driver, TourInfoUI.UPLOAD_BUTTON, "uploadGalleries");
+        clickToElementByJS(driver, TourInfoUI.UPLOAD_BUTTON, "uploadGalleries");
         waitElementToVisible(driver,MediaManagementUI.MEDIA_MANAGEMENT_POPUP);
         media.uploadImageFromLocalToMedia(driver, fileImage);
-        media.selectMoreImageOnMedia(driver);
-    }
-
-    public void chooseImageOnMediaManagement(WebDriver driver, int number) {
-        uploadImageToMediaManagement(driver);
+        waitForElementInvisible(driver, MediaManagementUI.PROCESSING_BAR);
+        setTimeDelay(10);
+        media.selectOneImageOnMedia(driver);
+        setTimeDelay(1);
     }
 
     public void uploadImageToMediaManagement(WebDriver driver){
@@ -64,15 +66,19 @@ public class TourInfoTab extends TourCommon {
         sendKeyToElement(driver, TourInfoUI.DYNAMIC_FIELD_TAB_INFO, valueData, nameField);
     }
     public void chooseItemToUpdateLocation(WebDriver driver, String dropdownName, String valueData) {
-      selectItemInCustomDropdown(driver, TourInfoUI.DYNAMIC_DROPDOWN, TourInfoUI.ITEM_DYNAMIC_DROPDOWN,valueData,dropdownName);
+        clickToElement(driver,  TourInfoUI.DYNAMIC_DROPDOWN,dropdownName );
+        setTimeDelay(1);
+        clickToElementByJS(driver, TourInfoUI.ITEM_DYNAMIC_DROPDOWN,dropdownName, valueData);
+        setTimeDelay(1);
     }
 
     public void clickToButtonSaveTour() {
         waitForElementClickable(driver, TourInfoUI.SAVE_TOUR_BUTTON);
         clickToElement(driver, TourInfoUI.SAVE_TOUR_BUTTON);
+        setTimeDelay(2);
     }
 
     public boolean checkTourDetaiTabInfoDisplay() {
-        return true;
+        return checkElementDisplay(driver, TourInfoUI.TAB_INFORMATION);
     }
 }

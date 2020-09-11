@@ -1,6 +1,6 @@
 package Project.Shared.ForgotPass;
 
-import Common.HandleFunction.AbstractPage;
+import Common.HelperFunction.AbstractPage;
 import org.openqa.selenium.WebDriver;
 
 public class ForgotPassword extends AbstractPage {

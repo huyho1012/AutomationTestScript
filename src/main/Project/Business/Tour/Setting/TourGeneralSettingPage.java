@@ -1,6 +1,6 @@
 package Project.Business.Tour.Setting;
 
-import Interfaces.Business.Tour.GeneralSetting.TourGeneralSettingPageUI;
+import Interfaces.hahalolo_business.Tour.GeneralSetting.TourGeneralSettingPageUI;
 import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
 
@@ -76,30 +76,18 @@ public class TourGeneralSettingPage extends HeaderPage {
 
     public boolean checkVATSettingPageDisplay(WebDriver driver) {
         waitElementToVisible(driver,TourGeneralSettingPageUI.TITLE_OF_GENERAL_INFO);
-        if(getAttributeValue(driver,TourGeneralSettingPageUI.NAVBAR_MENU,"class","vat").contains("active")){
-            return true;
-        }
-        else
-            return false;
+        return getAttributeValue(driver, TourGeneralSettingPageUI.NAVBAR_MENU, "class", "vat").contains("active");
     }
 
     public boolean checkAgeSettingPageDisplay(WebDriver driver){
         waitElementToVisible(driver,TourGeneralSettingPageUI.TITLE_OF_GENERAL_INFO);
-        if(getAttributeValue(driver,TourGeneralSettingPageUI.NAVBAR_MENU,"class","age").contains("active")){
-            return true;
-        }
-        else
-            return false;
+        return getAttributeValue(driver, TourGeneralSettingPageUI.NAVBAR_MENU, "class", "age").contains("active");
 
     }
 
     public boolean checkNotiForOrderSettingPageDisplay(WebDriver driver) {
         waitElementToVisible(driver,TourGeneralSettingPageUI.TITLE_OF_GENERAL_INFO);
-        if(getAttributeValue(driver,TourGeneralSettingPageUI.NAVBAR_MENU,"class","mail").contains("active")){
-            return true;
-        }
-        else
-            return false;
+        return getAttributeValue(driver, TourGeneralSettingPageUI.NAVBAR_MENU, "class", "mail").contains("active");
     }
 
     public void enterDataValueToTextFieldOnPrepaymentTab(WebDriver driver, String nameField, String valueData) {

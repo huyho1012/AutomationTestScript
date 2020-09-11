@@ -1,6 +1,6 @@
 package Project.Business.Business;
 
-import Interfaces.Business.Business.BusinessInfoPageUI;
+import Interfaces.hahalolo_business.Business.BusinessInfoPageUI;
 import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
 

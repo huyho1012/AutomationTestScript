@@ -1,6 +1,6 @@
 package Common.LogAndReport;
 
-import Common.HandleFunction.VerificationFailures;
+import Common.HelperFunction.VerificationFailures;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.testng.IInvokedMethod;

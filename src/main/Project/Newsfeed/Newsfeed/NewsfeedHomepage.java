@@ -1,8 +1,7 @@
 package Project.Newsfeed.Newsfeed;
 
-import Interfaces.Newsfeed.Homepage.HeaderPageUI;
-import Interfaces.Newsfeed.Homepage.HomePageUI;
-import Interfaces.Wallet.WalletOverviewUI;
+import Interfaces.hahalolo_newsfeed.Homepage.HeaderPageUI;
+import Interfaces.hahalolo_newsfeed.Homepage.HomePageUI;
 import org.openqa.selenium.WebDriver;
 
 public class NewsfeedHomepage extends HeaderPage {
@@ -13,8 +12,7 @@ public class NewsfeedHomepage extends HeaderPage {
 
     public boolean formFirstUpdateInfoIsDisplay() {
         waitElementToVisible(driver,HomePageUI.UPDATE_INFO_BUTTON);
-        if(checkElementDisplay(driver, HomePageUI.FORM_UPDATE_NEW_INFO)) return true;
-            return false;
+        return checkElementDisplay(driver, HomePageUI.FORM_UPDATE_NEW_INFO);
     }
 
     public String getTitleOfFormFirstUpdateInfo() {
@@ -70,17 +68,10 @@ public class NewsfeedHomepage extends HeaderPage {
 
     public boolean checkNewsfeedDisplay(){
         waitElementToVisible(driver, HeaderPageUI.MAIN_SEARCH);
-        if(getCurrentURL(driver).equals("https://test-newsfeed.hahalolo.com/") && getPageTitle(driver).equalsIgnoreCase("Bảng tin | Hahalolo")){
-            return true;
-        }else
-            return false;
+        return getCurrentURL(driver).equals("https://test-newsfeed.hahalolo.com/") && getPageTitle(driver).equalsIgnoreCase("Bảng tin | Hahalolo");
     }
 
     public boolean checkNewsfeedDisplayOnFirstTime(WebDriver driver) {
-        if(checkNewsfeedDisplay() && checkElementDisplay(driver, HomePageUI.FORM_UPDATE_NEW_INFO)){
-            return true;
-        }
-        else
-            return false;
+        return checkNewsfeedDisplay() && checkElementDisplay(driver, HomePageUI.FORM_UPDATE_NEW_INFO);
     }
 }

@@ -1,6 +1,6 @@
 package Project.Business.Business;
 
-import Interfaces.Business.Business.BusinessDashboardPageUI;
+import Interfaces.hahalolo_business.Business.BusinessDashboardPageUI;
 import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
 
@@ -25,12 +25,9 @@ public class BusinessDashboardPage extends HeaderPage {
 
     public boolean checkPageIsDisplaySuccessfully() {
        waitElementToVisible(driver, BusinessDashboardPageUI.DASBOARD_PAGE);
-       if(getTextElement(driver, BusinessDashboardPageUI.DASBOARD_TITLE).equalsIgnoreCase("Quản lý tài khoản kinh doanh")
-           && checkElementDisplay(driver, BusinessDashboardPageUI.FORM_BUSI_INFO) && checkElementDisplay(driver, BusinessDashboardPageUI.FORM_BUSI_PAGE)
-           && checkElementDisplay(driver, BusinessDashboardPageUI.FORM_BUSI_STAFF)){
-           return true;
-       }
-       else return false;
+        return getTextElement(driver, BusinessDashboardPageUI.DASBOARD_TITLE).equalsIgnoreCase("Quản lý tài khoản kinh doanh")
+                && checkElementDisplay(driver, BusinessDashboardPageUI.FORM_BUSI_INFO) && checkElementDisplay(driver, BusinessDashboardPageUI.FORM_BUSI_PAGE)
+                && checkElementDisplay(driver, BusinessDashboardPageUI.FORM_BUSI_STAFF);
     }
 
     public void clickCreatePageNowButton() {

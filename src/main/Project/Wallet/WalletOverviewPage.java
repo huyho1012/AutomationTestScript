@@ -1,7 +1,7 @@
 package Project.Wallet;
 
-import Common.HandleFunction.AbstractPage;
-import Interfaces.Wallet.WalletOverviewUI;
+import Common.HelperFunction.AbstractPage;
+import Interfaces.hahalolo_wallet.WalletOverviewUI;
 import org.openqa.selenium.WebDriver;
 
 public class WalletOverviewPage extends AbstractPage {
@@ -33,10 +33,7 @@ public class WalletOverviewPage extends AbstractPage {
 
     public boolean checkCreatePaymentAccountPopupIsDisplay() {
         System.out.println(getAttributeValue(driver,WalletOverviewUI.POPUP_CREATE_PAYMENT_ACCOUNT,"style"));
-        if(getAttributeValue(driver,WalletOverviewUI.POPUP_CREATE_PAYMENT_ACCOUNT,"style").contains("display: block")) {
-            return true;
-        }else
-        return false;
+        return getAttributeValue(driver, WalletOverviewUI.POPUP_CREATE_PAYMENT_ACCOUNT, "style").contains("display: block");
     }
 
     public void clickToFinishButton(WebDriver driver) {

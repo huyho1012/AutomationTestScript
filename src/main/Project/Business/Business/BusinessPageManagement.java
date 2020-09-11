@@ -1,7 +1,6 @@
 package Project.Business.Business;
 
-import Common.HandleFunction.AbstractPage;
-import Interfaces.Business.Business.BusinessPageManagementUI;
+import Interfaces.hahalolo_business.Business.BusinessPageManagementUI;
 import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
 
@@ -49,11 +48,8 @@ public class BusinessPageManagement extends HeaderPage {
         waitElementToVisible(driver, BusinessPageManagementUI.BUTTON_ASSIGNED_PAGE);
         System.out.println("Page name on Details: " + getTextElement(driver, BusinessPageManagementUI.PAGE_NAME_ON_DETAIL));
         System.out.println("Page name on list: " + getTextElement(driver, BusinessPageManagementUI.PAGE_NAME_ON_PAGE_LIST));
-        if(getTextElement(driver, BusinessPageManagementUI.PAGE_NAME_ON_DETAIL).contains(pageName)
-                && getTextElement(driver, BusinessPageManagementUI.PAGE_NAME_ON_PAGE_LIST).contains(pageName)){
-            return true;
-        } else
-            return false;
+        return getTextElement(driver, BusinessPageManagementUI.PAGE_NAME_ON_DETAIL).contains(pageName)
+                && getTextElement(driver, BusinessPageManagementUI.PAGE_NAME_ON_PAGE_LIST).contains(pageName);
     }
 
     public String getOwnerOfDirectPage(WebDriver driver, String pageName) {

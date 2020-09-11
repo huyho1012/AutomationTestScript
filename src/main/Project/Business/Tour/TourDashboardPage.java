@@ -1,6 +1,6 @@
 package Project.Business.Tour;
 
-import Interfaces.Business.Tour.TourDashboardPageUI;
+import Interfaces.hahalolo_business.Tour.TourDashboardPageUI;
 import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
 

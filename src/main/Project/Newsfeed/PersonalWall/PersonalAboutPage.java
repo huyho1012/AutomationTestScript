@@ -1,8 +1,7 @@
 package Project.Newsfeed.PersonalWall;
 
-import Common.HandleFunction.AbstractPage;
-import Interfaces.Newsfeed.PersonaWall.PersonalHeadCoverUI;
-import Interfaces.Newsfeed.PersonaWall.PersonalUI;
+import Interfaces.hahalolo_newsfeed.PersonaWall.PersonalHeadCoverUI;
+import Interfaces.hahalolo_newsfeed.PersonaWall.PersonalUI;
 import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
 
@@ -26,10 +25,7 @@ public class PersonalAboutPage extends HeaderPage {
 
     public boolean checkPageIsDisplay(String fullName) {
         waitElementToVisible(driver, PersonalHeadCoverUI.PERSONAL_PAGE);
-        if(getPageTitle(driver).equalsIgnoreCase("Giới thiệu - Trang cá nhân | Hahalolo")
-                && getTextElement(driver, PersonalHeadCoverUI.HEADER_COVER_FULLNAME).equalsIgnoreCase(fullName)){
-            return true;
-        }
-        return false;
+        return getPageTitle(driver).equalsIgnoreCase("Giới thiệu - Trang cá nhân | Hahalolo")
+                && getTextElement(driver, PersonalHeadCoverUI.HEADER_COVER_FULLNAME).equalsIgnoreCase(fullName);
     }
 }

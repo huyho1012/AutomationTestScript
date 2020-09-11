@@ -1,9 +1,9 @@
 package Project.Newsfeed.Newsfeed;
 
-import Common.HandleFunction.AbstractPage;
-import Interfaces.Business.Business.BusinessVerificationUI;
-import Interfaces.Business.Tour.TourDashboardPageUI;
-import Interfaces.Newsfeed.Homepage.HeaderPageUI;
+import Common.HelperFunction.AbstractPage;
+import Interfaces.hahalolo_business.Business.BusinessVerificationUI;
+import Interfaces.hahalolo_business.Tour.TourDashboardPageUI;
+import Interfaces.hahalolo_newsfeed.Homepage.HeaderPageUI;
 import org.openqa.selenium.WebDriver;
 
 public class HeaderPage extends AbstractPage {

@@ -1,7 +1,7 @@
 package Project.Business.Business;
 
-import Common.HandleFunction.AbstractPage;
-import Interfaces.Business.Business.BusinessVerificationUI;
+import Common.HelperFunction.AbstractPage;
+import Interfaces.hahalolo_business.Business.BusinessVerificationUI;
 import Interfaces.Shared.LOCATION_PLACE_MODEL;
 import org.openqa.selenium.WebDriver;
 

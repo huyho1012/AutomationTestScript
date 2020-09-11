@@ -1,7 +1,7 @@
 package Project.Business.Business;
 
-import Common.HandleFunction.AbstractTest;
-import Interfaces.Business.Business.BusinessOverviewUI;
+import Common.HelperFunction.AbstractTest;
+import Interfaces.hahalolo_business.Business.BusinessOverviewUI;
 import org.openqa.selenium.WebDriver;
 
 public class BusinessOverviewPage extends AbstractTest {
@@ -18,11 +18,8 @@ public class BusinessOverviewPage extends AbstractTest {
     }
 
     public boolean checkOverViewPageWithHaveBusiness() {
-        if(checkElementDisplay(driver, BusinessOverviewUI.BUTTON_BUSI_MANAGEMENT)
-            &&  getTextElement(driver,BusinessOverviewUI.TITLE_OVERVIEW_BUSINESS).equalsIgnoreCase("Quản lý tài khoản")){
-            return true;
-        } else
-            return false;
+        return checkElementDisplay(driver, BusinessOverviewUI.BUTTON_BUSI_MANAGEMENT)
+                && getTextElement(driver, BusinessOverviewUI.TITLE_OVERVIEW_BUSINESS).equalsIgnoreCase("Quản lý tài khoản");
     }
     public void clickToCreateNewBusiness(WebDriver driver) {
         waitForElementClickable(driver, BusinessOverviewUI.CREATE_NEW_BUSINESS_ACCOUNT_BUTTON);

@@ -1,7 +1,7 @@
 package Project.Shared.SingUp;
 
-import Interfaces.Newsfeed.StartApp.CommonStartApp;
-import Interfaces.Newsfeed.StartApp.SignUp.SignUpUI;
+import Project.Shared.CommonStartApp;
+import Interfaces.Shared.SignUp.SignUpUI;
 import org.openqa.selenium.WebDriver;
 
 import java.util.ArrayList;
@@ -84,9 +84,6 @@ public class SignUpPage extends CommonStartApp {
 
 
     public boolean checkVerifyPageDisplay() {
-        if(checkElementDisplay(driver, SignUpUI.VERIFY_ACCOUNT_FORM_PAGE) && getPageTitle(driver).equals("Kích hoạt tài khoản | Hahalolo")){
-            return true;
-        }
-        else return false;
+        return checkElementDisplay(driver, SignUpUI.VERIFY_ACCOUNT_FORM_PAGE) && getPageTitle(driver).equals("Kích hoạt tài khoản | Hahalolo");
     }
 }
