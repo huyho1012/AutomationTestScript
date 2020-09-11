@@ -1,6 +1,6 @@
-package Interfaces.hahalolo_business.Tour.Promotion;
+package Interfaces.hahalolo_business.Promotion;
 
-public class TourPromotionUI {
+public class PromotionUI {
     public static final String PROMOTION_LIST = "";
     public static final String PROMOTION_DETAIL = "";
 
@@ -13,10 +13,12 @@ public class TourPromotionUI {
     public static final String PROMO_TYPE_FIX_AMOUNT = "//input[@id ='promotion-type-1']/following-sibling::label";
     public static final String PROMO_TYPE_PER_CENT = "//input[@id ='promotion-type-2']/following-sibling::label";
 
-    public static final String DISCOUNT_AMOUT = "//input[@name ='tn356']";
+    public static final String DISCOUNT_AMOUNT = "//input[@name ='tn356']";
     public static final String MIN_ORDER_VALUE = "//input[@name ='tn358']";
     public static final String MIN_PER = "//input[@name ='tn361']";
 
+    public static final String PROMOTION_STATUS = "//input[@id='public-promotion']/following-sibling::label";
+    public static final String FORM_CREATE_EDIT_PROMO = "//div[contains(@data-bind,'with: promotionVM')]";
     public static final String BUTTON_ADD_PROMOTION_LEVEL  = "//button[contains(@data-bind,'addValuePromotion')]";
     public static final String APPLY_ADVANCED_MODE  = "//input[@id = 'apply-mode']/following-sibling::label";
 
@@ -28,6 +30,11 @@ public class TourPromotionUI {
     // PROMOTION AVDANCE_MODe
     public static final String PROMOTION_ADVANCE_MODEL = "//div[@class ='promotion-advance-mode']";
 
-
-
+    public static final String CURRENCY_DROPDOWN = "";
+    public static final String BUTTON_SAVE_PROMOTO = "";
+    public static final String BUTTON_SEARCH_TOUR = "";
+    public static final String TYPE_TOUR_OPTION = "";
+    public static final String TOPIC_TOUR_OPTION = "";
+    public static final String EXCEED_TOUR_ITEM = "";
+    public static final String BUTTON_REMOVE_DIRECT_TOUR = "";
 }

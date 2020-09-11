@@ -1,6 +1,7 @@
 package Common.HelperFunction;
 
 
+import Project.Business.Promotion.Promotion;
 import Project.Shared.Login.LoginPage;
 import Project.Backend.BackendHomePage;
 import Project.Backend.BackendVerifyBusiManagement;
@@ -20,10 +21,11 @@ import org.openqa.selenium.WebDriver;
 
 public class PageGeneration {
 
-    public static LoginPage createLoginPage(WebDriver driver){
+    public static LoginPage createLoginPage(WebDriver driver) {
         return new LoginPage(driver);
     }
-    public static SignUpPage createFormRegister(WebDriver driver){
+
+    public static SignUpPage createFormRegister(WebDriver driver) {
         return new SignUpPage(driver);
     }
 
@@ -104,28 +106,34 @@ public class PageGeneration {
     }
 
     public static BusinessPageManagement openCreatePagePopup(WebDriver driver) {
-        return  new BusinessPageManagement(driver);
+        return new BusinessPageManagement(driver);
     }
 
-    public static TourPartTab createTourPartTab(WebDriver driver){
+    public static TourPartTab createTourPartTab(WebDriver driver) {
         return new TourPartTab(driver);
     }
-    public static TourPriceTab createTourPriceTab(WebDriver driver){
+
+    public static TourPriceTab createTourPriceTab(WebDriver driver) {
         return new TourPriceTab(driver);
     }
-    public static TourServiceTab createTourServiceTab(WebDriver driver){
-        return  new TourServiceTab(driver);
+
+    public static TourServiceTab createTourServiceTab(WebDriver driver) {
+        return new TourServiceTab(driver);
     }
-    public static TourSchedulerTab createTourSchedulerTab(WebDriver driver){
-        return new TourSchedulerTab (driver);
+
+    public static TourSchedulerTab createTourSchedulerTab(WebDriver driver) {
+        return new TourSchedulerTab(driver);
     }
-    public static TourPromotionTab createTourPromotionTab(WebDriver driver){
-        return new TourPromotionTab (driver);
+
+    public static TourPromotionTab createTourPromotionTab(WebDriver driver) {
+        return new TourPromotionTab(driver);
     }
-    public static TourSettingTab createTourSettingTab(WebDriver driver){
-        return new TourSettingTab (driver);
+
+    public static TourSettingTab createTourSettingTab(WebDriver driver) {
+        return new TourSettingTab(driver);
     }
-    public static TourServicePrice createTourServicePriceTab(WebDriver driver){
-        return new TourServicePrice (driver);
+
+    public static TourServicePrice createTourServicePriceTab(WebDriver driver) {
+        return new TourServicePrice(driver);
     }
 }

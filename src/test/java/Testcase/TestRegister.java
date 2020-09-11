@@ -13,6 +13,7 @@ import Project.Backend.BackendHomePage;
 import Project.Backend.BackendVerifyBusiManagement;
 import Project.Business.Tour.*;
 import Project.Business.Tour.Management.List.TourManagementPage;
+import Project.Business.Promotion.Promotion;
 import Project.Business.Tour.Setting.TourGeneralSettingPage;
 import Project.Business.Tour.Topic.TourTopicPage;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
@@ -27,7 +28,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import sun.jvm.hotspot.debugger.Page;
 
 public class TestRegister extends AbstractTest {
     DriverManager driverManager;
@@ -64,6 +64,8 @@ public class TestRegister extends AbstractTest {
     TourPromotionTab tourPromoTab;
     TourSettingTab tourSettingTab;
     TourServicePrice tourServicePriceTab;
+
+    Promotion promoPage;
 
 
     // Define user properties
@@ -754,6 +756,8 @@ public class TestRegister extends AbstractTest {
         verifyEquals(tourPromoTab.getMessageNotFoundPromo(), "Không tìm thấy dữ liệu.");
         log.info("Step 1. Click Create new promo");
         tourPromoTab.clickToCreatePromotionButton();
+
+        promoPage = PageGeneration.goToCreateEditPromotionPage(driver);
 
     }
 }
