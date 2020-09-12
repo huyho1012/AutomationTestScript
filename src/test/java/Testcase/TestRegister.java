@@ -113,16 +113,20 @@ public class TestRegister extends AbstractTest {
 
     @BeforeTest
     public void generateDataForTesting() {
+        // Generate thông tin tài khoản người dùng
         firstNameUser = data.getFirstName();
         lastNameUser = data.getLastName();
         emailUser = randomVirtualEmail();
         passwordUser = "1234567";
         confirmPassUser = "1234567";
-
-        businessName = data.getCompanyName();
+        // Generate thông tin chủ sở hữu
         ownerName = data.getFullName();
         ownerPhone = "0936709449";
         ownerEmail = randomVirtualEmail();
+        // Generate thông tin doanh nghiệp
+        businessName = data.getCompanyName();
+
+        // Generate thông tin xác minh tài khoản Enterprise
         companyName = data.getCompanyName();
         otherCompanyName = data.getCompanyName();
         abbCompanyName = data.getCompanyName();
@@ -135,7 +139,10 @@ public class TestRegister extends AbstractTest {
         businessScope = "Buôn bán văn phòng phẩm";
         paymentAccountName = "Test Payment Account";
 
+        // Generate thông tin Tour
         pageTourName = "Tour Bình Ba";
+
+        // Generate thông tin part
         partAddress = "400A Điện biên phủ , Bình Thạnh ";
         partDesc = "haehahaha";
         startDateTour = "20/10/2020";
@@ -624,16 +631,19 @@ public class TestRegister extends AbstractTest {
         verifyTrue(tourInfoTab.checkTourInfoTabDisplay());
         log.info("Step 2. Enter sku code");
         String skuCode = "HKTT_101";
+        String totalDay = "1";
+        String basicPrice = "1000000";
+
         tourInfoTab.enterValueToDynamicField(driver, "tv102", skuCode);
         log.info("Step 3. Enter Total day of Tour");
-        String totalDay = "1";
+
         tourInfoTab.enterValueToDynamicField(driver, "tn123", totalDay);
         log.info("Step 4. Enter Basic Price of Tour");
-        String basicPrice = "1000000";
+
         tourInfoTab.enterValueToDynamicField(driver, "tn133", basicPrice);
         log.info("Step 5. Enter Allow booking date of Tour");
-        String allowBookingDate = "2";
-        tourInfoTab.enterValueToDynamicField(driver, "tn130", allowBookingDate);
+
+        tourInfoTab.enterValueToDynamicField(driver, "tn130", "2");
         log.info("Step 6. Enter Address");
         String addresss = "400 Điện Biên Phủ P25, Quận Bình Thạnh";
         tourInfoTab.enterValueToDynamicField(driver, "address", addresss);

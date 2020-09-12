@@ -62,19 +62,7 @@ public class LoginPage extends CommonStartApp {
 
 
 
-    public void clickToChangeLanguageToVI(WebDriver driver){
-        waitForPageLoading(driver);
-        if(getAttributeValue(driver,LoginUI.VI_ICON,"class").contains("active")){
-            clickToElement(driver,LoginUI.VI_ICON);
-        }
-    }
 
-    public void clickToChangeToEng(WebDriver driver){
-        waitForPageLoading(driver);
-        if(getAttributeValue(driver,LoginUI.ENG_ICON,"class").contains("active")){
-            clickToElement(driver,LoginUI.ENG_ICON);
-        }
-    }
 
     public void Login(WebDriver driver, String userName, String password){
         waitForPageLoading(driver);

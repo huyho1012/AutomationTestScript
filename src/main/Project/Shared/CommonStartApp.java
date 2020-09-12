@@ -42,4 +42,17 @@ public class CommonStartApp extends AbstractTest {
         waitForElementClickable(driver, StartingCommonUI.GOOGLE_PLAY);
         clickToElement(driver, StartingCommonUI.GOOGLE_PLAY);
     }
+    public void clickToChangeLanguageToVI(WebDriver driver){
+        waitForPageLoading(driver);
+        if(getAttributeValue(driver,LoginUI.VI_ICON,"class").contains("active")){
+            clickToElement(driver,LoginUI.VI_ICON);
+        }
+    }
+
+    public void clickToChangeToEng(WebDriver driver){
+        waitForPageLoading(driver);
+        if(getAttributeValue(driver,LoginUI.ENG_ICON,"class").contains("active")){
+            clickToElement(driver,LoginUI.ENG_ICON);
+        }
+    }
 }

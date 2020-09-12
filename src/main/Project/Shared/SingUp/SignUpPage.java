@@ -21,21 +21,24 @@ public class SignUpPage extends CommonStartApp {
     public void enterDataValueToDynamicOnFormSignUp(WebDriver driver, String nameField , String dataValue){
         waitElementToVisible(driver, SignUpUI.TEXT_FIELD_DYNAMIC, nameField);
         sendKeyToElement(driver, SignUpUI.TEXT_FIELD_DYNAMIC, dataValue, nameField);
+        setTimeDelay(1);
     }
 
     public void choosePhoneCode(WebDriver driver, String phoneName){
         waitForElementClickable(driver,SignUpUI.PHONE_CODE_DROPDOWN);
         selectItemInCustomDropdown(driver,SignUpUI.PHONE_CODE_DROPDOWN,SignUpUI.PHONE_CODE_ITEM,phoneName);
+        setTimeDelay(1);
     }
 
     public String getValidErrMessageOfDynamicOnFormSignUp(WebDriver driver, String nameField){
-        waitElementToVisible(driver, SignUpUI.ERROR_MESSAGE_OF_TEXT_FIELD,nameField);
-        return getTextElement(driver, SignUpUI.ERROR_MESSAGE_OF_TEXT_FIELD,nameField);
+        waitElementToVisible(driver, SignUpUI.ERROR_MESSAGE_OF_TEXT_FIELD, nameField);
+        return getTextElement(driver, SignUpUI.ERROR_MESSAGE_OF_TEXT_FIELD, nameField);
     }
 
     public void clickSignUpButton(){
         waitForElementClickable(driver, SignUpUI.SIGNUP_BUTTON);
         clickToElement(driver, SignUpUI.SIGNUP_BUTTON);
+        setTimeDelay(1);
     }
 
     public String getErrMessageOfPhoneCode(WebDriver driver){
@@ -53,6 +56,35 @@ public class SignUpPage extends CommonStartApp {
         return getTextElement(driver, SignUpUI.TITLE_FORM_VERIFY_ACCOUNT);
     }
 
+
+
+    public void enterVerifyCodeToVerifyAccount(WebDriver driver, String verifyCode){
+        waitElementToVisible(driver, SignUpUI.VERIFY_CODE_FIELD);
+        sendKeyToElement(driver,SignUpUI.VERIFY_CODE_FIELD,verifyCode);
+        setTimeDelay(1);
+    }
+
+    public void clickToVerifyAccount(WebDriver driver){
+        waitForElementClickable(driver, SignUpUI.VERIFY_ACCOUNT_BUTTON);
+        clickToElement(driver, SignUpUI.VERIFY_ACCOUNT_BUTTON);
+        setTimeDelay(1);
+    }
+
+    public void clickToResendCodeOnVerificationPage(WebDriver driver){
+        waitForElementClickable(driver, SignUpUI.BUTTON_RESEND_CODE);
+        clickToElement(driver,SignUpUI.BUTTON_RESEND_CODE);
+        setTimeDelay(1);
+    }
+
+
+    public boolean checkVerifyPageDisplay() {
+        if(checkElementDisplay(driver, SignUpUI.VERIFY_ACCOUNT_FORM_PAGE) && getPageTitle(driver).equals("Kích hoạt tài khoản | Hahalolo")){
+            return true;
+        }
+        return false;
+    }
+
+
     public String getVerifyCodeByEmail(String email){
         ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
         openNewWindow(driver, "https://www.mailinator.com/");
@@ -67,23 +99,11 @@ public class SignUpPage extends CommonStartApp {
         return code;
     }
 
-    public void enterVerifyCodeToVerifyAccount(WebDriver driver, String verifyCode){
-        waitElementToVisible(driver, SignUpUI.VERIFY_CODE_FIELD);
-        sendKeyToElement(driver,SignUpUI.VERIFY_CODE_FIELD,verifyCode);
+    public Object getPlaceholderOfDynamicField() {
+        return null;
     }
 
-    public void clickToVerifyAccount(WebDriver driver){
-        waitForElementClickable(driver, SignUpUI.VERIFY_ACCOUNT_BUTTON);
-        clickToElement(driver, SignUpUI.VERIFY_ACCOUNT_BUTTON);
-    }
-
-    public void clickToResendCodeOnVerificationPage(WebDriver driver){
-        waitForElementClickable(driver, SignUpUI.BUTTON_RESEND_CODE);
-        clickToElement(driver,SignUpUI.BUTTON_RESEND_CODE);
-    }
-
-
-    public boolean checkVerifyPageDisplay() {
-        return checkElementDisplay(driver, SignUpUI.VERIFY_ACCOUNT_FORM_PAGE) && getPageTitle(driver).equals("Kích hoạt tài khoản | Hahalolo");
+    public Object getContentOfSignUpButton() {
+        return null;
     }
 }

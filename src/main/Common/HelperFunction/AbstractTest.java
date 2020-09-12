@@ -15,6 +15,22 @@ public abstract class AbstractTest extends AbstractPage {
         log = LogFactory.getLog(getClass());
     }
 
+    protected int randomNumber(int number){
+        Random rd = new Random();
+        return rd.nextInt(number);
+    }
+
+    protected String randomPassword(int numPassChar) {
+        String text = null;
+        String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789" + "abcdefghijklmnopqrstuvxyz";
+        StringBuilder bd = new StringBuilder(numPassChar);
+        for (int i = 0; i < numPassChar; i++) {
+            int index = (int) (AlphaNumericString.length() * Math.random());
+            text = bd.append(AlphaNumericString.charAt(index)).toString();
+        }
+        return text;
+    }
+
     protected String randomVirtualEmail(){
         String userName = "huyho";
         String domainEmail = "@mailinator.com";

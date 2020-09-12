@@ -15,7 +15,7 @@ public class LoginUI {
 
     public static final String VALIDATE_USERNAME_ERROR_MESSAGE = "//input[@name = 'identity']/following-sibling::div";
     public static final String VALIDATE_PASSWORD_ERROR_MESSAGE = "//input[@name = 'password']/following-sibling::div";
-    public static final String VALIDATE_CAPTCHA_ERROR_MESSAGE = "//input[@name = 'password']/following-sibling::div";
+    public static final String VALIDATE_CAPTCHA_ERROR_MESSAGE = "//input[@id = 'captchaCode']/following-sibling::div";
 
     public static final String CAPTCHA_CODE_IMAGE = "";
 }
