@@ -78,7 +78,7 @@ public class TourInfoTab extends TourCommon {
         setTimeDelay(2);
     }
 
-    public boolean checkTourDetaiTabInfoDisplay() {
+    public boolean checkTourInfoTabDisplay() {
         return checkElementDisplay(driver, TourInfoUI.TAB_INFORMATION);
     }
 }

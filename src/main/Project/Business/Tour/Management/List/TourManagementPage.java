@@ -50,4 +50,11 @@ public class TourManagementPage extends TourCommon {
         waitElementToVisible(driver, TourManagementUI.POPUP_CREATE_TOUR);
         return getTextElement(driver, TourManagementUI.POPUP_CREATE_TOUR_TITLE).contentEquals("Tạo Tour mới");
     }
+
+    public boolean checkPageWithCaseHaveTourDisplay(WebDriver driver) {
+        return true;
+    }
+
+    public void clickEditButtonOfDirectTour(WebDriver driver) {
+    }
 }

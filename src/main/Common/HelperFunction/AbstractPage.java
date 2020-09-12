@@ -301,7 +301,8 @@ public abstract class AbstractPage {
         jsExecutor = (JavascriptExecutor)driver;
         jsExecutor.executeScript("window.location = '" + urlPage + "'");
     }
-    public void scrollToBottomPage() {
+    public void scrollToBottomPage(WebDriver driver) {
+        jsExecutor = (JavascriptExecutor)driver;
         jsExecutor.executeScript("window.scrollBy(0,document.body.scrollHeight)");
     }
     public void highlightElement(WebDriver driver, String locator) {
@@ -451,6 +452,15 @@ public abstract class AbstractPage {
             }
         }
         setTimeDelay(3);
+    }
+
+    public void scrollToTopPage(WebDriver driver){
+        jsExecutor =(JavascriptExecutor) driver;
+        jsExecutor.executeScript("window.scrollBy(0,0)");
+    }
+    public String getCSSValueOfElement(WebDriver driver, String locator, String valueCSS){
+        element = findElement(driver,locator);
+        return element.getCssValue(valueCSS);
     }
 }
 

@@ -2,12 +2,13 @@ package Project.Business.Promotion;
 
 import Common.HelperFunction.AbstractPage;
 import Interfaces.hahalolo_business.Promotion.PromotionUI;
+import Project.Business.Tour.Management.TourCommon;
 import org.openqa.selenium.WebDriver;
 
-public class Promotion  extends AbstractPage {
+public class Promotion  extends TourCommon {
     WebDriver driver;
 
-    public void publicPromo(WebDriver driver){
+    public void publicPromotion(WebDriver driver){
         waitForElementClickable(driver, PromotionUI.PROMOTION_STATUS);
         clickToElement(driver, PromotionUI.PROMOTION_STATUS);
     }
@@ -27,19 +28,21 @@ public class Promotion  extends AbstractPage {
         sendKeyToElement(driver, PromotionUI.PROMOTION_DESC,promoDesc);
     }
 
-    public void chooseCurrencyPromo(WebDriver driver, String currency) {
+    public void chooseCurrencyPromotion(WebDriver driver, String currency) {
         waitForElementClickable(driver, PromotionUI.CURRENCY_DROPDOWN);
         clickToElement(driver, PromotionUI.CURRENCY_DROPDOWN,currency);
     }
 
-    public void chooseLanguagePromotion(WebDriver driver, String currency) {
+    public void chooseLanguagePromotion(WebDriver driver, String language) {
         waitForElementClickable(driver, PromotionUI.CURRENCY_DROPDOWN);
-        clickToElement(driver, PromotionUI.CURRENCY_DROPDOWN,currency);
+        clickToElement(driver, PromotionUI.CURRENCY_DROPDOWN,language);
+        setTimeDelay(1);
     }
 
-    public void enterDateRangeApply(WebDriver driver, String DateRange){
+    public void enterDateRangeApply(WebDriver driver, String dateRange){
         waitForElementClickable(driver, PromotionUI.PROMOTION_DATE_RANGE);
-        sendKeyToElement(driver, PromotionUI.PROMOTION_DATE_RANGE,DateRange);
+        sendKeyToElement(driver, PromotionUI.PROMOTION_DATE_RANGE, dateRange);
+        setTimeDelay(1);
     }
 
     public void chooseTypeDiscount(WebDriver driver, int numOption) {
@@ -114,7 +117,7 @@ public class Promotion  extends AbstractPage {
         clickToElement(driver, PromotionUI.BUTTON_SAVE_PROMOTO);
     }
 
-    public void clickAddImagePromo(WebDriver driver){
+    public void clickAddImagePromo(WebDriver driver, String imageName){
         waitForElementClickable(driver, PromotionUI.BUTTON_ADD_PROMOTION_IMAGE);
         clickToElement(driver, PromotionUI.BUTTON_ADD_PROMOTION_IMAGE);
     }
@@ -122,5 +125,20 @@ public class Promotion  extends AbstractPage {
     public void clickTOAddDiscountLevel(WebDriver driver){
         waitForElementClickable(driver, PromotionUI.BUTTON_ADD_PROMOTION_LEVEL);
         clickToElement(driver, PromotionUI.BUTTON_ADD_PROMOTION_LEVEL);
+    }
+
+    public String getPromotionNameDisplayOnPromoDetail() {
+        return null;
+    }
+    public String getPromotionDescDisplayOnPromoDetail() {
+        return null;
+    }
+
+    public Object getPromotionStatusDisplayOnPromoDetail() {
+        return null;
+    }
+
+    public Object getPromotionLanguageDisplayOnPromoDetail() {
+        return null;
     }
 }

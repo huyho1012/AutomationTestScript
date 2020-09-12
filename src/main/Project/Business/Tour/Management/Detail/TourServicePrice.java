@@ -8,4 +8,20 @@ public class TourServicePrice extends TourCommon {
     public TourServicePrice(WebDriver webDriver){
         driver = webDriver;
     }
+
+    public boolean checkTourServicePriceTab(WebDriver driver) {
+        return true;
+    }
+
+    public void clickButtonCreateNewPrice() {
+    }
+
+    public void enterPriceOfService() {
+    }
+
+    public void choooseServiceOnDropdown() {
+    }
+
+    public void checkPublishTour() {
+    }
 }

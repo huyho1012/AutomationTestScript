@@ -2,6 +2,8 @@ package Common.HelperFunction;
 
 
 import Project.Business.Promotion.Promotion;
+import Project.Business.Promotion.TourPromotion;
+import Project.Business.Tour.Setting.PubishPage;
 import Project.Shared.Login.LoginPage;
 import Project.Backend.BackendHomePage;
 import Project.Backend.BackendVerifyBusiManagement;
@@ -135,5 +137,13 @@ public class PageGeneration {
 
     public static TourServicePrice createTourServicePriceTab(WebDriver driver) {
         return new TourServicePrice(driver);
+    }
+
+    public static TourPromotion goToCreateEditPromotionPage(WebDriver driver) {
+        return new TourPromotion(driver);
+    }
+
+    public static PubishPage createPageSetting(WebDriver driver) {
+        return new PubishPage(driver);
     }
 }

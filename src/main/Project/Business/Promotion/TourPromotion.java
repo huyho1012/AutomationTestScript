@@ -51,4 +51,38 @@ public class TourPromotion extends Promotion {
     }
 
 
+    public void clickIconAddTourToSelectedList(WebDriver driver) {
+    }
+
+    public boolean checkViewDetailPromotionDisplay() {
+        return true;
+    }
+
+    public Object getPromotionCurrencyDisplayOnPromoDetail() {
+        return null;
+    }
+
+    public Object getPromotionDateRangeDisplayOnPromoDetail() {
+        return null;
+    }
+
+    public Object getPromotionDiscountTypeDisplayOnPromoDetail() {
+        return null;
+    }
+
+    public Object getPromotionTypeDisplayOnPromoDetail() {
+        return null;
+    }
+
+    public Object getTourTypeAppliedDisplayOnPromoDetail() {
+        return null;
+    }
+
+    public Object getListTourAppliedOnPromoDetail() {
+        return null;
+    }
+
+    public boolean getPromotionDisountLevel() {
+        return true;
+    }
 }

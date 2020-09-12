@@ -54,7 +54,10 @@ public class TourTopicPage extends HeaderPage {
     }
 
     public boolean checkPageWithCaseNoTopicDisplay() {
-        return checkElementDisplay(driver, TourTopicPageUI.BUTTON_CREATE_NEW_TOPIC);
+        if(checkElementDisplay(driver, TourTopicPageUI.BUTTON_CREATE_NEW_TOPIC)){
+            return true;
+        } else
+            return false;
     }
 
     public boolean checkCreatedTopicDisplay(WebDriver driver) {

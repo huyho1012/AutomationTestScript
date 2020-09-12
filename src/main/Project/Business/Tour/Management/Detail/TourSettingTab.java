@@ -8,4 +8,8 @@ public class TourSettingTab extends TourCommon {
     public TourSettingTab (WebDriver webDriver){
         driver = webDriver;
     }
+
+    public boolean checkSettingTourPageDisplay(WebDriver driver) {
+        return true;
+    }
 }
