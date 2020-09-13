@@ -127,11 +127,10 @@ public class Testcase_Register extends AbstractTest {
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv103","H@ Do@an");
         signUpPage.clickSignUpButton();
         verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp(driver,"nv103"),"Họ không chứa ký tự đặc biệt.");
-        log.info("Step 6. LLast name contains Script Code");
+        log.info("Step 6. Last name contains Script Code");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver, "nv103", SCRIPT_CODE);
         signUpPage.clickSignUpButton();
         verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp(driver,"nv103"),"Họ không chứa ký tự đặc biệt.");
-
         log.info("Step 7. Last name contains HTML Code");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv103",HTML_CODE);
         signUpPage.clickSignUpButton();
@@ -191,33 +190,28 @@ public class Testcase_Register extends AbstractTest {
     public void Testcase_Register_05_Check_Register_New_Account_With_Invalid_Password(){
         log.info("Precondition");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv108",email);
-
         log.info("Step 1. Enter blank Password");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv109","");
         signUpPage.clickSignUpButton();
         verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp(driver,"nv109"),"Mật khẩu là bắt buộc.");
-
-        log.info("Step 2 Enter Password <6 chars");
+        log.info("Step 2. Enter Password <6 chars");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv109","12345");
         signUpPage.clickSignUpButton();
         verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp(driver,"nv109"),"Giới hạn tối thiểu của Mật khẩu là 6 kí tự");
-
         log.info("Step 3. Enter Password > 128 chars");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv109",randomPassword(129));
         signUpPage.clickSignUpButton();
         verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp(driver,"nv109"),"Giới hạn tối đa của Mật khẩu là 128 kí tự");
-
         log.info("Step 4. Enter Password contains whitespace");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv109","123 456");
         signUpPage.clickSignUpButton();
         verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp(driver,"nv109"),"Mật khẩu không chứa kí tự trắng.");
     }
-
     @Test
     public void Testcase_Register_05_Check_Register_New_Account_With_Invalid_Confirm_Password(){
         log.info("Precondition");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv109","123456");
-        log.info("Step 1 - Do not input Confirm Password");
+        log.info("Step 1. Do not input Confirm Password");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"repeatPassword","");
         signUpPage.clickSignUpButton();
         verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp(driver,"repeatPassword"),"Mật khẩu xác nhận là bắt buộc.");
@@ -252,28 +246,28 @@ public class Testcase_Register extends AbstractTest {
     @Test
     public void TC08_RegisterAccountWithEmailIsUppercase() {
         signUpPage.refreshPage(driver);
-        log.info("Step 1 - Input FirstName");
+        log.info("Step 1. Input FirstName");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv104", firstName);
-        log.info("Step 2 - Input LastName");
+        log.info("Step 2. Input LastName");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv103", lastName);
-        log.info("Step 3 - Input email");
+        log.info("Step 3. Input email");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv108",email.toUpperCase());
-        log.info("Step 4 - Input Password");
+        log.info("Step 4. Input Password");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv109","123456");
-        log.info("Step 5 - Input ConfirmPass");
+        log.info("Step 5. Input ConfirmPass");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"repeatPassword","123456");
-        log.info("Step 6 - Click SignUp button and verify email of account display");
+        log.info("Step 6. Click SignUp button and verify email of account display");
         signUpPage.clickSignUpButton();
         verifyTrue(signUpPage.getTitleOfVerifyForm().endsWith("email"));
         verifyEquals(signUpPage.getUserAccountToDisplay(), email);
-        log.info("Step 7 - Input verify code and verify account");
+        log.info("Step 7. Input verify code and verify account");
         verifyCode = signUpPage.getVerifyCodeByEmail(email);
         signUpPage.enterVerifyCodeToVerifyAccount(driver, verifyCode);
         signUpPage.clickToVerifyAccount(driver);
         newsfeedPage = PageGeneration.createNewsfeedHomepage(driver);
-        log.info("Step 8- Check form update info display");
+        log.info("Step 8. Check form update info display");
         newsfeedPage.checkNewsfeedDisplayOnFirstTime(driver);
-        log.info("Step 9. Click cancel update");
+        log.info("Step 9. Click cancel update information");
         newsfeedPage.clickCancelUpdateNewInfo();
         log.info("Step 10. Go To Personal about");
         newsfeedPage.clickToEditProfile(driver);
@@ -286,27 +280,27 @@ public class Testcase_Register extends AbstractTest {
     }
     @Test
     public void TC09_RegisterAccountWithEmailContainsMoreThan2Idots() {
-        log.info("Step 1 - Input FirstName");
+        log.info("Step 1. Input FirstName");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv104", firstName);
-        log.info("Step 2 - Input LastName");
+        log.info("Step 2. Input LastName");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv103", lastName);
-        log.info("Step 3 - Input Email");
+        log.info("Step 3. Input Email");
         email = randomVirtualEmail();
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv108",email);
-        log.info("Step 4 - Input Password");
+        log.info("Step 4. Input Password");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv109","123456");
-        log.info("Step 5 - Input ConfirmPass");
+        log.info("Step 5. Input ConfirmPass");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"repeatPassword","123456");
-        log.info("Step 6 - Click SignUp button and verify email of account display");
+        log.info("Step 6. Click SignUp button and verify account display");
         signUpPage.clickSignUpButton();
         verifyTrue(signUpPage.getTitleOfVerifyForm().endsWith("email"));
         verifyEquals(signUpPage.getUserAccountToDisplay(), email);
-        log.info("Step 7 - Input verify code and verify account");
+        log.info("Step 7. Input verify code and verify account");
         verifyCode = signUpPage.getVerifyCodeByEmail(email);
         signUpPage.enterVerifyCodeToVerifyAccount(driver,verifyCode);
         signUpPage.clickToVerifyAccount(driver);
         newsfeedPage = PageGeneration.createNewsfeedHomepage(driver);
-        log.info("Step 8- Check form update info display");
+        log.info("Step 8. Check form update info display");
         newsfeedPage.checkNewsfeedDisplayOnFirstTime(driver);
         log.info("Step 9. Click cancel update");
         newsfeedPage.clickCancelUpdateNewInfo();
@@ -315,32 +309,32 @@ public class Testcase_Register extends AbstractTest {
         personalAboutPage = PageGeneration.createPerTAboutPage(driver);
         log.info("Step 11. Check email display");
         verifyEquals(personalAboutPage.getEmailIsDisplayOnIntroduceWidget(), email);
-        log.info("Step 12 - Logout account");
+        log.info("Step 12. Logout account");
         personalAboutPage.clickToItemOnSettingMenu(driver,"ic-logout-c");
         signUpPage = PageGeneration.createFormRegister(driver);
     }
     @Test (enabled = false)
     public void TC10_RegisterAccountWithPhoneHaveAreaCode() {
-        log.info("Step 1 - Input FirstName");
+        log.info("Step 1. Input FirstName");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv104", firstName);
-        log.info("Step 2 - Input LastName");
+        log.info("Step 2. Input LastName");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver, "nv103", lastName);
-        log.info("Step 3 - Input Phone");
+        log.info("Step 3. Input Phone");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver, "nv108","840936709449");
-        log.info("Step 4 - Input Password");
+        log.info("Step 4. Input Password");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"nv109","123456");
-        log.info("Step 5 - Input ConfirmPass");
+        log.info("Step 5. Input ConfirmPass");
         signUpPage.enterDataValueToDynamicOnFormSignUp(driver,"repeatPassword","123456");
-        log.info("Step 6 - Click SignUp button and verify phone of account display");
+        log.info("Step 6. Click SignUp button and verify phone of account display");
         signUpPage.clickSignUpButton();
         verifyTrue(signUpPage.getTitleOfVerifyForm().contains("Số điện thoại"));
         verifyEquals(signUpPage.getUserAccountToDisplay(), "840936709449");
-        log.info("Step 7 - Input verify code and verify account");
+        log.info("Step 7. Input verify code and verify account");
         verifyCode = signUpPage.getVerifyCodeByEmail(email);
         signUpPage.enterVerifyCodeToVerifyAccount(driver,verifyCode);
         signUpPage.clickToVerifyAccount(driver);
         newsfeedPage = PageGeneration.createNewsfeedHomepage(driver);
-        log.info("Step 8- Check form update info display");
+        log.info("Step 8. Check form update info display");
         newsfeedPage.checkNewsfeedDisplayOnFirstTime(driver);
         log.info("Step 9. Click cancel update");
         newsfeedPage.clickCancelUpdateNewInfo();
