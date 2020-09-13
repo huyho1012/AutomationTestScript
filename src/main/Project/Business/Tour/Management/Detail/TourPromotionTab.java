@@ -12,7 +12,7 @@ public class TourPromotionTab extends TourCommon {
 
     public boolean checkPromotionTabDislay() {
         waitElementToVisible(driver, TourPromotionUI.TOUR_PROMO_TAB);
-        return getTextElement(driver, TourPromotionUI.TOUR_PROMO_TAB_TITLE).contains("Danh sách khuyến mãi đang áp dụng"));
+        return getTextElement(driver, TourPromotionUI.TOUR_PROMO_TAB_TITLE).contains("Danh sách khuyến mãi đang áp dụng");
     }
 
     public String getMessageNotFoundPromo() {

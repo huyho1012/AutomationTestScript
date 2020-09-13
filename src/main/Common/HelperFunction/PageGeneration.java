@@ -23,7 +23,7 @@ import org.openqa.selenium.WebDriver;
 
 public class PageGeneration {
 
-    public static LoginPage createLoginPage(WebDriver driver) {
+    public static LoginPage createNewsfeedLoginPage(WebDriver driver) {
         return new LoginPage(driver);
     }
 

@@ -50,7 +50,7 @@ public class NewsfeedHomepage extends HeaderPage {
         setTimeDelay(1);
     }
 
-    public void changeLanguageNewsfeedToVI(WebDriver driver) {
+    public void changeLanguageNewsfeedToVI() {
         waitForElementClickable(driver,HomePageUI.FOOTER_VI_LANGUAGE);
         clickToElement(driver, HomePageUI.FOOTER_VI_LANGUAGE);
         setTimeDelay(1);

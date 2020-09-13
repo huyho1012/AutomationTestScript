@@ -10,6 +10,7 @@ import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
 import Project.Shared.Login.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class Testcase_Login extends AbstractTest {
@@ -21,21 +22,22 @@ public class Testcase_Login extends AbstractTest {
     String scriptCode = "";
     WebDriver driver;
 
+    @Parameters("browser")
     @BeforeTest
     public void preconditionTest(String browserName){
         log.info("Precondition - Step 1. Create Browser Driver ");
         driverManager = BrowserInitialization.getBrowser(browserName);
         log.info("Precondition - Step 2. Open browser and go to Newsfeed login");
         driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
-        newsfeedLogin = PageGeneration.createLoginPage(driver);
+        newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
         log.info("Precondition - Step 3.  Verify url page");
         verifyEquals(newsfeedLogin.getCurrentURL(driver), "https://test-newsfeed.hahalolo.com/auth/signin");
         log.info("Precondition - Step 4. Verify icon Google play display");
-        verifyTrue(newsfeedLogin.checkGooglePlayIconIsDisplay(driver));
+        verifyTrue(newsfeedLogin.checkGooglePlayIconIsDisplay());
         log.info("Precondition - Step 5. Verify icon App store display");
-        verifyTrue(newsfeedLogin.checkAppStoreIconIsDisplay(driver));
+        verifyTrue(newsfeedLogin.checkAppStoreIconIsDisplay());
         log.info("Precondition - Step 6. Change system language To Vi");
-        newsfeedLogin.clickToChangeLanguageToVI(driver);
+        newsfeedLogin.clickToChangeLanguageToVI();
     }
     @Test
     public void Testcase_Newsfeed_Login_01_Login_With_Invalid_Information(){
@@ -57,7 +59,7 @@ public class Testcase_Login extends AbstractTest {
         newsfeedLogin.enterPasswordToLogin(driver,"12345678");
         log.info(" Step 3. Click button Login");
         newsfeedLogin.clickToLoginButton(driver);
-        verifyEquals(newsfeedLogin.getErrorMessageOfPassword(driver),"TTên tài khoản hoặc mật khẩu sai");
+        verifyEquals(newsfeedLogin.getErrorMessageOfPassword(driver),"Tên tài khoản hoặc mật khẩu sai");
     }
     @Test
     public void Testcase_Newsfeed_Login_03_Login_With_Password_Incorrect(){
@@ -68,7 +70,7 @@ public class Testcase_Login extends AbstractTest {
         log.info(" Step 3. Click button Login");
         newsfeedLogin.clickToLoginButton(driver);
 
-        verifyEquals(newsfeedLogin.getErrorMessageOfPassword(driver),"TTên tài khoản hoặc mật khẩu sai");
+        verifyEquals(newsfeedLogin.getErrorMessageOfPassword(driver),"Tên tài khoản hoặc mật khẩu sai");
     }
     @Test
     public void Testcase_Newsfeed_Login_04_Login_With_Invalid_Password(){
@@ -88,15 +90,7 @@ public class Testcase_Login extends AbstractTest {
         newsfeedLogin.enterPasswordToLogin(driver, randomPassword(129));
         newsfeedLogin.clickToLoginButton(driver);
         verifyEquals(newsfeedLogin.getErrorMessageOfPassword(driver),"Giới hạn tối đa của Mật khẩu là 128 kí tự");
-        log.info("Step 5. Password contains HTML Code");
-        newsfeedLogin.enterPasswordToLogin(driver, htmlCode);
-        newsfeedLogin.clickToLoginButton(driver);
-        verifyEquals(newsfeedLogin.getErrorMessageOfPassword(driver),"Mật khẩu không chứa kí tự trắng.");
-        log.info("Step 6. Password contains Script Code");
-        newsfeedLogin.enterPasswordToLogin(driver,scriptCode);
-        newsfeedLogin.clickToLoginButton(driver);
-        verifyEquals(newsfeedLogin.getErrorMessageOfPassword(driver),"Mật khẩu không chứa kí tự trắng.");
-        log.info("Step 7. Password contains white space");
+        log.info("Step 5. Password contains white space");
         newsfeedLogin.enterPasswordToLogin(driver,"1234 56");
         newsfeedLogin.clickToLoginButton(driver);
         verifyEquals(newsfeedLogin.getErrorMessageOfPassword(driver),"Mật khẩu không chứa kí tự trắng.");
@@ -170,7 +164,7 @@ public class Testcase_Login extends AbstractTest {
         verifyTrue(newsFeedHomePage.checkNewsfeedDisplay());
         log.info("Step 5. Logout account");
         newsFeedHomePage.clickToItemOnSettingMenu(driver,"ic-logout-c");
-        newsfeedLogin = PageGeneration.createLoginPage(driver);
+        newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
         log.info("Step 6. Check Logout account success");
         verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay(driver));
     }
@@ -187,7 +181,7 @@ public class Testcase_Login extends AbstractTest {
         verifyTrue(newsFeedHomePage.checkNewsfeedDisplay());
         log.info("Step 5 - Logout account");
         newsFeedHomePage.clickToItemOnSettingMenu(driver,"ic-logout-c");
-        newsfeedLogin = PageGeneration.createLoginPage(driver);
+        newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
         log.info("Step 6 - Check Logout account success");
         verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay(driver));
     }
@@ -204,11 +198,11 @@ public class Testcase_Login extends AbstractTest {
         verifyTrue(newsFeedHomePage.checkNewsfeedDisplay());
         log.info("Step 5 - Logout account");
         newsFeedHomePage.clickToItemOnSettingMenu(driver,"ic-logout-c");
-        newsfeedLogin = PageGeneration.createLoginPage(driver);
+        newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
         log.info("Step 6 - Check Logout account success");
         verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay(driver));
     }
-    @Test
+    @Test(enabled = false)
     public void Testcase_Newsfeed_Login_08_Login_With_Phone_contains_PhoneCode(){
         log.info("Step 1 - Enter username");
         newsfeedLogin.enterUserNameToLogin(driver,"840936709449");
@@ -221,7 +215,7 @@ public class Testcase_Login extends AbstractTest {
         verifyTrue(newsFeedHomePage.checkNewsfeedDisplay());
         log.info("Step 5 - Logout account");
         newsFeedHomePage.clickToItemOnSettingMenu(driver,"ic-logout-c");
-        newsfeedLogin = PageGeneration.createLoginPage(driver);
+        newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
         log.info("Step 6 - Check Logout account success");
         verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay(driver));
     }

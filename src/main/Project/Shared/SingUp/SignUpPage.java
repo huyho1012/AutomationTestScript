@@ -13,24 +13,24 @@ public class SignUpPage extends CommonStartApp {
         driver = webDriver;
     }
 
-    public String getTitleOfFormSignUp(WebDriver driver){
+    public String getTitleOfFormSignUp(){
         waitElementToVisible(driver, SignUpUI.TITLE_REGISTER_FORM);
         return getTextElement(driver, SignUpUI.TITLE_REGISTER_FORM);
     }
 
-    public void enterDataValueToDynamicOnFormSignUp(WebDriver driver, String nameField , String dataValue){
+    public void enterDataValueToDynamicOnFormSignUp(String nameField , String dataValue){
         waitElementToVisible(driver, SignUpUI.TEXT_FIELD_DYNAMIC, nameField);
         sendKeyToElement(driver, SignUpUI.TEXT_FIELD_DYNAMIC, dataValue, nameField);
         setTimeDelay(1);
     }
 
-    public void choosePhoneCode(WebDriver driver, String phoneName){
+    public void choosePhoneCode(String countryCode){
         waitForElementClickable(driver,SignUpUI.PHONE_CODE_DROPDOWN);
-        selectItemInCustomDropdown(driver,SignUpUI.PHONE_CODE_DROPDOWN,SignUpUI.PHONE_CODE_ITEM,phoneName);
+        selectItemInCustomDropdown(driver,SignUpUI.PHONE_CODE_DROPDOWN,SignUpUI.PHONE_CODE_ITEM,countryCode);
         setTimeDelay(1);
     }
 
-    public String getValidErrMessageOfDynamicOnFormSignUp(WebDriver driver, String nameField){
+    public String getValidErrMessageOfDynamicOnFormSignUp(String nameField){
         waitElementToVisible(driver, SignUpUI.ERROR_MESSAGE_OF_TEXT_FIELD, nameField);
         return getTextElement(driver, SignUpUI.ERROR_MESSAGE_OF_TEXT_FIELD, nameField);
     }
@@ -41,7 +41,7 @@ public class SignUpPage extends CommonStartApp {
         setTimeDelay(1);
     }
 
-    public String getErrMessageOfPhoneCode(WebDriver driver){
+    public String getErrMessageOfPhoneCode(){
         waitElementToVisible(driver, SignUpUI.ERROR_MESS_PHONE_AREA);
         return getTextElement(driver, SignUpUI.ERROR_MESS_PHONE_AREA);
     }

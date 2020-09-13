@@ -12,7 +12,7 @@
 <body>
 <h1>Test with firefox</h1>
 <p>
-  Test duration: 298.340s
+  Test duration: 209.898s
 </p>
 
 
@@ -20,28 +20,28 @@
   <table class="resultsTable">
     <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">Testcase.TestRegister</td>
+        <td colspan="3" class="group">Testcase.Register.SystemTest_Of_SignUp</td>
       </tr>
             
 <tr>
   <td class="method">
-                  TC19_Create_Price_Of_Tour
+                  Testcase_Register_05_Check_Register_New_Account_With_Invalid_Username
       </td>
   <td class="duration">
-    0.306s
+    52.969s
   </td>
   <td class="result">
         
     
         
 
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.NumberFormatException: For input string: &quot;/2&quot;</b></a><br />
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@name = &apos;nv108&apos;]/following-sibling::*[contains(@class,&apos;invalid-feedback&apos;)] (tried for 30 second(s) with 500 milliseconds interval)</b></a><br />
     <div class="stackTrace" id="exception-0">
-              java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:68)<br />
-              java.base/java.lang.Integer.parseInt(Integer.java:638)<br />
-              java.base/java.lang.Integer.parseInt(Integer.java:770)<br />
-              Common.HelperFunction.AbstractTest.nextDate(AbstractTest.java:120)<br />
-              Testcase.TestRegister.TC19_Create_Price_Of_Tour(TestRegister.java:676)<br />
+              org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)<br />
+              org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)<br />
+              Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:355)<br />
+              Project.Shared.SingUp.SignUpPage.getValidErrMessageOfDynamicOnFormSignUp(SignUpPage.java:34)<br />
+              Testcase.Register.SystemTest_Of_SignUp.Testcase_Register_05_Check_Register_New_Account_With_Invalid_Username(Testcase_Register.java:182)<br />
               java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
               java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
               java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
@@ -65,52 +65,61 @@
               org.testng.TestNG.run(TestNG.java:1057)<br />
               com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br />
               com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)<br />
-                </div>
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  TC20_Create_Scheduler_Of_Tour
-      </td>
-  <td class="duration">
-    0.135s
-  </td>
-  <td class="result">
-        
-    
-        
-
-        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>java.lang.NumberFormatException: For input string: &quot;/2&quot;</b></a><br />
-    <div class="stackTrace" id="exception-1">
-              java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:68)<br />
-              java.base/java.lang.Integer.parseInt(Integer.java:638)<br />
-              java.base/java.lang.Integer.parseInt(Integer.java:770)<br />
-              Common.HelperFunction.AbstractTest.nextDate(AbstractTest.java:120)<br />
-              Testcase.TestRegister.TC20_Create_Scheduler_Of_Tour(TestRegister.java:698)<br />
-              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
-              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
-              java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
-              java.base/java.lang.reflect.Method.invoke(Method.java:564)<br />
-              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)<br />
-              org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br />
-              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br />
-              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br />
-              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br />
-              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br />
-              org.testng.TestRunner.privateRun(TestRunner.java:767)<br />
-              org.testng.TestRunner.run(TestRunner.java:617)<br />
-              org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br />
-              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br />
-              org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br />
-              org.testng.SuiteRunner.run(SuiteRunner.java:240)<br />
-              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
-              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
-              org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)<br />
-              org.testng.TestNG.runSuitesLocally(TestNG.java:1149)<br />
-              org.testng.TestNG.run(TestNG.java:1057)<br />
-              com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br />
-              com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)<br />
-                </div>
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name = &apos;nv108&apos;]/following-sibling::*[contains(@class,&apos;invalid-feedback&apos;)]&quot;}<br/>
+&nbsp; (Session info: chrome=85.0.4183.102)<br/>
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;<br/>
+System info: host: &apos;DESKTOP-LF4PDD0&apos;, ip: &apos;172.16.99.20&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.1&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\WIN10~1\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:49245}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 1b8cd6cddee6ae6007bb88c1ab2b9f92<br/>
+*** Element info: {Using=xpath, value=//input[@name = &apos;nv108&apos;]/following-sibling::*[contains(@class,&apos;invalid-feedback&apos;)]}</a><br />
+        <div class="stackTrace" id="exception-1">
+                      jdk.internal.reflect.GeneratedConstructorAccessor9.newInstance(Unknown Source)<br />
+                      java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+                      java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+                      java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)<br />
+                      org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)<br />
+                      org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)<br />
+                      org.openqa.selenium.By$ByXPath.findElement(By.java:353)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)<br />
+                      org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)<br />
+                      Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:355)<br />
+                      Project.Shared.SingUp.SignUpPage.getValidErrMessageOfDynamicOnFormSignUp(SignUpPage.java:34)<br />
+                      Testcase.Register.SystemTest_Of_SignUp.Testcase_Register_05_Check_Register_New_Account_With_Invalid_Username(Testcase_Register.java:182)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+                      java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.base/java.lang.reflect.Method.invoke(Method.java:564)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)<br />
+                      org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br />
+                      org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br />
+                      org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br />
+                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br />
+                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br />
+                      org.testng.TestRunner.privateRun(TestRunner.java:767)<br />
+                      org.testng.TestRunner.run(TestRunner.java:617)<br />
+                      org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br />
+                      org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br />
+                      org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br />
+                      org.testng.SuiteRunner.run(SuiteRunner.java:240)<br />
+                      org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+                      org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+                      org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)<br />
+                      org.testng.TestNG.runSuitesLocally(TestNG.java:1149)<br />
+                      org.testng.TestNG.run(TestNG.java:1057)<br />
+                      com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br />
+                      com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)<br />
+                  </div>
+          </div>
       </td>
 </tr>
       </table>
@@ -119,15 +128,15 @@
   <table class="resultsTable">
     <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">Testcase.TestRegister</td>
+        <td colspan="3" class="group">Testcase.Register.SystemTest_Of_SignUp</td>
       </tr>
             
 <tr>
   <td class="method">
-                  TC05_Login_To_Newsfeed
+                  Testcase_Register_03_Check_Register_New_Account_With_Invalid_FirstName
       </td>
   <td class="duration">
-    3.902s
+    19.787s
   </td>
   <td class="result">
         
@@ -138,10 +147,10 @@
 </tr>
 <tr>
   <td class="method">
-                  TC10_CreateNewPage
+                  Testcase_Register_04_Check_Register_New_Account_With_Invalid_LastName
       </td>
   <td class="duration">
-    12.355s
+    16.315s
   </td>
   <td class="result">
         
@@ -152,10 +161,10 @@
 </tr>
 <tr>
   <td class="method">
-                  TC11_Update_Prepayment_Cancellation_On_Tour_General_Information
+                  Testcase_Register_06_Check_Register_New_Account_With_Invalid_Password
       </td>
   <td class="duration">
-    4.889s
+    9.910s
   </td>
   <td class="result">
         
@@ -166,10 +175,10 @@
 </tr>
 <tr>
   <td class="method">
-                  TC12_Update_VAT_On_Tour_General_Information
+                  Testcase_Register_07_Check_Register_New_Account_With_Invalid_Confirm_Password
       </td>
   <td class="duration">
-    0.239s
+    12.010s
   </td>
   <td class="result">
         
@@ -180,10 +189,10 @@
 </tr>
 <tr>
   <td class="method">
-                  TC13_Update_Age_Setting_On_Tour_General_Information
+                  Testcase_Register_08_Check_Register_New_Account_With_UpperCase_Email
       </td>
   <td class="duration">
-    0.411s
+    42.742s
   </td>
   <td class="result">
         
@@ -194,80 +203,10 @@
 </tr>
 <tr>
   <td class="method">
-                  TC14_Update_Noti_Order_Setting_On_Tour_General_Information
+                  Testcase_Register_09_Check_Register_New_Account_ContainsMoreThan2Idots
       </td>
   <td class="duration">
-    1.404s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  TC15_Create_New_Topic
-      </td>
-  <td class="duration">
-    52.077s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  TC16_Create_New_Promotion_Apply
-      </td>
-  <td class="duration">
-    0.000s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  TC16_Create_New_Tour
-      </td>
-  <td class="duration">
-    4.951s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  TC17_Update_Tour_Information
-      </td>
-  <td class="duration">
-    150.378s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  TC18_Create_Part_Of_Tour
-      </td>
-  <td class="duration">
-    57.179s
+    44.248s
   </td>
   <td class="result">
         

@@ -1,4 +1,4 @@
-package Testcase;
+package Testcase.Register;
 
 import Common.DriverManagement.BrowserInitialization;
 import Common.DriverManagement.DriverManager;
@@ -30,9 +30,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import sun.jvm.hotspot.debugger.Page;
 
-public class TestRegister extends AbstractTest {
+public class UnitTest_Of_SignUp extends AbstractTest {
     DriverManager driverManager;
     DataHelper data = new DataHelper();
     WebDriver driver;
@@ -97,15 +96,15 @@ public class TestRegister extends AbstractTest {
         driverManager = BrowserInitialization.getBrowser(browserName);
         log.info("Precondition - Step 2. Open browser and go to Newsfeed login");
         driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
-        loginPage = PageGeneration.createLoginPage(driver);
+        loginPage = PageGeneration.createNewsfeedLoginPage(driver);
         log.info("Precondition - Step 3.  Verify url page");
         verifyEquals(loginPage.getCurrentURL(driver), "https://test-newsfeed.hahalolo.com/auth/signin");
         log.info("Precondition - Step 4. Verify icon Google play display");
-        verifyTrue(loginPage.checkGooglePlayIconIsDisplay(driver));
+        verifyTrue(loginPage.checkGooglePlayIconIsDisplay());
         log.info("Precondition - Step 5. Verify icon App store display");
-        verifyTrue(loginPage.checkAppStoreIconIsDisplay(driver));
+        verifyTrue(loginPage.checkAppStoreIconIsDisplay());
         log.info("Precondition - Step 6. Change system language To Vi");
-        loginPage.clickToChangeLanguageToVI(driver);
+        loginPage.clickToChangeLanguageToVI();
 //        signUpPage = PageGeneration.createFormRegister(driver);
 //        log.info("Precondition - Step 7. Check Halo slogan");
 //        verifyTrue(signUpPage.checkContentOfHaLoStartApp(driver));
@@ -152,17 +151,17 @@ public class TestRegister extends AbstractTest {
     @Test(enabled = false)
     public void TC01_Sign_Up_With_New_Account() {
         log.info("Step 1. Check title Signup form");
-        verifyEquals(signUpPage.getTitleOfFormSignUp(driver), "Tham gia Hahalolo ngay!");
+        verifyEquals(signUpPage.getTitleOfFormSignUp(), "Tham gia Hahalolo ngay!");
         log.info("Step 2. Enter first name");
-        signUpPage.enterDataValueToDynamicOnFormSignUp(driver, "nv104", firstNameUser);
+        signUpPage.enterDataValueToDynamicOnFormSignUp( "nv104", firstNameUser);
         log.info("Step 3. Enter last name");
-        signUpPage.enterDataValueToDynamicOnFormSignUp(driver, "nv103", lastNameUser);
+        signUpPage.enterDataValueToDynamicOnFormSignUp( "nv103", lastNameUser);
         log.info("Step 4. Enter email");
-        signUpPage.enterDataValueToDynamicOnFormSignUp(driver, "nv108", emailUser);
+        signUpPage.enterDataValueToDynamicOnFormSignUp( "nv108", emailUser);
         log.info("Step 5. Enter password");
-        signUpPage.enterDataValueToDynamicOnFormSignUp(driver, "nv109", passwordUser);
+        signUpPage.enterDataValueToDynamicOnFormSignUp( "nv109", passwordUser);
         log.info("Step 6. Enter confirm password");
-        signUpPage.enterDataValueToDynamicOnFormSignUp(driver, "repeatPassword", confirmPassUser);
+        signUpPage.enterDataValueToDynamicOnFormSignUp( "repeatPassword", confirmPassUser);
         log.info("Step 7. Click sign up button");
         signUpPage.clickSignUpButton();
     }
@@ -206,7 +205,7 @@ public class TestRegister extends AbstractTest {
     @Test(enabled = false)
     public void TC04_Check_Information_Of_Account() {
         log.info("Step1.Change language before checking");
-        newsfeedHomePage.changeLanguageNewsfeedToVI(driver);
+        newsfeedHomePage.changeLanguageNewsfeedToVI();
         log.info("Step 2.Compare Fullname display on My account widget with User Fullname");
         fullName = newsfeedHomePage.getFullNameDisplayOnMyAccount(driver);
         verifyEquals(fullName, getFullName(firstNameUser, lastNameUser));
@@ -233,13 +232,13 @@ public class TestRegister extends AbstractTest {
         verifyEquals(generalAccSetting.getFullNameIsDisplay(), fullName);
         log.info("Step 12.Logout newsfeed");
         generalAccSetting.clickToItemOnSettingMenu(driver, "ic-logout-c");
-        loginPage = PageGeneration.createLoginPage(driver);
+        loginPage = PageGeneration.createNewsfeedLoginPage(driver);
     }
 
     @Test
     public void TC05_Login_To_Newsfeed() {
         log.info("Step 1.Check Login newsfeed page");
-        verifyTrue(loginPage.checkAppStoreIconIsDisplay(driver));
+        verifyTrue(loginPage.checkAppStoreIconIsDisplay());
         log.info("Step 2.Enter email address");
         loginPage.enterUserNameToLogin(driver, "balo_04@mailinator.com");
         log.info("Step 3.Enter password");
