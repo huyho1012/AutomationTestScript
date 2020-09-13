@@ -74,4 +74,10 @@ public class NewsfeedHomepage extends HeaderPage {
     public boolean checkNewsfeedDisplayOnFirstTime(WebDriver driver) {
         return checkNewsfeedDisplay() && checkElementDisplay(driver, HomePageUI.FORM_UPDATE_NEW_INFO);
     }
+
+    public void clickCancelUpdateNewInfo() {
+        waitForElementClickable(driver, HomePageUI.CANCEL_UPDATE_INFO);
+        clickToElement(driver, HomePageUI.CANCEL_UPDATE_INFO);
+        setTimeDelay(1);
+    }
 }
