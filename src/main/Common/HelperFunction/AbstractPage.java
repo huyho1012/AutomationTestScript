@@ -1,8 +1,10 @@
 package Common.HelperFunction;
 
 import Common.GlobalVariables;
+import Interfaces.hahalolo_business.Tour.GeneralSetting.PublishPageUI;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -221,13 +223,49 @@ public abstract class AbstractPage {
         elements = findElements(driver,itemOnDropdown);
         for(WebElement item: elements){
             if(item.getText().contains(expectedValue)){
-                jsExecutor = (JavascriptExecutor) driver;
                 item.click();
                 setTimeDelay(1);
                 break;
             }
         }
     }
+    public void selectItemInCustomDropdownByScroll(WebDriver driver, String customDropdown, String itemOnDropdown, String expectedValue){
+        element = findElement(driver, customDropdown);
+        waitForElementClickable(driver, customDropdown);
+        clickToElement(driver,customDropdown);
+        setTimeDelay(1);
+        explicitWait = new WebDriverWait(driver, 30);
+        explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(itemOnDropdown)));
+        elements = findElements(driver,itemOnDropdown);
+        for(WebElement item: elements){
+            if(item.getText().contains(expectedValue)){
+                jsExecutor = (JavascriptExecutor) driver;
+                jsExecutor.executeScript("arguments[0].scrollIntoView(true);",item);
+                item.click();
+                setTimeDelay(1);
+                break;
+            }
+        }
+    }
+    public void selectItemInCustomDropdownByScroll(WebDriver driver, String customDropdown, String itemOnDropdown, String expectedValue, String... values){
+        element = findElement(driver, castToObject(customDropdown,values));
+        waitForElementClickable(driver, customDropdown);
+        clickToElement(driver,customDropdown);
+        setTimeDelay(1);
+        explicitWait = new WebDriverWait(driver, 30);
+        explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(castToObject(itemOnDropdown,values))));
+        elements = findElements(driver,itemOnDropdown);
+        for(WebElement item: elements){
+            if(item.getText().contains(expectedValue)){
+                jsExecutor = (JavascriptExecutor) driver;
+                jsExecutor.executeScript("arguments[0].scrollIntoView(true);",item);
+                item.click();
+                setTimeDelay(1);
+                break;
+            }
+        }
+    }
+
     public void selectItemInCustomDropdown(WebDriver driver, String customDropdown, String itemOnDropdown, String expectedValue, String... values){
         waitForElementClickable(driver, castToObject(customDropdown,values));
         clickToElement(driver,castToObject(customDropdown,values));
@@ -435,7 +473,7 @@ public abstract class AbstractPage {
                 e.printStackTrace();
             }
         }
-        setTimeDelay(3);
+        setTimeDelay(1);
     }
     public void uploadOneFileByAutoIT(WebDriver driver, String fileName){
         if (driver.toString().contains("firefox")){
@@ -462,6 +500,20 @@ public abstract class AbstractPage {
         element = findElement(driver,locator);
         return element.getCssValue(valueCSS);
     }
+
+    public String convertRpgToHexaCode(WebDriver driver,String locator, String cssValue){
+        element =findElement(driver, locator);
+        String colorCode= element.getCssValue(cssValue);
+        return Color.fromString(colorCode).asHex();
+    }
+
+    public String getAttributeOfClassAfter(WebDriver driver, String classLocator, String cssValue){
+        WebElement switchLabel = driver.findElement(By.cssSelector(classLocator));
+        jsExecutor = (JavascriptExecutor)driver;
+        String colorRGB = jsExecutor.executeScript("return window.getComputedStyle(arguments[0],':before').getPropertyValue('"+cssValue+"');",switchLabel).toString();
+    return colorRGB;
+    }
+
 }
 
 

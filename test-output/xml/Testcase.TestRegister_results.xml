@@ -6,16 +6,16 @@
            skipped="0"
            time="288.226">
   <properties />
-            <testcase name="TC20_Create_Scheduler_Of_Tour" time="0.135" classname="Testcase.Register.TestRegister">
+            <testcase name="TC20_Create_Scheduler_Of_Tour" time="0.135" classname="Testcase.SignUp.TestRegister">
                 <failure type="java.lang.NumberFormatException"
                   message="For input string: &quot;/2&quot;"
               >
-<![CDATA[java.lang.NumberFormatException: For input string: "/2"
+                    <![CDATA[java.lang.NumberFormatException: For input string: "/2"
   java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:68)
   java.base/java.lang.Integer.parseInt(Integer.java:638)
   java.base/java.lang.Integer.parseInt(Integer.java:770)
   Common.HelperFunction.AbstractTest.nextDate(AbstractTest.java:120)
-  Testcase.Register.TestRegister.TC20_Create_Scheduler_Of_Tour(TestRegister.java:698)
+  Testcase.SignUp.TestRegister.TC20_Create_Scheduler_Of_Tour(TestRegister.java:698)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -40,19 +40,19 @@
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
-            <testcase name="TC19_Create_Price_Of_Tour" time="0.306" classname="Testcase.Register.TestRegister">
+            <testcase name="TC19_Create_Price_Of_Tour" time="0.306" classname="Testcase.SignUp.TestRegister">
                 <failure type="java.lang.NumberFormatException"
                   message="For input string: &quot;/2&quot;"
               >
-<![CDATA[java.lang.NumberFormatException: For input string: "/2"
+                    <![CDATA[java.lang.NumberFormatException: For input string: "/2"
   java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:68)
   java.base/java.lang.Integer.parseInt(Integer.java:638)
   java.base/java.lang.Integer.parseInt(Integer.java:770)
   Common.HelperFunction.AbstractTest.nextDate(AbstractTest.java:120)
-  Testcase.Register.TestRegister.TC19_Create_Price_Of_Tour(TestRegister.java:676)
+  Testcase.SignUp.TestRegister.TC19_Create_Price_Of_Tour(TestRegister.java:676)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -77,21 +77,21 @@
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
   
   
-            <testcase name="TC10_CreateNewPage" time="12.355" classname="Testcase.Register.TestRegister" />
-                <testcase name="TC17_Update_Tour_Information" time="150.378" classname="Testcase.Register.TestRegister" />
-                <testcase name="TC05_Login_To_Newsfeed" time="3.902" classname="Testcase.Register.TestRegister" />
-                <testcase name="TC15_Create_New_Topic" time="52.077" classname="Testcase.Register.TestRegister" />
-                <testcase name="TC11_Update_Prepayment_Cancellation_On_Tour_General_Information" time="4.889" classname="Testcase.Register.TestRegister" />
-                <testcase name="TC14_Update_Noti_Order_Setting_On_Tour_General_Information" time="1.404" classname="Testcase.Register.TestRegister" />
-                <testcase name="TC16_Create_New_Promotion_Apply" time="0.000" classname="Testcase.Register.TestRegister" />
-                <testcase name="TC16_Create_New_Tour" time="4.951" classname="Testcase.Register.TestRegister" />
-                <testcase name="TC18_Create_Part_Of_Tour" time="57.179" classname="Testcase.Register.TestRegister" />
-                <testcase name="TC13_Update_Age_Setting_On_Tour_General_Information" time="0.411" classname="Testcase.Register.TestRegister" />
-                <testcase name="TC12_Update_VAT_On_Tour_General_Information" time="0.239" classname="Testcase.Register.TestRegister" />
+            <testcase name="TC10_CreateNewPage" time="12.355" classname="Testcase.SignUp.TestRegister" />
+                <testcase name="TC17_Update_Tour_Information" time="150.378" classname="Testcase.SignUp.TestRegister" />
+                <testcase name="TC05_Login_To_Newsfeed" time="3.902" classname="Testcase.SignUp.TestRegister" />
+                <testcase name="TC15_Create_New_Topic" time="52.077" classname="Testcase.SignUp.TestRegister" />
+                <testcase name="TC11_Update_Prepayment_Cancellation_On_Tour_General_Information" time="4.889" classname="Testcase.SignUp.TestRegister" />
+                <testcase name="TC14_Update_Noti_Order_Setting_On_Tour_General_Information" time="1.404" classname="Testcase.SignUp.TestRegister" />
+                <testcase name="TC16_Create_New_Promotion_Apply" time="0.000" classname="Testcase.SignUp.TestRegister" />
+                <testcase name="TC16_Create_New_Tour" time="4.951" classname="Testcase.SignUp.TestRegister" />
+                <testcase name="TC18_Create_Part_Of_Tour" time="57.179" classname="Testcase.SignUp.TestRegister" />
+                <testcase name="TC13_Update_Age_Setting_On_Tour_General_Information" time="0.411" classname="Testcase.SignUp.TestRegister" />
+                <testcase name="TC12_Update_VAT_On_Tour_General_Information" time="0.239" classname="Testcase.SignUp.TestRegister" />
       
 </testsuite>

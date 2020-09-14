@@ -1,4 +1,4 @@
-package Testcase.Register;
+package Testcase.SignUp;
 
 import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;
@@ -13,7 +13,7 @@ public class GUI_Test_Of_SignUp extends AbstractTest {
     SignUpPage signUpPage;
     @Test(enabled = false)
     public void Testcase_Register_01_Check_SignUpForm_With_Eng_Language(){
-        newsfeedLoginPage.clickToChangeToEng();
+        newsfeedLoginPage.clickToChangeToEng(driver);
         signUpPage = PageGeneration.createFormRegister(driver);
         log.info("Check Title Of SignUp form when");
         verifyEquals(signUpPage.getTitleOfFormSignUp(),"Join Hahalolo Now!");
@@ -27,6 +27,7 @@ public class GUI_Test_Of_SignUp extends AbstractTest {
     }
     @Test(enabled = false)
     public void Testcase_Register_02_Check_SignUpForm_With_VI_Language(){
+        newsfeedLoginPage.clickToChangeLanguageToVI(driver);
         log.info("Check Title Of SignUp form when");
         verifyEquals(signUpPage.getTitleOfFormSignUp(),"Tham gia Hahalolo ngay!");
         log.info("Check placeholder of fields");

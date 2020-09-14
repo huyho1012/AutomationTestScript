@@ -14,7 +14,6 @@ public class MediaManagement extends AbstractPage {
         waitElementToVisible(driver, MediaManagementUI.UPLOAD_BUTTON);
         clickToElement(driver, MediaManagementUI.UPLOAD_BUTTON);
         uploadMultipleFileByAutoIT(driver,fileName);
-        setTimeDelay(1);
     }
     public void selectOneImageOnMedia(WebDriver driver){
         waitElementToVisible(driver,MediaManagementUI.MEDIA_MANAGEMENT_POPUP);

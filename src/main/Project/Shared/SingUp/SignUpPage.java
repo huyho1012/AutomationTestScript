@@ -21,13 +21,11 @@ public class SignUpPage extends CommonStartApp {
     public void enterDataValueToDynamicOnFormSignUp(String nameField , String dataValue){
         waitElementToVisible(driver, SignUpUI.TEXT_FIELD_DYNAMIC, nameField);
         sendKeyToElement(driver, SignUpUI.TEXT_FIELD_DYNAMIC, dataValue, nameField);
-        setTimeDelay(1);
     }
 
     public void choosePhoneCode(String countryCode){
         waitForElementClickable(driver,SignUpUI.PHONE_CODE_DROPDOWN);
         selectItemInCustomDropdown(driver,SignUpUI.PHONE_CODE_DROPDOWN,SignUpUI.PHONE_CODE_ITEM,countryCode);
-        setTimeDelay(1);
     }
 
     public String getValidErrMessageOfDynamicOnFormSignUp(String nameField){
@@ -38,7 +36,6 @@ public class SignUpPage extends CommonStartApp {
     public void clickSignUpButton(){
         waitForElementClickable(driver, SignUpUI.SIGNUP_BUTTON);
         clickToElement(driver, SignUpUI.SIGNUP_BUTTON);
-        setTimeDelay(1);
     }
 
     public String getErrMessageOfPhoneCode(){
@@ -56,32 +53,24 @@ public class SignUpPage extends CommonStartApp {
         return getTextElement(driver, SignUpUI.TITLE_FORM_VERIFY_ACCOUNT);
     }
 
-
-
     public void enterVerifyCodeToVerifyAccount(WebDriver driver, String verifyCode){
         waitElementToVisible(driver, SignUpUI.VERIFY_CODE_FIELD);
         sendKeyToElement(driver,SignUpUI.VERIFY_CODE_FIELD,verifyCode);
-        setTimeDelay(1);
     }
 
     public void clickToVerifyAccount(WebDriver driver){
         waitForElementClickable(driver, SignUpUI.VERIFY_ACCOUNT_BUTTON);
         clickToElement(driver, SignUpUI.VERIFY_ACCOUNT_BUTTON);
-        setTimeDelay(1);
     }
 
     public void clickToResendCodeOnVerificationPage(WebDriver driver){
         waitForElementClickable(driver, SignUpUI.BUTTON_RESEND_CODE);
         clickToElement(driver,SignUpUI.BUTTON_RESEND_CODE);
-        setTimeDelay(1);
     }
 
 
     public boolean checkVerifyPageDisplay() {
-        if(checkElementDisplay(driver, SignUpUI.VERIFY_ACCOUNT_FORM_PAGE) && getPageTitle(driver).equals("Kích hoạt tài khoản | Hahalolo")){
-            return true;
-        }
-        return false;
+        return checkElementDisplay(driver, SignUpUI.VERIFY_ACCOUNT_FORM_PAGE) && getPageTitle(driver).equals("Kích hoạt tài khoản | Hahalolo");
     }
 
 

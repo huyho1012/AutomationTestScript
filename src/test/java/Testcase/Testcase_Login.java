@@ -33,11 +33,11 @@ public class Testcase_Login extends AbstractTest {
         log.info("Precondition - Step 3.  Verify url page");
         verifyEquals(newsfeedLogin.getCurrentURL(driver), "https://test-newsfeed.hahalolo.com/auth/signin");
         log.info("Precondition - Step 4. Verify icon Google play display");
-        verifyTrue(newsfeedLogin.checkGooglePlayIconIsDisplay());
+        verifyTrue(newsfeedLogin.checkGooglePlayIconIsDisplay(driver));
         log.info("Precondition - Step 5. Verify icon App store display");
-        verifyTrue(newsfeedLogin.checkAppStoreIconIsDisplay());
+        verifyTrue(newsfeedLogin.checkAppStoreIconIsDisplay(driver));
         log.info("Precondition - Step 6. Change system language To Vi");
-        newsfeedLogin.clickToChangeLanguageToVI();
+        newsfeedLogin.clickToChangeLanguageToVI(driver);
     }
     @Test
     public void Testcase_Newsfeed_Login_01_Login_With_Invalid_Information(){

@@ -1,4 +1,4 @@
-package Testcase.Register;
+package Testcase.SignUp;
 
 import Common.DriverManagement.BrowserInitialization;
 import Common.DriverManagement.DriverManager;
@@ -13,7 +13,7 @@ import Project.Shared.SingUp.SignUpPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
-public class SystemTest_Of_SignUp extends AbstractTest {
+public class Component_Test_Of_SignUp extends AbstractTest {
     WebDriver driver;
     DriverManager driverManager;
     DataHelper data = DataHelper.getData();
@@ -35,27 +35,24 @@ public class SystemTest_Of_SignUp extends AbstractTest {
         driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
         newsfeedLoginPage = PageGeneration.createNewsfeedLoginPage(driver);
         log.info("Step 9. Change language to Vietnamese");
-        newsfeedPage.changeLanguageNewsfeedToVI();
+        newsfeedLoginPage.clickToChangeLanguageToVI(driver);
         signUpPage = PageGeneration.createFormRegister(driver);
     }
-
     @BeforeMethod
     public void prepareData(){
         email = randomVirtualEmail();
         firstName = data.getFirstName();
         lastName = data.getFirstName();
         HTML_CODE ="<p>HelloWord</p>";
-        SCRIPT_CODE= "<script>destroyWebsite();</script>";;
-    }
-    @BeforeTest
-    public void prepare_Function(){
-        signUpPage.enterDataValueToDynamicOnFormSignUp("nv103", lastName);
-        signUpPage.enterDataValueToDynamicOnFormSignUp("nv108", email);
-        signUpPage.enterDataValueToDynamicOnFormSignUp("nv109","123456");
-        signUpPage.enterDataValueToDynamicOnFormSignUp( "repeatPassword","123456");
+        SCRIPT_CODE= "<script>destroyWebsite();</script>";
     }
     @Test
     public void Testcase_Register_01_Check_Register_New_Account_With_Invalid_FirstName(){
+        signUpPage.enterDataValueToDynamicOnFormSignUp("nv103", lastName);
+        signUpPage.enterDataValueToDynamicOnFormSignUp("nv108", email);
+        signUpPage.enterDataValueToDynamicOnFormSignUp("nv109","123456");
+        signUpPage.enterDataValueToDynamicOnFormSignUp("repeatPassword","123456");
+
         log.info("Step 1. Do Enter First name");
         signUpPage.enterDataValueToDynamicOnFormSignUp("nv104","");
         signUpPage.clickSignUpButton();
@@ -84,11 +81,10 @@ public class SystemTest_Of_SignUp extends AbstractTest {
         signUpPage.enterDataValueToDynamicOnFormSignUp("nv104",HTML_CODE);
         signUpPage.clickSignUpButton();
         verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp("nv104"),"Tên không chứa ký tự đặc biệt.");
+        signUpPage.enterDataValueToDynamicOnFormSignUp("nv104",firstName);
     }
     @Test
     public void Testcase_Register_02_Check_Register_New_Account_With_Invalid_LastName(){
-        log.info("Precondition");
-        signUpPage.enterDataValueToDynamicOnFormSignUp("nv104",firstName);
         log.info("Step 1. Do not input Last name");
         signUpPage.enterDataValueToDynamicOnFormSignUp("nv103", "");
         signUpPage.clickSignUpButton();
@@ -110,7 +106,7 @@ public class SystemTest_Of_SignUp extends AbstractTest {
         signUpPage.clickSignUpButton();
         verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp("nv103"),"Họ không chứa ký tự đặc biệt.");
         log.info("Step 6. Last name contains Script Code");
-        signUpPage.enterDataValueToDynamicOnFormSignUp( "nv103", SCRIPT_CODE);
+        signUpPage.enterDataValueToDynamicOnFormSignUp("nv103", SCRIPT_CODE);
         signUpPage.clickSignUpButton();
         verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp("nv103"),"Họ không chứa ký tự đặc biệt.");
         log.info("Step 7. Last name contains HTML Code");
@@ -174,10 +170,10 @@ public class SystemTest_Of_SignUp extends AbstractTest {
         signUpPage.clickSignUpButton();
         verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp("nv108"), "Tài khoản không hợp lệ.");
         log.info("Phone number invalid with phone area");
-        signUpPage.enterDataValueToDynamicOnFormSignUp("nv108", "0541565555");
         signUpPage.choosePhoneCode("(+84) Viet Nam");
+        signUpPage.enterDataValueToDynamicOnFormSignUp("nv108", "0541565555");
         signUpPage.clickSignUpButton();
-        verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp("nv108"), "Tài khoản không hợp lệ.");
+        verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp("nv108"), "Số điện thoại không hợp lệ.");
         log.info("Existed Phone");
         signUpPage.enterDataValueToDynamicOnFormSignUp("nv108","0936709449");
         signUpPage.clickSignUpButton();
@@ -207,11 +203,12 @@ public class SystemTest_Of_SignUp extends AbstractTest {
         signUpPage.enterDataValueToDynamicOnFormSignUp("nv109","123 456");
         signUpPage.clickSignUpButton();
         verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp("nv109"),"Mật khẩu không chứa kí tự trắng.");
+
+
+        signUpPage.enterDataValueToDynamicOnFormSignUp("nv109","123456");
     }
     @Test
     public void Testcase_Register_07_Check_Register_New_Account_With_Invalid_Confirm_Password(){
-        log.info("Precondition");
-        signUpPage.enterDataValueToDynamicOnFormSignUp("nv109","123456");
         log.info("Step 1. Do not input Confirm Password");
         signUpPage.enterDataValueToDynamicOnFormSignUp("repeatPassword","");
         signUpPage.clickSignUpButton();
@@ -270,7 +267,6 @@ public class SystemTest_Of_SignUp extends AbstractTest {
         newsfeedPage.checkNewsfeedDisplayOnFirstTime(driver);
         log.info("Step 9. Click cancel update information");
         newsfeedPage.clickCancelUpdateNewInfo();
-
         log.info("Step 10. Go To Personal about");
         newsfeedPage.clickToEditProfile(driver);
         personalAboutPage = PageGeneration.createPerTAboutPage(driver);

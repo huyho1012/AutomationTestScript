@@ -4,7 +4,7 @@ public class SignUpUI {
     public static final String TITLE_REGISTER_FORM = "//div[@class = 'form-signup-header']/div";
     public static final String TEXT_FIELD_DYNAMIC = "//input[@name = '%s']";
     public static final String ERROR_MESSAGE_OF_TEXT_FIELD = "//input[@name = '%s']/following-sibling::*[contains(@class,'invalid-feedback')]";
-    public static final String PHONE_CODE_DROPDOWN="//select[@id = 'select-phone-code']";
+    public static final String PHONE_CODE_DROPDOWN="//select[@id = 'select-phone-code']/following-sibling::div//input";
     public static final String PHONE_CODE_ITEM="//select[@id = 'select-phone-code']/following-sibling::div//div[@class = 'item']";
 
     public static final String SIGNUP_BUTTON = "//button[@id='signUpButton']";

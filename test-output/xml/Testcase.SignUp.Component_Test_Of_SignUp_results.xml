@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test with firefox"
+           tests="8"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="64.994">
+  <properties />
+  
+  
+            <testcase name="Testcase_Register_07_Check_Register_New_Account_With_Invalid_Confirm_Password" time="0.712" classname="Testcase.SignUp.Component_Test_Of_SignUp" />
+                <testcase name="Testcase_Register_03_Check_Register_New_Account_With_Invalid_Email" time="1.568" classname="Testcase.SignUp.Component_Test_Of_SignUp" />
+                <testcase name="Testcase_Register_03_Check_Register_New_Account_With_Invalid_Phonenumber" time="6.898" classname="Testcase.SignUp.Component_Test_Of_SignUp" />
+                <testcase name="Testcase_Register_01_Check_Register_New_Account_With_Invalid_FirstName" time="1.965" classname="Testcase.SignUp.Component_Test_Of_SignUp" />
+                <testcase name="Testcase_Register_08_Check_Register_New_Account_With_UpperCase_Email" time="27.983" classname="Testcase.SignUp.Component_Test_Of_SignUp" />
+                <testcase name="Testcase_Register_06_Check_Register_New_Account_With_Invalid_Password" time="0.762" classname="Testcase.SignUp.Component_Test_Of_SignUp" />
+                <testcase name="Testcase_Register_09_Check_Register_New_Account_ContainsMoreThan2Idots" time="24.113" classname="Testcase.SignUp.Component_Test_Of_SignUp" />
+                <testcase name="Testcase_Register_02_Check_Register_New_Account_With_Invalid_LastName" time="0.993" classname="Testcase.SignUp.Component_Test_Of_SignUp" />
+      
+</testsuite>

@@ -17,7 +17,7 @@ public class CommonStartApp extends AbstractTest {
     String content6= "thao tác nhỏ để trải nghiệm và cảm nhận";
     String content7= "các tiện ích tuyệt vời của chúng tôi.";
 
-    public boolean checkContentOfHaLoStartApp() {
+    public boolean checkContentOfHaLoStartApp(WebDriver driver) {
         waitElementToVisible(driver, LoginUI.LOGIN_BUTTON);
         return getTextElement(driver, StartingCommonUI.NEWSFEED_HALO_CONTENT_1).equalsIgnoreCase(content1)
                 && getTextElement(driver, StartingCommonUI.NEWSFEED_HALO_CONTENT_2).equalsIgnoreCase(content2)
@@ -27,30 +27,30 @@ public class CommonStartApp extends AbstractTest {
                 && getTextElement(driver, StartingCommonUI.NEWSFEED_HALO_CONTENT_6).equalsIgnoreCase(content6)
                 && getTextElement(driver, StartingCommonUI.NEWSFEED_HALO_CONTENT_7).equalsIgnoreCase(content7);
     }
-    public boolean checkGooglePlayIconIsDisplay(){
+    public boolean checkGooglePlayIconIsDisplay(WebDriver driver){
         waitElementToVisible(driver, LoginUI.LOGIN_BUTTON);
         return checkElementDisplay(driver, StartingCommonUI.GOOGLE_PLAY);
     }
-    public boolean checkAppStoreIconIsDisplay(){
+    public boolean checkAppStoreIconIsDisplay(WebDriver driver){
         waitElementToVisible(driver, LoginUI.LOGIN_BUTTON);
         return checkElementDisplay(driver, StartingCommonUI.APP_STORE);
     }
-    public void clickToAppStoreLink(){
+    public void clickToAppStoreLink(WebDriver driver){
         waitForElementClickable(driver, StartingCommonUI.APP_STORE);
         clickToElement(driver, StartingCommonUI.APP_STORE);
     }
-    public void clickToCHPlayLink(){
+    public void clickToCHPlayLink(WebDriver driver){
         waitForElementClickable(driver, StartingCommonUI.GOOGLE_PLAY);
         clickToElement(driver, StartingCommonUI.GOOGLE_PLAY);
     }
-    public void clickToChangeLanguageToVI(){
+    public void clickToChangeLanguageToVI(WebDriver driver){
         waitForPageLoading(driver);
         if(getAttributeValue(driver,LoginUI.VI_ICON,"class").contains("active")){
             clickToElement(driver,LoginUI.VI_ICON);
         }
     }
 
-    public void clickToChangeToEng(){
+    public void clickToChangeToEng(WebDriver driver){
         waitForPageLoading(driver);
         if(getAttributeValue(driver,LoginUI.ENG_ICON,"class").contains("active")){
             clickToElement(driver,LoginUI.ENG_ICON);
