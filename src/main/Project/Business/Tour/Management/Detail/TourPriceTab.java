@@ -17,6 +17,7 @@ public class TourPriceTab extends TourCommon {
     public void clickToCreateNewPrice(WebDriver driver) {
         waitForElementClickable(driver, TourPriceUI.BTN_CREATE_NEW_PRICE);
         clickToElement(driver,TourPriceUI.BTN_CREATE_NEW_PRICE);
+        setTimeDelay(1);
     }
 
     public boolean checkPriceDetailIsDisplay() {
@@ -26,35 +27,41 @@ public class TourPriceTab extends TourCommon {
     public void chooseStartDateOfPrice(WebDriver driver, String dateTime) {
         waitElementToVisible(driver, TourPriceUI.START_DATE_PRICE);
         sendKeyToElement(driver,TourPriceUI.START_DATE_PRICE,dateTime);
+        setTimeDelay(1);
     }
 
     public void enterValueOfAdultPrice(WebDriver driver, String priceAdult) {
         waitElementToVisible(driver, TourPriceUI.ADULT_PRICE);
         sendKeyToElement(driver, TourPriceUI.ADULT_PRICE, priceAdult);
+        setTimeDelay(1);
     }
 
     public void enterValueOfChildPrice(WebDriver driver, String priceChild) {
         checkItemOnCheckBox(driver, TourPriceUI.CHILD_CHECKBOX);
         waitElementToVisible(driver, TourPriceUI.CHILD_PRICE);
         sendKeyToElement(driver, TourPriceUI.CHILD_PRICE, priceChild);
+        setTimeDelay(1);
     }
 
     public void enterValueOfYoungChildPrice(WebDriver driver, String priceYoungChild) {
         checkItemOnCheckBox(driver, TourPriceUI.YOUNG_CHILD_CHECKBOX);
         waitElementToVisible(driver, TourPriceUI.YOUNG_CHILD_PRICE);
         sendKeyToElement(driver, TourPriceUI.YOUNG_CHILD_PRICE, priceYoungChild);
+        setTimeDelay(1);
     }
 
     public void enterValueOfInfantPrice(WebDriver driver, String priceBaby) {
         checkItemOnCheckBox(driver, TourPriceUI.BABY_CHECKBOX);
         waitElementToVisible(driver, TourPriceUI.BABY_PRICE);
         sendKeyToElement(driver, TourPriceUI.BABY_PRICE, priceBaby);
+        setTimeDelay(1);
     }
 
 
     public void clickToSavePriceButton(WebDriver driver) {
         waitForElementClickable(driver, TourPriceUI.BTN_SAVE_PRICE);
         clickToElement(driver, TourPriceUI.BTN_SAVE_PRICE);
+        setTimeDelay(1);
     }
 
     public boolean checkPriceCreatedSuccessfully() {

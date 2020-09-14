@@ -29,41 +29,43 @@ public class BusinessPageManagement extends HeaderPage {
     }
 
     public void clickPageManagementLinkToGoDetail(WebDriver driver, String pageName) {
-        waitForElementClickable(driver,BusinessPageManagementUI.PAGE_MANAGEMENT,pageName);
-        clickToElement(driver,BusinessPageManagementUI.PAGE_MANAGEMENT,pageName);
+        waitForElementClickable(driver,BusinessPageManagementUI.PAGE_MANAGEMENT_LINK,pageName);
+        clickToElement(driver,BusinessPageManagementUI.PAGE_MANAGEMENT_LINK,pageName);
         setTimeDelay(1);
     }
 
     public boolean checkPageDisplaySuccess(WebDriver driver) {
-        return getPageTitle(driver).contains("Hahalolo - Business Pages");
+        waitElementToVisible(driver,BusinessPageManagementUI.HEADER_TITLE_PAGE);
+        if(checkElementDisplay(driver, BusinessPageManagementUI.BUTTON_CREATE_PAGE) && getTextElement(driver,BusinessPageManagementUI.HEADER_TITLE_PAGE).equalsIgnoreCase("Danh sách trang")){
+            return true;
+        }
+        else
+            return false;
     }
 
     public boolean checkPopupCreatePageDisplay() {
-        System.out.println("Style of popup " + getAttributeValue(driver, BusinessPageManagementUI.POPUP_CREATE_NEW_PAGE,"style"));
-        return getAttributeValue(driver, BusinessPageManagementUI.POPUP_CREATE_NEW_PAGE,"style").contains("display: block");
+        return checkElementDisplay(driver, BusinessPageManagementUI.POPUP_CREATE_NEW_PAGE);
     }
 
     public boolean checkCreatedPageSuccess(WebDriver driver, String pageName) {
-        waitElementToVisible(driver, BusinessPageManagementUI.BUTTON_OPEN_CREATE_PAGE_POPUP);
+        waitElementToVisible(driver, BusinessPageManagementUI.BUTTON_CREATE_NEW_PAGE);
         waitElementToVisible(driver, BusinessPageManagementUI.BUTTON_ASSIGNED_PAGE);
-        System.out.println("Page name on Details: " + getTextElement(driver, BusinessPageManagementUI.PAGE_NAME_ON_DETAIL));
-        System.out.println("Page name on list: " + getTextElement(driver, BusinessPageManagementUI.PAGE_NAME_ON_PAGE_LIST));
         return getTextElement(driver, BusinessPageManagementUI.PAGE_NAME_ON_DETAIL).contains(pageName)
-                && getTextElement(driver, BusinessPageManagementUI.PAGE_NAME_ON_PAGE_LIST).contains(pageName);
+                && getTextElement(driver, BusinessPageManagementUI.PAGE_NAME_ON_LIST).contains(pageName);
     }
 
     public String getOwnerOfDirectPage(WebDriver driver, String pageName) {
-        System.out.println("Ownern of page: " + getTextElement(driver, BusinessPageManagementUI.OWNER_PAGE_NAME,pageName));
-        return getTextElement(driver, BusinessPageManagementUI.OWNER_PAGE_NAME, pageName);
+        System.out.println("Ownern of page: " + getTextElement(driver, BusinessPageManagementUI.OWNER_PAGE,pageName));
+        return getTextElement(driver, BusinessPageManagementUI.OWNER_PAGE, pageName);
     }
 
     public String getPageIdOfDirectPage(WebDriver driver, String pageName) {
-        System.out.println("Ownern of page: " + getTextElement(driver, BusinessPageManagementUI.ID_OF_PAGE_NAME,pageName));
-        return getTextElement(driver,BusinessPageManagementUI.ID_OF_PAGE_NAME,pageName);
+        System.out.println("Ownern of page: " + getTextElement(driver, BusinessPageManagementUI.ID_PAGE,pageName));
+        return getTextElement(driver,BusinessPageManagementUI.ID_PAGE,pageName);
     }
 
     public void clickToCreatePageToDisplayPopupCreatePage() {
-        waitForElementClickable(driver, BusinessPageManagementUI.BUTTON_OPEN_CREATE_PAGE_POPUP);
-        clickToElement(driver, BusinessPageManagementUI.BUTTON_OPEN_CREATE_PAGE_POPUP);
+        waitForElementClickable(driver, BusinessPageManagementUI.BUTTON_CREATE_NEW_PAGE);
+        clickToElement(driver, BusinessPageManagementUI.BUTTON_CREATE_NEW_PAGE);
     }
 }

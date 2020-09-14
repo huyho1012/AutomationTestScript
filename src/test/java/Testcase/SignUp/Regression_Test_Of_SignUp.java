@@ -88,6 +88,8 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
 
     String partName, partDay, partTime, partAddress, partDesc;
     String startDateTour, endTDateTour;
+    String promoName, promoDesc, promoTimeApplied, promoLang, promoCurrency, promoImage;
+    String discountValue1, minOrderValue1;
 
     @Parameters("browser")
     @BeforeClass
@@ -145,7 +147,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         partAddress = "400A Điện biên phủ , Bình Thạnh ";
         partDesc = "haehahaha";
         startDateTour = "20/10/2020";
-        endTDateTour = "30/12/2020";
+        endTDateTour = "30/11/2020";
     }
 
     @Test(enabled = false)
@@ -706,7 +708,6 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         log.info("Step 4. Check Part tab display");
         verifyTrue(tourPriceTab.checkPriceDetailIsDisplay());
         log.info("Step 5. Enter day of part");
-
         tourPriceTab.chooseStartDateOfPrice(driver, startDateTour);
         log.info("Step 6. Enter day of part");
         tourPriceTab.enterValueOfAdultPrice(driver, "300000");
@@ -728,10 +729,10 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         tourSchedulerTab = PageGeneration.createTourSchedulerTab(driver);
         log.info("Step 2. Check Scheduler tab display");
         verifyTrue(tourSchedulerTab.checkSchedulerTabDisplaySuccess());
-        log.info("Step 3. Choose start Date");
-        tourSchedulerTab.chooseStartDate(driver,startDateTour);
         log.info("Step 4. Choose End Date");
         tourSchedulerTab.chooseEndDate(driver, endTDateTour);
+        log.info("Step 3. Choose start Date");
+        tourSchedulerTab.chooseStartDate(driver,startDateTour);
         log.info("Step 5. Click button setting");
         tourSchedulerTab.clickButtonSetting(driver);
     }
@@ -743,10 +744,10 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         log.info("Step 2. Check Tour services tab display");
         verifyTrue(tourServiceTab.checkTourServiceTabDisplaySuccess());
         log.info("Step 3. Choose Tour services");
-        tourServiceTab.addServicesApply(driver);
+        tourServiceTab.addServicesApply(driver,2);
         log.info("Step 4. Click button setting");
         tourServiceTab.clickUpdateButton(driver);
-//        log.info("Step 5. Check service is added");
+        log.info("Step 5. Check service is added");
 //        tourServiceTab.checkHaloTourIsAdded(driver);
     }
     @Test
@@ -758,40 +759,47 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         verifyTrue(tourPromoTab.checkPromotionTabDislay());
         log.info("Step 3. Check Tour promotion no promotion apply");
         verifyEquals(tourPromoTab.getMessageNotFoundPromo(), "Không tìm thấy dữ liệu.");
-        log.info("Step 1. Click Create new promo");
+        log.info("Step 4. Click Create new promo");
         tourPromoTab.clickToCreatePromotionButton();
-
         tourPromotionPage = PageGeneration.goToCreateEditPromotionPage(driver);
-        log.info("Step 1. Enter promotion name");
-        tourPromotionPage.enterPromoName(driver, "");
-        log.info("Step 1. Enter promotion desc");
+        log.info("Step 5. Enter promotion name");
+        promoName = "Khuyến mãi mùa 1";
+        tourPromotionPage.enterPromoName(driver, promoName);
+        log.info("Step 6. Enter promotion desc");
+        promoName = "";
         tourPromotionPage.enterPromoDesc(driver, "");
-        log.info("Step 1. Choose language promotion");
+        promoLang = "";
+        log.info("Step 7. Choose language promotion");
         tourPromotionPage.chooseLanguagePromotion(driver, "");
-        log.info("Step 1. Choose currency promotion");
+        log.info("Step 8. Choose currency promotion");
+        promoCurrency ="";
         tourPromotionPage.chooseCurrencyPromotion(driver, "");
-        log.info("Step 1. Add promotion image");
-        tourPromotionPage.clickAddImagePromo(driver, "");
-        log.info("Step 1. Choose promotion time range");
+        log.info("Step 9. Add promotion image");
+        promoImage = "";
+        tourPromotionPage.clickAddImagePromo(driver, promoImage);
+        log.info("Step 10. Choose promotion time range");
+        promoTimeApplied ="";
         tourPromotionPage.enterDateRangeApply(driver, "");
-        log.info("Step 1. Choose discount type");
+        log.info("Step 11. Choose discount type is ");
         tourPromotionPage.chooseTypeDiscount(driver, 1);
-        log.info("Step 1. Choose promotion type");
+        log.info("Step 12. Choose promotion type is");
         tourPromotionPage.chooseTypeDiscount(driver, 1);
-        log.info("Step 1. Enter discount value");
-        tourPromotionPage.enterDiscountAmount(driver, "");
-        log.info("Step 1. Enter min order value");
-        tourPromotionPage.enterMinOrderValue(driver, "");
-        log.info("Step 1. Choose Apply Mode");
+        discountValue1 = "";
+        log.info("Step 13. Enter discount value");
+        tourPromotionPage.enterDiscountAmount(driver, discountValue1);
+        log.info("Step 14. Enter min order value");
+        minOrderValue1 = "";
+        tourPromotionPage.enterMinOrderValue(driver, minOrderValue1);
+        log.info("Step 15. Choose sample mode");
         tourPromotionPage.chooseModeSimple(driver);
-        log.info("Step 1. Choose Tour apply promotion");
+        log.info("Step 16. Choose Tour apply promotion");
         tourPromotionPage.clickIconAddTourToSelectedList(driver);
-        log.info("Step 1. Publish promotion");
+        log.info("Step 17. Publish promotion");
         tourPromotionPage.scrollToTopPage(driver);
         tourPromotionPage.publicPromotion(driver);
-        log.info("Step 1. Click button Save");
+        log.info("Step 18. Click button Save");
         tourPromotionPage.clickSaveButton(driver);
-        log.info("Step 1. Check detail promotion");
+        log.info("Step 19. Check detail promotion");
         verifyTrue(tourPromotionPage.checkViewDetailPromotionDisplay());
 
         log.info("Step 1. Check info of promotion");

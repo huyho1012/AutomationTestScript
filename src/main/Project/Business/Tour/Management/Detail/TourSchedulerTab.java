@@ -17,19 +17,16 @@ public class TourSchedulerTab extends TourCommon {
     public void chooseStartDate(WebDriver driver, String startDate) {
         waitElementToVisible(driver, TourSchedulerUI.START_DATE_FIELD);
         sendKeyToElement(driver, TourSchedulerUI.START_DATE_FIELD,startDate);
-        setTimeDelay(1);
     }
 
     public void chooseEndDate(WebDriver driver,String endDate) {
         waitElementToVisible(driver, TourSchedulerUI.END_DATE_FIELD);
         sendKeyToElement(driver, TourSchedulerUI.END_DATE_FIELD,endDate);
-        setTimeDelay(1);
+        setTimeDelay(3);
     }
 
     public void clickButtonSetting(WebDriver driver) {
         waitForElementClickable(driver, TourSchedulerUI.BUTTON_SETTING);
         clickToElement(driver, TourSchedulerUI.BUTTON_SETTING);
-        setTimeDelay(1);
-
     }
 }

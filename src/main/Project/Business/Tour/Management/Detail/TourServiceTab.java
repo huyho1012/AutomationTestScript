@@ -15,13 +15,16 @@ public class TourServiceTab extends TourCommon {
         return checkElementDisplay(driver, TourServiceUI.SERVICE_TAB);
     }
 
-    public void addServicesApply(WebDriver driver) {
+    public void addServicesApply(WebDriver driver , int numberService) {
         waitElementToVisible(driver, TourServiceUI.SERVICE_TAB);
         int n = findElements(driver, TourServiceUI.HALO_SERVICE_LIST).size();
         for(int i =0 ; i<n ; i++){
             waitForElementClickable(driver,TourServiceUI.HALO_SERVICE_ITEM);
             clickToElement(driver,TourServiceUI.HALO_SERVICE_ITEM);
             setTimeDelay(1);
+            if(i == numberService){
+                break;
+            }
         }
     }
     public void removeServiceApply(WebDriver driver) {
