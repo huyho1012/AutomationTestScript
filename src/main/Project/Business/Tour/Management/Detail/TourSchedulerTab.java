@@ -11,6 +11,7 @@ public class TourSchedulerTab extends TourCommon {
     }
 
     public boolean checkSchedulerTabDisplaySuccess() {
+        scrollToTopPage(driver);
         return checkElementDisplay(driver, TourSchedulerUI.SCHEDULER_TAB);
     }
 
@@ -26,7 +27,8 @@ public class TourSchedulerTab extends TourCommon {
     }
 
     public void clickButtonSetting(WebDriver driver) {
+        clickToElement(driver,TourSchedulerUI.SCHEDULER_TAB);
         waitForElementClickable(driver, TourSchedulerUI.BUTTON_SETTING);
-        clickToElement(driver, TourSchedulerUI.BUTTON_SETTING);
+        clickToElementByJS(driver, TourSchedulerUI.BUTTON_SETTING);
     }
 }

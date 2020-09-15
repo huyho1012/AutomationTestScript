@@ -36,11 +36,7 @@ public class BusinessPageManagement extends HeaderPage {
 
     public boolean checkPageDisplaySuccess(WebDriver driver) {
         waitElementToVisible(driver,BusinessPageManagementUI.HEADER_TITLE_PAGE);
-        if(checkElementDisplay(driver, BusinessPageManagementUI.BUTTON_CREATE_PAGE) && getTextElement(driver,BusinessPageManagementUI.HEADER_TITLE_PAGE).equalsIgnoreCase("Danh sách trang")){
-            return true;
-        }
-        else
-            return false;
+        return checkElementDisplay(driver, BusinessPageManagementUI.BUTTON_CREATE_PAGE) && getTextElement(driver, BusinessPageManagementUI.HEADER_TITLE_PAGE).equalsIgnoreCase("Danh sách trang");
     }
 
     public boolean checkPopupCreatePageDisplay() {

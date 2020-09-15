@@ -24,41 +24,34 @@ public class TourInfoTab extends TourCommon {
     }
 
     public void updateLogo(WebDriver driver, String fileImage) {
-        media = new MediaManagement(driver);
         clickToElementByJS(driver, TourInfoUI.UPLOAD_BUTTON, "uploadLogo");
         waitElementToVisible(driver,MediaManagementUI.MEDIA_MANAGEMENT_POPUP);
+        media = new MediaManagement(driver);
         media.uploadImageFromLocalToMedia(driver, fileImage);
-        waitForElementInvisible(driver, MediaManagementUI.PROCESSING_BAR);
-        setTimeDelay(10);
-        media.selectOneImageOnMedia(driver);
+        waitElementToVisible(driver, MediaManagementUI.PROCESSING_BAR);
+        waitForElementClickable(driver,MediaManagementUI.SELECT_BUTTON);
+        clickToElement(driver, MediaManagementUI.SELECT_BUTTON);
         setTimeDelay(1);
     }
-    public void updateCover(WebDriver driver, String fileImage) {
-        media = new MediaManagement(driver);
+    public void updateCover(WebDriver driver, String fileName) {
         clickToElementByJS(driver, TourInfoUI.UPLOAD_BUTTON, "uploadCover");
         waitElementToVisible(driver,MediaManagementUI.MEDIA_MANAGEMENT_POPUP);
-        media.uploadImageFromLocalToMedia(driver, fileImage);
-        waitForElementInvisible(driver, MediaManagementUI.PROCESSING_BAR);
-        setTimeDelay(10);
-        media.selectOneImageOnMedia(driver);
+        media = new MediaManagement(driver);
+        media.uploadImageFromLocalToMedia(driver,fileName);
+        waitElementToVisible(driver, MediaManagementUI.PROCESSING_BAR);
+        waitForElementClickable(driver,MediaManagementUI.SELECT_BUTTON);
+        clickToElement(driver, MediaManagementUI.SELECT_BUTTON);
         setTimeDelay(1);
     }
-    public void updateTourGallery(WebDriver driver, String fileImage) {
-        media = new MediaManagement(driver);
+    public void updateTourGallery(WebDriver driver, String... fileImage) {
         clickToElementByJS(driver, TourInfoUI.UPLOAD_BUTTON, "uploadGalleries");
         waitElementToVisible(driver,MediaManagementUI.MEDIA_MANAGEMENT_POPUP);
-        media.uploadImageFromLocalToMedia(driver, fileImage);
-        waitForElementInvisible(driver, MediaManagementUI.PROCESSING_BAR);
-        setTimeDelay(10);
-        media.selectOneImageOnMedia(driver);
+        media = new MediaManagement(driver);
+        media.uploadImageFromLocalToMedia(driver,fileImage);
+        waitElementToVisible(driver, MediaManagementUI.PROCESSING_BAR);
+        waitForElementClickable(driver,MediaManagementUI.SELECT_BUTTON);
+        clickToElement(driver, MediaManagementUI.SELECT_BUTTON);
         setTimeDelay(1);
-    }
-
-    public void uploadImageToMediaManagement(WebDriver driver){
-        waitElementToVisible(driver, MediaManagementUI.MEDIA_MANAGEMENT_POPUP);
-        waitForElementClickable(driver, MediaManagementUI.UPLOAD_BUTTON);
-        clickToElement(driver, MediaManagementUI.UPLOAD_BUTTON);
-        uploadMultipleFileByAutoIT(driver);
     }
 
     public void enterValueToDynamicField(WebDriver driver, String nameField, String valueData) {
@@ -80,5 +73,17 @@ public class TourInfoTab extends TourCommon {
 
     public boolean checkTourInfoTabDisplay() {
         return checkElementDisplay(driver, TourInfoUI.TAB_INFORMATION);
+    }
+
+    public void chooseLanguage(WebDriver driver, String languageName) {
+        waitElementToVisible(driver, TourInfoUI.TAB_INFORMATION);
+        selectItemInCustomDropdownByScroll(driver, TourInfoUI.LANGUAGE_DROPDOWN, TourInfoUI.LANGUAGE_ITEM, languageName);
+        setTimeDelay(1);
+    }
+
+    public void choooseCurrency(WebDriver driver, String currencyCode) {
+        waitElementToVisible(driver, TourInfoUI.TAB_INFORMATION);
+        selectItemInCustomDropdownByScroll(driver, TourInfoUI.CURRENCY_DROPDOWN, TourInfoUI.CURRENCY_ITEM, currencyCode);
+        setTimeDelay(1);
     }
 }

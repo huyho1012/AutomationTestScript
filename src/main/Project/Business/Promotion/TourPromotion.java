@@ -1,6 +1,8 @@
 package Project.Business.Promotion;
 
-import Interfaces.hahalolo_business.Promotion.PromotionUI;
+import Interfaces.hahalolo_business.Promotion.CreateEditPromoUI;
+import Interfaces.hahalolo_business.Promotion.DetailPromoUI;
+import Interfaces.hahalolo_business.Promotion.ListPromoUI;
 import org.openqa.selenium.WebDriver;
 
 public class TourPromotion extends Promotion {
@@ -10,77 +12,55 @@ public class TourPromotion extends Promotion {
     }
 
     public void enterTourNameForSeacrching(WebDriver driver, String tourName){
-        waitElementToVisible(driver, PromotionUI.SEARCH_TOUR_FIELD);
-        sendKeyToElement(driver, PromotionUI.SEARCH_TOUR_FIELD, tourName);
+        waitElementToVisible(driver, CreateEditPromoUI.SEARCH_TOUR_FIELD);
+        sendKeyToElement(driver, CreateEditPromoUI.SEARCH_TOUR_FIELD, tourName);
         setTimeDelay(1);
     }
 
     public void clickToSeacrhTour(WebDriver driver, String tourName){
-        waitElementToVisible(driver, PromotionUI.BUTTON_SEARCH_TOUR);
-        clickToElement(driver, PromotionUI.BUTTON_SEARCH_TOUR);
+        waitElementToVisible(driver, CreateEditPromoUI.BUTTON_SEARCH_TOUR);
+        clickToElement(driver, CreateEditPromoUI.BUTTON_SEARCH_TOUR);
         setTimeDelay(1);
     }
 
     public void addRedicrectTourTrToSelectedApplyPromo(WebDriver driver, String tourName){
-        waitElementToVisible(driver, PromotionUI.BUTTON_ADD_DIRECT_TOUR);
-        clickToElement(driver, PromotionUI.BUTTON_ADD_DIRECT_TOUR,tourName);
+        waitElementToVisible(driver, CreateEditPromoUI.ICON_ADD_DIRECT_TOUR);
+        clickToElement(driver, CreateEditPromoUI.ICON_ADD_DIRECT_TOUR,tourName);
         setTimeDelay(1);
     }
     public void removeTourOnSelectedApplyPromo(WebDriver driver,String tourName){
-        waitElementToVisible(driver, PromotionUI.BUTTON_REMOVE_DIRECT_TOUR);
-        clickToElement(driver, PromotionUI.BUTTON_REMOVE_DIRECT_TOUR,tourName);
+        waitElementToVisible(driver, CreateEditPromoUI.BUTTON_REMOVE_DIRECT_TOUR);
+        clickToElement(driver, CreateEditPromoUI.BUTTON_REMOVE_DIRECT_TOUR,tourName);
         setTimeDelay(1);
     }
 
     public void chooseTypeTour(WebDriver driver, String typeTour){
-        waitElementToVisible(driver, PromotionUI.TYPE_TOUR_OPTION);
-        clickToElement(driver, PromotionUI.TYPE_TOUR_OPTION,typeTour);
+        waitElementToVisible(driver, CreateEditPromoUI.TYPE_TOUR_OPTION);
+        clickToElement(driver, CreateEditPromoUI.TYPE_TOUR_OPTION,typeTour);
         setTimeDelay(1);
     }
 
     public void chooseTopicTour(WebDriver driver, String topicTour){
-        waitElementToVisible(driver, PromotionUI.TOPIC_TOUR_OPTION);
-        clickToElement(driver, PromotionUI.TOPIC_TOUR_OPTION,topicTour);
+        waitElementToVisible(driver, CreateEditPromoUI.TOPIC_TOUR_OPTION);
+        clickToElement(driver, CreateEditPromoUI.TOPIC_TOUR_OPTION,topicTour);
         setTimeDelay(1);
     }
 
     public void chooseExceedTour(WebDriver driver, String tourName){
-        waitElementToVisible(driver, PromotionUI.EXCEED_TOUR_ITEM);
-        clickToElement(driver, PromotionUI.EXCEED_TOUR_ITEM,tourName);
+        waitElementToVisible(driver, CreateEditPromoUI.EXCEED_TOUR_ITEM);
+        clickToElement(driver, CreateEditPromoUI.EXCEED_TOUR_ITEM,tourName);
         setTimeDelay(1);
     }
 
 
-    public void clickIconAddTourToSelectedList(WebDriver driver) {
+    public void clickIconAddTourToSelectedList(WebDriver driver, String tourName) {
+        waitElementToVisible(driver, CreateEditPromoUI.PROMOTION_SIMPLE_MODE);
+        waitElementToVisible(driver, CreateEditPromoUI.ICON_ADD_DIRECT_TOUR, tourName);
+        clickToElement(driver, CreateEditPromoUI.ICON_ADD_DIRECT_TOUR, tourName);
+        setTimeDelay(1);
     }
 
-    public boolean checkViewDetailPromotionDisplay() {
-        return true;
-    }
 
-    public Object getPromotionCurrencyDisplayOnPromoDetail() {
-        return null;
-    }
-
-    public Object getPromotionDateRangeDisplayOnPromoDetail() {
-        return null;
-    }
-
-    public Object getPromotionDiscountTypeDisplayOnPromoDetail() {
-        return null;
-    }
-
-    public Object getPromotionTypeDisplayOnPromoDetail() {
-        return null;
-    }
-
-    public Object getTourTypeAppliedDisplayOnPromoDetail() {
-        return null;
-    }
-
-    public Object getListTourAppliedOnPromoDetail() {
-        return null;
-    }
 
     public boolean getPromotionDisountLevel() {
         return true;

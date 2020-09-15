@@ -45,7 +45,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Sep 15, 2020 01:57:13 AM</span>
+			<span class='label blue darken-3 suite-start-time'>Sep 15, 2020 06:10:17 PM</span>
 			</a>
 		</ul>
 	</div>
@@ -104,10 +104,10 @@
                     <canvas id='parent-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='83.333%'><span class='strong'>15</span> test(s) passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='84.211%'><span class='strong'>16</span> test(s) passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='16.667%'>3</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                    <span class='strong tooltipped' data-position='top' data-tooltip='15.789%'>3</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
                 </div>
             </div>
         </div>
@@ -128,14 +128,14 @@
 				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>TC27_Tour_Detail_Publish_Tour</span>
-						<span class='test-time'>Sep 15, 2020 01:57:12 AM</span>
+						<span class='test-time'>Sep 15, 2020 06:10:15 PM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 15, 2020 01:57:12 AM</span>
-	<span class='label end-time'>Sep 15, 2020 01:57:13 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+884ms</span>
+	<span class='label start-time'>Sep 15, 2020 06:10:15 PM</span>
+	<span class='label end-time'>Sep 15, 2020 06:10:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+845ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -149,10 +149,10 @@
 		<tbody>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>1:57:13 AM</td>
+				<td class='timestamp'>6:10:17 PM</td>
 				<td class='step-details'>
 						<textarea disabled class="code-block">java.lang.NullPointerException
-	at Testcase.SignUp.Regression_Test_Of_SignUp.TC27_Tour_Detail_Publish_Tour(Regression_Test_Of_SignUp.java:863)
+	at Testcase.SignUp.Regression_Test_Of_SignUp.TC27_Tour_Detail_Publish_Tour(Regression_Test_Of_SignUp.java:957)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -187,15 +187,15 @@
 				</li>
 				<li class='test displayed active  fail' status='fail' bdd='false' test-id='2'>
 					<div class='test-heading'>
-						<span class='test-name'>TC26_Tour_Detail_Create_Service_Price</span>
-						<span class='test-time'>Sep 15, 2020 01:56:40 AM</span>
+						<span class='test-name'>TC26_Tour_Detail_Check_Promotion_Detail</span>
+						<span class='test-time'>Sep 15, 2020 06:09:43 PM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 15, 2020 01:56:40 AM</span>
-	<span class='label end-time'>Sep 15, 2020 01:57:13 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 33s+454ms</span>
+	<span class='label start-time'>Sep 15, 2020 06:09:43 PM</span>
+	<span class='label end-time'>Sep 15, 2020 06:10:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 33s+556ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -209,15 +209,281 @@
 		<tbody>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>1:57:13 AM</td>
+				<td class='timestamp'>6:10:17 PM</td>
+				<td class='step-details'>
+						<textarea disabled class="code-block">java.lang.Throwable: Mulitple failures (7):
+Failure 1 of 7
+java.lang.AssertionError: expected [Khuyến mãi mùa 1] but found [null]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:165)
+	at Common.HelperFunction.AbstractTest.checkEquals(AbstractTest.java:90)
+	at Common.HelperFunction.AbstractTest.verifyEquals(AbstractTest.java:101)
+	at Testcase.SignUp.Regression_Test_Of_SignUp.TC26_Tour_Detail_Check_Promotion_Detail(Regression_Test_Of_SignUp.java:891)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+
+Failure 2 of 7
+java.lang.AssertionError: expected [Khuyến mãi ưu đãi lớn cho người thuộc lứa tuổi học sinh - sinh viên] but found [null]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:165)
+	at Common.HelperFunction.AbstractTest.checkEquals(AbstractTest.java:90)
+	at Common.HelperFunction.AbstractTest.verifyEquals(AbstractTest.java:101)
+	at Testcase.SignUp.Regression_Test_Of_SignUp.TC26_Tour_Detail_Check_Promotion_Detail(Regression_Test_Of_SignUp.java:894)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+
+Failure 3 of 7
+java.lang.AssertionError: expected [12-10-2020, 20-10-2021] but found [null]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:165)
+	at Common.HelperFunction.AbstractTest.checkEquals(AbstractTest.java:90)
+	at Common.HelperFunction.AbstractTest.verifyEquals(AbstractTest.java:101)
+	at Testcase.SignUp.Regression_Test_Of_SignUp.TC26_Tour_Detail_Check_Promotion_Detail(Regression_Test_Of_SignUp.java:906)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+
+Failure 4 of 7
+java.lang.AssertionError: expected [] but found [null]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:165)
+	at Common.HelperFunction.AbstractTest.checkEquals(AbstractTest.java:90)
+	at Common.HelperFunction.AbstractTest.verifyEquals(AbstractTest.java:101)
+	at Testcase.SignUp.Regression_Test_Of_SignUp.TC26_Tour_Detail_Check_Promotion_Detail(Regression_Test_Of_SignUp.java:909)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+
+Failure 5 of 7
+java.lang.AssertionError: expected [] but found [null]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:165)
+	at Common.HelperFunction.AbstractTest.checkEquals(AbstractTest.java:90)
+	at Common.HelperFunction.AbstractTest.verifyEquals(AbstractTest.java:101)
+	at Testcase.SignUp.Regression_Test_Of_SignUp.TC26_Tour_Detail_Check_Promotion_Detail(Regression_Test_Of_SignUp.java:912)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+
+Failure 6 of 7
+java.lang.AssertionError: expected [] but found [null]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:165)
+	at Common.HelperFunction.AbstractTest.checkEquals(AbstractTest.java:90)
+	at Common.HelperFunction.AbstractTest.verifyEquals(AbstractTest.java:101)
+	at Testcase.SignUp.Regression_Test_Of_SignUp.TC26_Tour_Detail_Check_Promotion_Detail(Regression_Test_Of_SignUp.java:915)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+
+Failure 7 of 7
+java.lang.AssertionError: expected [] but found [null]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:165)
+	at Common.HelperFunction.AbstractTest.checkEquals(AbstractTest.java:90)
+	at Common.HelperFunction.AbstractTest.verifyEquals(AbstractTest.java:101)
+	at Testcase.SignUp.Regression_Test_Of_SignUp.TC26_Tour_Detail_Check_Promotion_Detail(Regression_Test_Of_SignUp.java:918)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+</textarea>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>TC26_Tour_Detail_Create_Service_Price</span>
+						<span class='test-time'>Sep 15, 2020 06:09:43 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 15, 2020 06:09:43 PM</span>
+	<span class='label end-time'>Sep 15, 2020 06:10:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 33s+533ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>6:10:17 PM</td>
 				<td class='step-details'>
 						<textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@id='tour-information'] (tried for 30 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 	at Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:389)
 	at Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:165)
-	at Project.Business.Tour.Management.Detail.TourInfoTab.checkTourInfoTabDisplay(TourInfoTab.java:82)
-	at Testcase.SignUp.Regression_Test_Of_SignUp.TC26_Tour_Detail_Create_Service_Price(Regression_Test_Of_SignUp.java:840)
+	at Project.Business.Tour.Management.Detail.TourInfoTab.checkTourInfoTabDisplay(TourInfoTab.java:75)
+	at Testcase.SignUp.Regression_Test_Of_SignUp.TC26_Tour_Detail_Create_Service_Price(Regression_Test_Of_SignUp.java:934)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -245,10 +511,10 @@ Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable t
   (Session info: chrome=85.0.4183.102)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-LF4PDD0', ip: '172.16.99.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.1'
+System info: host: 'ADMIN', ip: '10.0.2.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\WIN10~1\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:61302}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 7bfa352e691e25a930366309a57ebbd0
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:58649}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 0aeae8733ff6b2fa624c6b7a4360f1c3
 *** Element info: {Using=xpath, value=//div[@id='tour-information']}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -278,109 +544,17 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='3'>
-					<div class='test-heading'>
-						<span class='test-name'>TC25_Tour_Detail_Create_New_Promotion_Apply</span>
-						<span class='test-time'>Sep 15, 2020 01:56:10 AM</span>
-						<span class='test-status right fail'>fail</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 15, 2020 01:56:10 AM</span>
-	<span class='label end-time'>Sep 15, 2020 01:57:13 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 1m 3s+761ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>1:57:13 AM</td>
-				<td class='step-details'>
-						<textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@name ='promotionName'] (tried for 30 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:389)
-	at Project.Business.Promotion.Promotion.enterPromoName(Promotion.java:22)
-	at Testcase.SignUp.Regression_Test_Of_SignUp.TC25_Tour_Detail_Create_New_Promotion_Apply(Regression_Test_Of_SignUp.java:767)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name ='promotionName']"}
-  (Session info: chrome=85.0.4183.102)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-LF4PDD0', ip: '172.16.99.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\WIN10~1\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:61302}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 7bfa352e691e25a930366309a57ebbd0
-*** Element info: {Using=xpath, value=//input[@name ='promotionName']}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 26 more
-</textarea>
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
 					<div class='test-heading'>
-						<span class='test-name'>TC22_Tour_Detail_Create_New_Price</span>
-						<span class='test-time'>Sep 15, 2020 01:55:56 AM</span>
+						<span class='test-name'>TC12_Business_Create_New_Page_Tour</span>
+						<span class='test-time'>Sep 15, 2020 06:07:51 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 15, 2020 01:55:56 AM</span>
-	<span class='label end-time'>Sep 15, 2020 01:57:13 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 1m 17s+753ms</span>
+	<span class='label start-time'>Sep 15, 2020 06:07:51 PM</span>
+	<span class='label end-time'>Sep 15, 2020 06:10:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 25s+332ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -394,7 +568,7 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 		<tbody>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>1:57:13 AM</td>
+				<td class='timestamp'>6:10:17 PM</td>
 				<td class='step-details'>
 						Test passed
 					
@@ -407,15 +581,15 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 				</li>
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
 					<div class='test-heading'>
-						<span class='test-name'>TC23_Tour_Detail_Choose_Date_For_Open_Sale_Tour</span>
-						<span class='test-time'>Sep 15, 2020 01:56:04 AM</span>
+						<span class='test-name'>TC19_Tour_Create_New_Tour</span>
+						<span class='test-time'>Sep 15, 2020 06:08:21 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 15, 2020 01:56:04 AM</span>
-	<span class='label end-time'>Sep 15, 2020 01:57:13 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 1m 9s+587ms</span>
+	<span class='label start-time'>Sep 15, 2020 06:08:21 PM</span>
+	<span class='label end-time'>Sep 15, 2020 06:10:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 55s+654ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -429,7 +603,7 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 		<tbody>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>1:57:13 AM</td>
+				<td class='timestamp'>6:10:17 PM</td>
 				<td class='step-details'>
 						Test passed
 					
@@ -442,15 +616,15 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 				</li>
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='6'>
 					<div class='test-heading'>
-						<span class='test-name'>TC24_Tour_Detail_Update_Services_Provided</span>
-						<span class='test-time'>Sep 15, 2020 01:56:07 AM</span>
+						<span class='test-name'>TC22_Tour_Detail_Create_New_Price</span>
+						<span class='test-time'>Sep 15, 2020 06:09:12 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 15, 2020 01:56:07 AM</span>
-	<span class='label end-time'>Sep 15, 2020 01:57:13 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 1m 6s+171ms</span>
+	<span class='label start-time'>Sep 15, 2020 06:09:12 PM</span>
+	<span class='label end-time'>Sep 15, 2020 06:10:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 4s+718ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -464,7 +638,7 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 		<tbody>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>1:57:13 AM</td>
+				<td class='timestamp'>6:10:17 PM</td>
 				<td class='step-details'>
 						Test passed
 					
@@ -477,15 +651,15 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 				</li>
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='7'>
 					<div class='test-heading'>
-						<span class='test-name'>TC15_Tour_Update_Age_On_General_Information</span>
-						<span class='test-time'>Sep 15, 2020 01:51:38 AM</span>
+						<span class='test-name'>TC13_Tour_Update_Prepayment_Cancellation_On_General_Information</span>
+						<span class='test-time'>Sep 15, 2020 06:08:02 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 15, 2020 01:51:38 AM</span>
-	<span class='label end-time'>Sep 15, 2020 01:57:13 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 5m 35s+449ms</span>
+	<span class='label start-time'>Sep 15, 2020 06:08:02 PM</span>
+	<span class='label end-time'>Sep 15, 2020 06:10:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 14s+230ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -499,7 +673,7 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 		<tbody>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>1:57:13 AM</td>
+				<td class='timestamp'>6:10:17 PM</td>
 				<td class='step-details'>
 						Test passed
 					
@@ -512,15 +686,15 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 				</li>
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='8'>
 					<div class='test-heading'>
-						<span class='test-name'>TC12_Business_Create_New_Page_Tour</span>
-						<span class='test-time'>Sep 15, 2020 01:51:19 AM</span>
+						<span class='test-name'>TC15_Tour_Update_Age_On_General_Information</span>
+						<span class='test-time'>Sep 15, 2020 06:08:07 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 15, 2020 01:51:19 AM</span>
-	<span class='label end-time'>Sep 15, 2020 01:57:13 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 5m 54s+302ms</span>
+	<span class='label start-time'>Sep 15, 2020 06:08:07 PM</span>
+	<span class='label end-time'>Sep 15, 2020 06:10:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 9s+452ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -534,7 +708,7 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 		<tbody>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>1:57:13 AM</td>
+				<td class='timestamp'>6:10:17 PM</td>
 				<td class='step-details'>
 						Test passed
 					
@@ -547,15 +721,15 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 				</li>
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='9'>
 					<div class='test-heading'>
-						<span class='test-name'>TC20_Tour_Detail_Update_Information</span>
-						<span class='test-time'>Sep 15, 2020 01:52:38 AM</span>
+						<span class='test-name'>TC18_Tour_Create_New_Topic</span>
+						<span class='test-time'>Sep 15, 2020 06:08:12 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 15, 2020 01:52:38 AM</span>
-	<span class='label end-time'>Sep 15, 2020 01:57:13 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 4m 35s+367ms</span>
+	<span class='label start-time'>Sep 15, 2020 06:08:12 PM</span>
+	<span class='label end-time'>Sep 15, 2020 06:10:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 4s+768ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -569,7 +743,7 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 		<tbody>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>1:57:13 AM</td>
+				<td class='timestamp'>6:10:17 PM</td>
 				<td class='step-details'>
 						Test passed
 					
@@ -582,15 +756,15 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 				</li>
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='10'>
 					<div class='test-heading'>
-						<span class='test-name'>TC16_Tour_Update_Notice_Order_On_General_Information</span>
-						<span class='test-time'>Sep 15, 2020 01:51:38 AM</span>
+						<span class='test-name'>TC17_Tour_Publish_Page</span>
+						<span class='test-time'>Sep 15, 2020 06:08:09 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 15, 2020 01:51:38 AM</span>
-	<span class='label end-time'>Sep 15, 2020 01:57:13 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 5m 35s+42ms</span>
+	<span class='label start-time'>Sep 15, 2020 06:08:09 PM</span>
+	<span class='label end-time'>Sep 15, 2020 06:10:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 7s+674ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -604,7 +778,7 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 		<tbody>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>1:57:13 AM</td>
+				<td class='timestamp'>6:10:17 PM</td>
 				<td class='step-details'>
 						Test passed
 					
@@ -617,15 +791,15 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 				</li>
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='11'>
 					<div class='test-heading'>
-						<span class='test-name'>TC17_Tour_Publish_Page</span>
-						<span class='test-time'>Sep 15, 2020 01:51:40 AM</span>
+						<span class='test-name'>TC25_Tour_Detail_Create_New_Promotion_Apply</span>
+						<span class='test-time'>Sep 15, 2020 06:09:30 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 15, 2020 01:51:40 AM</span>
-	<span class='label end-time'>Sep 15, 2020 01:57:13 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 5m 33s+589ms</span>
+	<span class='label start-time'>Sep 15, 2020 06:09:30 PM</span>
+	<span class='label end-time'>Sep 15, 2020 06:10:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 46s+697ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -639,7 +813,7 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 		<tbody>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>1:57:13 AM</td>
+				<td class='timestamp'>6:10:17 PM</td>
 				<td class='step-details'>
 						Test passed
 					
@@ -652,15 +826,15 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 				</li>
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='12'>
 					<div class='test-heading'>
-						<span class='test-name'>TC19_Tour_Create_New_Tour</span>
-						<span class='test-time'>Sep 15, 2020 01:52:33 AM</span>
+						<span class='test-name'>TC24_Tour_Detail_Update_Services_Provided</span>
+						<span class='test-time'>Sep 15, 2020 06:09:28 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 15, 2020 01:52:33 AM</span>
-	<span class='label end-time'>Sep 15, 2020 01:57:13 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 4m 40s+481ms</span>
+	<span class='label start-time'>Sep 15, 2020 06:09:28 PM</span>
+	<span class='label end-time'>Sep 15, 2020 06:10:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 49s+106ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -674,7 +848,7 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 		<tbody>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>1:57:13 AM</td>
+				<td class='timestamp'>6:10:17 PM</td>
 				<td class='step-details'>
 						Test passed
 					
@@ -687,15 +861,15 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 				</li>
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='13'>
 					<div class='test-heading'>
-						<span class='test-name'>TC13_Tour_Update_Prepayment_Cancellation_On_General_Information</span>
-						<span class='test-time'>Sep 15, 2020 01:51:33 AM</span>
+						<span class='test-name'>TC14_Tour_Update_VAT_On_General_Information</span>
+						<span class='test-time'>Sep 15, 2020 06:08:07 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 15, 2020 01:51:33 AM</span>
-	<span class='label end-time'>Sep 15, 2020 01:57:13 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 5m 40s+316ms</span>
+	<span class='label start-time'>Sep 15, 2020 06:08:07 PM</span>
+	<span class='label end-time'>Sep 15, 2020 06:10:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 9s+693ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -709,7 +883,7 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 		<tbody>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>1:57:13 AM</td>
+				<td class='timestamp'>6:10:17 PM</td>
 				<td class='step-details'>
 						Test passed
 					
@@ -722,15 +896,15 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 				</li>
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='14'>
 					<div class='test-heading'>
-						<span class='test-name'>TC05_Login_Newsfeed_With_Old_Account</span>
-						<span class='test-time'>Sep 15, 2020 01:51:15 AM</span>
+						<span class='test-name'>TC23_Tour_Detail_Choose_Date_For_Open_Sale_Tour</span>
+						<span class='test-time'>Sep 15, 2020 06:09:22 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 15, 2020 01:51:15 AM</span>
-	<span class='label end-time'>Sep 15, 2020 01:57:13 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 5m 58s+750ms</span>
+	<span class='label start-time'>Sep 15, 2020 06:09:22 PM</span>
+	<span class='label end-time'>Sep 15, 2020 06:10:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 54s+548ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -744,7 +918,7 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 		<tbody>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>1:57:13 AM</td>
+				<td class='timestamp'>6:10:17 PM</td>
 				<td class='step-details'>
 						Test passed
 					
@@ -757,15 +931,15 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 				</li>
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='15'>
 					<div class='test-heading'>
-						<span class='test-name'>TC18_Tour_Create_New_Topic</span>
-						<span class='test-time'>Sep 15, 2020 01:51:43 AM</span>
+						<span class='test-name'>TC21_Tour_Detail_Create_New_Part</span>
+						<span class='test-time'>Sep 15, 2020 06:08:59 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 15, 2020 01:51:43 AM</span>
-	<span class='label end-time'>Sep 15, 2020 01:57:13 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 5m 30s+638ms</span>
+	<span class='label start-time'>Sep 15, 2020 06:08:59 PM</span>
+	<span class='label end-time'>Sep 15, 2020 06:10:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 18s+59ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -779,7 +953,7 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 		<tbody>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>1:57:13 AM</td>
+				<td class='timestamp'>6:10:17 PM</td>
 				<td class='step-details'>
 						Test passed
 					
@@ -792,15 +966,15 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 				</li>
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='16'>
 					<div class='test-heading'>
-						<span class='test-name'>TC14_Tour_Update_VAT_On_General_Information</span>
-						<span class='test-time'>Sep 15, 2020 01:51:38 AM</span>
+						<span class='test-name'>TC05_Login_Newsfeed_With_Old_Account</span>
+						<span class='test-time'>Sep 15, 2020 06:07:48 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 15, 2020 01:51:38 AM</span>
-	<span class='label end-time'>Sep 15, 2020 01:57:13 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 5m 35s+699ms</span>
+	<span class='label start-time'>Sep 15, 2020 06:07:48 PM</span>
+	<span class='label end-time'>Sep 15, 2020 06:10:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 28s+631ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -814,7 +988,7 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 		<tbody>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>1:57:13 AM</td>
+				<td class='timestamp'>6:10:17 PM</td>
 				<td class='step-details'>
 						Test passed
 					
@@ -827,15 +1001,15 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 				</li>
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='17'>
 					<div class='test-heading'>
-						<span class='test-name'>TC21_Tour_Detail_Create_New_Part</span>
-						<span class='test-time'>Sep 15, 2020 01:55:01 AM</span>
+						<span class='test-name'>TC20_Tour_Detail_Update_Information</span>
+						<span class='test-time'>Sep 15, 2020 06:08:26 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 15, 2020 01:55:01 AM</span>
-	<span class='label end-time'>Sep 15, 2020 01:57:13 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 2m 12s+488ms</span>
+	<span class='label start-time'>Sep 15, 2020 06:08:26 PM</span>
+	<span class='label end-time'>Sep 15, 2020 06:10:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 50s+975ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -849,7 +1023,7 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 		<tbody>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>1:57:13 AM</td>
+				<td class='timestamp'>6:10:17 PM</td>
 				<td class='step-details'>
 						Test passed
 					
@@ -863,14 +1037,14 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='18'>
 					<div class='test-heading'>
 						<span class='test-name'>TC28_Tour_Detail_View_Page_On_Newsfeed</span>
-						<span class='test-time'>Sep 15, 2020 01:57:13 AM</span>
+						<span class='test-time'>Sep 15, 2020 06:10:16 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 15, 2020 01:57:13 AM</span>
-	<span class='label end-time'>Sep 15, 2020 01:57:13 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+169ms</span>
+	<span class='label start-time'>Sep 15, 2020 06:10:16 PM</span>
+	<span class='label end-time'>Sep 15, 2020 06:10:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+208ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -884,7 +1058,42 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 		<tbody>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>1:57:13 AM</td>
+				<td class='timestamp'>6:10:17 PM</td>
+				<td class='step-details'>
+						Test passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='19'>
+					<div class='test-heading'>
+						<span class='test-name'>TC16_Tour_Update_Notice_Order_On_General_Information</span>
+						<span class='test-time'>Sep 15, 2020 06:08:08 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 15, 2020 06:08:08 PM</span>
+	<span class='label end-time'>Sep 15, 2020 06:10:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 9s+76ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:10:17 PM</td>
 				<td class='step-details'>
 						Test passed
 					
@@ -950,11 +1159,270 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 								</thead>
 								<tbody>
 									<tr>
-										<td>Sep 15, 2020 01:57:12 AM</td>
+										<td>Sep 15, 2020 06:10:15 PM</td>
 										<td class='linked' test-id='1'>TC27_Tour_Detail_Publish_Tour</td>
 										<td>
 											<textarea disabled class="code-block">java.lang.NullPointerException
-	at Testcase.SignUp.Regression_Test_Of_SignUp.TC27_Tour_Detail_Publish_Tour(Regression_Test_Of_SignUp.java:863)
+	at Testcase.SignUp.Regression_Test_Of_SignUp.TC27_Tour_Detail_Publish_Tour(Regression_Test_Of_SignUp.java:957)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+</textarea>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='exception displayed active'>
+					<div class='exception-heading'>
+						<span class='exception-name'>java.lang.Throwable</span>
+						<span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+					</div>
+					<div class='exception-content hide'>
+						<div class='exception-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sep 15, 2020 06:09:43 PM</td>
+										<td class='linked' test-id='2'>TC26_Tour_Detail_Check_Promotion_Detail</td>
+										<td>
+											<textarea disabled class="code-block">java.lang.Throwable: Mulitple failures (7):
+Failure 1 of 7
+java.lang.AssertionError: expected [Khuyến mãi mùa 1] but found [null]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:165)
+	at Common.HelperFunction.AbstractTest.checkEquals(AbstractTest.java:90)
+	at Common.HelperFunction.AbstractTest.verifyEquals(AbstractTest.java:101)
+	at Testcase.SignUp.Regression_Test_Of_SignUp.TC26_Tour_Detail_Check_Promotion_Detail(Regression_Test_Of_SignUp.java:891)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+
+Failure 2 of 7
+java.lang.AssertionError: expected [Khuyến mãi ưu đãi lớn cho người thuộc lứa tuổi học sinh - sinh viên] but found [null]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:165)
+	at Common.HelperFunction.AbstractTest.checkEquals(AbstractTest.java:90)
+	at Common.HelperFunction.AbstractTest.verifyEquals(AbstractTest.java:101)
+	at Testcase.SignUp.Regression_Test_Of_SignUp.TC26_Tour_Detail_Check_Promotion_Detail(Regression_Test_Of_SignUp.java:894)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+
+Failure 3 of 7
+java.lang.AssertionError: expected [12-10-2020, 20-10-2021] but found [null]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:165)
+	at Common.HelperFunction.AbstractTest.checkEquals(AbstractTest.java:90)
+	at Common.HelperFunction.AbstractTest.verifyEquals(AbstractTest.java:101)
+	at Testcase.SignUp.Regression_Test_Of_SignUp.TC26_Tour_Detail_Check_Promotion_Detail(Regression_Test_Of_SignUp.java:906)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+
+Failure 4 of 7
+java.lang.AssertionError: expected [] but found [null]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:165)
+	at Common.HelperFunction.AbstractTest.checkEquals(AbstractTest.java:90)
+	at Common.HelperFunction.AbstractTest.verifyEquals(AbstractTest.java:101)
+	at Testcase.SignUp.Regression_Test_Of_SignUp.TC26_Tour_Detail_Check_Promotion_Detail(Regression_Test_Of_SignUp.java:909)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+
+Failure 5 of 7
+java.lang.AssertionError: expected [] but found [null]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:165)
+	at Common.HelperFunction.AbstractTest.checkEquals(AbstractTest.java:90)
+	at Common.HelperFunction.AbstractTest.verifyEquals(AbstractTest.java:101)
+	at Testcase.SignUp.Regression_Test_Of_SignUp.TC26_Tour_Detail_Check_Promotion_Detail(Regression_Test_Of_SignUp.java:912)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+
+Failure 6 of 7
+java.lang.AssertionError: expected [] but found [null]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:165)
+	at Common.HelperFunction.AbstractTest.checkEquals(AbstractTest.java:90)
+	at Common.HelperFunction.AbstractTest.verifyEquals(AbstractTest.java:101)
+	at Testcase.SignUp.Regression_Test_Of_SignUp.TC26_Tour_Detail_Check_Promotion_Detail(Regression_Test_Of_SignUp.java:915)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+
+Failure 7 of 7
+java.lang.AssertionError: expected [] but found [null]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:165)
+	at Common.HelperFunction.AbstractTest.checkEquals(AbstractTest.java:90)
+	at Common.HelperFunction.AbstractTest.verifyEquals(AbstractTest.java:101)
+	at Testcase.SignUp.Regression_Test_Of_SignUp.TC26_Tour_Detail_Check_Promotion_Detail(Regression_Test_Of_SignUp.java:918)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -989,7 +1457,7 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 				<li class='exception displayed active'>
 					<div class='exception-heading'>
 						<span class='exception-name'>org.openqa.selenium.TimeoutException</span>
-						<span class='exception-count right'><span class='label red lighten-1 white-text'>2</span></span>
+						<span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
 					</div>
 					<div class='exception-content hide'>
 						<div class='exception-tests'>
@@ -1003,16 +1471,16 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 								</thead>
 								<tbody>
 									<tr>
-										<td>Sep 15, 2020 01:56:40 AM</td>
-										<td class='linked' test-id='2'>TC26_Tour_Detail_Create_Service_Price</td>
+										<td>Sep 15, 2020 06:09:43 PM</td>
+										<td class='linked' test-id='3'>TC26_Tour_Detail_Create_Service_Price</td>
 										<td>
 											<textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@id='tour-information'] (tried for 30 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 	at Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:389)
 	at Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:165)
-	at Project.Business.Tour.Management.Detail.TourInfoTab.checkTourInfoTabDisplay(TourInfoTab.java:82)
-	at Testcase.SignUp.Regression_Test_Of_SignUp.TC26_Tour_Detail_Create_Service_Price(Regression_Test_Of_SignUp.java:840)
+	at Project.Business.Tour.Management.Detail.TourInfoTab.checkTourInfoTabDisplay(TourInfoTab.java:75)
+	at Testcase.SignUp.Regression_Test_Of_SignUp.TC26_Tour_Detail_Create_Service_Price(Regression_Test_Of_SignUp.java:934)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1040,10 +1508,10 @@ Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable t
   (Session info: chrome=85.0.4183.102)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-LF4PDD0', ip: '172.16.99.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.1'
+System info: host: 'ADMIN', ip: '10.0.2.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\WIN10~1\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:61302}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 7bfa352e691e25a930366309a57ebbd0
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:58649}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 0aeae8733ff6b2fa624c6b7a4360f1c3
 *** Element info: {Using=xpath, value=//div[@id='tour-information']}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -1064,70 +1532,6 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
 	... 27 more
-</textarea>
-										</td>
-									</tr>
-									<tr>
-										<td>Sep 15, 2020 01:56:10 AM</td>
-										<td class='linked' test-id='3'>TC25_Tour_Detail_Create_New_Promotion_Apply</td>
-										<td>
-											<textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@name ='promotionName'] (tried for 30 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:389)
-	at Project.Business.Promotion.Promotion.enterPromoName(Promotion.java:22)
-	at Testcase.SignUp.Regression_Test_Of_SignUp.TC25_Tour_Detail_Create_New_Promotion_Apply(Regression_Test_Of_SignUp.java:767)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name ='promotionName']"}
-  (Session info: chrome=85.0.4183.102)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-LF4PDD0', ip: '172.16.99.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\WIN10~1\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:61302}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 7bfa352e691e25a930366309a57ebbd0
-*** Element info: {Using=xpath, value=//input[@name ='promotionName']}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 26 more
 </textarea>
 										</td>
 									</tr>
@@ -1153,7 +1557,7 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Tests
-					<div class='panel-lead'>18</div>
+					<div class='panel-lead'>19</div>
 				</div>
 			</div>
 			<div class='col s2'>
@@ -1165,19 +1569,19 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Sep 15, 2020 01:57:13 AM</div>
+					<div class='panel-lead'>Sep 15, 2020 06:10:17 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Sep 15, 2020 01:57:13 AM</div>
+			 		<div class='panel-lead'>Sep 15, 2020 06:10:17 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 0s+98ms</div>
+					<div class='panel-lead'>0h 0m 0s+121ms</div>
 				</div>
 			</div>
 		</div>
@@ -1188,8 +1592,8 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 		<!-- container -->
 		<script>
 			var statusGroup = {
-                parentCount: 18,
-				passParent: 15,
+                parentCount: 19,
+				passParent: 16,
 				failParent: 3,
 				fatalParent: 0,
 				errorParent: 0,
@@ -1220,7 +1624,7 @@ Session ID: 7bfa352e691e25a930366309a57ebbd0
 		</script>
 		<script>
 			var timeline = {
-			        "TC27_Tour_Detail_Publish_Tour":1.884,"TC26_Tour_Detail_Create_Service_Price":33.454,"TC25_Tour_Detail_Create_New_Promotion_Apply":63.761,"TC22_Tour_Detail_Create_New_Price":77.753,"TC23_Tour_Detail_Choose_Date_For_Open_Sale_Tour":69.587,"TC24_Tour_Detail_Update_Services_Provided":66.171,"TC15_Tour_Update_Age_On_General_Information":335.449,"TC12_Business_Create_New_Page_Tour":354.302,"TC20_Tour_Detail_Update_Information":275.367,"TC16_Tour_Update_Notice_Order_On_General_Information":335.042,"TC17_Tour_Publish_Page":333.589,"TC19_Tour_Create_New_Tour":280.481,"TC13_Tour_Update_Prepayment_Cancellation_On_General_Information":340.316,"TC05_Login_Newsfeed_With_Old_Account":358.75,"TC18_Tour_Create_New_Topic":330.638,"TC14_Tour_Update_VAT_On_General_Information":335.699,"TC21_Tour_Detail_Create_New_Part":132.488,"TC28_Tour_Detail_View_Page_On_Newsfeed":0.169
+			        "TC27_Tour_Detail_Publish_Tour":1.845,"TC26_Tour_Detail_Check_Promotion_Detail":33.556,"TC26_Tour_Detail_Create_Service_Price":33.533,"TC12_Business_Create_New_Page_Tour":145.332,"TC19_Tour_Create_New_Tour":115.654,"TC22_Tour_Detail_Create_New_Price":64.718,"TC13_Tour_Update_Prepayment_Cancellation_On_General_Information":134.23,"TC15_Tour_Update_Age_On_General_Information":129.452,"TC18_Tour_Create_New_Topic":124.768,"TC17_Tour_Publish_Page":127.674,"TC25_Tour_Detail_Create_New_Promotion_Apply":46.697,"TC24_Tour_Detail_Update_Services_Provided":49.106,"TC14_Tour_Update_VAT_On_General_Information":129.693,"TC23_Tour_Detail_Choose_Date_For_Open_Sale_Tour":54.548,"TC21_Tour_Detail_Create_New_Part":78.059,"TC05_Login_Newsfeed_With_Old_Account":148.631,"TC20_Tour_Detail_Update_Information":110.975,"TC28_Tour_Detail_View_Page_On_Newsfeed":0.208,"TC16_Tour_Update_Notice_Order_On_General_Information":129.076
 			};
 		</script>
 		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/b65cd69/v3html/js/extent.js' type='text/javascript'></script>

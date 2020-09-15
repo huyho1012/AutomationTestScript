@@ -1,60 +1,72 @@
 package Project.Business.Promotion;
 
-import Common.HelperFunction.AbstractPage;
-import Interfaces.hahalolo_business.Promotion.PromotionUI;
+import Interfaces.Shared.MediaManagementUI;
+import Interfaces.hahalolo_business.Promotion.CreateEditPromoUI;
+import Interfaces.hahalolo_business.Promotion.ListPromoUI;
 import Project.Business.Tour.Management.TourCommon;
+import Project.Shared.Management.MediaManagement;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class Promotion  extends TourCommon {
     WebDriver driver;
+    MediaManagement media;
 
     public void publicPromotion(WebDriver driver){
-        waitForElementClickable(driver, PromotionUI.PROMOTION_STATUS);
-        clickToElement(driver, PromotionUI.PROMOTION_STATUS);
+        scrollToTopPage(driver);
+        waitForElementClickable(driver, CreateEditPromoUI.PROMO_STATUS_MODE);
+        clickToElement(driver, CreateEditPromoUI.PROMO_STATUS_MODE);
     }
 
     public void unpublicPromo(WebDriver driver){
-        waitForElementClickable(driver, PromotionUI.PROMOTION_STATUS);
-        clickToElement(driver, PromotionUI.PROMOTION_STATUS);
+        waitForElementClickable(driver, CreateEditPromoUI.PROMO_STATUS_MODE);
+        clickToElement(driver, CreateEditPromoUI.PROMO_STATUS_MODE);
     }
-
     public void enterPromoName(WebDriver driver, String promoName) {
-        waitElementToVisible(driver, PromotionUI.PROMOTION_NAME);
-        sendKeyToElement(driver, PromotionUI.PROMOTION_NAME,promoName);
+        waitElementToVisible(driver, CreateEditPromoUI.PROMO_NAME_FIELD);
+        sendKeyToElement(driver, CreateEditPromoUI.PROMO_NAME_FIELD,promoName);
     }
 
     public void enterPromoDesc(WebDriver driver, String promoDesc) {
-        waitElementToVisible(driver, PromotionUI.PROMOTION_DESC);
-        sendKeyToElement(driver, PromotionUI.PROMOTION_DESC,promoDesc);
-    }
-
-    public void chooseCurrencyPromotion(WebDriver driver, String currency) {
-        waitForElementClickable(driver, PromotionUI.CURRENCY_DROPDOWN);
-        clickToElement(driver, PromotionUI.CURRENCY_DROPDOWN,currency);
+        waitElementToVisible(driver, CreateEditPromoUI.PROMO_DESC_TEXTAREA);
+        sendKeyToElement(driver, CreateEditPromoUI.PROMO_DESC_TEXTAREA,promoDesc);
     }
 
     public void chooseLanguagePromotion(WebDriver driver, String language) {
-        waitForElementClickable(driver, PromotionUI.CURRENCY_DROPDOWN);
-        clickToElement(driver, PromotionUI.CURRENCY_DROPDOWN,language);
-        setTimeDelay(1);
+        selectItemInCustomDropdownByScroll(driver, CreateEditPromoUI.LANGUAGE_DROPDOWN, CreateEditPromoUI.LANGUAGE_ITEM,language);
+    }
+    public void chooseCurrencyPromotion(WebDriver driver, String currency) {
+        selectItemInCustomDropdownByScroll(driver, CreateEditPromoUI.CURRENCY_DROPDOWN, CreateEditPromoUI.CURRENCY_ITEM,currency);
     }
 
     public void enterDateRangeApply(WebDriver driver, String dateRange){
-        waitForElementClickable(driver, PromotionUI.PROMOTION_DATE_RANGE);
-        sendKeyToElement(driver, PromotionUI.PROMOTION_DATE_RANGE, dateRange);
+        waitForElementClickable(driver, CreateEditPromoUI.PROMOTION_DATE_RANGE);
+        sendKeyToElement(driver, CreateEditPromoUI.PROMOTION_DATE_RANGE, dateRange);
+        sendKeyBoardToElement(driver,CreateEditPromoUI.PROMOTION_DATE_RANGE, Keys.ENTER);
         setTimeDelay(1);
     }
 
+    public void clickAddImagePromo(WebDriver driver, String fileImage){
+        waitForElementClickable(driver, CreateEditPromoUI.BUTTON_ADD_PROMO_IMAGE);
+        clickToElement(driver, CreateEditPromoUI.BUTTON_ADD_PROMO_IMAGE);
+        media = new MediaManagement(driver);
+        media.uploadImageFromLocalToMedia(driver,fileImage);
+        waitElementToVisible(driver, MediaManagementUI.PROCESSING_BAR);
+        waitForElementClickable(driver,MediaManagementUI.SELECT_BUTTON);
+        clickToElement(driver, MediaManagementUI.SELECT_BUTTON);
+    }
+
     public void chooseTypeDiscount(WebDriver driver, int numOption) {
+        clickToElement(driver,CreateEditPromoUI.TITlE_HEADER);
         switch(numOption){
             case 1:
-                waitForElementClickable(driver, PromotionUI.TYPE_DISCOUNT_PER_ADULT);
-                clickToElement(driver, PromotionUI.TYPE_DISCOUNT_PER_ADULT);
+                waitForElementClickable(driver, CreateEditPromoUI.DISCOUNT_TOTAL_ORDER);
+                clickToElement(driver, CreateEditPromoUI.DISCOUNT_TOTAL_ORDER);
                 setTimeDelay(1);
                 break;
             case 2:
-                waitForElementClickable(driver, PromotionUI.TYPE_DISCOUNT_TOTAL_ORDER);
-                clickToElement(driver, PromotionUI.TYPE_DISCOUNT_TOTAL_ORDER);
+                waitForElementClickable(driver, CreateEditPromoUI.DISCOUNT_PER_ADULT);
+                clickToElement(driver, CreateEditPromoUI.DISCOUNT_PER_ADULT);
                 setTimeDelay(1);
                 break;
             default:
@@ -62,16 +74,17 @@ public class Promotion  extends TourCommon {
         }
     }
 
-    public void choosePromoType(WebDriver driver, int numOption) {
-       switch(numOption){
+    public void chooseTypePromo(WebDriver driver, int numOption) {
+        clickToElement(driver,CreateEditPromoUI.TITlE_HEADER);
+        switch(numOption){
             case 1:
-                waitForElementClickable(driver, PromotionUI.PROMO_TYPE_FIX_AMOUNT);
-                clickToElement(driver, PromotionUI.PROMO_TYPE_FIX_AMOUNT);
+                waitForElementClickable(driver, CreateEditPromoUI.FIXED_AMOUNT);
+                clickToElement(driver, CreateEditPromoUI.FIXED_AMOUNT);
                 setTimeDelay(1);
                 break;
             case 2:
-                waitForElementClickable(driver, PromotionUI.PROMO_TYPE_PER_CENT);
-                clickToElement(driver, PromotionUI.PROMO_TYPE_PER_CENT);
+                waitForElementClickable(driver, CreateEditPromoUI.PERCENT_ORIGINAL_PRICE);
+                clickToElement(driver, CreateEditPromoUI.PERCENT_ORIGINAL_PRICE);
                 setTimeDelay(1);
                 break;
            default:
@@ -80,32 +93,30 @@ public class Promotion  extends TourCommon {
     }
 
     public void enterDiscountAmount(WebDriver driver, String discountAmount) {
-        waitElementToVisible(driver, PromotionUI.DISCOUNT_AMOUNT);
-        sendKeyToElement(driver, PromotionUI.DISCOUNT_AMOUNT,discountAmount);
+        waitElementToVisible(driver, CreateEditPromoUI.DISCOUNT_AMOUNT);
+        sendKeyToElement(driver, CreateEditPromoUI.DISCOUNT_AMOUNT, discountAmount);
     }
 
     public void enterMinOrderValue(WebDriver driver, String minOrderValue) {
-        waitElementToVisible(driver, PromotionUI.MIN_ORDER_VALUE);
-        sendKeyToElement(driver, PromotionUI.MIN_ORDER_VALUE, minOrderValue);
+        waitElementToVisible(driver, CreateEditPromoUI.MIN_ORDER_VALUE);
+        sendKeyToElement(driver, CreateEditPromoUI.MIN_ORDER_VALUE, minOrderValue);
     }
 
     public void enterMinAdultPerson(WebDriver driver, String minAdultPer) {
-        waitElementToVisible(driver, PromotionUI.MIN_PER);
-        sendKeyToElement(driver, PromotionUI.MIN_PER, minAdultPer);
+        waitElementToVisible(driver, CreateEditPromoUI.MIN_ADULT_PEOPLE);
+        sendKeyToElement(driver, CreateEditPromoUI.MIN_ADULT_PEOPLE, minAdultPer);
     }
 
     public void chooseModeAdvance(WebDriver driver){
         if(checkStatusOfModeButton()){
-            waitForElementClickable(driver, PromotionUI.PROMOTION_STATUS);
-            clickToElement(driver, PromotionUI.PROMOTION_STATUS);
+            waitForElementClickable(driver, CreateEditPromoUI.APPLY_MODE);
+            clickToElement(driver, CreateEditPromoUI.APPLY_MODE);
         }
     }
 
     public void chooseModeSimple(WebDriver driver){
-        if(checkStatusOfModeButton()){
-            waitForElementClickable(driver, PromotionUI.PROMOTION_STATUS);
-            clickToElement(driver, PromotionUI.PROMOTION_STATUS);
-        }
+        waitForElementClickable(driver, CreateEditPromoUI.APPLY_MODE);
+        clickToElement(driver, CreateEditPromoUI.APPLY_MODE);
     }
 
     private boolean checkStatusOfModeButton() {
@@ -113,19 +124,15 @@ public class Promotion  extends TourCommon {
     }
 
     public void clickSaveButton(WebDriver driver){
-        waitForElementClickable(driver, PromotionUI.BUTTON_SAVE_PROMOTO);
-        clickToElement(driver, PromotionUI.BUTTON_SAVE_PROMOTO);
+        waitForElementClickable(driver, CreateEditPromoUI.BUTTON_SAVE_PROMO);
+        clickToElement(driver, CreateEditPromoUI.BUTTON_SAVE_PROMO);
     }
 
-    public void clickAddImagePromo(WebDriver driver, String imageName){
-        waitForElementClickable(driver, PromotionUI.BUTTON_ADD_PROMOTION_IMAGE);
-        clickToElement(driver, PromotionUI.BUTTON_ADD_PROMOTION_IMAGE);
+    public void clickTOAddPromoLevel(WebDriver driver){
+        waitForElementClickable(driver, CreateEditPromoUI.ICON_ADD_PROMO_LEVEL);
+        clickToElement(driver, CreateEditPromoUI.ICON_ADD_PROMO_LEVEL);
     }
 
-    public void clickTOAddDiscountLevel(WebDriver driver){
-        waitForElementClickable(driver, PromotionUI.BUTTON_ADD_PROMOTION_LEVEL);
-        clickToElement(driver, PromotionUI.BUTTON_ADD_PROMOTION_LEVEL);
-    }
 
     public String getPromotionNameDisplayOnPromoDetail() {
         return null;
@@ -141,4 +148,6 @@ public class Promotion  extends TourCommon {
     public Object getPromotionLanguageDisplayOnPromoDetail() {
         return null;
     }
+
+
 }

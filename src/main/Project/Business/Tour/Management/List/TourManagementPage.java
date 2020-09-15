@@ -57,4 +57,8 @@ public class TourManagementPage extends TourCommon {
 
     public void clickEditButtonOfDirectTour(WebDriver driver) {
     }
+
+    public String getLanguageDefaultDsiplayOnFilterLang(WebDriver driver) {
+        return getTextElement(driver,TourManagementUI.DEFAULT_LANGUAGE);
+    }
 }

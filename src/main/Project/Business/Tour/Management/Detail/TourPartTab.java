@@ -47,14 +47,13 @@ public class TourPartTab extends TourCommon {
     }
 
     public void choosePartLogo(WebDriver driver, String fileImage) {
-        media = new MediaManagement(driver);
         clickToElementByJS(driver, TourPartUI.UPLOAD_BUTTON, "click:uploadCover");
         waitElementToVisible(driver, MediaManagementUI.MEDIA_MANAGEMENT_POPUP);
-        media.uploadImageFromLocalToMedia(driver, fileImage);
-        waitForElementInvisible(driver, MediaManagementUI.PROCESSING_BAR);
-        setTimeDelay(10);
-        media.selectOneImageOnMedia(driver);
-        setTimeDelay(1);
+        media = new MediaManagement(driver);
+        media.uploadImageFromLocalToMedia(driver,fileImage);
+        waitElementToVisible(driver, MediaManagementUI.PROCESSING_BAR);
+        waitForElementClickable(driver,MediaManagementUI.SELECT_BUTTON);
+        clickToElement(driver, MediaManagementUI.SELECT_BUTTON);
     }
 
     public void clickToButtonSavePart(WebDriver driver) {

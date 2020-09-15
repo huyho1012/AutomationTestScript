@@ -8,6 +8,7 @@ import Common.GlobalVariables;
 import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;
 import Project.Business.Business.*;
+import Project.Business.Promotion.DetailPromo;
 import Project.Business.Promotion.TourPromotion;
 import Project.Business.Tour.Management.Detail.*;
 import Project.Backend.BackendHomePage;
@@ -69,6 +70,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
 
     Promotion promotionListPage;
     TourPromotion  tourPromotionPage;
+    DetailPromo viewDetailPromoPage;
 
 
     // Define user properties
@@ -77,7 +79,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     String businessName, ownerName, ownerEmail, ownerPhone;
     // Define business verification properties
     String companyName, otherCompanyName, abbCompanyName, taxCodeCompany, representativeName, registrationAddress, zipCode, companyPhone, companyEmail, businessScope;
-    String fileUploadImage2 = "image2.jpg";
+    String fileUploadImage2 = "partTour.jpg";
     String fileUploadImage1 = "image1.jpg";
     // Define payment account properties
     String paymentAccountName;
@@ -85,10 +87,10 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     String pageTourName;
     String tourName;
     String topicName;
-
+    String languageOnTourPage;
     String partName, partDay, partTime, partAddress, partDesc;
     String startDateTour, endTDateTour;
-    String promoName, promoDesc, promoTimeApplied, promoLang, promoCurrency, promoImage;
+    String promoName, promoDesc, promoTimeApplied,promoStatus, promoLang, promoCurrency, promoImage;
     String discountValue1, minOrderValue1;
 
     @Parameters("browser")
@@ -144,8 +146,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         pageTourName = "Tour Bình Ba";
 
         // Generate thông tin part
-        partAddress = "400A Điện biên phủ , Bình Thạnh ";
-        partDesc = "haehahaha";
+
         startDateTour = "20/10/2020";
         endTDateTour = "30/11/2020";
     }
@@ -591,6 +592,8 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         tourManagementPage = PageGeneration.createTourManagementPage(driver);
         log.info("Step 2. Check Tour management with case no Tour");
         verifyTrue(tourManagementPage.checkPageWithCaseNoTourDisplay());
+        // Get language system
+        languageOnTourPage = tourManagementPage.getLanguageDefaultDsiplayOnFilterLang(driver);
         log.info("Step 3. Click button create tour");
         tourManagementPage.clickStartCreateTourButtonOnCenterListPage(driver);
         log.info("Step 4. Check popup Create tour display");
@@ -610,89 +613,132 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     public void TC20_Tour_Detail_Update_Information() {
         log.info("Step 1. Check Tab Tour of Tour Detail display");
         verifyTrue(tourInfoTab.checkTourInfoTabDisplay());
-        log.info("Step 2. Enter sku code");
-        String skuCode = "HKTT_101";
-        String totalDay = "1";
-        String basicPrice = "1000000";
 
-        tourInfoTab.enterValueToDynamicField(driver, "tv102", skuCode);
-        log.info("Step 3. Enter Total day of Tour");
+        log.info("Step 2. Choose Vietnamese language");
+        tourInfoTab.chooseLanguage(driver, "Tiếng Việt");
 
-        tourInfoTab.enterValueToDynamicField(driver, "tn123", totalDay);
-        log.info("Step 4. Enter Basic Price of Tour");
+        log.info("Step 3. Choose Vietnamese language");
+        tourInfoTab.choooseCurrency(driver, "VND");
 
-        tourInfoTab.enterValueToDynamicField(driver, "tn133", basicPrice);
-        log.info("Step 5. Enter Allow booking date of Tour");
+        log.info("Step 4. Enter sku code");
+        String skuTour = "HKTT_101";
+        tourInfoTab.enterValueToDynamicField(driver, "tv102", skuTour);
 
-        tourInfoTab.enterValueToDynamicField(driver, "tn130", "2");
-        log.info("Step 6. Enter Address");
-        String addresss = "400 Điện Biên Phủ P25, Quận Bình Thạnh";
-        tourInfoTab.enterValueToDynamicField(driver, "address", addresss);
-        log.info("Step 7. Choose country");
-        String countryName = "Vietnam";
-        tourInfoTab.chooseItemToUpdateLocation(driver, "country", countryName);
-        log.info("Step 8. Choose City/State");
-        String cityName = "Ho Chi Minh City";
-        tourInfoTab.chooseItemToUpdateLocation(driver, "city", cityName);
-        log.info("Step 9. Choose District/ County");
-        String districtName = "Quận Bình Thạnh";
-        tourInfoTab.chooseItemToUpdateLocation(driver, "region", districtName);
-        log.info("Step 10. Enter Short description");
-        String shortDescription = "Test Mô tả ngắn của tour";
-        tourInfoTab.enterValueOfShortDesc(driver, shortDescription);
-        log.info("Step 11. Enter Private regulations");
-        String privateRegulations = "Quy đinh riêng";
-        tourInfoTab.enterValueOfTourToDynamicSummerNoteOnInformationTab(driver, "tv152", privateRegulations);
-        log.info("Step 12. Enter Policy");
-        String policy = "Chính sách Tour";
-        tourInfoTab.enterValueOfTourToDynamicSummerNoteOnInformationTab(driver, "tv153", policy);
-        log.info("Step 13. Enter Installment policy");
-        String policyInstallment = "Chính sách trả góp";
-        tourInfoTab.enterValueOfTourToDynamicSummerNoteOnInformationTab(driver, "tv155", policyInstallment);
-        log.info("Step 14. Choose Tour Logo");
-        tourInfoTab.updateLogo(driver, fileUploadImage2);
-        log.info("Step 15. Choose Tour Cover");
-        tourInfoTab.updateCover(driver, fileUploadImage2);
-        log.info("Step 16 .Choose Tour Gallery");
-        tourInfoTab.updateTourGallery(driver, fileUploadImage2);
-        log.info("Step 17. Click to Save Tour button");
+        log.info("Step 5. Enter Total day");
+        String totalDayTour = "1";
+        tourInfoTab.enterValueToDynamicField(driver, "tn123", totalDayTour);
+
+        log.info("Step 6. Enter Basic Price");
+        String basicPriceTour = "1000000";
+        tourInfoTab.enterValueToDynamicField(driver, "tn133", basicPriceTour);
+
+        log.info("Step 7. Enter Allow booking date");
+        String allowBookingDateTour = "2";
+        tourInfoTab.enterValueToDynamicField(driver, "tn130", allowBookingDateTour);
+
+        log.info("Step 8. Enter Tour Address");
+        String addressTour = "400 Điện Biên Phủ P25, Quận Bình Thạnh";
+        tourInfoTab.enterValueToDynamicField(driver, "address", addressTour);
+
+        log.info("Step 9. Choose country");
+        tourInfoTab.chooseItemToUpdateLocation(driver, "country", "Vietnam");
+
+        log.info("Step 10. Choose City/State");
+        tourInfoTab.chooseItemToUpdateLocation(driver, "city", "Ho Chi Minh City");
+
+        log.info("Step 11. Choose District/ County");
+        tourInfoTab.chooseItemToUpdateLocation(driver, "region", "Quận Bình Thạnh");
+
+        log.info("Step 12. Enter Short description");
+        String shortDescTour = "Test Mô tả ngắn của tour";
+        tourInfoTab.enterValueOfShortDesc(driver, shortDescTour);
+
+        log.info("Step 13. Enter Private regulations");
+        String privateRegulTour = "Quy đinh riêng";
+        tourInfoTab.enterValueOfTourToDynamicSummerNoteOnInformationTab(driver, "tv152", privateRegulTour);
+
+        log.info("Step 14. Enter Policy");
+        String policyTour = "Chính sách Tour";
+        tourInfoTab.enterValueOfTourToDynamicSummerNoteOnInformationTab(driver, "tv153", policyTour);
+
+        log.info("Step 15. Enter Installment policy");
+        String policyInstallmentTour = "Chính sách trả góp";
+        tourInfoTab.enterValueOfTourToDynamicSummerNoteOnInformationTab(driver, "tv155", policyInstallmentTour);
+
+        log.info("Step 16. Choose Tour Logo");
+        String logoTour = "tourLogo.jpg";
+        tourInfoTab.updateLogo(driver, logoTour);
+
+        log.info("Step 17. Choose Tour Cover");
+        String coverTour = "tourCover.jpg";
+        tourInfoTab.updateCover(driver, coverTour);
+
+        log.info("Step 18 .Choose Tour Gallery");
+        String galleryTourImage1 = "galleryTour1.jpg";
+        String galleryTourImage2 = "galleryTour2.jpg";
+        String galleryTourImage3 = "galleryTour3.jpg";
+        tourInfoTab.updateTourGallery(driver, galleryTourImage1,galleryTourImage2,galleryTourImage3);
+
+        log.info("Step 19. Click to Save Tour button");
         tourInfoTab.clickToButtonSaveTour();
     }
     @Test
     public void TC21_Tour_Detail_Create_New_Part() {
-        log.info("Step 1. Click to Part tab");
+        log.info("Step 1. Click to Part");
         tourInfoTab.clickToItemOfNavigationMenu(driver, "#tour-parts");
         tourPartTab = PageGeneration.createTourPartTab(driver);
+
         log.info("Step 2. Check Part tab display");
         verifyTrue(tourPartTab.checkPartTabDisplaySuccess());
+
+        log.info("Step 3. Check Tour Part not have part");
+        verifyTrue(tourPartTab.checkPartTabDisplaySuccess());
+
+        log.info("Step 3. Click to create new part");
         tourPartTab.clickToCreateNewPartButton();
+
         log.info("Step 3. Check Part Detail display");
         verifyTrue(tourPartTab.checkPartDetailDisplay());
+
         log.info("Step 4. Enter part name");
         partName = "Sài Gòn - Đà Nẵng";
         tourPartTab.enterValueToDynamicFieldOnPartTab(driver, "tv302", partName);
+
         log.info("Step 5. Enter day of part");
         partDay = "1";
         tourPartTab.enterValueToDynamicFieldOnPartTab(driver, "tn305", partDay);
+
         log.info("Step 6. Enter part time");
         partTime = "12:00";
         tourPartTab.enterValueToDynamicFieldOnPartTab(driver, "tv306", partTime);
+
         log.info("Step 7. Enter part address");
+        partAddress = "400A Điện biên phủ , Bình Thạnh ";
         tourPartTab.enterValueToDynamicFieldOnPartTab(driver, "address", partAddress);
+
         log.info("Step 8. Choose Country");
-        tourPartTab.chooseItemToUpdateLocation(driver, "country", "countryName");
+        tourPartTab.chooseItemToUpdateLocation(driver, "country", "Vietnam");
+
         log.info("Step 9. Choose City/state");
-        tourPartTab.chooseItemToUpdateLocation(driver, "city", "cityName");
+        tourPartTab.chooseItemToUpdateLocation(driver, "city", "Ho Chi Minh City");
+
         log.info("Step 9. Choose District/ County");
-        tourPartTab.chooseItemToUpdateLocation(driver, "region", "districtName");
+        tourPartTab.chooseItemToUpdateLocation(driver, "region", "Quận Bình Thạnh");
+
         log.info("Step 9. Enter part description");
+        partDesc = "Hồ chí minh xứ sở của những dramma bật nhất VN";
         tourPartTab.enterValueToShortDescription(driver, partDesc);
+
         log.info("Step 12. Choose transport item");
         tourPartTab.chooseNewTransportItem(driver, "car");
+
         log.info("Step 13. Update Part Logo");
-        tourPartTab.choosePartLogo(driver, fileUploadImage1);
+        String partLogo = "partTour.jpg";
+        tourPartTab.choosePartLogo(driver, partLogo);
+
         log.info("Step 14. Click button Save Part");
         tourPartTab.clickToButtonSavePart(driver);
+
         log.info("Step 15. Check part have been created successfully");
         verifyTrue(tourPartTab.checkPartHasBeenCreatedSuccessfully());
     }
@@ -701,24 +747,34 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         log.info("Step 1. Go to price tab");
         tourPartTab.clickToItemOfNavigationMenu(driver, "#tour-prices");
         tourPriceTab = PageGeneration.createTourPriceTab(driver);
-        log.info("Step 2. Check Part tab display");
+
+        log.info("Step 2. Check Price tab display");
         verifyTrue(tourPriceTab.checkPriceTabDisplaySuccess());
+
         log.info("Step 3. Click to button Create new price");
         tourPriceTab.clickToCreateNewPrice(driver);
-        log.info("Step 4. Check Part tab display");
+
+        log.info("Step 4. Check Price tab display");
         verifyTrue(tourPriceTab.checkPriceDetailIsDisplay());
-        log.info("Step 5. Enter day of part");
+
+        log.info("Step 5. Choose start date");
         tourPriceTab.chooseStartDateOfPrice(driver, startDateTour);
-        log.info("Step 6. Enter day of part");
-        tourPriceTab.enterValueOfAdultPrice(driver, "300000");
-        log.info("Step 7. Enter day of part");
-        tourPriceTab.enterValueOfChildPrice(driver, "300000");
-        log.info("Step 8. Enter day of part");
-        tourPriceTab.enterValueOfYoungChildPrice(driver, "300000");
-        log.info("Step 8. Enter day of part");
-        tourPriceTab.enterValueOfInfantPrice(driver, "300000");
-        log.info("Step 8. Enter day of part");
+
+        log.info("Step 6. Enter adult price");
+        tourPriceTab.enterValueOfAdultPrice(driver, "3000000");
+
+        log.info("Step 7. Enter child prirce");
+        tourPriceTab.enterValueOfChildPrice(driver, "2500000");
+
+        log.info("Step 8. Enter young child price");
+        tourPriceTab.enterValueOfYoungChildPrice(driver, "1000000");
+
+        log.info("Step 8. Enter infant price");
+        tourPriceTab.enterValueOfInfantPrice(driver, "50000");
+
+        log.info("Step 8. Click to save pricel");
         tourPriceTab.clickToSavePriceButton(driver);
+
         log.info("Step 15. Check price have been created successfully");
         verifyTrue(tourPriceTab.checkPriceCreatedSuccessfully());
     }
@@ -727,13 +783,17 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         log.info("Step 1. Go to price tab");
         tourPartTab.clickToItemOfNavigationMenu(driver, "#tour-schedulers");
         tourSchedulerTab = PageGeneration.createTourSchedulerTab(driver);
+
         log.info("Step 2. Check Scheduler tab display");
         verifyTrue(tourSchedulerTab.checkSchedulerTabDisplaySuccess());
         log.info("Step 4. Choose End Date");
         tourSchedulerTab.chooseEndDate(driver, endTDateTour);
+
         log.info("Step 3. Choose start Date");
         tourSchedulerTab.chooseStartDate(driver,startDateTour);
+
         log.info("Step 5. Click button setting");
+        tourSchedulerTab.scrollToTopPage(driver);
         tourSchedulerTab.clickButtonSetting(driver);
     }
     @Test
@@ -741,13 +801,17 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         log.info("Step 1. Go to Tour services tab");
         tourSchedulerTab.clickToItemOfNavigationMenu(driver, "#tour-services");
         tourServiceTab = PageGeneration.createTourServiceTab(driver);
+
         log.info("Step 2. Check Tour services tab display");
         verifyTrue(tourServiceTab.checkTourServiceTabDisplaySuccess());
+
         log.info("Step 3. Choose Tour services");
         tourServiceTab.addServicesApply(driver,2);
+
         log.info("Step 4. Click button setting");
+
         tourServiceTab.clickUpdateButton(driver);
-        log.info("Step 5. Check service is added");
+//        log.info("Step 5. Check service is added");
 //        tourServiceTab.checkHaloTourIsAdded(driver);
     }
     @Test
@@ -755,75 +819,105 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         log.info("Step 1. Go to Tour promotion tab");
         tourServiceTab.clickToItemOfNavigationMenu(driver, "#tour-promotions");
         tourPromoTab = PageGeneration.createTourPromotionTab(driver);
+
         log.info("Step 2. Check Tour promotion tab display");
         verifyTrue(tourPromoTab.checkPromotionTabDislay());
-        log.info("Step 3. Check Tour promotion no promotion apply");
+
+        log.info("Step 3. Check no Promotion apply on Tour");
         verifyEquals(tourPromoTab.getMessageNotFoundPromo(), "Không tìm thấy dữ liệu.");
-        log.info("Step 4. Click Create new promo");
+
+        log.info("Step 4. Click Create promotion button");
         tourPromoTab.clickToCreatePromotionButton();
         tourPromotionPage = PageGeneration.goToCreateEditPromotionPage(driver);
+        tourPromotionPage.switchWindowByTitle(driver, "Hahalolo - Tour Create Promotion");
+
         log.info("Step 5. Enter promotion name");
         promoName = "Khuyến mãi mùa 1";
         tourPromotionPage.enterPromoName(driver, promoName);
+
         log.info("Step 6. Enter promotion desc");
-        promoName = "";
-        tourPromotionPage.enterPromoDesc(driver, "");
-        promoLang = "";
-        log.info("Step 7. Choose language promotion");
-        tourPromotionPage.chooseLanguagePromotion(driver, "");
-        log.info("Step 8. Choose currency promotion");
-        promoCurrency ="";
-        tourPromotionPage.chooseCurrencyPromotion(driver, "");
+        promoDesc = "Khuyến mãi ưu đãi lớn cho người thuộc lứa tuổi học sinh - sinh viên";
+        tourPromotionPage.enterPromoDesc(driver, promoDesc);
+
+//        log.info("Step 7. Choose language promotion");
+//        promoLang = "Tiếng Việt";
+//        tourPromotionPage.chooseLanguagePromotion(driver, promoLang);
+//
+//        log.info("Step 8. Choose currency promotion");
+//        promoCurrency = "VND";
+//         tourPromotionPage.chooseCurrencyPromotion(driver, promoCurrency);
+
         log.info("Step 9. Add promotion image");
-        promoImage = "";
+        promoImage = "promoImage.jpg";
         tourPromotionPage.clickAddImagePromo(driver, promoImage);
+
         log.info("Step 10. Choose promotion time range");
-        promoTimeApplied ="";
-        tourPromotionPage.enterDateRangeApply(driver, "");
-        log.info("Step 11. Choose discount type is ");
+        promoTimeApplied = "12-10-2020 20-10-2021";
+        tourPromotionPage.enterDateRangeApply(driver, promoTimeApplied);
+
+        log.info("Step 11. Choose Promotion type based on order total");
+        tourPromotionPage.chooseTypePromo(driver, 1);
+
+        log.info("Step 12. Choose promotion type is Fixed amount");
         tourPromotionPage.chooseTypeDiscount(driver, 1);
-        log.info("Step 12. Choose promotion type is");
-        tourPromotionPage.chooseTypeDiscount(driver, 1);
-        discountValue1 = "";
+
         log.info("Step 13. Enter discount value");
+        discountValue1 = "400000";
         tourPromotionPage.enterDiscountAmount(driver, discountValue1);
+
         log.info("Step 14. Enter min order value");
-        minOrderValue1 = "";
+        minOrderValue1 = "50000000";
         tourPromotionPage.enterMinOrderValue(driver, minOrderValue1);
-        log.info("Step 15. Choose sample mode");
-        tourPromotionPage.chooseModeSimple(driver);
+
+//        log.info("Step 15. Choose sample mode");
+//        tourPromotionPage.chooseModeSimple(driver);
+
         log.info("Step 16. Choose Tour apply promotion");
-        tourPromotionPage.clickIconAddTourToSelectedList(driver);
+        tourPromotionPage.clickIconAddTourToSelectedList(driver, tourName);
+
         log.info("Step 17. Publish promotion");
-        tourPromotionPage.scrollToTopPage(driver);
         tourPromotionPage.publicPromotion(driver);
+
         log.info("Step 18. Click button Save");
         tourPromotionPage.clickSaveButton(driver);
-        log.info("Step 19. Check detail promotion");
-        verifyTrue(tourPromotionPage.checkViewDetailPromotionDisplay());
+    }
+    @Test
+    public void TC26_Tour_Detail_Check_Promotion_Detail() {
+        log.info("Step 1. Check detail promotion");
+        viewDetailPromoPage = PageGeneration.createViewDetailPromoPage(driver);
+        verifyTrue(viewDetailPromoPage.checkViewDetailPromotionDisplay());
 
-        log.info("Step 1. Check info of promotion");
-        log.info("Step 1. Check promotion name display");
-        verifyEquals(tourPromotionPage.getPromotionNameDisplayOnPromoDetail(),"");
-        log.info("Step 1. Check promotion description display");
-        verifyEquals(tourPromotionPage.getPromotionDescDisplayOnPromoDetail(),"");
-        log.info("Step 1. Check promotion status display");
-        verifyEquals(tourPromotionPage.getPromotionStatusDisplayOnPromoDetail(),"");
-        log.info("Step 1. Check promotion language display");
-        verifyEquals(tourPromotionPage.getPromotionLanguageDisplayOnPromoDetail(),"");
-        log.info("Step 1. Check promotion currency display");
-        verifyEquals(tourPromotionPage.getPromotionCurrencyDisplayOnPromoDetail(),"");
-        log.info("Step 1. Check promotion date range display");
-        verifyEquals(tourPromotionPage.getPromotionDateRangeDisplayOnPromoDetail(),"");
-        log.info("Step 1. Check discount type display");
-        verifyEquals(tourPromotionPage.getPromotionDiscountTypeDisplayOnPromoDetail(),"");
-        log.info("Step 1. Check promotion type display");
-        verifyEquals(tourPromotionPage.getPromotionTypeDisplayOnPromoDetail(),"");
-        log.info("Step 1. Check tour type applied display");
-        verifyEquals(tourPromotionPage.getTourTypeAppliedDisplayOnPromoDetail(),"");
-        log.info("Step 1. Check tour type applied display");
-        verifyEquals(tourPromotionPage.getListTourAppliedOnPromoDetail(),"");
-        log.info("Step 1. Check Min order value and discount amount display");
+        log.info("Step 2. Check Promotion Name");
+        verifyEquals(viewDetailPromoPage.getPromoNameOnDetail(),promoName);
+
+        log.info("Step 3. Check Promotion Description");
+        verifyEquals(viewDetailPromoPage.getPromoDescOnDetail(),promoDesc);
+
+        log.info("Step 4. Check Promotion status");
+        verifyEquals(viewDetailPromoPage.getStatusOnDetail(),promoStatus);
+
+        log.info("Step 5. Check Promotion language");
+        verifyEquals(viewDetailPromoPage.getLanguageOnDetail(),promoLang);
+
+        log.info("Step 6. Check Promotioncurrency");
+        verifyEquals(viewDetailPromoPage.getCurrencyDisplayOnDetail(),promoCurrency);
+
+        log.info("Step 7. Check Promotion Time Applied");
+        verifyEquals(viewDetailPromoPage.getDateRangeOnDetail(),promoTimeApplied);
+
+        log.info("Step 8. Check Promotion discount type");
+        verifyEquals(viewDetailPromoPage.geDiscountTypeOnDetail(),"");
+
+        log.info("Step 9. Check Promotion type");
+        verifyEquals(viewDetailPromoPage.getPromoTypeOnDetail(),"");
+
+        log.info("Step 10. Check Applied tour type");
+        verifyEquals(viewDetailPromoPage.getTourTypeAppliedOnDetail(),"");
+
+        log.info("Step 11. Check Applied tour applied");
+        verifyEquals(viewDetailPromoPage.getListTourAppliedOnPromoDetail(),"");
+
+        log.info("Step 12. Check Min order value and discount amount display");
         verifyTrue(tourPromotionPage.getPromotionDisountLevel());
     }
     @Test

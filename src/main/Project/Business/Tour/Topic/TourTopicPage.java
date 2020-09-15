@@ -21,14 +21,13 @@ public class TourTopicPage extends HeaderPage {
     }
 
     public void chooseTopicImage(WebDriver driver, String fileName) {
-        media = new MediaManagement(driver);
         waitForElementClickable(driver,TourTopicPageUI.BUTTON_ADD_TOPIC_IMAGE);
         clickToElement(driver,TourTopicPageUI.BUTTON_ADD_TOPIC_IMAGE);
+        media = new MediaManagement(driver);
         media.uploadImageFromLocalToMedia(driver,fileName);
-        waitForElementInvisible(driver, MediaManagementUI.PROCESSING_BAR);
-        setTimeDelay(10);
-        media.selectOneImageOnMedia(driver);
-        setTimeDelay(1);
+        waitElementToVisible(driver, MediaManagementUI.PROCESSING_BAR);
+        waitForElementClickable(driver,MediaManagementUI.SELECT_BUTTON);
+        clickToElement(driver, MediaManagementUI.SELECT_BUTTON);
     }
 
     public void chooseLanguageOfTopic(WebDriver driver , String langName) {

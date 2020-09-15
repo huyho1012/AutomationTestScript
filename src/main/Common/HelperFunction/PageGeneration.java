@@ -1,6 +1,7 @@
 package Common.HelperFunction;
 
 
+import Project.Business.Promotion.DetailPromo;
 import Project.Business.Promotion.Promotion;
 import Project.Business.Promotion.TourPromotion;
 import Project.Business.Tour.Setting.PubishPage;
@@ -145,5 +146,9 @@ public class PageGeneration {
 
     public static PubishPage createPageSetting(WebDriver driver) {
         return new PubishPage(driver);
+    }
+
+    public static DetailPromo createViewDetailPromoPage(WebDriver driver) {
+        return new DetailPromo(driver);
     }
 }

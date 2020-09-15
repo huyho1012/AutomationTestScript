@@ -18,10 +18,11 @@ public class TourPromotionTab extends TourCommon {
     public String getMessageNotFoundPromo() {
         waitElementToVisible(driver, TourPromotionUI.TOUR_PROMO_TAB);
         return getTextElement(driver, TourPromotionUI.DATA_NOT_FOUND_MESSAGE);
-
     }
 
     public void clickToCreatePromotionButton() {
+        scrollToTopPage(driver);
+        waitElementToVisible(driver, TourPromotionUI.TOUR_PROMO_TAB);
         waitForElementClickable(driver, TourPromotionUI.BUTTON_CREATE_PROMO);
         clickToElement(driver, TourPromotionUI.BUTTON_CREATE_PROMO);
     }

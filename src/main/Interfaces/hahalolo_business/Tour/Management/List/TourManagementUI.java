@@ -12,4 +12,5 @@ public class TourManagementUI {
     public static final String TOUR_TYPE_DROP_DOWN = "//div[contains(@data-bind,'create')]//select[@name='tn120']";
     public static final String TOUR_TOPIC_DROP_DOWN = "//div[contains(@data-bind,'create')]//select[@name='pt550']";
     public static final String BUTTON_SAVE = "//div[contains(@data-bind,'create')]//button[contains(@data-bind,'onSaveTour')]";
+    public static final String DEFAULT_LANGUAGE = "//select[contains(@data-bind,'languages')]/option";
 }

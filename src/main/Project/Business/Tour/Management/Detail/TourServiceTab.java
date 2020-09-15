@@ -18,11 +18,11 @@ public class TourServiceTab extends TourCommon {
     public void addServicesApply(WebDriver driver , int numberService) {
         waitElementToVisible(driver, TourServiceUI.SERVICE_TAB);
         int n = findElements(driver, TourServiceUI.HALO_SERVICE_LIST).size();
-        for(int i =0 ; i<n ; i++){
-            waitForElementClickable(driver,TourServiceUI.HALO_SERVICE_ITEM);
-            clickToElement(driver,TourServiceUI.HALO_SERVICE_ITEM);
+        for(int i =1 ; i<=n ; i++){
+            waitForElementClickable(driver,TourServiceUI.HALO_SERVICE_ITEM, String.valueOf(i));
+            clickToElement(driver,TourServiceUI.HALO_SERVICE_ITEM, String.valueOf(i));
             setTimeDelay(1);
-            if(i == numberService){
+            if(i > numberService){
                 break;
             }
         }
@@ -31,8 +31,8 @@ public class TourServiceTab extends TourCommon {
         waitElementToVisible(driver, TourServiceUI.SERVICE_TAB);
         int n = findElements(driver, TourServiceUI.HALO_SERVICE_LIST).size();
         for(int i =0 ; i<n ; i++){
-            waitForElementClickable(driver,TourServiceUI.HALO_SERVICE_ITEM);
-            clickToElement(driver,TourServiceUI.HALO_SERVICE_ITEM);
+            waitForElementClickable(driver,TourServiceUI.HALO_SERVICE_ITEM, String.valueOf(i));
+            clickToElement(driver,TourServiceUI.HALO_SERVICE_ITEM, String.valueOf(i));
             setTimeDelay(1);
         }
     }
@@ -47,8 +47,8 @@ public class TourServiceTab extends TourCommon {
         waitElementToVisible(driver, TourServiceUI.SERVICE_TAB);
         int n = findElements(driver, TourServiceUI.TOUR_SERVICE_LIST).size();
         for(int i = 0; i<n ; i++){
-            waitForElementClickable(driver,TourServiceUI.TOUR_SERVICE_ITEM);
-            clickToElement(driver,TourServiceUI.TOUR_SERVICE_ITEM);
+            waitForElementClickable(driver,TourServiceUI.TOUR_SERVICE_ITEM, String.valueOf(i));
+            clickToElement(driver,TourServiceUI.TOUR_SERVICE_ITEM, String.valueOf(i));
             setTimeDelay(1);
         }
 

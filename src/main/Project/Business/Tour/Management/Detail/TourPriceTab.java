@@ -11,6 +11,7 @@ public class TourPriceTab extends TourCommon {
     }
 
     public boolean checkPriceTabDisplaySuccess() {
+        scrollToTopPage(driver);
         return checkElementDisplay(driver,TourPriceUI.TOUR_PRICE);
     }
 
@@ -21,6 +22,7 @@ public class TourPriceTab extends TourCommon {
     }
 
     public boolean checkPriceDetailIsDisplay() {
+        scrollToTopPage(driver);
         return checkElementDisplay(driver,TourPriceUI.TOUR_PRICE_DETAIL);
     }
 

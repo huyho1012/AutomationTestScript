@@ -456,19 +456,22 @@ public abstract class AbstractPage {
     }
     public void uploadMultipleFileByAutoIT(WebDriver driver, String... fileNames){
         String fullFileName = "";
+        String folderImages = System.getProperty("user.dir") + "\\Upload\\";
+        String uploadChrome = System.getProperty("user.dir") + "/Extension/AutoIT/chromeUploadMultiple.exe";
+        String uploadFirefox = System.getProperty("user.dir") + "/resources/upload/firefoxUploadMultiple.exe";
         for(String file : fileNames){
-            fullFileName = fullFileName + "\"" + GlobalVariables.UPLOAD_FOLDER + file + "\"" +" ";
+            fullFileName = fullFileName + "\"" + folderImages + file + "\"" +" ";
         }
         fullFileName = fullFileName.trim();
         if (driver.toString().contains("firefox")){
             try {
-                Runtime.getRuntime().exec(new String[] {GlobalVariables.UPLOAD_MULTI_FILE_FIREFOX, fullFileName});
+                Runtime.getRuntime().exec(new String[] {uploadFirefox, fullFileName});
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else if (driver.toString().contains("chrome")){
             try {
-                Runtime.getRuntime().exec(new String[] {GlobalVariables.UPLOAD_MULTI_FILE_CHROME, fullFileName});
+                Runtime.getRuntime().exec(new String[] {uploadChrome, fullFileName});
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -476,25 +479,26 @@ public abstract class AbstractPage {
         setTimeDelay(1);
     }
     public void uploadOneFileByAutoIT(WebDriver driver, String fileName){
+        String uploadChrome = System.getProperty("user.dir") + "/Extension/AutoIT/chromeUploadOneTime.exe";
+        String uploadFirefox = System.getProperty("user.dir") + "/resources/upload/firefoxUploadOneTime.exe";
         if (driver.toString().contains("firefox")){
             try {
-                Runtime.getRuntime().exec(new String[] {GlobalVariables.UPLOAD_ONE_FILE_FIREFOX, fileName});
+                Runtime.getRuntime().exec(new String[] {uploadFirefox, fileName});
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else if (driver.toString().contains("chrome")) {
             try {
-                Runtime.getRuntime().exec(new String[]{GlobalVariables.UPLOAD_ONE_FILE_CHROME, fileName});
+                Runtime.getRuntime().exec(new String[]{uploadChrome, fileName});
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-        setTimeDelay(3);
     }
-
     public void scrollToTopPage(WebDriver driver){
         jsExecutor =(JavascriptExecutor) driver;
-        jsExecutor.executeScript("window.scrollBy(0,0)");
+        jsExecutor.executeScript("window.scrollTo(document.body.scrollHeight, 0)");
+        setTimeDelay(1);
     }
     public String getCSSValueOfElement(WebDriver driver, String locator, String valueCSS){
         element = findElement(driver,locator);

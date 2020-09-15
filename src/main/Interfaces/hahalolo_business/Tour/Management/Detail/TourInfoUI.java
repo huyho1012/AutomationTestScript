@@ -14,4 +14,8 @@ public class TourInfoUI {
 
 
     public static final String UPLOAD_BUTTON = "//button[contains(@data-bind,'%s')]";
+    public static final String LANGUAGE_DROPDOWN = "//select[contains(@data-bind,'langChoose')]/following-sibling::div//div[contains(@class,'selectize-input')]";
+    public static final String LANGUAGE_ITEM = "//select[contains(@data-bind,'langChoose')]/following-sibling::div//div[@class ='option']" ;
+    public static final String CURRENCY_DROPDOWN = "//select[contains(@data-bind,'currencyChoose')]/following-sibling::div//div[contains(@class,'selectize-input')]";
+    public static final String CURRENCY_ITEM = "//select[contains(@data-bind,'currencyChoose')]/following-sibling::div//div[@class ='option']";
 }
