@@ -54,7 +54,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     TourManagementPage tourManagementPage;
     WalletOverviewPage walletOverviewPage;
     WalletHomePage walletHomePage;
-    LoginPage loginPage;
+    LoginPage loginNewsfeedPage;
     SignUpPage signUpPage;
 
     PubishPage pubishPage;
@@ -100,15 +100,15 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         driverManager = BrowserInitialization.getBrowser(browserName);
         log.info("Precondition - Step 2. Open browser and go to Newsfeed login");
         driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
-        loginPage = PageGeneration.createNewsfeedLoginPage(driver);
+        loginNewsfeedPage = PageGeneration.createNewsfeedLoginPage(driver);
         log.info("Precondition - Step 3.  Verify url page");
-        verifyEquals(loginPage.getCurrentURL(driver), "https://test-newsfeed.hahalolo.com/auth/signin");
+        verifyEquals(loginNewsfeedPage.getCurrentURL(driver), "https://test-newsfeed.hahalolo.com/auth/signin");
         log.info("Precondition - Step 4. Verify icon Google play display");
-        verifyTrue(loginPage.checkGooglePlayIconIsDisplay(driver));
+        verifyTrue(loginNewsfeedPage.checkGooglePlayIconIsDisplay(driver));
         log.info("Precondition - Step 5. Verify icon App store display");
-        verifyTrue(loginPage.checkAppStoreIconIsDisplay(driver));
+        verifyTrue(loginNewsfeedPage.checkAppStoreIconIsDisplay(driver));
         log.info("Precondition - Step 6. Change system language To Vi");
-        loginPage.clickToChangeLanguageToVI(driver);
+        loginNewsfeedPage.clickToChangeLanguageToVI(driver);
 //        signUpPage = PageGeneration.createFormRegister(driver);
 //        log.info("Precondition - Step 7. Check Halo slogan");
 //        verifyTrue(signUpPage.checkContentOfHaLoStartApp(driver));
@@ -232,18 +232,18 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         verifyEquals(generalAccSetting.getFullNameIsDisplay(), fullName);
         log.info("Step 12.Logout newsfeed");
         generalAccSetting.clickToItemOnSettingMenu(driver, "ic-logout-c");
-        loginPage = PageGeneration.createNewsfeedLoginPage(driver);
+        loginNewsfeedPage = PageGeneration.createNewsfeedLoginPage(driver);
     }
     @Test
     public void TC05_Login_Newsfeed_With_Old_Account() {
         log.info("Step 1.Check Login newsfeed page");
-        verifyTrue(loginPage.checkAppStoreIconIsDisplay(driver));
+        verifyTrue(loginNewsfeedPage.checkAppStoreIconIsDisplay(driver));
         log.info("Step 2.Enter email address");
-        loginPage.enterUserNameToLogin(driver, "balo_04@mailinator.com");
+        loginNewsfeedPage.enterUserNameToLogin(driver, "balo_04@mailinator.com");
         log.info("Step 3.Enter password");
-        loginPage.enterPasswordToLogin(driver, "123456");
+        loginNewsfeedPage.enterPasswordToLogin(driver, "123456");
         log.info("Step 4.Click Login button");
-        loginPage.clickToLoginButton(driver);
+        loginNewsfeedPage.clickToLoginButton(driver);
         newsfeedHomePage = PageGeneration.createNewsfeedHomepage(driver);
         log.info("Step 1.Check Newsfeed Homepage display");
         newsfeedHomePage.checkNewsfeedDisplay();
@@ -338,18 +338,18 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     public void TC09_Backend_Confirm_Business_Verification() {
         log.info("Step 1. Go to Backend Login");
         businessInfoPage.openURL(driver, GlobalVariables.backendURL);
-        loginPage = PageGeneration.createLoginBackEndPage(driver);
+        loginNewsfeedPage = PageGeneration.createLoginBackEndPage(driver);
         log.info("Step 2. Check Backend Login display");
-        verifyTrue(loginPage.checkBackendLoginPageDisplay());
+        verifyTrue(loginNewsfeedPage.checkBackendLoginPageDisplay());
         log.info("Step 3. Enter admin account");
-        loginPage.enterUserNameToLogin(driver, GlobalVariables.ADMIN_ACCOUNT);
+        loginNewsfeedPage.enterUserNameToLogin(driver, GlobalVariables.ADMIN_ACCOUNT);
         log.info("Step 4. Enter admin password");
-        loginPage.enterPasswordToLogin(driver, GlobalVariables.ADMIN_PASSWORD);
+        loginNewsfeedPage.enterPasswordToLogin(driver, GlobalVariables.ADMIN_PASSWORD);
         log.info("Step 5. Enter captcha code");
-        loginPage.enterCaptchaCodeToLogin(driver, "");
+        loginNewsfeedPage.enterCaptchaCodeToLogin(driver, "");
         setTimeDelay(15);
         log.info("Step 6. Click Login button");
-        loginPage.clickToLoginButton(driver);
+        loginNewsfeedPage.clickToLoginButton(driver);
         backendHomePage = PageGeneration.createBackendHomepage(driver);
         setTimeDelay(2);
         log.info("Step 7.Check Backend homepage display");
@@ -387,19 +387,19 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     @Test(enabled = false)
     public void TC10_Wallet_Create_Payment_Account_Type_Business() {
         log.info("Step 1. Go to Login Wallet");
-        loginPage.negativeToURLByJS(driver, GlobalVariables.walletURL);
-        loginPage = PageGeneration.createWalletLoginPage(driver);
+        loginNewsfeedPage.negativeToURLByJS(driver, GlobalVariables.walletURL);
+        loginNewsfeedPage = PageGeneration.createWalletLoginPage(driver);
         log.info("Step 2. Check Login wallet page display");
-        verifyTrue(loginPage.checkWalletLoginPageIsDisplay());
+        verifyTrue(loginNewsfeedPage.checkWalletLoginPageIsDisplay());
         log.info("Step 3. Enter email address");
-        loginPage.enterUserNameToLogin(driver, emailUser);
+        loginNewsfeedPage.enterUserNameToLogin(driver, emailUser);
         log.info("Step 4. Enter password");
-        loginPage.enterPasswordToLogin(driver, passwordUser);
+        loginNewsfeedPage.enterPasswordToLogin(driver, passwordUser);
         log.info("Step 5. Enter captcha code");
-        loginPage.enterCaptchaCodeToLogin(driver, "");
+        loginNewsfeedPage.enterCaptchaCodeToLogin(driver, "");
         setTimeDelay(15);
         log.info("Step 6.Click Login button");
-        loginPage.clickToLoginButton(driver);
+        loginNewsfeedPage.clickToLoginButton(driver);
         walletOverviewPage = PageGeneration.createWalletOverviewPage(driver);
         log.info("Step 7 Check Wallet overview page display success");
         verifyTrue(walletOverviewPage.checkPageIsDisplayedSuccessfully());
@@ -422,7 +422,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     @Test(enabled = false)
     public void TC11_Business_Create_Page_Tour_With_Case_New() {
         log.info("Step 1. Back to Business page");
-        loginPage.openURL(driver, GlobalVariables.businessURL);
+        loginNewsfeedPage.openURL(driver, GlobalVariables.businessURL);
         businessOverviewPage = PageGeneration.createBusinessOverviewPage(driver);
         log.info("Step 2. Check Overview Business page display");
         verifyTrue(businessOverviewPage.checkOverViewPageWithHaveBusiness());
@@ -462,7 +462,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     @Test
     public void TC12_Business_Create_New_Page_Tour() {
         log.info("Step 1. Back to Business page");
-        loginPage.openURL(driver, GlobalVariables.businessURL);
+        loginNewsfeedPage.openURL(driver, GlobalVariables.businessURL);
         businessOverviewPage = PageGeneration.createBusinessOverviewPage(driver);
         log.info("Step 2. Check Overview Business page display");
         verifyTrue(businessOverviewPage.checkOverViewPageWithHaveBusiness());
@@ -960,6 +960,53 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     public void TC28_Tour_Detail_View_Page_On_Newsfeed() {
 
     }
+
+    @Test
+    public void TC28_Booking_Tour_Go_To_Tour_Detail_On_Newsfeed() {
+
+        loginNewsfeedPage.enterUserNameToLogin(driver, "balo_04@mailinator.com");
+
+        loginNewsfeedPage.enterPasswordToLogin(driver, "123456");
+
+        loginNewsfeedPage.clickToLoginButton(driver);
+
+        newsfeedHomePage = PageGeneration.createNewsfeedHomepage(driver);
+
+        verifyTrue(newsfeedHomePage.checkNewsfeedDisplay());
+
+        newsfeedHomePage.goToPageTour();
+
+        tourDetailForBooking = PageGeneration.createTourDetailBookingPage(driver);
+
+        verifyTrue(tourDetailForBooking.checkTourDetailForBookingIsDisplay());
+
+        tourDetailForBooking.clickToTabScheduler();
+        verifyTrue(tourDetailForBooking.checkTourSchedulerTabIsDisplay());
+
+        tourDetailForBooking.clickToTourDepartureDateBooking();
+
+        tourBooking = PageGeneration.createTourBookingPage();
+        verifyEquals(tourBooking.bookingTourStep1IsDisplay(), "");
+        verifyEquals(tourBooking.getTourName(), "");
+        verifyEquals(tourBooking.getBasicPriceOfTour(), "");
+        verifyEquals(tourBooking.getDepartureDate(), "");
+
+        tourBooking.clickToButtonContinueToStep2();
+        verifyEquals(tourBooking.bookingTourStep2IsDisplay(), "");
+        tourBooking.choosePerTitleOfTourLeader();
+        verifyEquals(tourBooking.getDefaultFullNameofTourLeader(),"");
+        verifyEquals(tourBooking.getDefaultEmailOfTourLeader(),"");
+        tourBooking.enterPhoneNumberOfTourLeader();
+        tourBooking.enterAddressOfTourLeader();
+        tourBooking.enterRequestNote();
+
+        tourBooking.chooseOptionImTourist();
+        tourBooking.chooseNumberAdult();
+        tourBooking.chooseNumberChild();
+        tourBooking.chooseNumberYoungChild();
+        tourBooking.chooseNumberOfInfant();
+    }
+
 }
 
 
