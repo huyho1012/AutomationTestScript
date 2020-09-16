@@ -8,6 +8,7 @@ import Project.Business.Tour.Setting.PubishPage;
 import Project.Newsfeed.Boooking.BoookingTour;
 import Project.Newsfeed.Boooking.PaymentInfo;
 import Project.Newsfeed.PageWall.TourDetail;
+import Project.Newsfeed.PersonalWall.Handnote.Handnote_Tour;
 import Project.Shared.Login.LoginPage;
 import Project.Backend.BackendHomePage;
 import Project.Backend.BackendVerifyBusiManagement;
@@ -165,5 +166,9 @@ public class PageGeneration {
 
     public static PaymentInfo createPaymentInfo(WebDriver driver) {
         return new PaymentInfo(driver);
+    }
+
+    public static Handnote_Tour createTourHandnotePage(WebDriver driver) {
+        return new Handnote_Tour(driver);
     }
 }

@@ -23,6 +23,7 @@ import Project.Newsfeed.Boooking.BoookingTour;
 import Project.Newsfeed.Boooking.PaymentInfo;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
 import Project.Newsfeed.PageWall.TourDetail;
+import Project.Newsfeed.PersonalWall.Handnote.Handnote_Tour;
 import Project.Newsfeed.PersonalWall.PersonalAboutPage;
 import Project.Newsfeed.AccountSetting.GeneralAccountSetting;
 import Project.Shared.Login.LoginPage;
@@ -81,6 +82,8 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
 
     PaymentInfo paymentInfoPage;
 
+    Handnote_Tour handnoteTourPage;
+
     // Define user properties
     String firstNameUser, lastNameUser, emailUser, passwordUser, confirmPassUser, birthdayUser, genderUser, fullName;
     // Define business properties
@@ -102,7 +105,6 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     String typeDiscount, typePromo;
     String discountValue1, minOrderValue1;
     String linkPaymentTour;
-
     @Parameters("browser")
     @BeforeClass
     public void preconditionStep(String browserName) {
@@ -1086,7 +1088,11 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     }
     @Test
     public void TC28_Confirm_Order_On_Handnote() {
-        log,
+        log.info("Step 1. Go to handnote");
+        paymentInfoPage.clickHereLinkToGoHandnote(driver);
+        handnoteTourPage = PageGeneration.createTourHandnotePage(driver);
+        log.info("Step 1. Check handnote-tab tour display");
+        verifyTrue(handnoteTourPage.checkHandnoteTourPageIsDisplay());
     }
 }
 

@@ -31,11 +31,6 @@ public class PaymentInfo extends HeaderPage {
     public void enterCardHolderName() {
     }
 
-    public void enterCardNumber(String s) {
-    }
-
-
-
     public void clickButtonSaveBillingInfo() {
     }
     
@@ -57,5 +52,8 @@ public class PaymentInfo extends HeaderPage {
 
     public boolean checkPaymentSuccessIsDisplay() {
         return true;
+    }
+
+    public void clickHereLinkToGoHandnote(WebDriver driver) {
     }
 }
