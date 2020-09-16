@@ -150,4 +150,23 @@ public class Promotion  extends TourCommon {
     }
 
 
+    public String getTextOfDiscountType(WebDriver driver, int numOption) {
+        clickToElement(driver,CreateEditPromoUI.TITlE_HEADER);
+        if(numOption == 1)
+            return getTextElement(driver, CreateEditPromoUI.DISCOUNT_TOTAL_ORDER);
+        else if(numOption == 2)
+            return getTextElement(driver, CreateEditPromoUI.DISCOUNT_PER_ADULT);
+        else
+            return null;
+    }
+
+    public String getTextOfPromoType(WebDriver driver, int numOption) {
+        clickToElement(driver,CreateEditPromoUI.TITlE_HEADER);
+        if(numOption == 1)
+            return getTextElement(driver, CreateEditPromoUI.FIXED_AMOUNT);
+        else if(numOption == 2)
+            return getTextElement(driver, CreateEditPromoUI.PERCENT_ORIGINAL_PRICE);
+        else
+            return null;
+    }
 }

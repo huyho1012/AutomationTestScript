@@ -52,13 +52,22 @@ public class TourManagementPage extends TourCommon {
     }
 
     public boolean checkPageWithCaseHaveTourDisplay(WebDriver driver) {
-        return true;
+        waitElementToVisible(driver, TourManagementUI.TOUR_TOPIC_DROP_DOWN);
+        return checkElementDisplay(driver, TourManagementUI.TOUR_LIST);
     }
 
     public void clickEditButtonOfDirectTour(WebDriver driver) {
+        waitElementToVisible(driver, TourManagementUI.TOUR_TOPIC_DROP_DOWN);
+        waitForElementClickable(driver, TourManagementUI.BUTTON_EDIT_DIRECT_TOUR);
+        clickToElement(driver, TourManagementUI.BUTTON_EDIT_DIRECT_TOUR);
     }
 
     public String getLanguageDefaultDsiplayOnFilterLang(WebDriver driver) {
         return getTextElement(driver,TourManagementUI.DEFAULT_LANGUAGE);
+    }
+
+    public void clickTOViewDetailOfDirectTour(WebDriver driver , String tourName) {
+        waitForElementClickable(driver, TourManagementUI.BUTTON_VIEW_DETAIL_DIRECT_TOUR,tourName);
+        clickToElement(driver, TourManagementUI.BUTTON_VIEW_DETAIL_DIRECT_TOUR,tourName);
     }
 }

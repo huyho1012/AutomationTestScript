@@ -19,13 +19,17 @@ import Project.Business.Promotion.Promotion;
 import Project.Business.Tour.Setting.PubishPage;
 import Project.Business.Tour.Setting.TourGeneralSettingPage;
 import Project.Business.Tour.Topic.TourTopicPage;
+import Project.Newsfeed.Boooking.BoookingTour;
+import Project.Newsfeed.Boooking.PaymentInfo;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
+import Project.Newsfeed.PageWall.TourDetail;
 import Project.Newsfeed.PersonalWall.PersonalAboutPage;
 import Project.Newsfeed.AccountSetting.GeneralAccountSetting;
 import Project.Shared.Login.LoginPage;
 import Project.Shared.SingUp.SignUpPage;
 import Project.Wallet.WalletHomePage;
 import Project.Wallet.WalletOverviewPage;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
@@ -54,7 +58,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     TourManagementPage tourManagementPage;
     WalletOverviewPage walletOverviewPage;
     WalletHomePage walletHomePage;
-    LoginPage loginPage;
+    LoginPage loginNewsfeedPage;
     SignUpPage signUpPage;
 
     PubishPage pubishPage;
@@ -72,6 +76,10 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     TourPromotion  tourPromotionPage;
     DetailPromo viewDetailPromoPage;
 
+    TourDetail tourDetailForBooking;
+    BoookingTour tourBookingPage;
+
+    PaymentInfo paymentInfoPage;
 
     // Define user properties
     String firstNameUser, lastNameUser, emailUser, passwordUser, confirmPassUser, birthdayUser, genderUser, fullName;
@@ -91,7 +99,9 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     String partName, partDay, partTime, partAddress, partDesc;
     String startDateTour, endTDateTour;
     String promoName, promoDesc, promoTimeApplied,promoStatus, promoLang, promoCurrency, promoImage;
+    String typeDiscount, typePromo;
     String discountValue1, minOrderValue1;
+    String linkPaymentTour;
 
     @Parameters("browser")
     @BeforeClass
@@ -100,15 +110,15 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         driverManager = BrowserInitialization.getBrowser(browserName);
         log.info("Precondition - Step 2. Open browser and go to Newsfeed login");
         driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
-        loginPage = PageGeneration.createNewsfeedLoginPage(driver);
+        loginNewsfeedPage = PageGeneration.createNewsfeedLoginPage(driver);
         log.info("Precondition - Step 3.  Verify url page");
-        verifyEquals(loginPage.getCurrentURL(driver), "https://test-newsfeed.hahalolo.com/auth/signin");
+        verifyEquals(loginNewsfeedPage.getCurrentURL(driver), "https://test-newsfeed.hahalolo.com/auth/signin");
         log.info("Precondition - Step 4. Verify icon Google play display");
-        verifyTrue(loginPage.checkGooglePlayIconIsDisplay(driver));
+        verifyTrue(loginNewsfeedPage.checkGooglePlayIconIsDisplay(driver));
         log.info("Precondition - Step 5. Verify icon App store display");
-        verifyTrue(loginPage.checkAppStoreIconIsDisplay(driver));
+        verifyTrue(loginNewsfeedPage.checkAppStoreIconIsDisplay(driver));
         log.info("Precondition - Step 6. Change system language To Vi");
-        loginPage.clickToChangeLanguageToVI(driver);
+        loginNewsfeedPage.clickToChangeLanguageToVI(driver);
 //        signUpPage = PageGeneration.createFormRegister(driver);
 //        log.info("Precondition - Step 7. Check Halo slogan");
 //        verifyTrue(signUpPage.checkContentOfHaLoStartApp(driver));
@@ -232,18 +242,18 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         verifyEquals(generalAccSetting.getFullNameIsDisplay(), fullName);
         log.info("Step 12.Logout newsfeed");
         generalAccSetting.clickToItemOnSettingMenu(driver, "ic-logout-c");
-        loginPage = PageGeneration.createNewsfeedLoginPage(driver);
+        loginNewsfeedPage = PageGeneration.createNewsfeedLoginPage(driver);
     }
     @Test
     public void TC05_Login_Newsfeed_With_Old_Account() {
         log.info("Step 1.Check Login newsfeed page");
-        verifyTrue(loginPage.checkAppStoreIconIsDisplay(driver));
+        verifyTrue(loginNewsfeedPage.checkAppStoreIconIsDisplay(driver));
         log.info("Step 2.Enter email address");
-        loginPage.enterUserNameToLogin(driver, "balo_04@mailinator.com");
+        loginNewsfeedPage.enterUserNameToLogin(driver, "balo_04@mailinator.com");
         log.info("Step 3.Enter password");
-        loginPage.enterPasswordToLogin(driver, "123456");
+        loginNewsfeedPage.enterPasswordToLogin(driver, "123456");
         log.info("Step 4.Click Login button");
-        loginPage.clickToLoginButton(driver);
+        loginNewsfeedPage.clickToLoginButton(driver);
         newsfeedHomePage = PageGeneration.createNewsfeedHomepage(driver);
         log.info("Step 1.Check Newsfeed Homepage display");
         newsfeedHomePage.checkNewsfeedDisplay();
@@ -338,18 +348,18 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     public void TC09_Backend_Confirm_Business_Verification() {
         log.info("Step 1. Go to Backend Login");
         businessInfoPage.openURL(driver, GlobalVariables.backendURL);
-        loginPage = PageGeneration.createLoginBackEndPage(driver);
+        loginNewsfeedPage = PageGeneration.createLoginBackEndPage(driver);
         log.info("Step 2. Check Backend Login display");
-        verifyTrue(loginPage.checkBackendLoginPageDisplay());
+        verifyTrue(loginNewsfeedPage.checkBackendLoginPageDisplay());
         log.info("Step 3. Enter admin account");
-        loginPage.enterUserNameToLogin(driver, GlobalVariables.ADMIN_ACCOUNT);
+        loginNewsfeedPage.enterUserNameToLogin(driver, GlobalVariables.ADMIN_ACCOUNT);
         log.info("Step 4. Enter admin password");
-        loginPage.enterPasswordToLogin(driver, GlobalVariables.ADMIN_PASSWORD);
+        loginNewsfeedPage.enterPasswordToLogin(driver, GlobalVariables.ADMIN_PASSWORD);
         log.info("Step 5. Enter captcha code");
-        loginPage.enterCaptchaCodeToLogin(driver, "");
+        loginNewsfeedPage.enterCaptchaCodeToLogin(driver, "");
         setTimeDelay(15);
         log.info("Step 6. Click Login button");
-        loginPage.clickToLoginButton(driver);
+        loginNewsfeedPage.clickToLoginButton(driver);
         backendHomePage = PageGeneration.createBackendHomepage(driver);
         setTimeDelay(2);
         log.info("Step 7.Check Backend homepage display");
@@ -387,19 +397,19 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     @Test(enabled = false)
     public void TC10_Wallet_Create_Payment_Account_Type_Business() {
         log.info("Step 1. Go to Login Wallet");
-        loginPage.negativeToURLByJS(driver, GlobalVariables.walletURL);
-        loginPage = PageGeneration.createWalletLoginPage(driver);
+        loginNewsfeedPage.negativeToURLByJS(driver, GlobalVariables.walletURL);
+        loginNewsfeedPage = PageGeneration.createWalletLoginPage(driver);
         log.info("Step 2. Check Login wallet page display");
-        verifyTrue(loginPage.checkWalletLoginPageIsDisplay());
+        verifyTrue(loginNewsfeedPage.checkWalletLoginPageIsDisplay());
         log.info("Step 3. Enter email address");
-        loginPage.enterUserNameToLogin(driver, emailUser);
+        loginNewsfeedPage.enterUserNameToLogin(driver, emailUser);
         log.info("Step 4. Enter password");
-        loginPage.enterPasswordToLogin(driver, passwordUser);
+        loginNewsfeedPage.enterPasswordToLogin(driver, passwordUser);
         log.info("Step 5. Enter captcha code");
-        loginPage.enterCaptchaCodeToLogin(driver, "");
+        loginNewsfeedPage.enterCaptchaCodeToLogin(driver, "");
         setTimeDelay(15);
         log.info("Step 6.Click Login button");
-        loginPage.clickToLoginButton(driver);
+        loginNewsfeedPage.clickToLoginButton(driver);
         walletOverviewPage = PageGeneration.createWalletOverviewPage(driver);
         log.info("Step 7 Check Wallet overview page display success");
         verifyTrue(walletOverviewPage.checkPageIsDisplayedSuccessfully());
@@ -422,7 +432,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     @Test(enabled = false)
     public void TC11_Business_Create_Page_Tour_With_Case_New() {
         log.info("Step 1. Back to Business page");
-        loginPage.openURL(driver, GlobalVariables.businessURL);
+        loginNewsfeedPage.openURL(driver, GlobalVariables.businessURL);
         businessOverviewPage = PageGeneration.createBusinessOverviewPage(driver);
         log.info("Step 2. Check Overview Business page display");
         verifyTrue(businessOverviewPage.checkOverViewPageWithHaveBusiness());
@@ -462,7 +472,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     @Test
     public void TC12_Business_Create_New_Page_Tour() {
         log.info("Step 1. Back to Business page");
-        loginPage.openURL(driver, GlobalVariables.businessURL);
+        loginNewsfeedPage.openURL(driver, GlobalVariables.businessURL);
         businessOverviewPage = PageGeneration.createBusinessOverviewPage(driver);
         log.info("Step 2. Check Overview Business page display");
         verifyTrue(businessOverviewPage.checkOverViewPageWithHaveBusiness());
@@ -814,7 +824,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
 //        log.info("Step 5. Check service is added");
 //        tourServiceTab.checkHaloTourIsAdded(driver);
     }
-    @Test
+    @Test(enabled = false)
     public void TC25_Tour_Detail_Create_New_Promotion_Apply() {
         log.info("Step 1. Go to Tour promotion tab");
         tourServiceTab.clickToItemOfNavigationMenu(driver, "#tour-promotions");
@@ -839,27 +849,30 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         promoDesc = "Khuyến mãi ưu đãi lớn cho người thuộc lứa tuổi học sinh - sinh viên";
         tourPromotionPage.enterPromoDesc(driver, promoDesc);
 
-//        log.info("Step 7. Choose language promotion");
-//        promoLang = "Tiếng Việt";
-//        tourPromotionPage.chooseLanguagePromotion(driver, promoLang);
-//
-//        log.info("Step 8. Choose currency promotion");
-//        promoCurrency = "VND";
-//         tourPromotionPage.chooseCurrencyPromotion(driver, promoCurrency);
+        log.info("Step 7. Choose language promotion");
+        promoLang = "Tiếng Việt";
+        tourPromotionPage.chooseLanguagePromotion(driver, promoLang);
+
+        log.info("Step 8. Choose currency promotion");
+        promoCurrency = "VND";
+         tourPromotionPage.chooseCurrencyPromotion(driver, promoCurrency);
 
         log.info("Step 9. Add promotion image");
         promoImage = "promoImage.jpg";
         tourPromotionPage.clickAddImagePromo(driver, promoImage);
 
-        log.info("Step 10. Choose promotion time range");
-        promoTimeApplied = "12-10-2020 20-10-2021";
-        tourPromotionPage.enterDateRangeApply(driver, promoTimeApplied);
+//        log.info("Step 10. Choose promotion time range");
+//        promoTimeApplied = "12-10-202020-10-2021";
+//        tourPromotionPage.enterDateRangeApply(driver, promoTimeApplied);
+        setTimeDelay(15);
 
         log.info("Step 11. Choose Promotion type based on order total");
         tourPromotionPage.chooseTypePromo(driver, 1);
+        typeDiscount = tourPromotionPage.getTextOfDiscountType(driver,1 );
 
         log.info("Step 12. Choose promotion type is Fixed amount");
         tourPromotionPage.chooseTypeDiscount(driver, 1);
+        typePromo = tourPromotionPage.getTextOfPromoType(driver,1 );
 
         log.info("Step 13. Enter discount value");
         discountValue1 = "400000";
@@ -881,7 +894,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         log.info("Step 18. Click button Save");
         tourPromotionPage.clickSaveButton(driver);
     }
-    @Test
+    @Test(enabled = false)
     public void TC26_Tour_Detail_Check_Promotion_Detail() {
         log.info("Step 1. Check detail promotion");
         viewDetailPromoPage = PageGeneration.createViewDetailPromoPage(driver);
@@ -900,30 +913,30 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         verifyEquals(viewDetailPromoPage.getLanguageOnDetail(),promoLang);
 
         log.info("Step 6. Check Promotioncurrency");
-        verifyEquals(viewDetailPromoPage.getCurrencyDisplayOnDetail(),promoCurrency);
+        verifyEquals(viewDetailPromoPage.getCurrencyOnDetail(),promoCurrency);
 
         log.info("Step 7. Check Promotion Time Applied");
         verifyEquals(viewDetailPromoPage.getDateRangeOnDetail(),promoTimeApplied);
 
         log.info("Step 8. Check Promotion discount type");
-        verifyEquals(viewDetailPromoPage.geDiscountTypeOnDetail(),"");
+        verifyEquals(viewDetailPromoPage.geDiscountTypeOnDetail(),typeDiscount);
 
         log.info("Step 9. Check Promotion type");
-        verifyEquals(viewDetailPromoPage.getPromoTypeOnDetail(),"");
-
-        log.info("Step 10. Check Applied tour type");
-        verifyEquals(viewDetailPromoPage.getTourTypeAppliedOnDetail(),"");
-
-        log.info("Step 11. Check Applied tour applied");
-        verifyEquals(viewDetailPromoPage.getListTourAppliedOnPromoDetail(),"");
-
-        log.info("Step 12. Check Min order value and discount amount display");
-        verifyTrue(tourPromotionPage.getPromotionDisountLevel());
+        verifyEquals(viewDetailPromoPage.getPromoTypeOnDetail(),typeDiscount);
+//
+//        log.info("Step 10. Check Applied tour type");
+//        verifyEquals(viewDetailPromoPage.getTourTypeAppliedOnDetail(),"");
+//
+//        log.info("Step 11. Check Applied tour applied");
+//        verifyEquals(viewDetailPromoPage.getListTourAppliedOnPromoDetail(),"");
+//
+//        log.info("Step 12. Check Min order value and discount amount display");
+//        verifyTrue(tourPromotionPage.getPromotionDisountLevel());
     }
-    @Test
+    @Test(enabled = false)
     public void TC26_Tour_Detail_Create_Service_Price() {
         log.info("Step 1. Go to Tour Managment");
-        tourPromotionPage.clickItemOnTourNavMenu(driver,"Tours");
+        tourServiceTab.clickItemOnTourNavMenu(driver,"Tours");
         tourManagementPage = PageGeneration.createTourManagementPage(driver);
         log.info("Step 2. Check Tour Managerment display");
         verifyTrue(tourManagementPage.checkPageWithCaseHaveTourDisplay(driver));
@@ -933,14 +946,14 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         log.info("Step 4. Check tour detail display");
         tourInfoTab.checkTourInfoTabDisplay();
         log.info("Step 1. Click to Service price");
-        tourInfoTab.clickItemOnTourNavMenu(driver,"");
+        tourInfoTab.clickItemOnTourNavMenu(driver,"#tour-service-price");
         tourServicePriceTab = PageGeneration.createTourServicePriceTab(driver);
         log.info("Step 2. Check Service price display");
         verifyTrue(tourServicePriceTab.checkTourServicePriceTab(driver));
         log.info("Step 3. Click button Adđ service price");
         tourServicePriceTab.clickButtonCreateNewPrice();
         log.info("Step 4. Input service price");
-        tourServicePriceTab.enterPriceOfService();
+        tourServicePriceTab.enterPriceOfService(driver,"300000");
         log.info("Step 5. Chooose service ");
         tourServicePriceTab.choooseServiceOnDropdown();
         log.info("Step 6. Click save price service ");
@@ -949,16 +962,131 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     @Test
     public void TC27_Tour_Detail_Publish_Tour() {
         log.info("Step 1. Click to Setting page");
-        tourInfoTab.clickItemOnTourNavMenu(driver,"");
+        tourServiceTab.clickToItemOfNavigationMenu(driver,"#tour-settings");
         tourSettingTab = PageGeneration.createTourSettingTab(driver);
         log.info("Step 2. Check Setting Tour display");
         verifyTrue(tourSettingTab.checkSettingTourPageDisplay(driver));
-        log.info("Step 3. Click button Adđ service price");
-        tourServicePriceTab.checkPublishTour();
+        log.info("Step 3. Click to publish Tour");
+        tourSettingTab.publishTour();
+        log.info("Step 4. Click button Save");
+        tourSettingTab.clickToSaveButton();
+        log.info("Step 5. Verify Tour is published");
+        verifyTrue(tourSettingTab.checkSettingTourPageDisplay(driver));
     }
     @Test
     public void TC28_Tour_Detail_View_Page_On_Newsfeed() {
+        log.info("Step 1. Go back to Tour");
+        tourSettingTab.clickToBackTourManagement(driver);
+        tourManagementPage = PageGeneration.createTourManagementPage(driver);
+        log.info("Step 2. Check Tour management page display");
+        verifyTrue(tourManagementPage.checkPageWithCaseHaveTourDisplay(driver));
+        log.info("Step 3. Click to view detail Tour");
+        tourManagementPage.clickTOViewDetailOfDirectTour(driver,tourName);
+        tourDetailForBooking = PageGeneration.createTourDetailBookingPage(driver);
+        log.info("Step 4. Check Tour Detail Booking page display");
+        verifyTrue(tourDetailForBooking.checkTourDetailBookingPageIsDisplay());
+        linkPaymentTour = tourDetailForBooking.getCurrentURL(driver);
+        log.info("Step 5. Logout");
+        tourDetailForBooking.clickToItemOnSettingMenu(driver, "ic-logout-c");
+        loginNewsfeedPage = PageGeneration.createNewsfeedLoginPage(driver);
 
+        loginNewsfeedPage.enterUserNameToLogin(driver,"balo_04@mailinator.com");
+        loginNewsfeedPage.enterPasswordToLogin(driver,"123456");
+        loginNewsfeedPage.clickToLoginButton(driver);
+
+        newsfeedHomePage = PageGeneration.createNewsfeedHomepage(driver);
+        newsfeedHomePage.openURL(driver,linkPaymentTour);
+        tourDetailForBooking = PageGeneration.createTourDetailBookingPage(driver);
+        verifyTrue(tourDetailForBooking.checkTourDetailBookingPageIsDisplay());
+        tourDetailForBooking.clickToSchedulerTab();
+        verifyTrue(tourDetailForBooking.checkTourSchedulerTabIsDisplay());
+
+        tourDetailForBooking.chooseDepatureDateWantBooking();
+        tourBookingPage = PageGeneration.createTourBookingPage(driver);
+        verifyEquals(tourBookingPage.checkBookingTourStep1IsDisplay(), "");
+        verifyEquals(tourBookingPage.getTourNameDisplayOnStep1(), "");
+        verifyEquals(tourBookingPage.getBasicPriceDisplayOnStep1(), "");
+        verifyEquals(tourBookingPage.getDepartureDateDisplayOnStep1(), "");
+
+        tourBookingPage.clickToButtonContinueToStep2();
+        verifyTrue(tourBookingPage.checBookingTourStep2IsDisplay());
+
+        tourBookingPage.choosePerTitleOfTourLeader();
+        verifyEquals(tourBookingPage.getDefaultFullNameofTourLeader(),"");
+        verifyEquals(tourBookingPage.getDefaultEmailOfTourLeader(),"");
+        tourBookingPage.enterPhoneNumberOfTourLeader();
+        tourBookingPage.enterAddressOfTourLeader();
+        tourBookingPage.enterRequestNote();
+
+        tourBookingPage.chooseOptionImTourist();
+        tourBookingPage.chooseNumberAdult();
+        tourBookingPage.chooseNumberChild();
+        tourBookingPage.chooseNumberYoungChild();
+        tourBookingPage.chooseNumberOfInfant();
+
+        tourBookingPage.enterValueOfAdullInfo();
+        tourBookingPage.enterValueOfChildInfo();
+        tourBookingPage.enterValueOfYoungChildInfo();
+        tourBookingPage.enterValueOfIfantInfo();
+        tourBookingPage.clickToButtonContinueToStep3();
+
+        verifyTrue(tourBookingPage.checBookingTourStep3IsDisplay());
+        tourBookingPage.clickToButtonContinueToStep4();
+        paymentInfoPage = PageGeneration.createPaymentInfo(driver);
+        verifyTrue(paymentInfoPage.checBookingTourStep4IsDisplay());
+
+        log.info("Step 14. Enter lastname on Billing info");
+        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver,"nv203","");
+        log.info("Step 14. Enter firstname and surname on Billing info");
+        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver,"nv204","");
+        log.info("Step 14. Enter company name on Billing info");
+        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver,"companyName","");
+        log.info("Step 14. Choose country on Billing info");
+        paymentInfoPage.chooseCountryOnBillingInfoTab(driver,"");
+        log.info("Step 14. Enter address on Billing info");
+        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver,"address","");
+        log.info("Step 14. Enter city on Billing info");
+        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver,"province","");
+        log.info("Step 14. Enter state on Billing info");
+        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver,"state","");
+        log.info("Step 14. Enter zipcode on Billing info");
+        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver,"zipCode","");
+        log.info("Step 14. Enter phone on Billing info");
+        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver,"nv231","");
+        log.info("Step 14. Enter email on Billing info");
+        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver,"nv208","");
+        log.info("Step 14. Click save to update billing info");
+        paymentInfoPage.clickButtonSaveBillingInfo();
+
+        log.info("Step 14. Check payment method display");
+        paymentInfoPage.checkPaymentMethodIsDisplay();
+
+        log.info("Step 14. Choose payment method");
+        paymentInfoPage.choosePaymentMethod();
+
+        log.info("Step 14. Check visa payment display");
+        verifyTrue(paymentInfoPage.checkViscardTabIsDisplay());
+
+        log.info("Step 14. Enter card number on visa method");
+        paymentInfoPage.enterDataToDynamicFieldOnVisaMethod(driver,"","");
+        log.info("Step 14. choose expired date on visa method");
+        paymentInfoPage.chooseExpDate();
+        log.info("Step 14. Enter ccv code on visa method");
+        paymentInfoPage.enterDataToDynamicFieldOnVisaMethod(driver,"","");
+        log.info("Step 14. Enter cardholdername on visa method");
+        paymentInfoPage.enterDataToDynamicFieldOnVisaMethod(driver,"","");
+        log.info("Step 14. Click to aggree rule");
+        paymentInfoPage.clickToAggreeRule();
+        log.info("Step 14. Click to payment button");
+        paymentInfoPage.clickButtonPayment();
+        log.info("Step 14. Check payment tour success");
+
+        verifyTrue(paymentInfoPage.checkPaymentSuccessIsDisplay());
+
+    }
+    @Test
+    public void TC28_Confirm_Order_On_Handnote() {
+        log,
     }
 }
 

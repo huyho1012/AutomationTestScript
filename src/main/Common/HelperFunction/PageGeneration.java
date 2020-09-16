@@ -5,6 +5,9 @@ import Project.Business.Promotion.DetailPromo;
 import Project.Business.Promotion.Promotion;
 import Project.Business.Promotion.TourPromotion;
 import Project.Business.Tour.Setting.PubishPage;
+import Project.Newsfeed.Boooking.BoookingTour;
+import Project.Newsfeed.Boooking.PaymentInfo;
+import Project.Newsfeed.PageWall.TourDetail;
 import Project.Shared.Login.LoginPage;
 import Project.Backend.BackendHomePage;
 import Project.Backend.BackendVerifyBusiManagement;
@@ -150,5 +153,17 @@ public class PageGeneration {
 
     public static DetailPromo createViewDetailPromoPage(WebDriver driver) {
         return new DetailPromo(driver);
+    }
+
+    public static TourDetail createTourDetailBookingPage(WebDriver driver) {
+        return new TourDetail(driver);
+    }
+
+    public static BoookingTour createTourBookingPage(WebDriver driver) {
+        return new BoookingTour(driver);
+    }
+
+    public static PaymentInfo createPaymentInfo(WebDriver driver) {
+        return new PaymentInfo(driver);
     }
 }
