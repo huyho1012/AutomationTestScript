@@ -1,28 +1,272 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Test with firefox"
-           tests="16"
-           failures="0"
+           tests="22"
+           failures="7"
            errors="0"
            skipped="0"
-           time="102.664">
+           time="146.054">
   <properties />
+            <testcase name="TC28_Tour_Detail_View_Page_On_Newsfeed" time="35.825" classname="Testcase.SignUp.Regression_Test_Of_SignUp">
+                <failure type="org.openqa.selenium.TimeoutException"
+                  message="Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class=&apos;menu menu--top&apos;]//i[contains(@class, &apos;ic-logout-c&apos;)] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;ADMIN&apos;, ip: &apos;10.0.2.120&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59738}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 05d2702ca812617d7ed310cfe66d785d"
+              >
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class='menu menu--top']//i[contains(@class, 'ic-logout-c')] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ADMIN', ip: '10.0.2.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59738}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 05d2702ca812617d7ed310cfe66d785d
+  org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+  org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+  Common.HelperFunction.AbstractPage.waitForElementClickable(AbstractPage.java:405)
+  Project.Newsfeed.Newsfeed.HeaderPage.clickToItemOnSettingMenu(HeaderPage.java:15)
+  Testcase.SignUp.Regression_Test_Of_SignUp.TC28_Tour_Detail_View_Page_On_Newsfeed(Regression_Test_Of_SignUp.java:994)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base/java.lang.reflect.Method.invoke(Method.java:564)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+  org.testng.TestRunner.privateRun(TestRunner.java:767)
+  org.testng.TestRunner.run(TestRunner.java:617)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+  org.testng.SuiteRunner.run(SuiteRunner.java:240)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+  org.testng.TestNG.run(TestNG.java:1057)
+  com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+  com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="TC29_Booking_Tour_Step1" time="0.000" classname="Testcase.SignUp.Regression_Test_Of_SignUp">
+                <failure type="java.lang.NullPointerException"
+                  message="(null)"
+              >
+<![CDATA[java.lang.NullPointerException
+  Testcase.SignUp.Regression_Test_Of_SignUp.TC29_Booking_Tour_Step1(Regression_Test_Of_SignUp.java:1023)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base/java.lang.reflect.Method.invoke(Method.java:564)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+  org.testng.TestRunner.privateRun(TestRunner.java:767)
+  org.testng.TestRunner.run(TestRunner.java:617)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+  org.testng.SuiteRunner.run(SuiteRunner.java:240)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+  org.testng.TestNG.run(TestNG.java:1057)
+  com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+  com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="TC31_Booking_Step2_Update_Traveller_Info" time="0.000" classname="Testcase.SignUp.Regression_Test_Of_SignUp">
+                <failure type="java.lang.NullPointerException"
+                  message="(null)"
+              >
+<![CDATA[java.lang.NullPointerException
+  Testcase.SignUp.Regression_Test_Of_SignUp.TC31_Booking_Step2_Update_Traveller_Info(Regression_Test_Of_SignUp.java:1078)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base/java.lang.reflect.Method.invoke(Method.java:564)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+  org.testng.TestRunner.privateRun(TestRunner.java:767)
+  org.testng.TestRunner.run(TestRunner.java:617)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+  org.testng.SuiteRunner.run(SuiteRunner.java:240)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+  org.testng.TestNG.run(TestNG.java:1057)
+  com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+  com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="TC33_Booking_Step4_PaymentInfo_Update_Billing_Info" time="0.001" classname="Testcase.SignUp.Regression_Test_Of_SignUp">
+                <failure type="java.lang.NullPointerException"
+                  message="(null)"
+              >
+<![CDATA[java.lang.NullPointerException
+  Testcase.SignUp.Regression_Test_Of_SignUp.TC33_Booking_Step4_PaymentInfo_Update_Billing_Info(Regression_Test_Of_SignUp.java:1117)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base/java.lang.reflect.Method.invoke(Method.java:564)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+  org.testng.TestRunner.privateRun(TestRunner.java:767)
+  org.testng.TestRunner.run(TestRunner.java:617)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+  org.testng.SuiteRunner.run(SuiteRunner.java:240)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+  org.testng.TestNG.run(TestNG.java:1057)
+  com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+  com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="TC30_Booking_Step2_Update_Leader_Info" time="0.000" classname="Testcase.SignUp.Regression_Test_Of_SignUp">
+                <failure type="java.lang.NullPointerException"
+                  message="(null)"
+              >
+<![CDATA[java.lang.NullPointerException
+  Testcase.SignUp.Regression_Test_Of_SignUp.TC30_Booking_Step2_Update_Leader_Info(Regression_Test_Of_SignUp.java:1058)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base/java.lang.reflect.Method.invoke(Method.java:564)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+  org.testng.TestRunner.privateRun(TestRunner.java:767)
+  org.testng.TestRunner.run(TestRunner.java:617)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+  org.testng.SuiteRunner.run(SuiteRunner.java:240)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+  org.testng.TestNG.run(TestNG.java:1057)
+  com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+  com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="TC34_Booking_Step4_Payment_With_Stripe" time="0.000" classname="Testcase.SignUp.Regression_Test_Of_SignUp">
+                <failure type="java.lang.NullPointerException"
+                  message="(null)"
+              >
+<![CDATA[java.lang.NullPointerException
+  Testcase.SignUp.Regression_Test_Of_SignUp.TC34_Booking_Step4_Payment_With_Stripe(Regression_Test_Of_SignUp.java:1142)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base/java.lang.reflect.Method.invoke(Method.java:564)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+  org.testng.TestRunner.privateRun(TestRunner.java:767)
+  org.testng.TestRunner.run(TestRunner.java:617)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+  org.testng.SuiteRunner.run(SuiteRunner.java:240)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+  org.testng.TestNG.run(TestNG.java:1057)
+  com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+  com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="TC32_Booking_Step3_ConfirmTravllerInfo" time="0.000" classname="Testcase.SignUp.Regression_Test_Of_SignUp">
+                <failure type="java.lang.NullPointerException"
+                  message="(null)"
+              >
+<![CDATA[java.lang.NullPointerException
+  Testcase.SignUp.Regression_Test_Of_SignUp.TC32_Booking_Step3_ConfirmTravllerInfo(Regression_Test_Of_SignUp.java:1109)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base/java.lang.reflect.Method.invoke(Method.java:564)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+  org.testng.TestRunner.privateRun(TestRunner.java:767)
+  org.testng.TestRunner.run(TestRunner.java:617)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+  org.testng.SuiteRunner.run(SuiteRunner.java:240)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+  org.testng.TestNG.run(TestNG.java:1057)
+  com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+  com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+      </failure>
+
+          </testcase>
   
   
-            <testcase name="TC23_Tour_Detail_Choose_Date_For_Open_Sale_Tour" time="5.404" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC05_Login_Newsfeed_With_Old_Account" time="3.369" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC18_Tour_Create_New_Topic" time="8.959" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC19_Tour_Create_New_Tour" time="4.765" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC16_Tour_Update_Notice_Order_On_General_Information" time="1.397" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC13_Tour_Update_Prepayment_Cancellation_On_General_Information" time="4.902" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC12_Business_Create_New_Page_Tour" time="11.143" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC15_Tour_Update_Age_On_General_Information" time="0.448" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC21_Tour_Detail_Create_New_Part" time="13.293" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC14_Tour_Update_VAT_On_General_Information" time="0.322" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC22_Tour_Detail_Create_New_Price" time="10.105" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC20_Tour_Detail_Update_Information" time="32.983" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC27_Tour_Detail_Publish_Tour" time="0.286" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC17_Tour_Publish_Page" time="2.928" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC24_Tour_Detail_Update_Services_Provided" time="2.360" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC28_Tour_Detail_View_Page_On_Newsfeed" time="0.000" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
+            <testcase name="TC18_Tour_Create_New_Topic" time="9.037" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
+                <testcase name="TC12_Business_Create_New_Page_Tour" time="17.772" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
+                <testcase name="TC13_Tour_Update_Prepayment_Cancellation_On_General_Information" time="4.556" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
+                <testcase name="TC17_Tour_Publish_Page" time="3.032" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
+                <testcase name="TC27_Tour_Detail_Publish_Tour" time="0.264" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
+                <testcase name="TC14_Tour_Update_VAT_On_General_Information" time="0.231" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
+                <testcase name="TC23_Tour_Detail_Choose_Date_For_Open_Sale_Tour" time="5.414" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
+                <testcase name="TC16_Tour_Update_Notice_Order_On_General_Information" time="1.390" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
+                <testcase name="TC15_Tour_Update_Age_On_General_Information" time="0.384" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
+                <testcase name="TC21_Tour_Detail_Create_New_Part" time="13.346" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
+                <testcase name="TC22_Tour_Detail_Create_New_Price" time="10.135" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
+                <testcase name="TC05_Login_Newsfeed_With_Old_Account" time="4.713" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
+                <testcase name="TC24_Tour_Detail_Update_Services_Provided" time="2.374" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
+                <testcase name="TC20_Tour_Detail_Update_Information" time="33.052" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
+                <testcase name="TC19_Tour_Create_New_Tour" time="4.528" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
       
 </testsuite>

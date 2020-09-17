@@ -20,6 +20,7 @@ import Project.Business.Tour.Setting.PubishPage;
 import Project.Business.Tour.Setting.TourGeneralSettingPage;
 import Project.Business.Tour.Topic.TourTopicPage;
 import Project.Newsfeed.Boooking.BoookingTour;
+import Project.Newsfeed.Boooking.PaymentGateWay.StripeGateway;
 import Project.Newsfeed.Boooking.PaymentInfo;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
 import Project.Newsfeed.PageWall.TourDetail;
@@ -81,7 +82,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     BoookingTour tourBookingPage;
 
     PaymentInfo paymentInfoPage;
-
+    StripeGateway stripePayment;
     Handnote_Tour handnoteTourPage;
 
     // Define user properties
@@ -980,113 +981,197 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         log.info("Step 1. Go back to Tour");
         tourSettingTab.clickToBackTourManagement(driver);
         tourManagementPage = PageGeneration.createTourManagementPage(driver);
-        log.info("Step 2. Check Tour management page display");
-        verifyTrue(tourManagementPage.checkPageWithCaseHaveTourDisplay(driver));
+//        log.info("Step 2. Check Tour management page display");
+//        verifyTrue(tourManagementPage.checkPageWithCaseHaveTourDisplay(driver));
         log.info("Step 3. Click to view detail Tour");
-        tourManagementPage.clickTOViewDetailOfDirectTour(driver,tourName);
+        tourManagementPage.clickTOViewDetailOfDirectTour(driver, tourName);
         tourDetailForBooking = PageGeneration.createTourDetailBookingPage(driver);
+        tourDetailForBooking.switchWindowByTitle(driver,tourName+ " | Chi tiết tour - Page Wall | Hahalolo");
         log.info("Step 4. Check Tour Detail Booking page display");
         verifyTrue(tourDetailForBooking.checkTourDetailBookingPageIsDisplay());
         linkPaymentTour = tourDetailForBooking.getCurrentURL(driver);
         log.info("Step 5. Logout");
         tourDetailForBooking.clickToItemOnSettingMenu(driver, "ic-logout-c");
         loginNewsfeedPage = PageGeneration.createNewsfeedLoginPage(driver);
-
-        loginNewsfeedPage.enterUserNameToLogin(driver,"balo_04@mailinator.com");
-        loginNewsfeedPage.enterPasswordToLogin(driver,"123456");
+        log.info("Step 6. Enter username");
+        loginNewsfeedPage.enterUserNameToLogin(driver, "balo_04@mailinator.com");
+        log.info("Step 7. Enter pasword");
+        loginNewsfeedPage.enterPasswordToLogin(driver, "123456");
+        log.info("Step 8. Click to button login");
         loginNewsfeedPage.clickToLoginButton(driver);
-
         newsfeedHomePage = PageGeneration.createNewsfeedHomepage(driver);
-        newsfeedHomePage.openURL(driver,linkPaymentTour);
+//        log.info("Step 9. Check login success");
+//        verifyTrue(newsfeedHomePage.checkNewsfeedDisplay());
+        log.info("Step 10. Go to Tour Detail for booking");
+        System.out.println(linkPaymentTour);
+        newsfeedHomePage.openURL(driver, linkPaymentTour);
         tourDetailForBooking = PageGeneration.createTourDetailBookingPage(driver);
+        log.info("Step 11. Check Tour Detail for booking display");
         verifyTrue(tourDetailForBooking.checkTourDetailBookingPageIsDisplay());
+        log.info("Step 11. Click to scheduler tab for choose departure date");
         tourDetailForBooking.clickToSchedulerTab();
         verifyTrue(tourDetailForBooking.checkTourSchedulerTabIsDisplay());
-
+        log.info("Step 11. Choose date for booking");
         tourDetailForBooking.chooseDepatureDateWantBooking();
         tourBookingPage = PageGeneration.createTourBookingPage(driver);
-        verifyEquals(tourBookingPage.checkBookingTourStep1IsDisplay(), "");
-        verifyEquals(tourBookingPage.getTourNameDisplayOnStep1(), "");
-        verifyEquals(tourBookingPage.getBasicPriceDisplayOnStep1(), "");
-        verifyEquals(tourBookingPage.getDepartureDateDisplayOnStep1(), "");
-
-        tourBookingPage.clickToButtonContinueToStep2();
-        verifyTrue(tourBookingPage.checBookingTourStep2IsDisplay());
-
-        tourBookingPage.choosePerTitleOfTourLeader();
-        verifyEquals(tourBookingPage.getDefaultFullNameofTourLeader(),"");
-        verifyEquals(tourBookingPage.getDefaultEmailOfTourLeader(),"");
-        tourBookingPage.enterPhoneNumberOfTourLeader();
-        tourBookingPage.enterAddressOfTourLeader();
-        tourBookingPage.enterRequestNote();
-
-        tourBookingPage.chooseOptionImTourist();
-        tourBookingPage.chooseNumberAdult();
-        tourBookingPage.chooseNumberChild();
-        tourBookingPage.chooseNumberYoungChild();
-        tourBookingPage.chooseNumberOfInfant();
-
-        tourBookingPage.enterValueOfAdullInfo();
-        tourBookingPage.enterValueOfChildInfo();
-        tourBookingPage.enterValueOfYoungChildInfo();
-        tourBookingPage.enterValueOfIfantInfo();
-        tourBookingPage.clickToButtonContinueToStep3();
-
-        verifyTrue(tourBookingPage.checBookingTourStep3IsDisplay());
-        tourBookingPage.clickToButtonContinueToStep4();
-        paymentInfoPage = PageGeneration.createPaymentInfo(driver);
-        verifyTrue(paymentInfoPage.checBookingTourStep4IsDisplay());
-
-        log.info("Step 14. Enter lastname on Billing info");
-        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver,"nv203","");
-        log.info("Step 14. Enter firstname and surname on Billing info");
-        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver,"nv204","");
-        log.info("Step 14. Enter company name on Billing info");
-        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver,"companyName","");
-        log.info("Step 14. Choose country on Billing info");
-        paymentInfoPage.chooseCountryOnBillingInfoTab(driver,"");
-        log.info("Step 14. Enter address on Billing info");
-        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver,"address","");
-        log.info("Step 14. Enter city on Billing info");
-        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver,"province","");
-        log.info("Step 14. Enter state on Billing info");
-        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver,"state","");
-        log.info("Step 14. Enter zipcode on Billing info");
-        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver,"zipCode","");
-        log.info("Step 14. Enter phone on Billing info");
-        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver,"nv231","");
-        log.info("Step 14. Enter email on Billing info");
-        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver,"nv208","");
-        log.info("Step 14. Click save to update billing info");
-        paymentInfoPage.clickButtonSaveBillingInfo();
-
-        log.info("Step 14. Check payment method display");
-        paymentInfoPage.checkPaymentMethodIsDisplay();
-
-        log.info("Step 14. Choose payment method");
-        paymentInfoPage.choosePaymentMethod();
-
-        log.info("Step 14. Check visa payment display");
-        verifyTrue(paymentInfoPage.checkViscardTabIsDisplay());
-
-        log.info("Step 14. Enter card number on visa method");
-        paymentInfoPage.enterDataToDynamicFieldOnVisaMethod(driver,"","");
-        log.info("Step 14. choose expired date on visa method");
-        paymentInfoPage.chooseExpDate();
-        log.info("Step 14. Enter ccv code on visa method");
-        paymentInfoPage.enterDataToDynamicFieldOnVisaMethod(driver,"","");
-        log.info("Step 14. Enter cardholdername on visa method");
-        paymentInfoPage.enterDataToDynamicFieldOnVisaMethod(driver,"","");
-        log.info("Step 14. Click to aggree rule");
-        paymentInfoPage.clickToAggreeRule();
-        log.info("Step 14. Click to payment button");
-        paymentInfoPage.clickButtonPayment();
-        log.info("Step 14. Check payment tour success");
-
-        verifyTrue(paymentInfoPage.checkPaymentSuccessIsDisplay());
-
+        log.info("Step 11. Verify booking tour step 1 is đisplay");
+        verifyTrue(tourBookingPage.checkTourBookingStep1IsDisplay());
     }
     @Test
+    public void TC29_Booking_Tour_Step1() {
+        log.info("Step 1. Verify tour Name on header");
+        verifyEquals(tourBookingPage.getTourNameDisplayOnBookingStep(), "");
+
+        log.info("Step 2. Verify tour price on detail");
+        verifyEquals(tourBookingPage.getBasicPriceDisplayOnStep1(), "");
+
+        log.info("Step 3. Verify tour departure date on detail");
+        verifyEquals(tourBookingPage.getDepartureDateDisplayOnStep1(), "");
+
+        log.info("Step 4. Verify tour departure place on detail");
+        verifyEquals(tourBookingPage.getDeparturePlaceOnStep1(), "");
+
+        log.info("Step 4. Verify tour destination place on detail");
+        verifyEquals(tourBookingPage.getDeparturePlaceOnStep1(), "");
+
+        log.info("Step 4. Verify tour price of Adult");
+        verifyEquals(tourBookingPage.getValuePriceByTypeAge(driver, "Người lớn"), "");
+
+        log.info("Step 4. Verify tour price of Child");
+        verifyEquals(tourBookingPage.getValuePriceByTypeAge(driver, "Trẻ em"), "");
+
+        log.info("Step 4. Verify tour price of Young Child");
+        verifyEquals(tourBookingPage.getValuePriceByTypeAge(driver, "Trẻ nhỏ"), "");
+
+        log.info("Step 4. Verify tour price of Young Child");
+        verifyEquals(tourBookingPage.getValuePriceByTypeAge(driver, "Em bé"), "");
+
+        log.info("Step 4. Go To step 2");
+        tourBookingPage.clickToNextStep(driver);
+
+        log.info("Step 11. Verify booking step 2 is đisplay");
+        verifyTrue(tourBookingPage.checkTourBookingStep2IsDisplay());
+    }
+    @Test
+    public void TC30_Booking_Step2_Update_Leader_Info() {
+        log.info("Step 4. Check and verify load default on Tour leader");
+        verifyEquals(tourBookingPage.getDefaultDataOfLeaderTraveller(driver, "ov402"), "");
+        verifyEquals(tourBookingPage.getDefaultDataOfLeaderTraveller(driver, "nv208"), "");
+        verifyEquals(tourBookingPage.getDefaultDataOfLeaderTraveller(driver, "ov405"), "");
+
+        log.info("Step 4. Update per title of Leader info");
+        tourBookingPage.choosePerTitleOfTourLeader();
+        log.info("Step 4. Update full name of Leader Info");
+        tourBookingPage.enterDataToDynamicFieldOnTourLeader(driver, "ov402", "");
+        log.info("Step 4. Update Email of Leader Info");
+        tourBookingPage.enterDataToDynamicFieldOnTourLeader(driver, "nv208", "");
+        log.info("Step 4. Update Phone number of Leader Info");
+        tourBookingPage.enterDataToDynamicFieldOnTourLeader(driver, "nv231", "");
+        log.info("Step 4. Update Address of Leader Info");
+        tourBookingPage.enterDataToDynamicFieldOnTourLeader(driver, "ov405", "");
+        log.info("Step 4. Update Request note");
+        tourBookingPage.enterRequestNote(driver, "");
+    }
+    @Test
+    public void TC31_Booking_Step2_Update_Traveller_Info() {
+        log.info("Step 1. Choose number of Adult");
+        tourBookingPage.chooseNumberAdult(driver,1);
+
+        log.info("Step 2. Choose number of Child");
+        tourBookingPage.chooseNumberChild(driver, 2);
+
+        log.info("Step 3. Choose number of Young Child");
+        tourBookingPage.chooseNumberYoungChild(driver,2);
+
+        log.info("Step 4. Choose number of Infant Child");
+        tourBookingPage.chooseNumberOfInfant(driver,2);
+
+        log.info("Step 4. Update info of Adult traveller");
+        tourBookingPage.enterValueOfAdullInfo(driver,2,"","","","");
+
+        log.info("Step 4. Update info of Child traveller");
+        tourBookingPage.enterValueOfChildInfo(driver,2,"", "", "","");
+
+        log.info("Step 4. Update info of Young Child traveller");
+        tourBookingPage.enterValueOfYoungChildInfo(driver,2,"", "", "","");
+
+        log.info("Step 4. Update info of Infant traveller");
+        tourBookingPage.enterValueOfIfantInfo(driver,2,"", "", "","");
+
+        log.info("Step 4. Click to step 3");
+        tourBookingPage.clickToNextStep(driver);
+        log.info("Step 4. Check step 3 is díplay");
+        verifyTrue(tourBookingPage.checBookingTourStep3IsDisplay());
+    }
+    @Test
+    public void TC32_Booking_Step3_ConfirmTravllerInfo() {
+        log.info("Step 1. Click to step 4");
+        tourBookingPage.clickToNextStep(driver);
+        paymentInfoPage = PageGeneration.createPaymentInfo(driver);
+        log.info("Step 4. Check step 3 is díplay");
+        verifyTrue(paymentInfoPage.checkPaymentBillinginfoIsDisplay());
+    }
+    @Test
+    public void TC33_Booking_Step4_PaymentInfo_Update_Billing_Info() {
+        log.info("Step 14. Enter lastname on Billing info");
+        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver, "nv203", "");
+        log.info("Step 14. Enter firstname and surname on Billing info");
+        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver, "nv204", "");
+        log.info("Step 14. Enter company name on Billing info");
+        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver, "companyName", "");
+        log.info("Step 14. Choose country on Billing info");
+        paymentInfoPage.chooseCountryOnBillingInfoTab(driver, "");
+        log.info("Step 14. Enter address on Billing info");
+        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver, "address", "");
+        log.info("Step 14. Enter city on Billing info");
+        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver, "province", "");
+        log.info("Step 14. Enter state on Billing info");
+        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver, "state", "");
+        log.info("Step 14. Enter zipcode on Billing info");
+        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver, "zipCode", "");
+        log.info("Step 14. Enter phone on Billing info");
+        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver, "nv231", "");
+        log.info("Step 14. Enter email on Billing info");
+        paymentInfoPage.enterDataToDynamicFieldOnBillingInfoTab(driver, "nv208", "");
+        log.info("Step 14. Click save to update billing info");
+        paymentInfoPage.clickButtonSaveBillingInfo();
+    }
+    @Test
+    public void TC34_Booking_Step4_Payment_With_Stripe() {
+        log.info("Step 4. Check payment method display");
+        paymentInfoPage.checkPaymentMethodIsDisplay();
+
+        log.info("Step 2. Choose payment method");
+        paymentInfoPage.choosePaymentMethodStripe();
+        stripePayment = PageGeneration.createPaymentWithStripe(driver);
+
+        log.info("Step 3. Check visa payment display");
+        verifyTrue(stripePayment.checkStripeSectionIsDisplay());
+
+        log.info("Step 4. Enter card number on visa method");
+        stripePayment.enterCardnumber(driver,"");
+
+        log.info("Step 5 . choose expired date on visa method");
+        stripePayment.chooseExpirteDate(driver,"","");
+
+        log.info("Step 6. Enter ccv code");
+        stripePayment.enterValueToCcvCodeField(driver,"");
+
+        log.info("Step 7.  Enter cardholdername");
+        stripePayment.enterValueToCardholderName(driver,"");
+
+        log.info("Step 14. Click to aggree rule");
+        stripePayment.clickToAggreeRule();
+
+
+        log.info("Step 14. Click to payment button");
+        stripePayment.clickButtonPayment();
+
+        log.info("Step 14. Check payment tour success");
+        paymentInfoPage = PageGeneration.createPageBookingSuccess(driver);
+        verifyTrue(paymentInfoPage.checkPaymentSuccessIsDisplay());
+    }
+    @Test(enabled = false)
     public void TC28_Confirm_Order_On_Handnote() {
         log.info("Step 1. Go to handnote");
         paymentInfoPage.clickHereLinkToGoHandnote(driver);

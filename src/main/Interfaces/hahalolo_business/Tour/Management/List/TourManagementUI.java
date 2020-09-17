@@ -18,6 +18,6 @@ public class TourManagementUI {
 
     // Table Tour list
     public static final String BUTTON_EDIT_DIRECT_TOUR = "//div[contains(@data-bind, 't101().tv151')][text()= '%s']/following-sibling::div/a[contains(@data-bind,'urlUpdateTour')]" ;
-    public static final String BUTTON_VIEW_DETAIL_DIRECT_TOUR = "//div[contains(@data-bind, 't101().tv151')][text()= '%s']/following-sibling::div/a[contains(@data-bind,'urlUpdateTour')]" ;
+    public static final String BUTTON_VIEW_DETAIL_DIRECT_TOUR = "//div[contains(@data-bind, 't101().tv151')][text()= '%s']/following-sibling::div/a[contains(@data-bind,'viewText')]" ;
 
 }

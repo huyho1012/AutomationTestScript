@@ -6,6 +6,7 @@ import Project.Business.Promotion.Promotion;
 import Project.Business.Promotion.TourPromotion;
 import Project.Business.Tour.Setting.PubishPage;
 import Project.Newsfeed.Boooking.BoookingTour;
+import Project.Newsfeed.Boooking.PaymentGateWay.StripeGateway;
 import Project.Newsfeed.Boooking.PaymentInfo;
 import Project.Newsfeed.PageWall.TourDetail;
 import Project.Newsfeed.PersonalWall.Handnote.Handnote_Tour;
@@ -170,5 +171,13 @@ public class PageGeneration {
 
     public static Handnote_Tour createTourHandnotePage(WebDriver driver) {
         return new Handnote_Tour(driver);
+    }
+
+    public static StripeGateway createPaymentWithStripe(WebDriver driver) {
+        return new StripeGateway(driver);
+    }
+
+    public static PaymentInfo createPageBookingSuccess(WebDriver driver) {
+        return new PaymentInfo(driver);
     }
 }
