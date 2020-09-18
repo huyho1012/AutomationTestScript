@@ -1,4 +1,4 @@
-package Testcase.SignUp;
+package Testcase.AccountSetting;
 
 import Common.DriverManagement.BrowserInitialization;
 import Common.DriverManagement.DriverManager;
@@ -83,7 +83,6 @@ public class Testcase_ChangeFullName extends AbstractTest {
 
         generalAccountSetting.enterDataToFirstNameField(driver, "Quốc Huy");
     }
-
     @Test
     public void Testcase02_Update_Fullname_With_Invalid_LastName(){
         log.info("Step 1 - Lastname is blank");
@@ -129,7 +128,7 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalAccountSetting.enterDataToLastnameField(driver, "Micheal");
     }
     @Test
-    public void Testcase03_Update_Fullname_With_Invalid_Midlename(){
+    public void Testcase03_Update_Fullname_With_Invalid_Middlename(){
         log.info("Step 1 - Middle name contains Number");
         generalAccountSetting.enterDataToMidnameField(driver,"123456");
         generalAccountSetting.clickButtonSaveChangesToUpdateFullname(driver);
@@ -167,108 +166,343 @@ public class Testcase_ChangeFullName extends AbstractTest {
         log.info("Step 3 - Check Confirm password popup is display");
         verifyTrue(generalAccountSetting.checkConfirmPasswordPopupIsDisplay());
         log.info("Step 4 - Enter confirm pass");
-        generalAccountSetting.enterDataToPasswordConfirm(driver,"confirmPwd","123456");
+        generalAccountSetting.enterDataToPasswordConfirm(driver,"123456");
         log.info("Step 5 - Click to confirm pass button");
         generalAccountSetting.clickToConfirmButton();
         log.info("Step 6 - Check full name after change");
         verifyEquals(generalAccountSetting.getFullNameIsDisplay(), "");
     }
     @Test
-    public void Testcase02_Update_Fullname_With_Firstname_Lowercase() {
+    public void Testcase05_Update_Fullname_With_Firstname_Lowercase() {
         log.info("Step 1 - Click button Edit Full name");
         generalAccountSetting.clickToButtonEditFullName();
         log.info("Step 2 - Check form Update full name display");
         verifyTrue(generalAccountSetting.checkUpdateFullNameFormIsDisplay());
         log.info("Step 3 - Enter first name");
-        generalAccountSetting.enterDataToFirstNameField(driver, , "quoc huy");
+        generalAccountSetting.enterDataToFirstNameField(driver, "quoc huy");
         log.info("Step 4 - Click to button Save changes");
         generalAccountSetting.clickButtonSaveChangesToUpdateFullname(driver);
         log.info("Step 5 - Check Confirm password popup is display");
         verifyTrue(generalAccountSetting.checkConfirmPasswordPopupIsDisplay());
         log.info("Step 6 - Enter confirm pass");
-        generalAccountSetting.enterDataToPasswordConfirm(driver, "confirmPwd", "123456");
+        generalAccountSetting.enterDataToPasswordConfirm(driver, "123456");
         log.info("Step 7 - Click to confirm pass button");
         generalAccountSetting.clickToConfirmButton();
         log.info("Step 8 - Check full name after change");
         verifyEquals(generalAccountSetting.getFullNameIsDisplay(), "");
     }
     @Test
-    public void Testcase02_Update_Fullname_With_Firstname_Have_Whitespace_At_First_Position{
-        log.info("Step 3 - First Name - Whitespace on first");
-        accountGeneralSetting.inputValueToFieldOnFullName(driver,"firstName","  Huy");
-        accountGeneralSetting.clickToButtonSaveChangeOfFullName(driver);
-        verifyTrue(accountGeneralSetting.checkConfirmPasswordPopupIsDisplay());
-        accountGeneralSetting.inputValueToFieldOnFullName(driver,"confirmPwd","123456");
-        accountGeneralSetting.clickToConfirmButtonOnPopup();
-        verifyEquals(accountGeneralSetting.getFullNameIsDisplay(), "");
-        accountGeneralSetting.clickIconEditFullName(driver);
+    public void Testcase06_Update_Fullname_With_Firstname_Have_Whitespace_At_First_Position() {
+        log.info("Step 1 - Click button Edit Full name");
+        generalAccountSetting.clickToButtonEditFullName();
+        log.info("Step 2 - Check form Update full name display");
+        verifyTrue(generalAccountSetting.checkUpdateFullNameFormIsDisplay());
+        log.info("Step 3 - Enter first name");
+        generalAccountSetting.enterDataToFirstNameField(driver, "  Huy");
+        log.info("Step 4 - Click to button Save changes");
+        generalAccountSetting.clickButtonSaveChangesToUpdateFullname(driver);
+        log.info("Step 5 - Check Confirm password popup is display");
+        verifyTrue(generalAccountSetting.checkConfirmPasswordPopupIsDisplay());
+        log.info("Step 6 - Enter confirm pass");
+        generalAccountSetting.enterDataToPasswordConfirm(driver,"123456");
+        log.info("Step 7 - Click to confirm pass button");
+        generalAccountSetting.clickToConfirmButton();
+        log.info("Step 8 - Check full name after change");
+        verifyEquals(generalAccountSetting.getFullNameIsDisplay(), "");
+    }
+    @Test
+    public void Testcase07_Update_Fullname_With_Firstname_Have_Whitespace_At_Last_Position() {
+        log.info("Step 1 - Click button Edit Full name");
+        generalAccountSetting.clickToButtonEditFullName();
+        log.info("Step 2 - Check form Update full name display");
+        verifyTrue(generalAccountSetting.checkUpdateFullNameFormIsDisplay());
+        log.info("Step 3 - Enter first name");
+        generalAccountSetting.enterDataToFirstNameField(driver, "Huy  ");
+        log.info("Step 4 - Click to button Save changes");
+        generalAccountSetting.clickButtonSaveChangesToUpdateFullname(driver);
+        log.info("Step 5 - Check Confirm password popup is display");
+        verifyTrue(generalAccountSetting.checkConfirmPasswordPopupIsDisplay());
+        log.info("Step 6 - Enter confirm pass");
+        generalAccountSetting.enterDataToPasswordConfirm(driver,"123456");
+        log.info("Step 7 - Click to confirm pass button");
+        generalAccountSetting.clickToConfirmButton();
+        log.info("Step 8 - Check full name after change");
+        verifyEquals(generalAccountSetting.getFullNameIsDisplay(), "");
+    }
 
-        log.info("Step 4 - First Name - Whitespace on last");
-        accountGeneralSetting.inputValueToFieldOnFullName(driver,"firstName","Huy  ");
-        accountGeneralSetting.clickToButtonSaveChangeOfFullName(driver);
-        verifyTrue(accountGeneralSetting.checkConfirmPasswordPopupIsDisplay());
-        accountGeneralSetting.inputValueToFieldOnFullName(driver,"confirmPwd","123456");
-        accountGeneralSetting.clickToConfirmButtonOnPopup();
-        verifyEquals(accountGeneralSetting.getFullNameIsDisplay(), "");
-        accountGeneralSetting.clickIconEditFullName(driver);
+    @Test
+    public void Testcase08_Update_Fullname_With_Lastname_Have_Lowercase() {
+        log.info("Step 1 - Click button Edit Full name");
+        generalAccountSetting.clickToButtonEditFullName();
+        log.info("Step 2 - Check form Update full name display");
+        verifyTrue(generalAccountSetting.checkUpdateFullNameFormIsDisplay());
+        log.info("Step 5 - Last name contains lowercase");
+        generalAccountSetting.enterDataToLastnameField(driver,"hồ");
+        log.info("Step 4 - Click to button Save changes");
+        generalAccountSetting.clickButtonSaveChangesToUpdateFullname(driver);
+        log.info("Step 5 - Check Confirm password popup is display");
+        verifyTrue(generalAccountSetting.checkConfirmPasswordPopupIsDisplay());
+        log.info("Step 6 - Enter confirm pass");
+        generalAccountSetting.enterDataToPasswordConfirm(driver, "123456");
+        log.info("Step 7 - Click to confirm pass button");
+        generalAccountSetting.clickToConfirmButton();
+        log.info("Step 8 - Check full name after change");
+        verifyEquals(generalAccountSetting.getFullNameIsDisplay(), "");
+    }
+    @Test
+    public void Testcase09_Update_Fullname_With_Lastname_Have_Uppercase() {
+        log.info("Step 1 - Click button Edit Full name");
+        generalAccountSetting.clickToButtonEditFullName();
+        log.info("Step 2 - Check form Update full name display");
+        verifyTrue(generalAccountSetting.checkUpdateFullNameFormIsDisplay());
+        log.info("Step 5 - Last name contaisn uppercase");
+        generalAccountSetting.enterDataToLastnameField(driver, "HỒ");
+        log.info("Step 4 - Click to button Save changes");
+        generalAccountSetting.clickButtonSaveChangesToUpdateFullname(driver);
+        log.info("Step 5 - Check Confirm password popup is display");
+        verifyTrue(generalAccountSetting.checkConfirmPasswordPopupIsDisplay());
+        log.info("Step 6 - Enter confirm pass");
+        generalAccountSetting.enterDataToPasswordConfirm(driver, "123456");
+        log.info("Step 7 - Click to confirm pass button");
+        generalAccountSetting.clickToConfirmButton();
+        log.info("Step 8 - Check full name after change");
+        verifyEquals(generalAccountSetting.getFullNameIsDisplay(), "");
+    }
+    @Test
+    public void Testcase10_Update_Fullname_With_Lastname_Have_Whitespace_At_First_Position() {
+        log.info("Step 1 - Click button Edit Full name");
+        generalAccountSetting.clickToButtonEditFullName();
+        log.info("Step 2 - Check form Update full name display");
+        verifyTrue(generalAccountSetting.checkUpdateFullNameFormIsDisplay());
+        log.info("Step 5 - Last name contaisn uppercase");
+        generalAccountSetting.enterDataToLastnameField(driver, " Hồ Doãn");
+        log.info("Step 4 - Click to button Save changes");
+        generalAccountSetting.clickButtonSaveChangesToUpdateFullname(driver);
+        log.info("Step 5 - Check Confirm password popup is display");
+        verifyTrue(generalAccountSetting.checkConfirmPasswordPopupIsDisplay());
+        log.info("Step 6 - Enter confirm pass");
+        generalAccountSetting.enterDataToPasswordConfirm(driver, "123456");
+        log.info("Step 7 - Click to confirm pass button");
+        generalAccountSetting.clickToConfirmButton();
+        log.info("Step 8 - Check full name after change");
+        verifyEquals(generalAccountSetting.getFullNameIsDisplay(), "");
+    }
+    @Test
+    public void Testcase11Update_Fullname_With_Lastname_Have_Whitespace_At_Last_Position() {
+        log.info("Step 1 - Click button Edit Full name");
+        generalAccountSetting.clickToButtonEditFullName();
+        log.info("Step 2 - Check form Update full name display");
+        verifyTrue(generalAccountSetting.checkUpdateFullNameFormIsDisplay());
+        log.info("Step 5 - Last name contaisn uppercase");
+        generalAccountSetting.enterDataToLastnameField(driver, "Hồ Doãn  ");
+        log.info("Step 4 - Click to button Save changes");
+        generalAccountSetting.clickButtonSaveChangesToUpdateFullname(driver);
+        log.info("Step 5 - Check Confirm password popup is display");
+        verifyTrue(generalAccountSetting.checkConfirmPasswordPopupIsDisplay());
+        log.info("Step 6 - Enter confirm pass");
+        generalAccountSetting.enterDataToPasswordConfirm(driver, "123456");
+        log.info("Step 7 - Click to confirm pass button");
+        generalAccountSetting.clickToConfirmButton();
+        log.info("Step 8 - Check full name after change");
+        verifyEquals(generalAccountSetting.getFullNameIsDisplay(), "");
+    }
 
+    @Test
+    public void Testcase12_Update_Fullname_With_MiddleName_Have_Lowercase() {
+        log.info("Step 1 - Click button Edit Full name");
+        generalAccountSetting.clickToButtonEditFullName();
+        log.info("Step 2 - Check form Update full name display");
+        verifyTrue(generalAccountSetting.checkUpdateFullNameFormIsDisplay());
+        log.info("Step 5 - Last name contaisn uppercase");
+        generalAccountSetting.enterDataToMidnameField(driver, "quốc");
+        log.info("Step 4 - Click to button Save changes");
+        generalAccountSetting.clickButtonSaveChangesToUpdateFullname(driver);
+        log.info("Step 5 - Check Confirm password popup is display");
+        verifyTrue(generalAccountSetting.checkConfirmPasswordPopupIsDisplay());
+        log.info("Step 6 - Enter confirm pass");
+        generalAccountSetting.enterDataToPasswordConfirm(driver, "123456");
+        log.info("Step 7 - Click to confirm pass button");
+        generalAccountSetting.clickToConfirmButton();
+        log.info("Step 8 - Check full name after change");
+        verifyEquals(generalAccountSetting.getFullNameIsDisplay(), "");
+    }
+    @Test
+    public void Testcase13_Update_Fullname_With_MiddleNam_Have_Uppercase() {
+        log.info("Step 1 - Click button Edit Full name");
+        generalAccountSetting.clickToButtonEditFullName();
+        log.info("Step 2 - Check form Update full name display");
+        verifyTrue(generalAccountSetting.checkUpdateFullNameFormIsDisplay());
+        log.info("Step 5 - Middle name contaisn uppercase");
+        generalAccountSetting.enterDataToMidnameField(driver, "QUỐC");
+        log.info("Step 4 - Click to button Save changes");
+        generalAccountSetting.clickButtonSaveChangesToUpdateFullname(driver);
+        log.info("Step 5 - Check Confirm password popup is display");
+        verifyTrue(generalAccountSetting.checkConfirmPasswordPopupIsDisplay());
+        log.info("Step 6 - Enter confirm pass");
+        generalAccountSetting.enterDataToPasswordConfirm(driver, "123456");
+        log.info("Step 7 - Click to confirm pass button");
+        generalAccountSetting.clickToConfirmButton();
+        log.info("Step 8 - Check full name after change");
+        verifyEquals(generalAccountSetting.getFullNameIsDisplay(), "");
+    }
+    @Test
+    public void Testcase14_Update_Fullname_With_MiddleName_Have_Whitespace_At_First_Position() {
+        log.info("Step 1 - Click button Edit Full name");
+        generalAccountSetting.clickToButtonEditFullName();
+        log.info("Step 2 - Check form Update full name display");
+        verifyTrue(generalAccountSetting.checkUpdateFullNameFormIsDisplay());
+        log.info("Step 5 - Middle name contaisn uppercase");
+        generalAccountSetting.enterDataToMidnameField(driver, " Quốc");
+        log.info("Step 4 - Click to button Save changes");
+        generalAccountSetting.clickButtonSaveChangesToUpdateFullname(driver);
+        log.info("Step 5 - Check Confirm password popup is display");
+        verifyTrue(generalAccountSetting.checkConfirmPasswordPopupIsDisplay());
+        log.info("Step 6 - Enter confirm pass");
+        generalAccountSetting.enterDataToPasswordConfirm(driver, "123456");
+        log.info("Step 7 - Click to confirm pass button");
+        generalAccountSetting.clickToConfirmButton();
+        log.info("Step 8 - Check full name after change");
+        verifyEquals(generalAccountSetting.getFullNameIsDisplay(), "");
+    }
+    @Test
+    public void Testcase15_Update_Fullname_With_MiddleName_Have_Whitespace_At_Last_Position() {
+        log.info("Step 1 - Click button Edit Full name");
+        generalAccountSetting.clickToButtonEditFullName();
+        log.info("Step 2 - Check form Update full name display");
+        verifyTrue(generalAccountSetting.checkUpdateFullNameFormIsDisplay());
         log.info("Step 5 - First Name -  Valid");
-        accountGeneralSetting.inputValueToFieldOnFullName(driver,"firstName","Huy");
+        generalAccountSetting.enterDataToMidnameField(driver,"Quốc  ");
+        log.info("Step 4 - Click to button Save changes");
+        generalAccountSetting.clickButtonSaveChangesToUpdateFullname(driver);
+        log.info("Step 5 - Check Confirm password popup is display");
+        verifyTrue(generalAccountSetting.checkConfirmPasswordPopupIsDisplay());
+        log.info("Step 6 - Enter confirm pass");
+        generalAccountSetting.enterDataToPasswordConfirm(driver,  "123456");
+        log.info("Step 7 - Click to confirm pass button");
+        generalAccountSetting.clickToConfirmButton();
+        log.info("Step 8 - Check full name after change");
+        verifyEquals(generalAccountSetting.getFullNameIsDisplay(), "");
+    }
+
+    @Test
+    public void Testcase15_Update_Fullname_With_Invalid_Pass() {
+        generalAccountSetting.clickToButtonEditFullName();
+        verifyTrue(generalAccountSetting.checkUpdateFullNameFormIsDisplay());
+        generalAccountSetting.enterDataToMidnameField(driver,"Huy");
+        generalAccountSetting.enterDataToMidnameField(driver,"Quốc");
+        generalAccountSetting.enterDataToLastnameField(driver,"Hồ Doãn");
+        generalAccountSetting.clickButtonSaveChangesToUpdateFullname(driver);
+        verifyTrue(generalAccountSetting.checkConfirmPasswordPopupIsDisplay());
+
+        log.info("Step 1 - Wrong pass");
+        generalAccountSetting.enterDataToPasswordConfirm(driver,  "1123456");
+        generalAccountSetting.clickToConfirmButton();
+        verifyEquals(generalAccountSetting.getErrMessageValidationOfConfirmPass(driver), "");
+
+        log.info("Step 2 - Pasword blank");
+        generalAccountSetting.enterDataToPasswordConfirm(driver,  "");
+        generalAccountSetting.clickToConfirmButton();
+        verifyEquals(generalAccountSetting.getErrMessageValidationOfConfirmPass(driver), "");
+
+        log.info("Step 3 - Pasword contains all whitespace");
+        generalAccountSetting.enterDataToPasswordConfirm(driver,  "    ");
+        generalAccountSetting.clickToConfirmButton();
+        verifyEquals(generalAccountSetting.getErrMessageValidationOfConfirmPass(driver), "");
+
+        log.info("Step 4 - Pasword contains less than 6 chars");
+        generalAccountSetting.enterDataToPasswordConfirm(driver,"12345");
+        generalAccountSetting.clickToConfirmButton();
+        verifyEquals(generalAccountSetting.getErrMessageValidationOfConfirmPass(driver), "");
+
+        log.info("Step 5 - Pasword contains more than 128 chars");
+        generalAccountSetting.enterDataToPasswordConfirm(driver,randomPassword(129));
+        generalAccountSetting.clickToConfirmButton();
+        verifyEquals(generalAccountSetting.getErrMessageValidationOfConfirmPass(driver), "");
+
+        log.info("Step 6 - Pasword contains white space");
+        generalAccountSetting.enterDataToPasswordConfirm(driver,"123 456");
+        generalAccountSetting.clickToConfirmButton();
+        verifyEquals(generalAccountSetting.getErrMessageValidationOfConfirmPass(driver), "");
+
+        log.info("Step 7 - Pasword contains script");
+        generalAccountSetting.enterDataToPasswordConfirm(driver,scriptCode);
+        generalAccountSetting.clickToConfirmButton();
+        verifyEquals(generalAccountSetting.getErrMessageValidationOfConfirmPass(driver), "");
+
+        log.info("Step 7 - Pasword contains HTML");
+        generalAccountSetting.enterDataToPasswordConfirm(driver, htmlCode);
+        generalAccountSetting.clickToConfirmButton();
+        verifyEquals(generalAccountSetting.getErrMessageValidationOfConfirmPass(driver), "");
+
+    }
+
+    @Test
+    public void Testcase15_Update_Fullname_With_TOTAL_FULL_NAME_GREATER_THAN_75_CHARS() {
+        log.info("Step 1 - Middle Name - Blank");
+        accountGeneralSetting.removeValueOnFieldOnFullName(driver,"middleName");
+        accountGeneralSetting.clickToButtonSaveChangeOfFullName(driver);
+        verifyTrue(accountGeneralSetting.checkConfirmPasswordPopupIsDisplay());
+        accountGeneralSetting.inputValueToFieldOnFullName(driver,"confirmPwd","123456");
+        accountGeneralSetting.clickToConfirmButtonOnPopup();
+        verifyEquals(accountGeneralSetting.getFullNameIsDisplay(), "");
+        accountGeneralSetting.clickIconEditFullName(driver);
+
+        log.info("Step 1 - Middle Name - Whitespace");
+        accountGeneralSetting.inputValueToFieldOnFullName(driver,"middleName" ,"      ");
+        accountGeneralSetting.clickToButtonSaveChangeOfFullName(driver);
+        verifyTrue(accountGeneralSetting.checkConfirmPasswordPopupIsDisplay());
+        accountGeneralSetting.inputValueToFieldOnFullName(driver,"confirmPwd","123456");
+        accountGeneralSetting.clickToConfirmButtonOnPopup();
+        verifyEquals(accountGeneralSetting.getFullNameIsDisplay(), "");
+        accountGeneralSetting.clickIconEditFullName(driver);
+
+        log.info("Step 1 - Middle Name - Uppercase");
+        accountGeneralSetting.inputValueToFieldOnFullName(driver,"middleName","DOÃN QUỐC");
+        accountGeneralSetting.clickToButtonSaveChangeOfFullName(driver);
+        verifyTrue(accountGeneralSetting.checkConfirmPasswordPopupIsDisplay());
+        accountGeneralSetting.inputValueToFieldOnFullName(driver,"confirmPwd","123456");
+        accountGeneralSetting.clickToConfirmButtonOnPopup();
+        verifyEquals(accountGeneralSetting.getFullNameIsDisplay(), "");
+        accountGeneralSetting.clickIconEditFullName(driver);
+
+        log.info("Step 2 - Middle Name - Lowercase");
+        accountGeneralSetting.inputValueToFieldOnFullName(driver,"middleName","doãn quốc");
+        accountGeneralSetting.clickToButtonSaveChangeOfFullName(driver);
+        verifyTrue(accountGeneralSetting.checkConfirmPasswordPopupIsDisplay());
+        accountGeneralSetting.inputValueToFieldOnFullName(driver,"confirmPwd","123456");
+        accountGeneralSetting.clickToConfirmButtonOnPopup();
+        verifyEquals(accountGeneralSetting.getFullNameIsDisplay(), "");
+        accountGeneralSetting.clickIconEditFullName(driver);
+
+        log.info("Step 3 - Middle Name - Whitespace on first");
+        accountGeneralSetting.inputValueToFieldOnFullName(driver,"middleName","  doãn quốc");
+        accountGeneralSetting.clickToButtonSaveChangeOfFullName(driver);
+        verifyTrue(accountGeneralSetting.checkConfirmPasswordPopupIsDisplay());
+        accountGeneralSetting.inputValueToFieldOnFullName(driver,"confirmPwd","123456");
+        accountGeneralSetting.clickToConfirmButtonOnPopup();
+        verifyEquals(accountGeneralSetting.getFullNameIsDisplay(), "");
+        accountGeneralSetting.clickIconEditFullName(driver);
+
+        log.info("Step 4 - Middle Name - Whitespace on last");
+        accountGeneralSetting.inputValueToFieldOnFullName(driver,"middleName","Doãn quốc  ");
+        accountGeneralSetting.clickToButtonSaveChangeOfFullName(driver);
+        verifyTrue(accountGeneralSetting.checkConfirmPasswordPopupIsDisplay());
+        accountGeneralSetting.inputValueToFieldOnFullName(driver,"confirmPwd","123456");
+        accountGeneralSetting.clickToConfirmButtonOnPopup();
+        verifyEquals(accountGeneralSetting.getFullNameIsDisplay(), "");
+        accountGeneralSetting.clickIconEditFullName(driver);
+
+        log.info("Step 5 - Middle Name - Valid");
+        accountGeneralSetting.inputValueToFieldOnFullName(driver,"middleName","Doãn Quốc");
         accountGeneralSetting.clickToButtonSaveChangeOfFullName(driver);
         verifyTrue(accountGeneralSetting.checkConfirmPasswordPopupIsDisplay());
         accountGeneralSetting.inputValueToFieldOnFullName(driver,"confirmPwd","123456");
         accountGeneralSetting.clickToConfirmButtonOnPopup();
         verifyEquals(accountGeneralSetting.getFullNameIsDisplay(), "");
     }
+
     @Test
-    public void TC05_LastName_Check_Validation_Positive() {
-        log.info("Step 1 - Last Name - Uppercase");
-        accountGeneralSetting.inputValueToFieldOnFullName(driver,"lastName","HỒ DOÃN");
-        accountGeneralSetting.clickToButtonSaveChangeOfFullName(driver);
-        verifyTrue(accountGeneralSetting.checkConfirmPasswordPopupIsDisplay());
-        accountGeneralSetting.inputValueToFieldOnFullName(driver,"confirmPwd","123456");
-        accountGeneralSetting.clickToConfirmButtonOnPopup();
-        verifyEquals(accountGeneralSetting.getFullNameIsDisplay(), "");
-        accountGeneralSetting.clickIconEditFullName(driver);
-
-        log.info("Step 2 - Last Name - Lowercase");
-        accountGeneralSetting.inputValueToFieldOnFullName(driver,"lastName","hồ doãn");
-        accountGeneralSetting.clickToButtonSaveChangeOfFullName(driver);
-        verifyTrue(accountGeneralSetting.checkConfirmPasswordPopupIsDisplay());
-        accountGeneralSetting.inputValueToFieldOnFullName(driver,"confirmPwd","123456");
-        accountGeneralSetting.clickToConfirmButtonOnPopup();
-        verifyEquals(accountGeneralSetting.getFullNameIsDisplay(), "");
-        accountGeneralSetting.clickIconEditFullName(driver);
-
-        log.info("Step 3 - Last Name - Whitespace on first");
-        accountGeneralSetting.inputValueToFieldOnFullName(driver,"lastName","  Hồ");
-        accountGeneralSetting.clickToButtonSaveChangeOfFullName(driver);
-        verifyTrue(accountGeneralSetting.checkConfirmPasswordPopupIsDisplay());
-        accountGeneralSetting.inputValueToFieldOnFullName(driver,"confirmPwd","123456");
-        accountGeneralSetting.clickToConfirmButtonOnPopup();
-        verifyEquals(accountGeneralSetting.getFullNameIsDisplay(), "");
-        accountGeneralSetting.clickIconEditFullName(driver);
-
-        log.info("Step 4 - Last Name - Whitespace on last");
-        accountGeneralSetting.inputValueToFieldOnFullName(driver,"lastName","Hồ  ");
-        accountGeneralSetting.clickToButtonSaveChangeOfFullName(driver);
-        verifyTrue(accountGeneralSetting.checkConfirmPasswordPopupIsDisplay());
-        accountGeneralSetting.inputValueToFieldOnFullName(driver,"confirmPwd","123456");
-        accountGeneralSetting.clickToConfirmButtonOnPopup();
-        verifyEquals(accountGeneralSetting.getFullNameIsDisplay(), "");
-        accountGeneralSetting.clickIconEditFullName(driver);
-
-        log.info("Step 5 - Last Name - Valid");
-        accountGeneralSetting.inputValueToFieldOnFullName(driver,"lastName","Hồ");
-        accountGeneralSetting.clickToButtonSaveChangeOfFullName(driver);
-        verifyTrue(accountGeneralSetting.checkConfirmPasswordPopupIsDisplay());
-        accountGeneralSetting.inputValueToFieldOnFullName(driver,"confirmPwd","123456");
-        accountGeneralSetting.clickToConfirmButtonOnPopup();
-        verifyEquals(accountGeneralSetting.getFullNameIsDisplay(), "");
-
-    }
-    @Test
-    public void TC05_Middle_Name_Check_Validation_Positive() {
+    public void Testcase15_Update_Fullname_With_TOTAL_FULL_NAME_GREATER_THAN_5_WORDS(){
         log.info("Step 1 - Middle Name - Blank");
         accountGeneralSetting.removeValueOnFieldOnFullName(driver,"middleName");
         accountGeneralSetting.clickToButtonSaveChangeOfFullName(driver);

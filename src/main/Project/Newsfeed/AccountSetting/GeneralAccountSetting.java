@@ -74,9 +74,13 @@ public class GeneralAccountSetting extends HeaderPage {
         return true;
     }
 
-    public void enterDataToPasswordConfirm(WebDriver driver, String confirmPwd, String s) {
+    public void enterDataToPasswordConfirm(WebDriver driver, String confirmPwd) {
     }
 
     public void clickToConfirmButton() {
+    }
+
+    public Object getErrMessageValidationOfConfirmPass(WebDriver driver) {
+        return null;
     }
 }
