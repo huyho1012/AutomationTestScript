@@ -463,24 +463,26 @@ public abstract class AbstractPage {
             fullFileName = fullFileName + "\"" + folderImages + file + "\"" +" ";
         }
         fullFileName = fullFileName.trim();
+        System.out.println(fullFileName);
         if (driver.toString().contains("firefox")){
             try {
                 Runtime.getRuntime().exec(new String[] {uploadFirefox, fullFileName});
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if (driver.toString().contains("chrome")){
+        } else if (driver.toString().contains("chrome")) {
             try {
-                Runtime.getRuntime().exec(new String[] {uploadChrome, fullFileName});
+                Runtime.getRuntime().exec(new String[]{uploadChrome, fullFileName});
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-        setTimeDelay(1);
     }
     public void uploadOneFileByAutoIT(WebDriver driver, String fileName){
         String uploadChrome = System.getProperty("user.dir") + "/Extension/AutoIT/chromeUploadOneTime.exe";
         String uploadFirefox = System.getProperty("user.dir") + "/resources/upload/firefoxUploadOneTime.exe";
+        String folderImages = System.getProperty("user.dir") + "\\Upload\\";
+        fileName =  folderImages + fileName;
         if (driver.toString().contains("firefox")){
             try {
                 Runtime.getRuntime().exec(new String[] {uploadFirefox, fileName});

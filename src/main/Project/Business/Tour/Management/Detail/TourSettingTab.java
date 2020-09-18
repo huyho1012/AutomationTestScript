@@ -31,11 +31,7 @@ public class TourSettingTab extends TourCommon {
     public boolean checkStatusPublishTour() {
         String colorBackground =  getAttributeOfClassAfter(driver,".custom-control-label","background-color");
         String hexaColorButtonPublish = Color.fromString(colorBackground).asHex();
-        if(hexaColorButtonPublish == "#166986"){
-            return true;
-        }
-        else
-            return false;
+        return hexaColorButtonPublish == "#166986";
     }
 
     public void clickToSaveButton() {

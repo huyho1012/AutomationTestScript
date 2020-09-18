@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test with firefox"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="135.557">
+  <properties />
+  
+  
+            <testcase name="Tescase01_Check_Validate_Of_File_Can_Use_To_Upload_Avatar_By_Local_Image" time="69.866" classname="Testcase.UploadAvatar" />
+                <testcase name="Tescase02_Check_Validate_Of_File_Can_Use_To_Upload_Cover_By_Local_Image" time="65.691" classname="Testcase.UploadAvatar" />
+      
+</testsuite>

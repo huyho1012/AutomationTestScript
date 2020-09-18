@@ -29,12 +29,12 @@ public class PaymentInfo extends HeaderPage {
         clickToElement(driver, PaymentInfoUI.BUTTON_UPDATE_BILLING_INFO);
     }
 
-    public boolean checkPaymentMethodSectionIsDisplay(WebDriver driver){
-        return checkElementDisplay(driver, PaymentInfoUI.PAYMENT_METHOD_SECTION);
-    }
+//    public boolean checkPaymentMethodSectionIsDisplay(WebDriver driver){
+//        return checkElementDisplay(driver, PaymentInfoUI.PAYMENT_METHOD_SECTION);
+//    }
 
     public void choosePaymentMethodAleypay(){
-        waitElementToVisible(driver, PaymentInfoUI.PAYMENT_METHOD_SECTION);
+//        waitElementToVisible(driver, PaymentInfoUI.PAYMENT_METHOD_SECTION);
         waitForElementClickable(driver, PaymentInfoUI.PAYMENT_METHOD_DOMESTIC);
         clickToElement(driver, PaymentInfoUI.PAYMENT_METHOD_DOMESTIC);
         setTimeDelay(1);
@@ -45,7 +45,7 @@ public class PaymentInfo extends HeaderPage {
     }
 
     public void choosePaymentMethodBaoKim(){
-        waitElementToVisible(driver, PaymentInfoUI.PAYMENT_METHOD_SECTION);
+//        waitElementToVisible(driver, PaymentInfoUI.PAYMENT_METHOD_SECTION);
         waitForElementClickable(driver, PaymentInfoUI.PAYMENT_METHOD_DOMESTIC);
         clickToElement(driver, PaymentInfoUI.PAYMENT_METHOD_DOMESTIC);
         setTimeDelay(1);
@@ -55,7 +55,7 @@ public class PaymentInfo extends HeaderPage {
         clickToElement(driver, PaymentInfoUI.BUTTON_PAYMENT);
     }
     public void choosePaymentMethodStripe(){
-        waitElementToVisible(driver, PaymentInfoUI.PAYMENT_METHOD_SECTION);
+//        waitElementToVisible(driver, PaymentInfoUI.PAYMENT_METHOD_SECTION);
         waitForElementClickable(driver, PaymentInfoUI.PAYMENT_METHOD_INTERNATIONAL);
         clickToElement(driver, PaymentInfoUI.PAYMENT_METHOD_INTERNATIONAL);
         setTimeDelay(1);
@@ -68,27 +68,15 @@ public class PaymentInfo extends HeaderPage {
         return true;
     }
 
-
-    public void enterCardHolderName() {
-    }
-
     public void clickButtonSaveBillingInfo() {
+        waitForElementClickable(driver, PaymentInfoUI.BUTTON_UPDATE_BILLING_INFO);
+        clickToElement(driver, PaymentInfoUI.BUTTON_UPDATE_BILLING_INFO);
     }
     
 
     public void checkPaymentMethodIsDisplay() {
+        setTimeDelay(2);
     }
-
-    public void choosePaymentMethod() {
-    }
-
-    public void chooseExpDate() {
-    }
-
-    public void enterDataToDynamicFieldOnVisaMethod(WebDriver driver, String nameField, String dataValue) {
-    }
-
-
 
     public boolean checkPaymentSuccessIsDisplay() {
         return true;

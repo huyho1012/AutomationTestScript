@@ -36,10 +36,7 @@ public class TourServicePrice extends TourCommon {
 
     private boolean checkPageHaveServicePrice() {
         waitElementToVisible(driver, TourServicePriceUI.TAB_PRICE_SERVICE);
-        if(checkElementDisplay(driver,TourServicePriceUI.SELECTED_SERIVCE)){
-            return  true;
-        }
-        else return false;
+        return checkElementDisplay(driver, TourServicePriceUI.SELECTED_SERIVCE);
     }
 
     public void choooseServiceOnDropdown() {

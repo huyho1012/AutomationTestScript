@@ -2,7 +2,6 @@ package Common.HelperFunction;
 
 
 import Project.Business.Promotion.DetailPromo;
-import Project.Business.Promotion.Promotion;
 import Project.Business.Promotion.TourPromotion;
 import Project.Business.Tour.Setting.PubishPage;
 import Project.Newsfeed.Boooking.BoookingTour;
@@ -10,6 +9,7 @@ import Project.Newsfeed.Boooking.PaymentGateWay.StripeGateway;
 import Project.Newsfeed.Boooking.PaymentInfo;
 import Project.Newsfeed.PageWall.TourDetail;
 import Project.Newsfeed.PersonalWall.Handnote.Handnote_Tour;
+import Project.Newsfeed.PersonalWall.NewsfeedPersonalTimeline;
 import Project.Shared.Login.LoginPage;
 import Project.Backend.BackendHomePage;
 import Project.Backend.BackendVerifyBusiManagement;
@@ -20,7 +20,7 @@ import Project.Business.Tour.Setting.TourGeneralSettingPage;
 import Project.Business.Tour.Topic.TourTopicPage;
 import Project.Business.Tour.TourDashboardPage;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
-import Project.Newsfeed.PersonalWall.PersonalAboutPage;
+import Project.Newsfeed.PersonalWall.About.PersonalAboutPage;
 import Project.Newsfeed.AccountSetting.GeneralAccountSetting;
 import Project.Shared.SingUp.SignUpPage;
 import Project.Wallet.WalletHomePage;
@@ -179,5 +179,9 @@ public class PageGeneration {
 
     public static PaymentInfo createPageBookingSuccess(WebDriver driver) {
         return new PaymentInfo(driver);
+    }
+
+    public static NewsfeedPersonalTimeline createPersonalTimeLinePage(WebDriver driver) {
+        return new NewsfeedPersonalTimeline(driver);
     }
 }

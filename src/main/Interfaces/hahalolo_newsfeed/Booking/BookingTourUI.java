@@ -18,16 +18,18 @@ public class BookingTourUI {
     public static final String LEADER_PER_TITLE_DROPDOWN = "//select[contains(@data-bind, 'nv230')]/following-sibling::div//div[contains(@class, 'selectize-input')]";
     public static final String LEADER_PER_TITLE_ITEM = "//select[contains(@data-bind, 'nv230')]/following-sibling::div//div[@class ='selectize-dropdown-content']/div";
 
-    public static final String DYNAMIC_FIELD_ON_LEADER_INFO = "//div[contains(@data-bind, 'orderVM.itemVM.leadPersonal.cid')]//input[@name = 'ov402']";
+    public static final String DYNAMIC_FIELD_ON_LEADER_INFO = "//div[contains(@data-bind, 'orderVM.itemVM.leadPersonal.cid')]//input[@name = '%s']";
     public static final String REQUEST_NOTE_TEXTAREA = "//textarea[contains(@data-bind, 'ov210')]";
     public static final String CHECKBOX_TRAVEL_LEADER = "//input[@id = 'customCheck1']/following-sibling::label";
 
-    public static final String NUMBER_PER_BY_TYPE_AGE = "//div[contains(text(),'%s')]/parent::div/following-sibling::div/div[@class = 'input-number']";
+    public static final String DROPDOWN_CHOOSE_PERSON_BY_TYPE = "//div[contains(text(),'%s')]/parent::div/following-sibling::div/div[@class = 'input-number']";
+    public static final String NUMBER_PER_BY_TYPE_AGE = "//div[contains(text(),'%s')]/parent::div/following-sibling::div/div[@class = 'input-number']/input";
+
 
     public static final String DYNAMIC_FIELD_ON_ADULT_INFO = "//h6[text()='%s']/following-sibling::ul//li[position()='%s']//input[@name= '%s']";
     public static final String GENDER_DROPDOWN_ON_TRAVELLER = "//h6[text()='%s']/following-sibling::ul//li[position()='%s']//select[contains(@data-bind, 'ov404')]/following-sibling::div//div[contains(@class, 'selectize-input')]";
     public static final String GENDER_ITEM_ON_ADULT_INFO = "//h6[text()='%s']/following-sibling::ul//li[position()='1']//select[contains(@data-bind, 'ov404')]/following-sibling::div//div[@class ='selectize-dropdown-content']/div";
 
 
-    public static final String DROPDOWN_CHOOSE_PERSON_BY_TYPE = "//div[contains(text(),'Người lớn:')]/parent::div/following-sibling::div/div[@class = 'input-number']";
+
 }
