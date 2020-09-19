@@ -30,6 +30,16 @@ public abstract class AbstractTest extends AbstractPage {
         }
         return text;
     }
+    protected String randomName(int numPassChar) {
+        String text = null;
+        String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "" + "abcdefghijklmnopqrstuvxyz";
+        StringBuilder bd = new StringBuilder(numPassChar);
+        for (int i = 0; i < numPassChar; i++) {
+            int index = (int) (AlphaNumericString.length() * Math.random());
+            text = bd.append(AlphaNumericString.charAt(index)).toString();
+        }
+        return text;
+    }
 
     protected String randomVirtualEmail(){
         String userName = "huyho";

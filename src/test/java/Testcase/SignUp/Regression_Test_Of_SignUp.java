@@ -237,12 +237,12 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         perAboutPage.clickToItemOnSettingMenu(driver, "ic-cog-c");
         generalAccSetting = PageGeneration.createGeneralAccountSettingPage(driver);
         log.info("Step 9.Check Account Setting page display");
-        verifyTrue(generalAccSetting.checkAccountSettingPageIsDisplay());
+        verifyTrue(generalAccSetting.checkAccountSettingPageIsDisplay(driver));
         verifyEquals(generalAccSetting.getPageTitle(driver), "Cài đặt tài khoản | Hahalolo");
         log.info("Step 10.Check FullName display");
-        verifyEquals(generalAccSetting.getFullNameIsDisplay(), getFullName(firstNameUser, lastNameUser));
+        verifyEquals(generalAccSetting.getFullNameIsDisplay(driver), getFullName(firstNameUser, lastNameUser));
         log.info("Step 11.Check FullName display");
-        verifyEquals(generalAccSetting.getFullNameIsDisplay(), fullName);
+        verifyEquals(generalAccSetting.getFullNameIsDisplay(driver), fullName);
         log.info("Step 12.Logout newsfeed");
         generalAccSetting.clickToItemOnSettingMenu(driver, "ic-logout-c");
         loginNewsfeedPage = PageGeneration.createNewsfeedLoginPage(driver);

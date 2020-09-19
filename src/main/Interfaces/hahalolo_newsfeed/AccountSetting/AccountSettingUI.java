@@ -7,6 +7,7 @@ public class AccountSettingUI {
     public static final String FULL_NAME = "//div[contains(@data-bind,'userProfileVM.fullName')]";
     public static final String FULLNAME_LOADING = "//div[contains(@data-bind,'userProfileVM.fullName')][contains(@data-bind,'!isLoading()')]" ;
     public static final String BUTTON_EDIT_FULLNAME =  "//div[contains(@data-bind,'userProfileVM.fullName')]/parent::div//following-sibling::div//i";
+    public static final String ERR_MESSAGE_OF_FULNAME_FUNCTION = "//div[contains(@class,'invalid-feedback')]";
 
     // Form Update fullname
     public static final String FIRSTNAME_FIELD = "//input[@name = 'firstName']";
@@ -23,4 +24,6 @@ public class AccountSettingUI {
     public static final String ERR_MESSAGE_CONFIRM_PASS = "//div[@id = 'modalConfirmPw']//input[@name = 'confirmPwd']/following-sibling::div[contains(@class, 'invalid-feedback')]";
     public static final String CONFIRM_BUTTON = "//button[@id = 'act-confirm-pwd']";
     public static final String BUTTON_CANCEL_UPDATE_FULLNAME = "//button[contains(@data-bind,'onCancelSaveName')]";
+    public static final String BUTTON_CANCEL_CONFIRM_PASS = "//button[contains(@data-bind,'onSaveName')]/following-sibling::button";
+
 }

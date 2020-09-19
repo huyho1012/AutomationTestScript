@@ -10,28 +10,26 @@ public class GeneralAccountSetting extends HeaderPage {
         driver = webDriver;
     }
 
-    public boolean checkAccountSettingPageIsDisplay() {
+    public boolean checkAccountSettingPageIsDisplay(WebDriver driver) {
 
         waitElementToVisible(driver, AccountSettingUI.ACCOUNT_SETTIGN_PAGE);
         return getTextElement(driver, AccountSettingUI.TITLE_PAGE, "setting_general").contains("THIẾT LẬP TÀI KHOẢN CHUNG");
     }
 
-    public String getFullNameIsDisplay() {
+    public String getFullNameIsDisplay(WebDriver driver) {
         waitElementToVisible(driver, AccountSettingUI.FULLNAME_LOADING);
         return getTextElement(driver, AccountSettingUI.FULL_NAME);
     }
 
-    public void clickToButtonEditFullName() {
+    public void clickToButtonEditFullName(WebDriver driver) {
         waitForElementClickable(driver, AccountSettingUI.BUTTON_EDIT_FULLNAME);
         clickToElement(driver, AccountSettingUI.BUTTON_EDIT_FULLNAME);
     }
 
-    public boolean checkUpdateFullNameFormIsDisplay() {
-        if(checkElementDisplay(driver, AccountSettingUI.FIRSTNAME_FIELD) && checkElementDisplay(driver, AccountSettingUI.MIDDLENAME_FIELD) && checkElementDisplay(driver,AccountSettingUI.LASTNAME_FIELD))
-        {
-            return  true;
-        }
-        else return false;
+    public boolean checkUpdateFullNameFormIsDisplay(WebDriver driver) {
+        return checkElementDisplay(driver, AccountSettingUI.FIRSTNAME_FIELD)
+                && checkElementDisplay(driver, AccountSettingUI.MIDDLENAME_FIELD)
+                && checkElementDisplay(driver, AccountSettingUI.LASTNAME_FIELD);
     }
 
     public void enterDataToFirstNameField(WebDriver driver, String firstName) {
@@ -92,5 +90,15 @@ public class GeneralAccountSetting extends HeaderPage {
     public void clickCancelUpdateFullname(WebDriver driver) {
         waitForElementClickable(driver, AccountSettingUI.BUTTON_CANCEL_UPDATE_FULLNAME);
         clickToElement(driver, AccountSettingUI.BUTTON_CANCEL_UPDATE_FULLNAME);
+    }
+
+    public void clickButtonToCancelSaveChangeFullName(WebDriver driver) {
+        waitForElementClickable(driver, AccountSettingUI.BUTTON_CANCEL_CONFIRM_PASS);
+        clickToElement(driver, AccountSettingUI.BUTTON_CANCEL_CONFIRM_PASS);
+    }
+
+    public Object getErrMessageOfChangeFullName(WebDriver driver) {
+        waitElementToVisible(driver,AccountSettingUI.ERR_MESSAGE_OF_FULNAME_FUNCTION);
+        return getTextElement(driver, AccountSettingUI.ERR_MESSAGE_OF_FULNAME_FUNCTION);
     }
 }
