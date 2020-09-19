@@ -44,6 +44,19 @@ public abstract class AbstractTest extends AbstractPage {
     protected String getFullName(String firstName, String lastName) {
         return lastName.trim() + " " + firstName.trim();
     }
+    protected String getFullName(String firstName,String middleName, String lastName) {
+       if(firstName.trim() == ""){
+           return middleName.trim() + " " + lastName.trim();
+       }
+       else if(middleName.trim()==""){
+           return firstName.trim() + " " + lastName.trim();
+       }
+       else if(lastName.trim()==""){
+            return firstName.trim() + " " + middleName.trim();
+        }
+       else
+           return firstName.trim() + middleName.trim() + lastName.trim();
+    }
     private boolean checkTrue(boolean condition) {
         boolean pass = true;
         try {

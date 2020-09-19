@@ -70,17 +70,27 @@ public class GeneralAccountSetting extends HeaderPage {
         clickToElement(driver, AccountSettingUI.BUTTON_SAVE_CHANGES_FULLNAME);
     }
 
-    public boolean checkConfirmPasswordPopupIsDisplay() {
-        return true;
+    public boolean checkConfirmPasswordPopupIsDisplay(WebDriver driver) {
+        return checkElementDisplay(driver, AccountSettingUI.FORM_CONFIRM_PASS_FOR_CHANGING);
     }
 
     public void enterDataToPasswordConfirm(WebDriver driver, String confirmPwd) {
+        waitElementToVisible(driver, AccountSettingUI.CONFIRM_PASS_FIELD);
+        sendKeyToElement(driver, AccountSettingUI.CONFIRM_PASS_FIELD, confirmPwd);
     }
 
     public void clickToConfirmButton() {
+        waitForElementClickable(driver, AccountSettingUI.CONFIRM_BUTTON);
+        clickToElement(driver, AccountSettingUI.CONFIRM_BUTTON);
     }
 
-    public Object getErrMessageValidationOfConfirmPass(WebDriver driver) {
-        return null;
+    public String getErrMessageValidationOfConfirmPass(WebDriver driver) {
+        waitElementToVisible(driver, AccountSettingUI.ERR_MESSAGE_CONFIRM_PASS);
+        return  getTextElement(driver, AccountSettingUI.ERR_MESSAGE_CONFIRM_PASS);
+    }
+
+    public void clickCancelUpdateFullname(WebDriver driver) {
+        waitForElementClickable(driver, AccountSettingUI.BUTTON_CANCEL_UPDATE_FULLNAME);
+        clickToElement(driver, AccountSettingUI.BUTTON_CANCEL_UPDATE_FULLNAME);
     }
 }

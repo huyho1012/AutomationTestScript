@@ -4,11 +4,11 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="135.557">
+           time="134.051">
   <properties />
   
   
-            <testcase name="Tescase01_Check_Validate_Of_File_Can_Use_To_Upload_Avatar_By_Local_Image" time="69.866" classname="Testcase.UploadAvatar" />
-                <testcase name="Tescase02_Check_Validate_Of_File_Can_Use_To_Upload_Cover_By_Local_Image" time="65.691" classname="Testcase.UploadAvatar" />
+            <testcase name="Tescase02_Check_Validate_Of_File_Can_Use_To_Upload_Cover_By_Local_Image" time="65.307" classname="Testcase.UploadAvatar" />
+                <testcase name="Tescase01_Check_Validate_Of_File_Can_Use_To_Upload_Avatar_By_Local_Image" time="68.744" classname="Testcase.UploadAvatar" />
       
 </testsuite>
