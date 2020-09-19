@@ -115,7 +115,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
         loginNewsfeedPage = PageGeneration.createNewsfeedLoginPage(driver);
         log.info("Precondition - Step 3.  Verify url page");
-        verifyEquals(loginNewsfeedPage.getCurrentURL(driver), "https://test-newsfeed.hahalolo.com/auth/signin");
+        verifyEquals(loginNewsfeedPage.getCurrentURL(driver), "https://hahalolo.com/auth/signin");
         log.info("Precondition - Step 4. Verify icon Google play display");
         verifyTrue(loginNewsfeedPage.checkGooglePlayIconIsDisplay(driver));
         log.info("Precondition - Step 5. Verify icon App store display");
