@@ -27,7 +27,7 @@ public class UploadAvatar extends AbstractTest {
         driverManager = BrowserInitialization.getBrowser(browserName);
         driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
         newsfeedLoginPage = PageGeneration.createNewsfeedLoginPage(driver);
-        newsfeedLoginPage.Login(driver, "balo_04@mailinator.com", "123456");
+//        newsfeedLoginPage.Login(driver, "balo_04@mailinator.com", "123456");
         newsfeedHomepage = PageGeneration.createNewsfeedHomepage(driver);
         verifyTrue(newsfeedHomepage.checkNewsfeedDisplay());
         newsfeedHomepage.changeLanguageNewsfeedToVI();

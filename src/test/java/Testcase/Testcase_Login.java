@@ -2,7 +2,7 @@ package Testcase;
 
 import Common.DriverManagement.BrowserInitialization;
 import Common.DriverManagement.DriverManager;
-import Common.DummyData.DataHelper;
+import Common.ExcelUtils.readDataOnExcel;
 import Common.GlobalVariables;
 import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;
@@ -13,18 +13,19 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+
 public class Testcase_Login extends AbstractTest {
     DriverManager driverManager;
     LoginPage newsfeedLogin;
     NewsfeedHomepage newsFeedHomePage;
-    DataHelper data = new DataHelper();
+
     String htmlCode = "";
     String scriptCode = "";
     WebDriver driver;
 
-    @Parameters("browser")
+    @Parameters({"browser"})
     @BeforeTest
-    public void preconditionTest(String browserName){
+    public void preconditionTest(String browserName) {
         log.info("Precondition - Step 1. Create Browser Driver ");
         driverManager = BrowserInitialization.getBrowser(browserName);
         log.info("Precondition - Step 2. Open browser and go to Newsfeed login");
@@ -39,6 +40,7 @@ public class Testcase_Login extends AbstractTest {
         log.info("Precondition - Step 6. Change system language To Vi");
         newsfeedLogin.clickToChangeLanguageToVI(driver);
     }
+
     @Test
     public void Testcase_Newsfeed_Login_01_Login_With_Invalid_Information(){
         log.info(" Step 1. Do not enter Username");

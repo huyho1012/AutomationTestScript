@@ -19,6 +19,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public abstract class AbstractPage {
+    private WebDriver driver;
     private Actions action;
     private WebDriverWait explicitWait;
     private Alert alert;
