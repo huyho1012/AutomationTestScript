@@ -2,7 +2,6 @@ package Testcase;
 
 import Common.DriverManagement.BrowserInitialization;
 import Common.DriverManagement.DriverManager;
-import Common.ExcelUtils.readDataOnExcel;
 import Common.GlobalVariables;
 import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;

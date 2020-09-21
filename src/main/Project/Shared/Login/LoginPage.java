@@ -1,6 +1,7 @@
 package Project.Shared.Login;
 
 import Interfaces.Shared.Login.LoginUI;
+import Interfaces.Shared.StartingCommonUI;
 import Project.Shared.CommonStartApp;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.openqa.selenium.WebDriver;
@@ -61,17 +62,17 @@ public class LoginPage extends CommonStartApp {
         return getTextElement(driver, LoginUI.VALIDATE_CAPTCHA_ERROR_MESSAGE);
     }
 
-    public void Login(XSSFRow row){
-        waitForPageLoading(driver);
+    public void Login(WebDriver driver, String userName, String password){
+        waitElementToVisible(driver, StartingCommonUI.APP_STORE);
         waitElementToVisible(driver, LoginUI.USER_NAME);
-        sendKeyToElement(driver, LoginUI.USER_NAME, row.getCell(1).toString());
+        sendKeyToElement(driver, LoginUI.USER_NAME, userName);
         waitElementToVisible(driver, LoginUI.PASSWORD);
-        sendKeyToElement(driver, LoginUI.PASSWORD, row.getCell(2).toString());
+        sendKeyToElement(driver, LoginUI.PASSWORD, password);
         waitForElementClickable(driver,LoginUI.LOGIN_BUTTON);
         clickToElement(driver, LoginUI.LOGIN_BUTTON);
     }
     public void Login(WebDriver driver, String userName, String password, String captcha){
-        waitForPageLoading(driver);
+        waitElementToVisible(driver, StartingCommonUI.APP_STORE);
         waitElementToVisible(driver, LoginUI.USER_NAME);
         sendKeyToElement(driver, LoginUI.USER_NAME, userName);
         waitElementToVisible(driver, LoginUI.PASSWORD);

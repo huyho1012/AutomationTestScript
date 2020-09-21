@@ -3,6 +3,9 @@ package Project.Newsfeed.Newsfeed;
 import Interfaces.hahalolo_newsfeed.Homepage.HeaderPageUI;
 import Interfaces.hahalolo_newsfeed.Homepage.HomePageUI;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class NewsfeedHomepage extends HeaderPage {
     WebDriver driver;
@@ -80,4 +83,37 @@ public class NewsfeedHomepage extends HeaderPage {
         clickToElement(driver, HomePageUI.CANCEL_UPDATE_INFO);
         setTimeDelay(1);
     }
+
+
+    public boolean checkSiteCommunityIsDisplay(WebDriver driver){
+        return checkElementDisplay(driver, HomePageUI.COMMUNITY_SITES_NAME);
+    }
+
+    public void checkCountOfSite(WebDriver driver){
+        int countNumber = countElementNumber(driver,HomePageUI.COMMUNITY_SITES_NUMBERLIST);
+        int countCurrent = countElementNumber(driver, HomePageUI.COMMUNITY_SITES_LIST);
+        do{
+            clickToElement(driver,HomePageUI.COMMUNITY_SITES_VIEW_MORE);
+        } while (countCurrent == countNumber);
+        clickToElement(driver, HomePageUI.COMMUNITY_SITES_NAME,"Page Cộng Đồng 1");
+    }
+    public void goToSite(WebDriver driver) {
+        waitElementToVisible(driver, HomePageUI.COMMUNITY_SITES_LIST);
+        int n = findElements(driver, HomePageUI.COMMUNITY_SITES_LIST).size();
+        for (int i = 1; i <= n; i++) {
+            if (getTextElement(driver, HomePageUI.COMMUNITY_SITES_LIST).contains("Page Cộng Đồng 1")) {
+                waitForElementClickable(driver,HomePageUI.COMMUNITY_SITES_NAME, "Page Cộng Đồng 1");
+                scrollIntoElementByJS(driver, HomePageUI.COMMUNITY_SITES_NAME, "Page Cộng Đồng 1");
+                System.out.println("1");
+                clickToElementByJS(driver, HomePageUI.COMMUNITY_SITES_NAME, "Page Cộng Đồng 1");
+                System.out.println("2");
+
+            } else {
+                clickToElement(driver, HomePageUI.COMMUNITY_SITES_VIEW_MORE);
+                System.out.println("3");
+                setTimeDelay(3);
+            }
+        }
+    }
+
 }

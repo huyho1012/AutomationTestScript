@@ -26,8 +26,10 @@ public class HomePageUI {
     public static final String YOUR_PAGES_PAGE_NAME_ITEM = "//span[contains(@data-bind,'totalYourPages')]/ancestor::div[contains(@class,'card-header')]/following-sibling::div//a[@class='obj-name']";
     public static final String YOUR_PAGES_PAGE_NAME_AVATAR = "//span[contains(@data-bind,'totalYourPages')]/ancestor::div[contains(@class,'card-header')]/following-sibling::div//a[@class='avatar avatar--circle']";
 
-    public static final String COMMUNITY_SITES_NUMBER_SITE = "//span[contains(@data-bind,'totalSite')]";
-    public static final String COMMUNITY_SITES_SITE_NAME_ITEM = "//span[contains(@data-bind,'totalSite')]/ancestor::div[contains(@class,'card-header')]/following-sibling::div//a[@class='obj-name']";
+    public static final String COMMUNITY_SITES_NUMBERLIST = "//span[contains(@data-bind,'totalSite')]";
+    public static final String COMMUNITY_SITES_LIST = "//span[contains(@data-bind,'totalSite')]/ancestor::div[contains(@class,'card-header')]/following-sibling::div//a[@class='obj-name']";
+    public static final String COMMUNITY_SITES_NAME = "//span[contains(@data-bind,'totalSite')]/following::div[@class='card-body']//li/div[@class='media']/div/a[contains(text(),'%s')]";
+
     public static final String COMMUNITY_SITES_SITE_NAME_AVATAR = "//span[contains(@data-bind,'totalSite')]/ancestor::div[contains(@class,'card-header')]/following-sibling::div//a[@class='avatar avatar--circle']";
     public static final String COMMUNITY_SITES_VIEW_MORE = "//a[contains(@data-bind,'siteColls.collection().onLoadMore')]";
     public static final String COMMUNITY_SITES_BTN_CREATE = "//button[contains(@data-bind,'onCreatePage')]";
