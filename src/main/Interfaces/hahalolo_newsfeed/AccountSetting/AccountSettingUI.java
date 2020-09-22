@@ -26,4 +26,17 @@ public class AccountSettingUI {
     public static final String BUTTON_CANCEL_UPDATE_FULLNAME = "//button[contains(@data-bind,'onCancelSaveName')]";
     public static final String BUTTON_CANCEL_CONFIRM_PASS = "//button[contains(@data-bind,'onSaveName')]/following-sibling::button";
 
+
+    public static final String USERNAME = "//a[contains(@data-bind,'baseUrlUsername')]";
+
+    public static final String BUTTON_EDIT_USERNAME = "//div[@id ='js_body_username']//i";
+    public static final String USERNAME_FIELD = "//input[contains(@data-bind,'valUsername')]";
+    public static final String VALIDATE_MESS_OF_USERNAME = "//div[@id ='jsLoadMsg']//span";
+    public static final String BUTTON_SAVE_USERNAME = "//button[@id = 'js_btn_save_username']";
+    public static final String BUTTON_CANCEL_CHANGE_USERNAME = "//button[@id = 'js_btn_save_username']/following-sibling::button";
+
+    public static final String ICON_SUCCESS_CHANGE_USERNAME = "//div[@id='jsLoadMsg']/i[@class ='fa fa-check text-success']";
+    public static final String ICON_ERROR_CHANGE_USERNAME = "//div[@id='jsLoadMsg']/i[@class ='ffa fa-times text-danger']";
+
+
 }
