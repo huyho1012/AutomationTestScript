@@ -10,10 +10,10 @@ public class GeneralAccountSetting extends HeaderPage {
         driver = webDriver;
     }
 
-    public boolean checkAccountSettingPageIsDisplay(WebDriver driver) {
-
-        waitElementToVisible(driver, AccountSettingUI.ACCOUNT_SETTIGN_PAGE);
-        return getTextElement(driver, AccountSettingUI.TITLE_PAGE, "setting_general").contains("THIẾT LẬP TÀI KHOẢN CHUNG");
+    public String getTitleOfTab(WebDriver driver, String tabName) {
+        waitElementToVisible(driver, AccountSettingUI.ACCOUNT_SETTING_PAGE);
+        waitElementToVisible(driver, AccountSettingUI.ACCOUNT_SETTING_MENU);
+        return getTextElement(driver, AccountSettingUI.TITLE_PAGE, tabName);
     }
 
     public String getFullNameIsDisplay(WebDriver driver) {
@@ -61,7 +61,6 @@ public class GeneralAccountSetting extends HeaderPage {
         waitElementToVisible(driver, AccountSettingUI.ERR_VALIDATION_OF_MIDDLENAME);
         return getTextElement(driver, AccountSettingUI.ERR_VALIDATION_OF_MIDDLENAME);
     }
-
 
     public void clickButtonSaveChangesToUpdateFullname(WebDriver driver) {
         waitForElementClickable(driver, AccountSettingUI.BUTTON_SAVE_CHANGES_FULLNAME);
@@ -125,28 +124,28 @@ public class GeneralAccountSetting extends HeaderPage {
     }
 
     public String getErrMessOnUsername() {
-        waitElementToVisible(driver, GeneralSettingUI.MESSAGE_VALIDATE_USERNAME);
-        return getTextOfElement(driver, GeneralSettingUI.MESSAGE_VALIDATE_USERNAME);
+        waitElementToVisible(driver, AccountSettingUI.VALIDATE_MESS_OF_USERNAME);
+        return getTextElement(driver, AccountSettingUI.VALIDATE_MESS_OF_USERNAME);
     }
 
 
     public boolean checkIconSuccessIsDisplay() {
-        return checkIsDisplayedElement(driver, GeneralSettingUI.ICON_SUCCESS_MESSAGE_OF_USERNAME);
+        return checkElementDisplay(driver, AccountSettingUI.ICON_SUCCESS_CHANGE_USERNAME);
     }
+
     public boolean checkIconErrorIsDisplay() {
-        return checkIsDisplayedElement(driver, GeneralSettingUI.ICON_ERROR_MESSAGE_OF_USERNAME);
+        return checkElementDisplay(driver, AccountSettingUI.ICON_ERROR_CHANGE_USERNAME);
     }
-
-
-
 
     public Object checkUserNameIsDisplay() {
         return null;
     }
 
     public boolean checkGeneralAccountSettingTabIsDisplay(WebDriver driver, String fullName) {
-        waitElementToVisible(driver,GeneralSettingUI.FULL_NAME_DATA);
-        return getTitlePage(driver).contains("Cài đặt tài khoản | Hahalolo") && getTextOfElement(driver,GeneralSettingUI.FULL_NAME_DATA).contains(fullName) && checkIsDisplayedElement(driver, GeneralSettingUI.TITLE_OF_TAB,"setting_general");
+        waitElementToVisible(driver,AccountSettingUI.FULL_NAME);
+        return getPageTitle(driver).contains("Cài đặt tài khoản | Hahalolo")
+                && getTextElement(driver,AccountSettingUI.FULL_NAME).contains(fullName)
+                && checkElementDisplay(driver, AccountSettingUI.TITLE_PAGE,"setting_general");
     }
 
     public void enterDataToUsernameField(WebDriver driver, String userName) {
