@@ -10,11 +10,7 @@ public class GeneralAccountSetting extends HeaderPage {
         driver = webDriver;
     }
 
-    public String getTitleOfTab(WebDriver driver, String tabName) {
-        waitElementToVisible(driver, AccountSettingUI.ACCOUNT_SETTING_PAGE);
-        waitElementToVisible(driver, AccountSettingUI.ACCOUNT_SETTING_MENU);
-        return getTextElement(driver, AccountSettingUI.TITLE_PAGE, tabName);
-    }
+
 
     public String getFullNameIsDisplay(WebDriver driver) {
         waitElementToVisible(driver, AccountSettingUI.FULLNAME_LOADING);
