@@ -4,17 +4,17 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="33.551">
+           time="28.804">
   <properties />
   
   
-            <testcase name="Testcase_Newsfeed_Login_01_Login_With_Invalid_Information" time="0.343" classname="Testcase.Login.Testcase_Login_With_EXCEL" />
-                <testcase name="Testcase_Newsfeed_Login_02_Login_With_UserName_Not_Existed_On_Hahalolo" time="0.751" classname="Testcase.Login.Testcase_Login_With_EXCEL" />
-                <testcase name="Testcase_Newsfeed_Login_04_Login_With_Invalid_Password" time="1.105" classname="Testcase.Login.Testcase_Login_With_EXCEL" />
-                <testcase name="Testcase_Newsfeed_Login_05_Login_With_Invalid_Account" time="2.598" classname="Testcase.Login.Testcase_Login_With_EXCEL" />
-                <testcase name="Testcase_Newsfeed_Login_06_Login_With_Valid_Account" time="7.858" classname="Testcase.Login.Testcase_Login_With_EXCEL" />
-                <testcase name="Testcase_Newsfeed_Login_08_Login_With_Valid_Phone" time="12.010" classname="Testcase.Login.Testcase_Login_With_EXCEL" />
-                <testcase name="Testcase_Newsfeed_Login_03_Login_With_Password_Incorrect" time="0.735" classname="Testcase.Login.Testcase_Login_With_EXCEL" />
-                <testcase name="Testcase_Newsfeed_Login_07_Login_With_Uppercase_Email" time="8.151" classname="Testcase.Login.Testcase_Login_With_EXCEL" />
+            <testcase name="Testcase_Newsfeed_Login_07_Login_With_Uppercase_Email" time="7.838" classname="Testcase.Login.Testcase_Login_With_EXCEL" />
+                <testcase name="Testcase_Newsfeed_Login_03_Login_With_Password_Incorrect" time="0.727" classname="Testcase.Login.Testcase_Login_With_EXCEL" />
+                <testcase name="Testcase_Newsfeed_Login_04_Login_With_Invalid_Password" time="1.118" classname="Testcase.Login.Testcase_Login_With_EXCEL" />
+                <testcase name="Testcase_Newsfeed_Login_08_Login_With_Valid_Phone" time="7.650" classname="Testcase.Login.Testcase_Login_With_EXCEL" />
+                <testcase name="Testcase_Newsfeed_Login_05_Login_With_Invalid_Account" time="2.604" classname="Testcase.Login.Testcase_Login_With_EXCEL" />
+                <testcase name="Testcase_Newsfeed_Login_06_Login_With_Valid_Account" time="7.773" classname="Testcase.Login.Testcase_Login_With_EXCEL" />
+                <testcase name="Testcase_Newsfeed_Login_02_Login_With_UserName_Not_Existed_On_Hahalolo" time="0.746" classname="Testcase.Login.Testcase_Login_With_EXCEL" />
+                <testcase name="Testcase_Newsfeed_Login_01_Login_With_Invalid_Information" time="0.348" classname="Testcase.Login.Testcase_Login_With_EXCEL" />
       
 </testsuite>

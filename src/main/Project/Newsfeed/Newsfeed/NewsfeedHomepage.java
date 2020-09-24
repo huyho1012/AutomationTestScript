@@ -1,11 +1,8 @@
 package Project.Newsfeed.Newsfeed;
 
-import Interfaces.hahalolo_newsfeed.Homepage.HeaderPageUI;
+import Interfaces.hahalolo_newsfeed.HeaderPageUI;
 import Interfaces.hahalolo_newsfeed.Homepage.HomePageUI;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 public class NewsfeedHomepage extends HeaderPage {
     WebDriver driver;
@@ -56,7 +53,7 @@ public class NewsfeedHomepage extends HeaderPage {
     public void changeLanguageNewsfeedToVI() {
         waitForElementClickable(driver,HomePageUI.FOOTER_VI_LANGUAGE);
         clickToElement(driver, HomePageUI.FOOTER_VI_LANGUAGE);
-        setTimeDelay(1);
+        setTimeDelay(3);
     }
 
     public String getFullNameDisplayOnMyAccount(WebDriver driver) {
@@ -99,21 +96,37 @@ public class NewsfeedHomepage extends HeaderPage {
     }
     public void goToSite(WebDriver driver) {
         waitElementToVisible(driver, HomePageUI.COMMUNITY_SITES_LIST);
-        int n = findElements(driver, HomePageUI.COMMUNITY_SITES_LIST).size();
-        for (int i = 1; i <= n; i++) {
+        int countCurrent = countElementNumber(driver, HomePageUI.COMMUNITY_SITES_LIST);
+//        do {
+//            int n = 0;
+//            if (getTextElement(driver, HomePageUI.COMMUNITY_SITES_LIST).contains("Page Cộng Đồng 1")) {
+//                waitForElementClickable(driver,HomePageUI.COMMUNITY_SITES_NAME, "Page Cộng Đồng 1");
+//                clickToElementByJS(driver, HomePageUI.COMMUNITY_SITES_NAME, "Page Cộng Đồng 1");
+//                System.out.println("Do action 1");
+//            }
+//            else{
+//                clickToElement(driver, HomePageUI.COMMUNITY_SITES_VIEW_MORE);
+//                setTimeDelay(3);
+//                System.out.println("Click View more");
+//            }
+//        } while (n == countCurrent);
+//        System.out.println(countCurrent);
+//        System.out.println(countNumber);
+
+        for( int i =1 ; i <= countCurrent; i++){
             if (getTextElement(driver, HomePageUI.COMMUNITY_SITES_LIST).contains("Page Cộng Đồng 1")) {
                 waitForElementClickable(driver,HomePageUI.COMMUNITY_SITES_NAME, "Page Cộng Đồng 1");
-                scrollIntoElementByJS(driver, HomePageUI.COMMUNITY_SITES_NAME, "Page Cộng Đồng 1");
-                System.out.println("1");
                 clickToElementByJS(driver, HomePageUI.COMMUNITY_SITES_NAME, "Page Cộng Đồng 1");
-                System.out.println("2");
-
-            } else {
-                clickToElement(driver, HomePageUI.COMMUNITY_SITES_VIEW_MORE);
-                System.out.println("3");
-                setTimeDelay(3);
+                System.out.println("Do action click to page");
+            }
+            else {
+                if(i %3 ==0){
+                    clickToElement(driver, HomePageUI.COMMUNITY_SITES_VIEW_MORE);
+                    System.out.println("Do action click show more");
+                }
             }
         }
+
     }
 
 }

@@ -148,8 +148,15 @@ public abstract class AbstractTest extends AbstractPage {
     protected String getToday() {
         return getCurrentDay() + "/" + getCurrentMonth() + "/" + getCurrentYear();
     }
-
     protected String getBirthdayOnHaLo(String day, String month, String year){
         return day+ "-" + month + "-" + year;
+    }
+
+
+
+    // Xử lý trong chuỗi
+    protected String removeAllWhitespace(String data){
+        String sentence = data.trim();
+        return sentence.replaceAll(" ", "");
     }
 }

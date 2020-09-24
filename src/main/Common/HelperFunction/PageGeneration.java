@@ -4,13 +4,14 @@ package Common.HelperFunction;
 import Project.Business.Promotion.DetailPromo;
 import Project.Business.Promotion.TourPromotion;
 import Project.Business.Tour.Setting.PubishPage;
-import Project.Newsfeed.AccountSetting.GeneralAccountSetting;
+import Project.Newsfeed.AccountSetting.GeneralSetting;
 import Project.Newsfeed.Boooking.BoookingTour;
 import Project.Newsfeed.Boooking.PaymentGateWay.StripeGateway;
 import Project.Newsfeed.Boooking.PaymentInfo;
 import Project.Newsfeed.PageWall.TourDetail;
+import Project.Newsfeed.PersonalWall.About.Personal_About_Overview_PageObject;
 import Project.Newsfeed.PersonalWall.Handnote.Handnote_Tour;
-import Project.Newsfeed.PersonalWall.NewsfeedPersonalTimeline;
+import Project.Newsfeed.PersonalWall.Timeline.NewsfeedPersonalTimeline;
 import Project.Shared.Login.LoginPage;
 import Project.Backend.BackendHomePage;
 import Project.Backend.BackendVerifyBusiManagement;
@@ -45,8 +46,8 @@ public class PageGeneration {
         return new PersonalAboutPage(driver);
     }
 
-    public static GeneralAccountSetting createGeneralAccountSettingPage(WebDriver driver) {
-        return new GeneralAccountSetting(driver);
+    public static GeneralSetting createGeneralAccountSettingPage(WebDriver driver) {
+        return new GeneralSetting(driver);
     }
 
     public static BusinessOverviewPage createBusinessOverviewPage(WebDriver driver) {
@@ -183,5 +184,9 @@ public class PageGeneration {
 
     public static NewsfeedPersonalTimeline createPersonalTimeLinePage(WebDriver driver) {
         return new NewsfeedPersonalTimeline(driver);
+    }
+
+    public static Personal_About_Overview_PageObject createPersonalOverviewPage(WebDriver driver) {
+        return  new Personal_About_Overview_PageObject(driver);
     }
 }

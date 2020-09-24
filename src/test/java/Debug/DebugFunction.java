@@ -19,14 +19,23 @@ public class DebugFunction {
         else
             return firstName.trim() + middleName.trim() + lastName.trim();
     }
+
+    public static String removeAllWhitespace(String data) {
+        String sentence = data.trim();
+        return sentence.replaceAll(" ", "");
+    }
     public static void main (String [] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Nhập Họ");
-        String firstName = sc.nextLine();
-        System.out.println("Nhập Tên");
-        String lastName = sc.nextLine();
-        System.out.println("Nhập Tên lót");
-        String middname = sc.nextLine();
-        System.out.println(getFullName(firstName,middname,lastName));
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Nhập Họ");
+//        String firstName = sc.nextLine();
+//        System.out.println("Nhập Tên");
+//        String lastName = sc.nextLine();
+//        System.out.println("Nhập Tên lót");
+//        String middname = sc.nextLine();
+//        System.out.println(getFullName(firstName,middname,lastName));
+
+
+
+        System.out.println(removeAllWhitespace("       hahaha        anh       yeu      em     "));
     }
 }

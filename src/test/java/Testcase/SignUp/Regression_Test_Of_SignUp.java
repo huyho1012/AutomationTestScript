@@ -24,9 +24,10 @@ import Project.Newsfeed.Boooking.PaymentGateWay.StripeGateway;
 import Project.Newsfeed.Boooking.PaymentInfo;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
 import Project.Newsfeed.PageWall.TourDetail;
+import Project.Newsfeed.PersonalWall.About.Personal_About_Overview_PageObject;
 import Project.Newsfeed.PersonalWall.Handnote.Handnote_Tour;
 import Project.Newsfeed.PersonalWall.About.PersonalAboutPage;
-import Project.Newsfeed.AccountSetting.GeneralAccountSetting;
+import Project.Newsfeed.AccountSetting.GeneralSetting;
 import Project.Shared.Login.LoginPage;
 import Project.Shared.SingUp.SignUpPage;
 import Project.Wallet.WalletHomePage;
@@ -45,8 +46,13 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
 
     // Object model
     NewsfeedHomepage newsfeedHomePage;
+
+
     PersonalAboutPage perAboutPage;
-    GeneralAccountSetting generalAccSetting;
+    Personal_About_Overview_PageObject overviewPage;
+
+
+    GeneralSetting generalAccSetting;
     BusinessOverviewPage businessOverviewPage;
     BusinessDashboardPage businessDashboardPage;
     BusinessVerificationRequest businessVerifyPage;
@@ -224,20 +230,20 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         verifyEquals(fullName, getFullName(firstNameUser, lastNameUser));
         log.info("Step 3.Go Personal about");
         newsfeedHomePage.clickToEditProfile(driver);
-        perAboutPage = PageGeneration.createPerTAboutPage(driver);
+        overviewPage = PageGeneration.createPersonalOverviewPage(driver);
         log.info("Step 4.Check Personall about page display");
-        verifyTrue(perAboutPage.checkPageIsDisplay(getFullName(firstNameUser, lastNameUser)));
+        verifyTrue(overviewPage.checkPageIsDisplay(getFullName(firstNameUser, lastNameUser)));
         log.info("Step 5.Verify email on Introduce widget display correct");
-        verifyEquals(perAboutPage.getEmailIsDisplayOnIntroduceWidget(), emailUser);
+        verifyEquals(overviewPage.getEmailIsDisplayOnIntroduceWidget(fullName), emailUser);
         log.info("Step 6.Verify birthday on Introduce widget display correct");
-        verifyEquals(perAboutPage.getBirthdayDisplayOnIntroduceWidget(), birthdayUser);
+        verifyEquals(overviewPage.getBirthdayDisplayOnIntroduceWidget(fullName), birthdayUser);
         log.info("Step 7.Verify gender on Introduce widget display correct");
-        verifyEquals(perAboutPage.getGenderDisplayOnIntroduceWidget(), genderUser);
+        verifyEquals(overviewPage.getGenderDisplayOnIntroduceWidget(fullName), genderUser);
         log.info("Step 8.Go to Account setting page");
-        perAboutPage.clickToItemOnSettingMenu(driver, "ic-cog-c");
+        overviewPage.clickToItemOnSettingMenu(driver, "ic-cog-c");
         generalAccSetting = PageGeneration.createGeneralAccountSettingPage(driver);
         log.info("Step 9.Check Account Setting page display");
-        verifyTrue(generalAccSetting.checkAccountSettingPageIsDisplay(driver));
+        verifyTrue(generalAccSetting.checkAccountGeneralSettingIsDisplay());
         verifyEquals(generalAccSetting.getPageTitle(driver), "Cài đặt tài khoản | Hahalolo");
         log.info("Step 10.Check FullName display");
         verifyEquals(generalAccSetting.getFullNameIsDisplay(driver), getFullName(firstNameUser, lastNameUser));

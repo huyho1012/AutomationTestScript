@@ -4,14 +4,25 @@ import Interfaces.hahalolo_newsfeed.AccountSetting.AccountSettingUI;
 import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
 
-public class GeneralAccountSetting extends HeaderPage {
+public class GeneralSetting extends AccountCommon {
     WebDriver driver;
-    public GeneralAccountSetting(WebDriver webDriver){
+    public GeneralSetting(WebDriver webDriver){
         driver = webDriver;
     }
 
+<<<<<<< HEAD:src/main/Project/Newsfeed/AccountSetting/GeneralAccountSetting.java
 
 
+=======
+    public boolean checkAccountGeneralSettingIsDisplay(){
+        if(getTitleOfTab(driver,"setting_general").equalsIgnoreCase("Thiết lập tài khoản chung")
+                && checkElementDisplay(driver, AccountSettingUI.FULL_NAME)){
+            return true;
+        }
+        else
+            return false;
+    }
+>>>>>>> adc713830de5a294a6c41b775a3c72c6900baef4:src/main/Project/Newsfeed/AccountSetting/GeneralSetting.java
     public String getFullNameIsDisplay(WebDriver driver) {
         waitElementToVisible(driver, AccountSettingUI.FULLNAME_LOADING);
         return getTextElement(driver, AccountSettingUI.FULL_NAME);
@@ -99,24 +110,29 @@ public class GeneralAccountSetting extends HeaderPage {
 
 
     // Function thay đổi định danh người dùng
-    public String getUserIdentityNameDisplay(WebDriver driver){
+    public String getUserIdentityNameDisplay(){
         waitElementToVisible(driver, AccountSettingUI.USERNAME);
         return getTextElement(driver, AccountSettingUI.USERNAME);
     }
 
+    public String getMessageNoUsernameIsDisplay(){
+        waitElementToVisible(driver, AccountSettingUI.NO_USERNAME);
+        return getTextElement(driver, AccountSettingUI.NO_USERNAME);
+    }
     public void clickToButtonEditUsername() {
         waitForElementClickable(driver, AccountSettingUI.BUTTON_EDIT_USERNAME);
         clickToElement(driver, AccountSettingUI.BUTTON_EDIT_USERNAME);
     }
 
-    public boolean checkButtonSaveChangeOfUsername(WebDriver driver) {
-        return checkElementDisplay(driver, AccountSettingUI.BUTTON_SAVE_USERNAME);
+    public boolean checkButtonSaveChangeOfUsername() {
+        waitElementToVisible(driver, AccountSettingUI.BUTTON_CANCEL_CHANGE_USERNAME);
+        return checkIsElementIsEnable(driver, AccountSettingUI.BUTTON_SAVE_USERNAME);
     }
 
-
-    public void clickToButtonSaveChangeUserName(WebDriver driver) {
+    public void clickToButtonSaveChangeUserName() {
         waitForElementClickable(driver, AccountSettingUI.BUTTON_SAVE_USERNAME);
         clickToElement(driver, AccountSettingUI.BUTTON_SAVE_USERNAME);
+        setTimeDelay(1);
     }
 
     public String getErrMessOnUsername() {
@@ -133,19 +149,26 @@ public class GeneralAccountSetting extends HeaderPage {
         return checkElementDisplay(driver, AccountSettingUI.ICON_ERROR_CHANGE_USERNAME);
     }
 
-    public Object checkUserNameIsDisplay() {
-        return null;
+
+    public String getMessageNoUsername() {
+        return getTextElement(driver,AccountSettingUI.NO_USERNAME);
     }
 
-    public boolean checkGeneralAccountSettingTabIsDisplay(WebDriver driver, String fullName) {
+    public boolean checkGeneralAccountSettingTabIsDisplay(String fullName) {
         waitElementToVisible(driver,AccountSettingUI.FULL_NAME);
         return getPageTitle(driver).contains("Cài đặt tài khoản | Hahalolo")
                 && getTextElement(driver,AccountSettingUI.FULL_NAME).contains(fullName)
                 && checkElementDisplay(driver, AccountSettingUI.TITLE_PAGE,"setting_general");
     }
 
-    public void enterDataToUsernameField(WebDriver driver, String userName) {
+    public void enterDataToUsernameField(String userName) {
         waitElementToVisible(driver, AccountSettingUI.USERNAME_FIELD);
         sendKeyToElement(driver,AccountSettingUI.USERNAME_FIELD,userName);
+        setTimeDelay(1);
+    }
+
+    public void cancelSaveChangeUsername() {
+        waitForElementClickable(driver, AccountSettingUI.BUTTON_CANCEL_CHANGE_USERNAME);
+        clickToElement(driver, AccountSettingUI.BUTTON_CANCEL_CHANGE_USERNAME);
     }
 }

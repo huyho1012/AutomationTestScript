@@ -1,4 +1,4 @@
-package Interfaces.hahalolo_newsfeed.Homepage;
+package Interfaces.hahalolo_newsfeed;
 
 public class HeaderPageUI {
     public static final String LOGO_HALO = "//a[@class = 'logo-top']";
@@ -21,4 +21,5 @@ public class HeaderPageUI {
     public static final String HELPER_ITEM = "//div[@class='menu menu--top']//a[contains(@data-bind, 'href: '%s')]";
     public static final String SETTING_ITEM = "//div[@class='menu menu--top']//i[contains(@class, '%s')]";
     public static final String BUSINESS_NAVBAR_MENU ="//div[@id ='menu-primary']//a[@data-menu='%s']" ;
+    public static final String TOAST_MESSAGE ="//div[@class='toast-body']" ;
 }

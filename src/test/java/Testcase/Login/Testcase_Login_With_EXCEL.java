@@ -1,4 +1,4 @@
-package Testcase;
+package Testcase.Login;
 
 import Common.DriverManagement.BrowserInitialization;
 import Common.DriverManagement.DriverManager;
@@ -182,12 +182,9 @@ public class Testcase_Login_With_EXCEL extends AbstractTest {
     }
     @Test
     public void Testcase_Newsfeed_Login_08_Login_With_Valid_Phone(){
-        log.info("Step 1 - Enter username");
-        newsfeedLogin.enterUserNameToLogin(driver,"0936709449");
-        log.info("Step 2 - Enter password");
-        newsfeedLogin.enterPasswordToLogin(driver,"20b87bis");
-        log.info("Step 3 - Click Login button");
-        newsfeedLogin.clickToLoginButton(driver);
+        newsfeedLogin.Login(ExcelUtil.getRowData(24));
+        ExcelUtil.setRowNumber(24);
+        newsFeedHomePage = PageGeneration.createNewsfeedHomepage(driver);
         newsFeedHomePage = PageGeneration.createNewsfeedHomepage(driver);
         log.info("Step 4. Verify Login success");
         verifyTrue(newsFeedHomePage.checkNewsfeedDisplay());
