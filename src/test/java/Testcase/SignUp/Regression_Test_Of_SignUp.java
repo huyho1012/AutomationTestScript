@@ -19,6 +19,7 @@ import Project.Business.Promotion.Promotion;
 import Project.Business.Tour.Setting.PubishPage;
 import Project.Business.Tour.Setting.TourGeneralSettingPage;
 import Project.Business.Tour.Topic.TourTopicPage;
+import Project.Newsfeed.AccountSetting.GeneralAccountSetting;
 import Project.Newsfeed.Boooking.BoookingTour;
 import Project.Newsfeed.Boooking.PaymentGateWay.StripeGateway;
 import Project.Newsfeed.Boooking.PaymentInfo;
@@ -27,7 +28,6 @@ import Project.Newsfeed.PageWall.TourDetail;
 import Project.Newsfeed.PersonalWall.About.Personal_About_Overview_PageObject;
 import Project.Newsfeed.PersonalWall.Handnote.Handnote_Tour;
 import Project.Newsfeed.PersonalWall.About.PersonalAboutPage;
-import Project.Newsfeed.AccountSetting.GeneralSetting;
 import Project.Shared.Login.LoginPage;
 import Project.Shared.SingUp.SignUpPage;
 import Project.Wallet.WalletHomePage;
@@ -52,7 +52,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     Personal_About_Overview_PageObject overviewPage;
 
 
-    GeneralSetting generalAccSetting;
+    GeneralAccountSetting generalAccSetting;
     BusinessOverviewPage businessOverviewPage;
     BusinessDashboardPage businessDashboardPage;
     BusinessVerificationRequest businessVerifyPage;

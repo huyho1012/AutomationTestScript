@@ -5,7 +5,7 @@ import Common.DriverManagement.DriverManager;
 import Common.GlobalVariables;
 import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;
-import Project.Newsfeed.AccountSetting.GeneralSetting;
+import Project.Newsfeed.AccountSetting.GeneralAccountSetting;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
 import Project.Shared.Login.LoginPage;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +18,7 @@ public class Testcase_ChangeFullName extends AbstractTest {
     DriverManager driverManager;
     LoginPage newsfeedLoginPage;
     NewsfeedHomepage newsfeedHomepage;
-    GeneralSetting generalSetting;
+    GeneralAccountSetting generalSetting;
     String htmlCode = "<h>HelloWord</h>";
     String scriptCode = "<script>destroyWebsite();</script>";
     String firstName, lastName, middleName;

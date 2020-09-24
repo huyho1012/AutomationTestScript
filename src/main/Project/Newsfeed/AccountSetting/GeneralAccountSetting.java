@@ -1,28 +1,14 @@
 package Project.Newsfeed.AccountSetting;
 
 import Interfaces.hahalolo_newsfeed.AccountSetting.AccountSettingUI;
-import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
 
-public class GeneralSetting extends AccountCommon {
+public class GeneralAccountSetting extends AccountCommon {
     WebDriver driver;
-    public GeneralSetting(WebDriver webDriver){
+    public GeneralAccountSetting(WebDriver webDriver){
         driver = webDriver;
     }
 
-<<<<<<< HEAD:src/main/Project/Newsfeed/AccountSetting/GeneralAccountSetting.java
-
-
-=======
-    public boolean checkAccountGeneralSettingIsDisplay(){
-        if(getTitleOfTab(driver,"setting_general").equalsIgnoreCase("Thiết lập tài khoản chung")
-                && checkElementDisplay(driver, AccountSettingUI.FULL_NAME)){
-            return true;
-        }
-        else
-            return false;
-    }
->>>>>>> adc713830de5a294a6c41b775a3c72c6900baef4:src/main/Project/Newsfeed/AccountSetting/GeneralSetting.java
     public String getFullNameIsDisplay(WebDriver driver) {
         waitElementToVisible(driver, AccountSettingUI.FULLNAME_LOADING);
         return getTextElement(driver, AccountSettingUI.FULL_NAME);
@@ -170,5 +156,9 @@ public class GeneralSetting extends AccountCommon {
     public void cancelSaveChangeUsername() {
         waitForElementClickable(driver, AccountSettingUI.BUTTON_CANCEL_CHANGE_USERNAME);
         clickToElement(driver, AccountSettingUI.BUTTON_CANCEL_CHANGE_USERNAME);
+    }
+
+    public boolean checkAccountGeneralSettingIsDisplay() {
+        return true;
     }
 }

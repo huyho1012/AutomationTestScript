@@ -1,7 +1,4 @@
 package Interfaces.hahalolo_newsfeed.AccountSetting;
-<<<<<<< HEAD
-public class SecurityAndLoginUI {
-=======
 
 public class SecurityAndLoginUI {
     public static final String BUTTON_LOGOUT_ALL = "//a[contains(@data-bind,'logOutAllDevice')]";
@@ -21,5 +18,4 @@ public class SecurityAndLoginUI {
     public static final String MESSAGE_OF_CURRENT_PASS = "//input[@name = 'currentPassword']/following-sibling::div[contains(@class, 'invalid-feedback')]";
     public static final String MESSAGE_OF_NEW_PASS = "//input[@name = 'newPassword']/following-sibling::div[contains(@class, 'invalid-feedback')]";
     public static final String MESSAGE_OF_CONFIRM_NEW_PASS = "//input[@name = 'reNewPassword']/following-sibling::div[contains(@class, 'invalid-feedback')]";
->>>>>>> adc713830de5a294a6c41b775a3c72c6900baef4
 }

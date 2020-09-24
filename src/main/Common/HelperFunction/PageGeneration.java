@@ -4,7 +4,7 @@ package Common.HelperFunction;
 import Project.Business.Promotion.DetailPromo;
 import Project.Business.Promotion.TourPromotion;
 import Project.Business.Tour.Setting.PubishPage;
-import Project.Newsfeed.AccountSetting.GeneralSetting;
+import Project.Newsfeed.AccountSetting.GeneralAccountSetting;
 import Project.Newsfeed.Boooking.BoookingTour;
 import Project.Newsfeed.Boooking.PaymentGateWay.StripeGateway;
 import Project.Newsfeed.Boooking.PaymentInfo;
@@ -42,12 +42,8 @@ public class PageGeneration {
         return new NewsfeedHomepage(driver);
     }
 
-    public static PersonalAboutPage createPerTAboutPage(WebDriver driver) {
-        return new PersonalAboutPage(driver);
-    }
-
-    public static GeneralSetting createGeneralAccountSettingPage(WebDriver driver) {
-        return new GeneralSetting(driver);
+    public static GeneralAccountSetting createGeneralAccountSettingPage(WebDriver driver) {
+        return new GeneralAccountSetting(driver);
     }
 
     public static BusinessOverviewPage createBusinessOverviewPage(WebDriver driver) {

@@ -6,7 +6,7 @@ import Common.DummyData.DataHelper;
 import Common.GlobalVariables;
 import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;
-import Project.Newsfeed.AccountSetting.GeneralSetting;
+import Project.Newsfeed.AccountSetting.GeneralAccountSetting;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
 import Project.Newsfeed.PersonalWall.About.PersonalAboutPage;
 import Project.Shared.Login.LoginPage;
@@ -22,7 +22,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
     WebDriver driver;
     LoginPage loginNewsfeedPage;
     NewsfeedHomepage newsFeedHomePage;
-    GeneralSetting accountSetting;
+    GeneralAccountSetting accountSetting;
     SignUpPage signUpPage;
     PersonalAboutPage personalAboutPage;
     String account = "balo_04@mailinator.com";

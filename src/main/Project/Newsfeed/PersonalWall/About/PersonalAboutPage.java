@@ -11,8 +11,6 @@ public class PersonalAboutPage extends HeaderPage {
     WebDriver driver;
 
     // Hàm xử lý các thông tin trong widget introduction
-
-
     public boolean checkPageIsDisplay(String fullName) {
         waitElementToVisible(driver, PersonalHeadCoverUI.PERSONAL_PAGE);
         return getPageTitle(driver).equalsIgnoreCase("Giới thiệu - Trang cá nhân | Hahalolo")
@@ -64,18 +62,5 @@ public class PersonalAboutPage extends HeaderPage {
     public void clickToEditPlaceLiving(){
         waitForElementClickable(driver, AboutCommonUI.BUTTON_EDIT_PLACE_LIVING);
         clickToElement(driver, AboutCommonUI.BUTTON_EDIT_PLACE_LIVING);
-    }
-
-
-    public void selectStartDateOfWorkPlace(String yearItem, String monthItem, String dayItem){
-        selectItemInCustomDropdownByScroll(driver, WorkEducationUI.DATE_FROM_DROPDOWN_SELECTED, WorkEducationUI.ITEM_DATE_ON_DROPDOWN, yearItem, "");
-        selectItemInCustomDropdownByScroll(driver, WorkEducationUI.DATE_FROM_DROPDOWN_SELECTED, WorkEducationUI.ITEM_DATE_ON_DROPDOWN, monthItem, "");
-        selectItemInCustomDropdownByScroll(driver, WorkEducationUI.DATE_FROM_DROPDOWN_SELECTED, WorkEducationUI.ITEM_DATE_ON_DROPDOWN, dayItem, "");
-    }
-
-    public void selectEndDateOfWorkPlace(String yearItem, String monthItem, String dayItem){
-        selectItemInCustomDropdownByScroll(driver, WorkEducationUI.DATE_FROM_DROPDOWN_SELECTED, WorkEducationUI.ITEM_DATE_ON_DROPDOWN, yearItem, "");
-        selectItemInCustomDropdownByScroll(driver, WorkEducationUI.DATE_FROM_DROPDOWN_SELECTED, WorkEducationUI.ITEM_DATE_ON_DROPDOWN, monthItem, "");
-        selectItemInCustomDropdownByScroll(driver, WorkEducationUI.DATE_FROM_DROPDOWN_SELECTED, WorkEducationUI.ITEM_DATE_ON_DROPDOWN, dayItem, "");
     }
 }
