@@ -9,7 +9,7 @@ import Project.Newsfeed.Boooking.PaymentGateWay.StripeGateway;
 import Project.Newsfeed.Boooking.PaymentInfo;
 import Project.Newsfeed.PageWall.TourDetail;
 import Project.Newsfeed.PersonalWall.Handnote.Handnote_Tour;
-import Project.Newsfeed.PersonalWall.NewsfeedPersonalTimeline;
+import Project.Newsfeed.PersonalWall.Timeline.NewsfeedPersonalTimeline;
 import Project.Shared.Login.LoginPage;
 import Project.Backend.BackendHomePage;
 import Project.Backend.BackendVerifyBusiManagement;
@@ -21,7 +21,7 @@ import Project.Business.Tour.Topic.TourTopicPage;
 import Project.Business.Tour.TourDashboardPage;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
 import Project.Newsfeed.PersonalWall.About.PersonalAboutPage;
-import Project.Newsfeed.AccountSetting.GeneralAccountSetting;
+import Project.Newsfeed.AccountSetting.GeneralSetting;
 import Project.Shared.SingUp.SignUpPage;
 import Project.Wallet.WalletHomePage;
 import Project.Wallet.WalletOverviewPage;
@@ -45,8 +45,8 @@ public class PageGeneration {
         return new PersonalAboutPage(driver);
     }
 
-    public static GeneralAccountSetting createGeneralAccountSettingPage(WebDriver driver) {
-        return new GeneralAccountSetting(driver);
+    public static GeneralSetting createGeneralAccountSettingPage(WebDriver driver) {
+        return new GeneralSetting(driver);
     }
 
     public static BusinessOverviewPage createBusinessOverviewPage(WebDriver driver) {

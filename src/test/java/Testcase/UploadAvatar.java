@@ -6,7 +6,7 @@ import Common.GlobalVariables;
 import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
-import Project.Newsfeed.PersonalWall.NewsfeedPersonalTimeline;
+import Project.Newsfeed.PersonalWall.Timeline.NewsfeedPersonalTimeline;
 import Project.Shared.Login.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;

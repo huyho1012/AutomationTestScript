@@ -1,4 +1,4 @@
-package Testcase;
+package Testcase.Login;
 
 import Common.DriverManagement.BrowserInitialization;
 import Common.DriverManagement.DriverManager;

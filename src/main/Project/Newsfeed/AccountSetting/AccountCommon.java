@@ -4,7 +4,7 @@ import Interfaces.hahalolo_newsfeed.AccountSetting.AccountSettingUI;
 import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
 
-public class AccountSettingCommon extends HeaderPage {
+public class AccountCommon extends HeaderPage {
 
     public String getTitleOfTab(WebDriver driver, String tabName) {
         waitElementToVisible(driver, AccountSettingUI.ACCOUNT_SETTING_PAGE);
@@ -14,7 +14,8 @@ public class AccountSettingCommon extends HeaderPage {
 
     public void clickToItemOnAccountSettingMenu(WebDriver driver, String itemMenu){
         waitElementToVisible(driver, AccountSettingUI.ACCOUNT_SETTING_MENU);
-        waitForElementClickable(driver, AccountSettingUI.ITEM_ON_MENU_ACCOUNT_SETTING);
+        waitForElementClickable(driver, AccountSettingUI.ITEM_ON_MENU_ACCOUNT_SETTING, itemMenu);
+        clickToElement(driver, AccountSettingUI.ITEM_ON_MENU_ACCOUNT_SETTING, itemMenu);
     }
 
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test with firefox"
+           tests="7"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="66.712">
+  <properties />
+  
+  
+            <testcase name="Testcase04_Update_Username_With_Username_Is_Number" time="3.695" classname="Testcase.AccountSetting.TestcaseFunctionUpdateUsername" />
+                <testcase name="Testcase05_Update_Username_With_Username_Is_AlphaNumber" time="4.188" classname="Testcase.AccountSetting.TestcaseFunctionUpdateUsername" />
+                <testcase name="Testcase07_CheckDefaultUsernameAndUpdateValidUsernameCaseNewAccount" time="28.300" classname="Testcase.AccountSetting.TestcaseFunctionUpdateUsername" />
+                <testcase name="Testcase06_Update_Username_With_Username_is_All_Uppercase" time="9.963" classname="Testcase.AccountSetting.TestcaseFunctionUpdateUsername" />
+                <testcase name="Testcase02_Update_Username_With_Valid_Username" time="4.884" classname="Testcase.AccountSetting.TestcaseFunctionUpdateUsername" />
+                <testcase name="Testcase03_Update_Username_With_Username_Has_Capital_Letters" time="4.267" classname="Testcase.AccountSetting.TestcaseFunctionUpdateUsername" />
+                <testcase name="Testcase01_Update_Username_With_Invalid_Information" time="11.415" classname="Testcase.AccountSetting.TestcaseFunctionUpdateUsername" />
+      
+</testsuite>

@@ -54,7 +54,7 @@ Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60089}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
 Session ID: b562c69c9c6fd3bda9a4ed51ea875f95"
               >
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(@data-bind,'userProfileVM.fullName')]/parent::div//following-sibling::div//i (tried for 30 second(s) with 500 milliseconds interval)
+                    <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(@data-bind,'userProfileVM.fullName')]/parent::div//following-sibling::div//i (tried for 30 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'ADMIN', ip: '10.0.2.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
@@ -63,7 +63,7 @@ Session ID: b562c69c9c6fd3bda9a4ed51ea875f95
   org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
   Common.HelperFunction.AbstractPage.waitForElementClickable(AbstractPage.java:401)
-  Project.Newsfeed.AccountSetting.GeneralAccountSetting.clickToButtonEditFullName(GeneralAccountSetting.java:25)
+  Project.Newsfeed.AccountSetting.GeneralSetting.clickToButtonEditFullName(GeneralAccountSetting.java:25)
   Testcase.AccountSetting.Testcase_ChangeFullName.Testcase15_Update_Fullname_With_MiddleName_Have_Whitespace_At_Last_Position(Testcase_ChangeFullName.java:477)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -89,7 +89,7 @@ Session ID: b562c69c9c6fd3bda9a4ed51ea875f95
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
             <testcase name="Testcase15_Update_Fullname_With_TOTAL_FULL_NAME_GREATER_THAN_5_WORDS" time="1.311" classname="Testcase.AccountSetting.Testcase_ChangeFullName">
@@ -102,7 +102,7 @@ Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60089}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
 Session ID: b562c69c9c6fd3bda9a4ed51ea875f95"
               >
-<![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button type="submit" class="btn btn-primary" data-bind="click: userProfileVM.onConfirmSaveName, text: t('common.btn_save_change')">...</button> is not clickable at point (601, 396). Other element would receive the click: <div class="modal fade modalConfirmPw show" id="modalConfirmPw" aria-modal="true" style="padding-right: 17px; display: block;">...</div>
+                    <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button type="submit" class="btn btn-primary" data-bind="click: userProfileVM.onConfirmSaveName, text: t('common.btn_save_change')">...</button> is not clickable at point (601, 396). Other element would receive the click: <div class="modal fade modalConfirmPw show" id="modalConfirmPw" aria-modal="true" style="padding-right: 17px; display: block;">...</div>
   (Session info: chrome=85.0.4183.102)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'ADMIN', ip: '10.0.2.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
@@ -123,7 +123,7 @@ Session ID: b562c69c9c6fd3bda9a4ed51ea875f95
   org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
   org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
   Common.HelperFunction.AbstractPage.clickToElement(AbstractPage.java:131)
-  Project.Newsfeed.AccountSetting.GeneralAccountSetting.clickButtonSaveChangesToUpdateFullname(GeneralAccountSetting.java:71)
+  Project.Newsfeed.AccountSetting.GeneralSetting.clickButtonSaveChangesToUpdateFullname(GeneralAccountSetting.java:71)
   Testcase.AccountSetting.Testcase_ChangeFullName.Testcase15_Update_Fullname_With_TOTAL_FULL_NAME_GREATER_THAN_5_WORDS(Testcase_ChangeFullName.java:574)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -149,7 +149,7 @@ Session ID: b562c69c9c6fd3bda9a4ed51ea875f95
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
             <testcase name="Testcase14_Update_Fullname_With_MiddleName_Have_Whitespace_At_First_Position" time="3.327" classname="Testcase.AccountSetting.Testcase_ChangeFullName">
@@ -397,7 +397,7 @@ Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60089}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
 Session ID: b562c69c9c6fd3bda9a4ed51ea875f95"
               >
-<![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+                    <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
   (Session info: chrome=85.0.4183.102)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
@@ -419,7 +419,7 @@ Session ID: b562c69c9c6fd3bda9a4ed51ea875f95
   org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
   org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:166)
   Common.HelperFunction.AbstractPage.getTextElement(AbstractPage.java:150)
-  Project.Newsfeed.AccountSetting.GeneralAccountSetting.getErrMessageValidationOfFirstName(GeneralAccountSetting.java:45)
+  Project.Newsfeed.AccountSetting.GeneralSetting.getErrMessageValidationOfFirstName(GeneralAccountSetting.java:45)
   Testcase.AccountSetting.Testcase_ChangeFullName.Testcase01_Update_Fullname_With_Invalid_FirstName(Testcase_ChangeFullName.java:50)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -445,7 +445,7 @@ Session ID: b562c69c9c6fd3bda9a4ed51ea875f95
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
             <testcase name="Testcase12_Update_Fullname_With_MiddleName_Have_Lowercase" time="3.377" classname="Testcase.AccountSetting.Testcase_ChangeFullName">
@@ -491,11 +491,11 @@ Session ID: b562c69c9c6fd3bda9a4ed51ea875f95
                 <failure type="org.openqa.selenium.TimeoutException"
                   message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[@id = &apos;modalConfirmPw&apos;]//input[@name = &apos;confirmPwd&apos;]/following-sibling::div[contains(@class, &apos;invalid-feedback&apos;)] (tried for 30 second(s) with 500 milliseconds interval)"
               >
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@id = 'modalConfirmPw']//input[@name = 'confirmPwd']/following-sibling::div[contains(@class, 'invalid-feedback')] (tried for 30 second(s) with 500 milliseconds interval)
+                    <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@id = 'modalConfirmPw']//input[@name = 'confirmPwd']/following-sibling::div[contains(@class, 'invalid-feedback')] (tried for 30 second(s) with 500 milliseconds interval)
   org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:389)
-  Project.Newsfeed.AccountSetting.GeneralAccountSetting.getErrMessageValidationOfConfirmPass(GeneralAccountSetting.java:89)
+  Project.Newsfeed.AccountSetting.GeneralSetting.getErrMessageValidationOfConfirmPass(GeneralAccountSetting.java:89)
   Testcase.AccountSetting.Testcase_ChangeFullName.Testcase15_Update_Fullname_With_Invalid_Pass(Testcase_ChangeFullName.java:510)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -547,7 +547,7 @@ Session ID: b562c69c9c6fd3bda9a4ed51ea875f95
   org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:389)
-  Project.Newsfeed.AccountSetting.GeneralAccountSetting.getErrMessageValidationOfConfirmPass(GeneralAccountSetting.java:89)
+  Project.Newsfeed.AccountSetting.GeneralSetting.getErrMessageValidationOfConfirmPass(GeneralAccountSetting.java:89)
   Testcase.AccountSetting.Testcase_ChangeFullName.Testcase15_Update_Fullname_With_Invalid_Pass(Testcase_ChangeFullName.java:510)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -573,7 +573,7 @@ Session ID: b562c69c9c6fd3bda9a4ed51ea875f95
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
             <testcase name="Testcase15_Update_Fullname_With_TOTAL_FULL_NAME_GREATER_THAN_75_CHARS" time="30.495" classname="Testcase.AccountSetting.Testcase_ChangeFullName">
@@ -585,7 +585,7 @@ Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60089}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
 Session ID: b562c69c9c6fd3bda9a4ed51ea875f95"
               >
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(@data-bind,'userProfileVM.fullName')]/parent::div//following-sibling::div//i (tried for 30 second(s) with 500 milliseconds interval)
+                    <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(@data-bind,'userProfileVM.fullName')]/parent::div//following-sibling::div//i (tried for 30 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'ADMIN', ip: '10.0.2.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
@@ -594,7 +594,7 @@ Session ID: b562c69c9c6fd3bda9a4ed51ea875f95
   org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
   Common.HelperFunction.AbstractPage.waitForElementClickable(AbstractPage.java:401)
-  Project.Newsfeed.AccountSetting.GeneralAccountSetting.clickToButtonEditFullName(GeneralAccountSetting.java:25)
+  Project.Newsfeed.AccountSetting.GeneralSetting.clickToButtonEditFullName(GeneralAccountSetting.java:25)
   Testcase.AccountSetting.Testcase_ChangeFullName.Testcase15_Update_Fullname_With_TOTAL_FULL_NAME_GREATER_THAN_75_CHARS(Testcase_ChangeFullName.java:555)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -620,7 +620,7 @@ Session ID: b562c69c9c6fd3bda9a4ed51ea875f95
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
             <testcase name="Testcase07_Update_Fullname_With_Firstname_Have_Whitespace_At_Last_Position" time="2.752" classname="Testcase.AccountSetting.Testcase_ChangeFullName">

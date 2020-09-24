@@ -4,25 +4,29 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="9.892">
+           time="4.465">
   <properties />
-            <testcase name="Test" time="9.892" classname="Testcase.CommunitySite.Community">
-                <failure type="org.openqa.selenium.ElementNotInteractableException"
-                  message="element not interactable
+            <testcase name="Test" time="4.465" classname="Testcase.CommunitySite.Community">
+                <failure type="org.openqa.selenium.NoSuchElementException"
+                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[contains(@data-bind,&apos;siteColls.collection().onLoadMore&apos;)]&quot;}
   (Session info: chrome=85.0.4183.102)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-LF4PDD0&apos;, ip: &apos;172.16.99.20&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
+System info: host: &apos;ADMIN&apos;, ip: &apos;10.0.2.120&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\WIN10~1\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:52202}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: e3526ba1b31406a281ba7251f65efa55"
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56533}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: c7e4c2edc39cd1157c31ddb9edffbabc
+*** Element info: {Using=xpath, value=//a[contains(@data-bind,&apos;siteColls.collection().onLoadMore&apos;)]}"
               >
-<![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[contains(@data-bind,'siteColls.collection().onLoadMore')]"}
   (Session info: chrome=85.0.4183.102)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-LF4PDD0', ip: '172.16.99.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
+System info: host: 'ADMIN', ip: '10.0.2.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\WIN10~1\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:52202}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: e3526ba1b31406a281ba7251f65efa55
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56533}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: c7e4c2edc39cd1157c31ddb9edffbabc
+*** Element info: {Using=xpath, value=//a[contains(@data-bind,'siteColls.collection().onLoadMore')]}
   java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
   java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -34,10 +38,13 @@ Session ID: e3526ba1b31406a281ba7251f65efa55
   org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
   org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
   org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-  org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-  org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-  Common.HelperFunction.AbstractPage.clickToElement(AbstractPage.java:132)
-  Project.Newsfeed.Newsfeed.NewsfeedHomepage.goToSite(NewsfeedHomepage.java:112)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+  org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+  org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+  Common.HelperFunction.AbstractPage.findElement(AbstractPage.java:122)
+  Common.HelperFunction.AbstractPage.clickToElement(AbstractPage.java:131)
+  Project.Newsfeed.Newsfeed.NewsfeedHomepage.goToSite(NewsfeedHomepage.java:127)
   Testcase.CommunitySite.Community.Test(Community.java:39)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)

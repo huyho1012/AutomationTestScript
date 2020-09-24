@@ -173,7 +173,7 @@ public abstract class AbstractPage {
     }
     public boolean checkIsElementIsEnable(WebDriver driver, String locator){
         element = findElement(driver, locator);
-        return  element.isDisplayed();
+        return  element.isEnabled();
     }
     public boolean checkIsElementIsSelected(WebDriver driver, String locator){
         element = findElement(driver, locator);

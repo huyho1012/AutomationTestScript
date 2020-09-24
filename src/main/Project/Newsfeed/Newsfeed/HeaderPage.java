@@ -3,7 +3,7 @@ package Project.Newsfeed.Newsfeed;
 import Common.HelperFunction.AbstractPage;
 import Interfaces.hahalolo_business.Business.BusinessVerificationUI;
 import Interfaces.hahalolo_business.Tour.TourDashboardPageUI;
-import Interfaces.hahalolo_newsfeed.Homepage.HeaderPageUI;
+import Interfaces.hahalolo_newsfeed.HeaderPageUI;
 import org.openqa.selenium.WebDriver;
 
 public class HeaderPage extends AbstractPage {

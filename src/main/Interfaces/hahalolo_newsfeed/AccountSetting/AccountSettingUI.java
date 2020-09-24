@@ -2,7 +2,9 @@ package Interfaces.hahalolo_newsfeed.AccountSetting;
 
 public class AccountSettingUI {
     public static final String TITLE_PAGE = "//div[@id='%s']//div[@class = 'pageUI-about-heading']";
-    public static final String ACCOUNT_SETTIGN_PAGE = "//section[@id = 'main-content']";
+    public static final String ACCOUNT_SETTING_PAGE = "//div[@class = 'pageUI-header__title']";
+    public static final String ACCOUNT_SETTING_MENU = "//nav[contains(@class,'pageUI-nav-column')]";
+    public static final String ITEM_ON_MENU_ACCOUNT_SETTING = "//nav[contains(@class,'pageUI-nav-column')]/a[@href= '%s']";
     // Full name section
     public static final String FULL_NAME = "//div[contains(@data-bind,'userProfileVM.fullName')]";
     public static final String FULLNAME_LOADING = "//div[contains(@data-bind,'userProfileVM.fullName')][contains(@data-bind,'!isLoading()')]" ;
@@ -27,8 +29,8 @@ public class AccountSettingUI {
     public static final String BUTTON_CANCEL_CONFIRM_PASS = "//button[contains(@data-bind,'onSaveName')]/following-sibling::button";
 
 
+    // Chức năng thay đổi định danh người dùng
     public static final String USERNAME = "//a[contains(@data-bind,'baseUrlUsername')]";
-
     public static final String BUTTON_EDIT_USERNAME = "//div[@id ='js_body_username']//i";
     public static final String USERNAME_FIELD = "//input[contains(@data-bind,'valUsername')]";
     public static final String VALIDATE_MESS_OF_USERNAME = "//div[@id ='jsLoadMsg']//span";
@@ -39,4 +41,5 @@ public class AccountSettingUI {
     public static final String ICON_ERROR_CHANGE_USERNAME = "//div[@id='jsLoadMsg']/i[@class ='ffa fa-times text-danger']";
 
 
+    public static final String NO_USERNAME = "//div[@id='js_body_username']//b";
 }
