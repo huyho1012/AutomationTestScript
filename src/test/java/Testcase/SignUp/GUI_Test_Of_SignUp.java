@@ -27,7 +27,7 @@ public class GUI_Test_Of_SignUp extends AbstractTest {
     }
     @Test(enabled = false)
     public void Testcase_Register_02_Check_SignUpForm_With_VI_Language(){
-        newsfeedLoginPage.clickToChangeLanguageToVI(driver);
+        newsfeedLoginPage.clickToChangeLanguageToVI();
         log.info("Check Title Of SignUp form when");
         verifyEquals(signUpPage.getTitleOfFormSignUp(),"Tham gia Hahalolo ngay!");
         log.info("Check placeholder of fields");

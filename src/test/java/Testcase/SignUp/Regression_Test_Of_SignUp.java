@@ -21,7 +21,7 @@ import Project.Business.Tour.Setting.TourGeneralSettingPage;
 import Project.Business.Tour.Topic.TourTopicPage;
 import Project.Newsfeed.AccountSetting.GeneralAccountSetting;
 import Project.Newsfeed.Boooking.BoookingTour;
-import Project.Newsfeed.Boooking.PaymentGateWay.StripeGateway;
+import Project.Newsfeed.Boooking.PaymentGateWay.Stripe_PageObject;
 import Project.Newsfeed.Boooking.PaymentInfo;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
 import Project.Newsfeed.PageWall.TourDetail;
@@ -88,7 +88,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     BoookingTour tourBookingPage;
 
     PaymentInfo paymentInfoPage;
-    StripeGateway stripePayment;
+    Stripe_PageObject stripePayment;
     Handnote_Tour handnoteTourPage;
 
     // Define user properties
@@ -127,7 +127,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         log.info("Precondition - Step 5. Verify icon App store display");
         verifyTrue(loginNewsfeedPage.checkAppStoreIconIsDisplay(driver));
         log.info("Precondition - Step 6. Change system language To Vi");
-        loginNewsfeedPage.clickToChangeLanguageToVI(driver);
+        loginNewsfeedPage.clickToChangeLanguageToVI();
 //        signUpPage = PageGeneration.createFormRegister(driver);
 //        log.info("Precondition - Step 7. Check Halo slogan");
 //        verifyTrue(signUpPage.checkContentOfHaLoStartApp(driver));

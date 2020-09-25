@@ -30,27 +30,26 @@ public class Testcase_PersonalAbout_DetailsAboutYou extends AbstractTest {
     String dayBirth, monthBirth, yearBirth, gender, nationality;
     @BeforeTest
     public void precondition(String browserName){
+        dataHelper = DataHelper.getData();
+
+        log.info("Precondition step 1 - Create driver browser");
         driverManager = BrowserInitialization.getBrowser(browserName);
+
+        log.info("Precondition step 2 - Go to Newsfeed hahalolo");
         driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
         newsfeedLoginPage = PageGeneration.createNewsfeedLoginPage(driver);
+        log.info("Precondition step 3 - Check Newsfeed Login display successfully");
+        verifyTrue(newsfeedLoginPage.checkNewsfeedLoginPageDisplay());
     }
 
     @Test
     public void Testcase01_Check_Information_When_User_Create_New_Account_Email(){
-
-
-        dayBirth ="12";
-        monthBirth = "10";
-        yearBirth = "1992";
-        gender ="male";
-        nationality = "";
-
         log.info("Step 1 - Register new account");
         // Thay đổi ngôn ngữ hệ thống để đồng nhất dữ liệu - Tiếng việt)
-        newsfeedLoginPage.clickToChangeLanguageToVI(driver);
+        newsfeedLoginPage.clickToChangeLanguageToVI();
         signUpPage = PageGeneration.createFormRegister(driver);
         // Đăng ký tài khoản
-        dataHelper = DataHelper.getData();
+
         firstName = dataHelper.getFirstName();
         lastName = dataHelper.getLastName();
         email = randomVirtualEmail();
@@ -59,11 +58,15 @@ public class Testcase_PersonalAbout_DetailsAboutYou extends AbstractTest {
         signUpPage.signUpWithNewAccountByEmail(firstName, lastName, email, password, confirmPass);
         String fullNameOfUser = getFullName(lastName, firstName);
         newsfeedHomepage = PageGeneration.createNewsfeedHomepage(driver);
-
         log.info("Step 2 - Update new information");
         // Kiểm tra trang newsfeed hiển thị với trường hợp tạo mới thành công
         verifyTrue(newsfeedHomepage.checkNewsfeedDisplayOnFirstTime(driver));
         // Cập nhật thông tin người dùng tại lần đầu tiên đăng nhập
+        dayBirth ="12";
+        monthBirth = "10";
+        yearBirth = "1992";
+        gender ="male";
+        nationality = "";
         newsfeedHomepage.updateNewInformationOfAccount(dayBirth, monthBirth, yearBirth, gender, nationality);
         String birthday = getBirthdayOnHaLo(dayBirth,monthBirth,yearBirth);
         // Lấy thông tin hiển tên người dùng hiển thị tại My Account

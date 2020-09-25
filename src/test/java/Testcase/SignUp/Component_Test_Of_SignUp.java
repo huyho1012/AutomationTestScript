@@ -37,7 +37,7 @@ public class Component_Test_Of_SignUp extends AbstractTest {
         newsfeedLoginPage = PageGeneration.createNewsfeedLoginPage(driver);
 
         log.info("Step 9. Change language to Vietnamese");
-        newsfeedLoginPage.clickToChangeLanguageToVI(driver);
+        newsfeedLoginPage.clickToChangeLanguageToVI();
         signUpPage = PageGeneration.createFormRegister(driver);
     }
     @BeforeMethod

@@ -1,4 +1,4 @@
-package Testcase.Login;
+package Testcase.Login.ComponentTest;
 
 import Common.DriverManagement.BrowserInitialization;
 import Common.DriverManagement.DriverManager;
@@ -35,7 +35,7 @@ public class Testcase_Login_With_EXCEL extends AbstractTest {
         log.info("Precondition - Step 5. Verify icon App store display");
         verifyTrue(newsfeedLogin.checkAppStoreIconIsDisplay(driver));
         log.info("Precondition - Step 6. Change system language To Vi");
-        newsfeedLogin.clickToChangeLanguageToVI(driver);
+        newsfeedLogin.clickToChangeLanguageToVI();
         setTimeDelay(1);
     }
 
@@ -164,7 +164,7 @@ public class Testcase_Login_With_EXCEL extends AbstractTest {
         newsFeedHomePage.clickToItemOnSettingMenu(driver,"ic-logout-c");
         newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
         log.info("Step 6. Check Logout account success");
-        verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay(driver));
+        verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay());
     }
     @Test
     public void Testcase_Newsfeed_Login_07_Login_With_Uppercase_Email(){
@@ -177,7 +177,7 @@ public class Testcase_Login_With_EXCEL extends AbstractTest {
         newsFeedHomePage.clickToItemOnSettingMenu(driver,"ic-logout-c");
         newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
         log.info("Step 6 - Check Logout account success");
-        verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay(driver));
+        verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay());
     }
     @Test
     public void Testcase_Newsfeed_Login_08_Login_With_Valid_Phone(){
@@ -191,7 +191,7 @@ public class Testcase_Login_With_EXCEL extends AbstractTest {
         newsFeedHomePage.clickToItemOnSettingMenu(driver,"ic-logout-c");
         newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
         log.info("Step 6 - Check Logout account success");
-        verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay(driver));
+        verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay());
     }
     @Test(enabled = false)
     public void Testcase_Newsfeed_Login_98_Login_With_Phone_contains_PhoneCode(){
@@ -208,6 +208,6 @@ public class Testcase_Login_With_EXCEL extends AbstractTest {
         newsFeedHomePage.clickToItemOnSettingMenu(driver,"ic-logout-c");
         newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
         log.info("Step 6 - Check Logout account success");
-        verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay(driver));
+        verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay());
     }
 }

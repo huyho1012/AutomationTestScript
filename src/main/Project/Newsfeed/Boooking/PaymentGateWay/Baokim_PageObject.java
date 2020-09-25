@@ -2,9 +2,9 @@ package Project.Newsfeed.Boooking.PaymentGateWay;
 
 import org.openqa.selenium.WebDriver;
 
-public class BaokimGateway {
+public class Baokim_PageObject {
     WebDriver driver;
-    public BaokimGateway(WebDriver webDriver){
+    public Baokim_PageObject(WebDriver webDriver){
         driver = webDriver;
     }
 

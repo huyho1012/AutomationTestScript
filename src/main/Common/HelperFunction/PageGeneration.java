@@ -6,10 +6,11 @@ import Project.Business.Promotion.TourPromotion;
 import Project.Business.Tour.Setting.PubishPage;
 import Project.Newsfeed.AccountSetting.GeneralAccountSetting;
 import Project.Newsfeed.Boooking.BoookingTour;
-import Project.Newsfeed.Boooking.PaymentGateWay.StripeGateway;
+import Project.Newsfeed.Boooking.PaymentGateWay.Stripe_PageObject;
 import Project.Newsfeed.Boooking.PaymentInfo;
 import Project.Newsfeed.PageWall.TourDetail;
 import Project.Newsfeed.PersonalWall.About.PerAbout_BasicInfoAndContact_PageObject;
+import Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject;
 import Project.Newsfeed.PersonalWall.About.PerAbout_Overview_PageObject;
 import Project.Newsfeed.PersonalWall.Handnote.Handnote_Tour;
 import Project.Newsfeed.PersonalWall.Timeline.NewsfeedPersonalTimeline;
@@ -23,7 +24,6 @@ import Project.Business.Tour.Setting.TourGeneralSettingPage;
 import Project.Business.Tour.Topic.TourTopicPage;
 import Project.Business.Tour.TourDashboardPage;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
-import Project.Newsfeed.PersonalWall.About.PersonalAboutPage;
 import Project.Shared.SingUp.SignUpPage;
 import Project.Wallet.WalletHomePage;
 import Project.Wallet.WalletOverviewPage;
@@ -171,8 +171,8 @@ public class PageGeneration {
         return new Handnote_Tour(driver);
     }
 
-    public static StripeGateway createPaymentWithStripe(WebDriver driver) {
-        return new StripeGateway(driver);
+    public static Stripe_PageObject createPaymentWithStripe(WebDriver driver) {
+        return new Stripe_PageObject(driver);
     }
 
     public static PaymentInfo createPageBookingSuccess(WebDriver driver) {
@@ -189,5 +189,9 @@ public class PageGeneration {
 
     public static PerAbout_BasicInfoAndContact_PageObject createperBasicInfoAndContactPage(WebDriver driver) {
         return new PerAbout_BasicInfoAndContact_PageObject(driver);
+    }
+
+    public static PerAbout_DetailsAboutYou_PageObject createPersonalDetailsAboutYouTab(WebDriver driver) {
+        return new PerAbout_DetailsAboutYou_PageObject(driver);
     }
 }

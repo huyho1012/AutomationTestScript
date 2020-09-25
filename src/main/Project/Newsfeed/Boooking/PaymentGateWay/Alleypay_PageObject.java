@@ -4,10 +4,10 @@ import Common.HelperFunction.AbstractPage;
 import Interfaces.hahalolo_newsfeed.Booking.PaymentGateWay.AlleypayGatewayUI;
 import org.openqa.selenium.WebDriver;
 
-public class AlleypayGateWay extends AbstractPage
+public class Alleypay_PageObject extends AbstractPage
 {
     WebDriver driver;
-    public AlleypayGateWay(WebDriver webDriver){
+    public Alleypay_PageObject(WebDriver webDriver){
         driver = webDriver;
     }
 

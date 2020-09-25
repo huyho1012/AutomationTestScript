@@ -28,7 +28,7 @@ public class Community extends AbstractTest {
         driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
         newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
         log.info("Precondition - Step 3. Change system language To Vi");
-        newsfeedLogin.clickToChangeLanguageToVI(driver);
+        newsfeedLogin.clickToChangeLanguageToVI();
         newsfeedLogin.Login("balo_04@mailinator.com","123456");
         newsfeedHomepage = PageGeneration.createNewsfeedHomepage(driver);
     }

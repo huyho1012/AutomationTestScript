@@ -1,4 +1,4 @@
-package Testcase.Login;
+package Testcase.Login.ComponentTest;
 
 import Common.DriverManagement.BrowserInitialization;
 import Common.DriverManagement.DriverManager;
@@ -24,17 +24,24 @@ import org.testng.annotations.Test;
         public void preconditionTest(String browserName) {
             log.info("Precondition - Step 1. Create Browser Driver ");
             driverManager = BrowserInitialization.getBrowser(browserName);
+
             log.info("Precondition - Step 2. Open browser and go to Newsfeed login");
             driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
             newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
-            log.info("Precondition - Step 3.  Verify url page");
-            verifyEquals(newsfeedLogin.getCurrentURL(driver), "https://test-newsfeed.hahalolo.com/auth/signin");
-            log.info("Precondition - Step 4. Verify icon Google play display");
+
+
+
+            newsfeedLogin.clickToChangeLanguageToVI();
+        }
+
+        public void checkElementISDisplayOnNewsfeedLoginPage(){
+            log.info("Step 1. Verify icon Google play display");
             verifyTrue(newsfeedLogin.checkGooglePlayIconIsDisplay(driver));
+
+            log.info("Step 2. ");
             log.info("Precondition - Step 5. Verify icon App store display");
             verifyTrue(newsfeedLogin.checkAppStoreIconIsDisplay(driver));
             log.info("Precondition - Step 6. Change system language To Vi");
-            newsfeedLogin.clickToChangeLanguageToVI(driver);
         }
 
         @Test
@@ -164,7 +171,7 @@ import org.testng.annotations.Test;
             newsFeedHomePage.clickToItemOnSettingMenu(driver,"ic-logout-c");
             newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
             log.info("Step 6. Check Logout account success");
-            verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay(driver));
+            verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay());
         }
         @Test
         public void Testcase_Newsfeed_Login_06_Login_With_Uppercase_Email(){
@@ -181,7 +188,7 @@ import org.testng.annotations.Test;
             newsFeedHomePage.clickToItemOnSettingMenu(driver,"ic-logout-c");
             newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
             log.info("Step 6 - Check Logout account success");
-            verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay(driver));
+            verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay());
         }
         @Test
         public void Testcase_Newsfeed_Login_07_Login_With_Valid_Phone(){
@@ -198,7 +205,7 @@ import org.testng.annotations.Test;
             newsFeedHomePage.clickToItemOnSettingMenu(driver,"ic-logout-c");
             newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
             log.info("Step 6 - Check Logout account success");
-            verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay(driver));
+            verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay());
         }
         @Test(enabled = false)
         public void Testcase_Newsfeed_Login_08_Login_With_Phone_contains_PhoneCode(){
@@ -215,7 +222,7 @@ import org.testng.annotations.Test;
             newsFeedHomePage.clickToItemOnSettingMenu(driver,"ic-logout-c");
             newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
             log.info("Step 6 - Check Logout account success");
-            verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay(driver));
+            verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay());
         }
     }
 
