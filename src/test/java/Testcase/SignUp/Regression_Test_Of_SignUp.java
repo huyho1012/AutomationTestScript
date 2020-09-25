@@ -25,7 +25,7 @@ import Project.Newsfeed.Boooking.PaymentGateWay.StripeGateway;
 import Project.Newsfeed.Boooking.PaymentInfo;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
 import Project.Newsfeed.PageWall.TourDetail;
-import Project.Newsfeed.PersonalWall.About.Personal_About_Overview_PageObject;
+import Project.Newsfeed.PersonalWall.About.PerAbout_Overview_PageObject;
 import Project.Newsfeed.PersonalWall.Handnote.Handnote_Tour;
 import Project.Newsfeed.PersonalWall.About.PersonalAboutPage;
 import Project.Shared.Login.LoginPage;
@@ -49,7 +49,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
 
 
     PersonalAboutPage perAboutPage;
-    Personal_About_Overview_PageObject overviewPage;
+    PerAbout_Overview_PageObject overviewPage;
 
 
     GeneralAccountSetting generalAccSetting;
@@ -230,9 +230,9 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         verifyEquals(fullName, getFullName(firstNameUser, lastNameUser));
         log.info("Step 3.Go Personal about");
         newsfeedHomePage.clickToEditProfile(driver);
-        overviewPage = PageGeneration.createPersonalOverviewPage(driver);
+//        overviewPage = PageGeneration.createPersonalOverviewPage(driver);
         log.info("Step 4.Check Personall about page display");
-        verifyTrue(overviewPage.checkPageIsDisplay(getFullName(firstNameUser, lastNameUser)));
+        verifyTrue(overviewPage.checkPersonalPageIsDisplay(getFullName(firstNameUser, lastNameUser)));
         log.info("Step 5.Verify email on Introduce widget display correct");
         verifyEquals(overviewPage.getEmailIsDisplayOnIntroduceWidget(fullName), emailUser);
         log.info("Step 6.Verify birthday on Introduce widget display correct");

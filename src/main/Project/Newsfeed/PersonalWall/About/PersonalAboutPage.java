@@ -11,14 +11,14 @@ public class PersonalAboutPage extends HeaderPage {
     WebDriver driver;
 
     // Hàm xử lý các thông tin trong widget introduction
-    public boolean checkPageIsDisplay(String fullName) {
+    public boolean checkPersonalPageIsDisplay(String fullName) {
         waitElementToVisible(driver, PersonalHeadCoverUI.PERSONAL_PAGE);
         return getPageTitle(driver).equalsIgnoreCase("Giới thiệu - Trang cá nhân | Hahalolo")
                 && getTextElement(driver, PersonalHeadCoverUI.HEADER_COVER_FULLNAME).equalsIgnoreCase(fullName);
     }
 
 
-    public void clickToItemOnNavTabOnAbout(String aboutItem){
+    public void clickToTabItemOnAbout(String aboutItem){
         waitElementToVisible(driver, AboutCommonUI.ABOUT_NAVIGATION_MENU);
         waitForElementClickable(driver, AboutCommonUI.ITEM_ON_ABOUT_NAVIGATION_MENU,aboutItem);
         clickToElement(driver, AboutCommonUI.ITEM_ON_ABOUT_NAVIGATION_MENU);

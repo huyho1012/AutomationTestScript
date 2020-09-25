@@ -9,7 +9,8 @@ import Project.Newsfeed.Boooking.BoookingTour;
 import Project.Newsfeed.Boooking.PaymentGateWay.StripeGateway;
 import Project.Newsfeed.Boooking.PaymentInfo;
 import Project.Newsfeed.PageWall.TourDetail;
-import Project.Newsfeed.PersonalWall.About.Personal_About_Overview_PageObject;
+import Project.Newsfeed.PersonalWall.About.PerAbout_BasicInfoAndContact_PageObject;
+import Project.Newsfeed.PersonalWall.About.PerAbout_Overview_PageObject;
 import Project.Newsfeed.PersonalWall.Handnote.Handnote_Tour;
 import Project.Newsfeed.PersonalWall.Timeline.NewsfeedPersonalTimeline;
 import Project.Shared.Login.LoginPage;
@@ -182,7 +183,11 @@ public class PageGeneration {
         return new NewsfeedPersonalTimeline(driver);
     }
 
-    public static Personal_About_Overview_PageObject createPersonalOverviewPage(WebDriver driver) {
-        return  new Personal_About_Overview_PageObject(driver);
+    public static PerAbout_Overview_PageObject createPersonalOverviewPage(WebDriver driver) {
+        return new PerAbout_Overview_PageObject(driver);
+    }
+
+    public static PerAbout_BasicInfoAndContact_PageObject createperBasicInfoAndContactPage(WebDriver driver) {
+        return new PerAbout_BasicInfoAndContact_PageObject(driver);
     }
 }

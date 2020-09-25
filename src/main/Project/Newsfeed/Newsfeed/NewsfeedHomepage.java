@@ -4,7 +4,7 @@ import Interfaces.hahalolo_newsfeed.HeaderPageUI;
 import Interfaces.hahalolo_newsfeed.Homepage.HomePageUI;
 import org.openqa.selenium.WebDriver;
 
-public class NewsfeedHomepage extends HeaderPage {
+public class  NewsfeedHomepage extends HeaderPage {
     WebDriver driver;
     public NewsfeedHomepage(WebDriver webDriver){
         driver = webDriver;
@@ -81,11 +81,17 @@ public class NewsfeedHomepage extends HeaderPage {
         setTimeDelay(1);
     }
 
+    public void updateNewInformationOfAccount(String dayItem, String monthItem, String yearItem, String gender, String nationality){
+        updateBirthdayOfUser(driver, dayItem,monthItem,yearItem);
+        setTimeDelay(2);
+        updateGenderOfUser(driver, gender);
+        setTimeDelay(2);
+        updateNationalOfUser(driver, nationality);
+    }
 
     public boolean checkSiteCommunityIsDisplay(WebDriver driver){
         return checkElementDisplay(driver, HomePageUI.COMMUNITY_SITES_NAME);
     }
-
     public void checkCountOfSite(WebDriver driver){
         int countNumber = countElementNumber(driver,HomePageUI.COMMUNITY_SITES_NUMBERLIST);
         int countCurrent = countElementNumber(driver, HomePageUI.COMMUNITY_SITES_LIST);

@@ -41,9 +41,4 @@ public class AccountSettingUI {
     public static final String ICON_ERROR_CHANGE_USERNAME = "//div[@id='jsLoadMsg']/i[@class ='ffa fa-times text-danger']";
 
 
-<<<<<<< HEAD
-    public static final String MENU_ACCOUNT_SETTING = "" ;
-=======
-    public static final String NO_USERNAME = "//div[@id='js_body_username']//b";
->>>>>>> adc713830de5a294a6c41b775a3c72c6900baef4
 }

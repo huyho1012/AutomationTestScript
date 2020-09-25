@@ -101,10 +101,10 @@ public class GeneralAccountSetting extends AccountCommon {
         return getTextElement(driver, AccountSettingUI.USERNAME);
     }
 
-    public String getMessageNoUsernameIsDisplay(){
-        waitElementToVisible(driver, AccountSettingUI.NO_USERNAME);
-        return getTextElement(driver, AccountSettingUI.NO_USERNAME);
-    }
+//    public String getMessageNoUsernameIsDisplay(){
+//        waitElementToVisible(driver, AccountSettingUI.NO_USERNAME);
+//        return getTextElement(driver, AccountSettingUI.NO_USERNAME);
+//    }
     public void clickToButtonEditUsername() {
         waitForElementClickable(driver, AccountSettingUI.BUTTON_EDIT_USERNAME);
         clickToElement(driver, AccountSettingUI.BUTTON_EDIT_USERNAME);
@@ -136,9 +136,9 @@ public class GeneralAccountSetting extends AccountCommon {
     }
 
 
-    public String getMessageNoUsername() {
-        return getTextElement(driver,AccountSettingUI.NO_USERNAME);
-    }
+//    public String getMessageNoUsername() {
+//        return getTextElement(driver,AccountSettingUI.NO_USERNAME);
+//    }
 
     public boolean checkGeneralAccountSettingTabIsDisplay(String fullName) {
         waitElementToVisible(driver,AccountSettingUI.FULL_NAME);

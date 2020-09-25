@@ -5,11 +5,11 @@ import Project.Newsfeed.PersonalWall.PersonalCommon;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-public class WorkAndEducation extends PersonalCommon {
+public class PerAbout_WorkAndEducation_PageObject extends PersonalCommon {
 
     WebDriver driver;
 
-    public WorkAndEducation(WebDriver webDriver){
+    public PerAbout_WorkAndEducation_PageObject(WebDriver webDriver){
         driver = webDriver;
     }
 

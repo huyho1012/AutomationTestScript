@@ -7,8 +7,7 @@ import Common.GlobalVariables;
 import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
-import Project.Newsfeed.PersonalWall.About.PersonalAboutPage;
-import Project.Newsfeed.PersonalWall.About.Personal_About_Overview_PageObject;
+import Project.Newsfeed.PersonalWall.About.PerAbout_Overview_PageObject;
 import Project.Shared.Login.LoginPage;
 import Project.Shared.SingUp.SignUpPage;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +20,7 @@ public class Component_Test_Of_SignUp extends AbstractTest {
     SignUpPage signUpPage;
     LoginPage newsfeedLoginPage;
     NewsfeedHomepage newsfeedPage;
-    Personal_About_Overview_PageObject overviewPage;
+    PerAbout_Overview_PageObject overviewPage;
     // Khai báo giá trị nhập vào
     String email, firstName, lastName;
     String HTML_CODE, SCRIPT_CODE;

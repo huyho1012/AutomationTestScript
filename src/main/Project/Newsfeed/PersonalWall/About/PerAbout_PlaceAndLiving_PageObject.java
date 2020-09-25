@@ -3,9 +3,9 @@ package Project.Newsfeed.PersonalWall.About;
 import Interfaces.hahalolo_newsfeed.PersonaWall.About.PlaceAndLiving_UI;
 import org.openqa.selenium.WebDriver;
 
-public class PersonalAbout_PlaceAndLiving_PageObject extends PersonalAboutPage{
+public class PerAbout_PlaceAndLiving_PageObject extends PersonalAboutPage{
     WebDriver driver;
-    public PersonalAbout_PlaceAndLiving_PageObject(WebDriver webDriver){
+    public PerAbout_PlaceAndLiving_PageObject(WebDriver webDriver){
         driver = webDriver;
     }
 

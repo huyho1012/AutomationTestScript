@@ -44,9 +44,6 @@ public class WorkEducationUI {
     public static final String EDIT_WORKPLACE_FUNCTION = "";
 
 
-;
-
-
     public static final String SAVE_WORKPLACE_BUTTON = "";
 
 }

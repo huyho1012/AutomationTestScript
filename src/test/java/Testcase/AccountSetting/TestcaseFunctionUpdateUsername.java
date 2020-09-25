@@ -285,7 +285,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         verifyTrue(accountSetting.checkAccountGeneralSettingIsDisplay());
 
         // Step 6 - Kiểm tra định danh người dùng hiển thị mặc định lúc mới dc tài khoản
-        verifyEquals(accountSetting.getMessageNoUsername(),"Bạn chưa thiết lập tên người dùng");
+//        verifyEquals(accountSetting.getMessageNoUsername(),"Bạn chưa thiết lập tên người dùng");
 
         // Step 7 - Nhấn nút chihnr sửa định danh người dùng
         accountSetting.clickToButtonEditUsername();
@@ -312,7 +312,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
 
         // Step 14 - Nhấn vào trang cá nhân của người dùng
         accountSetting.clickToAvatarOnHeader(driver);
-        personalAboutPage = PageGeneration.createPerTAboutPage(driver);
+//        personalAboutPage = PageGeneration.createPerTAboutPage(driver);
 
         // Step 15 - Kiểm tra link đinh danh người dùng tại màn hình thay đổi dịnh danh người dung với link của người dùng tại trang cá nhân
         verifyEquals(personalAboutPage.getCurrentURL(driver),urlUserName);
