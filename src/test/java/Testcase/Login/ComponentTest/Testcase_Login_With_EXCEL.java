@@ -23,49 +23,48 @@ public class Testcase_Login_With_EXCEL extends AbstractTest {
     @BeforeTest
     public void preconditionTest(String browserName) {
         ExcelUtil.setExcelFileSheet();
+
         log.info("Precondition - Step 1. Create Browser Driver ");
         driverManager = BrowserInitialization.getBrowser(browserName);
+
         log.info("Precondition - Step 2. Open browser and go to Newsfeed login");
         driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
         newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
-        log.info("Precondition - Step 3.  Verify url page");
-        verifyEquals(newsfeedLogin.getCurrentURL(driver), "https://test-newsfeed.hahalolo.com/auth/signin");
-        log.info("Precondition - Step 4. Verify icon Google play display");
-        verifyTrue(newsfeedLogin.checkGooglePlayIconIsDisplay(driver));
-        log.info("Precondition - Step 5. Verify icon App store display");
-        verifyTrue(newsfeedLogin.checkAppStoreIconIsDisplay(driver));
-        log.info("Precondition - Step 6. Change system language To Vi");
+
+        log.info("Precondition - Step 3. Change system language To Vi");
         newsfeedLogin.clickToChangeLanguageToVI();
-        setTimeDelay(1);
     }
 
     @Test
-    public void Testcase_Newsfeed_Login_01_Login_With_Invalid_Information(){
+    public void TC01_Login_With_Invalid_Information(){
         newsfeedLogin.Login(ExcelUtil.getRowData(1));
         ExcelUtil.setRowNumber(1);
         verifyEquals(newsfeedLogin.getErrorMessageOfUsername(driver),ExcelUtil.getCellData(1,4));
         verifyEquals(newsfeedLogin.getErrorMessageOfPassword(driver),ExcelUtil.getCellData(1,5));
     }
+
     @Test
-    public void Testcase_Newsfeed_Login_02_Login_With_UserName_Not_Existed_On_Hahalolo() {
+    public void TC02_Login_With_Account_Not_Exist_On_Hahalolo() {
         newsfeedLogin.Login(ExcelUtil.getRowData(2));
         ExcelUtil.setRowNumber(2);
         verifyEquals(newsfeedLogin.getErrorMessageOfPassword(driver), ExcelUtil.getCellData(2, 5));
     }
+
     @Test
-    public void Testcase_Newsfeed_Login_03_Login_With_Password_Incorrect(){
+    public void TC03_Login_With_Incorrect_Password(){
         newsfeedLogin.Login(ExcelUtil.getRowData(3));
         ExcelUtil.setRowNumber(3);
         verifyEquals(newsfeedLogin.getErrorMessageOfPassword(driver), ExcelUtil.getCellData(3, 5));
     }
+
     @Test
-    public void Testcase_Newsfeed_Login_04_Login_With_Invalid_Password(){
+    public void T04_Login_With_Invalid_Password(){
         log.info("Step 1. Blank password");
         newsfeedLogin.Login(ExcelUtil.getRowData(4));
         ExcelUtil.setRowNumber(4);
         verifyEquals(newsfeedLogin.getErrorMessageOfPassword(driver), ExcelUtil.getCellData(4, 5));
 
-        log.info("Step 2. Enter white space");
+        log.info("Step 2. All white space");
         newsfeedLogin.Login(ExcelUtil.getRowData(5));
         ExcelUtil.setRowNumber(5);
         verifyEquals(newsfeedLogin.getErrorMessageOfPassword(driver), ExcelUtil.getCellData(5, 5));
@@ -85,9 +84,9 @@ public class Testcase_Login_With_EXCEL extends AbstractTest {
         ExcelUtil.setRowNumber(8);
         verifyEquals(newsfeedLogin.getErrorMessageOfPassword(driver), ExcelUtil.getCellData(8, 5));
     }
+
     @Test
-    public void Testcase_Newsfeed_Login_05_Login_With_Invalid_Account() {
-        newsfeedLogin.enterPasswordToLogin(driver, "123456");
+    public void TC05_Login_With_Invalid_Account() {
         log.info("Step 1 - Blank Username");
         newsfeedLogin.Login(ExcelUtil.getRowData(9));
         ExcelUtil.setRowNumber(9);
@@ -153,8 +152,9 @@ public class Testcase_Login_With_EXCEL extends AbstractTest {
         ExcelUtil.setRowNumber(21);
         verifyEquals(newsfeedLogin.getErrorMessageOfUsername(driver), ExcelUtil.getCellData(21, 4));
     }
+
     @Test
-    public void Testcase_Newsfeed_Login_06_Login_With_Valid_Account(){
+    public void TC06_Login_With_Valid_Account(){
         newsfeedLogin.Login(ExcelUtil.getRowData(22));
         ExcelUtil.setRowNumber(22);
         newsFeedHomePage = PageGeneration.createNewsfeedHomepage(driver);
@@ -167,47 +167,38 @@ public class Testcase_Login_With_EXCEL extends AbstractTest {
         verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay());
     }
     @Test
-    public void Testcase_Newsfeed_Login_07_Login_With_Uppercase_Email(){
+    public void TC07_Login_With_Uppercase_Email(){
+        log.info("Step 1. Login account");
         newsfeedLogin.Login(ExcelUtil.getRowData(23));
         ExcelUtil.setRowNumber(23);
         newsFeedHomePage = PageGeneration.createNewsfeedHomepage(driver);
-        log.info("Step 4. Verify Login success");
+
+        log.info("Step 2. Verify Login success");
         verifyTrue(newsFeedHomePage.checkNewsfeedDisplay());
-        log.info("Step 5 - Logout account");
+
+        log.info("Step 3 - Logout account");
         newsFeedHomePage.clickToItemOnSettingMenu(driver,"ic-logout-c");
         newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
-        log.info("Step 6 - Check Logout account success");
+
+        log.info("Step 4 - Check Logout account success");
         verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay());
     }
+
     @Test
-    public void Testcase_Newsfeed_Login_08_Login_With_Valid_Phone(){
+    public void TC08_Login_With_Valid_Phone(){
+        log.info("Step 1. Login account");
         newsfeedLogin.Login(ExcelUtil.getRowData(24));
         ExcelUtil.setRowNumber(24);
         newsFeedHomePage = PageGeneration.createNewsfeedHomepage(driver);
-        newsFeedHomePage = PageGeneration.createNewsfeedHomepage(driver);
-        log.info("Step 4. Verify Login success");
+
+        log.info("Step 2. Verify login success");
         verifyTrue(newsFeedHomePage.checkNewsfeedDisplay());
-        log.info("Step 5 - Logout account");
+
+        log.info("Step 3 - Logout account");
         newsFeedHomePage.clickToItemOnSettingMenu(driver,"ic-logout-c");
         newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
-        log.info("Step 6 - Check Logout account success");
-        verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay());
-    }
-    @Test(enabled = false)
-    public void Testcase_Newsfeed_Login_98_Login_With_Phone_contains_PhoneCode(){
-        log.info("Step 1 - Enter username");
-        newsfeedLogin.enterUserNameToLogin(driver,"840936709449");
-        log.info("Step 2 - Enter password");
-        newsfeedLogin.enterPasswordToLogin(driver,"20b87bis");
-        log.info("Step 3 - Click Login button");
-        newsfeedLogin.clickToLoginButton(driver);
-        newsFeedHomePage = PageGeneration.createNewsfeedHomepage(driver);
-        log.info("Step 4. Verify Login success");
-        verifyTrue(newsFeedHomePage.checkNewsfeedDisplay());
-        log.info("Step 5 - Logout account");
-        newsFeedHomePage.clickToItemOnSettingMenu(driver,"ic-logout-c");
-        newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
-        log.info("Step 6 - Check Logout account success");
+
+        log.info("Step 4 - Check Logout account success");
         verifyTrue(newsfeedLogin.checkNewsfeedLoginPageDisplay());
     }
 }

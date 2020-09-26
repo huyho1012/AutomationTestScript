@@ -10,15 +10,19 @@ public class  NewsfeedHomepage extends HeaderPage {
         driver = webDriver;
     }
 
+    // Chức năng Cập nhật thông tin tài khoản
+    // Hàm kiểm tra form cập nhật thông tin đối với trường hợp đắng ký mới
     public boolean formFirstUpdateInfoIsDisplay() {
         waitElementToVisible(driver,HomePageUI.UPDATE_INFO_BUTTON);
         return checkElementDisplay(driver, HomePageUI.FORM_UPDATE_NEW_INFO);
     }
 
+    //
     public String getTitleOfFormFirstUpdateInfo() {
         return getTextElement(driver, HomePageUI.FORM_UPDATE_NEW_INFO_TITLE);
     }
 
+    // hàm cập nhậtNga
     public void updateBirthdayOfUser(WebDriver driver, String dayItem, String monthItem, String yearItem) {
         selectItemInCustomDropdown(driver,HomePageUI.DYNAMIC_BIRTHDAY_DROPDOWN, HomePageUI.DYNAMIC_BIRTHDAY_ITEM,dayItem,"day");
         setTimeDelay(1);
@@ -53,7 +57,6 @@ public class  NewsfeedHomepage extends HeaderPage {
     public void changeLanguageNewsfeedToVI() {
         waitForElementClickable(driver,HomePageUI.FOOTER_VI_LANGUAGE);
         clickToElement(driver, HomePageUI.FOOTER_VI_LANGUAGE);
-        setTimeDelay(3);
     }
 
     public String getFullNameDisplayOnMyAccount(WebDriver driver) {
@@ -78,7 +81,6 @@ public class  NewsfeedHomepage extends HeaderPage {
     public void clickCancelUpdateNewInfo() {
         waitForElementClickable(driver, HomePageUI.CANCEL_UPDATE_INFO);
         clickToElement(driver, HomePageUI.CANCEL_UPDATE_INFO);
-        setTimeDelay(1);
     }
 
     public void updateNewInformationOfAccount(String dayItem, String monthItem, String yearItem, String gender, String nationality){
@@ -88,51 +90,4 @@ public class  NewsfeedHomepage extends HeaderPage {
         setTimeDelay(2);
         updateNationalOfUser(driver, nationality);
     }
-
-    public boolean checkSiteCommunityIsDisplay(WebDriver driver){
-        return checkElementDisplay(driver, HomePageUI.COMMUNITY_SITES_NAME);
-    }
-    public void checkCountOfSite(WebDriver driver){
-        int countNumber = countElementNumber(driver,HomePageUI.COMMUNITY_SITES_NUMBERLIST);
-        int countCurrent = countElementNumber(driver, HomePageUI.COMMUNITY_SITES_LIST);
-        do{
-            clickToElement(driver,HomePageUI.COMMUNITY_SITES_VIEW_MORE);
-        } while (countCurrent == countNumber);
-        clickToElement(driver, HomePageUI.COMMUNITY_SITES_NAME,"Page Cộng Đồng 1");
-    }
-    public void goToSite(WebDriver driver) {
-        waitElementToVisible(driver, HomePageUI.COMMUNITY_SITES_LIST);
-        int countCurrent = countElementNumber(driver, HomePageUI.COMMUNITY_SITES_LIST);
-//        do {
-//            int n = 0;
-//            if (getTextElement(driver, HomePageUI.COMMUNITY_SITES_LIST).contains("Page Cộng Đồng 1")) {
-//                waitForElementClickable(driver,HomePageUI.COMMUNITY_SITES_NAME, "Page Cộng Đồng 1");
-//                clickToElementByJS(driver, HomePageUI.COMMUNITY_SITES_NAME, "Page Cộng Đồng 1");
-//                System.out.println("Do action 1");
-//            }
-//            else{
-//                clickToElement(driver, HomePageUI.COMMUNITY_SITES_VIEW_MORE);
-//                setTimeDelay(3);
-//                System.out.println("Click View more");
-//            }
-//        } while (n == countCurrent);
-//        System.out.println(countCurrent);
-//        System.out.println(countNumber);
-
-        for( int i =1 ; i <= countCurrent; i++){
-            if (getTextElement(driver, HomePageUI.COMMUNITY_SITES_LIST).contains("Page Cộng Đồng 1")) {
-                waitForElementClickable(driver,HomePageUI.COMMUNITY_SITES_NAME, "Page Cộng Đồng 1");
-                clickToElementByJS(driver, HomePageUI.COMMUNITY_SITES_NAME, "Page Cộng Đồng 1");
-                System.out.println("Do action click to page");
-            }
-            else {
-                if(i %3 ==0){
-                    clickToElement(driver, HomePageUI.COMMUNITY_SITES_VIEW_MORE);
-                    System.out.println("Do action click show more");
-                }
-            }
-        }
-
-    }
-
 }

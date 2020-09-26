@@ -1,4 +1,4 @@
-package Testcase.PersonalPageWall;
+package Testcase.PersonalPageWall.DetailsAboutYou;
 
 import Common.DriverManagement.BrowserInitialization;
 import Common.DriverManagement.DriverManager;
@@ -79,9 +79,9 @@ public class Testcase_PersonalAbout_DetailsAboutYou extends AbstractTest {
         // Kiểm tra người dùng vào đúng trang tài khoản của mình
         verifyTrue(perOverviewPage.checkPersonalPageIsDisplay(fullNameOfUser));
         // Lấy các thông tin hiển tại Widget Introduce
-        String genderOnPerIntroduce = perOverviewPage.getGenderDisplayOnIntroduceWidget(fullNameOfUser);
-        String emailOnPerIntroduce = perOverviewPage.getEmailIsDisplayOnIntroduceWidget(fullNameOfUser);
-        String birthdayOnPerIntroduce = perOverviewPage.getBirthdayDisplayOnIntroduceWidget(fullNameOfUser);
+        String genderOnPerIntroduce = perOverviewPage.getGenderDisplayOnIntroduceWidget();
+        String emailOnPerIntroduce = perOverviewPage.getEmailIsDisplayOnIntroduceWidget();
+        String birthdayOnPerIntroduce = perOverviewPage.getBirthdayDisplayOnIntroduceWidget();
 
         log.info("Step 4 - Go to Personal - Basic info and contact");
         perOverviewPage.clickToTabItemOnAbout("#about_contact");

@@ -234,11 +234,11 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         log.info("Step 4.Check Personall about page display");
         verifyTrue(overviewPage.checkPersonalPageIsDisplay(getFullName(firstNameUser, lastNameUser)));
         log.info("Step 5.Verify email on Introduce widget display correct");
-        verifyEquals(overviewPage.getEmailIsDisplayOnIntroduceWidget(fullName), emailUser);
+        verifyEquals(overviewPage.getEmailIsDisplayOnIntroduceWidget(), emailUser);
         log.info("Step 6.Verify birthday on Introduce widget display correct");
-        verifyEquals(overviewPage.getBirthdayDisplayOnIntroduceWidget(fullName), birthdayUser);
+        verifyEquals(overviewPage.getBirthdayDisplayOnIntroduceWidget(), birthdayUser);
         log.info("Step 7.Verify gender on Introduce widget display correct");
-        verifyEquals(overviewPage.getGenderDisplayOnIntroduceWidget(fullName), genderUser);
+        verifyEquals(overviewPage.getGenderDisplayOnIntroduceWidget(), genderUser);
         log.info("Step 8.Go to Account setting page");
         overviewPage.clickToItemOnSettingMenu(driver, "ic-cog-c");
         generalAccSetting = PageGeneration.createGeneralAccountSettingPage(driver);

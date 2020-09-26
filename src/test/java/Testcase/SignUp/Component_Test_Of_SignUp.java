@@ -311,7 +311,7 @@ public class Component_Test_Of_SignUp extends AbstractTest {
         overviewPage = PageGeneration.createPersonalOverviewPage(driver);
 
         log.info("Step 11. Check email display");
-        verifyEquals(overviewPage.getEmailIsDisplayOnIntroduceWidget(fullName), email);
+        verifyEquals(overviewPage.getEmailIsDisplayOnIntroduceWidget(), email);
 
         log.info("Step 12 - Logout account");
         overviewPage.clickToItemOnSettingMenu(driver,"ic-logout-c");
@@ -358,7 +358,7 @@ public class Component_Test_Of_SignUp extends AbstractTest {
         overviewPage = PageGeneration.createPersonalOverviewPage(driver);
 
         log.info("Step 11. Check email display");
-        verifyEquals(overviewPage.getEmailIsDisplayOnIntroduceWidget(fullName), email);
+        verifyEquals(overviewPage.getEmailIsDisplayOnIntroduceWidget(), email);
 
         log.info("Step 12. Logout account");
         overviewPage.clickToItemOnSettingMenu(driver,"ic-logout-c");
@@ -404,7 +404,7 @@ public class Component_Test_Of_SignUp extends AbstractTest {
         overviewPage = PageGeneration.createPersonalOverviewPage(driver);
 
         log.info("Step 11. Check email display");
-        verifyEquals(overviewPage.getEmailIsDisplayOnIntroduceWidget(fullName), email);
+        verifyEquals(overviewPage.getEmailIsDisplayOnIntroduceWidget(), email);
 
         log.info("Step 12 - Logout account");
         overviewPage.clickToItemOnSettingMenu(driver,"ic-logout-c");

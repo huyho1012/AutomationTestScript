@@ -22,4 +22,10 @@ public class HeaderPageUI {
     public static final String SETTING_ITEM = "//div[@class='menu menu--top']//i[contains(@class, '%s')]";
     public static final String BUSINESS_NAVBAR_MENU ="//div[@id ='menu-primary']//a[@data-menu='%s']" ;
     public static final String TOAST_MESSAGE ="//div[@class='toast-body']" ;
+
+
+
+
+
+
 }

@@ -1,6 +1,6 @@
 package Interfaces.hahalolo_newsfeed.PersonaWall.About;
 
-public class WorkEducationUI {
+public class PerAbout_WorkAndEducation_PageUI {
 
     // List Workplace
     public static final String ADD_NEW_WORKPLACE = "//div[contains(@data-bind,'doOpen.formAddWorkplace')]";

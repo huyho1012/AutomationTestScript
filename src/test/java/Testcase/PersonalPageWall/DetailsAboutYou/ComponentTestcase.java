@@ -1,4 +1,4 @@
-package Testcase.PersonalPageWall;
+package Testcase.PersonalPageWall.DetailsAboutYou;
 
 import Common.DriverManagement.BrowserInitialization;
 import Common.DriverManagement.DriverManager;
@@ -11,23 +11,27 @@ import Project.Newsfeed.PersonalWall.About.PerAbout_Overview_PageObject;
 import Project.Shared.Login.LoginPage;
 import Project.Shared.SingUp.SignUpPage;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
 
 public class ComponentTestcase extends AbstractTest {
     WebDriver driver;
     DriverManager driverManager;
 
+    // Khai báo param
     String emailUser, passwordUser;
+
+    // Khai báo Page Object
     LoginPage newsfeedLoginPage;
     NewsfeedHomepage newsfeedHomepage;
-
     PerAbout_Overview_PageObject perOverviewTab;
     PerAbout_DetailsAboutYou_PageObject perDetailAboutTab;
     SignUpPage signUpPage;
 
-
+    @Test
     public void preconditionStep(String browserName){
         emailUser = "balo_04@mailinator.com";
         passwordUser = "123456";
+
         log.info("Precondition Step 1 - Create browser driver");
         driverManager = BrowserInitialization.getBrowser(browserName);
 
@@ -35,8 +39,10 @@ public class ComponentTestcase extends AbstractTest {
         driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
         newsfeedLoginPage = PageGeneration.createNewsfeedLoginPage(driver);
 
+        log.info("Precondition Step 3 - Change language system to VI");
         newsfeedLoginPage.clickToChangeLanguageToVI();
-        log.info("Preconditon Step 3 - Login newsfeed");
+
+        log.info("Preconditon Step 4 - Login newsfeed");
         newsfeedLoginPage.Login(emailUser, passwordUser);
         newsfeedHomepage = PageGeneration.createNewsfeedHomepage(driver);
     }
