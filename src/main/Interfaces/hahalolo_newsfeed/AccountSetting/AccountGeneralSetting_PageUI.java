@@ -1,6 +1,6 @@
 package Interfaces.hahalolo_newsfeed.AccountSetting;
 
-public class AccountSettingUI {
+public class AccountGeneralSetting_PageUI {
     public static final String TITLE_PAGE = "//div[@id='%s']//div[@class = 'pageUI-about-heading']";
     public static final String ACCOUNT_SETTING_PAGE = "//div[@class = 'pageUI-header__title']";
     public static final String ACCOUNT_SETTING_MENU = "//nav[contains(@class,'pageUI-nav-column')]";

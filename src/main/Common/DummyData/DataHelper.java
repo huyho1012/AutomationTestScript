@@ -38,6 +38,9 @@ public class DataHelper {
         return faker.name().firstName();
     }
 
+    public String getMiddleName(){
+        return faker.name().nameWithMiddle();
+    }
     public String getLastName(){
         return faker.address().firstName();
     }

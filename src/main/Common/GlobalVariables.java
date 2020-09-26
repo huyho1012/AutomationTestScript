@@ -13,5 +13,13 @@ public class GlobalVariables {
     public static final String ADMIN_ACCOUNT = "balo_04@mailinator.com";
     public static final String ADMIN_PASSWORD = "123456";
 
+    public static final String USER_ACCOUNT = "balo_04@mailinator.com";
+    public static final String USER_PASSWORD = "123456";
+
+    public static final String HTML_CODE = "<h>HelloWord</h>";
+    public static final String SCRPIT_CODE = "<script>destroyWebsite();</script>";
+
+
+
 
 }

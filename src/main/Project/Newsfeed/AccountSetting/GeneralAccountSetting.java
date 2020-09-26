@@ -1,6 +1,6 @@
 package Project.Newsfeed.AccountSetting;
 
-import Interfaces.hahalolo_newsfeed.AccountSetting.AccountSettingUI;
+import Interfaces.hahalolo_newsfeed.AccountSetting.AccountGeneralSetting_PageUI;
 import org.openqa.selenium.WebDriver;
 
 public class GeneralAccountSetting extends AccountCommon {
@@ -10,95 +10,95 @@ public class GeneralAccountSetting extends AccountCommon {
     }
 
     public String getFullNameIsDisplay(WebDriver driver) {
-        waitElementToVisible(driver, AccountSettingUI.FULLNAME_LOADING);
-        return getTextElement(driver, AccountSettingUI.FULL_NAME);
+        waitElementToVisible(driver, AccountGeneralSetting_PageUI.FULLNAME_LOADING);
+        return getTextElement(driver, AccountGeneralSetting_PageUI.FULL_NAME);
     }
 
     public void clickToButtonEditFullName(WebDriver driver) {
-        waitForElementClickable(driver, AccountSettingUI.BUTTON_EDIT_FULLNAME);
-        clickToElement(driver, AccountSettingUI.BUTTON_EDIT_FULLNAME);
+        waitForElementClickable(driver, AccountGeneralSetting_PageUI.BUTTON_EDIT_FULLNAME);
+        clickToElement(driver, AccountGeneralSetting_PageUI.BUTTON_EDIT_FULLNAME);
     }
 
     public boolean checkUpdateFullNameFormIsDisplay(WebDriver driver) {
-        return checkElementDisplay(driver, AccountSettingUI.FIRSTNAME_FIELD)
-                && checkElementDisplay(driver, AccountSettingUI.MIDDLENAME_FIELD)
-                && checkElementDisplay(driver, AccountSettingUI.LASTNAME_FIELD);
+        return checkElementDisplay(driver, AccountGeneralSetting_PageUI.FIRSTNAME_FIELD)
+                && checkElementDisplay(driver, AccountGeneralSetting_PageUI.MIDDLENAME_FIELD)
+                && checkElementDisplay(driver, AccountGeneralSetting_PageUI.LASTNAME_FIELD);
     }
 
     public void enterDataToFirstNameField(WebDriver driver, String firstName) {
-        waitElementToVisible(driver, AccountSettingUI.FIRSTNAME_FIELD);
-        sendKeyToElement(driver, AccountSettingUI.FIRSTNAME_FIELD, firstName);
+        waitElementToVisible(driver, AccountGeneralSetting_PageUI.FIRSTNAME_FIELD);
+        sendKeyToElement(driver, AccountGeneralSetting_PageUI.FIRSTNAME_FIELD, firstName);
     }
 
     public String getErrMessageValidationOfFirstName(WebDriver driver) {
-        waitElementToVisible(driver, AccountSettingUI.ERR_VALIDATION_OF_FIRSTNAME);
-        return getTextElement(driver, AccountSettingUI.ERR_VALIDATION_OF_FIRSTNAME);
+        waitElementToVisible(driver, AccountGeneralSetting_PageUI.ERR_VALIDATION_OF_FIRSTNAME);
+        return getTextElement(driver, AccountGeneralSetting_PageUI.ERR_VALIDATION_OF_FIRSTNAME);
     }
 
     public void enterDataToLastnameField(WebDriver driver, String lastName) {
-        waitElementToVisible(driver, AccountSettingUI.LASTNAME_FIELD);
-        sendKeyToElement(driver, AccountSettingUI.LASTNAME_FIELD, lastName);
+        waitElementToVisible(driver, AccountGeneralSetting_PageUI.LASTNAME_FIELD);
+        sendKeyToElement(driver, AccountGeneralSetting_PageUI.LASTNAME_FIELD, lastName);
     }
 
     public String getErrMessageValidationOfLastName(WebDriver driver) {
-        waitElementToVisible(driver, AccountSettingUI.ERR_VALIDATION_OF_LASTNAME);
-        return getTextElement(driver, AccountSettingUI.ERR_VALIDATION_OF_LASTNAME);
+        waitElementToVisible(driver, AccountGeneralSetting_PageUI.ERR_VALIDATION_OF_LASTNAME);
+        return getTextElement(driver, AccountGeneralSetting_PageUI.ERR_VALIDATION_OF_LASTNAME);
     }
 
     public void enterDataToMidnameField(WebDriver driver, String midName) {
-        waitElementToVisible(driver, AccountSettingUI.MIDDLENAME_FIELD);
-        sendKeyToElement(driver, AccountSettingUI.MIDDLENAME_FIELD, midName);
+        waitElementToVisible(driver, AccountGeneralSetting_PageUI.MIDDLENAME_FIELD);
+        sendKeyToElement(driver, AccountGeneralSetting_PageUI.MIDDLENAME_FIELD, midName);
     }
 
     public Object getErrMessageValidationOfMidName(WebDriver driver) {
-        waitElementToVisible(driver, AccountSettingUI.ERR_VALIDATION_OF_MIDDLENAME);
-        return getTextElement(driver, AccountSettingUI.ERR_VALIDATION_OF_MIDDLENAME);
+        waitElementToVisible(driver, AccountGeneralSetting_PageUI.ERR_VALIDATION_OF_MIDDLENAME);
+        return getTextElement(driver, AccountGeneralSetting_PageUI.ERR_VALIDATION_OF_MIDDLENAME);
     }
 
     public void clickButtonSaveChangesToUpdateFullname(WebDriver driver) {
-        waitForElementClickable(driver, AccountSettingUI.BUTTON_SAVE_CHANGES_FULLNAME);
-        clickToElement(driver, AccountSettingUI.BUTTON_SAVE_CHANGES_FULLNAME);
+        waitForElementClickable(driver, AccountGeneralSetting_PageUI.BUTTON_SAVE_CHANGES_FULLNAME);
+        clickToElement(driver, AccountGeneralSetting_PageUI.BUTTON_SAVE_CHANGES_FULLNAME);
     }
 
     public boolean checkConfirmPasswordPopupIsDisplay(WebDriver driver) {
-        return checkElementDisplay(driver, AccountSettingUI.FORM_CONFIRM_PASS_FOR_CHANGING);
+        return checkElementDisplay(driver, AccountGeneralSetting_PageUI.FORM_CONFIRM_PASS_FOR_CHANGING);
     }
 
     public void enterDataToPasswordConfirm(WebDriver driver, String confirmPwd) {
-        waitElementToVisible(driver, AccountSettingUI.CONFIRM_PASS_FIELD);
-        sendKeyToElement(driver, AccountSettingUI.CONFIRM_PASS_FIELD, confirmPwd);
+        waitElementToVisible(driver, AccountGeneralSetting_PageUI.CONFIRM_PASS_FIELD);
+        sendKeyToElement(driver, AccountGeneralSetting_PageUI.CONFIRM_PASS_FIELD, confirmPwd);
     }
 
     public void clickToConfirmButton() {
-        waitForElementClickable(driver, AccountSettingUI.CONFIRM_BUTTON);
-        clickToElement(driver, AccountSettingUI.CONFIRM_BUTTON);
+        waitForElementClickable(driver, AccountGeneralSetting_PageUI.CONFIRM_BUTTON);
+        clickToElement(driver, AccountGeneralSetting_PageUI.CONFIRM_BUTTON);
     }
 
     public String getErrMessageValidationOfConfirmPass(WebDriver driver) {
-        waitElementToVisible(driver, AccountSettingUI.ERR_MESSAGE_CONFIRM_PASS);
-        return  getTextElement(driver, AccountSettingUI.ERR_MESSAGE_CONFIRM_PASS);
+        waitElementToVisible(driver, AccountGeneralSetting_PageUI.ERR_MESSAGE_CONFIRM_PASS);
+        return  getTextElement(driver, AccountGeneralSetting_PageUI.ERR_MESSAGE_CONFIRM_PASS);
     }
 
     public void clickCancelUpdateFullname(WebDriver driver) {
-        waitForElementClickable(driver, AccountSettingUI.BUTTON_CANCEL_UPDATE_FULLNAME);
-        clickToElement(driver, AccountSettingUI.BUTTON_CANCEL_UPDATE_FULLNAME);
+        waitForElementClickable(driver, AccountGeneralSetting_PageUI.BUTTON_CANCEL_UPDATE_FULLNAME);
+        clickToElement(driver, AccountGeneralSetting_PageUI.BUTTON_CANCEL_UPDATE_FULLNAME);
     }
 
     public void clickButtonToCancelSaveChangeFullName(WebDriver driver) {
-        waitForElementClickable(driver, AccountSettingUI.BUTTON_CANCEL_CONFIRM_PASS);
-        clickToElement(driver, AccountSettingUI.BUTTON_CANCEL_CONFIRM_PASS);
+        waitForElementClickable(driver, AccountGeneralSetting_PageUI.BUTTON_CANCEL_CONFIRM_PASS);
+        clickToElement(driver, AccountGeneralSetting_PageUI.BUTTON_CANCEL_CONFIRM_PASS);
     }
 
     public Object getErrMessageOfChangeFullName(WebDriver driver) {
-        waitElementToVisible(driver,AccountSettingUI.ERR_MESSAGE_OF_FULNAME_FUNCTION);
-        return getTextElement(driver, AccountSettingUI.ERR_MESSAGE_OF_FULNAME_FUNCTION);
+        waitElementToVisible(driver, AccountGeneralSetting_PageUI.ERR_MESSAGE_OF_FULNAME_FUNCTION);
+        return getTextElement(driver, AccountGeneralSetting_PageUI.ERR_MESSAGE_OF_FULNAME_FUNCTION);
     }
 
 
     // Function thay đổi định danh người dùng
     public String getUserIdentityNameDisplay(){
-        waitElementToVisible(driver, AccountSettingUI.USERNAME);
-        return getTextElement(driver, AccountSettingUI.USERNAME);
+        waitElementToVisible(driver, AccountGeneralSetting_PageUI.USERNAME);
+        return getTextElement(driver, AccountGeneralSetting_PageUI.USERNAME);
     }
 
 //    public String getMessageNoUsernameIsDisplay(){
@@ -106,33 +106,33 @@ public class GeneralAccountSetting extends AccountCommon {
 //        return getTextElement(driver, AccountSettingUI.NO_USERNAME);
 //    }
     public void clickToButtonEditUsername() {
-        waitForElementClickable(driver, AccountSettingUI.BUTTON_EDIT_USERNAME);
-        clickToElement(driver, AccountSettingUI.BUTTON_EDIT_USERNAME);
+        waitForElementClickable(driver, AccountGeneralSetting_PageUI.BUTTON_EDIT_USERNAME);
+        clickToElement(driver, AccountGeneralSetting_PageUI.BUTTON_EDIT_USERNAME);
     }
 
     public boolean checkButtonSaveChangeOfUsername() {
-        waitElementToVisible(driver, AccountSettingUI.BUTTON_CANCEL_CHANGE_USERNAME);
-        return checkIsElementIsEnable(driver, AccountSettingUI.BUTTON_SAVE_USERNAME);
+        waitElementToVisible(driver, AccountGeneralSetting_PageUI.BUTTON_CANCEL_CHANGE_USERNAME);
+        return checkIsElementIsEnable(driver, AccountGeneralSetting_PageUI.BUTTON_SAVE_USERNAME);
     }
 
     public void clickToButtonSaveChangeUserName() {
-        waitForElementClickable(driver, AccountSettingUI.BUTTON_SAVE_USERNAME);
-        clickToElement(driver, AccountSettingUI.BUTTON_SAVE_USERNAME);
+        waitForElementClickable(driver, AccountGeneralSetting_PageUI.BUTTON_SAVE_USERNAME);
+        clickToElement(driver, AccountGeneralSetting_PageUI.BUTTON_SAVE_USERNAME);
         setTimeDelay(1);
     }
 
     public String getErrMessOnUsername() {
-        waitElementToVisible(driver, AccountSettingUI.VALIDATE_MESS_OF_USERNAME);
-        return getTextElement(driver, AccountSettingUI.VALIDATE_MESS_OF_USERNAME);
+        waitElementToVisible(driver, AccountGeneralSetting_PageUI.VALIDATE_MESS_OF_USERNAME);
+        return getTextElement(driver, AccountGeneralSetting_PageUI.VALIDATE_MESS_OF_USERNAME);
     }
 
 
     public boolean checkIconSuccessIsDisplay() {
-        return checkElementDisplay(driver, AccountSettingUI.ICON_SUCCESS_CHANGE_USERNAME);
+        return checkElementDisplay(driver, AccountGeneralSetting_PageUI.ICON_SUCCESS_CHANGE_USERNAME);
     }
 
     public boolean checkIconErrorIsDisplay() {
-        return checkElementDisplay(driver, AccountSettingUI.ICON_ERROR_CHANGE_USERNAME);
+        return checkElementDisplay(driver, AccountGeneralSetting_PageUI.ICON_ERROR_CHANGE_USERNAME);
     }
 
 
@@ -141,24 +141,33 @@ public class GeneralAccountSetting extends AccountCommon {
 //    }
 
     public boolean checkGeneralAccountSettingTabIsDisplay(String fullName) {
-        waitElementToVisible(driver,AccountSettingUI.FULL_NAME);
+        waitElementToVisible(driver, AccountGeneralSetting_PageUI.FULL_NAME);
         return getPageTitle(driver).contains("Cài đặt tài khoản | Hahalolo")
-                && getTextElement(driver,AccountSettingUI.FULL_NAME).contains(fullName)
-                && checkElementDisplay(driver, AccountSettingUI.TITLE_PAGE,"setting_general");
+                && getTextElement(driver, AccountGeneralSetting_PageUI.FULL_NAME).contains(fullName)
+                && checkElementDisplay(driver, AccountGeneralSetting_PageUI.TITLE_PAGE,"setting_general");
     }
 
     public void enterDataToUsernameField(String userName) {
-        waitElementToVisible(driver, AccountSettingUI.USERNAME_FIELD);
-        sendKeyToElement(driver,AccountSettingUI.USERNAME_FIELD,userName);
+        waitElementToVisible(driver, AccountGeneralSetting_PageUI.USERNAME_FIELD);
+        sendKeyToElement(driver, AccountGeneralSetting_PageUI.USERNAME_FIELD,userName);
         setTimeDelay(1);
     }
 
     public void cancelSaveChangeUsername() {
-        waitForElementClickable(driver, AccountSettingUI.BUTTON_CANCEL_CHANGE_USERNAME);
-        clickToElement(driver, AccountSettingUI.BUTTON_CANCEL_CHANGE_USERNAME);
+        waitForElementClickable(driver, AccountGeneralSetting_PageUI.BUTTON_CANCEL_CHANGE_USERNAME);
+        clickToElement(driver, AccountGeneralSetting_PageUI.BUTTON_CANCEL_CHANGE_USERNAME);
     }
 
     public boolean checkAccountGeneralSettingIsDisplay() {
         return true;
+    }
+
+
+
+    public void updateFullName(String firstName, String middleName, String lastName){
+        enterDataToFirstNameField(driver, firstName);
+        enterDataToMidnameField(driver,middleName );
+        enterDataToLastnameField(driver, lastName);
+        clickButtonSaveChangesToUpdateFullname(driver);
     }
 }
