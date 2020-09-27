@@ -1,31 +1,31 @@
 package Project.Newsfeed.PersonalWall.About;
 
+import Interfaces.hahalolo_newsfeed.PersonaWall.About.AboutCommonUI;
 import Interfaces.hahalolo_newsfeed.PersonaWall.PersonalHeadCoverUI;
-import Interfaces.hahalolo_newsfeed.PersonaWall.PersonalUI;
 import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
 
 public class PersonalAboutPage extends HeaderPage {
     WebDriver driver;
-    public PersonalAboutPage(WebDriver webDriver){
-        driver = webDriver;
-    }
 
-    public String getEmailIsDisplayOnIntroduceWidget() {
-        return getTextElement(driver, PersonalUI.WIDGET_INTRO_EMAIL);
-    }
-
-    public Object getBirthdayDisplayOnIntroduceWidget() {
-        return getTextElement(driver, PersonalUI.WIDGET_INTRO_BIRTHDAY);
-    }
-
-    public Object getGenderDisplayOnIntroduceWidget() {
-        return getTextElement(driver, PersonalUI.WIDGET_INTRO_GENDER);
-    }
-
-    public boolean checkPageIsDisplay(String fullName) {
+    // Hàm xử lý các thông tin trong widget introduction
+    public boolean checkPersonalPageIsDisplay(String fullName) {
         waitElementToVisible(driver, PersonalHeadCoverUI.PERSONAL_PAGE);
         return getPageTitle(driver).equalsIgnoreCase("Giới thiệu - Trang cá nhân | Hahalolo")
                 && getTextElement(driver, PersonalHeadCoverUI.HEADER_COVER_FULLNAME).equalsIgnoreCase(fullName);
     }
+
+
+    public void clickToTabItemOnAbout(String aboutItem){
+        waitElementToVisible(driver,PersonalHeadCoverUI.ABOUT_NAVIGATION_MENU);
+        waitForElementClickable(driver, PersonalHeadCoverUI.ITEM_ON_ABOUT_NAVIGATION_MENU,aboutItem);
+        clickToElement(driver, PersonalHeadCoverUI.ITEM_ON_ABOUT_NAVIGATION_MENU);
+    }
+
+    public boolean checkTabIsSelected(String aboutItem){
+        waitElementToVisible(driver, PersonalHeadCoverUI.ITEM_ON_ABOUT_NAVIGATION_MENU,aboutItem);
+        return getAttributeValue(driver, PersonalHeadCoverUI.ITEM_ON_ABOUT_NAVIGATION_MENU,"class",aboutItem).contains("active");
+    }
+
+
 }

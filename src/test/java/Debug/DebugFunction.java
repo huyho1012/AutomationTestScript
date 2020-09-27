@@ -1,8 +1,7 @@
 package Debug;
 
-import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
-
-import java.util.Scanner;
+import java.time.LocalTime;
+import java.util.Random;
 
 public class DebugFunction {
 
@@ -19,14 +18,19 @@ public class DebugFunction {
         else
             return firstName.trim() + middleName.trim() + lastName.trim();
     }
+
+    public static String removeAllWhitespace(String data) {
+        String sentence = data.trim();
+        return sentence.replaceAll(" ", "");
+    }
+    protected static String randomVirtualEmail(){
+        String userName = "huyho";
+        String domainEmail = "@mailinator.com";
+        Random random = new Random();
+        return userName + random.nextInt(2000000) + domainEmail;
+    }
     public static void main (String [] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Nhập Họ");
-        String firstName = sc.nextLine();
-        System.out.println("Nhập Tên");
-        String lastName = sc.nextLine();
-        System.out.println("Nhập Tên lót");
-        String middname = sc.nextLine();
-        System.out.println(getFullName(firstName,middname,lastName));
+        System.out.println(randomVirtualEmail());
+        System.out.println(LocalTime.now());
     }
 }

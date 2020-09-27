@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test with firefox"
+           tests="8"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="27.890">
+  <properties />
+  
+  
+            <testcase name="Testcase_Newsfeed_Login_02_Login_With_UserName_Not_Existed_On_Hahalolo" time="0.706" classname="Testcase.Login.ComponentTest.Testcase_Login_With_Hard_Data" />
+                <testcase name="Testcase_Newsfeed_Login_07_Login_With_Valid_Phone" time="8.269" classname="Testcase.Login.ComponentTest.Testcase_Login_With_Hard_Data" />
+                <testcase name="Testcase_Newsfeed_Login_03_Login_With_Password_Incorrect" time="0.709" classname="Testcase.Login.ComponentTest.Testcase_Login_With_Hard_Data" />
+                <testcase name="Testcase_Newsfeed_Login_01_Login_With_Invalid_Information" time="0.264" classname="Testcase.Login.ComponentTest.Testcase_Login_With_Hard_Data" />
+                <testcase name="Testcase_Newsfeed_Login_05_Login_With_Invalid_Account" time="1.685" classname="Testcase.Login.ComponentTest.Testcase_Login_With_Hard_Data" />
+                <testcase name="Testcase_Newsfeed_Login_06_Login_With_Valid_Account" time="7.973" classname="Testcase.Login.ComponentTest.Testcase_Login_With_Hard_Data" />
+                <testcase name="Testcase_Newsfeed_Login_04_Login_With_Invalid_Password" time="0.697" classname="Testcase.Login.ComponentTest.Testcase_Login_With_Hard_Data" />
+                <testcase name="Testcase_Newsfeed_Login_06_Login_With_Uppercase_Email" time="7.587" classname="Testcase.Login.ComponentTest.Testcase_Login_With_Hard_Data" />
+      
+</testsuite>

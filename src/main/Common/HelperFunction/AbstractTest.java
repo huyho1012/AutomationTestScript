@@ -30,6 +30,16 @@ public abstract class AbstractTest extends AbstractPage {
         }
         return text;
     }
+    protected String randomName(int numPassChar) {
+        String text = null;
+        String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "" + "abcdefghijklmnopqrstuvxyz";
+        StringBuilder bd = new StringBuilder(numPassChar);
+        for (int i = 0; i < numPassChar; i++) {
+            int index = (int) (AlphaNumericString.length() * Math.random());
+            text = bd.append(AlphaNumericString.charAt(index)).toString();
+        }
+        return text;
+    }
 
     protected String randomVirtualEmail(){
         String userName = "huyho";
@@ -138,8 +148,15 @@ public abstract class AbstractTest extends AbstractPage {
     protected String getToday() {
         return getCurrentDay() + "/" + getCurrentMonth() + "/" + getCurrentYear();
     }
-
     protected String getBirthdayOnHaLo(String day, String month, String year){
         return day+ "-" + month + "-" + year;
+    }
+
+
+
+    // Xử lý trong chuỗi
+    protected String removeAllWhitespace(String data){
+        String sentence = data.trim();
+        return sentence.replaceAll(" ", "");
     }
 }

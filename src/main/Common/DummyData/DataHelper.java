@@ -2,7 +2,7 @@ package Common.DummyData;
 import com.github.javafaker.Faker;
 import java.util.Locale;
 public class DataHelper {
-    private final Locale locale = new Locale("vi");
+    private final Locale locale = new Locale("en");
     private final Faker faker = new Faker(locale);
 
     public static DataHelper getData() {
@@ -38,6 +38,9 @@ public class DataHelper {
         return faker.name().firstName();
     }
 
+    public String getMiddleName(){
+        return faker.name().nameWithMiddle();
+    }
     public String getLastName(){
         return faker.address().firstName();
     }

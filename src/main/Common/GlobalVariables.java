@@ -3,10 +3,6 @@ package Common;
 public class GlobalVariables {
     public static final String ROOT_FOLDER = System.getProperty("user.dir");
     public static final String UPLOAD_FOLDER = ROOT_FOLDER+ "\\Upload\\";
-    public static final String UPLOAD_MULTI_FILE_FIREFOX = ROOT_FOLDER + "\\Extension\\AutoIT\\chromeUploadMultiple.exe";
-    public static final String UPLOAD_MULTI_FILE_CHROME = ROOT_FOLDER + "\\Extension\\AutoIT\\firefoxUploadMultiple.exe";
-    public static final String UPLOAD_ONE_FILE_FIREFOX = ROOT_FOLDER + "\\Extension\\AutoIT\\chromeUploadOneTime.exe";
-    public static final String UPLOAD_ONE_FILE_CHROME = ROOT_FOLDER + "\\Extension\\AutoIT\\firefoxUploadOneTime.exe";
 
 
     public static final String newsfeedURL = "https://test-newsfeed.hahalolo.com/";
@@ -16,6 +12,14 @@ public class GlobalVariables {
 
     public static final String ADMIN_ACCOUNT = "balo_04@mailinator.com";
     public static final String ADMIN_PASSWORD = "123456";
+
+    public static final String USER_ACCOUNT = "balo_04@mailinator.com";
+    public static final String USER_PASSWORD = "123456";
+
+    public static final String HTML_CODE = "<h>HelloWord</h>";
+    public static final String SCRPIT_CODE = "<script>destroyWebsite();</script>";
+
+
 
 
 }

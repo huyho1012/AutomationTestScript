@@ -1,7 +1,10 @@
 package Project.Shared.Login;
 
-import Project.Shared.CommonStartApp;
+import Common.ExcelUitls.ExcelUtil;
 import Interfaces.Shared.Login.LoginUI;
+import Interfaces.Shared.StartingCommonUI;
+import Project.Shared.CommonStartApp;
+import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends CommonStartApp {
@@ -60,12 +63,8 @@ public class LoginPage extends CommonStartApp {
         return getTextElement(driver, LoginUI.VALIDATE_CAPTCHA_ERROR_MESSAGE);
     }
 
-
-
-
-
-    public void Login(WebDriver driver, String userName, String password){
-        waitForPageLoading(driver);
+    public void Login(String userName, String password){
+        waitElementToVisible(driver, StartingCommonUI.APP_STORE);
         waitElementToVisible(driver, LoginUI.USER_NAME);
         sendKeyToElement(driver, LoginUI.USER_NAME, userName);
         waitElementToVisible(driver, LoginUI.PASSWORD);
@@ -74,13 +73,25 @@ public class LoginPage extends CommonStartApp {
         clickToElement(driver, LoginUI.LOGIN_BUTTON);
     }
     public void Login(WebDriver driver, String userName, String password, String captcha){
-        waitForPageLoading(driver);
+        waitElementToVisible(driver, StartingCommonUI.APP_STORE);
         waitElementToVisible(driver, LoginUI.USER_NAME);
         sendKeyToElement(driver, LoginUI.USER_NAME, userName);
         waitElementToVisible(driver, LoginUI.PASSWORD);
         sendKeyToElement(driver, LoginUI.PASSWORD, password);
         waitElementToVisible(driver, LoginUI.CAPTCHA_CODE);
         sendKeyToElement(driver,LoginUI.CAPTCHA_CODE, captcha);
+        waitForElementClickable(driver,LoginUI.LOGIN_BUTTON);
+        clickToElement(driver, LoginUI.LOGIN_BUTTON);
+    }
+
+    public void Login(XSSFRow row){
+        waitElementToVisible(driver, StartingCommonUI.APP_STORE);
+        waitElementToVisible(driver, LoginUI.USER_NAME);
+        sendKeyToElement(driver, LoginUI.USER_NAME,row.getCell(2).toString());
+        System.out.println("Email" + row.getCell(2).toString());
+        waitElementToVisible(driver, LoginUI.PASSWORD);
+        sendKeyToElement(driver, LoginUI.PASSWORD, row.getCell(3).toString());
+        System.out.println("Password" + row.getCell(3).toString());
         waitForElementClickable(driver,LoginUI.LOGIN_BUTTON);
         clickToElement(driver, LoginUI.LOGIN_BUTTON);
     }
@@ -94,7 +105,7 @@ public class LoginPage extends CommonStartApp {
         return true;
     }
 
-    public boolean checkNewsfeedLoginPageDisplay(WebDriver driver) {
+    public boolean checkNewsfeedLoginPageDisplay() {
         return true;
     }
 }

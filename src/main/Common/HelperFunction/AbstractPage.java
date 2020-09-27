@@ -19,6 +19,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public abstract class AbstractPage {
+    private WebDriver driver;
     private Actions action;
     private WebDriverWait explicitWait;
     private Alert alert;
@@ -172,7 +173,7 @@ public abstract class AbstractPage {
     }
     public boolean checkIsElementIsEnable(WebDriver driver, String locator){
         element = findElement(driver, locator);
-        return  element.isDisplayed();
+        return  element.isEnabled();
     }
     public boolean checkIsElementIsSelected(WebDriver driver, String locator){
         element = findElement(driver, locator);

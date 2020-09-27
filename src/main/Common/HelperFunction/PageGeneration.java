@@ -4,12 +4,16 @@ package Common.HelperFunction;
 import Project.Business.Promotion.DetailPromo;
 import Project.Business.Promotion.TourPromotion;
 import Project.Business.Tour.Setting.PubishPage;
+import Project.Newsfeed.AccountSetting.GeneralAccountSetting;
 import Project.Newsfeed.Boooking.BoookingTour;
-import Project.Newsfeed.Boooking.PaymentGateWay.StripeGateway;
+import Project.Newsfeed.Boooking.PaymentGateWay.Stripe_PageObject;
 import Project.Newsfeed.Boooking.PaymentInfo;
 import Project.Newsfeed.PageWall.TourDetail;
+import Project.Newsfeed.PersonalWall.About.PerAbout_BasicInfoAndContact_PageObject;
+import Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject;
+import Project.Newsfeed.PersonalWall.About.PerAbout_Overview_PageObject;
 import Project.Newsfeed.PersonalWall.Handnote.Handnote_Tour;
-import Project.Newsfeed.PersonalWall.NewsfeedPersonalTimeline;
+import Project.Newsfeed.PersonalWall.Timeline.NewsfeedPersonalTimeline;
 import Project.Shared.Login.LoginPage;
 import Project.Backend.BackendHomePage;
 import Project.Backend.BackendVerifyBusiManagement;
@@ -20,8 +24,6 @@ import Project.Business.Tour.Setting.TourGeneralSettingPage;
 import Project.Business.Tour.Topic.TourTopicPage;
 import Project.Business.Tour.TourDashboardPage;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
-import Project.Newsfeed.PersonalWall.About.PersonalAboutPage;
-import Project.Newsfeed.AccountSetting.GeneralAccountSetting;
 import Project.Shared.SingUp.SignUpPage;
 import Project.Wallet.WalletHomePage;
 import Project.Wallet.WalletOverviewPage;
@@ -39,10 +41,6 @@ public class PageGeneration {
 
     public static NewsfeedHomepage createNewsfeedHomepage(WebDriver driver) {
         return new NewsfeedHomepage(driver);
-    }
-
-    public static PersonalAboutPage createPerTAboutPage(WebDriver driver) {
-        return new PersonalAboutPage(driver);
     }
 
     public static GeneralAccountSetting createGeneralAccountSettingPage(WebDriver driver) {
@@ -173,8 +171,8 @@ public class PageGeneration {
         return new Handnote_Tour(driver);
     }
 
-    public static StripeGateway createPaymentWithStripe(WebDriver driver) {
-        return new StripeGateway(driver);
+    public static Stripe_PageObject createPaymentWithStripe(WebDriver driver) {
+        return new Stripe_PageObject(driver);
     }
 
     public static PaymentInfo createPageBookingSuccess(WebDriver driver) {
@@ -183,5 +181,17 @@ public class PageGeneration {
 
     public static NewsfeedPersonalTimeline createPersonalTimeLinePage(WebDriver driver) {
         return new NewsfeedPersonalTimeline(driver);
+    }
+
+    public static PerAbout_Overview_PageObject createPersonalOverviewPage(WebDriver driver) {
+        return new PerAbout_Overview_PageObject(driver);
+    }
+
+    public static PerAbout_BasicInfoAndContact_PageObject createperBasicInfoAndContactPage(WebDriver driver) {
+        return new PerAbout_BasicInfoAndContact_PageObject(driver);
+    }
+
+    public static PerAbout_DetailsAboutYou_PageObject createPersonalDetailsAboutYouTab(WebDriver driver) {
+        return new PerAbout_DetailsAboutYou_PageObject(driver);
     }
 }

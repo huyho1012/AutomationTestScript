@@ -4,6 +4,7 @@
            failures="0"
            errors="0"
            skipped="0"
+<<<<<<< HEAD
            time="36.535">
   <properties />
   
@@ -16,5 +17,19 @@
                 <testcase name="Testcase_Newsfeed_Login_06_Login_With_Uppercase_Email" time="11.166" classname="Testcase.Testcase_Login" />
                 <testcase name="Testcase_Newsfeed_Login_01_Login_With_Invalid_Information" time="1.015" classname="Testcase.Testcase_Login" />
                 <testcase name="Testcase_Newsfeed_Login_04_Login_With_Invalid_Password" time="1.203" classname="Testcase.Testcase_Login" />
+=======
+           time="28.164">
+  <properties />
+  
+  
+            <testcase name="Testcase_Newsfeed_Login_08_Login_With_Valid_Phone" time="7.364" classname="Testcase.Login.ComponentTest.Testcase_Login_With_EXCEL" />
+                <testcase name="Testcase_Newsfeed_Login_04_Login_With_Invalid_Password" time="1.145" classname="Testcase.Login.ComponentTest.Testcase_Login_With_EXCEL" />
+                <testcase name="Testcase_Newsfeed_Login_02_Login_With_UserName_Not_Existed_On_Hahalolo" time="0.748" classname="Testcase.Login.ComponentTest.Testcase_Login_With_EXCEL" />
+                <testcase name="Testcase_Newsfeed_Login_07_Login_With_Uppercase_Email" time="6.858" classname="Testcase.Login.ComponentTest.Testcase_Login_With_EXCEL" />
+                <testcase name="Testcase_Newsfeed_Login_01_Login_With_Invalid_Information" time="0.323" classname="Testcase.Login.ComponentTest.Testcase_Login_With_EXCEL" />
+                <testcase name="Testcase_Newsfeed_Login_03_Login_With_Password_Incorrect" time="0.740" classname="Testcase.Login.ComponentTest.Testcase_Login_With_EXCEL" />
+                <testcase name="Testcase_Newsfeed_Login_05_Login_With_Invalid_Account" time="2.639" classname="Testcase.Login.ComponentTest.Testcase_Login_With_EXCEL" />
+                <testcase name="Testcase_Newsfeed_Login_06_Login_With_Valid_Account" time="8.347" classname="Testcase.Login.ComponentTest.Testcase_Login_With_EXCEL" />
+>>>>>>> 4216f2a26590013948354bc7625f2ba18b91a237
       
 </testsuite>

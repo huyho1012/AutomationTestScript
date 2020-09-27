@@ -1,5 +1,6 @@
-package Project.Newsfeed.PersonalWall;
+package Project.Newsfeed.PersonalWall.Timeline;
 
+import Project.Newsfeed.PersonalWall.PersonalCommon;
 import org.openqa.selenium.WebDriver;
 
 public class NewsfeedPersonalTimeline extends PersonalCommon {

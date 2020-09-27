@@ -4,10 +4,10 @@ import Interfaces.hahalolo_newsfeed.Booking.PaymentGateWay.StripeGatewayUI;
 import Project.Newsfeed.Boooking.BookingCommon;
 import org.openqa.selenium.WebDriver;
 
-public class StripeGateway extends BookingCommon {
+public class Stripe_PageObject extends BookingCommon {
     WebDriver driver;
 
-    public StripeGateway(WebDriver webDriver){
+    public Stripe_PageObject(WebDriver webDriver){
         driver = webDriver;
     }
     public boolean checkStripeSectionIsDisplay(){

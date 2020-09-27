@@ -95,4 +95,37 @@ public class SignUpPage extends CommonStartApp {
     public Object getContentOfSignUpButton() {
         return null;
     }
+
+    public void signUpWithNewAccountByEmail(String firstName, String lastName, String email, String password, String confirmPass){
+        // Step 1 - Nhập tên của người dùng
+        enterDataValueToDynamicOnFormSignUp("nv104", firstName);
+
+        // Step 2 - Nhập họ của người dùng
+        enterDataValueToDynamicOnFormSignUp("nv103", lastName);
+
+        // Step 3 - Nhập email để đăng ký
+        enterDataValueToDynamicOnFormSignUp("nv108", email);
+
+        // Step 4 - Nhập mật khẩu tài khoản
+        enterDataValueToDynamicOnFormSignUp("nv109", password);
+
+        // Step 5 - Xác nhận lại mật khảu
+        enterDataValueToDynamicOnFormSignUp("repeatPassword", confirmPass);
+
+        // Step 6 - Nhấn nút xác nhận đăng ký tài khoản
+        clickSignUpButton();
+
+        // Step 7 - Xác nhân người dùng đăng ký tài khoản bằng email
+        verifyTrue(getTitleOfVerifyForm().contains(""));
+
+        // Step 8 - Kiểm tra email người dùng nhập ở bước 3 hiển thị chính xác hay không
+        verifyEquals(getUserAccountToDisplay(), email);
+
+        // Step 9 - Lấy mã xác minh đăng ký tài khoản và nhập vào ô Mã xác minh
+        String code = getVerifyCodeByEmail(email);
+        enterVerifyCodeToVerifyAccount(driver,code);
+
+        // Step 10 - Nhấn nút xác minh để hoàn tất quy trình đăng ký tài khoản
+        clickToVerifyAccount(driver);
+    }
 }
