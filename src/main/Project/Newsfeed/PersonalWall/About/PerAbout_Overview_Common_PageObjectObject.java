@@ -7,9 +7,9 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class PerAbout_Overview_PageObject extends PersonalAboutPage {
+public class PerAbout_Overview_Common_PageObjectObject extends PerAbout_Common_PageObject {
     WebDriver driver;
-    public PerAbout_Overview_PageObject(WebDriver webDriver){
+    public PerAbout_Overview_Common_PageObjectObject(WebDriver webDriver){
         driver = webDriver;
     }
 

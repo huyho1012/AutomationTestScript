@@ -7,7 +7,7 @@ import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
 import Project.Newsfeed.PersonalWall.Timeline.NewsfeedPersonalTimeline;
-import Project.Shared.Login.LoginPage;
+import Project.Shared.Login_PageObject;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -17,7 +17,7 @@ public class UploadAvatar extends AbstractTest {
 
     WebDriver driver;
     DriverManager driverManager;
-    LoginPage newsfeedLoginPage;
+    Login_PageObject newsfeedLoginPageObject;
     NewsfeedHomepage newsfeedHomepage;
     NewsfeedPersonalTimeline personalTimeline;
 
@@ -26,7 +26,7 @@ public class UploadAvatar extends AbstractTest {
     public void openNewBrowser(String browserName){
         driverManager = BrowserInitialization.getBrowser(browserName);
         driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
-        newsfeedLoginPage = PageGeneration.createNewsfeedLoginPage(driver);
+        newsfeedLoginPageObject = PageGeneration.createNewsfeedLoginPage(driver);
 //        newsfeedLoginPage.Login(driver, "balo_04@mailinator.com", "123456");
         newsfeedHomepage = PageGeneration.createNewsfeedHomepage(driver);
         verifyTrue(newsfeedHomepage.checkNewsfeedDisplay());

@@ -3,7 +3,8 @@ package Project.Newsfeed.Newsfeed;
 import Common.HelperFunction.AbstractPage;
 import Interfaces.hahalolo_business.Business.BusinessVerificationUI;
 import Interfaces.hahalolo_business.Tour.TourDashboardPageUI;
-import Interfaces.hahalolo_newsfeed.HeaderPageUI;
+import Interfaces.hahalolo_newsfeed.Header.HeaderPageUI;
+import jdk.javadoc.internal.doclets.formats.html.markup.Head;
 import org.openqa.selenium.WebDriver;
 
 public class HeaderPage extends AbstractPage {
@@ -31,4 +32,22 @@ public class HeaderPage extends AbstractPage {
         waitForElementClickable(driver, HeaderPageUI.USER_AVATAR);
         clickToElement(driver, HeaderPageUI.USER_AVATAR);
     }
+
+
+    public void clickToHahaloloLogo(){
+        waitForElementClickable(driver, HeaderPageUI.LOGO_HALO);
+        clickToElement(driver, HeaderPageUI.LOGO_HALO);
+    }
+
+    public void clickToWalletIcon(){
+        waitForElementClickable(driver, HeaderPageUI.WALLET_ICON);
+        clickToElement(driver, HeaderPageUI.WALLET_ICON);
+    }
+
+    public void clickToCartIcon(){
+        waitForElementClickable(driver, HeaderPageUI.CART_ICON);
+        clickToElement(driver, HeaderPageUI.CART_ICON);
+    }
+
+
 }

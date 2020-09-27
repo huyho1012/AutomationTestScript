@@ -2,8 +2,8 @@ package Project.Shared;
 
 
 import Common.HelperFunction.AbstractTest;
-import Interfaces.Shared.Login.LoginUI;
-import Interfaces.Shared.StartingCommonUI;
+import Interfaces.hahalolo_newsfeed.StartApp.LoginUI;
+import Interfaces.hahalolo_newsfeed.StartApp.StartingCommonUI;
 import org.openqa.selenium.WebDriver;
 
 public class CommonStartApp extends AbstractTest {

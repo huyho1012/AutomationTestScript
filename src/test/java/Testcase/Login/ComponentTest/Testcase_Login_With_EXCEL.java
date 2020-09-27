@@ -7,7 +7,7 @@ import Common.GlobalVariables;
 import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
-import Project.Shared.Login.LoginPage;
+import Project.Shared.Login_PageObject;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 
 public class Testcase_Login_With_EXCEL extends AbstractTest {
     DriverManager driverManager;
-    LoginPage newsfeedLogin;
+    Login_PageObject newsfeedLogin;
     NewsfeedHomepage newsFeedHomePage;
     WebDriver driver;
     @Parameters({"browser"})

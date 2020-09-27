@@ -1,15 +1,13 @@
-package Project.Shared.Login;
+package Project.Shared;
 
-import Common.ExcelUitls.ExcelUtil;
-import Interfaces.Shared.Login.LoginUI;
-import Interfaces.Shared.StartingCommonUI;
-import Project.Shared.CommonStartApp;
+import Interfaces.hahalolo_newsfeed.StartApp.LoginUI;
+import Interfaces.hahalolo_newsfeed.StartApp.StartingCommonUI;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage extends CommonStartApp {
+public class Login_PageObject extends CommonStartApp {
     WebDriver driver;
-    public LoginPage(WebDriver webDriver){
+    public Login_PageObject(WebDriver webDriver){
         driver = webDriver;
     }
 

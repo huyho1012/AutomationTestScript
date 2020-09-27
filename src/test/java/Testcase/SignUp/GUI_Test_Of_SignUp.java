@@ -2,18 +2,18 @@ package Testcase.SignUp;
 
 import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;
-import Project.Shared.Login.LoginPage;
-import Project.Shared.SingUp.SignUpPage;
+import Project.Shared.Login_PageObject;
+import Project.Shared.SignUpPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 public class GUI_Test_Of_SignUp extends AbstractTest {
     WebDriver driver;
-    LoginPage newsfeedLoginPage;
+    Login_PageObject newsfeedLoginPageObject;
     SignUpPage signUpPage;
     @Test(enabled = false)
     public void Testcase_Register_01_Check_SignUpForm_With_Eng_Language(){
-        newsfeedLoginPage.clickToChangeToEng(driver);
+        newsfeedLoginPageObject.clickToChangeToEng(driver);
         signUpPage = PageGeneration.createFormRegister(driver);
         log.info("Check Title Of SignUp form when");
         verifyEquals(signUpPage.getTitleOfFormSignUp(),"Join Hahalolo Now!");
@@ -27,7 +27,7 @@ public class GUI_Test_Of_SignUp extends AbstractTest {
     }
     @Test(enabled = false)
     public void Testcase_Register_02_Check_SignUpForm_With_VI_Language(){
-        newsfeedLoginPage.clickToChangeLanguageToVI();
+        newsfeedLoginPageObject.clickToChangeLanguageToVI();
         log.info("Check Title Of SignUp form when");
         verifyEquals(signUpPage.getTitleOfFormSignUp(),"Tham gia Hahalolo ngay!");
         log.info("Check placeholder of fields");

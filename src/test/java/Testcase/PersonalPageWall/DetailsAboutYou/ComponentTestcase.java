@@ -6,10 +6,10 @@ import Common.GlobalVariables;
 import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
-import Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject;
-import Project.Newsfeed.PersonalWall.About.PerAbout_Overview_PageObject;
-import Project.Shared.Login.LoginPage;
-import Project.Shared.SingUp.SignUpPage;
+import Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_Common_PageObjectObject;
+import Project.Newsfeed.PersonalWall.About.PerAbout_Overview_Common_PageObjectObject;
+import Project.Shared.Login_PageObject;
+import Project.Shared.SignUpPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
@@ -21,10 +21,10 @@ public class ComponentTestcase extends AbstractTest {
     String emailUser, passwordUser;
 
     // Khai báo Page Object
-    LoginPage newsfeedLoginPage;
+    Login_PageObject newsfeedLoginPageObject;
     NewsfeedHomepage newsfeedHomepage;
-    PerAbout_Overview_PageObject perOverviewTab;
-    PerAbout_DetailsAboutYou_PageObject perDetailAboutTab;
+    PerAbout_Overview_Common_PageObjectObject perOverviewTab;
+    PerAbout_DetailsAboutYou_Common_PageObjectObject perDetailAboutTab;
     SignUpPage signUpPage;
 
     @Test
@@ -37,13 +37,13 @@ public class ComponentTestcase extends AbstractTest {
 
         log.info("Precondition Step 2 - Go to Newsfeed Login");
         driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
-        newsfeedLoginPage = PageGeneration.createNewsfeedLoginPage(driver);
+        newsfeedLoginPageObject = PageGeneration.createNewsfeedLoginPage(driver);
 
         log.info("Precondition Step 3 - Change language system to VI");
-        newsfeedLoginPage.clickToChangeLanguageToVI();
+        newsfeedLoginPageObject.clickToChangeLanguageToVI();
 
         log.info("Preconditon Step 4 - Login newsfeed");
-        newsfeedLoginPage.Login(emailUser, passwordUser);
+        newsfeedLoginPageObject.Login(emailUser, passwordUser);
         newsfeedHomepage = PageGeneration.createNewsfeedHomepage(driver);
     }
 

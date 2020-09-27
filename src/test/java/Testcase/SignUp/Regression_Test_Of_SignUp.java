@@ -25,11 +25,11 @@ import Project.Newsfeed.Boooking.PaymentGateWay.Stripe_PageObject;
 import Project.Newsfeed.Boooking.PaymentInfo;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
 import Project.Newsfeed.PageWall.TourDetail;
-import Project.Newsfeed.PersonalWall.About.PerAbout_Overview_PageObject;
+import Project.Newsfeed.PersonalWall.About.PerAbout_Overview_Common_PageObjectObject;
 import Project.Newsfeed.PersonalWall.Handnote.Handnote_Tour;
-import Project.Newsfeed.PersonalWall.About.PersonalAboutPage;
-import Project.Shared.Login.LoginPage;
-import Project.Shared.SingUp.SignUpPage;
+import Project.Newsfeed.PersonalWall.About.PerAbout_Common_PageObject;
+import Project.Shared.Login_PageObject;
+import Project.Shared.SignUpPage;
 import Project.Wallet.WalletHomePage;
 import Project.Wallet.WalletOverviewPage;
 
@@ -48,8 +48,8 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     NewsfeedHomepage newsfeedHomePage;
 
 
-    PersonalAboutPage perAboutPage;
-    PerAbout_Overview_PageObject overviewPage;
+    PerAbout_Common_PageObject perAboutPage;
+    PerAbout_Overview_Common_PageObjectObject overviewPage;
 
 
     GeneralAccountSetting generalAccSetting;
@@ -66,7 +66,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     TourManagementPage tourManagementPage;
     WalletOverviewPage walletOverviewPage;
     WalletHomePage walletHomePage;
-    LoginPage loginNewsfeedPage;
+    Login_PageObject loginNewsfeedPage;
     SignUpPage signUpPage;
 
     PubishPage pubishPage;
@@ -226,7 +226,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         log.info("Step1.Change language before checking");
         newsfeedHomePage.changeLanguageNewsfeedToVI();
         log.info("Step 2.Compare Fullname display on My account widget with User Fullname");
-        fullName = newsfeedHomePage.getFullNameDisplayOnMyAccount(driver);
+        fullName = newsfeedHomePage.getFullNameDisplayOnMyAccount();
         verifyEquals(fullName, getFullName(firstNameUser, lastNameUser));
         log.info("Step 3.Go Personal about");
         newsfeedHomePage.clickToEditProfile(driver);
@@ -246,9 +246,9 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         verifyTrue(generalAccSetting.checkAccountGeneralSettingIsDisplay());
         verifyEquals(generalAccSetting.getPageTitle(driver), "Cài đặt tài khoản | Hahalolo");
         log.info("Step 10.Check FullName display");
-        verifyEquals(generalAccSetting.getFullNameIsDisplay(driver), getFullName(firstNameUser, lastNameUser));
+        verifyEquals(generalAccSetting.getFullNameIsDisplay(), getFullName(firstNameUser, lastNameUser));
         log.info("Step 11.Check FullName display");
-        verifyEquals(generalAccSetting.getFullNameIsDisplay(driver), fullName);
+        verifyEquals(generalAccSetting.getFullNameIsDisplay(), fullName);
         log.info("Step 12.Logout newsfeed");
         generalAccSetting.clickToItemOnSettingMenu(driver, "ic-logout-c");
         loginNewsfeedPage = PageGeneration.createNewsfeedLoginPage(driver);

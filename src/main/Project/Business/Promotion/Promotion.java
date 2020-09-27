@@ -2,9 +2,8 @@ package Project.Business.Promotion;
 
 import Interfaces.Shared.MediaManagementUI;
 import Interfaces.hahalolo_business.Promotion.CreateEditPromoUI;
-import Interfaces.hahalolo_business.Promotion.ListPromoUI;
 import Project.Business.Tour.Management.TourCommon;
-import Project.Shared.Management.MediaManagement;
+import Project.Shared.MediaManagement;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 

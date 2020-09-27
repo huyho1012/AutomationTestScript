@@ -2,9 +2,8 @@ package Project.Business.Tour.Topic;
 
 import Interfaces.Shared.MediaManagementUI;
 import Interfaces.hahalolo_business.Tour.Topic.TourTopicPageUI;
-import Project.Business.Tour.Management.TourCommon;
 import Project.Newsfeed.Newsfeed.HeaderPage;
-import Project.Shared.Management.MediaManagement;
+import Project.Shared.MediaManagement;
 import org.openqa.selenium.WebDriver;
 
 public class TourTopicPage extends HeaderPage {

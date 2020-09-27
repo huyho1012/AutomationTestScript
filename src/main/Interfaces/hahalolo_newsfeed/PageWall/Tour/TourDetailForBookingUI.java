@@ -1,4 +1,4 @@
-package Interfaces.hahalolo_newsfeed.PageWall;
+package Interfaces.hahalolo_newsfeed.PageWall.Tour;
 
 public class TourDetailForBookingUI {
     public static final String TAB_SCHEDULER = "//a[@href ='#tab-scheduler']";

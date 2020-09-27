@@ -8,9 +8,9 @@ import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;
 import Project.Newsfeed.AccountSetting.GeneralAccountSetting;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
-import Project.Newsfeed.PersonalWall.About.PersonalAboutPage;
-import Project.Shared.Login.LoginPage;
-import Project.Shared.SingUp.SignUpPage;
+import Project.Newsfeed.PersonalWall.About.PerAbout_Common_PageObject;
+import Project.Shared.Login_PageObject;
+import Project.Shared.SignUpPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -20,13 +20,11 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
     DriverManager driverManager;
     DataHelper data;
     WebDriver driver;
-    LoginPage loginNewsfeedPage;
+    Login_PageObject loginNewsfeedPage;
     NewsfeedHomepage newsFeedHomePage;
     GeneralAccountSetting accountSetting;
     SignUpPage signUpPage;
-    PersonalAboutPage personalAboutPage;
-    String account = "balo_04@mailinator.com";
-    String passWord = "123456";
+    PerAbout_Common_PageObject perAboutCommonPageObject;
     String htmlCode ="<p>HelloWord</p>";
     String scriptCode ="<script>destroyWebsite();</script>";
     String userName;
@@ -34,288 +32,321 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
     @Parameters("browser")
     @BeforeTest
     public void Precondition(String browserName){
+        log.info("Prepare data");
         data = DataHelper.getData();
-        driverManager = BrowserInitialization.getBrowser(browserName);
-        driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
 
-        // Mở trang Hahalolo Login
+        log.info("Create driver");
+        driverManager = BrowserInitialization.getBrowser(browserName);
+
+        log.info("Open Hahalolo Newsfeed login");
+        driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
         loginNewsfeedPage = PageGeneration.createNewsfeedLoginPage(driver);
 
-        // Đắng nhập vào Hahalolo - Newsfeed
-        loginNewsfeedPage.Login(account,passWord);
+        log.info("Change language of system to VI");
+        loginNewsfeedPage.clickToChangeLanguageToVI();
+
+        log.info("Login to Hahalolo");
+        loginNewsfeedPage.Login(GlobalVariables.USER_ACCOUNT,GlobalVariables.USER_PASSWORD);
         newsFeedHomePage = PageGeneration.createNewsfeedHomepage(driver);
 
-        // Thay đổi ngôn ngữ hiển thị của newsfeed sang Tiếng việt
-        newsFeedHomePage.changeLanguageNewsfeedToVI();
-
+        log.info("Go To Account setting");
         // Nhán vào chức năng Thiết lập tài khoản
         newsFeedHomePage.clickToItemOnSettingMenu(driver,"ic-cog-c");
         accountSetting = PageGeneration.createGeneralAccountSettingPage(driver);
 
-        // Kiểm tra trang thiết lập tài khoản hiển thị
+        log.info("Verify General Account setting");
         verifyTrue(accountSetting.checkAccountGeneralSettingIsDisplay());
 
-        // Nhấn nút chỉnh sửa thông tin định danh người dùng
+        log.info("Click to Edit username");
         accountSetting.clickToButtonEditUsername();
     }
 
     @Test
-    public void Testcase01_Update_Username_With_Invalid_Information(){
-        // Nhập định danh người dùng rỗng
+    public void TC01_Update_Username_With_Invalid_Information(){
+        log.info("Case username is blank");
+        log.info("Step 1. Enter username");
         accountSetting.enterDataToUsernameField("");
+        log.info("Step 2. Check status of button save change");
         verifyFalse(accountSetting.checkButtonSaveChangeOfUsername());
 
-        // Nhập định danh người dùng chứa toàn ký tự trắng
+        log.info("Case username contains all whitespace");
+        log.info("Step 1. Enter username");
         accountSetting.enterDataToUsernameField("  ");
+        log.info("Step 2. Check status of button save change");
         verifyFalse(accountSetting.checkButtonSaveChangeOfUsername());
+        log.info("Step 3. Verify message of function Change username");
         verifyEquals(accountSetting.getErrMessOnUsername() ,"Phải có ít nhất 5 kí tự");
 
-        // Nhập định danh người dùng có khoảng trắng ở giữa dữ liệu
+        log.info("Case username contains whitespace on middle data");
+        log.info("Step 1. Enter username");
         accountSetting.enterDataToUsernameField("huy hodoan");
+        log.info("Step 2. Check status of button save change");
         verifyFalse(accountSetting.checkButtonSaveChangeOfUsername());
+        log.info("Step 3. Verify message of function Change username");
         verifyEquals(accountSetting.getErrMessOnUsername() ,"Có chứa ký tự không hợp lệ.");
 
-        // Nhập định danh người dùng chứa dấu chấm ở cuối dữ liệu
+        log.info("Case username contains dot on last position");
+        log.info("Step 1. Enter username");
         accountSetting.enterDataToUsernameField("huyhodoan.");
+        log.info("Step 2. Check status of button save change");
         verifyFalse(accountSetting.checkButtonSaveChangeOfUsername());
+        log.info("Step 3. Verify message of function Change username");
         verifyEquals(accountSetting.getErrMessOnUsername() ,"Có chứa ký tự đặc biệt không đúng chỗ");
 
-        // Nhập tên người dùng chứa ký tự đặc biệt
+        log.info("Case username contains special characters");
+        log.info("Step 1. Enter username");
         accountSetting.enterDataToUsernameField("huyhodo@an");
+        log.info("Step 2. Check status of button save change");
         verifyFalse(accountSetting.checkButtonSaveChangeOfUsername());
+        log.info("Step 3. Verify message of function Change username");
         verifyEquals(accountSetting.getErrMessOnUsername() ,"Có chứa ký tự không hợp lệ.");
 
-        // Nhập định danh người dùng có số lượng ký tự ít hơn 5
+        log.info("Case username contains less than 5 characters");
+        log.info("Step 1. Enter username");
         accountSetting.enterDataToUsernameField("huya");
+        log.info("Step 2. Check status of button save change");
         verifyFalse(accountSetting.checkButtonSaveChangeOfUsername());
+        log.info("Step 3. Verify message of function Change username");
         verifyEquals(accountSetting.getErrMessOnUsername() ,"Phải có ít nhất 5 kí tự");
 
-        // Nhập định danh người dùng có số lượng ký tự nhiều hơn 50
+        log.info("Case username contains greather than 50 characters");
+        log.info("Step 1. Enter username");
         accountSetting.enterDataToUsernameField(randomName(51));
+        log.info("Step 2. Check status of button save change");
         verifyFalse(accountSetting.checkButtonSaveChangeOfUsername());
+        log.info("Step 3. Verify message of function Change username");
         verifyEquals(accountSetting.getErrMessOnUsername() ,"Tên người dùng vượt số ký tự tối đa cho phép");
 
-        // Nhập định danh người dùng là 1 đoạn script
-        accountSetting.enterDataToUsernameField(scriptCode);
+        log.info("Case username contains script code");
+        log.info("Step 1. Enter username");
+        accountSetting.enterDataToUsernameField(GlobalVariables.SCRPIT_CODE);
+        log.info("Step 2. Check status of button save change");
         verifyFalse(accountSetting.checkButtonSaveChangeOfUsername());
+        log.info("Step 3. Verify message of function Change username");
         verifyEquals(accountSetting.getErrMessOnUsername() ,"Có chứa ký tự không hợp lệ.");
 
-        // Nhập định danh người dùng là 1 đoạn html
-        accountSetting.enterDataToUsernameField(htmlCode);
+        log.info("Case username contains HTML code");
+        log.info("Step 1. Enter username");
+        accountSetting.enterDataToUsernameField(GlobalVariables.HTML_CODE);
+        log.info("Step 2. Check status of button save change");
         verifyFalse(accountSetting.checkButtonSaveChangeOfUsername());
+        log.info("Step 3. Verify message of function Change username");
         verifyEquals(accountSetting.getErrMessOnUsername() ,"Có chứa ký tự không hợp lệ.");
 
-        // Nhập định danh người dùng có dấu
+        log.info("Case username contains mark");
+        log.info("Step 1. Enter username");
         accountSetting.enterDataToUsernameField("huayhô");
+        log.info("Step 2. Check status of button save change");
         verifyFalse(accountSetting.checkButtonSaveChangeOfUsername());
+        log.info("Step 3. Verify message of function Change username");
         verifyEquals(accountSetting.getErrMessOnUsername() ,"Có chứa ký tự không hợp lệ.");
 
+        log.info("End step. Cancel function change username");
         accountSetting.cancelSaveChangeUsername();
     }
 
     @Test
-    public void Testcase02_Update_Username_With_Valid_Username() {
+    public void TC02_Update_Username_With_Valid_Username() {
+        log.info("Prepare data");
         userName = removeAllWhitespace(data.getFirstName()).toLowerCase();
-        System.out.println(userName);
-        // Step 1 - Nhấn vào nút cập nhật định danh người dùng
+
+        log.info("Step 1. Open function Edit username");
         accountSetting.clickToButtonEditUsername();
 
-        // Step 2 - Nhập vào đinh danh người dùng hợp lệ
+        log.info("Step 2. Enter username");
         accountSetting.enterDataToUsernameField(userName);
 
-        // Step 3 - Kiểm tra hiển thị thông báo định danh người dùng hợp lệ
+        log.info("Step 3. Verify message of Fucntion Change username");
         verifyEquals(accountSetting.getErrMessOnUsername(), "Tên người dùng khả dụng");
 
-        // Step 4 - Kiểm tra nút lưu thay đổi cho phép nhấn hay chưa
+        log.info("Step 4. Verify status of button save change username");
         verifyTrue(accountSetting.checkButtonSaveChangeOfUsername());
 
-        // Step 5 - Nhấn nút lưu thay đổi thông tin định danh người dùng
+        log.info("Step 5. Click to save change username");
         accountSetting.clickToButtonSaveChangeUserName();
 
-        // Step 6 - Kiểm tra định danh người dùng thay đổi thành công
+        log.info("Step 6. Verify username has been change successfully");
         verifyTrue(accountSetting.getUserIdentityNameDisplay().endsWith(userName));
     }
 
     @Test
-    public void Testcase03_Update_Username_With_Username_Has_Capital_Letters() {
+    public void TC03_Update_Username_With_Username_Has_Capital_Letters() {
+        log.info("Prepare data");
         userName = "HuyHoDoan" + randomNumber(22000);
-        System.out.println(userName);
-        // Step 1 - Nhấn vào nút cập nhật định danh người dùng
+
+        log.info("Step 1. Open function Edit username");
         accountSetting.clickToButtonEditUsername();
 
-        // Step 2 - Nhập vào đinh danh người dùng hợp lệ có chứa ký tự viết hoa
+        log.info("Step 2. Enter username");
         accountSetting.enterDataToUsernameField(userName);
 
-        // Step 3 - Kiểm tra hiển thị thông báo định danh người dùng hợp lệ
+        log.info("Step 3. Verify message of Fucntion Change username");
         verifyEquals(accountSetting.getErrMessOnUsername(), "Tên người dùng khả dụng");
 
-        // Step 4 - Kiểm tra nút lưu thay đổi cho phép nhấn hay chưa
+        log.info("Step 4. Verify status of button save change username");
         verifyTrue(accountSetting.checkButtonSaveChangeOfUsername());
 
-        // Step 5 - Nhấn nút lưu thay đổi thông tin định danh người dùng
+        log.info("Step 5. Click to save change username");
         accountSetting.clickToButtonSaveChangeUserName();
 
-        // Step 6 - Kiểm tra định danh người dùng thay đổi thành công
+        log.info("Step 6. Verify username has been change successfully");
         verifyTrue(accountSetting.getUserIdentityNameDisplay().endsWith(userName));
     }
 
     @Test
-    public void Testcase04_Update_Username_With_Username_Is_Number() {
+    public void TC04_Update_Username_With_Username_Is_Number() {
+        log.info("Prepare data");
         userName = String.valueOf(randomNumber(1000000000));
-        System.out.println(userName);
-        // Step 1 - Nhấn vào nút cập nhật định danh người dùng
+
+        log.info("Step 1. Open function Edit username");
         accountSetting.clickToButtonEditUsername();
 
-        // Step 2 - Nhập vào đinh danh người dùng là một chuỗi số
+        log.info("Step 2. Enter username");
         accountSetting.enterDataToUsernameField(userName);
 
-        // Step 3 - Kiểm tra hiển thị thông báo định danh người dùng hợp lệ
+        log.info("Step 3. Verify message of Fucntion Change username");
         verifyEquals(accountSetting.getErrMessOnUsername(), "Tên người dùng khả dụng");
 
-        // Step 4 - Kiểm tra nút lưu thay đổi cho phép nhấn hay chưa
+        log.info("Step 4. Verify status of button save change username");
         verifyTrue(accountSetting.checkButtonSaveChangeOfUsername());
 
-        // Step 5 - Nhấn nút lưu thay đổi thông tin định danh người dùng
+        log.info("Step 5. Click to save change username");
         accountSetting.clickToButtonSaveChangeUserName();
 
-        // Step 6 - Kiểm tra định danh người dùng thay đổi thành công
+        log.info("Step 6. Verify username has been change successfully");
         verifyTrue(accountSetting.getUserIdentityNameDisplay().endsWith(userName));
     }
     @Test
-    public void Testcase05_Update_Username_With_Username_Is_AlphaNumber(){
+    public void TC05_Update_Username_With_Username_Is_AlphaNumber(){
+        log.info("Prepare data");
         userName = removeAllWhitespace(data.getFirstName()) + randomNumber(20000);
-        System.out.println(userName);
-        // Step 1 - Nhấn vào nút cập nhật định danh người đùng
+
+        log.info("Step 1. Open function Edit username");
         accountSetting.clickToButtonEditUsername();
 
-        // Step 2 - Nhập vào đinh danh người dùng là một chuỗi ký tự số
+        log.info("Step 2. Enter username");
         accountSetting.enterDataToUsernameField(userName);
 
-        // Step 3 - Kiểm tra hiển thị thông báo định danh người dùng hợp lệ
+        log.info("Step 3. Verify message of Fucntion Change username");
         verifyEquals(accountSetting.getErrMessOnUsername(), "Tên người dùng khả dụng");
 
-        // Step 4 - Kiểm tra nút lưu thay đổi cho phép nhấn hay chưa
+        log.info("Step 4. Verify status of button save change username");
         verifyTrue(accountSetting.checkButtonSaveChangeOfUsername());
 
-        // Step 5 - Nhấn nút lưu thay đổi thông tin định danh người dùng
+        log.info("Step 5. Click to save change username");
         accountSetting.clickToButtonSaveChangeUserName();
 
-        // Step 6 - Kiểm tra định danh người dùng thay đổi thành công
+        log.info("Step 6. Verify username has been change successfully");
         verifyTrue(accountSetting.getUserIdentityNameDisplay().endsWith(userName));
     }
 
     @Test
-    public void Testcase06_Update_Username_With_Username_is_All_Uppercase(){
+    public void TC06_Update_Username_With_Username_is_All_Uppercase(){
+        log.info("Prepare data");
         userName = removeAllWhitespace(data.getFirstName()).toUpperCase();
-        System.out.println(userName);
-        // Step 1 - Nhấn vào nút cập nhật định danh người đùng
+
+        log.info("Step 1. Open function Edit username");
         accountSetting.clickToButtonEditUsername();
 
-        // Step 2 - Nhập vào đinh danh người dùng là một chuỗi ký tự số
+        log.info("Step 2. Enter username");
         accountSetting.enterDataToUsernameField(userName);
 
-        // Step 3 - Kiểm tra hiển thị thông báo định danh người dùng hợp lệ
+        log.info("Step 3. Verify message of Fucntion Change username");
         verifyEquals(accountSetting.getErrMessOnUsername(), "Tên người dùng khả dụng");
 
-        // Step 4 - Kiểm tra nút lưu thay đổi cho phép nhấn hay chưa
+        log.info("Step 4. Verify status of button save change username");
         verifyTrue(accountSetting.checkButtonSaveChangeOfUsername());
 
-        // Step 5 - Nhấn nút lưu thay đổi thông tin định danh người dùng
+        log.info("Step 5. Click to save change username");
         accountSetting.clickToButtonSaveChangeUserName();
 
-        // Step 6 - Kiểm tra định danh người dùng thay đổi thành công
+        log.info("Step 6. Verify username has been change successfully");
         verifyTrue(accountSetting.getUserIdentityNameDisplay().endsWith(userName));
-        setTimeDelay(1);
-        accountSetting.clickToItemOnSettingMenu(driver,"ic-logout-c");
-        signUpPage = PageGeneration.createFormRegister(driver);
+
     }
 
-    @Test(enabled = false)
-    public void TC_05_Update_UserName_With_Data_Has_More_Diot_Not_End_Position(){
+    @Test
+    public void TC07_Update_UserName_With_Data_Has_Endwith_Is_Dot(){
+        log.info("Prepare data");
         userName = "huy.hodoan."+randomNumber(300000);
-        System.out.println(userName);
-        // Step 1 - Nhấn vào nút cập nhật định danh người đùng
+
+        log.info("Step 1. Open function Edit username");
         accountSetting.clickToButtonEditUsername();
 
-        // Step 2 - Nhập vào đinh danh người dùng chứa nhiều dấu châm và vị trị dấu chám không nằm cuối
+        log.info("Step 2. Enter username");
         accountSetting.enterDataToUsernameField(userName);
 
-        // Step 3 - Kiểm tra hiển thị thông báo định danh người dùng hợp lệ
+        log.info("Step 3. Verify message of Fucntion Change username");
         verifyEquals(accountSetting.getErrMessOnUsername(), "Tên người dùng khả dụng");
 
-        // Step 4 - Kiểm tra nút lưu thay đổi cho phép nhấn hay chưa
+        log.info("Step 4. Verify status of button save change username");
         verifyTrue(accountSetting.checkButtonSaveChangeOfUsername());
 
-        // Step 5 - Nhấn nút lưu thay đổi thông tin định danh người dùng
+        log.info("Step 5. Click to save change username");
         accountSetting.clickToButtonSaveChangeUserName();
 
-        // Step 6 - Kiểm tra định danh người dùng thay đổi thành công
+        log.info("Step 6. Verify username has been change successfully");
         verifyTrue(accountSetting.getUserIdentityNameDisplay().endsWith(userName));
 
-        // End step - Logout
-        setTimeDelay(1);
+        log.info("End step. Logot account");
         accountSetting.clickToItemOnSettingMenu(driver,"ic-logout-c");
         signUpPage = PageGeneration.createFormRegister(driver);
     }
 
     @Test
-    public void Testcase07_CheckDefaultUsernameAndUpdateValidUsernameCaseNewAccount(){
-        // Prepare data
-        String firstName  = "Huy";
-        String lastName = "Hô";
+    public void TC7_Update_Username_With_Case_NewAccount(){
+        log.info("Prepare data");
+        String firstName  = data.getFirstName();
+        String lastName = data.getLastName();
         String email = randomVirtualEmail();
-        String password = "123456";
-        String confirmPass = "123456";
+        userName = "huy.hodoan."+randomNumber(300000);
 
-        // Step 1 - Đăng ký tài khoản mới với thông tin như sau
-        signUpPage.signUpWithNewAccountByEmail(firstName, lastName, email, password, confirmPass);
+        log.info("Step 1. Register new account");
+        signUpPage.signUpWithNewAccountByEmail(firstName, lastName, email, "123456", "123456");
         newsFeedHomePage = PageGeneration.createNewsfeedHomepage(driver);
 
-        // Step 2 - Kiểm trả người dùng đăng ký thành công
+        log.info("Step 2. Verify register new account successfully");
         verifyTrue(newsFeedHomePage.checkNewsfeedDisplayOnFirstTime(driver));
 
-        // Step 3 - Nhấn nút Huỷ cập nhật thông tin người dùng
+        log.info("Step 3. Cancel update new info");
         newsFeedHomePage.clickCancelUpdateNewInfo();
 
-        // Step 4 - Nhán vào chức năng Thiết lập tài khoản
+        log.info("Step 4. Go to General account setting");
         newsFeedHomePage.clickToItemOnSettingMenu(driver,"ic-cog-c");
         accountSetting = PageGeneration.createGeneralAccountSettingPage(driver);
 
-        // Step 5 - Kiểm tra trang thiết lập chung tài khoản hiển thị hay không
+        log.info("Step 5. Verify General account display successfully");
         verifyTrue(accountSetting.checkAccountGeneralSettingIsDisplay());
 
-        // Step 6 - Kiểm tra định danh người dùng hiển thị mặc định lúc mới dc tài khoản
-//        verifyEquals(accountSetting.getMessageNoUsername(),"Bạn chưa thiết lập tên người dùng");
+        log.info("Step 6. Check content of Function Change username");
+        verifyEquals(accountSetting.getMessageNoUsername(),"Bạn chưa thiết lập tên người dùng");
 
-        // Step 7 - Nhấn nút chihnr sửa định danh người dùng
+        log.info("Step 7. Open function Edit username");
         accountSetting.clickToButtonEditUsername();
 
-        userName = "huy.hodoan."+randomNumber(300000);
-        System.out.println(userName);
-        // Step 8 - Nhập tên định danh người dùng hợp lệ
+        log.info("Step 2. Enter username");
         accountSetting.enterDataToUsernameField(userName);
 
-        // Step 9 - Kiểm tra hiển thị thông báo định danh người dùng hợp lệ
+        log.info("Step 3. Verify message of Fucntion Change username");
         verifyEquals(accountSetting.getErrMessOnUsername(), "Tên người dùng khả dụng");
 
-        // Step 10 - Kiểm tra nút lưu thay đổi cho phép nhấn hay chưa
+        log.info("Step 4. Verify status of button save change username");
         verifyTrue(accountSetting.checkButtonSaveChangeOfUsername());
 
-        // Step 11 - Nhấn nút lưu thay đổi thông tin định danh người dùng
+        log.info("Step 5. Click to save change username");
         accountSetting.clickToButtonSaveChangeUserName();
 
-        // Step 12 - Kiểm tra định danh người dùng thay đổi thành công
+        log.info("Step 6. Verify username has been change successfully");
         verifyTrue(accountSetting.getUserIdentityNameDisplay().endsWith(userName));
 
-        // Step 13 - Lưu link đường dẫn tên định danh người dùng
         String urlUserName = accountSetting.getUserIdentityNameDisplay();
 
-        // Step 14 - Nhấn vào trang cá nhân của người dùng
+        log.info("Step 6. Go to Personal About - Overview");
         accountSetting.clickToAvatarOnHeader(driver);
-//        personalAboutPage = PageGeneration.createPerTAboutPage(driver);
+        perAboutCommonPageObject = PageGeneration.createPersonalOverviewPage(driver);
 
-        // Step 15 - Kiểm tra link đinh danh người dùng tại màn hình thay đổi dịnh danh người dung với link của người dùng tại trang cá nhân
-        verifyEquals(personalAboutPage.getCurrentURL(driver),urlUserName);
+        log.info("Step 6. Verify personal URL with urlUsername");
+        verifyEquals(perAboutCommonPageObject.getCurrentURL(driver),urlUserName);
 
     }
 

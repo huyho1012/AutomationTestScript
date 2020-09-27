@@ -3,7 +3,7 @@ package Project.Business.Tour.Management.Detail;
 import Interfaces.hahalolo_business.Tour.Management.Detail.TourInfoUI;
 import Interfaces.Shared.MediaManagementUI;
 import Project.Business.Tour.Management.TourCommon;
-import Project.Shared.Management.MediaManagement;
+import Project.Shared.MediaManagement;
 import org.openqa.selenium.WebDriver;
 
 public class TourInfoTab extends TourCommon {

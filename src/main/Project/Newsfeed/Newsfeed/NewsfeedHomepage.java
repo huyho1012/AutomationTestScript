@@ -1,6 +1,6 @@
 package Project.Newsfeed.Newsfeed;
 
-import Interfaces.hahalolo_newsfeed.HeaderPageUI;
+import Interfaces.hahalolo_newsfeed.Header.HeaderPageUI;
 import Interfaces.hahalolo_newsfeed.Homepage.HomePageUI;
 import org.openqa.selenium.WebDriver;
 
@@ -59,7 +59,7 @@ public class  NewsfeedHomepage extends HeaderPage {
         clickToElement(driver, HomePageUI.FOOTER_VI_LANGUAGE);
     }
 
-    public String getFullNameDisplayOnMyAccount(WebDriver driver) {
+    public String getFullNameDisplayOnMyAccount() {
         return getTextElement(driver, HomePageUI.MY_ACCOUNT_FULL_NAME);
     }
 

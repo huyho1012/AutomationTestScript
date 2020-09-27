@@ -1,4 +1,4 @@
-package Interfaces.Shared.Login;
+package Interfaces.hahalolo_newsfeed.StartApp;
 
 public class LoginUI {
     public static final String FORGOT_LINK = "//a[@class='forgotpw']";

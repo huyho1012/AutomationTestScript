@@ -1,4 +1,4 @@
-package Interfaces.Shared.SignUp;
+package Interfaces.hahalolo_newsfeed.StartApp;
 
 public class SignUpUI {
     public static final String TITLE_REGISTER_FORM = "//div[@class = 'form-signup-header']/div";

@@ -8,9 +8,9 @@ import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
 import Project.Newsfeed.PersonalWall.About.PerAbout_BasicInfoAndContact_PageObject;
-import Project.Newsfeed.PersonalWall.About.PerAbout_Overview_PageObject;
-import Project.Shared.Login.LoginPage;
-import Project.Shared.SingUp.SignUpPage;
+import Project.Newsfeed.PersonalWall.About.PerAbout_Overview_Common_PageObjectObject;
+import Project.Shared.Login_PageObject;
+import Project.Shared.SignUpPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -19,11 +19,11 @@ public class Testcase_PersonalAbout_DetailsAboutYou extends AbstractTest {
     DataHelper dataHelper;
     WebDriver driver;
     DriverManager driverManager;
-    LoginPage newsfeedLoginPage;
+    Login_PageObject newsfeedLoginPageObject;
     SignUpPage signUpPage;
 
     NewsfeedHomepage newsfeedHomepage;
-    PerAbout_Overview_PageObject perOverviewPage;
+    PerAbout_Overview_Common_PageObjectObject perOverviewPage;
     PerAbout_BasicInfoAndContact_PageObject perBasicInfoAndContactPage;
 
     String firstName, lastName, email, password, confirmPass;
@@ -37,16 +37,16 @@ public class Testcase_PersonalAbout_DetailsAboutYou extends AbstractTest {
 
         log.info("Precondition step 2 - Go to Newsfeed hahalolo");
         driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
-        newsfeedLoginPage = PageGeneration.createNewsfeedLoginPage(driver);
+        newsfeedLoginPageObject = PageGeneration.createNewsfeedLoginPage(driver);
         log.info("Precondition step 3 - Check Newsfeed Login display successfully");
-        verifyTrue(newsfeedLoginPage.checkNewsfeedLoginPageDisplay());
+        verifyTrue(newsfeedLoginPageObject.checkNewsfeedLoginPageDisplay());
     }
 
     @Test
     public void Testcase01_Check_Information_When_User_Create_New_Account_Email(){
         log.info("Step 1 - Register new account");
         // Thay đổi ngôn ngữ hệ thống để đồng nhất dữ liệu - Tiếng việt)
-        newsfeedLoginPage.clickToChangeLanguageToVI();
+        newsfeedLoginPageObject.clickToChangeLanguageToVI();
         signUpPage = PageGeneration.createFormRegister(driver);
         // Đăng ký tài khoản
 
@@ -70,7 +70,7 @@ public class Testcase_PersonalAbout_DetailsAboutYou extends AbstractTest {
         newsfeedHomepage.updateNewInformationOfAccount(dayBirth, monthBirth, yearBirth, gender, nationality);
         String birthday = getBirthdayOnHaLo(dayBirth,monthBirth,yearBirth);
         // Lấy thông tin hiển tên người dùng hiển thị tại My Account
-        String fullNameOnMyAccount = newsfeedHomepage.getFullNameDisplayOnMyAccount(driver);
+        String fullNameOnMyAccount = newsfeedHomepage.getFullNameDisplayOnMyAccount();
         // Kiểm tra hiển thị tại wigdet MyAccount với tên người dùng dc tạo ra từ dữ liệu form đăng ký
         verifyEquals(fullNameOfUser, fullNameOnMyAccount);
         log.info("Step 3 - Go To Personal About");

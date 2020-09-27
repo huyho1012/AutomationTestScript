@@ -1,6 +1,6 @@
 package Project.Newsfeed.PersonalWall;
 
-import Interfaces.hahalolo_newsfeed.PageWall.PersonalCommonUI;
+import Interfaces.hahalolo_newsfeed.PersonaWall.PersonalCommonUI;
 import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
 

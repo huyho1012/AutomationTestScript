@@ -1,7 +1,7 @@
 package Project.Newsfeed.PageWall;
 
-import Interfaces.hahalolo_newsfeed.PageWall.PersonalCommonUI;
-import Interfaces.hahalolo_newsfeed.PageWall.TourDetailForBookingUI;
+import Interfaces.hahalolo_newsfeed.PersonaWall.PersonalCommonUI;
+import Interfaces.hahalolo_newsfeed.PageWall.Tour.TourDetailForBookingUI;
 import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
 

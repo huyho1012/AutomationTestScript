@@ -6,10 +6,11 @@ import Common.DummyData.DataHelper;
 import Common.GlobalVariables;
 import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;
+import Project.Newsfeed.AccountSetting.GeneralAccountSetting;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
-import Project.Newsfeed.PersonalWall.About.PerAbout_Overview_PageObject;
-import Project.Shared.Login.LoginPage;
-import Project.Shared.SingUp.SignUpPage;
+import Project.Newsfeed.PersonalWall.About.PerAbout_Overview_Common_PageObjectObject;
+import Project.Shared.Login_PageObject;
+import Project.Shared.SignUpPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
@@ -18,12 +19,12 @@ public class Component_Test_Of_SignUp extends AbstractTest {
     DriverManager driverManager;
     DataHelper data = DataHelper.getData();
     SignUpPage signUpPage;
-    LoginPage newsfeedLoginPage;
+    Login_PageObject newsfeedLoginPageObject;
     NewsfeedHomepage newsfeedPage;
-    PerAbout_Overview_PageObject overviewPage;
+    PerAbout_Overview_Common_PageObjectObject overviewPage;
+    GeneralAccountSetting generalSettingAccountPage;
     // Khai báo giá trị nhập vào
     String email, firstName, lastName;
-    String HTML_CODE, SCRIPT_CODE;
     String verifyCode;
 
     @Parameters("browser")
@@ -34,10 +35,10 @@ public class Component_Test_Of_SignUp extends AbstractTest {
 
         log.info("Precondition - Go to NewsFeed Login");
         driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
-        newsfeedLoginPage = PageGeneration.createNewsfeedLoginPage(driver);
+        newsfeedLoginPageObject = PageGeneration.createNewsfeedLoginPage(driver);
 
         log.info("Step 9. Change language to Vietnamese");
-        newsfeedLoginPage.clickToChangeLanguageToVI();
+        newsfeedLoginPageObject.clickToChangeLanguageToVI();
         signUpPage = PageGeneration.createFormRegister(driver);
     }
     @BeforeMethod
@@ -45,11 +46,9 @@ public class Component_Test_Of_SignUp extends AbstractTest {
         email = randomVirtualEmail();
         firstName = data.getFirstName();
         lastName = data.getFirstName();
-        HTML_CODE ="<p>HelloWord</p>";
-        SCRIPT_CODE= "<script>destroyWebsite();</script>";
     }
     @Test
-    public void Testcase_Register_01_Check_Register_New_Account_With_Invalid_FirstName(){
+    public void TC01_Register_Account_With_Invalid_FirstName(){
         log.info("Prepare data");
         signUpPage.enterDataValueToDynamicOnFormSignUp("nv103", lastName);
         signUpPage.enterDataValueToDynamicOnFormSignUp("nv108", email);
@@ -82,12 +81,12 @@ public class Component_Test_Of_SignUp extends AbstractTest {
         verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp("nv104"),"Tên không chứa ký tự đặc biệt.");
 
         log.info("Step 6 - First name is Script code");
-        signUpPage.enterDataValueToDynamicOnFormSignUp("nv104", SCRIPT_CODE);
+        signUpPage.enterDataValueToDynamicOnFormSignUp("nv104", GlobalVariables.SCRPIT_CODE);
         signUpPage.clickSignUpButton();
         verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp( "nv104"),"Tên không chứa ký tự đặc biệt.");
 
         log.info("Step 7 - Input First name is HTML Code");
-        signUpPage.enterDataValueToDynamicOnFormSignUp("nv104",HTML_CODE);
+        signUpPage.enterDataValueToDynamicOnFormSignUp("nv104",GlobalVariables.HTML_CODE);
         signUpPage.clickSignUpButton();
         verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp("nv104"),"Tên không chứa ký tự đặc biệt.");
 
@@ -95,7 +94,7 @@ public class Component_Test_Of_SignUp extends AbstractTest {
         signUpPage.enterDataValueToDynamicOnFormSignUp("nv104",firstName);
     }
     @Test
-    public void Testcase_Register_02_Check_Register_New_Account_With_Invalid_LastName(){
+    public void TC02_Register_Account_With_Invalid_LastName(){
         log.info("Step 1. Do not input Last name");
         signUpPage.enterDataValueToDynamicOnFormSignUp("nv103", "");
         signUpPage.clickSignUpButton();
@@ -122,12 +121,12 @@ public class Component_Test_Of_SignUp extends AbstractTest {
         verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp("nv103"),"Họ không chứa ký tự đặc biệt.");
 
         log.info("Step 6. Last name contains Script Code");
-        signUpPage.enterDataValueToDynamicOnFormSignUp("nv103", SCRIPT_CODE);
+        signUpPage.enterDataValueToDynamicOnFormSignUp("nv103", GlobalVariables.SCRPIT_CODE);
         signUpPage.clickSignUpButton();
         verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp("nv103"),"Họ không chứa ký tự đặc biệt.");
 
         log.info("Step 7. Last name contains HTML Code");
-        signUpPage.enterDataValueToDynamicOnFormSignUp("nv103",HTML_CODE);
+        signUpPage.enterDataValueToDynamicOnFormSignUp("nv103",GlobalVariables.HTML_CODE);
         signUpPage.clickSignUpButton();
         verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp("nv103"),"Họ không chứa ký tự đặc biệt.");
 
@@ -135,7 +134,7 @@ public class Component_Test_Of_SignUp extends AbstractTest {
         signUpPage.enterDataValueToDynamicOnFormSignUp("nv103", lastName);
     }
     @Test
-    public void Testcase_Register_03_Check_Register_New_Account_With_Invalid_Email() {
+    public void TC03_Register_Account_With_Invalid_Email() {
         log.info("Email is blank");
         signUpPage.enterDataValueToDynamicOnFormSignUp("nv108", "");
         signUpPage.clickSignUpButton();
@@ -177,7 +176,7 @@ public class Component_Test_Of_SignUp extends AbstractTest {
         verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp("nv108"), "Tài khoản không hợp lệ.");
     }
     @Test
-    public void Testcase_Register_03_Check_Register_New_Account_With_Invalid_Phonenumber() {
+    public void TC03_Register_Account_With_Invalid_Phonenumber() {
         log.info("Phone is blank");
         signUpPage.enterDataValueToDynamicOnFormSignUp("nv108", "");
         signUpPage.clickSignUpButton();
@@ -218,7 +217,7 @@ public class Component_Test_Of_SignUp extends AbstractTest {
         signUpPage.enterDataValueToDynamicOnFormSignUp("nv108",email);
     }
     @Test
-    public void Testcase_Register_06_Check_Register_New_Account_With_Invalid_Password(){
+    public void TC04_Register_Account_With_Invalid_Password(){
 
         log.info("Step 1. Enter blank Password");
         signUpPage.enterDataValueToDynamicOnFormSignUp("nv109","");
@@ -244,7 +243,7 @@ public class Component_Test_Of_SignUp extends AbstractTest {
         signUpPage.enterDataValueToDynamicOnFormSignUp("nv109","123456");
     }
     @Test
-    public void Testcase_Register_07_Check_Register_New_Account_With_Invalid_Confirm_Password(){
+    public void TC05_Register_Account_With_Invalid_Confirm_Password(){
         log.info("Step 1. Do not input Confirm Password");
         signUpPage.enterDataValueToDynamicOnFormSignUp("repeatPassword","");
         signUpPage.clickSignUpButton();
@@ -271,7 +270,7 @@ public class Component_Test_Of_SignUp extends AbstractTest {
         verifyEquals(signUpPage.getValidErrMessageOfDynamicOnFormSignUp("repeatPassword"),"Mật khẩu xác nhận phải trùng với Mật khẩu");
     }
     @Test
-    public void Testcase_Register_08_Check_Register_New_Account_With_UpperCase_Email() {
+    public void TC06_Register_Account_With_UpperCase_Email() {
         signUpPage.refreshPage(driver);
         log.info("Step 1. Input FirstName");
         signUpPage.enterDataValueToDynamicOnFormSignUp("nv104", firstName);
@@ -304,7 +303,7 @@ public class Component_Test_Of_SignUp extends AbstractTest {
 
         log.info("Step 9. Click cancel update information");
         newsfeedPage.clickCancelUpdateNewInfo();
-        String fullName = newsfeedPage.getFullNameDisplayOnMyAccount(driver);
+        String fullName = newsfeedPage.getFullNameDisplayOnMyAccount();
 
         log.info("Step 10. Go To Personal about");
         newsfeedPage.clickToEditProfile(driver);
@@ -318,7 +317,7 @@ public class Component_Test_Of_SignUp extends AbstractTest {
         signUpPage = PageGeneration.createFormRegister(driver);
     }
     @Test
-    public void Testcase_Register_09_Check_Register_New_Account_ContainsMoreThan2Idots() {
+    public void TC07_Register_Account_ContainsMoreThan2Idots() {
         log.info("Step 1. Input FirstName");
         signUpPage.enterDataValueToDynamicOnFormSignUp("nv104", firstName);
 
@@ -351,7 +350,7 @@ public class Component_Test_Of_SignUp extends AbstractTest {
 
         log.info("Step 9. Click cancel update");
         newsfeedPage.clickCancelUpdateNewInfo();
-        String fullName = newsfeedPage.getFullNameDisplayOnMyAccount(driver);
+        String fullName = newsfeedPage.getFullNameDisplayOnMyAccount();
 
         log.info("Step 10. Go To Personal about -Overview");
         newsfeedPage.clickToEditProfile(driver);
@@ -397,7 +396,7 @@ public class Component_Test_Of_SignUp extends AbstractTest {
 
         log.info("Step 9. Click cancel update");
         newsfeedPage.clickCancelUpdateNewInfo();
-        String fullName = newsfeedPage.getFullNameDisplayOnMyAccount(driver);
+        String fullName = newsfeedPage.getFullNameDisplayOnMyAccount();
 
         log.info("Step 10. Go To Personal about");
         newsfeedPage.clickToEditProfile(driver);
@@ -409,5 +408,91 @@ public class Component_Test_Of_SignUp extends AbstractTest {
         log.info("Step 12 - Logout account");
         overviewPage.clickToItemOnSettingMenu(driver,"ic-logout-c");
         signUpPage = PageGeneration.createFormRegister(driver);
+    }
+
+    public void TC07_Register_Account_With_Uppercase_Firstname(){
+        log.info("Step 1. Input FirstName");
+        signUpPage.enterDataValueToDynamicOnFormSignUp("nv104", firstName.toUpperCase());
+
+        log.info("Step 2. Input LastName");
+        signUpPage.enterDataValueToDynamicOnFormSignUp("nv103", lastName);
+
+        log.info("Step 3. Input Phone");
+        signUpPage.enterDataValueToDynamicOnFormSignUp("nv108",email);
+
+        log.info("Step 4. Input Password");
+        signUpPage.enterDataValueToDynamicOnFormSignUp("nv109","123456");
+
+        log.info("Step 5. Input ConfirmPass");
+        signUpPage.enterDataValueToDynamicOnFormSignUp("repeatPassword","123456");
+
+        log.info("Step 6. Click SignUp button");
+        signUpPage.clickSignUpButton();
+
+        log.info("Step 6. Verify form register account by email display successfully");
+        verifyTrue(signUpPage.getTitleOfVerifyForm().endsWith("email"));
+        verifyEquals(signUpPage.getUserAccountToDisplay(), email);
+
+        log.info("Step 7. Input verify code");
+        verifyCode = signUpPage.getVerifyCodeByEmail(email);
+        signUpPage.enterVerifyCodeToVerifyAccount(driver,verifyCode);
+
+        log.info("Step 7. Click verify button");
+        signUpPage.clickToVerifyAccount(driver);
+        newsfeedPage = PageGeneration.createNewsfeedHomepage(driver);
+
+        log.info("Step 8. Check verify account succesfully and check form update info is display");
+        newsfeedPage.checkNewsfeedDisplayOnFirstTime(driver);
+
+        log.info("Step 9. Click cancel update information");
+        newsfeedPage.clickCancelUpdateNewInfo();
+        String fullName = newsfeedPage.getFullNameDisplayOnMyAccount();
+
+        log.info("Step 9. Verify fullname display on My account");
+        verifyEquals(newsfeedPage.getFullNameDisplayOnMyAccount(),"");
+
+        log.info("Step 10. Go to General Account Setting");
+        newsfeedPage.clickToItemOnSettingMenu(driver,"");
+        generalSettingAccountPage = PageGeneration.createGeneralAccountSettingPage(driver);
+
+        log.info("Step 10. Verify General Account Setting display successfully");
+        verifyEquals(generalSettingAccountPage.getFullNameIsDisplay(),"");
+
+    }
+
+    public void TC07_Register_Account_With_Lowercase_Firstname(){
+
+    }
+
+    public void TC07_Register_Account_With_Firstname_Has_Whitespace_On_First_Position(){
+
+    }
+
+    public void TC07_Register_Account_With_Firstname_Has_Whitespace_On_Last_Position(){
+
+    }
+
+    public void TC07_Register_Account_With_Firstname_Has_Whitespace_On_Middle_Position(){
+
+    }
+
+    public void TC07_Register_Account_With_Uppercase_LastName(){
+
+    }
+
+    public void TC07_Register_Account_With_Lowercase_LastName(){
+
+    }
+
+    public void TC07_Register_Account_With_LastName_Has_Whitespace_On_First_Position(){
+
+    }
+
+    public void TC07_Register_Account_With_LastName_Has_Whitespace_On_Last_Position(){
+
+    }
+
+    public void TC07_Register_Account_With_LastName_Has_Whitespace_On_Middle_Position(){
+
     }
 }

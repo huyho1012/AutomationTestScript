@@ -10,11 +10,11 @@ import Project.Newsfeed.Boooking.PaymentGateWay.Stripe_PageObject;
 import Project.Newsfeed.Boooking.PaymentInfo;
 import Project.Newsfeed.PageWall.TourDetail;
 import Project.Newsfeed.PersonalWall.About.PerAbout_BasicInfoAndContact_PageObject;
-import Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject;
-import Project.Newsfeed.PersonalWall.About.PerAbout_Overview_PageObject;
+import Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_Common_PageObjectObject;
+import Project.Newsfeed.PersonalWall.About.PerAbout_Overview_Common_PageObjectObject;
 import Project.Newsfeed.PersonalWall.Handnote.Handnote_Tour;
 import Project.Newsfeed.PersonalWall.Timeline.NewsfeedPersonalTimeline;
-import Project.Shared.Login.LoginPage;
+import Project.Shared.Login_PageObject;
 import Project.Backend.BackendHomePage;
 import Project.Backend.BackendVerifyBusiManagement;
 import Project.Business.Business.*;
@@ -24,15 +24,15 @@ import Project.Business.Tour.Setting.TourGeneralSettingPage;
 import Project.Business.Tour.Topic.TourTopicPage;
 import Project.Business.Tour.TourDashboardPage;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
-import Project.Shared.SingUp.SignUpPage;
+import Project.Shared.SignUpPage;
 import Project.Wallet.WalletHomePage;
 import Project.Wallet.WalletOverviewPage;
 import org.openqa.selenium.WebDriver;
 
 public class PageGeneration {
 
-    public static LoginPage createNewsfeedLoginPage(WebDriver driver) {
-        return new LoginPage(driver);
+    public static Login_PageObject createNewsfeedLoginPage(WebDriver driver) {
+        return new Login_PageObject(driver);
     }
 
     public static SignUpPage createFormRegister(WebDriver driver) {
@@ -63,8 +63,8 @@ public class PageGeneration {
         return new BusinessInfoPage(driver);
     }
 
-    public static LoginPage createLoginBackEndPage(WebDriver driver) {
-        return new LoginPage(driver);
+    public static Login_PageObject createLoginBackEndPage(WebDriver driver) {
+        return new Login_PageObject(driver);
     }
 
     public static BackendHomePage createBackendHomepage(WebDriver driver) {
@@ -75,8 +75,8 @@ public class PageGeneration {
         return new BackendVerifyBusiManagement(driver);
     }
 
-    public static LoginPage createWalletLoginPage(WebDriver driver) {
-        return new LoginPage(driver);
+    public static Login_PageObject createWalletLoginPage(WebDriver driver) {
+        return new Login_PageObject(driver);
     }
 
     public static WalletOverviewPage createWalletOverviewPage(WebDriver driver) {
@@ -183,15 +183,15 @@ public class PageGeneration {
         return new NewsfeedPersonalTimeline(driver);
     }
 
-    public static PerAbout_Overview_PageObject createPersonalOverviewPage(WebDriver driver) {
-        return new PerAbout_Overview_PageObject(driver);
+    public static PerAbout_Overview_Common_PageObjectObject createPersonalOverviewPage(WebDriver driver) {
+        return new PerAbout_Overview_Common_PageObjectObject(driver);
     }
 
     public static PerAbout_BasicInfoAndContact_PageObject createperBasicInfoAndContactPage(WebDriver driver) {
         return new PerAbout_BasicInfoAndContact_PageObject(driver);
     }
 
-    public static PerAbout_DetailsAboutYou_PageObject createPersonalDetailsAboutYouTab(WebDriver driver) {
-        return new PerAbout_DetailsAboutYou_PageObject(driver);
+    public static PerAbout_DetailsAboutYou_Common_PageObjectObject createPersonalDetailsAboutYouTab(WebDriver driver) {
+        return new PerAbout_DetailsAboutYou_Common_PageObjectObject(driver);
     }
 }

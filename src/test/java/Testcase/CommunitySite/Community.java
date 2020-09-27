@@ -7,7 +7,7 @@ import Common.GlobalVariables;
 import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
-import Project.Shared.Login.LoginPage;
+import Project.Shared.Login_PageObject;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -17,7 +17,7 @@ public class Community extends AbstractTest {
     WebDriver driver;
     DriverManager driverManager;
 
-    LoginPage newsfeedLogin;
+    Login_PageObject newsfeedLogin;
     NewsfeedHomepage newsfeedHomepage;
     @Parameters({"browser"})
     @BeforeTest

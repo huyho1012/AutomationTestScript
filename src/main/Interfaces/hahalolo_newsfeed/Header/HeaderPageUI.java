@@ -1,4 +1,4 @@
-package Interfaces.hahalolo_newsfeed;
+package Interfaces.hahalolo_newsfeed.Header;
 
 public class HeaderPageUI {
     public static final String LOGO_HALO = "//a[@class = 'logo-top']";

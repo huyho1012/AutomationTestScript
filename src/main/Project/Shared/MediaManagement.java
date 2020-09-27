@@ -1,4 +1,4 @@
-package Project.Shared.Management;
+package Project.Shared;
 
 import Common.HelperFunction.AbstractPage;
 import Interfaces.Shared.MediaManagementUI;

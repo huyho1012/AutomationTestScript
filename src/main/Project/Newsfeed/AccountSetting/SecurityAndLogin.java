@@ -1,7 +1,7 @@
 package Project.Newsfeed.AccountSetting;
 
 import Interfaces.hahalolo_newsfeed.AccountSetting.AccountSecurityAndLogin_PageUI;
-import Interfaces.hahalolo_newsfeed.HeaderPageUI;
+import Interfaces.hahalolo_newsfeed.Header.HeaderPageUI;
 import org.openqa.selenium.WebDriver;
 
 public class SecurityAndLogin extends AccountCommon{

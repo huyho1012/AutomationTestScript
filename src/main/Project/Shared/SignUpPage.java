@@ -1,7 +1,6 @@
-package Project.Shared.SingUp;
+package Project.Shared;
 
-import Project.Shared.CommonStartApp;
-import Interfaces.Shared.SignUp.SignUpUI;
+import Interfaces.hahalolo_newsfeed.StartApp.SignUpUI;
 import org.openqa.selenium.WebDriver;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package Interfaces.Shared;
+package Interfaces.hahalolo_newsfeed.StartApp;
 
 public class StartingCommonUI {
     public static final String NEWSFEED_HALO_CONTENT_1 = "//h3[contains(@data-bind,'caption_1')]";

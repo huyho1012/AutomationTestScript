@@ -3,10 +3,10 @@ package Project.Newsfeed.PersonalWall.About;
 import Interfaces.hahalolo_newsfeed.PersonaWall.About.PerAbout_DetailsAboutYou_PageUI;
 import org.openqa.selenium.WebDriver;
 
-public class PerAbout_DetailsAboutYou_PageObject extends PersonalAboutPage{
+public class PerAbout_DetailsAboutYou_Common_PageObjectObject extends PerAbout_Common_PageObject {
     WebDriver driver;
 
-    public PerAbout_DetailsAboutYou_PageObject(WebDriver webDriver){
+    public PerAbout_DetailsAboutYou_Common_PageObjectObject(WebDriver webDriver){
         driver = webDriver;
     }
 

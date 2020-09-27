@@ -41,4 +41,5 @@ public class AccountGeneralSetting_PageUI {
     public static final String ICON_ERROR_CHANGE_USERNAME = "//div[@id='jsLoadMsg']/i[@class ='ffa fa-times text-danger']";
 
 
+    public static final String NO_USERNAME = "";
 }

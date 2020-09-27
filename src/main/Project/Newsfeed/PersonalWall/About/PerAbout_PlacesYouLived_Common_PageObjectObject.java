@@ -1,14 +1,12 @@
 package Project.Newsfeed.PersonalWall.About;
 
-import Interfaces.hahalolo_newsfeed.Homepage.HomePageUI;
 import Interfaces.hahalolo_newsfeed.PersonaWall.About.PerAbout_PlacesYouLived_PageUI;
 import Interfaces.hahalolo_newsfeed.PersonaWall.PersonalHeadCoverUI;
-import Interfaces.hahalolo_newsfeed.PersonaWall.PersonalUI;
 import org.openqa.selenium.WebDriver;
 
-public class PerAbout_PlacesYouLived_PageObject extends PersonalAboutPage{
+public class PerAbout_PlacesYouLived_Common_PageObjectObject extends PerAbout_Common_PageObject {
     WebDriver driver;
-    public PerAbout_PlacesYouLived_PageObject(WebDriver webDriver){
+    public PerAbout_PlacesYouLived_Common_PageObjectObject(WebDriver webDriver){
         driver = webDriver;
     }
 
