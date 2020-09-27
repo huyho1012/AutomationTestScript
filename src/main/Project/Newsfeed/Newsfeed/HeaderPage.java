@@ -7,7 +7,7 @@ import Interfaces.hahalolo_newsfeed.Homepage.HeaderPageUI;
 import org.openqa.selenium.WebDriver;
 
 public class HeaderPage extends AbstractPage {
-
+    WebDriver driver;
     public void clickToItemOnSettingMenu(WebDriver driver, String nameItem){
         waitForElementClickable(driver, HeaderPageUI.SETTING_ICON);
         clickToElement(driver,HeaderPageUI.SETTING_ICON);
@@ -25,5 +25,10 @@ public class HeaderPage extends AbstractPage {
 
     public void clickItemOnTourNavMenu(WebDriver driver, String itemMenu) {
         clickToElementByJS(driver, TourDashboardPageUI.ITEM_ON_TOUR_BUSINESS,itemMenu);
+    }
+
+    public void clickToAvatarOnHeader(WebDriver driver) {
+        waitForElementClickable(driver, HeaderPageUI.USER_AVATAR);
+        clickToElement(driver, HeaderPageUI.USER_AVATAR);
     }
 }

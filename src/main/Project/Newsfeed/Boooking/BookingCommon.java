@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 public class BookingCommon extends AbstractPage {
     WebDriver driver;
 
-    public String getTourNameDisplayOnBookingStep() {
+    public String getTourNameDisplayOnBookingStep(WebDriver driver) {
         return getTextElement(driver, BookingTourUI.HEADER_TOUR_NAME);
     }
 
@@ -23,12 +23,12 @@ public class BookingCommon extends AbstractPage {
         clickToElement(driver, BookingTourUI.BUTTON_CONTINUE_BOOKING);
     }
 
-    public void clickToAggreeRule() {
+    public void clickToAggreeRule(WebDriver driver) {
         waitForElementClickable(driver, PaymentInfoUI.CHECKBOX_AGGREE_POLICY);
         clickToElement(driver, PaymentInfoUI.CHECKBOX_AGGREE_POLICY);
     }
 
-    public void clickButtonPayment() {
+    public void clickButtonPayment(WebDriver driver) {
         waitForElementClickable(driver, PaymentInfoUI.BUTTON_PAYMENT);
         clickToElement(driver, PaymentInfoUI.BUTTON_PAYMENT);
     }

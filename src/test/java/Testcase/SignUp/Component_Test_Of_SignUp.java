@@ -7,7 +7,7 @@ import Common.GlobalVariables;
 import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
-import Project.Newsfeed.PersonalWall.PersonalAboutPage;
+import Project.Newsfeed.PersonalWall.About.PersonalAboutPage;
 import Project.Shared.Login.LoginPage;
 import Project.Shared.SingUp.SignUpPage;
 import org.openqa.selenium.WebDriver;

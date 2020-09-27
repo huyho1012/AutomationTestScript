@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test with firefox"
+           tests="2"
+           failures="1"
+           errors="0"
+           skipped="0"
+           time="163.509">
+  <properties />
+            <testcase name="Tescase02_Check_Validate_Of_File_Can_Use_To_Upload_Cover_By_Local_Image" time="77.448" classname="Testcase.UploadAvatar">
+                <failure type="java.lang.AssertionError"
+                  message="expected [Tập tin không đúng định dạng ne] but found [Tập tin không đúng định dạng]"
+              >
+<![CDATA[java.lang.AssertionError: expected [Tập tin không đúng định dạng ne] but found [Tập tin không đúng định dạng]
+  org.testng.Assert.fail(Assert.java:94)
+  org.testng.Assert.failNotEquals(Assert.java:494)
+  org.testng.Assert.assertEquals(Assert.java:123)
+  org.testng.Assert.assertEquals(Assert.java:165)
+  Common.HelperFunction.AbstractTest.checkEquals(AbstractTest.java:103)
+  Common.HelperFunction.AbstractTest.verifyEquals(AbstractTest.java:114)
+  Testcase.UploadAvatar.Tescase02_Check_Validate_Of_File_Can_Use_To_Upload_Cover_By_Local_Image(UploadAvatar.java:122)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+  java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base/java.lang.reflect.Method.invoke(Method.java:564)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+  org.testng.TestRunner.privateRun(TestRunner.java:767)
+  org.testng.TestRunner.run(TestRunner.java:617)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+  org.testng.SuiteRunner.run(SuiteRunner.java:240)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+  org.testng.TestNG.run(TestNG.java:1057)
+  com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+  com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+      </failure>
+
+          </testcase>
+  
+  
+            <testcase name="Tescase01_Check_Validate_Of_File_Can_Use_To_Upload_Avatar_By_Local_Image" time="86.061" classname="Testcase.UploadAvatar" />
+      
+</testsuite>

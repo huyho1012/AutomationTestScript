@@ -1,5 +1,6 @@
 package Project.Newsfeed.PageWall;
 
+import Interfaces.hahalolo_newsfeed.PageWall.PersonalCommonUI;
 import Interfaces.hahalolo_newsfeed.PageWall.TourDetailForBookingUI;
 import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,7 @@ public class TourDetail extends HeaderPage {
     }
 
     public boolean checkTourDetailBookingPageIsDisplay() {
+        waitElementToVisible(driver, PersonalCommonUI.HEADER_SECTION);
         return true;
     }
 

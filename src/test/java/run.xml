@@ -9,9 +9,10 @@
         </listeners>
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-<!--            <class name="Testcase.Testcase_Login"></class>-->
-<!--            <class name="Testcase.SignUp.Component_Test_Of_SignUp"></class>-->
+            <class name="Testcase.Testcase_Login"></class>
+            <class name="Testcase.SignUp.Component_Test_Of_SignUp"></class>
             <class name="Testcase.SignUp.Regression_Test_Of_SignUp"></class>
+            <class name ="Testcase.UploadAvatar"></class>
         </classes>
     </test>
 

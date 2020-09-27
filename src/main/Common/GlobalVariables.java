@@ -6,10 +6,10 @@ public class GlobalVariables {
     public static final String UPLOAD_MULTI_FILE_FIREFOX = ROOT_FOLDER + "\\Extension\\AutoIT\\chromeUploadMultiple.exe";
     public static final String UPLOAD_MULTI_FILE_CHROME = ROOT_FOLDER + "\\Extension\\AutoIT\\firefoxUploadMultiple.exe";
     public static final String UPLOAD_ONE_FILE_FIREFOX = ROOT_FOLDER + "\\Extension\\AutoIT\\chromeUploadOneTime.exe";
-    public static final String UPLOAD_ONE_FILE_CHROME = ROOT_FOLDER + Extension\\AutoIT\\firefoxUploadOneTime.exe";
+    public static final String UPLOAD_ONE_FILE_CHROME = ROOT_FOLDER + "\\Extension\\AutoIT\\firefoxUploadOneTime.exe";
 
 
-    public static final String newsfeedURL = "https://hahalolo.com/";
+    public static final String newsfeedURL = "https://test-newsfeed.hahalolo.com/";
     public static final String businessURL = "https://test-business.hahalolo.com/";
     public static final  String backendURL = "https://test-backend.hahalolo.com/";
     public static final  String walletURL = "https://test-wallet.hahalolo.com/auth/signin";
