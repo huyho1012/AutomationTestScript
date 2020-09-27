@@ -50,4 +50,8 @@ public class HeaderPage extends AbstractPage {
     }
 
 
+    public void clickToCurrencyIcon() {
+        waitForElementClickable(driver, HeaderPageUI.CURRENCY_ICON);
+        clickToElement(driver, HeaderPageUI.CURRENCY_ICON);
+    }
 }

@@ -90,4 +90,27 @@ public class  NewsfeedHomepage extends HeaderPage {
         setTimeDelay(2);
         updateNationalOfUser(driver, nationality);
     }
+
+    public boolean checkModelCurrencyCloseSuccess() {
+        return true;
+    }
+
+    public String getCurrencyCodeDisplayOnHeader() {
+        return null;
+    }
+
+    public Object getCurrencySymbolOnTourProduct() {
+        return null;
+    }
+
+    public void clickToTabItemOnNewsfeedNavigationMenu(String tabItem) {
+    }
+
+    public Object getCurrencySymbolOnHotelProduct() {
+        return null;
+    }
+
+    public Object getCurrencySymbolOnShoppingProductPost() {
+        return null;
+    }
 }

@@ -8,6 +8,7 @@ import Project.Newsfeed.AccountSetting.GeneralAccountSetting;
 import Project.Newsfeed.Boooking.BoookingTour;
 import Project.Newsfeed.Boooking.PaymentGateWay.Stripe_PageObject;
 import Project.Newsfeed.Boooking.PaymentInfo;
+import Project.Newsfeed.Newsfeed.Header.ChangeCurrency_PageObject;
 import Project.Newsfeed.PageWall.TourDetail;
 import Project.Newsfeed.PersonalWall.About.PerAbout_BasicInfoAndContact_PageObject;
 import Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_Common_PageObjectObject;
@@ -193,5 +194,9 @@ public class PageGeneration {
 
     public static PerAbout_DetailsAboutYou_Common_PageObjectObject createPersonalDetailsAboutYouTab(WebDriver driver) {
         return new PerAbout_DetailsAboutYou_Common_PageObjectObject(driver);
+    }
+
+    public static ChangeCurrency_PageObject openModelChangeCurrency(WebDriver driver) {
+        return new ChangeCurrency_PageObject(driver);
     }
 }

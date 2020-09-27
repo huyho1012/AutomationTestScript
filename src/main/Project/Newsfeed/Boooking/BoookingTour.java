@@ -188,4 +188,63 @@ public class BoookingTour extends BookingCommon {
             sendKeyToElement(driver, BookingTourUI.DYNAMIC_FIELD_ON_ADULT_INFO, address ,"Em bé", String.valueOf(i),"ov405");
         }
     }
+
+    public Object getCurrencySymbolPriceDisplayOnSidebar() {
+        return null;
+    }
+
+    public Object getCurrencySymbolServicePriceDisplayOnSidebar() {
+        return null;
+    }
+
+    public Object getCurrencySymbolVATDisplayOnSidebar() {
+        return null;
+    }
+
+    public Object getCurrencySymbolTotalPriceDisplayOnSidebar() {
+        return null;
+    }
+
+    public Object getCurrencySymbolTourPriceDisplayOnDetailStep1() {
+        return null;
+    }
+
+    public Object getCurrencySymbolAdultPriceDisplayOnPriceTable() {
+        return null;
+    }
+
+    public Object getCurrencySymbolChildPriceDisplayOnPriceTable() {
+        return null;
+    }
+    public Object getCurrencySymbolYoungChildPriceDisplayOnPriceTable() {
+        return null;
+    }
+    public Object getCurrencySymbolBabyPriceDisplayOnPriceTable() {
+        return null;
+    }
+    public Object getCurrencySymbolChildPriceDisplayOnSidebar() {
+        return null;
+    }
+    public Object getCurrencySymbolAdultPriceDisplayOnSidebar() {
+        return null;
+    }
+    public Object getCurrencySymbolYoungChildPriceDisplayOnSidebar() {
+        return null;
+    }
+    public Object getCurrencySymbolBabyPriceDisplayOnSidebar() {
+        return null;
+    }
+
+    public Object getCurSymbolTotalPriceOfAdultItemOnTravellerInfo() {
+        return null;
+    }
+    public Object getCurSymbolTotalPriceOfChildItemOnTravellerInfo() {
+        return null;
+    }
+    public Object getCurSymbolTotalPriceOfYoungChildItemOnTravellerInfo() {
+        return null;
+    }
+    public Object getCurSymbolTotalPriceOfBabyItemOnTravellerInfo() {
+        return null;
+    }
 }

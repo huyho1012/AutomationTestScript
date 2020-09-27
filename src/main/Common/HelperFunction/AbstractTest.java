@@ -6,6 +6,7 @@ import org.joda.time.DateTime;
 import org.testng.Assert;
 import org.testng.Reporter;
 
+import java.util.Currency;
 import java.util.Random;
 
 public abstract class AbstractTest extends AbstractPage {
@@ -159,4 +160,11 @@ public abstract class AbstractTest extends AbstractPage {
         String sentence = data.trim();
         return sentence.replaceAll(" ", "");
     }
+
+
+    protected String getCurrencySymbol(String currency){
+        Currency cur = Currency.getInstance(currency);
+        return  cur.getSymbol();
+    }
+
 }

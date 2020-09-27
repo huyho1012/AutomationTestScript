@@ -33,4 +33,12 @@ public class TourDetail extends HeaderPage {
     public boolean checkTourSchedulerTabIsDisplay() {
         return true;
     }
+
+    public Object getCurrencyOnPriceFromSection() {
+        return null;
+    }
+
+    public Object getCurrencySymbolOfTourItemOnScheduler() {
+        return null;
+    }
 }
