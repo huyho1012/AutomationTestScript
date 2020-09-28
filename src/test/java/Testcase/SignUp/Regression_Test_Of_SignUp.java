@@ -405,25 +405,86 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
 
         log.info("Go to Basic info and Contact tab");
 
-        log.info("Step - Check Contact and");
+        log.info("Step - Check Contact and Basic info tab display");
 
-        log.info("Step 38. Check Email display on Contact Information");
+        log.info("Step 38. Check Email display");
 
-        log.info("Step 39. Check Birthday display on Contact information");
+        log.info("Step 39. Check Birthday display");
 
-        log.info("Step 40. Check gender display on Contact Information");
+        log.info("Step 40. Check gender display");
 
-        log.info("Step 41. Click to add main phone");
+        log.info(" Add main phone");
+        log.info("Step 1. Click to button Add new phone");
+        log.info("Step 2. Enter data to main phone field");
 
-        log.info("Step 42. Go to Details about you");
+        log.info("Step 3. Click button add other phone");
+        log.info("Step 4. Enter data to other phone field");
 
-        log.info("Step 43. Check Detail about you display");
+        log.info("Step 5. Click Save button");
 
-        log.info("Step 44. Add new introduce");
+        log.info("Verify phone information");
+        log.info("Step 1. Verify main phone display");
 
-        log.info("Step 45. Add new ọther name");
+        log.info("Step 2. Verify other phone display");
+
+        log.info("Update birthday");
+        log.info("Step 1. Click button edit birthday");
+
+        log.info("Step 2. Enter data of Birthday");
+
+        log.info("Step - Choose scope");
+
+        log.info("Step 3. Click Save button");
+
+        log.info("Verify birthday change successdfully");
+
+        log.info("Add new address");
+        log.info("Step 1 - Check case no address");
+
+        log.info("Step 2 - Click to add new address");
+
+        log.info("Step 3 - Enter address");
+
+        log.info("Step 3 - Enter city");
+
+        log.info("Step 3 - Enter area code");
+
+        log.info("Step - Click save button");
+
+        log.info("Step - Check address information display");
+
+        log.info("Update gender");
+        log.info("Step - Click to edit gender");
+
+        log.info("Step - Choose gender");
+
+        log.info("Step - Choose scope");
+
+        log.info("Step - Click save button");
+
+        log.info("Step - Check gender update successfully");
+
+        log.info("Go to Details about you");
+
+        log.info("Check Detail About you tab is display");
+
+        log.info("Add new introduce");
+
+        log.info("Enter data of introduce");
+
+        log.info("Click Save button");
+
+        log.info("Add other name");
+
+        log.info("Enter data of other name");
+
+        log.info("Click Save button");
 
         log.info("Step 46. Add new favorite quotes");
+
+        log.info("Enter data of favorite quotes");
+
+        log.info("Click Save button");
 
         log.info("Step 8.Go to Account setting page");
         perAboutOverviewTab.clickToItemOnSettingMenu(driver, "ic-cog-c");
