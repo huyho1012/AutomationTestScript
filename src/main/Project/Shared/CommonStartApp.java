@@ -44,8 +44,7 @@ public class CommonStartApp extends AbstractTest {
         clickToElement(driver, StartingCommonUI.GOOGLE_PLAY);
     }
 
-    public void clickToChangeLanguageToVI(){
-        waitForPageLoading(driver);
+    public void clickToChangeLanguageToVI(WebDriver driver){
         if(getAttributeValue(driver,LoginUI.VI_ICON,"class").contains("active")){
             clickToElement(driver,LoginUI.VI_ICON);
         }

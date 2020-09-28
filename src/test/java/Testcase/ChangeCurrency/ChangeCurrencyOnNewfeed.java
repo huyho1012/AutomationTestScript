@@ -34,7 +34,7 @@ public class ChangeCurrencyOnNewfeed extends AbstractTest {
         newsfeedLoginPage = PageGeneration.createNewsfeedLoginPage(driver);
 
         log.info("Change language system to Vietnamese");
-        newsfeedLoginPage.clickToChangeLanguageToVI();
+        newsfeedLoginPage.clickToChangeLanguageToVI(driver);
 
         log.info("Login Hahalolo");
         newsfeedLoginPage.Login(GlobalVariables.USER_ACCOUNT, "123456");

@@ -63,7 +63,7 @@ public class  NewsfeedHomepage extends HeaderPage {
         return getTextElement(driver, HomePageUI.MY_ACCOUNT_FULL_NAME);
     }
 
-    public void clickToEditProfile(WebDriver driver) {
+    public void clickToEditProfile() {
         waitForElementClickable(driver,HomePageUI.MY_ACCOUNT_EDIT_PROFILE_BUTTON);
         clickToElement(driver, HomePageUI.MY_ACCOUNT_EDIT_PROFILE_BUTTON);
         setTimeDelay(1);
@@ -74,7 +74,7 @@ public class  NewsfeedHomepage extends HeaderPage {
         return getCurrentURL(driver).equals("https://test-newsfeed.hahalolo.com/") && getPageTitle(driver).equalsIgnoreCase("Bảng tin | Hahalolo");
     }
 
-    public boolean checkNewsfeedDisplayOnFirstTime(WebDriver driver) {
+    public boolean checkNewsfeedDisplayOnFirstTime() {
         return checkNewsfeedDisplay() && checkElementDisplay(driver, HomePageUI.FORM_UPDATE_NEW_INFO);
     }
 

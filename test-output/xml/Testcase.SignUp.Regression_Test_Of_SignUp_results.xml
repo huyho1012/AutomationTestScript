@@ -1,34 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Test with firefox"
-           tests="22"
-           failures="0"
+           tests="1"
+           failures="1"
            errors="0"
            skipped="0"
-           time="225.447">
+           time="28.269">
   <properties />
+            <testcase name="TC01_Newsfeed_Sign_Up_New_Account" time="28.269" classname="Testcase.SignUp.Regression_Test_Of_SignUp">
+                <failure type="org.openqa.selenium.NoSuchElementException"
+                  message="Cannot locate an element using xpath=//tr[contains(@id,&apos;huyho65076&apos;)][1]/td[3]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;ADMIN&apos;, ip: &apos;10.0.2.120&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
+Driver info: driver.version: RemoteWebDriver"
+              >
+<![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate an element using xpath=//tr[contains(@id,'huyho65076')][1]/td[3]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ADMIN', ip: '10.0.2.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
+Driver info: driver.version: RemoteWebDriver
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)
+  org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+  org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+  Common.HelperFunction.AbstractPage.findElement(AbstractPage.java:122)
+  Common.HelperFunction.AbstractPage.clickToElement(AbstractPage.java:135)
+  Project.Shared.SignUp_PageObject.getVerifyCodeByEmail(SignUp_PageObject.java:82)
+  Testcase.SignUp.Regression_Test_Of_SignUp.TC01_Newsfeed_Sign_Up_New_Account(Regression_Test_Of_SignUp.java:204)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+  java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base/java.lang.reflect.Method.invoke(Method.java:564)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:782)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+  org.testng.TestNG.run(TestNG.java:1064)
+  com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+  com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+      </failure>
+
+          </testcase>
   
   
-            <testcase name="TC12_Business_Create_New_Page_Tour" time="13.623" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC14_Tour_Update_VAT_On_General_Information" time="0.374" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC21_Tour_Detail_Create_New_Part" time="22.624" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC32_Booking_Step3_ConfirmTravllerInfo" time="8.038" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC29_Booking_Tour_Step1" time="2.920" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC31_Booking_Step2_Update_Traveller_Info" time="10.916" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC30_Booking_Step2_Update_Leader_Info" time="1.775" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC13_Tour_Update_Prepayment_Cancellation_On_General_Information" time="6.094" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC27_Tour_Detail_Publish_Tour" time="0.884" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC19_Tour_Create_New_Tour" time="5.583" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC05_Login_Newsfeed_With_Old_Account" time="4.750" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC20_Tour_Detail_Update_Information" time="59.627" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC23_Tour_Detail_Choose_Date_For_Open_Sale_Tour" time="6.242" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC15_Tour_Update_Age_On_General_Information" time="1.230" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC18_Tour_Create_New_Topic" time="18.447" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC28_Tour_Detail_View_Page_On_Newsfeed" time="25.016" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC22_Tour_Detail_Create_New_Price" time="12.232" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC33_Booking_Step4_PaymentInfo_Update_Billing_Info" time="10.258" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC24_Tour_Detail_Update_Services_Provided" time="2.885" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC16_Tour_Update_Notice_Order_On_General_Information" time="2.192" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC17_Tour_Publish_Page" time="3.729" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-                <testcase name="TC34_Booking_Step4_Payment_With_Stripe" time="6.008" classname="Testcase.SignUp.Regression_Test_Of_SignUp" />
-      
+  
 </testsuite>

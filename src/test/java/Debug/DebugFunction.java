@@ -19,6 +19,16 @@ public class DebugFunction {
             return firstName.trim() + middleName.trim() + lastName.trim();
     }
 
+    public static String randomName(int numPassChar) {
+        String text = null;
+        String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "abcdefghijklmnopqrstuvxyz";
+        StringBuilder bd = new StringBuilder(numPassChar);
+        for (int i = 0; i < numPassChar; i++) {
+            int index = (int) (AlphaNumericString.length() * Math.random());
+            text = bd.append(AlphaNumericString.charAt(index)).toString();
+        }
+        return text;
+    }
     public static String removeAllWhitespace(String data) {
         String sentence = data.trim();
         return sentence.replaceAll(" ", "");
@@ -32,5 +42,6 @@ public class DebugFunction {
     public static void main (String [] args) {
         System.out.println(randomVirtualEmail());
         System.out.println(LocalTime.now());
+        System.out.println(randomName(1000));
     }
 }

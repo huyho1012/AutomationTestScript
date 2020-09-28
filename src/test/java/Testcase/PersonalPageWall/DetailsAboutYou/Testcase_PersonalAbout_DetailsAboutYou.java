@@ -8,9 +8,9 @@ import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
 import Project.Newsfeed.PersonalWall.About.PerAbout_BasicInfoAndContact_PageObject;
-import Project.Newsfeed.PersonalWall.About.PerAbout_Overview_Common_PageObjectObject;
+import Project.Newsfeed.PersonalWall.About.PerAbout_Overview_PageObject;
 import Project.Shared.Login_PageObject;
-import Project.Shared.SignUpPage;
+import Project.Shared.SignUp_PageObject;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -20,10 +20,10 @@ public class Testcase_PersonalAbout_DetailsAboutYou extends AbstractTest {
     WebDriver driver;
     DriverManager driverManager;
     Login_PageObject newsfeedLoginPageObject;
-    SignUpPage signUpPage;
+    SignUp_PageObject signUpPageObject;
 
     NewsfeedHomepage newsfeedHomepage;
-    PerAbout_Overview_Common_PageObjectObject perOverviewPage;
+    PerAbout_Overview_PageObject perOverviewPage;
     PerAbout_BasicInfoAndContact_PageObject perBasicInfoAndContactPage;
 
     String firstName, lastName, email, password, confirmPass;
@@ -46,8 +46,8 @@ public class Testcase_PersonalAbout_DetailsAboutYou extends AbstractTest {
     public void Testcase01_Check_Information_When_User_Create_New_Account_Email(){
         log.info("Step 1 - Register new account");
         // Thay đổi ngôn ngữ hệ thống để đồng nhất dữ liệu - Tiếng việt)
-        newsfeedLoginPageObject.clickToChangeLanguageToVI();
-        signUpPage = PageGeneration.createFormRegister(driver);
+        newsfeedLoginPageObject.clickToChangeLanguageToVI(driver);
+        signUpPageObject = PageGeneration.createFormRegister(driver);
         // Đăng ký tài khoản
 
         firstName = dataHelper.getFirstName();
@@ -55,12 +55,12 @@ public class Testcase_PersonalAbout_DetailsAboutYou extends AbstractTest {
         email = randomVirtualEmail();
         password = "123456";
         confirmPass = "123456";
-        signUpPage.signUpWithNewAccountByEmail(firstName, lastName, email, password, confirmPass);
+        signUpPageObject.signUpWithNewAccountByEmail(firstName, lastName, email, password, confirmPass);
         String fullNameOfUser = getFullName(lastName, firstName);
         newsfeedHomepage = PageGeneration.createNewsfeedHomepage(driver);
         log.info("Step 2 - Update new information");
         // Kiểm tra trang newsfeed hiển thị với trường hợp tạo mới thành công
-        verifyTrue(newsfeedHomepage.checkNewsfeedDisplayOnFirstTime(driver));
+        verifyTrue(newsfeedHomepage.checkNewsfeedDisplayOnFirstTime());
         // Cập nhật thông tin người dùng tại lần đầu tiên đăng nhập
         dayBirth ="12";
         monthBirth = "10";
@@ -74,8 +74,8 @@ public class Testcase_PersonalAbout_DetailsAboutYou extends AbstractTest {
         // Kiểm tra hiển thị tại wigdet MyAccount với tên người dùng dc tạo ra từ dữ liệu form đăng ký
         verifyEquals(fullNameOfUser, fullNameOnMyAccount);
         log.info("Step 3 - Go To Personal About");
-        newsfeedHomepage.clickToEditProfile(driver);
-        perOverviewPage = PageGeneration.createPersonalOverviewPage(driver);
+        newsfeedHomepage.clickToEditProfile();
+        perOverviewPage = PageGeneration.createPerAboutOverviewTab(driver);
         // Kiểm tra người dùng vào đúng trang tài khoản của mình
         verifyTrue(perOverviewPage.checkPersonalPageIsDisplay(fullNameOfUser));
         // Lấy các thông tin hiển tại Widget Introduce

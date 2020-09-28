@@ -6,10 +6,10 @@ import Common.GlobalVariables;
 import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
-import Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_Common_PageObjectObject;
-import Project.Newsfeed.PersonalWall.About.PerAbout_Overview_Common_PageObjectObject;
+import Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject;
+import Project.Newsfeed.PersonalWall.About.PerAbout_Overview_PageObject;
 import Project.Shared.Login_PageObject;
-import Project.Shared.SignUpPage;
+import Project.Shared.SignUp_PageObject;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
@@ -23,9 +23,9 @@ public class ComponentTestcase extends AbstractTest {
     // Khai báo Page Object
     Login_PageObject newsfeedLoginPageObject;
     NewsfeedHomepage newsfeedHomepage;
-    PerAbout_Overview_Common_PageObjectObject perOverviewTab;
-    PerAbout_DetailsAboutYou_Common_PageObjectObject perDetailAboutTab;
-    SignUpPage signUpPage;
+    PerAbout_Overview_PageObject perOverviewTab;
+    PerAbout_DetailsAboutYou_PageObject perDetailAboutTab;
+    SignUp_PageObject signUpPageObject;
 
     @Test
     public void preconditionStep(String browserName){
@@ -40,7 +40,7 @@ public class ComponentTestcase extends AbstractTest {
         newsfeedLoginPageObject = PageGeneration.createNewsfeedLoginPage(driver);
 
         log.info("Precondition Step 3 - Change language system to VI");
-        newsfeedLoginPageObject.clickToChangeLanguageToVI();
+        newsfeedLoginPageObject.clickToChangeLanguageToVI(driver);
 
         log.info("Preconditon Step 4 - Login newsfeed");
         newsfeedLoginPageObject.Login(emailUser, passwordUser);
@@ -49,8 +49,8 @@ public class ComponentTestcase extends AbstractTest {
 
     public void goToPersonalAboutTabDetailsAboutYou(){
         log.info("Step 1 - GO to Personal wall - About - Overview");
-        newsfeedHomepage.clickToEditProfile(driver);
-        perOverviewTab = PageGeneration.createPersonalOverviewPage(driver);
+        newsfeedHomepage.clickToEditProfile();
+        perOverviewTab = PageGeneration.createPerAboutOverviewTab(driver);
 
         log.info("Step 1 - GO to Personal wall - About");
         perOverviewTab.clickToTabItemOnAbout("");

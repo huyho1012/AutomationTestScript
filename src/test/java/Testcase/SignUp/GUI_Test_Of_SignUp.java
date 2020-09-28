@@ -3,39 +3,39 @@ package Testcase.SignUp;
 import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;
 import Project.Shared.Login_PageObject;
-import Project.Shared.SignUpPage;
+import Project.Shared.SignUp_PageObject;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 public class GUI_Test_Of_SignUp extends AbstractTest {
     WebDriver driver;
     Login_PageObject newsfeedLoginPageObject;
-    SignUpPage signUpPage;
+    SignUp_PageObject signUpPageObject;
     @Test(enabled = false)
     public void Testcase_Register_01_Check_SignUpForm_With_Eng_Language(){
         newsfeedLoginPageObject.clickToChangeToEng(driver);
-        signUpPage = PageGeneration.createFormRegister(driver);
+        signUpPageObject = PageGeneration.createFormRegister(driver);
         log.info("Check Title Of SignUp form when");
-        verifyEquals(signUpPage.getTitleOfFormSignUp(),"Join Hahalolo Now!");
+        verifyEquals(signUpPageObject.getTitleOfFormSignUp(),"Join Hahalolo Now!");
         log.info("Check placeholder of fields");
-        verifyEquals(signUpPage.getPlaceholderOfDynamicField(),"First name");
-        verifyEquals(signUpPage.getPlaceholderOfDynamicField(),"Last name");
-        verifyEquals(signUpPage.getPlaceholderOfDynamicField(),"Phone number or Email");
-        verifyEquals(signUpPage.getPlaceholderOfDynamicField(),"Password");
-        verifyEquals(signUpPage.getPlaceholderOfDynamicField(),"Confirm Password");
-        verifyEquals(signUpPage.getContentOfSignUpButton(),"Sign Up");
+        verifyEquals(signUpPageObject.getPlaceholderOfDynamicField(),"First name");
+        verifyEquals(signUpPageObject.getPlaceholderOfDynamicField(),"Last name");
+        verifyEquals(signUpPageObject.getPlaceholderOfDynamicField(),"Phone number or Email");
+        verifyEquals(signUpPageObject.getPlaceholderOfDynamicField(),"Password");
+        verifyEquals(signUpPageObject.getPlaceholderOfDynamicField(),"Confirm Password");
+        verifyEquals(signUpPageObject.getContentOfSignUpButton(),"Sign Up");
     }
     @Test(enabled = false)
     public void Testcase_Register_02_Check_SignUpForm_With_VI_Language(){
-        newsfeedLoginPageObject.clickToChangeLanguageToVI();
+        newsfeedLoginPageObject.clickToChangeLanguageToVI(driver);
         log.info("Check Title Of SignUp form when");
-        verifyEquals(signUpPage.getTitleOfFormSignUp(),"Tham gia Hahalolo ngay!");
+        verifyEquals(signUpPageObject.getTitleOfFormSignUp(),"Tham gia Hahalolo ngay!");
         log.info("Check placeholder of fields");
-        verifyEquals(signUpPage.getPlaceholderOfDynamicField(),"Tên");
-        verifyEquals(signUpPage.getPlaceholderOfDynamicField(),"Họ");
-        verifyEquals(signUpPage.getPlaceholderOfDynamicField(),"Điện thoại hoặc Email");
-        verifyEquals(signUpPage.getPlaceholderOfDynamicField(),"Mật khẩu");
-        verifyEquals(signUpPage.getPlaceholderOfDynamicField(),"Mật khẩu xác nhận");
-        verifyEquals(signUpPage.getContentOfSignUpButton(),"Đăng ký");
+        verifyEquals(signUpPageObject.getPlaceholderOfDynamicField(),"Tên");
+        verifyEquals(signUpPageObject.getPlaceholderOfDynamicField(),"Họ");
+        verifyEquals(signUpPageObject.getPlaceholderOfDynamicField(),"Điện thoại hoặc Email");
+        verifyEquals(signUpPageObject.getPlaceholderOfDynamicField(),"Mật khẩu");
+        verifyEquals(signUpPageObject.getPlaceholderOfDynamicField(),"Mật khẩu xác nhận");
+        verifyEquals(signUpPageObject.getContentOfSignUpButton(),"Đăng ký");
     }
 }

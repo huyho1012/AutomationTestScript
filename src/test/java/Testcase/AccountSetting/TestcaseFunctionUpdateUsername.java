@@ -10,7 +10,7 @@ import Project.Newsfeed.AccountSetting.GeneralAccountSetting;
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
 import Project.Newsfeed.PersonalWall.About.PerAbout_Common_PageObject;
 import Project.Shared.Login_PageObject;
-import Project.Shared.SignUpPage;
+import Project.Shared.SignUp_PageObject;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -23,7 +23,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
     Login_PageObject loginNewsfeedPage;
     NewsfeedHomepage newsFeedHomePage;
     GeneralAccountSetting accountSetting;
-    SignUpPage signUpPage;
+    SignUp_PageObject signUpPageObject;
     PerAbout_Common_PageObject perAboutCommonPageObject;
     String htmlCode ="<p>HelloWord</p>";
     String scriptCode ="<script>destroyWebsite();</script>";
@@ -43,7 +43,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         loginNewsfeedPage = PageGeneration.createNewsfeedLoginPage(driver);
 
         log.info("Change language of system to VI");
-        loginNewsfeedPage.clickToChangeLanguageToVI();
+        loginNewsfeedPage.clickToChangeLanguageToVI(driver);
 
         log.info("Login to Hahalolo");
         loginNewsfeedPage.Login(GlobalVariables.USER_ACCOUNT,GlobalVariables.USER_PASSWORD);
@@ -290,7 +290,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
 
         log.info("End step. Logot account");
         accountSetting.clickToItemOnSettingMenu(driver,"ic-logout-c");
-        signUpPage = PageGeneration.createFormRegister(driver);
+        signUpPageObject = PageGeneration.createFormRegister(driver);
     }
 
     @Test
@@ -302,11 +302,11 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         userName = "huy.hodoan."+randomNumber(300000);
 
         log.info("Step 1. Register new account");
-        signUpPage.signUpWithNewAccountByEmail(firstName, lastName, email, "123456", "123456");
+        signUpPageObject.signUpWithNewAccountByEmail(firstName, lastName, email, "123456", "123456");
         newsFeedHomePage = PageGeneration.createNewsfeedHomepage(driver);
 
         log.info("Step 2. Verify register new account successfully");
-        verifyTrue(newsFeedHomePage.checkNewsfeedDisplayOnFirstTime(driver));
+        verifyTrue(newsFeedHomePage.checkNewsfeedDisplayOnFirstTime());
 
         log.info("Step 3. Cancel update new info");
         newsFeedHomePage.clickCancelUpdateNewInfo();
@@ -343,7 +343,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
 
         log.info("Step 6. Go to Personal About - Overview");
         accountSetting.clickToAvatarOnHeader(driver);
-        perAboutCommonPageObject = PageGeneration.createPersonalOverviewPage(driver);
+        perAboutCommonPageObject = PageGeneration.createPerAboutOverviewTab(driver);
 
         log.info("Step 6. Verify personal URL with urlUsername");
         verifyEquals(perAboutCommonPageObject.getCurrentURL(driver),urlUserName);

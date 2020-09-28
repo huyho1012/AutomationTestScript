@@ -2,9 +2,10 @@ package Project.Newsfeed.PersonalWall.About;
 
 import Interfaces.hahalolo_newsfeed.PersonaWall.PersonalHeadCoverUI;
 import Project.Newsfeed.Newsfeed.HeaderPage;
+import Project.Newsfeed.PersonalWall.PersonalCommon;
 import org.openqa.selenium.WebDriver;
 
-public class PerAbout_Common_PageObject extends HeaderPage {
+public class PerAbout_Common_PageObject extends PersonalCommon {
     WebDriver driver;
 
     // Hàm xử lý các thông tin trong widget introduction

@@ -29,7 +29,7 @@ import org.testng.annotations.Test;
             newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
 
             log.info("Precondition - Step 3. Change system language to Vietnamese");
-            newsfeedLogin.clickToChangeLanguageToVI();
+            newsfeedLogin.clickToChangeLanguageToVI(driver);
         }
 
         @Test

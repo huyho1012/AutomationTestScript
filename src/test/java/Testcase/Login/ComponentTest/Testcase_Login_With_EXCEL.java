@@ -32,7 +32,7 @@ public class Testcase_Login_With_EXCEL extends AbstractTest {
         newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
 
         log.info("Precondition - Step 3. Change system language To Vi");
-        newsfeedLogin.clickToChangeLanguageToVI();
+        newsfeedLogin.clickToChangeLanguageToVI(driver);
     }
 
     @Test

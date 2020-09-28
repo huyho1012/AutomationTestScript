@@ -45,11 +45,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-<<<<<<< HEAD
-			<span class='label blue darken-3 suite-start-time'>Sep 19, 2020 02:04:54 PM</span>
-=======
-			<span class='label blue darken-3 suite-start-time'>Sep 23, 2020 03:16:19 PM</span>
->>>>>>> 4216f2a26590013948354bc7625f2ba18b91a237
+			<span class='label blue darken-3 suite-start-time'>Sep 28, 2020 05:23:44 PM</span>
 			</a>
 		</ul>
 	</div>
@@ -64,8 +60,7 @@
 				<i class='material-icons'>warning</i> Status
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
-										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
-					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+										<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -108,14 +103,10 @@
                     <canvas id='parent-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-<<<<<<< HEAD
-                    <span class='tooltipped' data-position='top' data-tooltip='97.5%'><span class='strong'>39</span> test(s) passed</span>
-=======
-                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>7</span> test(s) passed</span>
->>>>>>> 4216f2a26590013948354bc7625f2ba18b91a237
+                    <span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> test(s) passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='2.5%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                    <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
                 </div>
             </div>
         </div>
@@ -135,16 +126,15 @@
 			<ul id='test-collection' class='test-collection'>
 				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
 					<div class='test-heading'>
-<<<<<<< HEAD
-						<span class='test-name'>Tescase02_Check_Validate_Of_File_Can_Use_To_Upload_Cover_By_Local_Image</span>
-						<span class='test-time'>Sep 19, 2020 02:03:37 PM</span>
+						<span class='test-name'>TC01_Newsfeed_Sign_Up_New_Account</span>
+						<span class='test-time'>Sep 28, 2020 05:23:16 PM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 02:03:37 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 1m 17s+878ms</span>
+	<span class='label start-time'>Sep 28, 2020 05:23:16 PM</span>
+	<span class='label end-time'>Sep 28, 2020 05:23:44 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 28s+420ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -158,1609 +148,45 @@
 		<tbody>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
+				<td class='timestamp'>5:23:44 PM</td>
 				<td class='step-details'>
-						<textarea disabled class="code-block">java.lang.AssertionError: expected [Tập tin không đúng định dạng ne] but found [Tập tin không đúng định dạng]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertEquals(Assert.java:123)
-	at org.testng.Assert.assertEquals(Assert.java:165)
-	at Common.HelperFunction.AbstractTest.checkEquals(AbstractTest.java:103)
-	at Common.HelperFunction.AbstractTest.verifyEquals(AbstractTest.java:114)
-	at Testcase.UploadAvatar.Tescase02_Check_Validate_Of_File_Can_Use_To_Upload_Cover_By_Local_Image(UploadAvatar.java:122)
+						<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: Cannot locate an element using xpath=//tr[contains(@id,'huyho65076')][1]/td[3]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ADMIN', ip: '10.0.2.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at Common.HelperFunction.AbstractPage.findElement(AbstractPage.java:122)
+	at Common.HelperFunction.AbstractPage.clickToElement(AbstractPage.java:135)
+	at Project.Shared.SignUp_PageObject.getVerifyCodeByEmail(SignUp_PageObject.java:82)
+	at Testcase.SignUp.Regression_Test_Of_SignUp.TC01_Newsfeed_Sign_Up_New_Account(Regression_Test_Of_SignUp.java:204)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 </textarea>
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
-					<div class='test-heading'>
-						<span class='test-name'>TC12_Business_Create_New_Page_Tour</span>
-						<span class='test-time'>Sep 19, 2020 01:58:14 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:58:14 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 6m 40s+742ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase_Register_03_Check_Register_New_Account_With_Invalid_Phonenumber</span>
-						<span class='test-time'>Sep 19, 2020 01:56:40 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:56:40 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 8m 14s+760ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
-					<div class='test-heading'>
-						<span class='test-name'>TC14_Tour_Update_VAT_On_General_Information</span>
-						<span class='test-time'>Sep 19, 2020 01:58:34 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:58:34 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 6m 21s+24ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
-					<div class='test-heading'>
-						<span class='test-name'>TC21_Tour_Detail_Create_New_Part</span>
-						<span class='test-time'>Sep 19, 2020 02:00:05 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 02:00:05 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 4m 49s+839ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='6'>
-					<div class='test-heading'>
-						<span class='test-name'>Tescase01_Check_Validate_Of_File_Can_Use_To_Upload_Avatar_By_Local_Image</span>
-						<span class='test-time'>Sep 19, 2020 02:02:11 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 02:02:11 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 2m 43s+952ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='7'>
-					<div class='test-heading'>
-						<span class='test-name'>TC32_Booking_Step3_ConfirmTravllerInfo</span>
-						<span class='test-time'>Sep 19, 2020 02:01:30 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 02:01:30 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 3m 24s+345ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='8'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase_Register_07_Check_Register_New_Account_With_Invalid_Confirm_Password</span>
-						<span class='test-time'>Sep 19, 2020 01:56:54 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:56:54 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 8m 0s+566ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='9'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase_Newsfeed_Login_02_Login_With_UserName_Not_Existed_On_Hahalolo</span>
-						<span class='test-time'>Sep 19, 2020 01:55:43 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:55:43 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 9m 11s+700ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='10'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase_Newsfeed_Login_07_Login_With_Valid_Phone</span>
-						<span class='test-time'>Sep 19, 2020 01:56:10 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:56:10 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 8m 44s+505ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='11'>
-					<div class='test-heading'>
-						<span class='test-name'>TC29_Booking_Tour_Step1</span>
-						<span class='test-time'>Sep 19, 2020 02:01:15 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 02:01:15 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 3m 39s+959ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='12'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase_Newsfeed_Login_05_Login_With_Invalid_Account</span>
-						<span class='test-time'>Sep 19, 2020 01:55:46 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:55:46 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 9m 8s+724ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='13'>
-					<div class='test-heading'>
-						<span class='test-name'>TC31_Booking_Step2_Update_Traveller_Info</span>
-						<span class='test-time'>Sep 19, 2020 02:01:19 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 02:01:19 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 3m 35s+266ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='14'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase_Newsfeed_Login_03_Login_With_Password_Incorrect</span>
-						<span class='test-time'>Sep 19, 2020 01:55:44 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:55:44 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 9m 10s+825ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='15'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase_Register_02_Check_Register_New_Account_With_Invalid_LastName</span>
-						<span class='test-time'>Sep 19, 2020 01:56:33 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:56:33 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 8m 21s+286ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='16'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase_Register_06_Check_Register_New_Account_With_Invalid_Password</span>
-						<span class='test-time'>Sep 19, 2020 01:56:51 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:56:51 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 8m 3s+105ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='17'>
-					<div class='test-heading'>
-						<span class='test-name'>TC30_Booking_Step2_Update_Leader_Info</span>
-						<span class='test-time'>Sep 19, 2020 02:01:18 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 02:01:18 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 3m 37s+43ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='18'>
-					<div class='test-heading'>
-						<span class='test-name'>TC13_Tour_Update_Prepayment_Cancellation_On_General_Information</span>
-						<span class='test-time'>Sep 19, 2020 01:58:27 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:58:27 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 6m 27s+128ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='19'>
-					<div class='test-heading'>
-						<span class='test-name'>TC27_Tour_Detail_Publish_Tour</span>
-						<span class='test-time'>Sep 19, 2020 02:00:49 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 02:00:49 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 4m 5s+864ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='20'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase_Register_01_Check_Register_New_Account_With_Invalid_FirstName</span>
-						<span class='test-time'>Sep 19, 2020 01:56:28 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:56:28 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 8m 26s+406ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='21'>
-					<div class='test-heading'>
-						<span class='test-name'>TC19_Tour_Create_New_Tour</span>
-						<span class='test-time'>Sep 19, 2020 01:58:59 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:58:59 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 5m 55s+60ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='22'>
-					<div class='test-heading'>
-						<span class='test-name'>TC05_Login_Newsfeed_With_Old_Account</span>
-						<span class='test-time'>Sep 19, 2020 01:58:09 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:58:09 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 6m 45s+504ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='23'>
-					<div class='test-heading'>
-						<span class='test-name'>TC20_Tour_Detail_Update_Information</span>
-						<span class='test-time'>Sep 19, 2020 01:59:05 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:59:05 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 5m 49s+477ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='24'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase_Newsfeed_Login_06_Login_With_Valid_Account</span>
-						<span class='test-time'>Sep 19, 2020 01:56:02 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:56:02 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 8m 52s+705ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='25'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase_Newsfeed_Login_06_Login_With_Uppercase_Email</span>
-						<span class='test-time'>Sep 19, 2020 01:55:51 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:55:51 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 9m 3s+872ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='26'>
-					<div class='test-heading'>
-						<span class='test-name'>TC23_Tour_Detail_Choose_Date_For_Open_Sale_Tour</span>
-						<span class='test-time'>Sep 19, 2020 02:00:40 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 02:00:40 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 4m 14s+994ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='27'>
-					<div class='test-heading'>
-						<span class='test-name'>TC15_Tour_Update_Age_On_General_Information</span>
-						<span class='test-time'>Sep 19, 2020 01:58:34 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:58:34 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 6m 20s+663ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='28'>
-					<div class='test-heading'>
-						<span class='test-name'>TC18_Tour_Create_New_Topic</span>
-						<span class='test-time'>Sep 19, 2020 01:58:41 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:58:41 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 6m 13s+510ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='29'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase_Register_09_Check_Register_New_Account_ContainsMoreThan2Idots</span>
-						<span class='test-time'>Sep 19, 2020 01:57:30 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:57:30 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 7m 24s+138ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='30'>
-					<div class='test-heading'>
-						<span class='test-name'>TC28_Tour_Detail_View_Page_On_Newsfeed</span>
-						<span class='test-time'>Sep 19, 2020 02:00:50 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 02:00:50 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 4m 4s+985ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='31'>
-					<div class='test-heading'>
-						<span class='test-name'>TC22_Tour_Detail_Create_New_Price</span>
-						<span class='test-time'>Sep 19, 2020 02:00:27 PM</span>
-=======
-						<span class='test-name'>Testcase04_Update_Username_With_Username_Is_Number</span>
-						<span class='test-time'>Sep 23, 2020 03:15:32 PM</span>
->>>>>>> 4216f2a26590013948354bc7625f2ba18b91a237
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-<<<<<<< HEAD
-	<span class='label start-time'>Sep 19, 2020 02:00:27 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 4m 27s+229ms</span>
-=======
-	<span class='label start-time'>Sep 23, 2020 03:15:32 PM</span>
-	<span class='label end-time'>Sep 23, 2020 03:16:19 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 46s+256ms</span>
->>>>>>> 4216f2a26590013948354bc7625f2ba18b91a237
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-<<<<<<< HEAD
-				<td class='timestamp'>2:04:55 PM</td>
-=======
-				<td class='timestamp'>3:16:19 PM</td>
->>>>>>> 4216f2a26590013948354bc7625f2ba18b91a237
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='32'>
-					<div class='test-heading'>
-<<<<<<< HEAD
-						<span class='test-name'>TC33_Booking_Step4_PaymentInfo_Update_Billing_Info</span>
-						<span class='test-time'>Sep 19, 2020 02:01:38 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 02:01:38 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 3m 16s+321ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='33'>
-					<div class='test-heading'>
-						<span class='test-name'>TC24_Tour_Detail_Update_Services_Provided</span>
-						<span class='test-time'>Sep 19, 2020 02:00:46 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 02:00:46 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 4m 8s+757ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='34'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase_Register_03_Check_Register_New_Account_With_Invalid_Email</span>
-						<span class='test-time'>Sep 19, 2020 01:56:36 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:56:36 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 8m 18s+709ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='35'>
-					<div class='test-heading'>
-						<span class='test-name'>TC16_Tour_Update_Notice_Order_On_General_Information</span>
-						<span class='test-time'>Sep 19, 2020 01:58:35 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:58:35 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 6m 19s+439ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='36'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase_Newsfeed_Login_01_Login_With_Invalid_Information</span>
-						<span class='test-time'>Sep 19, 2020 01:55:42 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:55:42 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 9m 12s+733ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='37'>
-					<div class='test-heading'>
-						<span class='test-name'>TC17_Tour_Publish_Page</span>
-						<span class='test-time'>Sep 19, 2020 01:58:37 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:58:37 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 6m 17s+248ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='38'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase_Register_08_Check_Register_New_Account_With_UpperCase_Email</span>
-						<span class='test-time'>Sep 19, 2020 01:56:56 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 01:56:56 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 7m 58s+228ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='39'>
-					<div class='test-heading'>
-						<span class='test-name'>TC34_Booking_Step4_Payment_With_Stripe</span>
-						<span class='test-time'>Sep 19, 2020 02:01:48 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 19, 2020 02:01:48 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 3m 6s+69ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:04:55 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='40'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase_Newsfeed_Login_04_Login_With_Invalid_Password</span>
-						<span class='test-time'>Sep 19, 2020 01:55:45 PM</span>
-=======
-						<span class='test-name'>Testcase05_Update_Username_With_Username_Is_AlphaNumber</span>
-						<span class='test-time'>Sep 23, 2020 03:15:36 PM</span>
->>>>>>> 4216f2a26590013948354bc7625f2ba18b91a237
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-<<<<<<< HEAD
-	<span class='label start-time'>Sep 19, 2020 01:55:45 PM</span>
-	<span class='label end-time'>Sep 19, 2020 02:04:55 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 9m 9s+945ms</span>
-=======
-	<span class='label start-time'>Sep 23, 2020 03:15:36 PM</span>
-	<span class='label end-time'>Sep 23, 2020 03:16:19 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 42s+563ms</span>
->>>>>>> 4216f2a26590013948354bc7625f2ba18b91a237
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-<<<<<<< HEAD
-				<td class='timestamp'>2:04:55 PM</td>
-=======
-				<td class='timestamp'>3:16:19 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase07_CheckDefaultUsernameAndUpdateValidUsernameCaseNewAccount</span>
-						<span class='test-time'>Sep 23, 2020 03:15:50 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 23, 2020 03:15:50 PM</span>
-	<span class='label end-time'>Sep 23, 2020 03:16:19 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 28s+412ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>3:16:19 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase06_Update_Username_With_Username_is_All_Uppercase</span>
-						<span class='test-time'>Sep 23, 2020 03:15:40 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 23, 2020 03:15:40 PM</span>
-	<span class='label end-time'>Sep 23, 2020 03:16:19 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 38s+375ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>3:16:19 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase02_Update_Username_With_Valid_Username</span>
-						<span class='test-time'>Sep 23, 2020 03:15:23 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 23, 2020 03:15:23 PM</span>
-	<span class='label end-time'>Sep 23, 2020 03:16:19 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 55s+412ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>3:16:19 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='6'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase03_Update_Username_With_Username_Has_Capital_Letters</span>
-						<span class='test-time'>Sep 23, 2020 03:15:28 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 23, 2020 03:15:28 PM</span>
-	<span class='label end-time'>Sep 23, 2020 03:16:19 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 50s+528ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>3:16:19 PM</td>
-				<td class='step-details'>
-						Test passed
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='7'>
-					<div class='test-heading'>
-						<span class='test-name'>Testcase01_Update_Username_With_Invalid_Information</span>
-						<span class='test-time'>Sep 23, 2020 03:15:12 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Sep 23, 2020 03:15:12 PM</span>
-	<span class='label end-time'>Sep 23, 2020 03:16:19 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 1m 6s+828ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>3:16:19 PM</td>
->>>>>>> 4216f2a26590013948354bc7625f2ba18b91a237
-				<td class='step-details'>
-						Test passed
 					
 				</td>
 			</tr>
@@ -1809,7 +235,7 @@
 			<ul id='exception-collection' class='exception-collection'>
 				<li class='exception displayed active'>
 					<div class='exception-heading'>
-						<span class='exception-name'>java.lang.AssertionError</span>
+						<span class='exception-name'>org.openqa.selenium.NoSuchElementException</span>
 						<span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
 					</div>
 					<div class='exception-content hide'>
@@ -1824,38 +250,43 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Sep 19, 2020 02:03:37 PM</td>
-										<td class='linked' test-id='1'>Tescase02_Check_Validate_Of_File_Can_Use_To_Upload_Cover_By_Local_Image</td>
+										<td>Sep 28, 2020 05:23:16 PM</td>
+										<td class='linked' test-id='1'>TC01_Newsfeed_Sign_Up_New_Account</td>
 										<td>
-											<textarea disabled class="code-block">java.lang.AssertionError: expected [Tập tin không đúng định dạng ne] but found [Tập tin không đúng định dạng]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertEquals(Assert.java:123)
-	at org.testng.Assert.assertEquals(Assert.java:165)
-	at Common.HelperFunction.AbstractTest.checkEquals(AbstractTest.java:103)
-	at Common.HelperFunction.AbstractTest.verifyEquals(AbstractTest.java:114)
-	at Testcase.UploadAvatar.Tescase02_Check_Validate_Of_File_Can_Use_To_Upload_Cover_By_Local_Image(UploadAvatar.java:122)
+											<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: Cannot locate an element using xpath=//tr[contains(@id,'huyho65076')][1]/td[3]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ADMIN', ip: '10.0.2.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at Common.HelperFunction.AbstractPage.findElement(AbstractPage.java:122)
+	at Common.HelperFunction.AbstractPage.clickToElement(AbstractPage.java:135)
+	at Project.Shared.SignUp_PageObject.getVerifyCodeByEmail(SignUp_PageObject.java:82)
+	at Testcase.SignUp.Regression_Test_Of_SignUp.TC01_Newsfeed_Sign_Up_New_Account(Regression_Test_Of_SignUp.java:204)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 </textarea>
@@ -1883,11 +314,7 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Tests
-<<<<<<< HEAD
-					<div class='panel-lead'>40</div>
-=======
-					<div class='panel-lead'>7</div>
->>>>>>> 4216f2a26590013948354bc7625f2ba18b91a237
+					<div class='panel-lead'>1</div>
 				</div>
 			</div>
 			<div class='col s2'>
@@ -1899,31 +326,19 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-<<<<<<< HEAD
-					<div class='panel-lead'>Sep 19, 2020 02:04:54 PM</div>
-=======
-					<div class='panel-lead'>Sep 23, 2020 03:16:19 PM</div>
->>>>>>> 4216f2a26590013948354bc7625f2ba18b91a237
+					<div class='panel-lead'>Sep 28, 2020 05:23:44 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-<<<<<<< HEAD
-			 		<div class='panel-lead'>Sep 19, 2020 02:04:55 PM</div>
-=======
-			 		<div class='panel-lead'>Sep 23, 2020 03:16:19 PM</div>
->>>>>>> 4216f2a26590013948354bc7625f2ba18b91a237
+			 		<div class='panel-lead'>Sep 28, 2020 05:23:44 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-<<<<<<< HEAD
-					<div class='panel-lead'>0h 0m 0s+204ms</div>
-=======
-					<div class='panel-lead'>0h 0m 0s+53ms</div>
->>>>>>> 4216f2a26590013948354bc7625f2ba18b91a237
+					<div class='panel-lead'>0h 0m 0s+55ms</div>
 				</div>
 			</div>
 		</div>
@@ -1934,15 +349,9 @@
 		<!-- container -->
 		<script>
 			var statusGroup = {
-<<<<<<< HEAD
-                parentCount: 40,
-				passParent: 39,
+                parentCount: 1,
+				passParent: 0,
 				failParent: 1,
-=======
-                parentCount: 7,
-				passParent: 7,
-				failParent: 0,
->>>>>>> 4216f2a26590013948354bc7625f2ba18b91a237
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
@@ -1972,11 +381,7 @@
 		</script>
 		<script>
 			var timeline = {
-<<<<<<< HEAD
-			        "Tescase02_Check_Validate_Of_File_Can_Use_To_Upload_Cover_By_Local_Image":77.878,"TC12_Business_Create_New_Page_Tour":400.742,"Testcase_Register_03_Check_Register_New_Account_With_Invalid_Phonenumber":494.76,"TC14_Tour_Update_VAT_On_General_Information":381.024,"TC21_Tour_Detail_Create_New_Part":289.839,"Tescase01_Check_Validate_Of_File_Can_Use_To_Upload_Avatar_By_Local_Image":163.952,"TC32_Booking_Step3_ConfirmTravllerInfo":204.345,"Testcase_Register_07_Check_Register_New_Account_With_Invalid_Confirm_Password":480.566,"Testcase_Newsfeed_Login_02_Login_With_UserName_Not_Existed_On_Hahalolo":551.7,"Testcase_Newsfeed_Login_07_Login_With_Valid_Phone":524.505,"TC29_Booking_Tour_Step1":219.959,"Testcase_Newsfeed_Login_05_Login_With_Invalid_Account":548.724,"TC31_Booking_Step2_Update_Traveller_Info":215.266,"Testcase_Newsfeed_Login_03_Login_With_Password_Incorrect":550.825,"Testcase_Register_02_Check_Register_New_Account_With_Invalid_LastName":501.286,"Testcase_Register_06_Check_Register_New_Account_With_Invalid_Password":483.105,"TC30_Booking_Step2_Update_Leader_Info":217.043,"TC13_Tour_Update_Prepayment_Cancellation_On_General_Information":387.128,"TC27_Tour_Detail_Publish_Tour":245.864,"Testcase_Register_01_Check_Register_New_Account_With_Invalid_FirstName":506.406,"TC19_Tour_Create_New_Tour":355.06,"TC05_Login_Newsfeed_With_Old_Account":405.504,"TC20_Tour_Detail_Update_Information":349.477,"Testcase_Newsfeed_Login_06_Login_With_Valid_Account":532.705,"Testcase_Newsfeed_Login_06_Login_With_Uppercase_Email":543.872,"TC23_Tour_Detail_Choose_Date_For_Open_Sale_Tour":254.994,"TC15_Tour_Update_Age_On_General_Information":380.663,"TC18_Tour_Create_New_Topic":373.51,"Testcase_Register_09_Check_Register_New_Account_ContainsMoreThan2Idots":444.138,"TC28_Tour_Detail_View_Page_On_Newsfeed":244.985,"TC22_Tour_Detail_Create_New_Price":267.229,"TC33_Booking_Step4_PaymentInfo_Update_Billing_Info":196.321,"TC24_Tour_Detail_Update_Services_Provided":248.757,"Testcase_Register_03_Check_Register_New_Account_With_Invalid_Email":498.709,"TC16_Tour_Update_Notice_Order_On_General_Information":379.439,"Testcase_Newsfeed_Login_01_Login_With_Invalid_Information":552.733,"TC17_Tour_Publish_Page":377.248,"Testcase_Register_08_Check_Register_New_Account_With_UpperCase_Email":478.228,"TC34_Booking_Step4_Payment_With_Stripe":186.069,"Testcase_Newsfeed_Login_04_Login_With_Invalid_Password":549.945
-=======
-			        "Testcase04_Update_Username_With_Username_Is_Number":46.256,"Testcase05_Update_Username_With_Username_Is_AlphaNumber":42.563,"Testcase07_CheckDefaultUsernameAndUpdateValidUsernameCaseNewAccount":28.412,"Testcase06_Update_Username_With_Username_is_All_Uppercase":38.375,"Testcase02_Update_Username_With_Valid_Username":55.412,"Testcase03_Update_Username_With_Username_Has_Capital_Letters":50.528,"Testcase01_Update_Username_With_Invalid_Information":66.828
->>>>>>> 4216f2a26590013948354bc7625f2ba18b91a237
+			        "TC01_Newsfeed_Sign_Up_New_Account":28.42
 			};
 		</script>
 		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/b65cd69/v3html/js/extent.js' type='text/javascript'></script>

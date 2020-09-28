@@ -10,20 +10,14 @@
         <parameter name="browser" value="chrome" />
         <parameter name="datalogin" value=".\JsonData\LoginUser.json"/>
         <classes>
-<<<<<<< HEAD
-            <class name="Testcase.Testcase_Login"></class>
-            <class name="Testcase.SignUp.Component_Test_Of_SignUp"></class>
-            <class name="Testcase.SignUp.Regression_Test_Of_SignUp"></class>
-            <class name ="Testcase.UploadAvatar"></class>
-=======
+
 <!--            <class name="Testcase.Login.ComponentTest.Testcase_Login_With_EXCEL"></class>-->
-            <class name="Testcase.AccountSetting.TestcaseFunctionUpdateUsername"></class>
+            <class name="Testcase.SignUp.Regression_Test_Of_SignUp"></class>
 <!--            <class name="Testcase.Login.ComponentTest.Testcase_Login_With_Hard_Data"></class>-->
 <!--            <class name="Testcase.SignUp.Component_Test_Of_SignUp"></class>-->
 <!--            <class name="Testcase.SignUp.Regression_Test_Of_SignUp"></class>-->
 <!--                <class name ="Testcase.AccountSetting.Testcase_ChangeFullName"></class>-->
 <!--            <class name="Testcase.CommunitySite.Community"></class>-->
->>>>>>> 4216f2a26590013948354bc7625f2ba18b91a237
         </classes>
     </test>
 

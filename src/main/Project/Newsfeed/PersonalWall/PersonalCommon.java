@@ -37,5 +37,38 @@ public class PersonalCommon extends HeaderPage {
         waitElementToVisible(driver,PersonalCommonUI.VALIDATION_ERR_MESS);
         return  getTextElement(driver,PersonalCommonUI.VALIDATION_ERR_MESS);
     }
+
+    public boolean checkCoverImageDisplayWithCaseNoImage() {
+        waitElementToVisible(driver, PersonalCommonUI.COVER_IMAGE);
+        return getAttributeValue(driver,PersonalCommonUI.COVER_IMAGE,"src").endsWith("cover-default.jpg");
+    }
+
+    public boolean checkAvatarUserDisplayWithGenderType(String genderType){
+        if(genderType == "male"){
+            if(getAttributeValue(driver, PersonalCommonUI.AVATAR_IMAGE,"data-bind").contains("")){
+                return true;
+            }
+            return false;
+        } else if(genderType =="femalte"){
+            if(getAttributeValue(driver, PersonalCommonUI.AVATAR_IMAGE,"data-bind").contains("")){
+                return true;
+            }
+            return false;
+        } else if(genderType =="femalte"){
+            if(getAttributeValue(driver, PersonalCommonUI.AVATAR_IMAGE,"data-bind").contains("")){
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    public Object getImageURLOfAvatar() {
+        return null;
+    }
+
+    public Object getImageOfCover() {
+        return null;
+    }
 }
 
