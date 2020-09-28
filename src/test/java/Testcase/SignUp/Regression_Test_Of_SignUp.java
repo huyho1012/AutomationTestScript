@@ -273,21 +273,28 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         perAboutOverviewTab.clickToTabItemOnAbout("");
         perAboutWorkEducationTab = PageGeneration.createPerAboutWorkEducationTab(driver);
         log.info("Step - Click to Add new workplace");
-        perAboutWorkEducationTab.clickToAddNewWorkPlace();
+        perAboutWorkEducationTab.clickButtonToAddNewWorkplace();
 
         log.info("Step - Enter a Company name");
+        perAboutWorkEducationTab.enterDataToCompanyNameOfWorkspace("");
 
         log.info("Step - Enter position");
+        perAboutWorkEducationTab.enterDataToPositionOfWorkspace("");
 
         log.info("Step - Enter Address company");
+        perAboutWorkEducationTab.enterDataToAddressOfWorkspace("");
 
         log.info("Step - Enter Workplace description");
+        perAboutWorkEducationTab.enterDataToDescriptionOfWorkspace("");
 
         log.info("Step - Update time range of workplace");
+        perAboutWorkEducationTab.chooseStartTimeAndEndTimeOfWorkspace("","","");
 
         log.info("Step - Choose scope");
+        perAboutWorkEducationTab.chooseScopeOfWorkPlace("");
 
         log.info("Step - Click button save");
+        perAboutWorkEducationTab.clickButtonToSaveWorkplace();
 
         log.info("Check information of workplace which have been already existed");
         log.info("Step - Check company name of workplace");
@@ -312,16 +319,22 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         perAboutWorkEducationTab.clickToAddNewUniversity();
 
         log.info("Step - Enter a highschool name");
+        perAboutWorkEducationTab.enterDataToHighschoolName("");
 
         log.info("Step - Enter a address of highschool");
+        perAboutWorkEducationTab.enterDataToHighschoolAddress("");
 
         log.info("Step - Enter a description of highschool");
+        perAboutWorkEducationTab.enterDataToHighschoolDescription("");
 
         log.info("Step - Update Time range of Highschool");
+        perAboutWorkEducationTab.chooseStartTimeAndEndTimeOfHighschool();
 
         log.info("Step - Choose scope");
+        perAboutWorkEducationTab.chooseScopeOfHighschool("");
 
         log.info("Step - Click button save");
+        perAboutWorkEducationTab.clickButtonToSaveHighSchoolItem();
 
         log.info("Check information of highschool which have been already existed");
         log.info("Step - Check name of highschool");

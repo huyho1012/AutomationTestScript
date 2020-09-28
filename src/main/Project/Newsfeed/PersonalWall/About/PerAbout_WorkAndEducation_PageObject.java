@@ -17,7 +17,7 @@ public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageOb
     }
 
     // Hàm mở form thêm mới nơi làm việc
-    public void clickToAddNewWorkPlace() {
+    public void clickButtonToAddNewWorkplace() {
         waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.ADD_NEW_WORKPLACE);
         clickToElement(driver, PerAbout_WorkAndEducation_PageUI.ADD_NEW_WORKPLACE);
     }
@@ -53,81 +53,80 @@ public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageOb
     public void clickToRemoveWorkplaceItembyName(String companyName) {
         waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.OPTION_OF_ITEM_WORKPLACE_BY_NAME, companyName);
         clickToElement(driver, PerAbout_WorkAndEducation_PageUI.OPTION_OF_ITEM_WORKPLACE_BY_NAME, companyName);
-        setTimeDelay(1);
         waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.REMOVE_ITEM_WORKPLACE_BY_NAME, companyName);
         clickToElement(driver, PerAbout_WorkAndEducation_PageUI.REMOVE_ITEM_WORKPLACE_BY_NAME, companyName);
     }
 
-    // Nhập Tên công ty của nơi làm việc
-    public void enterDataToCompanyField(String companyName) {
+    public void enterDataToCompanyNameOfWorkspace(String companyName) {
         waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.COMPANY_WORKPLACE);
         sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.COMPANY_WORKPLACE, companyName);
         sendKeyBoardToElement(driver, PerAbout_WorkAndEducation_PageUI.COMPANY_WORKPLACE, Keys.ENTER);
     }
 
-    // Nhập chức vụ của bạn tại nơi làm việc
-    public void enterDataToJobPositionField(String positionJob) {
+    public void enterDataToPositionOfWorkspace(String positionJob) {
         waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.POSITION_WORLPLACE);
         sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.POSITION_WORLPLACE, positionJob);
     }
 
-    // Nhập địa chỉ nơi làm việc
-    public void enterDataToAddressField(String address) {
+    public void enterDataToAddressOfWorkspace(String address) {
         waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.ADDRESS_WORKPLACE);
         sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.ADDRESS_WORKPLACE, address);
     }
 
-    // Nhập mô tả của nghề nghiệp
-    public void enterDataToDescription(String description) {
+    public void enterDataToDescriptionOfWorkspace(String description) {
         waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.DESC_WORLPLACE);
         sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.DESC_WORLPLACE, description);
     }
 
-    // Chọn - Bỏ chọn option làm tới hiện nay
     public void checkOptionTimePeriod() {
         waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.CHECKBOX_TIME_PERIOD);
         clickToElement(driver, PerAbout_WorkAndEducation_PageUI.CHECKBOX_TIME_PERIOD);
     }
 
-    // Nhấn lưu nơi làm việc
-    public void clickToSaveWorkplace() {
+    public void chooseStartTimeOfWorkplace(String dateStart, String monthStart, String yearStart){
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, yearStart, "workplaceVM.yearFrom");
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, monthStart, "workplaceVM.monthFrom");
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, dateStart, "workplaceVM.dayFrom");
+    }
+
+    public void chooseEndimeOfWorkplace(String dateSEnd, String monthEnd, String yearEnd){
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, yearEnd, "workplaceVM.yearTo");
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, monthEnd, "workplaceVM.monthTo");
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, dateSEnd, "workplaceVM.dayTo");
+    }
+
+
+    public void chooseStartTimeAndEndTimeOfWorkspace(String dateItem, String monthItem, String yearItem) {
+        if(checkIsElementIsSelected(driver, PerAbout_WorkAndEducation_PageUI.CHECKBOX_TIME_PERIOD)){
+            chooseStartTimeOfWorkplace("","","");
+        }
+        else {
+            chooseStartTimeOfWorkplace("","","");
+            chooseEndimeOfWorkplace("","","");
+        }
+    }
+
+    public void chooseScopeOfWorkPlace(String scopeName) {
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.SCOPE_DROPDOWN_OF_WORKPLACE);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.SCOPE_DROPDOWN_OF_WORKPLACE);
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.SCOPE_ITEM_OF_WORKPLACE, scopeName);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.SCOPE_ITEM_OF_WORKPLACE,scopeName);
+    }
+
+    public void clickButtonToSaveWorkplace() {
         waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.SAVE_WORKPLACE);
         clickToElement(driver, PerAbout_WorkAndEducation_PageUI.SAVE_WORKPLACE);
     }
 
-    // Bỏ lưu nơi làm việc
     public void cancelSaveWorkPlace() {
         waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.CANCEL_ADD_WORKPLACE);
         clickToElement(driver, PerAbout_WorkAndEducation_PageUI.CANCEL_ADD_WORKPLACE);
     }
 
-    // Chức năng chọn ngày bắt đầu case
-    public void chooseWorkplaceStartDateCaseNew(String dateItem, String monthItem, String yearItem) {
-        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, yearItem, "workplaceVM.yearFrom");
-        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, monthItem, "workplaceVM.monthFrom");
-        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, dateItem, "workplaceVM.dayFrom");
+
+    public void clickButtonToSaveHighSchoolItem() {
     }
 
-    // Chức năng chọn ngày kết thúc case tạo mới
-    public void chooseWorkplaceEndDateCaseNew(String dateItem, String monthItem, String yearItem) {
-        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, yearItem, "workplaceVM.yearTo");
-        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, monthItem, "workplaceVM.monthTo");
-        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, dateItem, "workplaceVM.dayTo");
-    }
-
-    // Chức năng chọn ngày bắt đầu case chỉnh sửa
-    public void chooseWorkplaceStartDateCaseEdit(String dateItem, String monthItem, String yearItem) {
-        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, yearItem, "workplaceVM.yearFrom");
-        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, monthItem, "workplaceVM.monthFrom");
-        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, dateItem, "workplaceVM.dayFrom");
-    }
-
-    // Chức năng chọn ngày kết thúc case chỉnh sửa
-    public void chooseWorkplaceEndDateCaseEdit(String dateItem, String monthItem, String yearItem) {
-        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, yearItem, "workplaceVM.yearTo");
-        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, monthItem, "workplaceVM.monthTo");
-        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, dateItem, "workplaceVM.dayTo");
-    }
 
 
     // Chức năng thêm trường đại học
@@ -145,31 +144,33 @@ public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageOb
     public void addNewWorkplace() {
     }
 
-    public Object getCompanyOfWorkplace() {
-        return null;
+    public String getCompanyOfWorkplace() {
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.COMPANY_DATA_WORKPLACE_ITEM);
     }
 
     public Object getPositionOfWorkplace() {
-        return null;
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.POSITION_DATA_WORKPLACE_ITEM);
     }
 
     public Object getTimestartOfWorkplace() {
-        return null;
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.START_DATE_DATA_WORKPLACE_ITEM);
     }
 
     public Object getTimeEndOfWorkplace() {
-        return null;
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.END_DATE_DATA_WORKPLACE_ITEM);
     }
 
     public Object getAddressOfWorkplace() {
-        return null;
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.ADDRESS_DATA_WORKPLACE_ITEM);
     }
 
     public Object getScopeOfWorkplace() {
-        return null;
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.SCOPE_DATA_WORKPLACE_ITEM);
     }
 
-    public void enterDataTocreateNewUniversity() {
+    public void enterDataTocreateNewUniversity(String universityName) {
+        waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_NAME_FIELD);
+        sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_NAME_FIELD, universityName);
     }
 
     public Object getHighschoolName() {
@@ -194,5 +195,28 @@ public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageOb
 
     public Object getScopeOfUniversity() {
         return null;
+    }
+
+    public void updateTimeRangeOfWorkplace() {
+    }
+
+
+    public void enterDataToHighschoolName(String s) {
+    }
+
+    public void enterDataToHighschoolAddress(String s) {
+    }
+
+    public void enterDataToHighschoolDescription(String s) {
+    }
+
+    public void chooseStartTimeAndEndTimeOfHighschool() {
+    }
+
+    public void chooseScopeOfHighschool(String scopeName) {
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.SCOPE_DROPDOWN_OF_HIGHSCHOOL);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.SCOPE_DROPDOWN_OF_HIGHSCHOOL);
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.SCOPE_ITEM_OF_HIGHSCHOOL, scopeName);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.SCOPE_ITEM_OF_HIGHSCHOOL,scopeName);
     }
 }
