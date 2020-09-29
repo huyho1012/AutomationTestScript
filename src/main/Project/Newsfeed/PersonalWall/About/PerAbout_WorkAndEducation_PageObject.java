@@ -1,8 +1,7 @@
 package Project.Newsfeed.PersonalWall.About;
 
 import Interfaces.hahalolo_newsfeed.PersonaWall.About.PerAbout_WorkAndEducation_PageUI;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 
 public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageObject {
 
@@ -12,17 +11,12 @@ public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageOb
         driver = webDriver;
     }
 
-    public boolean checkWorkAndEducationTabIsDisplay() {
-        return true;
-    }
 
-    // Hàm mở form thêm mới nơi làm việc
     public void clickButtonToAddNewWorkplace() {
         waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.ADD_NEW_WORKPLACE);
         clickToElement(driver, PerAbout_WorkAndEducation_PageUI.ADD_NEW_WORKPLACE);
     }
 
-    // Hàm mở form chỉnh sửa thông tin nơi làm việc theo index
     public void clickToEditWorkplaceItembyIndex(int indexWorkplace) {
         waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.OPTION_OF_ITEM_WORKPLACE_BY_INDEX, String.valueOf(indexWorkplace));
         clickToElement(driver, PerAbout_WorkAndEducation_PageUI.OPTION_OF_ITEM_WORKPLACE_BY_INDEX, String.valueOf(indexWorkplace));
@@ -31,7 +25,6 @@ public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageOb
         clickToElement(driver, PerAbout_WorkAndEducation_PageUI.EDIT_ITEM_WORKPLACE_BY_INDEX, String.valueOf(indexWorkplace));
     }
 
-    // Hàm mở form chỉnh sửa thông tin nơi làm việc theo tên của công ty
     public void clickToEditWorkplaceItembyName(String companyName) {
         waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.OPTION_OF_ITEM_WORKPLACE_BY_NAME, companyName);
         clickToElement(driver, PerAbout_WorkAndEducation_PageUI.OPTION_OF_ITEM_WORKPLACE_BY_NAME, companyName);
@@ -57,20 +50,26 @@ public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageOb
         clickToElement(driver, PerAbout_WorkAndEducation_PageUI.REMOVE_ITEM_WORKPLACE_BY_NAME, companyName);
     }
 
+    // Form Add new Workplace
     public void enterDataToCompanyNameOfWorkspace(String companyName) {
         waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.COMPANY_WORKPLACE);
-        sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.COMPANY_WORKPLACE, companyName);
-        sendKeyBoardToElement(driver, PerAbout_WorkAndEducation_PageUI.COMPANY_WORKPLACE, Keys.ENTER);
+        sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.COMPANY_WORKPLACE,companyName);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.COMPANY_WORKPLACE_DROPDOWWN_ITEM);
+        setTimeDelay(1);
+
     }
 
     public void enterDataToPositionOfWorkspace(String positionJob) {
         waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.POSITION_WORLPLACE);
         sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.POSITION_WORLPLACE, positionJob);
+        setTimeDelay(1);
+
     }
 
     public void enterDataToAddressOfWorkspace(String address) {
         waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.ADDRESS_WORKPLACE);
         sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.ADDRESS_WORKPLACE, address);
+        setTimeDelay(1);
     }
 
     public void enterDataToDescriptionOfWorkspace(String description) {
@@ -82,6 +81,7 @@ public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageOb
         waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.CHECKBOX_TIME_PERIOD);
         clickToElement(driver, PerAbout_WorkAndEducation_PageUI.CHECKBOX_TIME_PERIOD);
     }
+
 
     public void chooseStartTimeOfWorkplace(String dateStart, String monthStart, String yearStart){
         selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, yearStart, "workplaceVM.yearFrom");
@@ -97,13 +97,17 @@ public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageOb
 
 
     public void chooseStartTimeAndEndTimeOfWorkspace(String dateItem, String monthItem, String yearItem) {
-        if(checkIsElementIsSelected(driver, PerAbout_WorkAndEducation_PageUI.CHECKBOX_TIME_PERIOD)){
-            chooseStartTimeOfWorkplace("","","");
+        if(checkTimePeriodIsSelected()){
+            chooseStartTimeOfWorkplace("12","10","2010");
         }
         else {
             chooseStartTimeOfWorkplace("","","");
             chooseEndimeOfWorkplace("","","");
         }
+    }
+
+    private boolean checkTimePeriodIsSelected() {
+      return true;
     }
 
     public void chooseScopeOfWorkPlace(String scopeName) {
@@ -141,31 +145,29 @@ public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageOb
         clickToElement(driver, PerAbout_WorkAndEducation_PageUI.ADD_NEW_HIGHSCHOOL);
     }
 
-    public void addNewWorkplace() {
-    }
 
     public String getCompanyOfWorkplace() {
-        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.COMPANY_DATA_WORKPLACE_ITEM);
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.COMPANY_WORKPLACE_DATA);
     }
 
     public Object getPositionOfWorkplace() {
-        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.POSITION_DATA_WORKPLACE_ITEM);
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.POSITION_WORKPLACE_DATA);
     }
 
     public Object getTimestartOfWorkplace() {
-        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.START_DATE_DATA_WORKPLACE_ITEM);
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.START_DATE_WORKPLACE_DATA);
     }
 
     public Object getTimeEndOfWorkplace() {
-        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.END_DATE_DATA_WORKPLACE_ITEM);
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.END_DATE_WORKPLACE_DATA);
     }
 
     public Object getAddressOfWorkplace() {
-        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.ADDRESS_DATA_WORKPLACE_ITEM);
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.ADDRESS_WORKPLACE_DATA);
     }
 
     public Object getScopeOfWorkplace() {
-        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.SCOPE_DATA_WORKPLACE_ITEM);
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.SCOPE_WORKPLACE_DATA);
     }
 
     public void enterDataTocreateNewUniversity(String universityName) {
@@ -202,6 +204,10 @@ public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageOb
 
 
     public void enterDataToHighschoolName(String s) {
+        waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.HIGHSCHOOL_NAME_FIELD);
+        sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.COMPANY_WORKPLACE,companyName);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.COMPANY_WORKPLACE_DROPDOWWN_ITEM);
+        setTimeDelay(1);
     }
 
     public void enterDataToHighschoolAddress(String s) {
@@ -219,4 +225,6 @@ public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageOb
         waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.SCOPE_ITEM_OF_HIGHSCHOOL, scopeName);
         clickToElement(driver, PerAbout_WorkAndEducation_PageUI.SCOPE_ITEM_OF_HIGHSCHOOL,scopeName);
     }
+
+
 }

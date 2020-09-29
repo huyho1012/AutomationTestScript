@@ -30,4 +30,8 @@ public class PersonalCommonUI {
     public static final String TITLE_TAB_OF_ABOUT = "//div[@id = '%s']//div[@class = 'pageUI-about-heading']";
     public static final String COVER_IMAGE = "//img[@id='js-image-cover']";
     public static final String AVATAR_IMAGE = "//div[@id ='js-timeline-avatar']" ;
+    public static final String ICON_LOADING_IMAGE ="//div[@id='js-loading-container']";
+
+
+    ;
 }

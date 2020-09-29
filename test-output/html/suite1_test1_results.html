@@ -12,7 +12,7 @@
 <body>
 <h1>Test with firefox</h1>
 <p>
-  Test duration: 38.619s
+  Test duration: 45.546s
 </p>
 
 
@@ -28,27 +28,43 @@
                   TC01_Newsfeed_Sign_Up_New_Account
       </td>
   <td class="duration">
-    28.269s
+    35.032s
   </td>
   <td class="result">
         
     
         
 
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: Cannot locate an element using xpath=//tr[contains(@id,&apos;huyho65076&apos;)][1]/td[3]<br/>
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html<br/>
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression&nbsp; because of the following error:<br/>
+SyntaxError: Failed to execute &apos;evaluate&apos; on &apos;Document&apos;: The string &apos;&apos; is not a valid XPath expression.<br/>
+&nbsp; (Session info: chrome=85.0.4183.121)<br/>
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html<br/>
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;<br/>
 System info: host: &apos;ADMIN&apos;, ip: &apos;10.0.2.120&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;<br/>
-Driver info: driver.version: RemoteWebDriver</b></a><br />
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:64755}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
+Session ID: eb8b67c6bbaedec6b0345c4e8440b729<br/>
+*** Element info: {Using=xpath, value=}</b></a><br />
     <div class="stackTrace" id="exception-0">
-              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)<br />
+              java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
+              java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)<br />
+              java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)<br />
+              org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)<br />
+              org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)<br />
+              org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)<br />
               org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)<br />
               org.openqa.selenium.By$ByXPath.findElement(By.java:353)<br />
               org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)<br />
-              Common.HelperFunction.AbstractPage.findElement(AbstractPage.java:122)<br />
-              Common.HelperFunction.AbstractPage.clickToElement(AbstractPage.java:135)<br />
-              Project.Shared.SignUp_PageObject.getVerifyCodeByEmail(SignUp_PageObject.java:82)<br />
-              Testcase.SignUp.Regression_Test_Of_SignUp.TC01_Newsfeed_Sign_Up_New_Account(Regression_Test_Of_SignUp.java:204)<br />
+              Common.HelperFunction.AbstractPage.findElement(AbstractPage.java:123)<br />
+              Common.HelperFunction.AbstractPage.getTextElement(AbstractPage.java:151)<br />
+              Project.Newsfeed.PersonalWall.About.PerAbout_WorkAndEducation_PageObject.getCompanyOfWorkplace(PerAbout_WorkAndEducation_PageObject.java:152)<br />
+              Testcase.SignUp.Regression_Test_Of_SignUp.TC01_Newsfeed_Sign_Up_New_Account(Regression_Test_Of_SignUp.java:256)<br />
               java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
               java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)<br />
               java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />

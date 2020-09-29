@@ -5,8 +5,6 @@ import Project.Business.Tour.Management.TourCommon;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.Color;
 
-import java.awt.*;
-
 public class TourSettingTab extends TourCommon {
     WebDriver driver;
     public TourSettingTab (WebDriver webDriver){
@@ -29,7 +27,7 @@ public class TourSettingTab extends TourCommon {
         }
     }
     public boolean checkStatusPublishTour() {
-        String colorBackground =  getAttributeOfClassAfter(driver,".custom-control-label","background-color");
+        String colorBackground =  getAttributeColorOfClassAfter(driver,".custom-control-label","background-color");
         String hexaColorButtonPublish = Color.fromString(colorBackground).asHex();
         return hexaColorButtonPublish == "#166986";
     }

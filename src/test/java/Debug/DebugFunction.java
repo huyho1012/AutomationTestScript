@@ -40,8 +40,15 @@ public class DebugFunction {
         return userName + random.nextInt(2000000) + domainEmail;
     }
     public static void main (String [] args) {
-        System.out.println(randomVirtualEmail());
-        System.out.println(LocalTime.now());
-        System.out.println(randomName(1000));
+//        System.out.println(randomVirtualEmail());
+//        System.out.println(LocalTime.now());
+//        System.out.println(randomName(1000));
+        System.out.println(getLinkOnAvatarlink());
+    }
+
+    public static String getLinkOnAvatarlink(){
+        String url = "url('https://test-media.hahalolo.com/2020/09/29/09/13/5f72983fbc502609c2256036200929091357aF_240-xauto_high.jpg')";
+        String[] a = url.split("/");
+        return a[a.length-1].replaceAll("[^\\w\\.\\-]", "");
     }
 }

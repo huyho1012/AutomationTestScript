@@ -77,14 +77,14 @@ public class Testcase_PersonalAbout_DetailsAboutYou extends AbstractTest {
         newsfeedHomepage.clickToEditProfile();
         perOverviewPage = PageGeneration.createPerAboutOverviewTab(driver);
         // Kiểm tra người dùng vào đúng trang tài khoản của mình
-        verifyTrue(perOverviewPage.checkPersonalPageIsDisplay(fullNameOfUser));
+        verifyTrue(perOverviewPage.checkPersonalPageIsDisplay(driver,fullNameOfUser));
         // Lấy các thông tin hiển tại Widget Introduce
         String genderOnPerIntroduce = perOverviewPage.getGenderDisplayOnIntroduceWidget();
         String emailOnPerIntroduce = perOverviewPage.getEmailIsDisplayOnIntroduceWidget();
         String birthdayOnPerIntroduce = perOverviewPage.getBirthdayDisplayOnIntroduceWidget();
 
         log.info("Step 4 - Go to Personal - Basic info and contact");
-        perOverviewPage.clickToTabItemOnAbout("#about_contact");
+        perOverviewPage.clickToTabItemOnAbout(driver,"#about_contact");
         perBasicInfoAndContactPage = PageGeneration.createperBasicInfoAndContactPage(driver);
         // Kiểm tra tab Thông tin cơ bản và liên hệ loading thành công;
         // Kiểm tra hiển thị của trang

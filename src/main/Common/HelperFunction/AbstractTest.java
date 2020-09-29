@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.Reporter;
 
 import java.util.Currency;
+import java.util.Date;
 import java.util.Random;
 
 public abstract class AbstractTest extends AbstractPage {
@@ -124,6 +125,9 @@ public abstract class AbstractTest extends AbstractPage {
     protected boolean verifyEquals(Object actual, Object expected) {
         return checkEquals(actual, expected);
     }
+
+
+
     protected String getCurrentDay() {
         DateTime nowUTC = new DateTime();
         int day = nowUTC.getDayOfMonth();

@@ -3,7 +3,6 @@ package Project.Business.Tour.Setting;
 import Interfaces.hahalolo_business.Tour.GeneralSetting.PublishPageUI;
 import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.Color;
 
 public class PubishPage extends HeaderPage {
@@ -30,7 +29,7 @@ public class PubishPage extends HeaderPage {
 
 
     public Boolean checkStatusOfPage (WebDriver driver) {
-        String rgb = Color.fromString(getAttributeOfClassAfter(driver, ".custom-control-label","background-color")).asHex();
+        String rgb = Color.fromString(getAttributeColorOfClassAfter(driver, ".custom-control-label","background-color")).asHex();
         if(rgb.equals("#166986")){
             System.out.println("Page publish");
             return true;

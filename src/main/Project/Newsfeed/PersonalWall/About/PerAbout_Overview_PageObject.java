@@ -145,4 +145,8 @@ public class PerAbout_Overview_PageObject extends PerAbout_Common_PageObject {
         waitForElementClickable(driver, AboutCommonUI.BUTTON_EDIT_BASIC_INFO_AND_CONTACT);
         clickToElement(driver, AboutCommonUI.BUTTON_EDIT_BASIC_INFO_AND_CONTACT);
     }
+
+    public boolean checkOverViewTabCaseNewAccount() {
+        return checkEducationSectionWithCaseNoData() && checkHomeTownAndCurrentCitySectionWithCaseNoData() && checkWorkplaceSectionWithCaseNoData();
+    }
 }

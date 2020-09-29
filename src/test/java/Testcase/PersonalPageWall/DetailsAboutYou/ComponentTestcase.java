@@ -53,10 +53,9 @@ public class ComponentTestcase extends AbstractTest {
         perOverviewTab = PageGeneration.createPerAboutOverviewTab(driver);
 
         log.info("Step 1 - GO to Personal wall - About");
-        perOverviewTab.clickToTabItemOnAbout("");
+        perOverviewTab.clickToTabItemOnAbout(driver,"");
         perDetailAboutTab = PageGeneration.createPersonalDetailsAboutYouTab(driver);
     }
-
     public void Testcase01_Add_New_Introduce_With_Invalid_Info(){
         perDetailAboutTab.clickToButtonAddNewIntroduce();
 

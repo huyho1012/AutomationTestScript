@@ -7,30 +7,14 @@ import Common.GlobalVariables;
 
 import Common.HelperFunction.AbstractTest;
 import Common.HelperFunction.PageGeneration;
-import Project.Business.Business.*;
-import Project.Business.Promotion.DetailPromo;
-import Project.Business.Promotion.TourPromotion;
-import Project.Business.Tour.Management.Detail.*;
-import Project.Backend.BackendHomePage;
-import Project.Backend.BackendVerifyBusiManagement;
-import Project.Business.Tour.*;
-import Project.Business.Tour.Management.List.TourManagementPage;
-import Project.Business.Promotion.Promotion;
-import Project.Business.Tour.Setting.PubishPage;
-import Project.Business.Tour.Setting.TourGeneralSettingPage;
-import Project.Business.Tour.Topic.TourTopicPage;
+
 import Project.Newsfeed.AccountSetting.GeneralAccountSetting;
-import Project.Newsfeed.Boooking.BoookingTour;
-import Project.Newsfeed.Boooking.PaymentGateWay.Stripe_PageObject;
-import Project.Newsfeed.Boooking.PaymentInfo;
+
 import Project.Newsfeed.Newsfeed.NewsfeedHomepage;
-import Project.Newsfeed.PageWall.TourDetail;
 import Project.Newsfeed.PersonalWall.About.*;
-import Project.Newsfeed.PersonalWall.Handnote.Handnote_Tour;
 import Project.Shared.Login_PageObject;
 import Project.Shared.SignUp_PageObject;
-import Project.Wallet.WalletHomePage;
-import Project.Wallet.WalletOverviewPage;
+
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
@@ -56,63 +40,20 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
 
 
     GeneralAccountSetting generalAccSetting;
-    BusinessOverviewPage businessOverviewPage;
-    BusinessDashboardPage businessDashboardPage;
-    BusinessVerificationRequest businessVerifyPage;
-    BusinessInfoPage businessInfoPage;
-    BusinessPageManagement businessPageList;
-    BackendHomePage backendHomePage;
-    BackendVerifyBusiManagement verifyBusinessManagementPage;
-    TourDashboardPage tourDashboardPage;
-    TourGeneralSettingPage tourGeneralSettingPage;
-    TourTopicPage tourTopicPage;
-    TourManagementPage tourManagementPage;
-    WalletOverviewPage walletOverviewPage;
-    WalletHomePage walletHomePage;
-
-
-    PubishPage pubishPage;
-
-    TourInfoTab tourInfoTab;
-    TourPartTab tourPartTab;
-    TourPriceTab tourPriceTab;
-    TourSchedulerTab tourSchedulerTab;
-    TourServiceTab tourServiceTab;
-    TourPromotionTab tourPromoTab;
-    TourSettingTab tourSettingTab;
-    TourServicePrice tourServicePriceTab;
-    Promotion promotionListPage;
-    TourPromotion  tourPromotionPage;
-    DetailPromo viewDetailPromoPage;
-
-    TourDetail tourDetailForBooking;
-    BoookingTour tourBookingPage;
-
-    PaymentInfo paymentInfoPage;
-    Stripe_PageObject stripePayment;
-    Handnote_Tour handnoteTourPage;
 
     // Define user properties
     String firstNameUser, lastNameUser, emailUser, passwordUser, confirmPassUser, birthdayUser, genderUser, fullName;
+    String avatarUserImage, coverUserImage;
     // Define business properties
     String businessName, ownerName, ownerEmail, ownerPhone;
     // Define business verification properties
     String companyName, otherCompanyName, abbCompanyName, taxCodeCompany, representativeName, registrationAddress, zipCode, companyPhone, companyEmail, businessScope;
-    String fileUploadImage2 = "partTour.jpg";
-    String fileUploadImage1 = "image1.jpg";
     // Define payment account properties
     String paymentAccountName;
     // Define tour info properties
     String pageTourName;
-    String tourName;
-    String topicName;
-    String languageOnTourPage;
-    String partName, partDay, partTime, partAddress, partDesc;
     String startDateTour, endTDateTour;
-    String promoName, promoDesc, promoTimeApplied,promoStatus, promoLang, promoCurrency, promoImage;
-    String typeDiscount, typePromo;
-    String discountValue1, minOrderValue1;
-    String linkPaymentTour;
+
     @Parameters("browser")
     @BeforeClass
     public void preconditionStep(String browserName) {
@@ -139,6 +80,9 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         passwordUser = "1234567";
         confirmPassUser = "1234567";
 
+
+        avatarUserImage= "User\\avatarUser.png";
+        coverUserImage = "User\\coverUser.jpg";
 
         // Generate thông tin chủ sở hữu
         ownerName = data.getFullName();
@@ -237,7 +181,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         perAboutOverviewTab = PageGeneration.createPerAboutOverviewTab(driver);
 
         log.info("Step 20. Check information - Check Personal About Overview page display");
-        verifyTrue(perAboutOverviewTab.checkPersonalPageIsDisplay(fullNameOnMyWidget));
+        verifyTrue(perAboutOverviewTab.checkPersonalPageIsDisplay(driver,fullNameOnMyWidget));
         verifyTrue(perAboutOverviewTab.checkPerAboutOverviewTabIsDisplay());
 
         log.info("Step 22. Check email display on introduce widget");
@@ -248,72 +192,83 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
 
         log.info("Step 24. Check gender display on widget Introduce");
         verifyEquals(perAboutOverviewTab.getGenderDisplayOnIntroduceWidget(), genderUser);
+//
+//        log.info("Step 25. Check Avatar display default");
+//        verifyTrue(perAboutOverviewTab.checkAvatarUserDisplayWithGenderType(driver,genderUser));
+//        String avatarBeforeChange = perAboutOverviewTab.getImageURLOfAvatar(driver);
+//
+//        log.info("Step 26. Update avatar user");
+//        perAboutOverviewTab.clickToUploadAvatarByLocalImage(driver,avatarUserImage);
+//        perAboutOverviewTab.crossImage(driver);
 
-        log.info("Step 25. Check Avatar display default");
-        verifyTrue(perAboutOverviewTab.checkAvatarUserDisplayWithGenderType(genderUser));
+//        verifyFalse(perAboutOverviewTab.checkUploadAvatarUserSuccess(driver,avatarBeforeChange));
+//
+//        log.info("Steo 27. Check Cover image display default");
+//        verifyTrue(perAboutOverviewTab.checkCoverImageDisplayWithCaseNoImage(driver));
+//
+//        log.info("Step 28. Upload cover image");
+//        perAboutOverviewTab.clickToUploadCoverByLocalImage(driver,coverUserImage);
+//        perAboutOverviewTab.saveChangeImage(driver);
+//        verifyFalse(perAboutOverviewTab.checkCoverImageUploadSuccessfully(driver,avatarBeforeChange));
 
-        log.info("Step 26. Update avatar user");
-        perAboutOverviewTab.clickToUploadAvatarByLocalImage(driver,"");
-        verifyEquals(perAboutOverviewTab.getImageURLOfAvatar(),"");
-
-        log.info("Steo 27. Check Cover image display default");
-        verifyTrue(perAboutOverviewTab.checkCoverImageDisplayWithCaseNoImage());
-
-        log.info("Step 28. Upload cover image");
-        perAboutOverviewTab.clickToUploadCoverByLocalImage(driver,"");
-        verifyEquals(perAboutOverviewTab.getImageOfCover(),"");
-
-        log.info("Step 29. Check tab Overview");
-        verifyTrue(perAboutOverviewTab.checkEducationSectionWithCaseNoData());
-        verifyTrue(perAboutOverviewTab.checkWorkplaceSectionWithCaseNoData());
-        verifyTrue(perAboutOverviewTab.checkHomeTownAndCurrentCitySectionWithCaseNoData());
+        log.info("Step 29. Check tab Overview case create new account");
+        verifyTrue(perAboutOverviewTab.checkOverViewTabCaseNewAccount());
 
         log.info("Add new workplace");
         log.info("Step - Go to Work and Eduction tab");
-        perAboutOverviewTab.clickToTabItemOnAbout("");
+        perAboutOverviewTab.clickToTabItemOnAbout(driver,"#about_work");
         perAboutWorkEducationTab = PageGeneration.createPerAboutWorkEducationTab(driver);
+
         log.info("Step - Click to Add new workplace");
+        verifyTrue(perAboutWorkEducationTab.checkTabIsSelected(driver,"#about_work"));
         perAboutWorkEducationTab.clickButtonToAddNewWorkplace();
 
         log.info("Step - Enter a Company name");
-        perAboutWorkEducationTab.enterDataToCompanyNameOfWorkspace("");
+        String companyName = data.getCompanyName();
+        System.out.println(companyName);
+        perAboutWorkEducationTab.enterDataToCompanyNameOfWorkspace(companyName);
 
         log.info("Step - Enter position");
-        perAboutWorkEducationTab.enterDataToPositionOfWorkspace("");
+        String jobPosition = "Tester";
+        perAboutWorkEducationTab.enterDataToPositionOfWorkspace(jobPosition);
 
         log.info("Step - Enter Address company");
-        perAboutWorkEducationTab.enterDataToAddressOfWorkspace("");
+        String addressCompany = data.getAddress();
+        perAboutWorkEducationTab.enterDataToAddressOfWorkspace(addressCompany);
 
         log.info("Step - Enter Workplace description");
-        perAboutWorkEducationTab.enterDataToDescriptionOfWorkspace("");
+        String workplaceDesc = "Manual Testing";
+        perAboutWorkEducationTab.enterDataToDescriptionOfWorkspace(workplaceDesc);
+
+        perAboutWorkEducationTab.checkOptionTimePeriod();
 
         log.info("Step - Update time range of workplace");
         perAboutWorkEducationTab.chooseStartTimeAndEndTimeOfWorkspace("","","");
 
         log.info("Step - Choose scope");
-        perAboutWorkEducationTab.chooseScopeOfWorkPlace("");
+//        perAboutWorkEducationTab.chooseScopeOfWorkPlace("");
 
         log.info("Step - Click button save");
         perAboutWorkEducationTab.clickButtonToSaveWorkplace();
 
         log.info("Check information of workplace which have been already existed");
         log.info("Step - Check company name of workplace");
-        verifyEquals(perAboutWorkEducationTab.getCompanyOfWorkplace(),"");
-
-        log.info("Step - Check position of workplace");
-        verifyEquals(perAboutWorkEducationTab.getPositionOfWorkplace(),"");
-
-        log.info("Step - Check Start time of workplace");
-        verifyEquals(perAboutWorkEducationTab.getTimestartOfWorkplace(),"");
-
-        log.info("Step - Check End time of workplace");
-        verifyEquals(perAboutWorkEducationTab.getTimeEndOfWorkplace(),"");
-
-        log.info("Step - Check Address of workplace");
-        verifyEquals(perAboutWorkEducationTab.getAddressOfWorkplace(),"");
-
-        log.info("Step - Check Scope of workplace");
-        verifyEquals(perAboutWorkEducationTab.getScopeOfWorkplace(),"");
+//        verifyEquals(perAboutWorkEducationTab.getCompanyOfWorkplace(),"");
+//
+//        log.info("Step - Check position of workplace");
+//        verifyEquals(perAboutWorkEducationTab.getPositionOfWorkplace(),"");
+//
+//        log.info("Step - Check Start time of workplace");
+//        verifyEquals(perAboutWorkEducationTab.getTimestartOfWorkplace(),"");
+//
+//        log.info("Step - Check End time of workplace");
+//        verifyEquals(perAboutWorkEducationTab.getTimeEndOfWorkplace(),"");
+//
+//        log.info("Step - Check Address of workplace");
+//        verifyEquals(perAboutWorkEducationTab.getAddressOfWorkplace(),"");
+//
+//        log.info("Step - Check Scope of workplace");
+//        verifyEquals(perAboutWorkEducationTab.getScopeOfWorkplace(),"");
 
         log.info("Add new highschool");
         perAboutWorkEducationTab.clickToAddNewUniversity();
@@ -372,7 +327,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         verifyEquals(perAboutWorkEducationTab.getScopeOfUniversity(),"");
 
         log.info("Step 33. Go to Place you lived");
-        perAboutWorkEducationTab.clickToTabItemOnAbout("#about_location");
+        perAboutWorkEducationTab.clickToTabItemOnAbout(driver,"#about_location");
         perAboutPlaceYouLivedTab = PageGeneration.createPerAboutPlaceLivingTab(driver);
 
         log.info("Step 34. Check Tab Place you lived display");

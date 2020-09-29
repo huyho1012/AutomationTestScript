@@ -38,37 +38,76 @@ public class PersonalCommon extends HeaderPage {
         return  getTextElement(driver,PersonalCommonUI.VALIDATION_ERR_MESS);
     }
 
-    public boolean checkCoverImageDisplayWithCaseNoImage() {
+    public boolean checkCoverImageDisplayWithCaseNoImage(WebDriver driver) {
         waitElementToVisible(driver, PersonalCommonUI.COVER_IMAGE);
-        return getAttributeValue(driver,PersonalCommonUI.COVER_IMAGE,"src").endsWith("cover-default.jpg");
+        String imageLink = getImageOfCover(driver);
+        return imageLink.equals("cover-default.jpg");
     }
 
-    public boolean checkAvatarUserDisplayWithGenderType(String genderType){
-        if(genderType == "male"){
-            if(getAttributeValue(driver, PersonalCommonUI.AVATAR_IMAGE,"data-bind").contains("")){
+    public boolean checkUploadAvatarUserSuccess(WebDriver driver, String avatarBeforeChange) {
+        System.out.println(getDateTimeNow());
+        waitForElementInvisible(driver, PersonalCommonUI.ICON_LOADING_IMAGE);
+        System.out.println(getDateTimeNow());
+        String avatarAfterChange = getImageURLOfAvatar(driver);
+        System.out.println(avatarAfterChange);
+        return avatarBeforeChange.contains(avatarAfterChange);
+    }
+
+    public boolean checkCoverImageUploadSuccessfully(WebDriver driver,String coverBeforeChange) {
+        waitElementToVisible(driver, PersonalCommonUI.ICON_LOADING_IMAGE);
+        String avatarAfterChange = getImageOfCover(driver);
+        return avatarAfterChange.contains(coverBeforeChange);
+    }
+
+    public boolean checkAvatarUserDisplayWithGenderType(WebDriver driver, String genderType){
+        System.out.println(genderType);
+        String imageLink = getImageURLOfAvatar(driver);
+        System.out.println(imageLink);
+        if(genderType.contains("Nam")){
+            if(imageLink.contains("avatar-male-256px.png")){
+                System.out.println("This image is male png");
+                return true;
+            } else {
+                System.out.println("This image is not a male png");
+                return false;
+            }
+
+        } else if(genderType.contains("Nữ")){
+            if(imageLink.contains("avatar-user-256px.png")){
+                System.out.println("This image is female png");
                 return true;
             }
-            return false;
-        } else if(genderType =="femalte"){
-            if(getAttributeValue(driver, PersonalCommonUI.AVATAR_IMAGE,"data-bind").contains("")){
+            else {
+                System.out.println("This image is not a female png");
+                return false;
+            }
+        } else if(genderType.contains("Khác")){
+            if(imageLink.contains("avatar-user")){
+                System.out.println("This image is a other png");
                 return true;
             }
-            return false;
-        } else if(genderType =="femalte"){
-            if(getAttributeValue(driver, PersonalCommonUI.AVATAR_IMAGE,"data-bind").contains("")){
-                return true;
+            else {
+                System.out.println("This image is not a other png");
+                return false;
             }
-            return false;
         }
         return false;
     }
 
-    public Object getImageURLOfAvatar() {
-        return null;
+    public String getImageURLOfAvatar(WebDriver driver) {
+        String imageURL = getCSSValueOfElement(driver, PersonalCommonUI.AVATAR_IMAGE,"background-image");
+        String[] imageLink = imageURL.split("/");
+        String imagePath = imageLink[imageLink.length-1];
+        return imagePath.replaceAll("[^\\w\\.\\-]", "");
     }
 
-    public Object getImageOfCover() {
-        return null;
+    public String getImageOfCover(WebDriver driver) {
+        String imageURL = getAttributeValue(driver,PersonalCommonUI.COVER_IMAGE,"src");
+        String[] imageLink = imageURL.split("/");
+        String imagePath = imageLink[imageLink.length-1];
+        return imagePath.replaceAll("[^\\w\\.\\-]", "");
     }
+
+
 }
 

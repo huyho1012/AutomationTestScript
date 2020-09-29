@@ -14,6 +14,7 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -453,7 +454,6 @@ public abstract class AbstractPage {
         } catch (AWTException e) {
             e.printStackTrace();
         }
-
     }
     public void uploadMultipleFileByAutoIT(WebDriver driver, String... fileNames){
         String fullFileName = "";
@@ -514,13 +514,24 @@ public abstract class AbstractPage {
         return Color.fromString(colorCode).asHex();
     }
 
-    public String getAttributeOfClassAfter(WebDriver driver, String classLocator, String cssValue){
+    public String getAttributeColorOfClassAfter(WebDriver driver, String classLocator, String cssValue){
         WebElement switchLabel = driver.findElement(By.cssSelector(classLocator));
         jsExecutor = (JavascriptExecutor)driver;
         String colorRGB = jsExecutor.executeScript("return window.getComputedStyle(arguments[0],':before').getPropertyValue('"+cssValue+"');",switchLabel).toString();
-    return colorRGB;
+        return colorRGB;
     }
 
+    public String getAttributOfClassAfter(WebDriver driver, String classLocator, String cssValue){
+        WebElement switchLabel = driver.findElement(By.cssSelector(classLocator));
+        jsExecutor = (JavascriptExecutor)driver;
+        return jsExecutor.executeScript("return window.getComputedStyle(arguments[0],':before').getPropertyValue('"+cssValue+"');",switchLabel).toString();
+    }
+
+
+    protected Date getDateTimeNow(){
+        Date date = new Date();
+        return date;
+    }
 }
 
 
