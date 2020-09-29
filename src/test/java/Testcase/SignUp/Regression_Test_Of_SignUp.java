@@ -271,7 +271,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
 //        verifyEquals(perAboutWorkEducationTab.getScopeOfWorkplace(),"");
 
         log.info("Add new highschool");
-        perAboutWorkEducationTab.clickToAddNewUniversity();
+        perAboutWorkEducationTab.clickButtonToAddnewHighschool();
 
         log.info("Step - Enter a highschool name");
         perAboutWorkEducationTab.enterDataToHighschoolName("");
@@ -293,28 +293,35 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
 
         log.info("Check information of highschool which have been already existed");
         log.info("Step - Check name of highschool");
-        verifyEquals(perAboutWorkEducationTab.getHighschoolName(),"");
+        verifyEquals(perAboutWorkEducationTab.getDataNameOfHighschoolDisplay(),"");
 
         log.info("Step - Check address of highschool");
-        verifyEquals(perAboutWorkEducationTab.getAddressOfHighschool(),"");
+        verifyEquals(perAboutWorkEducationTab.getAddressDataOfHighschoolDisplay(),"");
 
         log.info("Step - Check scope of highschool");
-        verifyEquals(perAboutWorkEducationTab.getScopeOfHighschool(),"");
+        verifyEquals(perAboutWorkEducationTab.getTypeScopeOfHighschoolDisplay(),"");
 
         log.info("Add new university");
-        perAboutWorkEducationTab.addNewWorkplace();
+        perAboutWorkEducationTab.clickButtonToAddNewUniveristy();
 
         log.info("Step - Enter a university name");
+        perAboutWorkEducationTab.enterDataToUniveristyNameField("");
 
         log.info("Step - Enter a address of university");
+        perAboutWorkEducationTab.enterDataToUniversityAddressField();
 
         log.info("Step - Enter a description of university");
 
+        perAboutWorkEducationTab.enterDataToUniversityDescField();
+
         log.info("Step - Update Time range of university");
+        perAboutWorkEducationTab.chooseTimeRangeStudyOfUniversity();
 
         log.info("Step - Choose scope");
+        perAboutWorkEducationTab.clickToChooseScopeOfUniversity();
 
         log.info("Step - Click button save");
+        perAboutWorkEducationTab.clickToButtonToSaveUniversity();
 
         log.info("Check information of university which have been already existed");
         log.info("Step - Check name of university");
