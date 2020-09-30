@@ -12,111 +12,97 @@ public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageOb
     }
 
     public void clickButtonToAddNewWorkplace() {
-        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.ADD_NEW_WORKPLACE);
-        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.ADD_NEW_WORKPLACE);
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.ADD_NEW_WORKPLACE_BUTTON);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.ADD_NEW_WORKPLACE_BUTTON);
     }
 
     public void clickToEditWorkplaceItembyIndex(int indexWorkplace) {
-        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.OPTION_OF_ITEM_WORKPLACE_BY_INDEX, String.valueOf(indexWorkplace));
-        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.OPTION_OF_ITEM_WORKPLACE_BY_INDEX, String.valueOf(indexWorkplace));
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.OPTION_DROPDOWN_WORKPLACE_BY_INDEX, String.valueOf(indexWorkplace));
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.OPTION_DROPDOWN_WORKPLACE_BY_INDEX, String.valueOf(indexWorkplace));
         setTimeDelay(1);
-        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.EDIT_ITEM_WORKPLACE_BY_INDEX, String.valueOf(indexWorkplace));
-        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.EDIT_ITEM_WORKPLACE_BY_INDEX, String.valueOf(indexWorkplace));
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.EDIT_WORKPLACE_BY_INDEX, String.valueOf(indexWorkplace));
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.EDIT_WORKPLACE_BY_INDEX, String.valueOf(indexWorkplace));
     }
 
     public void clickToEditWorkplaceItembyName(String companyName) {
-        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.OPTION_OF_ITEM_WORKPLACE_BY_NAME, companyName);
-        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.OPTION_OF_ITEM_WORKPLACE_BY_NAME, companyName);
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.OPTION_DROPDOWN_WORKPLACE_BY_NAME, companyName);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.OPTION_DROPDOWN_WORKPLACE_BY_NAME, companyName);
         setTimeDelay(1);
-        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.EDIT_ITEM_WORKPLACE_BY_NAME, companyName);
-        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.EDIT_ITEM_WORKPLACE_BY_NAME, companyName);
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.EDIT_FUNCTION_WORKPLACE_BY_NAME, companyName);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.EDIT_FUNCTION_WORKPLACE_BY_NAME, companyName);
     }
 
     public void clickToRemoveWorkplaceItemByIndex(String indexWorkplace) {
-        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.OPTION_OF_ITEM_WORKPLACE_BY_INDEX, String.valueOf(indexWorkplace));
-        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.OPTION_OF_ITEM_WORKPLACE_BY_INDEX, String.valueOf(indexWorkplace));
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.OPTION_DROPDOWN_WORKPLACE_BY_INDEX, String.valueOf(indexWorkplace));
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.OPTION_DROPDOWN_WORKPLACE_BY_INDEX, String.valueOf(indexWorkplace));
         setTimeDelay(1);
-        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.REMOVE_ITEM_WORKPLACE_BY_INDEX, String.valueOf(indexWorkplace));
-        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.REMOVE_ITEM_WORKPLACE_BY_INDEX, String.valueOf(indexWorkplace));
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.REMOVE_WORKPLACE_BY_INDEX, String.valueOf(indexWorkplace));
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.REMOVE_WORKPLACE_BY_INDEX, String.valueOf(indexWorkplace));
     }
 
-    // Hàm xoá thông tin nơi làm việc lấy theo tên của công ty
     public void clickToRemoveWorkplaceItembyName(String companyName) {
-        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.OPTION_OF_ITEM_WORKPLACE_BY_NAME, companyName);
-        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.OPTION_OF_ITEM_WORKPLACE_BY_NAME, companyName);
-        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.REMOVE_ITEM_WORKPLACE_BY_NAME, companyName);
-        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.REMOVE_ITEM_WORKPLACE_BY_NAME, companyName);
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.OPTION_DROPDOWN_WORKPLACE_BY_NAME, companyName);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.OPTION_DROPDOWN_WORKPLACE_BY_NAME, companyName);
+        setTimeDelay(1);
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.REMOVE_WORKPLACE_BY_NAME, companyName);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.REMOVE_WORKPLACE_BY_NAME, companyName);
     }
 
-    // Form Add new Workplace
     public void enterDataToCompanyNameOfWorkspace(String companyName) {
-        waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.COMPANY_WORKPLACE);
-        sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.COMPANY_WORKPLACE, companyName);
-        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.COMPANY_WORKPLACE_DROPDOWWN_ITEM);
+        waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_COMPANY_NAME_FIELD);
+        sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_COMPANY_NAME_FIELD, companyName);
         setTimeDelay(1);
-
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_COMPANY_ITEM);
+        setTimeDelay(1);
     }
 
     public void enterDataToPositionOfWorkspace(String positionJob) {
-        waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.POSITION_WORLPLACE);
-        sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.POSITION_WORLPLACE, positionJob);
+        waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_DESCRIPTION_FIELD);
+        sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_DESCRIPTION_FIELD, positionJob);
         setTimeDelay(1);
 
     }
 
     public void enterDataToAddressOfWorkspace(String address) {
-        waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.ADDRESS_WORKPLACE);
-        sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.ADDRESS_WORKPLACE, address);
+        waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_ADDRESS_FIELD);
+        sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_ADDRESS_FIELD, address);
         setTimeDelay(1);
     }
 
     public void enterDataToDescriptionOfWorkspace(String description) {
-        waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.DESC_WORLPLACE);
-        sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.DESC_WORLPLACE, description);
+        waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_DESCRIPTION_FIELD);
+        sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_DESCRIPTION_FIELD, description);
     }
 
     public void checkOptionTimePeriod() {
-        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.CHECKBOX_TIME_PERIOD);
-        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.CHECKBOX_TIME_PERIOD);
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_TIME_PERIOD_CHECKBOX);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_TIME_PERIOD_CHECKBOX);
     }
 
 
     public void chooseStartTimeOfWorkplace(String dateStart, String monthStart, String yearStart) {
-        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, yearStart, "workplaceVM.yearFrom");
-        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, monthStart, "workplaceVM.monthFrom");
-        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, dateStart, "workplaceVM.dayFrom");
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_DROPDOWN, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_ITEM, yearStart, "workplaceVM.yearFrom");
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_DROPDOWN, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_ITEM, monthStart, "workplaceVM.monthFrom");
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_DROPDOWN, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_ITEM, dateStart, "workplaceVM.dayFrom");
     }
 
     public void chooseEndimeOfWorkplace(String dateSEnd, String monthEnd, String yearEnd) {
-        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, yearEnd, "workplaceVM.yearTo");
-        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, monthEnd, "workplaceVM.monthTo");
-        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.DATE_DROPDOWN_OF_WORKPLACE, PerAbout_WorkAndEducation_PageUI.ITEM_DATE_DROPDOWN_OF_WORKPLACE, dateSEnd, "workplaceVM.dayTo");
-    }
-
-
-    public void chooseStartTimeAndEndTimeOfWorkspace(String dateItem, String monthItem, String yearItem) {
-        if (checkTimePeriodIsSelected()) {
-            chooseStartTimeOfWorkplace("12", "10", "2010");
-        } else {
-            chooseStartTimeOfWorkplace("", "", "");
-            chooseEndimeOfWorkplace("", "", "");
-        }
-    }
-
-    private boolean checkTimePeriodIsSelected() {
-        return true;
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_DROPDOWN, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_ITEM, yearEnd, "workplaceVM.yearTo");
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_DROPDOWN, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_ITEM, monthEnd, "workplaceVM.monthTo");
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_DROPDOWN, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_ITEM, dateSEnd, "workplaceVM.dayTo");
     }
 
     public void chooseScopeOfWorkPlace(String scopeName) {
-        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.SCOPE_DROPDOWN_OF_WORKPLACE);
-        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.SCOPE_DROPDOWN_OF_WORKPLACE);
-        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.SCOPE_ITEM_OF_WORKPLACE, scopeName);
-        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.SCOPE_ITEM_OF_WORKPLACE, scopeName);
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SCOPE_DROPDOWN);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SCOPE_DROPDOWN);
+        setTimeDelay(1);
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.SCOPE_ITEM_DROPDOWN, scopeName);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.SCOPE_ITEM_DROPDOWN, scopeName);
     }
 
     public void clickButtonToSaveWorkplace() {
-        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.SAVE_WORKPLACE);
-        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.SAVE_WORKPLACE);
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.BUTTON_SAVE_CHANGE_WORKPLACE);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.BUTTON_SAVE_CHANGE_WORKPLACE);
     }
 
     public void cancelSaveWorkPlace() {
@@ -125,19 +111,20 @@ public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageOb
     }
 
     public String getCompanyOfWorkplace() {
-        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.COMPANY_WORKPLACE_DATA);
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_COMPANY_NAME);
     }
 
     public String getPositionOfWorkplace() {
-        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.POSITION_WORKPLACE_DATA);
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_POSITION);
+
     }
 
     public String getAddressOfWorkplace() {
-        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.ADDRESS_WORKPLACE_DATA);
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_ADDRESS);
     }
 
     public String getScopeOfWorkplace() {
-        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.SCOPE_WORKPLACE_DATA);
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SCOPE);
     }
 
 
@@ -145,26 +132,26 @@ public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageOb
     // Highschool section
 
     public String getDataNameOfHighschoolDisplay() {
-        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.DATA_NAME_OF_HIGHSCHOOL);
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.HIGHSCHOOL_NAME);
     }
 
     public String getAddressDataOfHighschoolDisplay() {
-        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.DATA_ADDRESS_OF_HIGHSCHOOL);
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.HIGHSCHOOL_ADDRESS);
     }
 
     public String getTypeScopeOfHighschoolDisplay() {
-        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.DATA_SCOPE_OF_HIGHSCHOOL);
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.HIGHSCHOOL_SCOPE);
     }
 
     public void clickButtonToAddnewHighschool() {
-        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.ADD_NEW_HIGHSCHOOL);
-        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.ADD_NEW_HIGHSCHOOL);
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.ADD_NEW_HIGHSCHOOL_BUTTON);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.ADD_NEW_HIGHSCHOOL_BUTTON);
     }
 
     public void enterDataToHighschoolName(String highschoolName) {
         waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.HIGHSCHOOL_NAME_FIELD);
         sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.HIGHSCHOOL_NAME_FIELD, highschoolName);
-        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.HIGHSCHOOL_NAME_DROPDOWWN_ITEM);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.HIGHSCHOOL_NAME_ITEM);
         setTimeDelay(1);
     }
 
@@ -174,19 +161,25 @@ public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageOb
     }
 
     public void enterDataToHighschoolDescription(String highschoolDesc) {
-        waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.HIGHSCHOOL_ADDRESS);
-        sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.HIGHSCHOOL_ADDRESS, highschoolDesc);
+        waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.HIGHSCHOOL_DESCRIPTION_FIELD);
+        sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.HIGHSCHOOL_DESCRIPTION_FIELD, highschoolDesc);
     }
 
     public void chooseStartTimeAndEndTimeOfHighschool() {
-        selectStartDateOfHighschool();
-        selectEndDateOfHighschool();
+        selectStartDateOfHighschool("","","");
+        selectEndDateOfHighschool("","","");
     }
 
-    private void selectStartDateOfHighschool() {
+    private void selectStartDateOfHighschool(String dateStart, String monthStart, String yearStart) {
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_DROPDOWN, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_ITEM, yearStart, "universityVM.yearFrom");
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_DROPDOWN, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_ITEM, monthStart, "universityVM.monthFrom");
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_DROPDOWN, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_ITEM, dateStart, "universityVM.dayFrom");
     }
 
-    private void selectEndDateOfHighschool() {
+    private void selectEndDateOfHighschool(String dateEnd, String monthEnd, String yearEnd) {
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_DROPDOWN, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_ITEM, yearEnd, "universityVM.yearTo");
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_DROPDOWN, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_ITEM, monthEnd, "universityVM.monthTo");
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_DROPDOWN, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_ITEM, dateEnd, "universityVM.dayTo");
     }
 
     public void checkOptionGruatedOfHighschool() {
@@ -214,20 +207,20 @@ public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageOb
     // University section
 
     public String getUniveristyName() {
-        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.DATA_NAME_OF_UNIVERSITY);
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_NAME);
     }
 
     public String getAddressOfUniversity() {
-        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.DATA_ADDRESS_OF_UNIVERSITY);
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_ADDRESS);
     }
 
     public String getScopeOfUniversity() {
-        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.DATA_SCOPE_OF_UNIVERSITY);
+        return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_SCOPE);
     }
 
     public void clickButtonToAddNewUniveristy() {
-        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.ADD_NEW_UNIVERSITY);
-        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.ADD_NEW_UNIVERSITY);
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.ADD_NEW_UNIVERSITY_BUTTON);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.ADD_NEW_UNIVERSITY_BUTTON);
 
     }
     public void enterDataToUniveristyNameField(String univeristyName) {
@@ -240,15 +233,38 @@ public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageOb
         sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_ADDRESS_FIELD,universityAddress);
     }
 
-    public void enterDataToUniversityDescField() {
+    public void enterDataToUniversityDescField(String universityDesc) {
+        waitElementToVisible(driver, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_DESC_FIELD);
+        sendKeyToElement(driver, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_DESC_FIELD,universityDesc);
+    }
+
+    private void selectStartDateOfUniversity(String dateStart, String monthStart, String yearStart) {
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_SELECTED_DATE_DROPDOWN, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_SELECTED_DATE_ITEM, yearStart, "universityVM.yearFrom");
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_SELECTED_DATE_DROPDOWN, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_SELECTED_DATE_ITEM, monthStart, "universityVM.monthFrom");
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_SELECTED_DATE_DROPDOWN, PerAbout_WorkAndEducation_PageUI.WORKPLACE_SELECTED_DATE_ITEM, dateStart, "universityVM.dayFrom");
+    }
+
+    private void selectEndDateOfUniversity(String dateEnd, String monthEnd, String yearEnd) {
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_SELECTED_DATE_DROPDOWN, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_SELECTED_DATE_ITEM, yearEnd, "universityVM.yearTo");
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_SELECTED_DATE_DROPDOWN, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_SELECTED_DATE_ITEM, monthEnd, "universityVM.monthTo");
+        selectItemInCustomDropdown(driver, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_SELECTED_DATE_DROPDOWN, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_SELECTED_DATE_ITEM, dateEnd, "universityVM.dayTo");
     }
 
     public void chooseTimeRangeStudyOfUniversity() {
+        selectStartDateOfUniversity("","","");
+        selectEndDateOfUniversity("","","");
     }
 
-    public void clickToChooseScopeOfUniversity() {
+    public void clickToChooseScopeOfUniversity(String scopeName) {
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_SCOPE_DROPDOWN);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_SCOPE_DROPDOWN);
+        setTimeDelay(1);
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_SCOPE_ITEM);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_SCOPE_ITEM,scopeName);
     }
 
     public void clickToButtonToSaveUniversity() {
+        waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.BUTTON_SAVE_CHANGE_UNIVERSITY);
+        clickToElement(driver, PerAbout_WorkAndEducation_PageUI.BUTTON_SAVE_CHANGE_UNIVERSITY);
     }
 }

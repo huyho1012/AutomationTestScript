@@ -1,6 +1,5 @@
 package Project.Newsfeed.PersonalWall;
 
-import Interfaces.hahalolo_newsfeed.PersonaWall.PersonalCommonUI;
 import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
 
@@ -95,7 +94,7 @@ public class PersonalCommon extends HeaderPage {
     }
 
     public String getImageURLOfAvatar(WebDriver driver) {
-        String imageURL = getCSSValueOfElement(driver, PersonalCommonUI.AVATAR_IMAGE,"background-image");
+        String imageURL = getCSSValueOfElement(driver, Per_Common_Page_UI.AVATAR_IMAGE,"background-image");
         String[] imageLink = imageURL.split("/");
         String imagePath = imageLink[imageLink.length-1];
         return imagePath.replaceAll("[^\\w\\.\\-]", "");

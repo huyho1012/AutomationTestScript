@@ -1,8 +1,7 @@
 package Project.Newsfeed.PersonalWall.About;
 
 import Interfaces.hahalolo_newsfeed.PersonaWall.About.PerAbout_PlacesYouLived_PageUI;
-import Interfaces.hahalolo_newsfeed.PersonaWall.PersonalHeadCoverUI;
-import Project.Newsfeed.PersonalWall.PersonalCommon;
+import Interfaces.hahalolo_newsfeed.PersonaWall.Per_Common_PageUI;
 import org.openqa.selenium.WebDriver;
 
 public class PerAbout_PlacesYouLived_PageObject extends PerAbout_Common_PageObject {
@@ -12,8 +11,8 @@ public class PerAbout_PlacesYouLived_PageObject extends PerAbout_Common_PageObje
     }
 
     public boolean checkPerAboutPlacesYouLivedIsDisplay(){
-        return getTextElement(driver, PersonalHeadCoverUI.TITLE_TAB_OF_ABOUT,"about_location").equalsIgnoreCase("Thành phố đang sống và quê quán")
-            && getAttributeValue(driver, PersonalHeadCoverUI.ABOUT_ITEM_MENU,"class","about_location").endsWith("active");
+        return getTextElement(driver, Per_Common_PageUI.TITLE_TAB_OF_ABOUT,"about_location").equalsIgnoreCase("Thành phố đang sống và quê quán")
+            && getAttributeValue(driver, Per_Common_PageUI.ABOUT_ITEM_MENU,"class","about_location").endsWith("active");
     }
 
     public boolean checkDisplayOfPerAboutWithCaseCreateNewAccount(){

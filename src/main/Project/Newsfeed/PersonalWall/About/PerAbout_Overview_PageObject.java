@@ -1,7 +1,7 @@
 package Project.Newsfeed.PersonalWall.About;
 
 import Interfaces.hahalolo_newsfeed.PersonaWall.About.AboutCommonUI;
-import Interfaces.hahalolo_newsfeed.PersonaWall.PersonalHeadCoverUI;
+import Interfaces.hahalolo_newsfeed.PersonaWall.Per_Common_PageUI;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -14,12 +14,10 @@ public class PerAbout_Overview_PageObject extends PerAbout_Common_PageObject {
     }
 
     public boolean checkPerAboutOverviewTabIsDisplay(){
-        waitElementToVisible(driver, PersonalHeadCoverUI.PER_ABOUT);
-        waitElementToVisible(driver, PersonalHeadCoverUI.ABOUT_MENU);
-        return getAttributeValue(driver, PersonalHeadCoverUI.ABOUT_ITEM_MENU,"class","#about_overview").endsWith("active");
+        waitElementToVisible(driver, Per_Common_PageUI.PER_ABOUT);
+        waitElementToVisible(driver, Per_Common_PageUI.ABOUT_MENU);
+        return getAttributeValue(driver, Per_Common_PageUI.ABOUT_ITEM_MENU,"class","#about_overview").endsWith("active");
     }
-
-    // Section Workplace
     public void clickAddWorkPlaceButtonToNavigateToWorkAndEducation(){
         waitForElementClickable(driver, AboutCommonUI.BUTTON_ADD_WORKSPACE);
         clickToElement(driver, AboutCommonUI.BUTTON_ADD_WORKSPACE);
@@ -97,7 +95,6 @@ public class PerAbout_Overview_PageObject extends PerAbout_Common_PageObject {
         return null;
     }
 
-    // Hometown and currenc city section
     public void clickAddCurrentCityAndHomeTownButtonToNavigateToPlaceYouLived(){
         waitForElementClickable(driver, AboutCommonUI.BUTTON_ADD_LIVING_PLACE);
         clickToElement(driver, AboutCommonUI.BUTTON_ADD_LIVING_PLACE);
@@ -124,7 +121,7 @@ public class PerAbout_Overview_PageObject extends PerAbout_Common_PageObject {
         return  getTextElement(driver, AboutCommonUI.HOMETOWN_ITEM);
     }
 
-    // Widget About Introduce
+
     public String getEmailIsDisplayOnIntroduceWidget() {
         return getTextElement(driver, AboutCommonUI.WIDGET_INTRO_EMAIL);
     }

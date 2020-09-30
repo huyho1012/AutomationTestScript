@@ -243,7 +243,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         perAboutWorkEducationTab.checkOptionTimePeriod();
 
         log.info("Step - Update time range of workplace");
-        perAboutWorkEducationTab.chooseStartTimeAndEndTimeOfWorkspace("","","");
+        perAboutWorkEducationTab.chooseStartTimeOfWorkplace("","","");
 
         log.info("Step - Choose scope");
 //        perAboutWorkEducationTab.chooseScopeOfWorkPlace("");
@@ -308,17 +308,17 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         perAboutWorkEducationTab.enterDataToUniveristyNameField("");
 
         log.info("Step - Enter a address of university");
-        perAboutWorkEducationTab.enterDataToUniversityAddressField();
+        perAboutWorkEducationTab.enterDataToUniversityAddressField("");
 
         log.info("Step - Enter a description of university");
 
-        perAboutWorkEducationTab.enterDataToUniversityDescField();
+        perAboutWorkEducationTab.enterDataToUniversityDescField("");
 
         log.info("Step - Update Time range of university");
         perAboutWorkEducationTab.chooseTimeRangeStudyOfUniversity();
 
         log.info("Step - Choose scope");
-        perAboutWorkEducationTab.clickToChooseScopeOfUniversity();
+        perAboutWorkEducationTab.clickToChooseScopeOfUniversity("");
 
         log.info("Step - Click button save");
         perAboutWorkEducationTab.clickToButtonToSaveUniversity();
