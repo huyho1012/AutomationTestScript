@@ -11,13 +11,7 @@
         <parameter name="datalogin" value=".\JsonData\LoginUser.json"/>
         <classes>
 
-<!--            <class name="Testcase.Login.ComponentTest.Testcase_Login_With_EXCEL"></class>-->
-            <class name="Testcase.SignUp.Regression_Test_Of_SignUp"></class>
-<!--            <class name="Testcase.Login.ComponentTest.Testcase_Login_With_Hard_Data"></class>-->
-<!--            <class name="Testcase.SignUp.Component_Test_Of_SignUp"></class>-->
-<!--            <class name="Testcase.SignUp.Regression_Test_Of_SignUp"></class>-->
-<!--                <class name ="Testcase.AccountSetting.Testcase_ChangeFullName"></class>-->
-<!--            <class name="Testcase.CommunitySite.Community"></class>-->
+            <class name="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_ComponentTest_PhoneNumber_Function"></class>
         </classes>
     </test>
 

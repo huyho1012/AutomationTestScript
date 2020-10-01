@@ -205,7 +205,6 @@ public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageOb
     }
 
     // University section
-
     public String getUniveristyName() {
         return getTextElement(driver, PerAbout_WorkAndEducation_PageUI.UNIVERSITY_NAME);
     }

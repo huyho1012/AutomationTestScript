@@ -43,7 +43,13 @@ public class DebugFunction {
 //        System.out.println(randomVirtualEmail());
 //        System.out.println(LocalTime.now());
 //        System.out.println(randomName(1000));
-        System.out.println(getLinkOnAvatarlink());
+//        System.out.println(getLinkOnAvatarlink());
+        String phoeData = "huy123456789ho123456789doan132";
+        String a =  phoeData.replaceAll("[^\\d]","");
+        if(a.length()>20){
+             a = a.substring(0,20);
+        }
+        System.out.println(a);
     }
 
     public static String getLinkOnAvatarlink(){

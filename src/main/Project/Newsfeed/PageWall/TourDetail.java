@@ -10,10 +10,10 @@ public class TourDetail extends HeaderPage {
         driver = webDriver;
     }
 
-    public boolean checkTourDetailBookingPageIsDisplay() {
-        waitElementToVisible(driver, PersonalCommonUI.HEADER_SECTION);
-        return true;
-    }
+//    public boolean checkTourDetailBookingPageIsDisplay() {
+//        waitElementToVisible(driver, PersonalCommonUI.HEADER_SECTION);
+//        return true;
+//    }
 
 
 
