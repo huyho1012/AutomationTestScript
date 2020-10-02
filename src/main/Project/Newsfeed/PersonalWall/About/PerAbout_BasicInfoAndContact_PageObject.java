@@ -252,6 +252,8 @@ public class PerAbout_BasicInfoAndContact_PageObject extends PerAbout_Common_Pag
         clickToElement(driver, PerAbout_ContactAndBasicInfo_PageUI.BUTTON_SAVE_BIRTHDAY);
     }
 
-    public void chooseGenderType() {
+    public void chooseGenderType(String genderType){
+        waitElementToVisible(driver, PerAbout_ContactAndBasicInfo_PageUI.GENDER_DROPDOWN);
+
     }
 }
