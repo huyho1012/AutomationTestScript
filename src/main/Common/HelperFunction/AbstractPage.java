@@ -387,35 +387,35 @@ public abstract class AbstractPage {
         jsExecutor.executeScript("arguments[0].removeAttribute('"+attributeName+"')",element);
     }
     public void waitElementToVisible(WebDriver driver, String locator){
-        explicitWait = new WebDriverWait(driver, 30);
+        explicitWait = new WebDriverWait(driver, 10);
         explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
     }
     public void waitElementToVisible(WebDriver driver, String locator, String... values){
-        explicitWait = new WebDriverWait(driver, 30);
+        explicitWait = new WebDriverWait(driver, 10);
         explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(castToObject(locator,values))));
     }
     public void waitForElementToPresence(WebDriver driver, String locator){
-        explicitWait = new WebDriverWait(driver, 30);
+        explicitWait = new WebDriverWait(driver, 10);
         explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
     }
     public void waitForElementClickable(WebDriver driver, String locator){
-        explicitWait = new WebDriverWait(driver, 30);
+        explicitWait = new WebDriverWait(driver, 10);
         explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
     }
     public void waitForElementClickable(WebDriver driver, String locator, String...values){
-        explicitWait = new WebDriverWait(driver, 30);
+        explicitWait = new WebDriverWait(driver, 10);
         explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath(castToObject(locator,values))));
     }
     public void waitForElementInvisible(WebDriver driver, String locator){
-        explicitWait = new WebDriverWait(driver, 30);
+        explicitWait = new WebDriverWait(driver, 10);
         explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(locator)));
     }
     public void waitForElementInvisible(WebDriver driver, String locator, String values){
-        explicitWait = new WebDriverWait(driver, 30);
+        explicitWait = new WebDriverWait(driver, 10);
         explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(castToObject(locator,values))));
     }
     public void waitForPageLoading(WebDriver driver){
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
     }
 
     public void uploadOneFileBySendKey(WebDriver driver, String locator, String fileName){

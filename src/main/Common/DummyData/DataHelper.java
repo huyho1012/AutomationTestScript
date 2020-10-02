@@ -50,4 +50,11 @@ public class DataHelper {
     }
 
 
+    public String getCity() {
+        return faker.address().city();
+    }
+
+    public String getAreaCode(){
+        return faker.address().zipCode();
+    }
 }

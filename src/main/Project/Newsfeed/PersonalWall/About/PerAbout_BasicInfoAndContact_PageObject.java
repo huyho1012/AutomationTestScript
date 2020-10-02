@@ -1,11 +1,13 @@
 package Project.Newsfeed.PersonalWall.About;
 
+import Common.HelperFunction.PageGeneration;
 import Interfaces.hahalolo_newsfeed.PersonaWall.About.PerAbout_ContactAndBasicInfo_PageUI;
 import Project.Newsfeed.PersonalWall.PersonalCommon;
 import com.fasterxml.jackson.databind.util.CompactStringObjectMap;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-public class PerAbout_BasicInfoAndContact_PageObject extends PersonalCommon {
+public class PerAbout_BasicInfoAndContact_PageObject extends PerAbout_Common_PageObject {
     WebDriver driver;
     public PerAbout_BasicInfoAndContact_PageObject(WebDriver webDriver){
         driver = webDriver;
@@ -104,6 +106,7 @@ public class PerAbout_BasicInfoAndContact_PageObject extends PersonalCommon {
     // Birthday
     public String getBirthdayDisplay(){
         waitElementToVisible(driver, PerAbout_ContactAndBasicInfo_PageUI.CONTACT_AND_BASIC_INFO_TAB);
+        waitElementToVisible(driver, PerAbout_ContactAndBasicInfo_PageUI.BIRTHDAY_DATA);
         return getTextElement(driver, PerAbout_ContactAndBasicInfo_PageUI.BIRTHDAY_DATA);
     }
 
@@ -217,5 +220,38 @@ public class PerAbout_BasicInfoAndContact_PageObject extends PersonalCommon {
 
     public Object getOtherPhoneDisplay() {
         return null;
+    }
+
+    public boolean checkFormAddOrEditAddressDisplay() {
+        return true;
+    }
+
+    public String getAttributeValueOfCityIsDisplay() {
+        return  getAttributeValue(driver, PerAbout_ContactAndBasicInfo_PageUI.CITY_FIELD, "value");
+    }
+
+    public String getAttributeValueOfAreaCodeIsDisplay() {
+        return  getAttributeValue(driver, PerAbout_ContactAndBasicInfo_PageUI.AREA_CODE_FIELD, "value");
+    }
+
+    public boolean checkAddressSectionNotHaveData() {
+        waitElementToVisible(driver, PerAbout_ContactAndBasicInfo_PageUI.TITLE_PAGE);
+        return checkElementDisplay(driver, PerAbout_ContactAndBasicInfo_PageUI.BUTTON_ADD_ADDRESSS);
+    }
+
+    public boolean checkFormUpdateBirthdayIsDisplay() {
+        return checkElementDisplay(driver, PerAbout_ContactAndBasicInfo_PageUI.BUTTON_SAVE_BIRTHDAY);
+    }
+
+    public void changeScopeOfBirthday(String valueScope) {
+        selectItemInCustomDropdown(driver, PerAbout_ContactAndBasicInfo_PageUI.SCOPE_DROPDOWN_OF_BIRTHDAY, PerAbout_ContactAndBasicInfo_PageUI.SCOPE_ITEM_OF_BIRTHDAY, valueScope);
+    }
+
+    public void clickToButtonSaveBirthday() {
+        waitForElementClickable(driver, PerAbout_ContactAndBasicInfo_PageUI.BUTTON_SAVE_BIRTHDAY);
+        clickToElement(driver, PerAbout_ContactAndBasicInfo_PageUI.BUTTON_SAVE_BIRTHDAY);
+    }
+
+    public void chooseGenderType() {
     }
 }

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test with firefox"
+           tests="32"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="49.359">
+  <properties />
+  
+  
+            <testcase name="TC_01_Update_Address_Information_With_Address_Data_Is_Invalid" time="0.408" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_23_Update_Address_Information_With_AreaCode_Data_Is_Uppercase" time="0.778" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_27_Update_Address_Information_With_AreaCode_Data_Contains_Special_Characters" time="0.769" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_08_Update_Address_Information_With_Address_Data_Is_SCRIPT_CODE" time="0.762" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_16_Update_Address_Information_With_City_Data_Contains_Special_Characters" time="0.781" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_21_Update_Address_Information_With_AreaCode_Data_Is_Blank" time="0.790" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_24_Update_Address_Information_With_AreaCode_Data_Is_Lowercase" time="0.783" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_14_Update_Information_With_City_Data_Is_Only_Number" time="0.776" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_02_Update_Address_Information_With_Address_Data_Is_Uppercase" time="0.843" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_11_Update_Address_Information_With_City_Data_Is_Invalid" time="0.362" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_12_Update_Address_Information_With_City_Data_Is_Uppercase" time="0.769" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_13_Update_Address_Information_With_City_Data_Is_Lowercase" time="0.797" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_32_Check_Address_Function_When_User_Create_New_Account" time="26.001" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_15_Update_Address_Information_With_City_Data_Combine_Characters_And_Number" time="0.804" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_05_Update_Address_Information_With_Addreess_Data_Combine_Characters_And_Number" time="0.768" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_04_Update_Address_Information_With_Address_Data_Is_Only_Number" time="0.741" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_19_Update_Address_Information_With_City_Data_Contains_Whitespace_On_First" time="0.779" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_20_Update_Address_Information_With_City_Data_Contains_Whitespace_On_Last" time="0.782" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_29_Update_Address_Information_With_AreaCode_Data_Is_SCRIPT_CODE" time="0.808" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_22_Update_Address_Information_With_AreaCode_Data_Contains_All_Whitespace" time="0.786" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_26_Update_Address_Information_With_AreaCode_Data_Combine_Characters_And_Number" time="0.780" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_06_Update_Address_Information_With_Address_Data_Contains_Special_Characters" time="0.741" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_25_Update_Information_With_AreaCode_Data_Is_Only_Number" time="0.775" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_09_Update_Address_Information_With_Address_Data_Contains_Whitespace_On_First" time="0.759" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_17_Update_Address_Information_With_City_Data_Is_HTML_CODE" time="0.788" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_30_Update_Address_Information_With_AreaCode_Data_Contains_Whitespace_On_First" time="0.778" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_07_Update_Address_Information_With_Address_Data_Is_HTML_CODE" time="0.741" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_31_Update_Address_Information_With_AreaCode_Data_Contains_Whitespace_On_Last" time="0.770" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_28_Update_Address_Information_With_AreaCode_Data_Is_HTML_CODE" time="0.785" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_03_Update_Address_Information_With_Address_Data_Is_Lowercase" time="0.769" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_18_Update_Address_Information_With_City_Data_Is_SCRIPT_CODE" time="0.793" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+                <testcase name="TC_10_Update_Address_Information_With_Address_Data_Contains_Whitespace_On_Last" time="0.793" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_AddressFunction" />
+      
+</testsuite>
