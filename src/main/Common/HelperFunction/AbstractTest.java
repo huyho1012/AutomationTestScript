@@ -167,7 +167,9 @@ public abstract class AbstractTest extends AbstractPage {
         return checkEquals(actual, expected);
     }
 
-
+    protected String replaceMoreWhitespaceToOne(String content) {
+        return  content.replaceAll("^ +| +$|( )+", "$1");
+    }
 
     protected String getCurrentDay() {
         DateTime nowUTC = new DateTime();

@@ -48,6 +48,12 @@ public class PerAbout_DetailsAboutYou_PageObject extends PerAbout_Common_PageObj
     }
 
 
+    public void doActionEditOrAddFavorite(){
+        if(checkElementDisplay(driver, PerAbout_DetailsAboutYou_PageUI.FAVORITE_QUOTE_DATA))
+            clickToButtonEditFavoriteQuote();
+        else
+            clickToAddFavoriteQuote();
+    }
     // Chức năng cập nhật Favorite quote
     public void clickToAddFavoriteQuote(){
         waitForElementClickable(driver, PerAbout_DetailsAboutYou_PageUI.BUTTON_ADD_NEW_FAVORITE_QUOTE);
@@ -75,6 +81,7 @@ public class PerAbout_DetailsAboutYou_PageObject extends PerAbout_Common_PageObj
     }
 
     public String getFavoriteQuoteDataDisplay(){
+        waitElementToVisible(driver, PerAbout_DetailsAboutYou_PageUI.FAVORITE_QUOTE_DATA);
         return getTextElement(driver, PerAbout_DetailsAboutYou_PageUI.FAVORITE_QUOTE_DATA);
     }
 

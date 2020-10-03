@@ -12,7 +12,7 @@
 <body>
 <h1>Test with firefox</h1>
 <p>
-  Test duration: 42.184s
+  Test duration: 129.982s
 </p>
 
 
@@ -20,7 +20,7 @@
   <table class="resultsTable">
     <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">Testcase.PersonalPageWall.DetailsAboutYou.ComponentTestcase</td>
+        <td colspan="3" class="group">Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes</td>
       </tr>
             
 <tr>
@@ -28,20 +28,21 @@
                   TC01_Update_Favorite_Quote_With_Blank_Data
       </td>
   <td class="duration">
-    10.322s
+    12.408s
   </td>
   <td class="result">
         
     
         
 
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)</b></a><br />
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)</b></a><br />
     <div class="stackTrace" id="exception-0">
               org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)<br />
               org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)<br />
-              Common.HelperFunction.AbstractPage.waitForElementClickable(AbstractPage.java:403)<br />
-              Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.clickToAddFavoriteQuote(PerAbout_DetailsAboutYou_PageObject.java:53)<br />
-              Testcase.PersonalPageWall.DetailsAboutYou.ComponentTestcase.TC01_Update_Favorite_Quote_With_Blank_Data(ComponentTestcase.java:74)<br />
+              Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)<br />
+              Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)<br />
+              Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)<br />
+              Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC01_Update_Favorite_Quote_With_Blank_Data(Testcase_ComponentTest_FavoriteQuotes.java:74)<br />
               java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
               java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)<br />
               java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
@@ -69,13 +70,13 @@
 &nbsp; (Session info: chrome=85.0.4183.121)<br/>
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html<br/>
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;<br/>
-System info: host: &apos;ADMIN&apos;, ip: &apos;10.0.2.120&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;<br/>
+System info: host: &apos;DESKTOP-LF4PDD0&apos;, ip: &apos;172.16.99.20&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;<br/>
 Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63709}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
-Session ID: 476066bd2fa7b04d12efb026a3e56cf1<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\WIN10~1\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:58715}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 7ef85ebcd1a82678a45e73e205384be0<br/>
 *** Element info: {Using=xpath, value=//div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)]}</a><br />
         <div class="stackTrace" id="exception-1">
-                      jdk.internal.reflect.GeneratedConstructorAccessor8.newInstance(Unknown Source)<br />
+                      jdk.internal.reflect.GeneratedConstructorAccessor9.newInstance(Unknown Source)<br />
                       java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
                       java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
                       java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)<br />
@@ -91,12 +92,11 @@ Session ID: 476066bd2fa7b04d12efb026a3e56cf1<br/>
                       org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)<br />
                       org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)<br />
                       org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)<br />
-                      org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)<br />
-                      org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)<br />
                       org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)<br />
-                      Common.HelperFunction.AbstractPage.waitForElementClickable(AbstractPage.java:403)<br />
-                      Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.clickToAddFavoriteQuote(PerAbout_DetailsAboutYou_PageObject.java:53)<br />
-                      Testcase.PersonalPageWall.DetailsAboutYou.ComponentTestcase.TC01_Update_Favorite_Quote_With_Blank_Data(ComponentTestcase.java:74)<br />
+                      Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)<br />
+                      Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)<br />
+                      Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)<br />
+                      Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC01_Update_Favorite_Quote_With_Blank_Data(Testcase_ComponentTest_FavoriteQuotes.java:74)<br />
                       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
                       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)<br />
                       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
@@ -129,20 +129,21 @@ Session ID: 476066bd2fa7b04d12efb026a3e56cf1<br/>
                   TC02_Update_Favorite_Quote_With_Data_Contains_All_Whitespace
       </td>
   <td class="duration">
-    10.318s
+    12.462s
   </td>
   <td class="result">
         
     
         
 
-        <a href="javascript:toggleElement('exception-2', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)</b></a><br />
+        <a href="javascript:toggleElement('exception-2', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)</b></a><br />
     <div class="stackTrace" id="exception-2">
               org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)<br />
               org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)<br />
-              Common.HelperFunction.AbstractPage.waitForElementClickable(AbstractPage.java:403)<br />
-              Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.clickToAddFavoriteQuote(PerAbout_DetailsAboutYou_PageObject.java:53)<br />
-              Testcase.PersonalPageWall.DetailsAboutYou.ComponentTestcase.TC02_Update_Favorite_Quote_With_Data_Contains_All_Whitespace(ComponentTestcase.java:85)<br />
+              Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)<br />
+              Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)<br />
+              Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)<br />
+              Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC02_Update_Favorite_Quote_With_Data_Contains_All_Whitespace(Testcase_ComponentTest_FavoriteQuotes.java:85)<br />
               java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
               java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)<br />
               java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
@@ -170,13 +171,13 @@ Session ID: 476066bd2fa7b04d12efb026a3e56cf1<br/>
 &nbsp; (Session info: chrome=85.0.4183.121)<br/>
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html<br/>
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;<br/>
-System info: host: &apos;ADMIN&apos;, ip: &apos;10.0.2.120&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;<br/>
+System info: host: &apos;DESKTOP-LF4PDD0&apos;, ip: &apos;172.16.99.20&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;<br/>
 Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63709}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
-Session ID: 476066bd2fa7b04d12efb026a3e56cf1<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\WIN10~1\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:58715}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 7ef85ebcd1a82678a45e73e205384be0<br/>
 *** Element info: {Using=xpath, value=//div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)]}</a><br />
         <div class="stackTrace" id="exception-3">
-                      jdk.internal.reflect.GeneratedConstructorAccessor8.newInstance(Unknown Source)<br />
+                      jdk.internal.reflect.GeneratedConstructorAccessor9.newInstance(Unknown Source)<br />
                       java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
                       java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
                       java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)<br />
@@ -192,12 +193,11 @@ Session ID: 476066bd2fa7b04d12efb026a3e56cf1<br/>
                       org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)<br />
                       org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)<br />
                       org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)<br />
-                      org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)<br />
-                      org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)<br />
                       org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)<br />
-                      Common.HelperFunction.AbstractPage.waitForElementClickable(AbstractPage.java:403)<br />
-                      Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.clickToAddFavoriteQuote(PerAbout_DetailsAboutYou_PageObject.java:53)<br />
-                      Testcase.PersonalPageWall.DetailsAboutYou.ComponentTestcase.TC02_Update_Favorite_Quote_With_Data_Contains_All_Whitespace(ComponentTestcase.java:85)<br />
+                      Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)<br />
+                      Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)<br />
+                      Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)<br />
+                      Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC02_Update_Favorite_Quote_With_Data_Contains_All_Whitespace(Testcase_ComponentTest_FavoriteQuotes.java:85)<br />
                       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
                       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)<br />
                       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
@@ -227,46 +227,24 @@ Session ID: 476066bd2fa7b04d12efb026a3e56cf1<br/>
 </tr>
 <tr>
   <td class="method">
-                  TC03_Update_FavoriteQuote_With_Data_Is_One_Sentence
+                  TC03_Update_FavoriteQuote_With_Data_Is_One_Paragarph
       </td>
   <td class="duration">
-    0.281s
+    12.028s
   </td>
   <td class="result">
         
     
         
 
-        <a href="javascript:toggleElement('exception-4', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression&nbsp; because of the following error:<br/>
-SyntaxError: Failed to execute &apos;evaluate&apos; on &apos;Document&apos;: The string &apos;&apos; is not a valid XPath expression.<br/>
-&nbsp; (Session info: chrome=85.0.4183.121)<br/>
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html<br/>
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;<br/>
-System info: host: &apos;ADMIN&apos;, ip: &apos;10.0.2.120&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;<br/>
-Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63709}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
-Session ID: 476066bd2fa7b04d12efb026a3e56cf1<br/>
-*** Element info: {Using=xpath, value=}</b></a><br />
+        <a href="javascript:toggleElement('exception-4', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)</b></a><br />
     <div class="stackTrace" id="exception-4">
-              java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
-              java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)<br />
-              java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
-              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
-              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)<br />
-              org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)<br />
-              org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)<br />
-              org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)<br />
-              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)<br />
-              org.openqa.selenium.By$ByXPath.findElement(By.java:353)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)<br />
-              Common.HelperFunction.AbstractPage.findElement(AbstractPage.java:123)<br />
-              Common.HelperFunction.AbstractPage.getTextElement(AbstractPage.java:151)<br />
-              Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.getFavoriteQuoteDataDisplay(PerAbout_DetailsAboutYou_PageObject.java:78)<br />
-              Testcase.PersonalPageWall.DetailsAboutYou.ComponentTestcase.TC03_Update_FavoriteQuote_With_Data_Is_One_Sentence(ComponentTestcase.java:116)<br />
+              org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)<br />
+              org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)<br />
+              Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)<br />
+              Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)<br />
+              Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)<br />
+              Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC03_Update_FavoriteQuote_With_Data_Is_One_Paragarph(Testcase_ComponentTest_FavoriteQuotes.java:97)<br />
               java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
               java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)<br />
               java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
@@ -290,119 +268,84 @@ Session ID: 476066bd2fa7b04d12efb026a3e56cf1<br/>
               org.testng.TestNG.run(TestNG.java:1064)<br />
               com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br />
               com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)<br />
-                </div>
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-5', 'block')" title="Click to expand/collapse">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)]&quot;}<br/>
+&nbsp; (Session info: chrome=85.0.4183.121)<br/>
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;<br/>
+System info: host: &apos;DESKTOP-LF4PDD0&apos;, ip: &apos;172.16.99.20&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\WIN10~1\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:58715}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 7ef85ebcd1a82678a45e73e205384be0<br/>
+*** Element info: {Using=xpath, value=//div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)]}</a><br />
+        <div class="stackTrace" id="exception-5">
+                      jdk.internal.reflect.GeneratedConstructorAccessor9.newInstance(Unknown Source)<br />
+                      java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+                      java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+                      java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)<br />
+                      org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)<br />
+                      org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)<br />
+                      org.openqa.selenium.By$ByXPath.findElement(By.java:353)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)<br />
+                      org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)<br />
+                      Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)<br />
+                      Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)<br />
+                      Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)<br />
+                      Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC03_Update_FavoriteQuote_With_Data_Is_One_Paragarph(Testcase_ComponentTest_FavoriteQuotes.java:97)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)<br />
+                      java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.base/java.lang.reflect.Method.invoke(Method.java:564)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)<br />
+                      org.testng.internal.Invoker.invokeMethod(Invoker.java:643)<br />
+                      org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)<br />
+                      org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)<br />
+                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+                      org.testng.TestRunner.privateRun(TestRunner.java:782)<br />
+                      org.testng.TestRunner.run(TestRunner.java:632)<br />
+                      org.testng.SuiteRunner.runTest(SuiteRunner.java:366)<br />
+                      org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)<br />
+                      org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)<br />
+                      org.testng.SuiteRunner.run(SuiteRunner.java:268)<br />
+                      org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+                      org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+                      org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)<br />
+                      org.testng.TestNG.runSuitesLocally(TestNG.java:1169)<br />
+                      org.testng.TestNG.run(TestNG.java:1064)<br />
+                      com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br />
+                      com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)<br />
+                  </div>
+          </div>
       </td>
 </tr>
 <tr>
   <td class="method">
-                  TC03_Update_FavoriteQuote_With_Data_Is_Paragarph
+                  TC04_Update_FavoriteQuote_With_Data_Are_More_Than_2_Paragarphs
       </td>
   <td class="duration">
-    0.894s
+    12.051s
   </td>
   <td class="result">
         
     
         
 
-        <a href="javascript:toggleElement('exception-5', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression&nbsp; because of the following error:<br/>
-SyntaxError: Failed to execute &apos;evaluate&apos; on &apos;Document&apos;: The string &apos;&apos; is not a valid XPath expression.<br/>
-&nbsp; (Session info: chrome=85.0.4183.121)<br/>
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html<br/>
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;<br/>
-System info: host: &apos;ADMIN&apos;, ip: &apos;10.0.2.120&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;<br/>
-Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63709}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
-Session ID: 476066bd2fa7b04d12efb026a3e56cf1<br/>
-*** Element info: {Using=xpath, value=}</b></a><br />
-    <div class="stackTrace" id="exception-5">
-              java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
-              java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)<br />
-              java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
-              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
-              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)<br />
-              org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)<br />
-              org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)<br />
-              org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)<br />
-              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)<br />
-              org.openqa.selenium.By$ByXPath.findElement(By.java:353)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)<br />
-              Common.HelperFunction.AbstractPage.findElement(AbstractPage.java:123)<br />
-              Common.HelperFunction.AbstractPage.getTextElement(AbstractPage.java:151)<br />
-              Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.getFavoriteQuoteDataDisplay(PerAbout_DetailsAboutYou_PageObject.java:78)<br />
-              Testcase.PersonalPageWall.DetailsAboutYou.ComponentTestcase.TC03_Update_FavoriteQuote_With_Data_Is_Paragarph(ComponentTestcase.java:103)<br />
-              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
-              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)<br />
-              java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
-              java.base/java.lang.reflect.Method.invoke(Method.java:564)<br />
-              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)<br />
-              org.testng.internal.Invoker.invokeMethod(Invoker.java:643)<br />
-              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)<br />
-              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)<br />
-              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
-              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
-              org.testng.TestRunner.privateRun(TestRunner.java:782)<br />
-              org.testng.TestRunner.run(TestRunner.java:632)<br />
-              org.testng.SuiteRunner.runTest(SuiteRunner.java:366)<br />
-              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)<br />
-              org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)<br />
-              org.testng.SuiteRunner.run(SuiteRunner.java:268)<br />
-              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
-              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
-              org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)<br />
-              org.testng.TestNG.runSuitesLocally(TestNG.java:1169)<br />
-              org.testng.TestNG.run(TestNG.java:1064)<br />
-              com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br />
-              com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)<br />
-                </div>
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  TC04_Update_FavoriteQuote_With_Data_Is_Only_Number
-      </td>
-  <td class="duration">
-    0.699s
-  </td>
-  <td class="result">
-        
-    
-        
-
-        <a href="javascript:toggleElement('exception-6', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression&nbsp; because of the following error:<br/>
-SyntaxError: Failed to execute &apos;evaluate&apos; on &apos;Document&apos;: The string &apos;&apos; is not a valid XPath expression.<br/>
-&nbsp; (Session info: chrome=85.0.4183.121)<br/>
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html<br/>
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;<br/>
-System info: host: &apos;ADMIN&apos;, ip: &apos;10.0.2.120&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;<br/>
-Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63709}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
-Session ID: 476066bd2fa7b04d12efb026a3e56cf1<br/>
-*** Element info: {Using=xpath, value=}</b></a><br />
+        <a href="javascript:toggleElement('exception-6', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)</b></a><br />
     <div class="stackTrace" id="exception-6">
-              java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
-              java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)<br />
-              java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
-              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
-              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)<br />
-              org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)<br />
-              org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)<br />
-              org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)<br />
-              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)<br />
-              org.openqa.selenium.By$ByXPath.findElement(By.java:353)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)<br />
-              Common.HelperFunction.AbstractPage.findElement(AbstractPage.java:123)<br />
-              Common.HelperFunction.AbstractPage.getTextElement(AbstractPage.java:151)<br />
-              Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.getFavoriteQuoteDataDisplay(PerAbout_DetailsAboutYou_PageObject.java:78)<br />
-              Testcase.PersonalPageWall.DetailsAboutYou.ComponentTestcase.TC04_Update_FavoriteQuote_With_Data_Is_Only_Number(ComponentTestcase.java:129)<br />
+              org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)<br />
+              org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)<br />
+              Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)<br />
+              Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)<br />
+              Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)<br />
+              Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC04_Update_FavoriteQuote_With_Data_Are_More_Than_2_Paragarphs(Testcase_ComponentTest_FavoriteQuotes.java:110)<br />
               java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
               java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)<br />
               java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
@@ -426,51 +369,84 @@ Session ID: 476066bd2fa7b04d12efb026a3e56cf1<br/>
               org.testng.TestNG.run(TestNG.java:1064)<br />
               com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br />
               com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)<br />
-                </div>
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-7', 'block')" title="Click to expand/collapse">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)]&quot;}<br/>
+&nbsp; (Session info: chrome=85.0.4183.121)<br/>
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;<br/>
+System info: host: &apos;DESKTOP-LF4PDD0&apos;, ip: &apos;172.16.99.20&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\WIN10~1\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:58715}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 7ef85ebcd1a82678a45e73e205384be0<br/>
+*** Element info: {Using=xpath, value=//div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)]}</a><br />
+        <div class="stackTrace" id="exception-7">
+                      jdk.internal.reflect.GeneratedConstructorAccessor9.newInstance(Unknown Source)<br />
+                      java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+                      java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+                      java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)<br />
+                      org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)<br />
+                      org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)<br />
+                      org.openqa.selenium.By$ByXPath.findElement(By.java:353)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)<br />
+                      org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)<br />
+                      Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)<br />
+                      Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)<br />
+                      Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)<br />
+                      Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC04_Update_FavoriteQuote_With_Data_Are_More_Than_2_Paragarphs(Testcase_ComponentTest_FavoriteQuotes.java:110)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)<br />
+                      java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.base/java.lang.reflect.Method.invoke(Method.java:564)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)<br />
+                      org.testng.internal.Invoker.invokeMethod(Invoker.java:643)<br />
+                      org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)<br />
+                      org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)<br />
+                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+                      org.testng.TestRunner.privateRun(TestRunner.java:782)<br />
+                      org.testng.TestRunner.run(TestRunner.java:632)<br />
+                      org.testng.SuiteRunner.runTest(SuiteRunner.java:366)<br />
+                      org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)<br />
+                      org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)<br />
+                      org.testng.SuiteRunner.run(SuiteRunner.java:268)<br />
+                      org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+                      org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+                      org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)<br />
+                      org.testng.TestNG.runSuitesLocally(TestNG.java:1169)<br />
+                      org.testng.TestNG.run(TestNG.java:1064)<br />
+                      com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br />
+                      com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)<br />
+                  </div>
+          </div>
       </td>
 </tr>
 <tr>
   <td class="method">
-                  TC05_Update_FavoriteQuote_With_Data_Is_Contains_Special_Characters
+                  TC05_Update_FavoriteQuote_With_Data_Is_One_Sentence
       </td>
   <td class="duration">
-    0.688s
+    12.440s
   </td>
   <td class="result">
         
     
         
 
-        <a href="javascript:toggleElement('exception-7', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression&nbsp; because of the following error:<br/>
-SyntaxError: Failed to execute &apos;evaluate&apos; on &apos;Document&apos;: The string &apos;&apos; is not a valid XPath expression.<br/>
-&nbsp; (Session info: chrome=85.0.4183.121)<br/>
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html<br/>
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;<br/>
-System info: host: &apos;ADMIN&apos;, ip: &apos;10.0.2.120&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;<br/>
-Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63709}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
-Session ID: 476066bd2fa7b04d12efb026a3e56cf1<br/>
-*** Element info: {Using=xpath, value=}</b></a><br />
-    <div class="stackTrace" id="exception-7">
-              java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
-              java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)<br />
-              java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
-              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
-              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)<br />
-              org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)<br />
-              org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)<br />
-              org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)<br />
-              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)<br />
-              org.openqa.selenium.By$ByXPath.findElement(By.java:353)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)<br />
-              Common.HelperFunction.AbstractPage.findElement(AbstractPage.java:123)<br />
-              Common.HelperFunction.AbstractPage.getTextElement(AbstractPage.java:151)<br />
-              Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.getFavoriteQuoteDataDisplay(PerAbout_DetailsAboutYou_PageObject.java:78)<br />
-              Testcase.PersonalPageWall.DetailsAboutYou.ComponentTestcase.TC05_Update_FavoriteQuote_With_Data_Is_Contains_Special_Characters(ComponentTestcase.java:142)<br />
+        <a href="javascript:toggleElement('exception-8', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)</b></a><br />
+    <div class="stackTrace" id="exception-8">
+              org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)<br />
+              org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)<br />
+              Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)<br />
+              Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)<br />
+              Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)<br />
+              Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC05_Update_FavoriteQuote_With_Data_Is_One_Sentence(Testcase_ComponentTest_FavoriteQuotes.java:124)<br />
               java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
               java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)<br />
               java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
@@ -494,7 +470,466 @@ Session ID: 476066bd2fa7b04d12efb026a3e56cf1<br/>
               org.testng.TestNG.run(TestNG.java:1064)<br />
               com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br />
               com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)<br />
-                </div>
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-9', 'block')" title="Click to expand/collapse">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)]&quot;}<br/>
+&nbsp; (Session info: chrome=85.0.4183.121)<br/>
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;<br/>
+System info: host: &apos;DESKTOP-LF4PDD0&apos;, ip: &apos;172.16.99.20&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\WIN10~1\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:58715}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 7ef85ebcd1a82678a45e73e205384be0<br/>
+*** Element info: {Using=xpath, value=//div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)]}</a><br />
+        <div class="stackTrace" id="exception-9">
+                      jdk.internal.reflect.GeneratedConstructorAccessor9.newInstance(Unknown Source)<br />
+                      java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+                      java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+                      java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)<br />
+                      org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)<br />
+                      org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)<br />
+                      org.openqa.selenium.By$ByXPath.findElement(By.java:353)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)<br />
+                      org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)<br />
+                      Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)<br />
+                      Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)<br />
+                      Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)<br />
+                      Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC05_Update_FavoriteQuote_With_Data_Is_One_Sentence(Testcase_ComponentTest_FavoriteQuotes.java:124)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)<br />
+                      java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.base/java.lang.reflect.Method.invoke(Method.java:564)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)<br />
+                      org.testng.internal.Invoker.invokeMethod(Invoker.java:643)<br />
+                      org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)<br />
+                      org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)<br />
+                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+                      org.testng.TestRunner.privateRun(TestRunner.java:782)<br />
+                      org.testng.TestRunner.run(TestRunner.java:632)<br />
+                      org.testng.SuiteRunner.runTest(SuiteRunner.java:366)<br />
+                      org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)<br />
+                      org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)<br />
+                      org.testng.SuiteRunner.run(SuiteRunner.java:268)<br />
+                      org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+                      org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+                      org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)<br />
+                      org.testng.TestNG.runSuitesLocally(TestNG.java:1169)<br />
+                      org.testng.TestNG.run(TestNG.java:1064)<br />
+                      com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br />
+                      com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)<br />
+                  </div>
+          </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  TC06_Update_FavoriteQuote_With_Data_Is_Only_Number
+      </td>
+  <td class="duration">
+    12.378s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-10', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)</b></a><br />
+    <div class="stackTrace" id="exception-10">
+              org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)<br />
+              org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)<br />
+              Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)<br />
+              Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)<br />
+              Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)<br />
+              Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC06_Update_FavoriteQuote_With_Data_Is_Only_Number(Testcase_ComponentTest_FavoriteQuotes.java:137)<br />
+              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)<br />
+              java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:564)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:643)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:782)<br />
+              org.testng.TestRunner.run(TestRunner.java:632)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:366)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:268)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1169)<br />
+              org.testng.TestNG.run(TestNG.java:1064)<br />
+              com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br />
+              com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)<br />
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-11', 'block')" title="Click to expand/collapse">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)]&quot;}<br/>
+&nbsp; (Session info: chrome=85.0.4183.121)<br/>
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;<br/>
+System info: host: &apos;DESKTOP-LF4PDD0&apos;, ip: &apos;172.16.99.20&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\WIN10~1\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:58715}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 7ef85ebcd1a82678a45e73e205384be0<br/>
+*** Element info: {Using=xpath, value=//div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)]}</a><br />
+        <div class="stackTrace" id="exception-11">
+                      jdk.internal.reflect.GeneratedConstructorAccessor9.newInstance(Unknown Source)<br />
+                      java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+                      java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+                      java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)<br />
+                      org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)<br />
+                      org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)<br />
+                      org.openqa.selenium.By$ByXPath.findElement(By.java:353)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)<br />
+                      org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)<br />
+                      Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)<br />
+                      Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)<br />
+                      Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)<br />
+                      Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC06_Update_FavoriteQuote_With_Data_Is_Only_Number(Testcase_ComponentTest_FavoriteQuotes.java:137)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)<br />
+                      java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.base/java.lang.reflect.Method.invoke(Method.java:564)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)<br />
+                      org.testng.internal.Invoker.invokeMethod(Invoker.java:643)<br />
+                      org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)<br />
+                      org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)<br />
+                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+                      org.testng.TestRunner.privateRun(TestRunner.java:782)<br />
+                      org.testng.TestRunner.run(TestRunner.java:632)<br />
+                      org.testng.SuiteRunner.runTest(SuiteRunner.java:366)<br />
+                      org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)<br />
+                      org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)<br />
+                      org.testng.SuiteRunner.run(SuiteRunner.java:268)<br />
+                      org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+                      org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+                      org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)<br />
+                      org.testng.TestNG.runSuitesLocally(TestNG.java:1169)<br />
+                      org.testng.TestNG.run(TestNG.java:1064)<br />
+                      com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br />
+                      com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)<br />
+                  </div>
+          </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  TC08_Update_FavoriteQuote_With_Data_Is_Contains_HTML_Code
+      </td>
+  <td class="duration">
+    12.401s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-12', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)</b></a><br />
+    <div class="stackTrace" id="exception-12">
+              org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)<br />
+              org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)<br />
+              Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)<br />
+              Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)<br />
+              Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)<br />
+              Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC08_Update_FavoriteQuote_With_Data_Is_Contains_HTML_Code(Testcase_ComponentTest_FavoriteQuotes.java:163)<br />
+              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)<br />
+              java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:564)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:643)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:782)<br />
+              org.testng.TestRunner.run(TestRunner.java:632)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:366)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:268)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1169)<br />
+              org.testng.TestNG.run(TestNG.java:1064)<br />
+              com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br />
+              com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)<br />
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-13', 'block')" title="Click to expand/collapse">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)]&quot;}<br/>
+&nbsp; (Session info: chrome=85.0.4183.121)<br/>
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;<br/>
+System info: host: &apos;DESKTOP-LF4PDD0&apos;, ip: &apos;172.16.99.20&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\WIN10~1\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:58715}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 7ef85ebcd1a82678a45e73e205384be0<br/>
+*** Element info: {Using=xpath, value=//div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)]}</a><br />
+        <div class="stackTrace" id="exception-13">
+                      jdk.internal.reflect.GeneratedConstructorAccessor9.newInstance(Unknown Source)<br />
+                      java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+                      java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+                      java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)<br />
+                      org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)<br />
+                      org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)<br />
+                      org.openqa.selenium.By$ByXPath.findElement(By.java:353)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)<br />
+                      org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)<br />
+                      Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)<br />
+                      Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)<br />
+                      Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)<br />
+                      Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC08_Update_FavoriteQuote_With_Data_Is_Contains_HTML_Code(Testcase_ComponentTest_FavoriteQuotes.java:163)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)<br />
+                      java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.base/java.lang.reflect.Method.invoke(Method.java:564)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)<br />
+                      org.testng.internal.Invoker.invokeMethod(Invoker.java:643)<br />
+                      org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)<br />
+                      org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)<br />
+                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+                      org.testng.TestRunner.privateRun(TestRunner.java:782)<br />
+                      org.testng.TestRunner.run(TestRunner.java:632)<br />
+                      org.testng.SuiteRunner.runTest(SuiteRunner.java:366)<br />
+                      org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)<br />
+                      org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)<br />
+                      org.testng.SuiteRunner.run(SuiteRunner.java:268)<br />
+                      org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+                      org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+                      org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)<br />
+                      org.testng.TestNG.runSuitesLocally(TestNG.java:1169)<br />
+                      org.testng.TestNG.run(TestNG.java:1064)<br />
+                      com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br />
+                      com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)<br />
+                  </div>
+          </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  TC09_Update_FavoriteQuote_With_Data_Is_Contains_Script_Code
+      </td>
+  <td class="duration">
+    12.279s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-14', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)</b></a><br />
+    <div class="stackTrace" id="exception-14">
+              org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)<br />
+              org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)<br />
+              Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)<br />
+              Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)<br />
+              Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)<br />
+              Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC09_Update_FavoriteQuote_With_Data_Is_Contains_Script_Code(Testcase_ComponentTest_FavoriteQuotes.java:176)<br />
+              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)<br />
+              java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:564)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:643)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:782)<br />
+              org.testng.TestRunner.run(TestRunner.java:632)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:366)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:268)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1169)<br />
+              org.testng.TestNG.run(TestNG.java:1064)<br />
+              com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br />
+              com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)<br />
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-15', 'block')" title="Click to expand/collapse">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)]&quot;}<br/>
+&nbsp; (Session info: chrome=85.0.4183.121)<br/>
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;<br/>
+System info: host: &apos;DESKTOP-LF4PDD0&apos;, ip: &apos;172.16.99.20&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\WIN10~1\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:58715}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 7ef85ebcd1a82678a45e73e205384be0<br/>
+*** Element info: {Using=xpath, value=//div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)]}</a><br />
+        <div class="stackTrace" id="exception-15">
+                      jdk.internal.reflect.GeneratedConstructorAccessor9.newInstance(Unknown Source)<br />
+                      java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+                      java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+                      java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)<br />
+                      org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)<br />
+                      org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)<br />
+                      org.openqa.selenium.By$ByXPath.findElement(By.java:353)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)<br />
+                      org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)<br />
+                      Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)<br />
+                      Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)<br />
+                      Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)<br />
+                      Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC09_Update_FavoriteQuote_With_Data_Is_Contains_Script_Code(Testcase_ComponentTest_FavoriteQuotes.java:176)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)<br />
+                      java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.base/java.lang.reflect.Method.invoke(Method.java:564)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)<br />
+                      org.testng.internal.Invoker.invokeMethod(Invoker.java:643)<br />
+                      org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)<br />
+                      org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)<br />
+                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+                      org.testng.TestRunner.privateRun(TestRunner.java:782)<br />
+                      org.testng.TestRunner.run(TestRunner.java:632)<br />
+                      org.testng.SuiteRunner.runTest(SuiteRunner.java:366)<br />
+                      org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)<br />
+                      org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)<br />
+                      org.testng.SuiteRunner.run(SuiteRunner.java:268)<br />
+                      org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+                      org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+                      org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)<br />
+                      org.testng.TestNG.runSuitesLocally(TestNG.java:1169)<br />
+                      org.testng.TestNG.run(TestNG.java:1064)<br />
+                      com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br />
+                      com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)<br />
+                  </div>
+          </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  TC7_Update_FavoriteQuote_With_Data_Is_Contains_Special_Characters
+      </td>
+  <td class="duration">
+    12.333s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-16', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)</b></a><br />
+    <div class="stackTrace" id="exception-16">
+              org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)<br />
+              org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)<br />
+              Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)<br />
+              Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)<br />
+              Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)<br />
+              Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC7_Update_FavoriteQuote_With_Data_Is_Contains_Special_Characters(Testcase_ComponentTest_FavoriteQuotes.java:150)<br />
+              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)<br />
+              java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:564)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:643)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:782)<br />
+              org.testng.TestRunner.run(TestRunner.java:632)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:366)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:268)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1169)<br />
+              org.testng.TestNG.run(TestNG.java:1064)<br />
+              com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br />
+              com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)<br />
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-17', 'block')" title="Click to expand/collapse">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)]&quot;}<br/>
+&nbsp; (Session info: chrome=85.0.4183.121)<br/>
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;<br/>
+System info: host: &apos;DESKTOP-LF4PDD0&apos;, ip: &apos;172.16.99.20&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\WIN10~1\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:58715}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 7ef85ebcd1a82678a45e73e205384be0<br/>
+*** Element info: {Using=xpath, value=//div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)]}</a><br />
+        <div class="stackTrace" id="exception-17">
+                      jdk.internal.reflect.GeneratedConstructorAccessor9.newInstance(Unknown Source)<br />
+                      java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+                      java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+                      java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)<br />
+                      org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)<br />
+                      org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)<br />
+                      org.openqa.selenium.By$ByXPath.findElement(By.java:353)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)<br />
+                      org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)<br />
+                      Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)<br />
+                      Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)<br />
+                      Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)<br />
+                      Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC7_Update_FavoriteQuote_With_Data_Is_Contains_Special_Characters(Testcase_ComponentTest_FavoriteQuotes.java:150)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)<br />
+                      java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.base/java.lang.reflect.Method.invoke(Method.java:564)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)<br />
+                      org.testng.internal.Invoker.invokeMethod(Invoker.java:643)<br />
+                      org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)<br />
+                      org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)<br />
+                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+                      org.testng.TestRunner.privateRun(TestRunner.java:782)<br />
+                      org.testng.TestRunner.run(TestRunner.java:632)<br />
+                      org.testng.SuiteRunner.runTest(SuiteRunner.java:366)<br />
+                      org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)<br />
+                      org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)<br />
+                      org.testng.SuiteRunner.run(SuiteRunner.java:268)<br />
+                      org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+                      org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+                      org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)<br />
+                      org.testng.TestNG.runSuitesLocally(TestNG.java:1169)<br />
+                      org.testng.TestNG.run(TestNG.java:1064)<br />
+                      com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br />
+                      com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)<br />
+                  </div>
+          </div>
       </td>
 </tr>
       </table>

@@ -18,7 +18,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class ComponentTestcase extends AbstractTest {
+public class Testcase_ComponentTest_FavoriteQuotes extends AbstractTest {
     WebDriver driver;
     DriverManager driverManager;
     DataHelper dataHelper;
@@ -71,7 +71,7 @@ public class ComponentTestcase extends AbstractTest {
     public void TC01_Update_Favorite_Quote_With_Blank_Data() {
         quotes = "";
         log.info("Click to Add faviore quotes");
-        perDetailAboutTab.clickToAddFavoriteQuote();
+        perDetailAboutTab.doActionEditOrAddFavorite();
         log.info("Enter favorite quotes");
         perDetailAboutTab.enterDataToFavoriteQuoteField(quotes);
         log.info("Click save favorite quotes");
@@ -82,45 +82,59 @@ public class ComponentTestcase extends AbstractTest {
     public void TC02_Update_Favorite_Quote_With_Data_Contains_All_Whitespace() {
         quotes = "     ";
         log.info("Click to Add faviore");
-        perDetailAboutTab.clickToAddFavoriteQuote();
+        perDetailAboutTab.doActionEditOrAddFavorite();
         log.info("Enter favorite quotes");
         perDetailAboutTab.enterDataToFavoriteQuoteField(quotes);
         log.info("Click to save quotes");
         perDetailAboutTab.clickToSaveFavoriteQuote();
-        verifyEquals(perDetailAboutTab.getFavoriteQuoteDataDisplay(),quotes);
+        verifyEquals(perDetailAboutTab.getFavoriteQuoteDataDisplay(),quotes.trim());
     }
 
     @Test
-    public void TC03_Update_FavoriteQuote_With_Data_Is_Paragarph(){
-        quotes = String.valueOf(dataHelper.getDummyParagarph(2));
+    public void TC03_Update_FavoriteQuote_With_Data_Is_One_Paragarph(){
+        quotes = lorem.getParagraphs(1,1);
         log.info("Click to Edit favorite quotes");
-        perDetailAboutTab.clickToButtonEditFavoriteQuote();
+        perDetailAboutTab.doActionEditOrAddFavorite();
         log.info("Enter favorite quotes");
         perDetailAboutTab.enterDataToFavoriteQuoteField(quotes);
         log.info("Click to save quotes");
         perDetailAboutTab.clickToSaveFavoriteQuote();
         log.info("Verify favorite quotes");
-        verifyEquals(perDetailAboutTab.getFavoriteQuoteDataDisplay(),quotes);
+        verifyEquals(perDetailAboutTab.getFavoriteQuoteDataDisplay(),replaceMoreWhitespaceToOne(quotes));
     }
 
     @Test
-    public void TC03_Update_FavoriteQuote_With_Data_Is_One_Sentence(){
+    public void TC04_Update_FavoriteQuote_With_Data_Are_More_Than_2_Paragarphs(){
+        quotes = lorem.getParagraphs(2,5);
+        log.info("Click to Edit favorite quotes");
+        perDetailAboutTab.doActionEditOrAddFavorite();
+        log.info("Enter favorite quotes");
+        perDetailAboutTab.enterDataToFavoriteQuoteField(quotes);
+        log.info("Click to save quotes");
+        perDetailAboutTab.clickToSaveFavoriteQuote();
+        log.info("Verify favorite quotes");
+        verifyEquals(perDetailAboutTab.getFavoriteQuoteDataDisplay(),replaceMoreWhitespaceToOne(quotes).replaceAll("\n", ""));
+    }
+
+
+    @Test
+    public void TC05_Update_FavoriteQuote_With_Data_Is_One_Sentence(){
         quotes = lorem.getWords(10);
         log.info("Click to Edit favorite quotes");
-        perDetailAboutTab.clickToButtonEditFavoriteQuote();
+        perDetailAboutTab.doActionEditOrAddFavorite();
         log.info("Enter favorite quotes");
         perDetailAboutTab.enterDataToFavoriteQuoteField(quotes);
         log.info("Click to save quotes");
         perDetailAboutTab.clickToSaveFavoriteQuote();
-        log.info("Verify favorite quotes");=
-        verifyEquals(perDetailAboutTab.getFavoriteQuoteDataDisplay(),quotes);
+        log.info("Verify favorite quotes");
+        verifyEquals(perDetailAboutTab.getFavoriteQuoteDataDisplay(),replaceMoreWhitespaceToOne(quotes));
     }
 
     @Test
-    public void TC04_Update_FavoriteQuote_With_Data_Is_Only_Number(){
+    public void TC06_Update_FavoriteQuote_With_Data_Is_Only_Number(){
         quotes = String.valueOf(randomNumber(3000));
         log.info("Click to Edit favorite quotes");
-        perDetailAboutTab.clickToButtonEditFavoriteQuote();
+        perDetailAboutTab.doActionEditOrAddFavorite();
         log.info("Enter favorite quotes");
         perDetailAboutTab.enterDataToFavoriteQuoteField(quotes);
         log.info("Click to save quotes");
@@ -130,10 +144,36 @@ public class ComponentTestcase extends AbstractTest {
     }
 
     @Test
-    public void TC05_Update_FavoriteQuote_With_Data_Is_Contains_Special_Characters(){
+    public void TC7_Update_FavoriteQuote_With_Data_Is_Contains_Special_Characters(){
         quotes = "@#$%^&* %#@##$$";
         log.info("Click to Edit favorite quotes");
-        perDetailAboutTab.clickToButtonEditFavoriteQuote();
+        perDetailAboutTab.doActionEditOrAddFavorite();
+        log.info("Enter favorite quotes");
+        perDetailAboutTab.enterDataToFavoriteQuoteField(quotes);
+        log.info("Click to save quotes");
+        perDetailAboutTab.clickToSaveFavoriteQuote();
+        log.info("Verify favorite quotes");
+        verifyEquals(perDetailAboutTab.getFavoriteQuoteDataDisplay(),quotes);
+    }
+
+    @Test
+    public void TC08_Update_FavoriteQuote_With_Data_Is_Contains_HTML_Code(){
+        quotes = GlobalVariables.HTML_CODE;
+        log.info("Click to Edit favorite quotes");
+        perDetailAboutTab.doActionEditOrAddFavorite();
+        log.info("Enter favorite quotes");
+        perDetailAboutTab.enterDataToFavoriteQuoteField(quotes);
+        log.info("Click to save quotes");
+        perDetailAboutTab.clickToSaveFavoriteQuote();
+        log.info("Verify favorite quotes");
+        verifyEquals(perDetailAboutTab.getFavoriteQuoteDataDisplay(),quotes);
+    }
+
+    @Test
+    public void TC09_Update_FavoriteQuote_With_Data_Is_Contains_Script_Code(){
+        quotes = GlobalVariables.SCRPIT_CODE;
+        log.info("Click to Edit favorite quotes");
+        perDetailAboutTab.doActionEditOrAddFavorite();
         log.info("Enter favorite quotes");
         perDetailAboutTab.enterDataToFavoriteQuoteField(quotes);
         log.info("Click to save quotes");
