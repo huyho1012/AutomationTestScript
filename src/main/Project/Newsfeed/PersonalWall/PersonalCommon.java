@@ -5,7 +5,31 @@ import Project.Newsfeed.Newsfeed.HeaderPage;
 import org.openqa.selenium.WebDriver;
 
 public class PersonalCommon extends HeaderPage {
-    WebDriver driver;
+
+    public String getGenderNameByValue(String languageSytem, String genderType) {
+        if(languageSytem == "vi"){
+            if(genderType == "M"){
+                return "Nam";
+            }else if(genderType =="F"){
+                return "Nữ";
+            }else if(genderType =="N"){
+                return "Khác";
+            }else
+                return null;
+        }
+        else if(languageSytem == "en") {
+            if (genderType == "M") {
+                return "Male";
+            } else if (genderType == "F") {
+                return "Female";
+            } else if (genderType == "N") {
+                return "Other";
+            } else
+                return null;
+        }
+        return null;
+    }
+
     public void clickToUploadAvatarByLocalImage(WebDriver driver, String imageLink){
         waitForElementClickable(driver, Per_Common_PageUI.UPLOAD_AVATAR_ICON);
         clickToElement(driver, Per_Common_PageUI.UPLOAD_AVATAR_ICON);
@@ -59,35 +83,27 @@ public class PersonalCommon extends HeaderPage {
         return avatarAfterChange.contains(coverBeforeChange);
     }
 
-    public boolean checkAvatarUserDisplayWithGenderType(WebDriver driver, String genderType){
-        System.out.println(genderType);
+    public boolean checkAvatarUserDisplayWithGenderType(WebDriver driver, String genderName){
         String imageLink = getImageURLOfAvatar(driver);
-        System.out.println(imageLink);
-        if(genderType.contains("Nam")){
+        if(genderName.equalsIgnoreCase("nam")|| genderName.equalsIgnoreCase("male")){
             if(imageLink.contains("avatar-male-256px.png")){
-                System.out.println("This image is male png");
                 return true;
             } else {
-                System.out.println("This image is not a male png");
                 return false;
             }
 
-        } else if(genderType.contains("Nữ")){
-            if(imageLink.contains("avatar-user-256px.png")){
-                System.out.println("This image is female png");
+        } else if(genderName.equalsIgnoreCase("nữ")||genderName.equalsIgnoreCase("female")){
+            if(imageLink.contains("avatar-female-256px.png")){
                 return true;
             }
             else {
-                System.out.println("This image is not a female png");
                 return false;
             }
-        } else if(genderType.contains("Khác")){
-            if(imageLink.contains("avatar-user")){
-                System.out.println("This image is a other png");
+        } else if(genderName.contains("Khác") || genderName.equalsIgnoreCase("other")){
+            if(imageLink.contains("avatar-user-256px.png")){
                 return true;
             }
             else {
-                System.out.println("This image is not a other png");
                 return false;
             }
         }

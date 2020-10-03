@@ -139,19 +139,19 @@ public class PerAbout_BasicInfoAndContact_PageObject extends PerAbout_Common_Pag
 
     // Giới tính
 
-    public String getGender(){
-        waitElementToVisible(driver, PerAbout_ContactAndBasicInfo_PageUI.CONTACT_AND_BASIC_INFO_TAB);
+    public String getGenderDisplayOnBasicInfoAndContact(){
+        waitElementToVisible(driver, PerAbout_ContactAndBasicInfo_PageUI.GENDER_DATA);
         return getTextElement(driver, PerAbout_ContactAndBasicInfo_PageUI.GENDER_DATA);
     }
 
 
-    public void clickToEditGenderOfUser(){
+    public void clickToEditGender(){
         waitForElementClickable(driver, PerAbout_ContactAndBasicInfo_PageUI.ICON_EDIT_GENDER);
         clickToElement(driver, PerAbout_ContactAndBasicInfo_PageUI.ICON_EDIT_GENDER);
     }
 
     public void selectGenderOption(String genderOption){
-        selectItemInDropdownByText(driver, PerAbout_ContactAndBasicInfo_PageUI.GENDER_DROPDOWN, genderOption);
+        selectItemInDropdownByValue(driver, PerAbout_ContactAndBasicInfo_PageUI.GENDER_DROPDOWN, genderOption);
     }
 
     public void clickToCancelSaveGenderInfo(){
@@ -159,9 +159,9 @@ public class PerAbout_BasicInfoAndContact_PageObject extends PerAbout_Common_Pag
         clickToElement(driver, PerAbout_ContactAndBasicInfo_PageUI.BUTTON_SAVE_GENDER);
     }
 
-    public void clickToSaveGenderInfo() {
-        waitForElementClickable(driver, PerAbout_ContactAndBasicInfo_PageUI.BUTTON_CANCEL_SAVE_GENDER);
-        clickToElement(driver, PerAbout_ContactAndBasicInfo_PageUI.BUTTON_CANCEL_SAVE_GENDER);
+    public void clickButtonToSaveGender() {
+        waitForElementClickable(driver, PerAbout_ContactAndBasicInfo_PageUI.BUTTON_SAVE_GENDER);
+        clickToElement(driver, PerAbout_ContactAndBasicInfo_PageUI.BUTTON_SAVE_GENDER);
 
     }
 
@@ -253,7 +253,17 @@ public class PerAbout_BasicInfoAndContact_PageObject extends PerAbout_Common_Pag
     }
 
     public void chooseGenderType(String genderType){
-        waitElementToVisible(driver, PerAbout_ContactAndBasicInfo_PageUI.GENDER_DROPDOWN);
+        selectItemInDropdownByValue(driver, PerAbout_ContactAndBasicInfo_PageUI.GENDER_DROPDOWN,genderType);
+    }
 
+    public boolean checkFormEditGenderOfUserIsDisplay() {
+        return checkElementDisplay(driver,PerAbout_ContactAndBasicInfo_PageUI.GENDER_DROPDOWN)
+                && checkElementDisplay(driver, PerAbout_ContactAndBasicInfo_PageUI.BUTTON_SAVE_GENDER)
+                    && checkElementDisplay(driver, PerAbout_ContactAndBasicInfo_PageUI.BUTTON_CANCEL_SAVE_GENDER);
+    }
+
+
+    public String getGenderOptionDisplayOnDropdown() {
+        return getAttributeValue(driver, PerAbout_ContactAndBasicInfo_PageUI.GENDER_DROPDOWN,"value");
     }
 }

@@ -170,7 +170,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         newsfeedHomePage.updateNationalOfUser(driver, "VN");
 
         log.info("Step 17. Update information model - Click to confirm button");
-        newsfeedHomePage.clickToButtonConfirmForUpdateInfo(driver);
+        newsfeedHomePage.clickToButtonConfirmForUpdateInfo();
 
         log.info("Step 18 - Check information - Check fullname display on Widget My account");
         String fullNameOnMyWidget = newsfeedHomePage.getFullNameDisplayOnMyAccount();

@@ -35,23 +35,18 @@ public class  NewsfeedHomepage extends HeaderPage {
     public void updateGenderOfUser(WebDriver driver, String valueGender) {
         waitForElementClickable(driver,HomePageUI.GENDER_OPTION,valueGender);
         clickToElement(driver, HomePageUI.GENDER_OPTION,valueGender);
-        setTimeDelay(1);
     }
     public String getGenderOfUser(WebDriver driver, String valueGender) {
         return getTextElement(driver,HomePageUI.GENDER_OPTION,valueGender);
     }
 
     public void updateNationalOfUser(WebDriver driver, String countryName) {
-        waitForElementClickable(driver,HomePageUI.COUNTRY_DROPDOWN);
-        clickToElement(driver, HomePageUI.COUNTRY_DROPDOWN);
-        clickToElement(driver, HomePageUI.COUNTRY_ITEM,countryName);
-        setTimeDelay(1);
+        selectItemInCustomDropdownByScroll(driver, HomePageUI.COUNTRY_DROPDOWN, HomePageUI.COUNTRY_ITEM, countryName);
     }
 
-    public void clickToButtonConfirmForUpdateInfo(WebDriver driver) {
+    public void clickToButtonConfirmForUpdateInfo() {
         waitForElementClickable(driver,HomePageUI.UPDATE_INFO_BUTTON);
         clickToElement(driver, HomePageUI.UPDATE_INFO_BUTTON);
-        setTimeDelay(1);
     }
 
     public void changeLanguageNewsfeedToVI() {
@@ -85,10 +80,12 @@ public class  NewsfeedHomepage extends HeaderPage {
 
     public void updateNewInformationOfAccount(String dayItem, String monthItem, String yearItem, String gender, String nationality){
         updateBirthdayOfUser(driver, dayItem,monthItem,yearItem);
-        setTimeDelay(2);
+        setTimeDelay(1);
         updateGenderOfUser(driver, gender);
-        setTimeDelay(2);
+        setTimeDelay(1);
         updateNationalOfUser(driver, nationality);
+        setTimeDelay(1);
+        clickToButtonConfirmForUpdateInfo();
     }
 
     public boolean checkModelCurrencyCloseSuccess() {

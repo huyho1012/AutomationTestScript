@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test with firefox"
+           tests="4"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="48.342">
+  <properties />
+  
+  
+            <testcase name="TC02_Update_Gender_Type_FeMale" time="0.913" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_ComponentTest_GenderFunction" />
+                <testcase name="TC01_Update_Gender_Type_Male" time="0.998" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_ComponentTest_GenderFunction" />
+                <testcase name="TC03_Update_Gender_Type_Other" time="5.519" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_ComponentTest_GenderFunction" />
+                <testcase name="TC04_Check_Update_Gender_With_New_Account" time="40.912" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_ComponentTest_GenderFunction" />
+      
+</testsuite>

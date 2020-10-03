@@ -78,7 +78,6 @@ public class Testcase_Update_Birthday extends AbstractTest {
 
         log.info("Check birthday change successfully");
         verifyEquals(perAboutBasicTab.getBirthdayDisplay(),"12-10-1992");
-
     }
 
     @Test
@@ -100,7 +99,6 @@ public class Testcase_Update_Birthday extends AbstractTest {
 
         log.info("Check error Validation");
         verifyEquals(perAboutBasicTab.getErrorMessageOfBirthday(),"");
-
     }
 
     @Test
@@ -117,7 +115,6 @@ public class Testcase_Update_Birthday extends AbstractTest {
         perAboutBasicTab.clickToButtonSaveBirthday();
         log.info("Check error Validation");
         verifyEquals(perAboutBasicTab.getErrorMessageOfBirthday(),"Ngày không hợp lệ");
-
 
         log.info("Case enter all whitespace");
         log.info("Enter birthday");

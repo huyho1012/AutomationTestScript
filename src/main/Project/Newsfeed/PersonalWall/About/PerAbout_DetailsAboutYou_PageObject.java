@@ -50,13 +50,13 @@ public class PerAbout_DetailsAboutYou_PageObject extends PerAbout_Common_PageObj
 
     // Chức năng cập nhật Favorite quote
     public void clickToAddFavoriteQuote(){
-        waitForElementClickable(driver, PerAbout_DetailsAboutYou_PageUI.ADD_NEW_FAVORITE_QUOTE);
-        clickToElement(driver, PerAbout_DetailsAboutYou_PageUI.ADD_NEW_FAVORITE_QUOTE);
+        waitForElementClickable(driver, PerAbout_DetailsAboutYou_PageUI.BUTTON_ADD_NEW_FAVORITE_QUOTE);
+        clickToElement(driver, PerAbout_DetailsAboutYou_PageUI.BUTTON_ADD_NEW_FAVORITE_QUOTE);
     }
 
     public void clickToButtonEditFavoriteQuote(){
-        waitForElementClickable(driver, PerAbout_DetailsAboutYou_PageUI.EDIT_FAVORITE_QUOTE);
-        clickToElement(driver, PerAbout_DetailsAboutYou_PageUI.EDIT_FAVORITE_QUOTE);
+        waitForElementClickable(driver, PerAbout_DetailsAboutYou_PageUI.ICON_EDIT_FAVORITE_QUOTE);
+        clickToElement(driver, PerAbout_DetailsAboutYou_PageUI.ICON_EDIT_FAVORITE_QUOTE);
     }
 
     public void enterDataToFavoriteQuoteField(String favoriteQuote){

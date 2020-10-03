@@ -45,15 +45,24 @@ public class CommonStartApp extends AbstractTest {
     }
 
     public void clickToChangeLanguageToVI(WebDriver driver){
-        if(getAttributeValue(driver,LoginUI.VI_ICON,"class").contains("active")){
-            clickToElement(driver,LoginUI.VI_ICON);
+        if(getAttributeValue(driver,StartingCommonUI.VI_LANG_ICON,"class").contains("active")){
+            clickToElement(driver,StartingCommonUI.VI_LANG_ICON);
         }
     }
 
-    public void clickToChangeToEng(WebDriver driver){
-        waitForPageLoading(driver);
-        if(getAttributeValue(driver,LoginUI.ENG_ICON,"class").contains("active")){
-            clickToElement(driver,LoginUI.ENG_ICON);
+    public void clickToChangeToEng(){
+        if(getAttributeValue(driver,StartingCommonUI.ENG_LANG_ICON,"class").contains("active")){
+            clickToElement(driver,StartingCommonUI.ENG_LANG_ICON);
         }
+    }
+
+    public String getLanguageOfSystemHahalolo(WebDriver driver) {
+        waitElementToVisible(driver,StartingCommonUI.VI_LANG_ICON);
+        if(getAttributeValue(driver, StartingCommonUI.VI_LANG_ICON,"class").endsWith("active")){
+            return "vi";
+        }else if(getAttributeValue(driver, StartingCommonUI.ENG_LANG_ICON,"class").endsWith("active")){
+            return "eng";
+        }
+        return null;
     }
 }

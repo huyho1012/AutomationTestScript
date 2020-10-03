@@ -49,6 +49,7 @@ public class PerAbout_ContactAndBasicInfo_PageUI {
     public static final String BUTTON_SAVE_GENDER = "//button[contains(@data-bind, 'doAdd.gender')]";
     public static final String BUTTON_CANCEL_SAVE_GENDER = "//button[contains(@data-bind, 'doCancel.addGender')]";
 
+
 }
 
 

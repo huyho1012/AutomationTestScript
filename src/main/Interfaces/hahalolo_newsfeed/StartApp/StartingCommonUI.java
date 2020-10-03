@@ -11,4 +11,6 @@ public class StartingCommonUI {
 
     public static final String GOOGLE_PLAY = "//a[@id = 'download-app-android']";
     public static final String APP_STORE = "//a[@id = 'download-app-ios']";
+    public static final String VI_LANG_ICON = "//span[text()= 'Tiếng Việt']";
+    public static final String ENG_LANG_ICON = "//span[text()= 'English']";
 }

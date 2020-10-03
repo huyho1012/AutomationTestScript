@@ -20,14 +20,16 @@ public class PerAbout_DetailsAboutYou_PageUI {
     public static final String BUTTON_SAVE_OTHER_NAME= "";
     public static final String BUTTON_CANCEL_SAVE_OTHER_NAME = "";
 
-    public static final String ADD_NEW_FAVORITE_QUOTE="";
-    public static final String EDIT_FAVORITE_QUOTE = "";
     public static final String FAVORITE_QUOTE_DATA ="";
+    public static final String BUTTON_ADD_NEW_FAVORITE_QUOTE = "//div[contains(@data-bind,'doOpen.formAddAboutYou')]";
+    public static final String ICON_EDIT_FAVORITE_QUOTE = "//button[contains(@data-bind,'doOpen.formAddAboutYou')]";
+    public static final String FAVORITE_QUOTE_FIELD = "//textarea[@name = 'nv211_2']";
+    public static final String BUTTON_SAVE_FAVORITE_QUOTE= "//button[@id = 'act-add-introduce-yourself']";
+    public static final String BUTTON_CANCEL_SAVE_FAVORITE_QUOTE ="//button[contains(@data-bind,'doCancel.addAboutYou')]";
 
-    public static final String FAVORITE_QUOTE_FIELD = "";
+
     public static final String ERROR_MESS_OF_FAVORITE_QUOTE = "" ;
-    public static final String BUTTON_SAVE_FAVORITE_QUOTE= "";
-    public static final String BUTTON_CANCEL_SAVE_FAVORITE_QUOTE ="";
+
 
 
 }

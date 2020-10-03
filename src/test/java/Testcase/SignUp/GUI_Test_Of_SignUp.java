@@ -13,7 +13,7 @@ public class GUI_Test_Of_SignUp extends AbstractTest {
     SignUp_PageObject signUpPageObject;
     @Test(enabled = false)
     public void Testcase_Register_01_Check_SignUpForm_With_Eng_Language(){
-        newsfeedLoginPageObject.clickToChangeToEng(driver);
+        newsfeedLoginPageObject.clickToChangeToEng();
         signUpPageObject = PageGeneration.createFormRegister(driver);
         log.info("Check Title Of SignUp form when");
         verifyEquals(signUpPageObject.getTitleOfFormSignUp(),"Join Hahalolo Now!");

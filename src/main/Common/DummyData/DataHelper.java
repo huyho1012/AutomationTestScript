@@ -1,5 +1,7 @@
 package Common.DummyData;
 import com.github.javafaker.Faker;
+
+import java.util.List;
 import java.util.Locale;
 public class DataHelper {
     private final Locale locale = new Locale("en");
@@ -24,7 +26,6 @@ public class DataHelper {
     public String getTaxCode(){
         return faker.commerce().promotionCode(10);
     }
-
 
     public String getAddress(){
         return faker.address().fullAddress();
@@ -56,5 +57,9 @@ public class DataHelper {
 
     public String getAreaCode(){
         return faker.address().zipCode();
+    }
+
+    public List<String> getDummyParagarph(int numberParaphs){
+        return faker.lorem().paragraphs(numberParaphs);
     }
 }

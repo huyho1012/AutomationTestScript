@@ -131,11 +131,13 @@ public class PerAbout_Overview_PageObject extends PerAbout_Common_PageObject {
     }
 
     public String getGenderDisplayOnIntroduceWidget() {
+        waitElementToVisible(driver, AboutCommonUI.WIDGET_INTRO_GENDER);
         return getTextElement(driver, AboutCommonUI.WIDGET_INTRO_GENDER);
     }
 
     public String getAddressDisplayOnIntroduceWidget(){
-        return getTextElement(driver, AboutCommonUI.WIDGET_INTRO_GENDER);
+        waitElementToVisible(driver, AboutCommonUI.WIDGET_INTRO_ADDRESS);
+        return getTextElement(driver, AboutCommonUI.WIDGET_INTRO_ADDRESS);
     }
 
     public void clickToEditBasicInfoAndContact(){
