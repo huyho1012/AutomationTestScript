@@ -266,4 +266,12 @@ public class PerAbout_WorkAndEducation_PageObject extends PerAbout_Common_PageOb
         waitForElementClickable(driver, PerAbout_WorkAndEducation_PageUI.BUTTON_SAVE_CHANGE_UNIVERSITY);
         clickToElement(driver, PerAbout_WorkAndEducation_PageUI.BUTTON_SAVE_CHANGE_UNIVERSITY);
     }
+
+    public boolean checkFormAddWorkplaceIsDisplay() {
+        return true;
+    }
+
+    public Object getTimeRangeOfWorkplace() {
+        return null;
+    }
 }

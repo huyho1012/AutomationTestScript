@@ -16,7 +16,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class Testcase_Update_Birthday extends AbstractTest {
+public class Testcase_Component_Update_Birthday extends AbstractTest {
     WebDriver driver;
     DriverManager driverManager;
     DataHelper dataHelper;

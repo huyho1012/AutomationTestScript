@@ -10,7 +10,7 @@
         <parameter name="browser" value="chrome" />
         <parameter name="datalogin" value=".\JsonData\LoginUser.json"/>
         <classes>
-            <class name="Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes"></class>
+            <class name="Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes"></class>
         </classes>
     </test>
 

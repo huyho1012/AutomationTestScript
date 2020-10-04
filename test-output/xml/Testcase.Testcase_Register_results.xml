@@ -6,7 +6,7 @@
            skipped="0"
            time="197.981">
   <properties />
-            <testcase name="Testcase_Register_05_Check_Register_New_Account_With_Invalid_Username" time="52.969" classname="Testcase.SignUp.Component_Test_Of_SignUp">
+            <testcase name="Testcase_Register_05_Check_Register_New_Account_With_Invalid_Username" time="52.969" classname="Testcase.SignUp.Testcase_ComponentTest_SIgnUpAccount">
                 <failure type="org.openqa.selenium.TimeoutException"
                   message="Expected condition failed: waiting for visibility of element located by By.xpath: //input[@name = &apos;nv108&apos;]/following-sibling::*[contains(@class,&apos;invalid-feedback&apos;)] (tried for 30 second(s) with 500 milliseconds interval)"
               >
@@ -15,7 +15,7 @@
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:355)
   Project.Shared.SignUp_PageObject.getValidErrMessageOfDynamicOnFormSignUp(SignUpPage.java:34)
-  Testcase.SignUp.Component_Test_Of_SignUp.Testcase_Register_05_Check_Register_New_Account_With_Invalid_Username(Testcase_Register.java:182)
+  Testcase.SignUp.Testcase_ComponentTest_SIgnUpAccount.Testcase_Register_05_Check_Register_New_Account_With_Invalid_Username(Testcase_Register.java:182)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -67,7 +67,7 @@ Session ID: 1b8cd6cddee6ae6007bb88c1ab2b9f92
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:355)
   Project.Shared.SignUp_PageObject.getValidErrMessageOfDynamicOnFormSignUp(SignUpPage.java:34)
-  Testcase.SignUp.Component_Test_Of_SignUp.Testcase_Register_05_Check_Register_New_Account_With_Invalid_Username(Testcase_Register.java:182)
+  Testcase.SignUp.Testcase_ComponentTest_SIgnUpAccount.Testcase_Register_05_Check_Register_New_Account_With_Invalid_Username(Testcase_Register.java:182)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -97,11 +97,11 @@ Session ID: 1b8cd6cddee6ae6007bb88c1ab2b9f92
           </testcase>
   
   
-            <testcase name="Testcase_Register_03_Check_Register_New_Account_With_Invalid_FirstName" time="19.787" classname="Testcase.SignUp.Component_Test_Of_SignUp" />
-                <testcase name="Testcase_Register_07_Check_Register_New_Account_With_Invalid_Confirm_Password" time="12.010" classname="Testcase.SignUp.Component_Test_Of_SignUp" />
-                <testcase name="Testcase_Register_09_Check_Register_New_Account_ContainsMoreThan2Idots" time="44.248" classname="Testcase.SignUp.Component_Test_Of_SignUp" />
-                <testcase name="Testcase_Register_06_Check_Register_New_Account_With_Invalid_Password" time="9.910" classname="Testcase.SignUp.Component_Test_Of_SignUp" />
-                <testcase name="Testcase_Register_04_Check_Register_New_Account_With_Invalid_LastName" time="16.315" classname="Testcase.SignUp.Component_Test_Of_SignUp" />
-                <testcase name="Testcase_Register_08_Check_Register_New_Account_With_UpperCase_Email" time="42.742" classname="Testcase.SignUp.Component_Test_Of_SignUp" />
+            <testcase name="Testcase_Register_03_Check_Register_New_Account_With_Invalid_FirstName" time="19.787" classname="Testcase.SignUp.Testcase_ComponentTest_SIgnUpAccount" />
+                <testcase name="Testcase_Register_07_Check_Register_New_Account_With_Invalid_Confirm_Password" time="12.010" classname="Testcase.SignUp.Testcase_ComponentTest_SIgnUpAccount" />
+                <testcase name="Testcase_Register_09_Check_Register_New_Account_ContainsMoreThan2Idots" time="44.248" classname="Testcase.SignUp.Testcase_ComponentTest_SIgnUpAccount" />
+                <testcase name="Testcase_Register_06_Check_Register_New_Account_With_Invalid_Password" time="9.910" classname="Testcase.SignUp.Testcase_ComponentTest_SIgnUpAccount" />
+                <testcase name="Testcase_Register_04_Check_Register_New_Account_With_Invalid_LastName" time="16.315" classname="Testcase.SignUp.Testcase_ComponentTest_SIgnUpAccount" />
+                <testcase name="Testcase_Register_08_Check_Register_New_Account_With_UpperCase_Email" time="42.742" classname="Testcase.SignUp.Testcase_ComponentTest_SIgnUpAccount" />
       
 </testsuite>

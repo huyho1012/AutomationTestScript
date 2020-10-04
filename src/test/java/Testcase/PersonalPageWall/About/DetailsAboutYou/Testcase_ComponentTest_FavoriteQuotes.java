@@ -1,4 +1,4 @@
-package Testcase.PersonalPageWall.DetailsAboutYou;
+package Testcase.PersonalPageWall.About.DetailsAboutYou;
 
 import Common.DriverManagement.BrowserInitialization;
 import Common.DriverManagement.DriverManager;

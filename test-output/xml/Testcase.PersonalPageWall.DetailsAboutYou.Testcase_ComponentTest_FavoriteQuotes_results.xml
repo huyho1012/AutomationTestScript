@@ -6,17 +6,17 @@
            skipped="0"
            time="110.780">
   <properties />
-            <testcase name="TC03_Update_FavoriteQuote_With_Data_Is_One_Paragarph" time="12.028" classname="Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
+            <testcase name="TC03_Update_FavoriteQuote_With_Data_Is_One_Paragarph" time="12.028" classname="Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
                 <failure type="org.openqa.selenium.TimeoutException"
                   message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)"
               >
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
+                    <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
   org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)
   Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC03_Update_FavoriteQuote_With_Data_Is_One_Paragarph(Testcase_ComponentTest_FavoriteQuotes.java:97)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC03_Update_FavoriteQuote_With_Data_Is_One_Paragarph(Testcase_ComponentTest_FavoriteQuotes.java:97)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -69,7 +69,7 @@ Session ID: 7ef85ebcd1a82678a45e73e205384be0
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)
   Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC03_Update_FavoriteQuote_With_Data_Is_One_Paragarph(Testcase_ComponentTest_FavoriteQuotes.java:97)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC03_Update_FavoriteQuote_With_Data_Is_One_Paragarph(Testcase_ComponentTest_FavoriteQuotes.java:97)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -94,20 +94,20 @@ Session ID: 7ef85ebcd1a82678a45e73e205384be0
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
-            <testcase name="TC04_Update_FavoriteQuote_With_Data_Are_More_Than_2_Paragarphs" time="12.051" classname="Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
+            <testcase name="TC04_Update_FavoriteQuote_With_Data_Are_More_Than_2_Paragarphs" time="12.051" classname="Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
                 <failure type="org.openqa.selenium.TimeoutException"
                   message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)"
               >
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
+                    <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
   org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)
   Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC04_Update_FavoriteQuote_With_Data_Are_More_Than_2_Paragarphs(Testcase_ComponentTest_FavoriteQuotes.java:110)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC04_Update_FavoriteQuote_With_Data_Are_More_Than_2_Paragarphs(Testcase_ComponentTest_FavoriteQuotes.java:110)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -160,7 +160,7 @@ Session ID: 7ef85ebcd1a82678a45e73e205384be0
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)
   Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC04_Update_FavoriteQuote_With_Data_Are_More_Than_2_Paragarphs(Testcase_ComponentTest_FavoriteQuotes.java:110)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC04_Update_FavoriteQuote_With_Data_Are_More_Than_2_Paragarphs(Testcase_ComponentTest_FavoriteQuotes.java:110)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -185,20 +185,20 @@ Session ID: 7ef85ebcd1a82678a45e73e205384be0
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
-            <testcase name="TC02_Update_Favorite_Quote_With_Data_Contains_All_Whitespace" time="12.462" classname="Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
+            <testcase name="TC02_Update_Favorite_Quote_With_Data_Contains_All_Whitespace" time="12.462" classname="Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
                 <failure type="org.openqa.selenium.TimeoutException"
                   message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)"
               >
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
+                    <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
   org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)
   Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC02_Update_Favorite_Quote_With_Data_Contains_All_Whitespace(Testcase_ComponentTest_FavoriteQuotes.java:85)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC02_Update_Favorite_Quote_With_Data_Contains_All_Whitespace(Testcase_ComponentTest_FavoriteQuotes.java:85)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -251,7 +251,7 @@ Session ID: 7ef85ebcd1a82678a45e73e205384be0
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)
   Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC02_Update_Favorite_Quote_With_Data_Contains_All_Whitespace(Testcase_ComponentTest_FavoriteQuotes.java:85)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC02_Update_Favorite_Quote_With_Data_Contains_All_Whitespace(Testcase_ComponentTest_FavoriteQuotes.java:85)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -276,20 +276,20 @@ Session ID: 7ef85ebcd1a82678a45e73e205384be0
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
-            <testcase name="TC06_Update_FavoriteQuote_With_Data_Is_Only_Number" time="12.378" classname="Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
+            <testcase name="TC06_Update_FavoriteQuote_With_Data_Is_Only_Number" time="12.378" classname="Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
                 <failure type="org.openqa.selenium.TimeoutException"
                   message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)"
               >
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
+                    <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
   org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)
   Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC06_Update_FavoriteQuote_With_Data_Is_Only_Number(Testcase_ComponentTest_FavoriteQuotes.java:137)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC06_Update_FavoriteQuote_With_Data_Is_Only_Number(Testcase_ComponentTest_FavoriteQuotes.java:137)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -342,7 +342,7 @@ Session ID: 7ef85ebcd1a82678a45e73e205384be0
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)
   Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC06_Update_FavoriteQuote_With_Data_Is_Only_Number(Testcase_ComponentTest_FavoriteQuotes.java:137)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC06_Update_FavoriteQuote_With_Data_Is_Only_Number(Testcase_ComponentTest_FavoriteQuotes.java:137)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -367,20 +367,20 @@ Session ID: 7ef85ebcd1a82678a45e73e205384be0
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
-            <testcase name="TC09_Update_FavoriteQuote_With_Data_Is_Contains_Script_Code" time="12.279" classname="Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
+            <testcase name="TC09_Update_FavoriteQuote_With_Data_Is_Contains_Script_Code" time="12.279" classname="Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
                 <failure type="org.openqa.selenium.TimeoutException"
                   message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)"
               >
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
+                    <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
   org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)
   Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC09_Update_FavoriteQuote_With_Data_Is_Contains_Script_Code(Testcase_ComponentTest_FavoriteQuotes.java:176)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC09_Update_FavoriteQuote_With_Data_Is_Contains_Script_Code(Testcase_ComponentTest_FavoriteQuotes.java:176)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -433,7 +433,7 @@ Session ID: 7ef85ebcd1a82678a45e73e205384be0
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)
   Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC09_Update_FavoriteQuote_With_Data_Is_Contains_Script_Code(Testcase_ComponentTest_FavoriteQuotes.java:176)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC09_Update_FavoriteQuote_With_Data_Is_Contains_Script_Code(Testcase_ComponentTest_FavoriteQuotes.java:176)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -458,20 +458,20 @@ Session ID: 7ef85ebcd1a82678a45e73e205384be0
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
-            <testcase name="TC01_Update_Favorite_Quote_With_Blank_Data" time="12.408" classname="Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
+            <testcase name="TC01_Update_Favorite_Quote_With_Blank_Data" time="12.408" classname="Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
                 <failure type="org.openqa.selenium.TimeoutException"
                   message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)"
               >
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
+                    <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
   org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)
   Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC01_Update_Favorite_Quote_With_Blank_Data(Testcase_ComponentTest_FavoriteQuotes.java:74)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC01_Update_Favorite_Quote_With_Blank_Data(Testcase_ComponentTest_FavoriteQuotes.java:74)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -524,7 +524,7 @@ Session ID: 7ef85ebcd1a82678a45e73e205384be0
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)
   Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC01_Update_Favorite_Quote_With_Blank_Data(Testcase_ComponentTest_FavoriteQuotes.java:74)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC01_Update_Favorite_Quote_With_Blank_Data(Testcase_ComponentTest_FavoriteQuotes.java:74)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -549,20 +549,20 @@ Session ID: 7ef85ebcd1a82678a45e73e205384be0
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
-            <testcase name="TC05_Update_FavoriteQuote_With_Data_Is_One_Sentence" time="12.440" classname="Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
+            <testcase name="TC05_Update_FavoriteQuote_With_Data_Is_One_Sentence" time="12.440" classname="Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
                 <failure type="org.openqa.selenium.TimeoutException"
                   message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)"
               >
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
+                    <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
   org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)
   Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC05_Update_FavoriteQuote_With_Data_Is_One_Sentence(Testcase_ComponentTest_FavoriteQuotes.java:124)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC05_Update_FavoriteQuote_With_Data_Is_One_Sentence(Testcase_ComponentTest_FavoriteQuotes.java:124)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -615,7 +615,7 @@ Session ID: 7ef85ebcd1a82678a45e73e205384be0
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)
   Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC05_Update_FavoriteQuote_With_Data_Is_One_Sentence(Testcase_ComponentTest_FavoriteQuotes.java:124)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC05_Update_FavoriteQuote_With_Data_Is_One_Sentence(Testcase_ComponentTest_FavoriteQuotes.java:124)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -640,20 +640,20 @@ Session ID: 7ef85ebcd1a82678a45e73e205384be0
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
-            <testcase name="TC08_Update_FavoriteQuote_With_Data_Is_Contains_HTML_Code" time="12.401" classname="Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
+            <testcase name="TC08_Update_FavoriteQuote_With_Data_Is_Contains_HTML_Code" time="12.401" classname="Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
                 <failure type="org.openqa.selenium.TimeoutException"
                   message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)"
               >
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
+                    <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
   org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)
   Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC08_Update_FavoriteQuote_With_Data_Is_Contains_HTML_Code(Testcase_ComponentTest_FavoriteQuotes.java:163)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC08_Update_FavoriteQuote_With_Data_Is_Contains_HTML_Code(Testcase_ComponentTest_FavoriteQuotes.java:163)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -706,7 +706,7 @@ Session ID: 7ef85ebcd1a82678a45e73e205384be0
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)
   Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC08_Update_FavoriteQuote_With_Data_Is_Contains_HTML_Code(Testcase_ComponentTest_FavoriteQuotes.java:163)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC08_Update_FavoriteQuote_With_Data_Is_Contains_HTML_Code(Testcase_ComponentTest_FavoriteQuotes.java:163)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -731,20 +731,20 @@ Session ID: 7ef85ebcd1a82678a45e73e205384be0
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
-            <testcase name="TC7_Update_FavoriteQuote_With_Data_Is_Contains_Special_Characters" time="12.333" classname="Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
+            <testcase name="TC7_Update_FavoriteQuote_With_Data_Is_Contains_Special_Characters" time="12.333" classname="Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
                 <failure type="org.openqa.selenium.TimeoutException"
                   message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)"
               >
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
+                    <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
   org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)
   Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC7_Update_FavoriteQuote_With_Data_Is_Contains_Special_Characters(Testcase_ComponentTest_FavoriteQuotes.java:150)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC7_Update_FavoriteQuote_With_Data_Is_Contains_Special_Characters(Testcase_ComponentTest_FavoriteQuotes.java:150)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -797,7 +797,7 @@ Session ID: 7ef85ebcd1a82678a45e73e205384be0
   Common.HelperFunction.AbstractPage.waitElementToVisible(AbstractPage.java:391)
   Common.HelperFunction.AbstractPage.checkElementDisplay(AbstractPage.java:167)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.doActionEditOrAddFavorite(PerAbout_DetailsAboutYou_PageObject.java:52)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC7_Update_FavoriteQuote_With_Data_Is_Contains_Special_Characters(Testcase_ComponentTest_FavoriteQuotes.java:150)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC7_Update_FavoriteQuote_With_Data_Is_Contains_Special_Characters(Testcase_ComponentTest_FavoriteQuotes.java:150)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -822,7 +822,7 @@ Session ID: 7ef85ebcd1a82678a45e73e205384be0
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
   

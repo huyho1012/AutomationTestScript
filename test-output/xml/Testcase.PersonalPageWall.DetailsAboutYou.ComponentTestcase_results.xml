@@ -6,7 +6,7 @@
            skipped="0"
            time="23.202">
   <properties />
-            <testcase name="TC03_Update_FavoriteQuote_With_Data_Is_One_Sentence" time="0.281" classname="Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
+            <testcase name="TC03_Update_FavoriteQuote_With_Data_Is_One_Sentence" time="0.281" classname="Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
                 <failure type="org.openqa.selenium.InvalidSelectorException"
                   message="invalid selector: Unable to locate an element with the xpath expression  because of the following error:
 SyntaxError: Failed to execute &apos;evaluate&apos; on &apos;Document&apos;: The string &apos;&apos; is not a valid XPath expression.
@@ -19,7 +19,7 @@ Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 8
 Session ID: 476066bd2fa7b04d12efb026a3e56cf1
 *** Element info: {Using=xpath, value=}"
               >
-<![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression  because of the following error:
+                    <![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression  because of the following error:
 SyntaxError: Failed to execute 'evaluate' on 'Document': The string '' is not a valid XPath expression.
   (Session info: chrome=85.0.4183.121)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
@@ -47,7 +47,7 @@ Session ID: 476066bd2fa7b04d12efb026a3e56cf1
   Common.HelperFunction.AbstractPage.findElement(AbstractPage.java:123)
   Common.HelperFunction.AbstractPage.getTextElement(AbstractPage.java:151)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.getFavoriteQuoteDataDisplay(PerAbout_DetailsAboutYou_PageObject.java:78)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC03_Update_FavoriteQuote_With_Data_Is_One_Sentence(ComponentTestcase.java:116)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC03_Update_FavoriteQuote_With_Data_Is_One_Sentence(ComponentTestcase.java:116)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -72,10 +72,10 @@ Session ID: 476066bd2fa7b04d12efb026a3e56cf1
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
-            <testcase name="TC03_Update_FavoriteQuote_With_Data_Is_Paragarph" time="0.894" classname="Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
+            <testcase name="TC03_Update_FavoriteQuote_With_Data_Is_Paragarph" time="0.894" classname="Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
                 <failure type="org.openqa.selenium.InvalidSelectorException"
                   message="invalid selector: Unable to locate an element with the xpath expression  because of the following error:
 SyntaxError: Failed to execute &apos;evaluate&apos; on &apos;Document&apos;: The string &apos;&apos; is not a valid XPath expression.
@@ -88,7 +88,7 @@ Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 8
 Session ID: 476066bd2fa7b04d12efb026a3e56cf1
 *** Element info: {Using=xpath, value=}"
               >
-<![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression  because of the following error:
+                    <![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression  because of the following error:
 SyntaxError: Failed to execute 'evaluate' on 'Document': The string '' is not a valid XPath expression.
   (Session info: chrome=85.0.4183.121)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
@@ -116,7 +116,7 @@ Session ID: 476066bd2fa7b04d12efb026a3e56cf1
   Common.HelperFunction.AbstractPage.findElement(AbstractPage.java:123)
   Common.HelperFunction.AbstractPage.getTextElement(AbstractPage.java:151)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.getFavoriteQuoteDataDisplay(PerAbout_DetailsAboutYou_PageObject.java:78)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC03_Update_FavoriteQuote_With_Data_Is_Paragarph(ComponentTestcase.java:103)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC03_Update_FavoriteQuote_With_Data_Is_Paragarph(ComponentTestcase.java:103)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -141,10 +141,10 @@ Session ID: 476066bd2fa7b04d12efb026a3e56cf1
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
-            <testcase name="TC04_Update_FavoriteQuote_With_Data_Is_Only_Number" time="0.699" classname="Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
+            <testcase name="TC04_Update_FavoriteQuote_With_Data_Is_Only_Number" time="0.699" classname="Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
                 <failure type="org.openqa.selenium.InvalidSelectorException"
                   message="invalid selector: Unable to locate an element with the xpath expression  because of the following error:
 SyntaxError: Failed to execute &apos;evaluate&apos; on &apos;Document&apos;: The string &apos;&apos; is not a valid XPath expression.
@@ -157,7 +157,7 @@ Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 8
 Session ID: 476066bd2fa7b04d12efb026a3e56cf1
 *** Element info: {Using=xpath, value=}"
               >
-<![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression  because of the following error:
+                    <![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression  because of the following error:
 SyntaxError: Failed to execute 'evaluate' on 'Document': The string '' is not a valid XPath expression.
   (Session info: chrome=85.0.4183.121)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
@@ -185,7 +185,7 @@ Session ID: 476066bd2fa7b04d12efb026a3e56cf1
   Common.HelperFunction.AbstractPage.findElement(AbstractPage.java:123)
   Common.HelperFunction.AbstractPage.getTextElement(AbstractPage.java:151)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.getFavoriteQuoteDataDisplay(PerAbout_DetailsAboutYou_PageObject.java:78)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC04_Update_FavoriteQuote_With_Data_Is_Only_Number(ComponentTestcase.java:129)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC04_Update_FavoriteQuote_With_Data_Is_Only_Number(ComponentTestcase.java:129)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -210,10 +210,10 @@ Session ID: 476066bd2fa7b04d12efb026a3e56cf1
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
-            <testcase name="TC05_Update_FavoriteQuote_With_Data_Is_Contains_Special_Characters" time="0.688" classname="Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
+            <testcase name="TC05_Update_FavoriteQuote_With_Data_Is_Contains_Special_Characters" time="0.688" classname="Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
                 <failure type="org.openqa.selenium.InvalidSelectorException"
                   message="invalid selector: Unable to locate an element with the xpath expression  because of the following error:
 SyntaxError: Failed to execute &apos;evaluate&apos; on &apos;Document&apos;: The string &apos;&apos; is not a valid XPath expression.
@@ -226,7 +226,7 @@ Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 8
 Session ID: 476066bd2fa7b04d12efb026a3e56cf1
 *** Element info: {Using=xpath, value=}"
               >
-<![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression  because of the following error:
+                    <![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression  because of the following error:
 SyntaxError: Failed to execute 'evaluate' on 'Document': The string '' is not a valid XPath expression.
   (Session info: chrome=85.0.4183.121)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
@@ -254,7 +254,7 @@ Session ID: 476066bd2fa7b04d12efb026a3e56cf1
   Common.HelperFunction.AbstractPage.findElement(AbstractPage.java:123)
   Common.HelperFunction.AbstractPage.getTextElement(AbstractPage.java:151)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.getFavoriteQuoteDataDisplay(PerAbout_DetailsAboutYou_PageObject.java:78)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC05_Update_FavoriteQuote_With_Data_Is_Contains_Special_Characters(ComponentTestcase.java:142)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC05_Update_FavoriteQuote_With_Data_Is_Contains_Special_Characters(ComponentTestcase.java:142)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -279,19 +279,19 @@ Session ID: 476066bd2fa7b04d12efb026a3e56cf1
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
-            <testcase name="TC01_Update_Favorite_Quote_With_Blank_Data" time="10.322" classname="Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
+            <testcase name="TC01_Update_Favorite_Quote_With_Blank_Data" time="10.322" classname="Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
                 <failure type="org.openqa.selenium.TimeoutException"
                   message="Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)"
               >
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
+                    <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
   org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
   Common.HelperFunction.AbstractPage.waitForElementClickable(AbstractPage.java:403)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.clickToAddFavoriteQuote(PerAbout_DetailsAboutYou_PageObject.java:53)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC01_Update_Favorite_Quote_With_Blank_Data(ComponentTestcase.java:74)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC01_Update_Favorite_Quote_With_Blank_Data(ComponentTestcase.java:74)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -345,7 +345,7 @@ Session ID: 476066bd2fa7b04d12efb026a3e56cf1
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
   Common.HelperFunction.AbstractPage.waitForElementClickable(AbstractPage.java:403)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.clickToAddFavoriteQuote(PerAbout_DetailsAboutYou_PageObject.java:53)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC01_Update_Favorite_Quote_With_Blank_Data(ComponentTestcase.java:74)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC01_Update_Favorite_Quote_With_Blank_Data(ComponentTestcase.java:74)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -370,19 +370,19 @@ Session ID: 476066bd2fa7b04d12efb026a3e56cf1
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
-            <testcase name="TC02_Update_Favorite_Quote_With_Data_Contains_All_Whitespace" time="10.318" classname="Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
+            <testcase name="TC02_Update_Favorite_Quote_With_Data_Contains_All_Whitespace" time="10.318" classname="Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes">
                 <failure type="org.openqa.selenium.TimeoutException"
                   message="Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(@data-bind,&apos;doOpen.formAddAboutYou&apos;)] (tried for 10 second(s) with 500 milliseconds interval)"
               >
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
+                    <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(@data-bind,'doOpen.formAddAboutYou')] (tried for 10 second(s) with 500 milliseconds interval)
   org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
   Common.HelperFunction.AbstractPage.waitForElementClickable(AbstractPage.java:403)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.clickToAddFavoriteQuote(PerAbout_DetailsAboutYou_PageObject.java:53)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC02_Update_Favorite_Quote_With_Data_Contains_All_Whitespace(ComponentTestcase.java:85)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC02_Update_Favorite_Quote_With_Data_Contains_All_Whitespace(ComponentTestcase.java:85)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -436,7 +436,7 @@ Session ID: 476066bd2fa7b04d12efb026a3e56cf1
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
   Common.HelperFunction.AbstractPage.waitForElementClickable(AbstractPage.java:403)
   Project.Newsfeed.PersonalWall.About.PerAbout_DetailsAboutYou_PageObject.clickToAddFavoriteQuote(PerAbout_DetailsAboutYou_PageObject.java:53)
-  Testcase.PersonalPageWall.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC02_Update_Favorite_Quote_With_Data_Contains_All_Whitespace(ComponentTestcase.java:85)
+  Testcase.PersonalPageWall.About.DetailsAboutYou.Testcase_ComponentTest_FavoriteQuotes.TC02_Update_Favorite_Quote_With_Data_Contains_All_Whitespace(ComponentTestcase.java:85)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -461,7 +461,7 @@ Session ID: 476066bd2fa7b04d12efb026a3e56cf1
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
   

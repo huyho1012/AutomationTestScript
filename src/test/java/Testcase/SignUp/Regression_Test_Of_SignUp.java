@@ -42,7 +42,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     GeneralAccountSetting generalAccSetting;
 
     // Define user properties
-    String firstNameUser, lastNameUser, emailUser, passwordUser, confirmPassUser, birthdayUser, genderUser, fullName;
+    String firstNameUser, lastNameUser, emailUser, passwordUser, confirmPassUser, genderUser, fullName;
     String avatarUserImage, coverUserImage;
     // Define business properties
     String businessName, ownerName, ownerEmail, ownerPhone;
@@ -54,33 +54,26 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
     String pageTourName;
     String startDateTour, endTDateTour;
 
+    String languageSystem;
+
     @Parameters("browser")
     @BeforeClass
     public void preconditionStep(String browserName) {
-        log.info("Pre step 1. Create Browser Driver ");
+        log.info("Create Driver ");
         driverManager = BrowserInitialization.getBrowser(browserName);
-
-        log.info("Pre step 2. Go to Newsfeed login");
+        log.info("Open Browser and Go to Newsfeed login");
         driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
         loginNewsfeedPage = PageGeneration.createNewsfeedLoginPage(driver);
-
-        log.info("Pre step 3. Verify Newsfeed login page display successfully");
+        log.info("Check Hahalolo login page display");
         verifyTrue(loginNewsfeedPage.checkNewsfeedLoginPageDisplay());
-
-        log.info("Pre step 4. Change system language To Vi");
+        log.info("Change system language To Vi");
         loginNewsfeedPage.clickToChangeLanguageToVI(driver);
+        signUpPage = PageGeneration.createFormRegister(driver);
+        languageSystem = signUpPage.getLanguageOfSystemHahalolo(driver);
     }
 
     @BeforeTest
     public void generateDataForTesting() {
-        // Generate thông tin tài khoản người dùng
-        firstNameUser = data.getFirstName();
-        lastNameUser = data.getLastName();
-        emailUser = randomVirtualEmail();
-        passwordUser = "1234567";
-        confirmPassUser = "1234567";
-
-
         avatarUserImage= "User\\avatarUser.png";
         coverUserImage = "User\\coverUser.jpg";
 
@@ -115,160 +108,117 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
 
     @Test
     public void TC01_Newsfeed_Sign_Up_New_Account() {
-        signUpPage = PageGeneration.createFormRegister(driver);
+        log.info("Register with new account");
+        log.info("Step 1 - Prepare data for register");
+        firstNameUser = data.getFirstName();
+        lastNameUser = data.getLastName();
+        emailUser = randomVirtualEmail();
+        passwordUser = "1234567";
+        confirmPassUser = "1234567";
 
-        log.info("Step 1. Signup - Enter first name");
-        signUpPage.enterDataValueToDynamicOnFormSignUp( "nv104", firstNameUser);
-
-        log.info("Step 2. Signup - Enter last name");
-        signUpPage.enterDataValueToDynamicOnFormSignUp( "nv103", lastNameUser);
-
-        log.info("Step 3. Signup - Enter email");
-        signUpPage.enterDataValueToDynamicOnFormSignUp( "nv108", emailUser);
-
-        log.info("Step 4. Signup - Enter password");
-        signUpPage.enterDataValueToDynamicOnFormSignUp( "nv109", passwordUser);
-
-        log.info("Step 5. Signup - Enter confirm password");
-        signUpPage.enterDataValueToDynamicOnFormSignUp( "repeatPassword", confirmPassUser);
-
-        log.info("Step 6. Signup - Click sign up button");
-        signUpPage.clickSignUpButton();
-
-        log.info("Step 7. Signup - Check Form verify account display successfully");
-        verifyTrue(signUpPage.checkVerifyPageDisplay());
-
-        log.info("Step 8. Signup - Check title of Form verify account");
-        verifyEquals(signUpPage.getTitleOfVerifyForm(), "Xác minh tài khoản bằng email");
-
-        log.info("Step 9. Signup - Check email display on form verify account");
-        verifyEquals(signUpPage.getUserAccountToDisplay(), emailUser);
-
-        log.info("Step 10. Signup - Get verify code on Mailinator");
-        String code = signUpPage.getVerifyCodeByEmail(emailUser);
-
-        log.info("Step 11. Signup - Enter code to verify code field");
-        signUpPage.enterVerifyCodeToVerifyAccount(code);
-
-        log.info("Step 12. Signup - Click To verify button");
+        log.info("Step 2 - Register account with email");
+        signUpPage.signUpWithNewAccountByEmail(firstNameUser,lastNameUser,emailUser,passwordUser,confirmPassUser);
+        fullName = getFullName(firstNameUser, lastNameUser);
         signUpPage.clickToVerifyAccount();
         newsfeedHomePage = PageGeneration.createNewsfeedHomepage(driver);
 
-        log.info("Step 13. Newsfeed - Check verify account successfully");
+        log.info("Step 3. Verify register account successfully");
         verifyTrue(newsfeedHomePage.checkNewsfeedDisplayOnFirstTime());
+
+        log.info("Update account information on first time login");
+        log.info("Step 1. Check form Upđate Information display");
         verifyEquals(newsfeedHomePage.getTitleOfFormFirstUpdateInfo(), "Xác minh tài khoản thành công!");
+        log.info("Step 2. Repare data for update information");
+        String dayBirth = "12";
+        String monthBirth = "10";
+        String yearBirth = "1992";
+        String genderType = "M";
+        String nationality = "";
+        log.info("Step 3. Update information");
+        newsfeedHomePage.updateNewInformationOfAccount(dayBirth,monthBirth,yearBirth,genderType,nationality);
+        String birthdayUser = getBirthdayOnHaLo(dayBirth,monthBirth,yearBirth);
+        String genderName = newsfeedHomePage.getGenderOfUser(driver,genderType);
 
-        log.info("Step 14. Update information model - Update birthday");
-        newsfeedHomePage.updateBirthdayOfUser(driver, "12", "10", "1992");
-        birthdayUser = getBirthdayOnHaLo("12", "10", "1992");
-
-        log.info("Step 15. Update information model - Update gender");
-        newsfeedHomePage.updateGenderOfUser(driver, "male");
-        genderUser = newsfeedHomePage.getGenderOfUser(driver, "male");
-
-        log.info("Step 16. Update information model - Update nationality");
-        newsfeedHomePage.updateNationalOfUser(driver, "VN");
-
-        log.info("Step 17. Update information model - Click to confirm button");
-        newsfeedHomePage.clickToButtonConfirmForUpdateInfo();
-
-        log.info("Step 18 - Check information - Check fullname display on Widget My account");
+        log.info("Verify account information");
+        log.info("Step 1. Check fullname display on Widget My account");
         String fullNameOnMyWidget = newsfeedHomePage.getFullNameDisplayOnMyAccount();
-        verifyEquals(fullNameOnMyWidget, getFullName(firstNameUser, lastNameUser));
-
-        log.info("Step 19. Check information - Go to Personal About Overview");
+        verifyEquals(fullNameOnMyWidget, fullName);
+        log.info("Step 2. Go to Personal About Overview");
         newsfeedHomePage.clickToEditProfile();
         perAboutOverviewTab = PageGeneration.createPerAboutOverviewTab(driver);
-
-        log.info("Step 20. Check information - Check Personal About Overview page display");
-        verifyTrue(perAboutOverviewTab.checkPersonalPageIsDisplay(driver,fullNameOnMyWidget));
+        log.info("Step 3. Check Personal About Overview page display");
+        verifyTrue(perAboutOverviewTab.checkPersonalPageIsDisplay(driver,fullName));
         verifyTrue(perAboutOverviewTab.checkPerAboutOverviewTabIsDisplay());
-
-        log.info("Step 22. Check email display on introduce widget");
-        verifyEquals(perAboutOverviewTab.getEmailIsDisplayOnIntroduceWidget(), emailUser);
-
-        log.info("Step 23. Check birthday display on widget introduce");
-        verifyEquals(perAboutOverviewTab.getBirthdayDisplayOnIntroduceWidget(), birthdayUser);
-
-        log.info("Step 24. Check gender display on widget Introduce");
-        verifyEquals(perAboutOverviewTab.getGenderDisplayOnIntroduceWidget(), genderUser);
-//
-//        log.info("Step 25. Check Avatar display default");
-//        verifyTrue(perAboutOverviewTab.checkAvatarUserDisplayWithGenderType(driver,genderUser));
-//        String avatarBeforeChange = perAboutOverviewTab.getImageURLOfAvatar(driver);
-//
-//        log.info("Step 26. Update avatar user");
-//        perAboutOverviewTab.clickToUploadAvatarByLocalImage(driver,avatarUserImage);
-//        perAboutOverviewTab.crossImage(driver);
-
-//        verifyFalse(perAboutOverviewTab.checkUploadAvatarUserSuccess(driver,avatarBeforeChange));
-//
-//        log.info("Steo 27. Check Cover image display default");
-//        verifyTrue(perAboutOverviewTab.checkCoverImageDisplayWithCaseNoImage(driver));
-//
-//        log.info("Step 28. Upload cover image");
-//        perAboutOverviewTab.clickToUploadCoverByLocalImage(driver,coverUserImage);
-//        perAboutOverviewTab.saveChangeImage(driver);
-//        verifyFalse(perAboutOverviewTab.checkCoverImageUploadSuccessfully(driver,avatarBeforeChange));
-
-        log.info("Step 29. Check tab Overview case create new account");
         verifyTrue(perAboutOverviewTab.checkOverViewTabCaseNewAccount());
+        log.info("Step 4. Check email display on introduce widget");
+        verifyEquals(perAboutOverviewTab.getEmailIsDisplayOnIntroduceWidget(), emailUser);
+        log.info("Step 5. Check birthday display on widget introduce");
+        verifyEquals(perAboutOverviewTab.getBirthdayDisplayOnIntroduceWidget(), birthdayUser);
+        log.info("Step 6. Check gender display on widget Introduce");
+        verifyEquals(perAboutOverviewTab.getGenderDisplayOnIntroduceWidget(), genderName);
+
+        log.info("Update avatar User");
+        log.info("Step 1. Check Avatar display default");
+        verifyTrue(perAboutOverviewTab.checkAvatarUserDisplayWithGenderType(driver,genderName));
+        String avatarBeforeChange = perAboutOverviewTab.getImageURLOfAvatar(driver);
+        log.info("Step 2. Update avatar user");
+        perAboutOverviewTab.clickToUploadAvatarByLocalImage(driver,avatarUserImage);
+        perAboutOverviewTab.crossImage(driver);
+        log.info("Step 3. Check user update avatar succesfully");
+        verifyFalse(perAboutOverviewTab.checkUploadAvatarUserSuccess(driver,avatarBeforeChange));
+
+        log.info("Update Cover");
+        log.info("Step 1. Check Cover image display default");
+        verifyTrue(perAboutOverviewTab.checkCoverImageDisplayWithCaseNoImage(driver));
+        String coverBeforeChange = perAboutOverviewTab.getImageOfCover(driver);
+        log.info("Step 2. Upload cover image");
+        perAboutOverviewTab.clickToUploadCoverByLocalImage(driver,coverUserImage);
+        perAboutOverviewTab.saveChangeImage(driver);
+        log.info("Step 3. Check user update cover succesfully");
+        verifyFalse(perAboutOverviewTab.checkCoverImageUploadSuccessfully(driver,coverBeforeChange));
 
         log.info("Add new workplace");
-        log.info("Step - Go to Work and Eduction tab");
+        log.info("Step 1. Go to Work and Eduction tab");
         perAboutOverviewTab.clickToTabItemOnAbout(driver,"#about_work");
         perAboutWorkEducationTab = PageGeneration.createPerAboutWorkEducationTab(driver);
-
-        log.info("Step - Click to Add new workplace");
+        log.info("Step 2. Click to Add new workplace");
         verifyTrue(perAboutWorkEducationTab.checkTabIsSelected(driver,"#about_work"));
         perAboutWorkEducationTab.clickButtonToAddNewWorkplace();
-
-        log.info("Step - Enter a Company name");
+        log.info("Step 3. Prepare data");
         String companyName = data.getCompanyName();
-        System.out.println(companyName);
-        perAboutWorkEducationTab.enterDataToCompanyNameOfWorkspace(companyName);
-
-        log.info("Step - Enter position");
         String jobPosition = "Tester";
-        perAboutWorkEducationTab.enterDataToPositionOfWorkspace(jobPosition);
-
-        log.info("Step - Enter Address company");
         String addressCompany = data.getAddress();
-        perAboutWorkEducationTab.enterDataToAddressOfWorkspace(addressCompany);
-
-        log.info("Step - Enter Workplace description");
         String workplaceDesc = "Manual Testing";
+        log.info("Step 4. Check form Add Workplace display");
+        verifyTrue(perAboutWorkEducationTab.checkFormAddWorkplaceIsDisplay());
+        log.info("Step 5. Enter a Company name");
+        perAboutWorkEducationTab.enterDataToCompanyNameOfWorkspace(companyName);
+        log.info("Step 6. Enter position");
+        perAboutWorkEducationTab.enterDataToPositionOfWorkspace(jobPosition);
+        log.info("Step 7. Enter Address company");
+        perAboutWorkEducationTab.enterDataToAddressOfWorkspace(addressCompany);
+        log.info("Step 8. Enter Workplace description");
         perAboutWorkEducationTab.enterDataToDescriptionOfWorkspace(workplaceDesc);
-
+        log.info("Step 9. Choose option time period");
         perAboutWorkEducationTab.checkOptionTimePeriod();
-
-        log.info("Step - Update time range of workplace");
+        log.info("Step 10. Update time range of workplace");
         perAboutWorkEducationTab.chooseStartTimeOfWorkplace("","","");
-
-        log.info("Step - Choose scope");
-//        perAboutWorkEducationTab.chooseScopeOfWorkPlace("");
-
-        log.info("Step - Click button save");
+        log.info("Step 11. Choose scope");
+        perAboutWorkEducationTab.chooseScopeOfWorkPlace("");
+        log.info("Step 12. Click button save");
         perAboutWorkEducationTab.clickButtonToSaveWorkplace();
 
-        log.info("Check information of workplace which have been already existed");
-        log.info("Step - Check company name of workplace");
-//        verifyEquals(perAboutWorkEducationTab.getCompanyOfWorkplace(),"");
-//
-//        log.info("Step - Check position of workplace");
-//        verifyEquals(perAboutWorkEducationTab.getPositionOfWorkplace(),"");
-//
-//        log.info("Step - Check Start time of workplace");
-//        verifyEquals(perAboutWorkEducationTab.getTimestartOfWorkplace(),"");
-//
-//        log.info("Step - Check End time of workplace");
-//        verifyEquals(perAboutWorkEducationTab.getTimeEndOfWorkplace(),"");
-//
-//        log.info("Step - Check Address of workplace");
-//        verifyEquals(perAboutWorkEducationTab.getAddressOfWorkplace(),"");
-//
-//        log.info("Step - Check Scope of workplace");
-//        verifyEquals(perAboutWorkEducationTab.getScopeOfWorkplace(),"");
+        log.info("Check information of workplace");
+        log.info("Step 1. Check company name of workplace");
+        verifyEquals(perAboutWorkEducationTab.getCompanyOfWorkplace(),companyName;
+        log.info("Step 2. Check position of workplace");
+        verifyEquals(perAboutWorkEducationTab.getPositionOfWorkplace(),"");
+        log.info("Step 3. Check timerange of workplace");
+        verifyEquals(perAboutWorkEducationTab.getTimeRangeOfWorkplace(),"");
+        log.info("Step 4. Check Address of workplace");
+        verifyEquals(perAboutWorkEducationTab.getAddressOfWorkplace(),"");
+        log.info("Step 5. Check Scope of workplace");
+        verifyEquals(perAboutWorkEducationTab.getScopeOfWorkplace(),"");
 
         log.info("Add new highschool");
         perAboutWorkEducationTab.clickButtonToAddnewHighschool();

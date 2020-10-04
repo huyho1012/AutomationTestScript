@@ -8,6 +8,6 @@
   <properties />
   
   
-            <testcase name="TC01_Update_Birthday_Of_User" time="9.642" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Update_Birthday" />
+            <testcase name="TC01_Update_Birthday_Of_User" time="9.642" classname="Testcase.PersonalPageWall.About.BasicInfoAndContact.Testcase_Component_Update_Birthday" />
       
 </testsuite>
