@@ -3,12 +3,12 @@ package Project.Business.Tour.Topic;
 import Interfaces.Shared.MediaManagementUI;
 import Interfaces.hahalolo_business.Tour.Topic.TourTopicPageUI;
 import Project.Newsfeed.Newsfeed.HeaderPage;
-import Project.Shared.MediaManagement;
+import Project.Shared.MediaManagement_PageObject;
 import org.openqa.selenium.WebDriver;
 
 public class TourTopicPage extends HeaderPage {
     WebDriver driver;
-    MediaManagement media;
+    MediaManagement_PageObject media;
     public TourTopicPage(WebDriver webDriver){
         driver = webDriver;
     }
@@ -22,7 +22,7 @@ public class TourTopicPage extends HeaderPage {
     public void chooseTopicImage(WebDriver driver, String fileName) {
         waitForElementClickable(driver,TourTopicPageUI.BUTTON_ADD_TOPIC_IMAGE);
         clickToElement(driver,TourTopicPageUI.BUTTON_ADD_TOPIC_IMAGE);
-        media = new MediaManagement(driver);
+        media = new MediaManagement_PageObject(driver);
         media.uploadImageFromLocalToMedia(driver,fileName);
         waitElementToVisible(driver, MediaManagementUI.PROCESSING_BAR);
         waitForElementClickable(driver,MediaManagementUI.SELECT_BUTTON);

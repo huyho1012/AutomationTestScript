@@ -1,6 +1,6 @@
 package Interfaces.hahalolo_newsfeed.PersonaWall;
 
-public class Per_Common_PageUI {
+public class Personal_Common_PageUI {
 
     public static final String PERSONAL_PAGE =  "//div[contains(@class, 'p-header--user')] ";
     public static final String FULLNAME_ON_COVER = "//div[@class='p-info__name']/span";

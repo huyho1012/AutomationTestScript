@@ -2,7 +2,7 @@ package Project.Shared;
 
 
 import Common.HelperFunction.AbstractTest;
-import Interfaces.hahalolo_newsfeed.StartApp.LoginUI;
+import Interfaces.hahalolo_newsfeed.StartApp.Login_PageUI;
 import Interfaces.hahalolo_newsfeed.StartApp.StartingCommonUI;
 import org.openqa.selenium.WebDriver;
 
@@ -18,7 +18,7 @@ public class CommonStartApp extends AbstractTest {
     String content7= "các tiện ích tuyệt vời của chúng tôi.";
 
     public boolean checkContentOfHaLoStartApp(WebDriver driver) {
-        waitElementToVisible(driver, LoginUI.LOGIN_BUTTON);
+        waitElementToVisible(driver, Login_PageUI.LOGIN_BUTTON);
         return getTextElement(driver, StartingCommonUI.NEWSFEED_HALO_CONTENT_1).equalsIgnoreCase(content1)
                 && getTextElement(driver, StartingCommonUI.NEWSFEED_HALO_CONTENT_2).equalsIgnoreCase(content2)
                 && getTextElement(driver, StartingCommonUI.NEWSFEED_HALO_CONTENT_3).equalsIgnoreCase(content3)
@@ -28,11 +28,11 @@ public class CommonStartApp extends AbstractTest {
                 && getTextElement(driver, StartingCommonUI.NEWSFEED_HALO_CONTENT_7).equalsIgnoreCase(content7);
     }
     public boolean checkGooglePlayIconIsDisplay(WebDriver driver){
-        waitElementToVisible(driver, LoginUI.LOGIN_BUTTON);
+        waitElementToVisible(driver, Login_PageUI.LOGIN_BUTTON);
         return checkElementIsDisplayed(driver, StartingCommonUI.GOOGLE_PLAY);
     }
     public boolean checkAppStoreIconIsDisplay(WebDriver driver){
-        waitElementToVisible(driver, LoginUI.LOGIN_BUTTON);
+        waitElementToVisible(driver, Login_PageUI.LOGIN_BUTTON);
         return checkElementIsDisplayed(driver, StartingCommonUI.APP_STORE);
     }
     public void clickToAppStoreLink(WebDriver driver){

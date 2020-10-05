@@ -3,13 +3,13 @@ package Project.Business.Promotion;
 import Interfaces.Shared.MediaManagementUI;
 import Interfaces.hahalolo_business.Promotion.CreateEditPromoUI;
 import Project.Business.Tour.Management.TourCommon;
-import Project.Shared.MediaManagement;
+import Project.Shared.MediaManagement_PageObject;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class Promotion  extends TourCommon {
     WebDriver driver;
-    MediaManagement media;
+    MediaManagement_PageObject media;
 
     public void publicPromotion(WebDriver driver){
         scrollToTopPage(driver);
@@ -48,7 +48,7 @@ public class Promotion  extends TourCommon {
     public void clickAddImagePromo(WebDriver driver, String fileImage){
         waitForElementClickable(driver, CreateEditPromoUI.BUTTON_ADD_PROMO_IMAGE);
         clickToElement(driver, CreateEditPromoUI.BUTTON_ADD_PROMO_IMAGE);
-        media = new MediaManagement(driver);
+        media = new MediaManagement_PageObject(driver);
         media.uploadImageFromLocalToMedia(driver,fileImage);
         waitElementToVisible(driver, MediaManagementUI.PROCESSING_BAR);
         waitForElementClickable(driver,MediaManagementUI.SELECT_BUTTON);

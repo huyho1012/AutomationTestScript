@@ -1,7 +1,7 @@
 package Project.Newsfeed.Newsfeed;
 
 import Common.HelperFunction.AbstractPage;
-import Interfaces.hahalolo_business.Business.BusinessVerificationUI;
+import Interfaces.hahalolo_business.Business.Business_VerificationRequest_PageUI;
 import Interfaces.hahalolo_business.Tour.TourDashboardPageUI;
 import Interfaces.hahalolo_newsfeed.Header.HeaderPageUI;
 import org.openqa.selenium.WebDriver;
@@ -19,7 +19,7 @@ public class HeaderPage extends AbstractPage {
 
     public void clickItemOnBusinessNavMenu(WebDriver driver, String businessItem) {
         waitForPageLoading(driver);
-        waitElementToVisible(driver, BusinessVerificationUI.BUSINESS_NAVBAR_INFO);
+        waitElementToVisible(driver, Business_VerificationRequest_PageUI.BUSINESS_NAVBAR_INFO);
         clickToElement(driver, HeaderPageUI.BUSINESS_NAVBAR_MENU , businessItem);
     }
 

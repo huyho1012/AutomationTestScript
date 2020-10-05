@@ -393,7 +393,7 @@ public class Testcase_ComponentTest_SIgnUpAccount extends AbstractTest {
 
         log.info("Step 7. Input verify code and verify account");
         verifyCode = signUpPageObject.getVerifyCodeByEmail(email);
-        signUpPageObject.enterVerifyCodeToVerifyAccount(verifyCode);
+        signUpPageObject.enterDataToVerifyCodeField(verifyCode);
         signUpPageObject.clickToVerifyAccount();
         newsfeedPage = PageGeneration.createNewsfeedHomepage(driver);
 
@@ -440,7 +440,7 @@ public class Testcase_ComponentTest_SIgnUpAccount extends AbstractTest {
 
         log.info("Step 7. Input verify code and verify account");
         verifyCode = signUpPageObject.getVerifyCodeByEmail(email);
-        signUpPageObject.enterVerifyCodeToVerifyAccount(verifyCode);
+        signUpPageObject.enterDataToVerifyCodeField(verifyCode);
         signUpPageObject.clickToVerifyAccount();
         newsfeedPage = PageGeneration.createNewsfeedHomepage(driver);
 
@@ -486,7 +486,7 @@ public class Testcase_ComponentTest_SIgnUpAccount extends AbstractTest {
 
         log.info("Step 7. Input verify code and verify account");
         verifyCode = signUpPageObject.getVerifyCodeByEmail(email);
-        signUpPageObject.enterVerifyCodeToVerifyAccount(verifyCode);
+        signUpPageObject.enterDataToVerifyCodeField(verifyCode);
         signUpPageObject.clickToVerifyAccount();
         newsfeedPage = PageGeneration.createNewsfeedHomepage(driver);
 
@@ -534,7 +534,7 @@ public class Testcase_ComponentTest_SIgnUpAccount extends AbstractTest {
 
         log.info("Step 7. Input verify code");
         verifyCode = signUpPageObject.getVerifyCodeByEmail(email);
-        signUpPageObject.enterVerifyCodeToVerifyAccount(verifyCode);
+        signUpPageObject.enterDataToVerifyCodeField(verifyCode);
 
         log.info("Step 7. Click verify button");
         signUpPageObject.clickToVerifyAccount();
@@ -555,7 +555,7 @@ public class Testcase_ComponentTest_SIgnUpAccount extends AbstractTest {
         generalSettingAccountPage = PageGeneration.createGeneralAccountSettingPage(driver);
 
         log.info("Step 10. Verify General Account Setting display successfully");
-        verifyEquals(generalSettingAccountPage.getFullNameIsDisplay(),"");
+        verifyEquals(generalSettingAccountPage.getFullNameDisplay(),"");
 
         generalSettingAccountPage.clickToItemOnSettingMenu(driver,"");
         signUpPageObject = PageGeneration.createFormRegister(driver);
@@ -590,7 +590,7 @@ public class Testcase_ComponentTest_SIgnUpAccount extends AbstractTest {
         verifyTrue(generalSettingAccountPage.checkAccountGeneralSettingIsDisplay());
 
         log.info("Check full name display on General account setting");
-        verifyEquals(generalSettingAccountPage.getFullNameIsDisplay(), fullName);
+        verifyEquals(generalSettingAccountPage.getFullNameDisplay(), fullName);
     }
 
     public void TC11_Register_Account_With_Firstname_Has_Whitespace_On_First_Position(){
@@ -621,7 +621,7 @@ public class Testcase_ComponentTest_SIgnUpAccount extends AbstractTest {
         verifyTrue(generalSettingAccountPage.checkAccountGeneralSettingIsDisplay());
 
         log.info("Check full name display on General account setting");
-        verifyEquals(generalSettingAccountPage.getFullNameIsDisplay(), fullName);
+        verifyEquals(generalSettingAccountPage.getFullNameDisplay(), fullName);
     }
 
     public void TC12_Register_Account_With_Firstname_Has_Whitespace_On_Last_Position(){
@@ -652,7 +652,7 @@ public class Testcase_ComponentTest_SIgnUpAccount extends AbstractTest {
         verifyTrue(generalSettingAccountPage.checkAccountGeneralSettingIsDisplay());
 
         log.info("Check full name display on General account setting");
-        verifyEquals(generalSettingAccountPage.getFullNameIsDisplay(), fullName);
+        verifyEquals(generalSettingAccountPage.getFullNameDisplay(), fullName);
     }
 
     public void TC13_Register_Account_With_Firstname_Has_More_Than_2_Whitespace_On_Middle_Position(){
@@ -683,7 +683,7 @@ public class Testcase_ComponentTest_SIgnUpAccount extends AbstractTest {
         verifyTrue(generalSettingAccountPage.checkAccountGeneralSettingIsDisplay());
 
         log.info("Check full name display on General account setting");
-        verifyEquals(generalSettingAccountPage.getFullNameIsDisplay(), fullName);
+        verifyEquals(generalSettingAccountPage.getFullNameDisplay(), fullName);
     }
 
     public void TC14_Register_Account_With_Uppercase_LastName(){
@@ -714,7 +714,7 @@ public class Testcase_ComponentTest_SIgnUpAccount extends AbstractTest {
         verifyTrue(generalSettingAccountPage.checkAccountGeneralSettingIsDisplay());
 
         log.info("Check full name display on General account setting");
-        verifyEquals(generalSettingAccountPage.getFullNameIsDisplay(), fullName);
+        verifyEquals(generalSettingAccountPage.getFullNameDisplay(), fullName);
     }
 
     public void TC15_Register_Account_With_Lowercase_LastName(){
@@ -745,7 +745,7 @@ public class Testcase_ComponentTest_SIgnUpAccount extends AbstractTest {
         verifyTrue(generalSettingAccountPage.checkAccountGeneralSettingIsDisplay());
 
         log.info("Check full name display on General account setting");
-        verifyEquals(generalSettingAccountPage.getFullNameIsDisplay(), fullName);
+        verifyEquals(generalSettingAccountPage.getFullNameDisplay(), fullName);
     }
 
     public void TC16_Register_Account_With_LastName_Has_Whitespace_On_First_Position(){
@@ -776,7 +776,7 @@ public class Testcase_ComponentTest_SIgnUpAccount extends AbstractTest {
         verifyTrue(generalSettingAccountPage.checkAccountGeneralSettingIsDisplay());
 
         log.info("Check full name display on General account setting");
-        verifyEquals(generalSettingAccountPage.getFullNameIsDisplay(), fullName);
+        verifyEquals(generalSettingAccountPage.getFullNameDisplay(), fullName);
 
     }
 
@@ -808,7 +808,7 @@ public class Testcase_ComponentTest_SIgnUpAccount extends AbstractTest {
         verifyTrue(generalSettingAccountPage.checkAccountGeneralSettingIsDisplay());
 
         log.info("Check full name display on General account setting");
-        verifyEquals(generalSettingAccountPage.getFullNameIsDisplay(), fullName);
+        verifyEquals(generalSettingAccountPage.getFullNameDisplay(), fullName);
 
     }
 
@@ -840,6 +840,6 @@ public class Testcase_ComponentTest_SIgnUpAccount extends AbstractTest {
         verifyTrue(generalSettingAccountPage.checkAccountGeneralSettingIsDisplay());
 
         log.info("Check full name display on General account setting");
-        verifyEquals(generalSettingAccountPage.getFullNameIsDisplay(), fullName);
+        verifyEquals(generalSettingAccountPage.getFullNameDisplay(), fullName);
     }
 }

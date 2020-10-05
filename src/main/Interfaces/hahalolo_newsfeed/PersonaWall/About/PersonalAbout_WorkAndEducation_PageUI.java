@@ -1,6 +1,6 @@
 package Interfaces.hahalolo_newsfeed.PersonaWall.About;
 
-public class PerAbout_WorkAndEducation_PageUI {
+public class PersonalAbout_WorkAndEducation_PageUI {
 
     public static final String SCOPE_DROPDOWN = "";
     public static final String SCOPE_ITEM_DROPDOWN = "";

@@ -1,12 +1,12 @@
-package Interfaces.hahalolo_newsfeed.Booking;
+package Interfaces.hahalolo_newsfeed.Booking.PaymentGateWay;
 
-public class PaymentInfoUI {
+public class Newsfeed_Payment_BillingInfo_PageUI {
     public static final String PAYMENT_TAB = "//div[contains(@data-bind, 'paymentVM')]";
     public static final String DYNAMIC_FIELD_ON_BILLING_INFO = "//input[contains(@data-bind, '%s')]";
     public static final String COUNTRY_DROPDOWN_ON_BILLING_INFO = "//select[@name= 'nv211']/following-sibling::div//div[contains(@class, 'selectize-input')]";
     public static final String COUNTRY_ITEMM_ON_BILLING_INFO = "//select[@name= 'nv211']/following-sibling::div//div[@class ='selectize-dropdown-content']/div";
     public static final String BUTTON_UPDATE_BILLING_INFO = "//button[contains(@data-bind,'onSaveInfoBilling')]";
-//    public static final String PAYMENT_METHOD_SECTION = "/";
+
     public static final String PAYMENT_METHOD_DOMESTIC = "//input[@id = 'payer-method-0']/following-sibling::label";
     public static final String PAYMENT_METHOD_INTERNATIONAL = "//input[@id = 'payer-method-1']/following-sibling::label";
     public static final String ALEYPAY_GATE_WAY = "//input[@value = 'ALEPAY']/following-sibling::label[contains(@data-src,'alepay.jpg')]";

@@ -39,7 +39,7 @@ public class Testcase_PersonalAbout_DetailsAboutYou extends AbstractTest {
         driver = driverManager.getDriver(GlobalVariables.NEWSFEED_URL);
         newsfeedLoginPageObject = PageGeneration.createNewsfeedLoginPage(driver);
         log.info("Precondition step 3 - Check Newsfeed Login display successfully");
-        verifyTrue(newsfeedLoginPageObject.checkNewsfeedLoginPageDisplay());
+        verifyTrue(newsfeedLoginPageObject.checkNewsfeedLoginPageIsDisplayed());
     }
 
     @Test

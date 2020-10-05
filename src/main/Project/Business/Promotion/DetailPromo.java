@@ -1,6 +1,6 @@
 package Project.Business.Promotion;
 
-import Interfaces.hahalolo_business.Promotion.DetailPromoUI;
+import Interfaces.hahalolo_business.Promotion.Promotion_Detail_PageUI;
 import org.openqa.selenium.WebDriver;
 
 public class DetailPromo extends Promotion {
@@ -13,35 +13,35 @@ public class DetailPromo extends Promotion {
     }
 
     public String getPromoNameOnDetail() {
-        return getTextElement(driver, DetailPromoUI.PROMO_NAME);
+        return getTextElement(driver, Promotion_Detail_PageUI.PROMO_NAME);
     }
 
     public String getPromoDescOnDetail() {
-        return getTextElement(driver, DetailPromoUI.PROMO_DESC);
+        return getTextElement(driver, Promotion_Detail_PageUI.PROMO_DESC);
     }
 
     public String getStatusOnDetail() {
-        return getTextElement(driver, DetailPromoUI.PROMO_STATUS);
+        return getTextElement(driver, Promotion_Detail_PageUI.PROMO_STATUS);
     }
 
     public String getLanguageOnDetail() {
-        return getTextElement(driver, DetailPromoUI.PROMO_LANGUAGE);
+        return getTextElement(driver, Promotion_Detail_PageUI.PROMO_LANGUAGE);
     }
 
     public String getCurrencyOnDetail() {
-        return getTextElement(driver, DetailPromoUI.PROMO_LANGUAGE);
+        return getTextElement(driver, Promotion_Detail_PageUI.PROMO_LANGUAGE);
     }
 
     public String getDateRangeOnDetail() {
-        return getTextElement(driver, DetailPromoUI.PROMO_APPLY_TIME);
+        return getTextElement(driver, Promotion_Detail_PageUI.PROMO_APPLY_TIME);
     }
 
     public String geDiscountTypeOnDetail() {
-        return getTextElement(driver, DetailPromoUI.DISCOUNT_TYPE);
+        return getTextElement(driver, Promotion_Detail_PageUI.DISCOUNT_TYPE);
     }
 
     public String getPromoTypeOnDetail() {
-        return getTextElement(driver, DetailPromoUI.PROMO_TYPE);
+        return getTextElement(driver, Promotion_Detail_PageUI.PROMO_TYPE);
     }
 
     public String getTourTypeAppliedOnDetail() {

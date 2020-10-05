@@ -46,7 +46,7 @@ public class Testcase_ComponentTest_GenderFunction extends AbstractTest {
         languageSystem = newsfeedLoginPage.getLanguageOfSystemHahalolo(driver);
 
         log.info("Login to newsfeed");
-        newsfeedLoginPage.Login(GlobalVariables.USER_ACCOUNT,"123456");
+        newsfeedLoginPage.LoginNewsfeedHahalolo(GlobalVariables.USER_EMAIL_ACCOUNT,"123456");
         newsfeedHomepage = PageGeneration.createNewsfeedHomepage(driver);
 
         log.info("Check Newsfeed page display successfully");

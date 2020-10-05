@@ -1,6 +1,6 @@
 package Interfaces.hahalolo_business.Business;
 
-public class BusinessVerificationUI {
+public class Business_VerificationRequest_PageUI {
     public static final String SELECT_DAY_DROPDOWN = "//select[contains(@data-bind,'daySelect')]";
     public static final String SELECT_MONTH_DROPDOWN = "//select[contains(@data-bind,'monthSelect')]";
     public static final String SELECT_YEAR_DROPDOWN ="//select[contains(@data-bind,'yearSelect')]";

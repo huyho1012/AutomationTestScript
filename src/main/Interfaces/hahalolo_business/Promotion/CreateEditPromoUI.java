@@ -15,10 +15,8 @@ public class CreateEditPromoUI {
     public static final String PROMOTION_DATE_RANGE = "//input[@name ='startDate']";
     public static final String APPLY_MODE = "//input[@id = 'apply-mode']/following-sibling::label";
 
-
     public static final String BUTTON_SAVE_PROMO = "//button[contains(@data-bind,'savePromotion')]";
     public static final String PROMOTION_SIMPLE_MODE = "//div[@class ='promotion-normal-mode']";
-
 
     // Type Discount
     public static final String DISCOUNT_TOTAL_ORDER = "//input[@id ='promo-type-1']/following-sibling::label";

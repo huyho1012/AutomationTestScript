@@ -1,6 +1,6 @@
 package Interfaces.hahalolo_newsfeed.Booking.PaymentGateWay;
 
-public class StripeGatewayUI {
+public class Newsfeed_Payment_Stripe_PageUI {
     public static final String STRIPE_PAGE = "//div[contains(@data-bind,'stripeVM')]";
     public static final String CARD_HOLDERNAME = "//input[@name = 'cardHolderName']";
     public static final String CARD_NUMBER = "//input[@name = 'cardNo']";

@@ -1,9 +1,6 @@
 package Interfaces.hahalolo_newsfeed.PersonaWall.About;
 
-public class AboutCommonUI {
-    // Menu
-
-
+public class PersonalAbout_Overview_PageUI {
     // Workplace
     public static final String BUTTON_ADD_WORKSPACE = "//div[contains(@data-bind,'btnAddWork')]";
     public static final String BUTTON_EDIT_WORKPLACE = "//div[contains(@data-bind,'workplaceKbCol')]/following-sibling::button";
@@ -25,11 +22,10 @@ public class AboutCommonUI {
     public static final String CURRENT_LIVING_ITEM = "//a[contains(@data-bind,'currentCityVM.nv211')]";
     public static final String HOMETOWN_ITEM = "//a[contains(@data-bind,'homeTownVM.nv211')]";
 
-
     // Widget User information
     public static final String BUTTON_EDIT_BASIC_INFO_AND_CONTACT = "//a[@href = '#about_contact']";
     public static final String WIDGET_INTRO_PHONE = "//td[contains(@data-bind,'contactAndBasicInfoVM.nv217')]";
-    public static final String WIDGET_INTRO_ADDRESS =  "//td[contains(@data-bind,'contactAndBasicInfoVM.nv218')]";
+    public static final String WIDGET_INTRO_ADDRESS = "//td[contains(@data-bind,'contactAndBasicInfoVM.nv218')]";
     public static final String WIDGET_INTRO_EMAIL = "//span[contains(@data-bind,'contactAndBasicInfoVM.nv215')]";
     public static final String WIDGET_INTRO_BIRTHDAY = "//span[contains(@data-bind,'contactAndBasicInfoVM.nd206')]" ;
     public static final String WIDGET_INTRO_GENDER = "//span[contains(@data-bind,'contactAndBasicInfoVM.gender')]" ;

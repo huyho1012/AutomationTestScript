@@ -1,6 +1,6 @@
 package Interfaces.hahalolo_business.Business;
 
-public class BusinessDashboardPageUI {
+public class Business_Dashboard_PageUI {
 
     public static final String SEND_VERIFY_BUTTON = "//a[@href ='info?verify=true']";
     public static final String DASHBOARD_BUSINESS_PAGE =  "//main[@class ='pt-3 business-dashboard']";

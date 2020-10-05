@@ -41,7 +41,7 @@ public class Testcase_ChangeFullName extends AbstractTest {
         newsfeedHomepage.changeLanguageNewsfeedToVI();
 
         log.info("Pre step 4 - Login to Newsfeed");
-        newsfeedLoginPageObject.Login(GlobalVariables.USER_ACCOUNT, "123456");
+        newsfeedLoginPageObject.LoginNewsfeedHahalolo(GlobalVariables.USER_EMAIL_ACCOUNT, "123456");
         newsfeedHomepage = PageGeneration.createNewsfeedHomepage(driver);
 
         log.info("Pre step 5 - Go To Account setting");
@@ -58,65 +58,65 @@ public class Testcase_ChangeFullName extends AbstractTest {
         log.info("Step 1. Enter first name");
         generalSetting.enterDataToFirstNameField("");
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfFirstName(), "Tên là bắt buộc.");
+        verifyEquals(generalSetting.getMessageValidateFirstName(), "Tên là bắt buộc.");
 
         log.info("Case contains all white space");
         log.info("Step 1. Enter first name");
         generalSetting.enterDataToFirstNameField("   ");
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfFirstName(), "Tên là bắt buộc.");
+        verifyEquals(generalSetting.getMessageValidateFirstName(), "Tên là bắt buộc.");
 
         log.info("Case contains only number");
         log.info("Step 1. Enter first name");
         generalSetting.enterDataToFirstNameField("123456");
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfFirstName(), "Tên không chứa số.");
+        verifyEquals(generalSetting.getMessageValidateFirstName(), "Tên không chứa số.");
 
         log.info("Case combine of number + characters");
         log.info("Step 1. Enter first name");
         generalSetting.enterDataToFirstNameField("Huy23");
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfFirstName(), "Tên không chứa số.");
+        verifyEquals(generalSetting.getMessageValidateFirstName(), "Tên không chứa số.");
 
         log.info("Case contains special characters");
         log.info("Step 1. Enter first name");
         generalSetting.enterDataToFirstNameField("Hu@n H@ồng");
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfFirstName(), "Tên không chứa ký tự đặc biệt.");
+        verifyEquals(generalSetting.getMessageValidateFirstName(), "Tên không chứa ký tự đặc biệt.");
 
         log.info("Case contains HTML code");
         log.info("Step 1. Enter first name");
         generalSetting.enterDataToFirstNameField(GlobalVariables.HTML_CODE);
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfFirstName(), "Tên không chứa ký tự đặc biệt.");
+        verifyEquals(generalSetting.getMessageValidateFirstName(), "Tên không chứa ký tự đặc biệt.");
 
         log.info("Step 7 - FirstName contains Script code");
         log.info("Step 1. Enter first name");
         generalSetting.enterDataToFirstNameField(GlobalVariables.SCRPIT_CODE);
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfFirstName(), "Tên không chứa ký tự đặc biệt.");
+        verifyEquals(generalSetting.getMessageValidateFirstName(), "Tên không chứa ký tự đặc biệt.");
 
         log.info("Step 8 - FirstName contains more than 2 whitespace between 2 word");
         log.info("Step 1. Enter first name");
         generalSetting.enterDataToFirstNameField("Huy  Quốc");
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfFirstName(), "Tên không được nhập quá 2 kí tự trắng.");
+        verifyEquals(generalSetting.getMessageValidateFirstName(), "Tên không được nhập quá 2 kí tự trắng.");
     }
     @Test
     public void TC02_Update_Fullname_With_Invalid_LastName() {
@@ -126,65 +126,65 @@ public class Testcase_ChangeFullName extends AbstractTest {
         log.info("Step 1. Enter last name");
         generalSetting.enterDataToLastnameField( "");
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfLastName(), "Họ là bắt buộc.");
+        verifyEquals(generalSetting.getMessageValidateLastName(), "Họ là bắt buộc.");
 
         log.info("Lastname contains all white space");
         log.info("Step 1. Enter last name");
         generalSetting.enterDataToLastnameField("   ");
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfLastName(), "Họ là bắt buộc.");
+        verifyEquals(generalSetting.getMessageValidateLastName(), "Họ là bắt buộc.");
 
         log.info("Lastname contains only number");
         log.info("Step 1. Enter last name");
         generalSetting.enterDataToLastnameField("123456");
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfLastName(), "Họ không chứa số.");
+        verifyEquals(generalSetting.getMessageValidateLastName(), "Họ không chứa số.");
 
         log.info("Lastname combine of number + characters");
         log.info("Step 1. Enter last name");
         generalSetting.enterDataToLastnameField("Hồ1");
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfLastName(), "Họ không chứa số.");
+        verifyEquals(generalSetting.getMessageValidateLastName(), "Họ không chứa số.");
 
         log.info("Lastname contains special characters");
         log.info("Step 1. Enter last name");
         generalSetting.enterDataToLastnameField("H@ Do@n");
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfLastName(), "Họ không chứa ký tự đặc biệt.");
+        verifyEquals(generalSetting.getMessageValidateLastName(), "Họ không chứa ký tự đặc biệt.");
 
         log.info("Lastname contains HTML code");
         log.info("Step 1. Enter last name");
         generalSetting.enterDataToLastnameField(GlobalVariables.HTML_CODE);
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfLastName(), "Họ không chứa ký tự đặc biệt.");
+        verifyEquals(generalSetting.getMessageValidateLastName(), "Họ không chứa ký tự đặc biệt.");
 
         log.info("Lastname contains Script code");
         log.info("Step 1. Enter last name");
         generalSetting.enterDataToLastnameField(GlobalVariables.SCRPIT_CODE);
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfLastName(), "Họ không chứa ký tự đặc biệt.");
+        verifyEquals(generalSetting.getMessageValidateLastName(), "Họ không chứa ký tự đặc biệt.");
 
         log.info("Lastname contains more than 2 whitespace between 2 word");
         log.info("Step 1. Enter last name");
         generalSetting.enterDataToLastnameField("Hồ  Doãn");
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfLastName(), "Họ không được nhập quá 2 kí tự trắng.");
+        verifyEquals(generalSetting.getMessageValidateLastName(), "Họ không được nhập quá 2 kí tự trắng.");
     }
 
     @Test
@@ -195,41 +195,41 @@ public class Testcase_ChangeFullName extends AbstractTest {
         log.info("Step 1. Enter Middle name");
         generalSetting.enterDataToMidnameField("123456");
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfMidName(), "Chữ lót không chứa số.");
+        verifyEquals(generalSetting.getMessageValidateMidName(), "Chữ lót không chứa số.");
 
         log.info("Middle name contains Alpha number");
         log.info("Step 1. Enter Middle name");
         generalSetting.enterDataToMidnameField("Huy12");
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfMidName(), "Chữ lót không chứa số.");
+        verifyEquals(generalSetting.getMessageValidateMidName(), "Chữ lót không chứa số.");
 
         log.info("Middle name contains Script Code");
         log.info("Step 1. Enter Middle name");
         generalSetting.enterDataToMidnameField(GlobalVariables.SCRPIT_CODE);
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfMidName(), "Chữ lót không chứa ký tự đặc biệt.");
+        verifyEquals(generalSetting.getMessageValidateMidName(), "Chữ lót không chứa ký tự đặc biệt.");
 
         log.info("Middle name contains HTML Code");
         log.info("Step 1. Enter Middle name");
         generalSetting.enterDataToMidnameField(GlobalVariables.HTML_CODE);
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfMidName(), "Chữ lót không chứa ký tự đặc biệt.");
+        verifyEquals(generalSetting.getMessageValidateMidName(), "Chữ lót không chứa ký tự đặc biệt.");
 
         log.info("Middle name contains special character");
         log.info("Step 1. Enter Middle name");
         generalSetting.enterDataToMidnameField("D@ãn");
         log.info("Step 2. Click to Login button");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
         log.info("Step 3. Verify error message");
-        verifyEquals(generalSetting.getErrMessageValidationOfMidName(), "Chữ lót không chứa ký tự đặc biệt.");
+        verifyEquals(generalSetting.getMessageValidateMidName(), "Chữ lót không chứa ký tự đặc biệt.");
 
         generalSetting.clickCancelUpdateFullname();
     }
@@ -255,10 +255,10 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.enterDataToLastnameField(lastName);
 
         log.info("Step 4 - Click to button Save changes");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
 
         log.info("Step 5 - Check Confirm password popup is display");
-        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplay());
+        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplayed());
 
         log.info("Step 6 - Enter confirm pass");
         generalSetting.enterDataToPasswordConfirm("123456");
@@ -267,7 +267,7 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.clickToConfirmButton();
 
         log.info("Step 8 - Check full name after change");
-        verifyEquals(generalSetting.getFullNameIsDisplay(), getFullName(firstName, middleName, lastName));
+        verifyEquals(generalSetting.getFullNameDisplay(), getFullName(firstName, middleName, lastName));
     }
 
     @Test
@@ -291,10 +291,10 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.enterDataToLastnameField(lastName);
 
         log.info("Step 4 - Click to button Save changes");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
 
         log.info("Step 5 - Check Confirm password popup is display");
-        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplay());
+        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplayed());
 
         log.info("Step 6 - Enter confirm pass");
         generalSetting.enterDataToPasswordConfirm("123456");
@@ -303,7 +303,7 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.clickToConfirmButton();
 
         log.info("Step 8 - Check full name after change");
-        verifyEquals(generalSetting.getFullNameIsDisplay(), getFullName(firstName, middleName, lastName));
+        verifyEquals(generalSetting.getFullNameDisplay(), getFullName(firstName, middleName, lastName));
     }
 
     @Test
@@ -327,10 +327,10 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.enterDataToLastnameField(lastName);
 
         log.info("Step 4 - Click to button Save changes");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
 
         log.info("Step 5 - Check Confirm password popup is display");
-        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplay());
+        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplayed());
 
         log.info("Step 6 - Enter confirm pass");
         generalSetting.enterDataToPasswordConfirm( "123456");
@@ -339,7 +339,7 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.clickToConfirmButton();
 
         log.info("Step 8 - Check full name after change");
-        verifyEquals(generalSetting.getFullNameIsDisplay(), getFullName(firstName, middleName, lastName));
+        verifyEquals(generalSetting.getFullNameDisplay(), getFullName(firstName, middleName, lastName));
     }
 
     @Test
@@ -363,10 +363,10 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.enterDataToLastnameField(lastName);
 
         log.info("Step 4 - Click to button Save changes");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
 
         log.info("Step 5 - Check Confirm password popup is display");
-        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplay());
+        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplayed());
 
         log.info("Step 6 - Enter confirm pass");
         generalSetting.enterDataToPasswordConfirm( "123456");
@@ -375,7 +375,7 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.clickToConfirmButton();
 
         log.info("Step 8 - Check full name after change");
-        verifyEquals(generalSetting.getFullNameIsDisplay(), getFullName(firstName, middleName, lastName));
+        verifyEquals(generalSetting.getFullNameDisplay(), getFullName(firstName, middleName, lastName));
     }
 
     @Test
@@ -399,10 +399,10 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.enterDataToLastnameField(lastName);
 
         log.info("Step 4 - Click to button Save changes");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
 
         log.info("Step 5 - Check Confirm password popup is display");
-        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplay());
+        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplayed());
 
         log.info("Step 6 - Enter confirm pass");
         generalSetting.enterDataToPasswordConfirm("123456");
@@ -411,7 +411,7 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.clickToConfirmButton();
 
         log.info("Step 8 - Check full name after change");
-        verifyEquals(generalSetting.getFullNameIsDisplay(), getFullName(firstName, middleName, lastName));
+        verifyEquals(generalSetting.getFullNameDisplay(), getFullName(firstName, middleName, lastName));
     }
 
     @Test
@@ -435,10 +435,10 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.enterDataToLastnameField(lastName);
 
         log.info("Step 4 - Click to button Save changes");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
 
         log.info("Step 5 - Check Confirm password popup is display");
-        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplay());
+        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplayed());
 
         log.info("Step 6 - Enter confirm pass");
         generalSetting.enterDataToPasswordConfirm( "123456");
@@ -447,7 +447,7 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.clickToConfirmButton();
 
         log.info("Step 8 - Check full name after change");
-        verifyEquals(generalSetting.getFullNameIsDisplay(), getFullName(firstName, middleName, lastName));
+        verifyEquals(generalSetting.getFullNameDisplay(), getFullName(firstName, middleName, lastName));
     }
 
     @Test
@@ -471,10 +471,10 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.enterDataToLastnameField(lastName);
 
         log.info("Step 4 - Click to button Save changes");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
 
         log.info("Step 5 - Check Confirm password popup is display");
-        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplay());
+        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplayed());
 
         log.info("Step 6 - Enter confirm pass");
         generalSetting.enterDataToPasswordConfirm( "123456");
@@ -483,7 +483,7 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.clickToConfirmButton();
 
         log.info("Step 8 - Check full name after change");
-        verifyEquals(generalSetting.getFullNameIsDisplay(), getFullName(firstName, middleName, lastName));
+        verifyEquals(generalSetting.getFullNameDisplay(), getFullName(firstName, middleName, lastName));
     }
 
     @Test
@@ -507,10 +507,10 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.enterDataToLastnameField(lastName);
 
         log.info("Step 4 - Click to button Save changes");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
 
         log.info("Step 5 - Check Confirm password popup is display");
-        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplay());
+        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplayed());
 
         log.info("Step 6 - Enter confirm pass");
         generalSetting.enterDataToPasswordConfirm( "123456");
@@ -519,7 +519,7 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.clickToConfirmButton();
 
         log.info("Step 8 - Check full name after change");
-        verifyEquals(generalSetting.getFullNameIsDisplay(), getFullName(firstName, middleName, lastName));
+        verifyEquals(generalSetting.getFullNameDisplay(), getFullName(firstName, middleName, lastName));
     }
     @Test
     public void TC12_Update_Fullname_With_MiddleName_Have_Lowercase () {
@@ -542,10 +542,10 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.enterDataToLastnameField(lastName);
 
         log.info("Step 4 - Click to button Save changes");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
 
         log.info("Step 5 - Check Confirm password popup is display");
-        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplay());
+        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplayed());
 
         log.info("Step 6 - Enter confirm pass");
         generalSetting.enterDataToPasswordConfirm("123456");
@@ -554,7 +554,7 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.clickToConfirmButton();
 
         log.info("Step 8 - Check full name after change");
-        verifyEquals(generalSetting.getFullNameIsDisplay(), getFullName(firstName, middleName, lastName));
+        verifyEquals(generalSetting.getFullNameDisplay(), getFullName(firstName, middleName, lastName));
     }
     @Test
     public void TC13_Update_Fullname_With_MiddleNam_Have_Uppercase () {
@@ -577,10 +577,10 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.enterDataToLastnameField(lastName);
 
         log.info("Step 4 - Click to button Save changes");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
 
         log.info("Step 5 - Check Confirm password popup is display");
-        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplay());
+        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplayed());
 
         log.info("Step 6 - Enter confirm pass");
         generalSetting.enterDataToPasswordConfirm("123456");
@@ -589,7 +589,7 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.clickToConfirmButton();
 
         log.info("Step 8 - Check full name after change");
-        verifyEquals(generalSetting.getFullNameIsDisplay(), getFullName(firstName, middleName, lastName));
+        verifyEquals(generalSetting.getFullNameDisplay(), getFullName(firstName, middleName, lastName));
     }
     @Test
     public void TC14_Update_Fullname_With_MiddleName_Have_Whitespace_At_First_Position () {
@@ -612,10 +612,10 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.enterDataToLastnameField(lastName);
 
         log.info("Step 4 - Click to button Save changes");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
 
         log.info("Step 5 - Check Confirm password popup is display");
-        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplay());
+        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplayed());
 
         log.info("Step 6 - Enter confirm pass");
         generalSetting.enterDataToPasswordConfirm("123456");
@@ -624,7 +624,7 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.clickToConfirmButton();
 
         log.info("Step 8 - Check full name after change");
-        verifyEquals(generalSetting.getFullNameIsDisplay(), getFullName(firstName, middleName, lastName));
+        verifyEquals(generalSetting.getFullNameDisplay(), getFullName(firstName, middleName, lastName));
     }
 
     @Test
@@ -648,10 +648,10 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.enterDataToLastnameField(lastName);
 
         log.info("Step 4 - Click to button Save changes");
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
+        generalSetting.clickToSaveFullname();
 
         log.info("Step 5 - Check Confirm password popup is display");
-        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplay());
+        verifyTrue(generalSetting.checkConfirmPasswordPopupIsDisplayed());
 
         log.info("Step 6 - Enter confirm pass");
         generalSetting.enterDataToPasswordConfirm("123456");
@@ -660,7 +660,7 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.clickToConfirmButton();
 
         log.info("Step 8 - Check full name after change");
-        verifyEquals(generalSetting.getFullNameIsDisplay(), getFullName(firstName, middleName, lastName));
+        verifyEquals(generalSetting.getFullNameDisplay(), getFullName(firstName, middleName, lastName));
     }
     @Test
     public void TC15_Update_Fullname_With_Invalid_Pass () {
@@ -671,7 +671,7 @@ public class Testcase_ChangeFullName extends AbstractTest {
 
         log.info("Prepare step");
         generalSetting.clickToButtonEditFullName();
-        generalSetting.updateFullName(firstName,middleName,lastName);
+        generalSetting.updateFullnameUser(firstName,middleName,lastName);
 
         log.info("Case Wrong pass");
         log.info("Step 1 - Enter Password");
@@ -738,7 +738,7 @@ public class Testcase_ChangeFullName extends AbstractTest {
         log.info("Step 3 - Verify error message");
         verifyEquals(generalSetting.getErrMessageValidationOfConfirmPass(driver), "Thay đổi tên thất bại. Mật khẩu bạn nhập không chính xác");
 
-        generalSetting.clickButtonToCancelSaveChangeFullName();
+        generalSetting.clickToCancelSaveChangeFullName();
     }
     @Test
     public void Testcase15_Update_Fullname_With_TOTAL_FULL_NAME_GREATER_THAN_75_CHARS () {
@@ -751,8 +751,8 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.enterDataToFirstNameField(firstName);
         generalSetting.enterDataToMidnameField(middleName);
         generalSetting.enterDataToLastnameField(lastName);
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
-        verifyEquals(generalSetting.getErrMessageOfChangeFullName(),"Giới hạn tối đa của Họ và tên là 75 kí tự");
+        generalSetting.clickToSaveFullname();
+        verifyEquals(generalSetting.getMessageFullNameFunction(),"Giới hạn tối đa của Họ và tên là 75 kí tự");
 
     }
 
@@ -765,8 +765,8 @@ public class Testcase_ChangeFullName extends AbstractTest {
         generalSetting.enterDataToFirstNameField(firstName);
         generalSetting.enterDataToMidnameField(middleName);
         generalSetting.enterDataToLastnameField(lastName);
-        generalSetting.clickButtonSaveChangesToUpdateFullname();
-        verifyEquals(generalSetting.getErrMessageOfChangeFullName(),"Họ và tên không lớn hơn 5 từ.̣");
+        generalSetting.clickToSaveFullname();
+        verifyEquals(generalSetting.getMessageFullNameFunction(),"Họ và tên không lớn hơn 5 từ.̣");
     }
 }
 

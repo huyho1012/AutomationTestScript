@@ -1,8 +1,12 @@
 package Interfaces.hahalolo_newsfeed.StartApp;
 
-public class SignUpUI {
-    public static final String TITLE_REGISTER_FORM = "//div[@class = 'form-signup-header']/div";
-    public static final String TEXT_FIELD_DYNAMIC = "//input[@name = '%s']";
+public class RegisterAccount_PageUI {
+    public static final String FORM_REGISTER_ACCOUNT = "//form[@id = 'signup_form']";
+
+
+
+    public static final String TITLE_FORM_REGISTER_ACCOUNT = "//div[@class = 'form-signup-header']/div";
+    public static final String DYNAMIC_TEXT_FIELD = "//input[@name = '%s']";
     public static final String ERROR_MESSAGE_OF_TEXT_FIELD = "//input[@name = '%s']/following-sibling::*[contains(@class,'invalid-feedback')]";
     public static final String PHONE_CODE_DROPDOWN="//select[@id = 'select-phone-code']/following-sibling::div//input";
     public static final String PHONE_CODE_ITEM="//select[@id = 'select-phone-code']/following-sibling::div//div[@class = 'item']";
@@ -23,4 +27,5 @@ public class SignUpUI {
     public static final String VERIFY_ACCOUNT_BUTTON = "//button[contains(@data-bind,'verifyAcc')]";
     public static final String BUTTON_RESEND_CODE = "//button[@id = 'btnResendCode']" ;
     public static final String VERIFY_ACCOUNT_FORM_PAGE = "//div[contains(@data-bind,'active-confirm-code')]";
+
 }

@@ -1,6 +1,6 @@
 package Interfaces.hahalolo_newsfeed.PersonaWall.About;
 
-public class PerAbout_ContactAndBasicInfo_PageUI {
+public class PersonalAbout_ContactAndBasicInfo_PageUI {
 
     public static final String CONTACT_AND_BASIC_INFO_TAB = "//div[@id = 'about_contact'][contains(@class ,'active')]";
     public static final String TITLE_PAGE = "//div[@id = 'about_contact']//div[contains(@data-bind,'contactInfo')]";

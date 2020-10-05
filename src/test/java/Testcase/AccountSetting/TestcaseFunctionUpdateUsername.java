@@ -46,7 +46,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         loginNewsfeedPage.clickToChangeLanguageToVI(driver);
 
         log.info("Login to Hahalolo");
-        loginNewsfeedPage.Login(GlobalVariables.USER_ACCOUNT,GlobalVariables.USER_PASSWORD);
+        loginNewsfeedPage.LoginNewsfeedHahalolo(GlobalVariables.USER_EMAIL_ACCOUNT,GlobalVariables.USER_EMAIL_PASSWORD);
         newsFeedHomePage = PageGeneration.createNewsfeedHomepage(driver);
 
         log.info("Go To Account setting");
@@ -58,7 +58,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         verifyTrue(accountSetting.checkAccountGeneralSettingIsDisplay());
 
         log.info("Click to Edit username");
-        accountSetting.clickToButtonEditUsername();
+        accountSetting.clickToEditUsername();
     }
 
     @Test
@@ -75,7 +75,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         log.info("Step 2. Check status of button save change");
         verifyFalse(accountSetting.checkButtonSaveChangeOfUsername());
         log.info("Step 3. Verify message of function Change username");
-        verifyEquals(accountSetting.getErrMessOnUsername() ,"Phải có ít nhất 5 kí tự");
+        verifyEquals(accountSetting.getMessageValidateUsername() ,"Phải có ít nhất 5 kí tự");
 
         log.info("Case username contains whitespace on middle data");
         log.info("Step 1. Enter username");
@@ -83,7 +83,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         log.info("Step 2. Check status of button save change");
         verifyFalse(accountSetting.checkButtonSaveChangeOfUsername());
         log.info("Step 3. Verify message of function Change username");
-        verifyEquals(accountSetting.getErrMessOnUsername() ,"Có chứa ký tự không hợp lệ.");
+        verifyEquals(accountSetting.getMessageValidateUsername() ,"Có chứa ký tự không hợp lệ.");
 
         log.info("Case username contains dot on last position");
         log.info("Step 1. Enter username");
@@ -91,7 +91,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         log.info("Step 2. Check status of button save change");
         verifyFalse(accountSetting.checkButtonSaveChangeOfUsername());
         log.info("Step 3. Verify message of function Change username");
-        verifyEquals(accountSetting.getErrMessOnUsername() ,"Có chứa ký tự đặc biệt không đúng chỗ");
+        verifyEquals(accountSetting.getMessageValidateUsername() ,"Có chứa ký tự đặc biệt không đúng chỗ");
 
         log.info("Case username contains special characters");
         log.info("Step 1. Enter username");
@@ -99,7 +99,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         log.info("Step 2. Check status of button save change");
         verifyFalse(accountSetting.checkButtonSaveChangeOfUsername());
         log.info("Step 3. Verify message of function Change username");
-        verifyEquals(accountSetting.getErrMessOnUsername() ,"Có chứa ký tự không hợp lệ.");
+        verifyEquals(accountSetting.getMessageValidateUsername() ,"Có chứa ký tự không hợp lệ.");
 
         log.info("Case username contains less than 5 characters");
         log.info("Step 1. Enter username");
@@ -107,7 +107,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         log.info("Step 2. Check status of button save change");
         verifyFalse(accountSetting.checkButtonSaveChangeOfUsername());
         log.info("Step 3. Verify message of function Change username");
-        verifyEquals(accountSetting.getErrMessOnUsername() ,"Phải có ít nhất 5 kí tự");
+        verifyEquals(accountSetting.getMessageValidateUsername() ,"Phải có ít nhất 5 kí tự");
 
         log.info("Case username contains greather than 50 characters");
         log.info("Step 1. Enter username");
@@ -115,7 +115,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         log.info("Step 2. Check status of button save change");
         verifyFalse(accountSetting.checkButtonSaveChangeOfUsername());
         log.info("Step 3. Verify message of function Change username");
-        verifyEquals(accountSetting.getErrMessOnUsername() ,"Tên người dùng vượt số ký tự tối đa cho phép");
+        verifyEquals(accountSetting.getMessageValidateUsername() ,"Tên người dùng vượt số ký tự tối đa cho phép");
 
         log.info("Case username contains script code");
         log.info("Step 1. Enter username");
@@ -123,7 +123,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         log.info("Step 2. Check status of button save change");
         verifyFalse(accountSetting.checkButtonSaveChangeOfUsername());
         log.info("Step 3. Verify message of function Change username");
-        verifyEquals(accountSetting.getErrMessOnUsername() ,"Có chứa ký tự không hợp lệ.");
+        verifyEquals(accountSetting.getMessageValidateUsername() ,"Có chứa ký tự không hợp lệ.");
 
         log.info("Case username contains HTML code");
         log.info("Step 1. Enter username");
@@ -131,7 +131,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         log.info("Step 2. Check status of button save change");
         verifyFalse(accountSetting.checkButtonSaveChangeOfUsername());
         log.info("Step 3. Verify message of function Change username");
-        verifyEquals(accountSetting.getErrMessOnUsername() ,"Có chứa ký tự không hợp lệ.");
+        verifyEquals(accountSetting.getMessageValidateUsername() ,"Có chứa ký tự không hợp lệ.");
 
         log.info("Case username contains mark");
         log.info("Step 1. Enter username");
@@ -139,7 +139,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         log.info("Step 2. Check status of button save change");
         verifyFalse(accountSetting.checkButtonSaveChangeOfUsername());
         log.info("Step 3. Verify message of function Change username");
-        verifyEquals(accountSetting.getErrMessOnUsername() ,"Có chứa ký tự không hợp lệ.");
+        verifyEquals(accountSetting.getMessageValidateUsername() ,"Có chứa ký tự không hợp lệ.");
 
         log.info("End step. Cancel function change username");
         accountSetting.cancelSaveChangeUsername();
@@ -151,13 +151,13 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         userName = removeAllWhitespace(data.getFirstName()).toLowerCase();
 
         log.info("Step 1. Open function Edit username");
-        accountSetting.clickToButtonEditUsername();
+        accountSetting.clickToEditUsername();
 
         log.info("Step 2. Enter username");
         accountSetting.enterDataToUsernameField(userName);
 
         log.info("Step 3. Verify message of Fucntion Change username");
-        verifyEquals(accountSetting.getErrMessOnUsername(), "Tên người dùng khả dụng");
+        verifyEquals(accountSetting.getMessageValidateUsername(), "Tên người dùng khả dụng");
 
         log.info("Step 4. Verify status of button save change username");
         verifyTrue(accountSetting.checkButtonSaveChangeOfUsername());
@@ -166,7 +166,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         accountSetting.clickToButtonSaveChangeUserName();
 
         log.info("Step 6. Verify username has been change successfully");
-        verifyTrue(accountSetting.getUserIdentityNameDisplay().endsWith(userName));
+        verifyTrue(accountSetting.getUsernameDisplay().endsWith(userName));
     }
 
     @Test
@@ -175,13 +175,13 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         userName = "HuyHoDoan" + randomNumber(22000);
 
         log.info("Step 1. Open function Edit username");
-        accountSetting.clickToButtonEditUsername();
+        accountSetting.clickToEditUsername();
 
         log.info("Step 2. Enter username");
         accountSetting.enterDataToUsernameField(userName);
 
         log.info("Step 3. Verify message of Fucntion Change username");
-        verifyEquals(accountSetting.getErrMessOnUsername(), "Tên người dùng khả dụng");
+        verifyEquals(accountSetting.getMessageValidateUsername(), "Tên người dùng khả dụng");
 
         log.info("Step 4. Verify status of button save change username");
         verifyTrue(accountSetting.checkButtonSaveChangeOfUsername());
@@ -190,7 +190,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         accountSetting.clickToButtonSaveChangeUserName();
 
         log.info("Step 6. Verify username has been change successfully");
-        verifyTrue(accountSetting.getUserIdentityNameDisplay().endsWith(userName));
+        verifyTrue(accountSetting.getUsernameDisplay().endsWith(userName));
     }
 
     @Test
@@ -199,13 +199,13 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         userName = String.valueOf(randomNumber(1000000000));
 
         log.info("Step 1. Open function Edit username");
-        accountSetting.clickToButtonEditUsername();
+        accountSetting.clickToEditUsername();
 
         log.info("Step 2. Enter username");
         accountSetting.enterDataToUsernameField(userName);
 
         log.info("Step 3. Verify message of Fucntion Change username");
-        verifyEquals(accountSetting.getErrMessOnUsername(), "Tên người dùng khả dụng");
+        verifyEquals(accountSetting.getMessageValidateUsername(), "Tên người dùng khả dụng");
 
         log.info("Step 4. Verify status of button save change username");
         verifyTrue(accountSetting.checkButtonSaveChangeOfUsername());
@@ -214,7 +214,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         accountSetting.clickToButtonSaveChangeUserName();
 
         log.info("Step 6. Verify username has been change successfully");
-        verifyTrue(accountSetting.getUserIdentityNameDisplay().endsWith(userName));
+        verifyTrue(accountSetting.getUsernameDisplay().endsWith(userName));
     }
     @Test
     public void TC05_Update_Username_With_Username_Is_AlphaNumber(){
@@ -222,13 +222,13 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         userName = removeAllWhitespace(data.getFirstName()) + randomNumber(20000);
 
         log.info("Step 1. Open function Edit username");
-        accountSetting.clickToButtonEditUsername();
+        accountSetting.clickToEditUsername();
 
         log.info("Step 2. Enter username");
         accountSetting.enterDataToUsernameField(userName);
 
         log.info("Step 3. Verify message of Fucntion Change username");
-        verifyEquals(accountSetting.getErrMessOnUsername(), "Tên người dùng khả dụng");
+        verifyEquals(accountSetting.getMessageValidateUsername(), "Tên người dùng khả dụng");
 
         log.info("Step 4. Verify status of button save change username");
         verifyTrue(accountSetting.checkButtonSaveChangeOfUsername());
@@ -237,7 +237,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         accountSetting.clickToButtonSaveChangeUserName();
 
         log.info("Step 6. Verify username has been change successfully");
-        verifyTrue(accountSetting.getUserIdentityNameDisplay().endsWith(userName));
+        verifyTrue(accountSetting.getUsernameDisplay().endsWith(userName));
     }
 
     @Test
@@ -246,13 +246,13 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         userName = removeAllWhitespace(data.getFirstName()).toUpperCase();
 
         log.info("Step 1. Open function Edit username");
-        accountSetting.clickToButtonEditUsername();
+        accountSetting.clickToEditUsername();
 
         log.info("Step 2. Enter username");
         accountSetting.enterDataToUsernameField(userName);
 
         log.info("Step 3. Verify message of Fucntion Change username");
-        verifyEquals(accountSetting.getErrMessOnUsername(), "Tên người dùng khả dụng");
+        verifyEquals(accountSetting.getMessageValidateUsername(), "Tên người dùng khả dụng");
 
         log.info("Step 4. Verify status of button save change username");
         verifyTrue(accountSetting.checkButtonSaveChangeOfUsername());
@@ -261,7 +261,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         accountSetting.clickToButtonSaveChangeUserName();
 
         log.info("Step 6. Verify username has been change successfully");
-        verifyTrue(accountSetting.getUserIdentityNameDisplay().endsWith(userName));
+        verifyTrue(accountSetting.getUsernameDisplay().endsWith(userName));
 
     }
 
@@ -271,13 +271,13 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         userName = "huy.hodoan."+randomNumber(300000);
 
         log.info("Step 1. Open function Edit username");
-        accountSetting.clickToButtonEditUsername();
+        accountSetting.clickToEditUsername();
 
         log.info("Step 2. Enter username");
         accountSetting.enterDataToUsernameField(userName);
 
         log.info("Step 3. Verify message of Fucntion Change username");
-        verifyEquals(accountSetting.getErrMessOnUsername(), "Tên người dùng khả dụng");
+        verifyEquals(accountSetting.getMessageValidateUsername(), "Tên người dùng khả dụng");
 
         log.info("Step 4. Verify status of button save change username");
         verifyTrue(accountSetting.checkButtonSaveChangeOfUsername());
@@ -286,7 +286,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         accountSetting.clickToButtonSaveChangeUserName();
 
         log.info("Step 6. Verify username has been change successfully");
-        verifyTrue(accountSetting.getUserIdentityNameDisplay().endsWith(userName));
+        verifyTrue(accountSetting.getUsernameDisplay().endsWith(userName));
 
         log.info("End step. Logot account");
         accountSetting.clickToItemOnSettingMenu(driver,"ic-logout-c");
@@ -319,16 +319,16 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         verifyTrue(accountSetting.checkAccountGeneralSettingIsDisplay());
 
         log.info("Step 6. Check content of Function Change username");
-        verifyEquals(accountSetting.getMessageNoUsername(),"Bạn chưa thiết lập tên người dùng");
+        verifyEquals(accountSetting.getContentOfMessageNoUser(),"Bạn chưa thiết lập tên người dùng");
 
         log.info("Step 7. Open function Edit username");
-        accountSetting.clickToButtonEditUsername();
+        accountSetting.clickToEditUsername();
 
         log.info("Step 2. Enter username");
         accountSetting.enterDataToUsernameField(userName);
 
         log.info("Step 3. Verify message of Fucntion Change username");
-        verifyEquals(accountSetting.getErrMessOnUsername(), "Tên người dùng khả dụng");
+        verifyEquals(accountSetting.getMessageValidateUsername(), "Tên người dùng khả dụng");
 
         log.info("Step 4. Verify status of button save change username");
         verifyTrue(accountSetting.checkButtonSaveChangeOfUsername());
@@ -337,9 +337,9 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         accountSetting.clickToButtonSaveChangeUserName();
 
         log.info("Step 6. Verify username has been change successfully");
-        verifyTrue(accountSetting.getUserIdentityNameDisplay().endsWith(userName));
+        verifyTrue(accountSetting.getUsernameDisplay().endsWith(userName));
 
-        String urlUserName = accountSetting.getUserIdentityNameDisplay();
+        String urlUserName = accountSetting.getUsernameDisplay();
 
         log.info("Step 6. Go to Personal About - Overview");
         accountSetting.clickToAvatarOnHeader(driver);

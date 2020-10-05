@@ -1,6 +1,6 @@
 package Interfaces.hahalolo_newsfeed.AccountSetting;
 
-public class AccountGeneralSetting_PageUI {
+public class Newsfeed_Account_GeneralSetting_PageUI {
     public static final String TITLE_PAGE = "//div[@id='%s']//div[@class = 'pageUI-about-heading']";
     public static final String ACCOUNT_SETTING_PAGE = "//div[@class = 'pageUI-header__title']";
     public static final String ACCOUNT_SETTING_MENU = "//nav[contains(@class,'pageUI-nav-column')]";
@@ -11,7 +11,6 @@ public class AccountGeneralSetting_PageUI {
     public static final String BUTTON_EDIT_FULLNAME =  "//div[contains(@data-bind,'userProfileVM.fullName')]/parent::div//following-sibling::div//i";
     public static final String ERR_MESSAGE_OF_FULNAME_FUNCTION = "//div[contains(@class,'invalid-feedback')]";
 
-    // Form Update fullname
     public static final String FIRSTNAME_FIELD = "//input[@name = 'firstName']";
     public static final String ERR_VALIDATION_OF_FIRSTNAME = "//input[@name = 'firstName']/following-sibling::div";
     public static final String MIDDLENAME_FIELD = "//input[@name = 'middleName']";

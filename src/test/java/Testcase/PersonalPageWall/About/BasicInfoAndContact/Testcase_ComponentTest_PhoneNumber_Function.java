@@ -34,7 +34,7 @@ public class Testcase_ComponentTest_PhoneNumber_Function extends AbstractTest {
         newsfeedLoginPage.clickToChangeLanguageToVI(driver);
 
         log.info("Prestep 1 - Login Hahalolo");
-        newsfeedLoginPage.Login(GlobalVariables.USER_ACCOUNT,"123456");
+        newsfeedLoginPage.LoginNewsfeedHahalolo(GlobalVariables.USER_EMAIL_ACCOUNT,"123456");
         newsfeedHomepage = PageGeneration.createNewsfeedHomepage(driver);
 
         log.info("Prestep 2 - Check Login successfully");

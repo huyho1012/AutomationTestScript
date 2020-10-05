@@ -1,6 +1,6 @@
 package Interfaces.hahalolo_newsfeed.Booking.PaymentGateWay;
 
-public class AlleypayGatewayUI {
+public class Newsfeed_Payment_Alepay_PageUI {
     public static final String ALLEYPAY_PAGE = "";
 
     public static final String PAYMENT_METHOD_DROPDOWN = "//div[@id ='typePayment']//select" ;

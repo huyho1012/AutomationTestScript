@@ -1,6 +1,6 @@
 package Interfaces.hahalolo_newsfeed.PersonaWall.About;
 
-public class PerAbout_PlacesYouLived_PageUI {
+public class PersonalAbout_PlacesYouLived_PageUI {
 
     public static final String CURRENT_CITY_DATA =  "//ul[contains(@data-bind, 'currentCityVM')]//a[contains(@data-bind,'nv211')]";
     public static final String ADD_NEW_CURRENT_CITY ="//div[contains(@data-bind,'doOpen.formAddCurrentCity')]";

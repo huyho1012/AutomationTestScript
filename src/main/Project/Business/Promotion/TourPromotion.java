@@ -1,8 +1,6 @@
 package Project.Business.Promotion;
 
 import Interfaces.hahalolo_business.Promotion.CreateEditPromoUI;
-import Interfaces.hahalolo_business.Promotion.DetailPromoUI;
-import Interfaces.hahalolo_business.Promotion.ListPromoUI;
 import org.openqa.selenium.WebDriver;
 
 public class TourPromotion extends Promotion {

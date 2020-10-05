@@ -1,6 +1,6 @@
 package Interfaces.hahalolo_newsfeed.PersonaWall.About;
 
-public class PerAbout_DetailsAboutYou_PageUI {
+public class PersonalAbout_DetailsAboutYou_PageUI {
     public static final String ADD_NEW_INTRODUCE ="";
     public static final String EDIT_INTRODUCE="";
     public static final String INTRODUCE_DATA ="";

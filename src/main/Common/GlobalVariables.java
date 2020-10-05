@@ -13,13 +13,12 @@ public class GlobalVariables {
     // Account information
     public static final String ADMIN_ACCOUNT = "balo_04@mailinator.com";
     public static final String ADMIN_PASSWORD = "123456";
-    public static final String USER_ACCOUNT = "balo_04@mailinator.com";
-    public static final String USER_PASSWORD = "123456";
+
+    public static final String USER_EMAIL_ACCOUNT = "balo_04@mailinator.com";
+    public static final String USER_EMAIL_PASSWORD = "123456";
+    public static final String USER_PHONE_ACCOUNT = "0936709449";
+    public static final String USER_PHONE_PASSWORD = "20b87bis";
 
     public static final String HTML_CODE = "<h>HelloWord</h>";
     public static final String SCRPIT_CODE = "<script>destroyWebsite();</script>";
-
-
-
-
 }

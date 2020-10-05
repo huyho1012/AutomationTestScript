@@ -3,12 +3,12 @@ package Project.Business.Tour.Management.Detail;
 import Interfaces.hahalolo_business.Tour.Management.Detail.TourInfoUI;
 import Interfaces.Shared.MediaManagementUI;
 import Project.Business.Tour.Management.TourCommon;
-import Project.Shared.MediaManagement;
+import Project.Shared.MediaManagement_PageObject;
 import org.openqa.selenium.WebDriver;
 
 public class TourInfoTab extends TourCommon {
     WebDriver driver;
-    MediaManagement media;
+    MediaManagement_PageObject media;
     public TourInfoTab(WebDriver webDriver){
         driver = webDriver;
     }
@@ -26,7 +26,7 @@ public class TourInfoTab extends TourCommon {
     public void updateLogo(WebDriver driver, String fileImage) {
         clickToElementByJS(driver, TourInfoUI.UPLOAD_BUTTON, "uploadLogo");
         waitElementToVisible(driver,MediaManagementUI.MEDIA_MANAGEMENT_POPUP);
-        media = new MediaManagement(driver);
+        media = new MediaManagement_PageObject(driver);
         media.uploadImageFromLocalToMedia(driver, fileImage);
         waitElementToVisible(driver, MediaManagementUI.PROCESSING_BAR);
         waitForElementClickable(driver,MediaManagementUI.SELECT_BUTTON);
@@ -36,7 +36,7 @@ public class TourInfoTab extends TourCommon {
     public void updateCover(WebDriver driver, String fileName) {
         clickToElementByJS(driver, TourInfoUI.UPLOAD_BUTTON, "uploadCover");
         waitElementToVisible(driver,MediaManagementUI.MEDIA_MANAGEMENT_POPUP);
-        media = new MediaManagement(driver);
+        media = new MediaManagement_PageObject(driver);
         media.uploadImageFromLocalToMedia(driver,fileName);
         waitElementToVisible(driver, MediaManagementUI.PROCESSING_BAR);
         waitForElementClickable(driver,MediaManagementUI.SELECT_BUTTON);
@@ -46,7 +46,7 @@ public class TourInfoTab extends TourCommon {
     public void updateTourGallery(WebDriver driver, String... fileImage) {
         clickToElementByJS(driver, TourInfoUI.UPLOAD_BUTTON, "uploadGalleries");
         waitElementToVisible(driver,MediaManagementUI.MEDIA_MANAGEMENT_POPUP);
-        media = new MediaManagement(driver);
+        media = new MediaManagement_PageObject(driver);
         media.uploadImageFromLocalToMedia(driver,fileImage);
         waitElementToVisible(driver, MediaManagementUI.PROCESSING_BAR);
         waitForElementClickable(driver,MediaManagementUI.SELECT_BUTTON);

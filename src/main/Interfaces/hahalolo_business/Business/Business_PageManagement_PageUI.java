@@ -1,6 +1,6 @@
 package Interfaces.hahalolo_business.Business;
 
-public class BusinessPageManagementUI {
+public class Business_PageManagement_PageUI {
     // Header page
     public static final String HEADER_TITLE_PAGE = "//span[contains(@data-bind, 'pageCollection')]/preceding-sibling::span";
     public static final String HEADER_PAGE_COUNT = "//span[contains(@data-bind, 'pageCollection')]";

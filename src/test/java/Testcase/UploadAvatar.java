@@ -17,109 +17,108 @@ public class UploadAvatar extends AbstractTest {
 
     WebDriver driver;
     DriverManager driverManager;
-    Login_PageObject newsfeedLoginPageObject;
+    Login_PageObject newsfeedLoginPage;
     NewsfeedHomepage newsfeedHomepage;
     NewsfeedPersonalTimeline personalTimeline;
+
+    String accountEmail = GlobalVariables.USER_EMAIL_ACCOUNT;
+    String accountPass = GlobalVariables.USER_EMAIL_PASSWORD;
 
     @Parameters("browser")
     @BeforeClass
     public void openNewBrowser(String browserName){
+        log.info("Create Driver");
         driverManager = BrowserInitialization.getBrowser(browserName);
+        log.info("Open Browser and Go to Newsfeed Hahalolo");
         driver = driverManager.getDriver(GlobalVariables.NEWSFEED_URL);
-        newsfeedLoginPageObject = PageGeneration.createNewsfeedLoginPage(driver);
-//        newsfeedLoginPage.Login(driver, "balo_04@mailinator.com", "123456");
+        newsfeedLoginPage = PageGeneration.createNewsfeedLoginPage(driver);
+        log.info("Change Newsfeed Hahalolo system to VI");
+        newsfeedLoginPage.clickToChangeLanguageToVI(driver);
+        log.info("Login Newsfeed Hahalolo");
+        newsfeedLoginPage.LoginNewsfeedHahalolo(accountEmail, accountPass);
         newsfeedHomepage = PageGeneration.createNewsfeedHomepage(driver);
+        log.info("Verify Newsfeed Homepage display successfully");
         verifyTrue(newsfeedHomepage.checkNewsfeedDisplay());
-        newsfeedHomepage.changeLanguageNewsfeedToVI();
-    }
-
-//    @BeforeTest
-//    public void goToPersonalPage(){
-//
-////      verifyTrue(personalTimeline.checkPersonalTimePageIsDislay());
-////      verifyEquals(personalTimeline.getFullNameOfUserDisplayOnHeader(),"");
-//    }
-
-    @Test
-    public void Tescase01_Check_Validate_Of_File_Can_Use_To_Upload_Avatar_By_Local_Image(){
+        log.info("Go to personal wall");
         newsfeedHomepage.clickToAvatarOnHeader(driver);
         personalTimeline = PageGeneration.createPersonalTimeLinePage(driver);
-        log.info("Upload image has format jpg");
-        personalTimeline.clickToUploadAvatarByLocalImage(driver,"FormatFile\\a1.jpg");
-        personalTimeline.crossImage(driver);
-
-        log.info("Upload image has format png");
-        personalTimeline.clickToUploadAvatarByLocalImage(driver,"FormatFile\\a2.png");
-        personalTimeline.crossImage(driver);
-
-        log.info("Upload image has format gif");
-        personalTimeline.clickToUploadAvatarByLocalImage(driver,"FormatFile\\gif.gif");
-        verifyEquals(personalTimeline.getErrMessageOfValidationFileUpload(driver),"Tập tin không đúng định dạng");
-
-        log.info("Upload image has format ico");
-        personalTimeline.clickToUploadAvatarByLocalImage(driver,"FormatFile\\ico.ico");
-        personalTimeline.crossImage(driver);
-
-        log.info("Upload image has format bmp");
-        personalTimeline.clickToUploadAvatarByLocalImage(driver,"FormatFile\\image.bmp");
-        personalTimeline.crossImage(driver);
-
-        log.info("Upload image has format jpeg");
-        personalTimeline.clickToUploadAvatarByLocalImage(driver,"FormatFile\\image1.jpeg");
-        personalTimeline.crossImage(driver);
-
-        log.info("Upload image has format tiff");
-        personalTimeline.clickToUploadAvatarByLocalImage(driver,"FormatFile\\tiff.tiff");
-        verifyEquals(personalTimeline.getErrMessageOfValidationFileUpload(driver),"Tập tin không đúng định dạng");
-
-        log.info("Upload image has format webp");
-        personalTimeline.clickToUploadAvatarByLocalImage(driver,"FormatFile\\webp.webp");
-        personalTimeline.crossImage(driver);
-        log.info("Upload image has format tif");
-
-        personalTimeline.clickToUploadAvatarByLocalImage(driver,"FormatFile\\tif.tif");
-        verifyEquals(personalTimeline.getErrMessageOfValidationFileUpload(driver),"Tập tin không đúng định dạng");
-
     }
 
     @Test
-    public void Tescase02_Check_Validate_Of_File_Can_Use_To_Upload_Cover_By_Local_Image(){
+    public void TC01_Check_Update_Avatar_By_Image_Format(){
+        log.info("Image format is jpg");
+        personalTimeline.clickToUploadAvatarByLocalImage("FormatFile\\a1.jpg");
+        personalTimeline.crossAvatarImage();
 
-        log.info("Upload image has format jpg");
+        log.info("Image format is png");
+        personalTimeline.clickToUploadAvatarByLocalImage("FormatFile\\a2.png");
+        personalTimeline.crossAvatarImage();
+
+        log.info("Image format is gif");
+        personalTimeline.clickToUploadAvatarByLocalImage("FormatFile\\gif.gif");
+        verifyEquals(personalTimeline.getErrMessageOfValidationFileUpload(driver),"Tập tin không đúng định dạng");
+
+        log.info("Image format is ico");
+        personalTimeline.clickToUploadAvatarByLocalImage("FormatFile\\ico.ico");
+        personalTimeline.crossAvatarImage();
+
+        log.info("Image format is bmp");
+        personalTimeline.clickToUploadAvatarByLocalImage("FormatFile\\image.bmp");
+        personalTimeline.crossAvatarImage();
+
+        log.info("Image format is jpeg");
+        personalTimeline.clickToUploadAvatarByLocalImage("FormatFile\\image1.jpeg");
+        personalTimeline.crossAvatarImage();
+
+        log.info("Image format is tiff");
+        personalTimeline.clickToUploadAvatarByLocalImage("FormatFile\\tiff.tiff");
+        verifyEquals(personalTimeline.getErrMessageOfValidationFileUpload(driver),"Tập tin không đúng định dạng");
+
+        log.info("Image format is webp");
+        personalTimeline.clickToUploadAvatarByLocalImage("FormatFile\\webp.webp");
+        personalTimeline.crossAvatarImage();
+
+        log.info("Image format is tif");
+        personalTimeline.clickToUploadAvatarByLocalImage("FormatFile\\tif.tif");
+        verifyEquals(personalTimeline.getErrMessageOfValidationFileUpload(driver),"Tập tin không đúng định dạng");
+    }
+
+    @Test
+    public void TC02_Check_Update_Cover_By_Image_Format(){
+        log.info("Image format is jpg");
         personalTimeline.clickToUploadCoverByLocalImage(driver,"FormatFile\\a1.jpg");
         personalTimeline.saveChangeImage(driver);
 
-        log.info("Upload image has format png");
+        log.info("Image format is png");
         personalTimeline.clickToUploadCoverByLocalImage(driver,"FormatFile\\a2.png");
         personalTimeline.saveChangeImage(driver);
 
-        log.info("Upload image has format gif");
+        log.info("Image format is gif");
         personalTimeline.clickToUploadCoverByLocalImage(driver,"FormatFile\\gif.gif");
         verifyEquals(personalTimeline.getErrMessageOfValidationFileUpload(driver),"Tập tin không đúng định dạng");
 
-        log.info("Upload image has format ico");
+        log.info("Image format is ico");
         personalTimeline.clickToUploadCoverByLocalImage(driver,"FormatFile\\ico.ico");
         personalTimeline.saveChangeImage(driver);
 
-        log.info("Upload image has format bmp");
+        log.info("Image format is bmp");
         personalTimeline.clickToUploadCoverByLocalImage(driver,"FormatFile\\image.bmp");
         personalTimeline.saveChangeImage(driver);
 
-        log.info("Upload image has format jpeg");
+        log.info("Image format is jpeg");
         personalTimeline.clickToUploadCoverByLocalImage(driver,"FormatFile\\image1.jpeg");
         personalTimeline.saveChangeImage(driver);
 
-        log.info("Upload image has format tiff");
+        log.info("Image format is tiff");
         personalTimeline.clickToUploadCoverByLocalImage(driver,"FormatFile\\tiff.tiff");
         verifyEquals(personalTimeline.getErrMessageOfValidationFileUpload(driver),"Tập tin không đúng định dạng");
 
-        log.info("Upload image has format webp");
+        log.info("Image format is webp");
         personalTimeline.clickToUploadCoverByLocalImage(driver,"FormatFile\\webp.webp");
         personalTimeline.saveChangeImage(driver);
-        log.info("Upload image has format tif");
 
+        log.info("Image format is tif");
         personalTimeline.clickToUploadCoverByLocalImage (driver,"FormatFile\\tif.tif");
         verifyEquals(personalTimeline.getErrMessageOfValidationFileUpload(driver),"Tập tin không đúng định dạng ne");
-
     }
 }

@@ -65,7 +65,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         driver = driverManager.getDriver(GlobalVariables.NEWSFEED_URL);
         loginNewsfeedPage = PageGeneration.createNewsfeedLoginPage(driver);
         log.info("Check Hahalolo login page display");
-        verifyTrue(loginNewsfeedPage.checkNewsfeedLoginPageDisplay());
+        verifyTrue(loginNewsfeedPage.checkNewsfeedLoginPageIsDisplayed());
         log.info("Change system language To Vi");
         loginNewsfeedPage.clickToChangeLanguageToVI(driver);
         signUpPage = PageGeneration.createFormRegister(driver);
@@ -128,7 +128,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         log.info("Update account information on first time login");
         log.info("Step 1. Check form Upđate Information display");
         verifyEquals(newsfeedHomePage.getTitleOfFormFirstUpdateInfo(), "Xác minh tài khoản thành công!");
-        log.info("Step 2. Repare data for update information");
+        log.info("Step 2. Prepare data before updating information");
         String dayBirth = "12";
         String monthBirth = "10";
         String yearBirth = "1992";
@@ -140,7 +140,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         String genderName = newsfeedHomePage.getGenderOfUser(driver,genderType);
 
         log.info("Verify account information");
-        log.info("Step 1. Check fullname display on Widget My account");
+        log.info("Step 1. Check fullname on My account widget");
         String fullNameOnMyWidget = newsfeedHomePage.getFullNameDisplayOnMyAccount();
         verifyEquals(fullNameOnMyWidget, fullName);
         log.info("Step 2. Go to Personal About Overview");
@@ -149,7 +149,6 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         log.info("Step 3. Check Personal About Overview page display");
         verifyTrue(perAboutOverviewTab.checkPersonalPageIsDisplay(driver,fullName));
         verifyTrue(perAboutOverviewTab.checkPerAboutOverviewTabIsDisplay());
-        verifyTrue(perAboutOverviewTab.checkOverViewTabCaseNewAccount());
         log.info("Step 4. Check email display on introduce widget");
         verifyEquals(perAboutOverviewTab.getEmailIsDisplayOnIntroduceWidget(), emailUser);
         log.info("Step 5. Check birthday display on widget introduce");
@@ -158,12 +157,12 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         verifyEquals(perAboutOverviewTab.getGenderDisplayOnIntroduceWidget(), genderName);
 
         log.info("Update avatar User");
-        log.info("Step 1. Check Avatar display default");
+        log.info("Step 1. Check Default Avatar");
         verifyTrue(perAboutOverviewTab.checkAvatarUserDisplayWithGenderType(driver,genderName));
         String avatarBeforeChange = perAboutOverviewTab.getImageURLOfAvatar(driver);
         log.info("Step 2. Update avatar user");
-        perAboutOverviewTab.clickToUploadAvatarByLocalImage(driver,avatarUserImage);
-        perAboutOverviewTab.crossImage(driver);
+        perAboutOverviewTab.clickToUploadAvatarByLocalImage(avatarUserImage);
+        perAboutOverviewTab.crossAvatarImage();
         log.info("Step 3. Check user update avatar succesfully");
         verifyFalse(perAboutOverviewTab.checkUploadAvatarUserSuccess(driver,avatarBeforeChange));
 
@@ -210,7 +209,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
 
         log.info("Check information of workplace");
         log.info("Step 1. Check company name of workplace");
-        verifyEquals(perAboutWorkEducationTab.getCompanyOfWorkplace(),companyName;
+        verifyEquals(perAboutWorkEducationTab.getCompanyOfWorkplace(),companyName);
         log.info("Step 2. Check position of workplace");
         verifyEquals(perAboutWorkEducationTab.getPositionOfWorkplace(),"");
         log.info("Step 3. Check timerange of workplace");
@@ -420,7 +419,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         verifyEquals(generalAccSetting.getPageTitle(driver), "Cài đặt tài khoản | Hahalolo");
 
         log.info("Step 10.Check FullName display");
-        verifyEquals(generalAccSetting.getFullNameIsDisplay(), newsfeedHomePage.getFullNameDisplayOnMyAccount());
+        verifyEquals(generalAccSetting.getFullNameDisplay(), newsfeedHomePage.getFullNameDisplayOnMyAccount());
 
         log.info("Step . Update full name");
 

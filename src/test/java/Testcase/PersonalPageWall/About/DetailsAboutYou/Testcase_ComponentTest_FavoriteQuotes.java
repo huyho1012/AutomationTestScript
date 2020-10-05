@@ -53,7 +53,7 @@ public class Testcase_ComponentTest_FavoriteQuotes extends AbstractTest {
         languageSystem = newsfeedLoginPage.getLanguageOfSystemHahalolo(driver);
 
         log.info("Login newsfeed");
-        newsfeedLoginPage.Login(GlobalVariables.USER_ACCOUNT, "123456");
+        newsfeedLoginPage.LoginNewsfeedHahalolo(GlobalVariables.USER_EMAIL_ACCOUNT, "123456");
         newsfeedHomepage = PageGeneration.createNewsfeedHomepage(driver);
         verifyTrue(newsfeedHomepage.checkNewsfeedDisplay());
 

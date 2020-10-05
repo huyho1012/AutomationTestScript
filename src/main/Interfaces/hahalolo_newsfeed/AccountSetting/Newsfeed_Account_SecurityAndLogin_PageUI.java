@@ -1,6 +1,6 @@
 package Interfaces.hahalolo_newsfeed.AccountSetting;
 
-public class AccountSecurityAndLogin_PageUI {
+public class Newsfeed_Account_SecurityAndLogin_PageUI {
     public static final String BUTTON_LOGOUT_ALL = "//a[contains(@data-bind,'logOutAllDevice')]";
     public static final String POPUP_CONFIRM_LOGOUT_ALL_SESSION = "//div[contains(@class,'modal__delete-common')]";
     public static final String BUTTON_CONFIRM_LOGOUT_ALL = "//div[contains(@class,'modal__delete-common')]//button[contains(@data-bind,'onConfirm')]";

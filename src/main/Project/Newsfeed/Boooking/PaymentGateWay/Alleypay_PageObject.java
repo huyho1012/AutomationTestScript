@@ -1,7 +1,7 @@
 package Project.Newsfeed.Boooking.PaymentGateWay;
 
 import Common.HelperFunction.AbstractPage;
-import Interfaces.hahalolo_newsfeed.Booking.PaymentGateWay.AlleypayGatewayUI;
+import Interfaces.hahalolo_newsfeed.Booking.PaymentGateWay.Newsfeed_Payment_Alepay_PageUI;
 import org.openqa.selenium.WebDriver;
 
 public class Alleypay_PageObject extends AbstractPage
@@ -16,43 +16,43 @@ public class Alleypay_PageObject extends AbstractPage
     }
 
     public void choosePaymentMethod(WebDriver driver, String paymentMethod){
-        waitForElementClickable(driver, AlleypayGatewayUI.PAYMENT_METHOD_DROPDOWN);
-        selectItemInDropdownByText(driver, AlleypayGatewayUI.PAYMENT_METHOD_DROPDOWN,paymentMethod);
+        waitForElementClickable(driver, Newsfeed_Payment_Alepay_PageUI.PAYMENT_METHOD_DROPDOWN);
+        selectItemInDropdownByText(driver, Newsfeed_Payment_Alepay_PageUI.PAYMENT_METHOD_DROPDOWN,paymentMethod);
     }
 
     public void enterDataToCardHolderNameField(WebDriver driver, String cardHoldername){
-        waitElementToVisible(driver, AlleypayGatewayUI.CARDHOLDER_NAME_FIELD);
-        sendKeyToElement(driver, AlleypayGatewayUI.CARDHOLDER_NAME_FIELD,cardHoldername);
+        waitElementToVisible(driver, Newsfeed_Payment_Alepay_PageUI.CARDHOLDER_NAME_FIELD);
+        sendKeyToElement(driver, Newsfeed_Payment_Alepay_PageUI.CARDHOLDER_NAME_FIELD,cardHoldername);
     }
 
     public void enterDataToCardNumberField(WebDriver driver, String cardHoldername){
-        waitElementToVisible(driver, AlleypayGatewayUI.CARD_NUMBER_FIELD);
-        sendKeyToElement(driver, AlleypayGatewayUI.CARD_NUMBER_FIELD,cardHoldername);
+        waitElementToVisible(driver, Newsfeed_Payment_Alepay_PageUI.CARD_NUMBER_FIELD);
+        sendKeyToElement(driver, Newsfeed_Payment_Alepay_PageUI.CARD_NUMBER_FIELD,cardHoldername);
     }
 
     public void enterDataToExpiredDateField(WebDriver driver, String expireDate){
-        waitElementToVisible(driver, AlleypayGatewayUI.EXPIRED_DATE_FIELD);
-        sendKeyToElement(driver, AlleypayGatewayUI.EXPIRED_DATE_FIELD,expireDate);
+        waitElementToVisible(driver, Newsfeed_Payment_Alepay_PageUI.EXPIRED_DATE_FIELD);
+        sendKeyToElement(driver, Newsfeed_Payment_Alepay_PageUI.EXPIRED_DATE_FIELD,expireDate);
     }
 
     public void enterDataToCVVField(WebDriver driver, String ccvCode){
-        waitElementToVisible(driver, AlleypayGatewayUI.CCV_CODE_FIELD);
-        sendKeyToElement(driver, AlleypayGatewayUI.CCV_CODE_FIELD,ccvCode);
+        waitElementToVisible(driver, Newsfeed_Payment_Alepay_PageUI.CCV_CODE_FIELD);
+        sendKeyToElement(driver, Newsfeed_Payment_Alepay_PageUI.CCV_CODE_FIELD,ccvCode);
     }
 
     public void enterDataToEmailField(WebDriver driver, String email){
-        waitElementToVisible(driver, AlleypayGatewayUI.EMAIL_FIELD);
-        sendKeyToElement(driver, AlleypayGatewayUI.EMAIL_FIELD,email);
+        waitElementToVisible(driver, Newsfeed_Payment_Alepay_PageUI.EMAIL_FIELD);
+        sendKeyToElement(driver, Newsfeed_Payment_Alepay_PageUI.EMAIL_FIELD,email);
     }
     public void enterDataToPhoneField(WebDriver driver, String phone){
-        waitElementToVisible(driver, AlleypayGatewayUI.PHONE_FIELD);
-        sendKeyToElement(driver, AlleypayGatewayUI.PHONE_FIELD,phone);
+        waitElementToVisible(driver, Newsfeed_Payment_Alepay_PageUI.PHONE_FIELD);
+        sendKeyToElement(driver, Newsfeed_Payment_Alepay_PageUI.PHONE_FIELD,phone);
     }
 
 
     public void clickToConfirmPayment(WebDriver driver){
-        waitForElementClickable(driver, AlleypayGatewayUI.PAYMENT_BUTTON);
-        clickToElement(driver, AlleypayGatewayUI.PAYMENT_BUTTON);
+        waitForElementClickable(driver, Newsfeed_Payment_Alepay_PageUI.PAYMENT_BUTTON);
+        clickToElement(driver, Newsfeed_Payment_Alepay_PageUI.PAYMENT_BUTTON);
     }
 
 }

@@ -1,6 +1,6 @@
 package Interfaces.hahalolo_business.Business;
 
-public class BusinessOverviewUI {
+public class Business_Overview_PageUI {
     public static final String CREATE_NEW_BUSINESS_ACCOUNT_BUTTON = "//a[@data-target ='#modal__create-business']" ;
     public static final String TYPE_BUSINESS_CHECKBOX = "//input[@type='radio'][@id='%s']/following-sibling::label" ;
     public static final String BUSINESS_NAME_FIELD = "//input[@name='bv104']";

@@ -1,6 +1,6 @@
 package Interfaces.hahalolo_business.Promotion;
 
-public class DetailPromoUI {
+public class Promotion_Detail_PageUI {
     public static final String PROMO_STATUS = "//td[contains(@data-bind, 'statusPromo')]";
     public static final String PROMO_NAME = "//h5[contains(@data-bind, 'namePromo')]";
     public static final String PROMO_DESC = "//div[contains(@data-bind, 'detailPromo')]";

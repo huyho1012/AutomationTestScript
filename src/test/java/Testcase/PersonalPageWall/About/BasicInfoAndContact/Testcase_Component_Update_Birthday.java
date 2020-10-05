@@ -41,7 +41,7 @@ public class Testcase_Component_Update_Birthday extends AbstractTest {
         newsfeedLoginPage.clickToChangeLanguageToVI(driver);
 
         log.info("Login to newsfeed");
-        newsfeedLoginPage.Login(GlobalVariables.USER_ACCOUNT,"123456");
+        newsfeedLoginPage.LoginNewsfeedHahalolo(GlobalVariables.USER_EMAIL_ACCOUNT,"123456");
         newsfeedHomepage = PageGeneration.createNewsfeedHomepage(driver);
 
         log.info("Check Newsfeed page display successfully");

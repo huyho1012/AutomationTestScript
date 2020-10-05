@@ -3,11 +3,11 @@ package Project.Business.Tour.Management.Detail;
 import Interfaces.hahalolo_business.Tour.Management.Detail.TourPartUI;
 import Interfaces.Shared.MediaManagementUI;
 import Project.Business.Tour.Management.TourCommon;
-import Project.Shared.MediaManagement;
+import Project.Shared.MediaManagement_PageObject;
 import org.openqa.selenium.WebDriver;
 
 public class TourPartTab extends TourCommon {
-    MediaManagement media;
+    MediaManagement_PageObject media;
     WebDriver driver;
     public TourPartTab(WebDriver webDriver){
         driver = webDriver;
@@ -49,7 +49,7 @@ public class TourPartTab extends TourCommon {
     public void choosePartLogo(WebDriver driver, String fileImage) {
         clickToElementByJS(driver, TourPartUI.UPLOAD_BUTTON, "click:uploadCover");
         waitElementToVisible(driver, MediaManagementUI.MEDIA_MANAGEMENT_POPUP);
-        media = new MediaManagement(driver);
+        media = new MediaManagement_PageObject(driver);
         media.uploadImageFromLocalToMedia(driver,fileImage);
         waitElementToVisible(driver, MediaManagementUI.PROCESSING_BAR);
         waitForElementClickable(driver,MediaManagementUI.SELECT_BUTTON);

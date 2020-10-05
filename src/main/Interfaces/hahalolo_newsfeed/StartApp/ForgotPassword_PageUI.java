@@ -1,6 +1,6 @@
 package Interfaces.hahalolo_newsfeed.StartApp;
 
-public class ForgotPasswor_PageUI {
+public class ForgotPassword_PageUI {
     public static final String SEARCH_USERNAME_FIELD = "//input[@name = 'nv108']";
     public static final String SEARCH_USER_BUTTON = "//button[contains(@data-bind,'searchUser')]";
     public static final String CANCEL_FORGOT_BUTTON = "//button[contains(@data-bind,'cancelForgotPw')]";
