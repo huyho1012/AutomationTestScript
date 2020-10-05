@@ -14,7 +14,7 @@ public class  NewsfeedHomepage extends HeaderPage {
     // Hàm kiểm tra form cập nhật thông tin đối với trường hợp đắng ký mới
     public boolean formFirstUpdateInfoIsDisplay() {
         waitElementToVisible(driver,HomePageUI.UPDATE_INFO_BUTTON);
-        return checkElementDisplay(driver, HomePageUI.FORM_UPDATE_NEW_INFO);
+        return checkElementIsDisplayed(driver, HomePageUI.FORM_UPDATE_NEW_INFO);
     }
 
     //
@@ -70,7 +70,7 @@ public class  NewsfeedHomepage extends HeaderPage {
     }
 
     public boolean checkNewsfeedDisplayOnFirstTime() {
-        return checkNewsfeedDisplay() && checkElementDisplay(driver, HomePageUI.FORM_UPDATE_NEW_INFO);
+        return checkNewsfeedDisplay() && checkElementIsDisplayed(driver, HomePageUI.FORM_UPDATE_NEW_INFO);
     }
 
     public void clickCancelUpdateNewInfo() {

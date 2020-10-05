@@ -12,7 +12,7 @@ public class PaymentInfo extends HeaderPage {
     }
 
     public boolean checkPaymentBillinginfoIsDisplay() {
-        return checkElementDisplay(driver, PaymentInfoUI.PAYMENT_TAB);
+        return checkElementIsDisplayed(driver, PaymentInfoUI.PAYMENT_TAB);
     }
 
     public void enterDataToDynamicFieldOnBillingInfoTab(WebDriver driver, String nameField, String valueData ){

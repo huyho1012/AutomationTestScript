@@ -25,7 +25,7 @@ import org.testng.annotations.Test;
             driverManager = BrowserInitialization.getBrowser(browserName);
 
             log.info("Precondition - Step 2. Open browser and go to Newsfeed login");
-            driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
+            driver = driverManager.getDriver(GlobalVariables.NEWSFEED_URL);
             newsfeedLogin = PageGeneration.createNewsfeedLoginPage(driver);
 
             log.info("Precondition - Step 3. Change system language to Vietnamese");

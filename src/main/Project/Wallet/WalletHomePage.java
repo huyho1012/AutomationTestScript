@@ -12,9 +12,9 @@ public class WalletHomePage extends AbstractPage {
 
     public boolean checkBusinessPaymentAccountPageDisplay() {
         waitForPageLoading(driver);
-        return checkElementDisplay(driver, WalletHomepageUI.MENU_WALLET) && checkElementDisplay(driver, WalletHomepageUI.AVAILABLE_COLLUM)
-                && checkElementDisplay(driver, WalletHomepageUI.WAITING_COLLUM) && checkElementDisplay(driver, WalletHomepageUI.FROZEN_COLLUM)
-                && checkElementDisplay(driver, WalletHomepageUI.PENDING_COLLUM)
+        return checkElementIsDisplayed(driver, WalletHomepageUI.MENU_WALLET) && checkElementIsDisplayed(driver, WalletHomepageUI.AVAILABLE_COLLUM)
+                && checkElementIsDisplayed(driver, WalletHomepageUI.WAITING_COLLUM) && checkElementIsDisplayed(driver, WalletHomepageUI.FROZEN_COLLUM)
+                && checkElementIsDisplayed(driver, WalletHomepageUI.PENDING_COLLUM)
                 && getTextElement(driver, WalletHomepageUI.TYPE_DISPLAYED_ON_DROPDOWN).equalsIgnoreCase("Tài khoản thanh toán doanh nghiệp");
     }
 

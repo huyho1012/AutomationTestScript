@@ -52,15 +52,15 @@ public class TourTopicPage extends HeaderPage {
     }
 
     public boolean checkPageWithCaseNoTopicDisplay() {
-        return checkElementDisplay(driver, TourTopicPageUI.BUTTON_CREATE_NEW_TOPIC);
+        return checkElementIsDisplayed(driver, TourTopicPageUI.BUTTON_CREATE_NEW_TOPIC);
     }
 
     public boolean checkCreatedTopicDisplay(WebDriver driver) {
-        return checkElementDisplay(driver, TourTopicPageUI.DISPLAYED_TOPIC_NAME);
+        return checkElementIsDisplayed(driver, TourTopicPageUI.DISPLAYED_TOPIC_NAME);
     }
 
     public boolean checkPopupCreateTopicDisplay() {
-        return checkElementDisplay(driver,TourTopicPageUI.POPUP_EDIT_ADD_TOPIC);
+        return checkElementIsDisplayed(driver,TourTopicPageUI.POPUP_EDIT_ADD_TOPIC);
     }
 
 

@@ -28,7 +28,7 @@ public class WalletOverviewPage extends AbstractPage {
     }
 
     public boolean checkPageIsDisplayedSuccessfully() {
-        return(checkElementDisplay(driver, WalletOverviewUI.TITLE_OVERVIEW_WALLET));
+        return(checkElementIsDisplayed(driver, WalletOverviewUI.TITLE_OVERVIEW_WALLET));
     }
 
     public boolean checkCreatePaymentAccountPopupIsDisplay() {

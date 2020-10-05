@@ -15,11 +15,11 @@ public class TourPartTab extends TourCommon {
 
     public boolean checkPartTabDisplaySuccess() {
         waitElementToVisible(driver,TourPartUI.TOUR_PART);
-        return checkElementDisplay(driver, TourPartUI.TOUR_PART);
+        return checkElementIsDisplayed(driver, TourPartUI.TOUR_PART);
     }
     public boolean checkPartDetailDisplay(){
         waitElementToVisible(driver,TourPartUI.TOUR_PART_DETAIL);
-        return checkElementDisplay(driver, TourPartUI.BUTTON_SAVE_PART);
+        return checkElementIsDisplayed(driver, TourPartUI.BUTTON_SAVE_PART);
     }
     public void clickToCreateNewPartButton() {
         waitForElementClickable(driver,TourPartUI.BUTTON_CREATE_NEW_PART);

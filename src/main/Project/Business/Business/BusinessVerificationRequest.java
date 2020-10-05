@@ -63,9 +63,9 @@ public class BusinessVerificationRequest extends AbstractPage {
 
     public boolean checkFormChooseLocationIsDisplay() {
         waitElementToVisible(driver, LOCATION_PLACE_MODEL.TITLE_FORM);
-        return checkElementDisplay(driver, LOCATION_PLACE_MODEL.ADD_LOCATION_BUTTON) &&
-                checkElementDisplay(driver, LOCATION_PLACE_MODEL.MAP_CONTENT) &&
-                checkElementDisplay(driver, LOCATION_PLACE_MODEL.TITLE_FORM);
+        return checkElementIsDisplayed(driver, LOCATION_PLACE_MODEL.ADD_LOCATION_BUTTON) &&
+                checkElementIsDisplayed(driver, LOCATION_PLACE_MODEL.MAP_CONTENT) &&
+                checkElementIsDisplayed(driver, LOCATION_PLACE_MODEL.TITLE_FORM);
     }
 
     public void chooseLocation(WebDriver driver, String expectedAddress) {

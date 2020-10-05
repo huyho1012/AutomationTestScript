@@ -49,7 +49,7 @@ public class PerAbout_DetailsAboutYou_PageObject extends PerAbout_Common_PageObj
 
 
     public void doActionEditOrAddFavorite(){
-        if(checkElementDisplay(driver, PerAbout_DetailsAboutYou_PageUI.FAVORITE_QUOTE_DATA))
+        if(checkElementIsDisplayed(driver, PerAbout_DetailsAboutYou_PageUI.FAVORITE_QUOTE_DATA))
             clickToButtonEditFavoriteQuote();
         else
             clickToAddFavoriteQuote();

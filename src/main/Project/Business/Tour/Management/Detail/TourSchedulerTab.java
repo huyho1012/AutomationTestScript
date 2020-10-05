@@ -12,7 +12,7 @@ public class TourSchedulerTab extends TourCommon {
 
     public boolean checkSchedulerTabDisplaySuccess() {
         scrollToTopPage(driver);
-        return checkElementDisplay(driver, TourSchedulerUI.SCHEDULER_TAB);
+        return checkElementIsDisplayed(driver, TourSchedulerUI.SCHEDULER_TAB);
     }
 
     public void chooseStartDate(WebDriver driver, String startDate) {

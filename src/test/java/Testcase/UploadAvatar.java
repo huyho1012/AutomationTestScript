@@ -25,7 +25,7 @@ public class UploadAvatar extends AbstractTest {
     @BeforeClass
     public void openNewBrowser(String browserName){
         driverManager = BrowserInitialization.getBrowser(browserName);
-        driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
+        driver = driverManager.getDriver(GlobalVariables.NEWSFEED_URL);
         newsfeedLoginPageObject = PageGeneration.createNewsfeedLoginPage(driver);
 //        newsfeedLoginPage.Login(driver, "balo_04@mailinator.com", "123456");
         newsfeedHomepage = PageGeneration.createNewsfeedHomepage(driver);

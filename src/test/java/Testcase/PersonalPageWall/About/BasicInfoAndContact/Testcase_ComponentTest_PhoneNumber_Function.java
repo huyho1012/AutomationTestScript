@@ -29,7 +29,7 @@ public class Testcase_ComponentTest_PhoneNumber_Function extends AbstractTest {
     @BeforeClass
     public void preconditionTest(String browserName){
         driverManager = BrowserInitialization.getBrowser(browserName);
-        driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
+        driver = driverManager.getDriver(GlobalVariables.NEWSFEED_URL);
         newsfeedLoginPage = PageGeneration.createNewsfeedLoginPage(driver);
         newsfeedLoginPage.clickToChangeLanguageToVI(driver);
 

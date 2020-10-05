@@ -7,27 +7,31 @@ import org.openqa.selenium.support.Color;
 
 public class TourSettingTab extends TourCommon {
     WebDriver driver;
+
     public TourSettingTab (WebDriver webDriver){
         driver = webDriver;
     }
 
     public boolean checkSettingTourPageDisplay(WebDriver driver) {
-        return checkElementDisplay(driver, TourSettingUI.TOUR_SETTING_TAB);
+        return checkElementIsDisplayed(driver, TourSettingUI.TOUR_SETTING_TAB);
     }
-    public void publishTour() {
+
+    public void clickToPublishTour() {
         if(!checkStatusPublishTour()){
             waitForElementClickable(driver, TourSettingUI.PUBLISH_TOUR);
             clickToElement(driver,TourSettingUI.PUBLISH_TOUR);
         }
     }
-    public void unPublishTour() {
+
+    public void clickToUnPublishTour() {
         if(checkStatusPublishTour()){
             waitForElementClickable(driver, TourSettingUI.PUBLISH_TOUR);
             clickToElement(driver,TourSettingUI.PUBLISH_TOUR);
         }
     }
+
     public boolean checkStatusPublishTour() {
-        String colorBackground =  getAttributeColorOfClassAfter(driver,".custom-control-label","background-color");
+        String colorBackground =  getAttributeClassWithAfter(driver,".custom-control-label","background-color");
         String hexaColorButtonPublish = Color.fromString(colorBackground).asHex();
         return hexaColorButtonPublish == "#166986";
     }
@@ -36,6 +40,4 @@ public class TourSettingTab extends TourCommon {
         waitForElementClickable(driver, TourSettingUI.BUTTON_SAVE_SETTING);
         clickToElement(driver,TourSettingUI.BUTTON_SAVE_SETTING);
     }
-
-
 }

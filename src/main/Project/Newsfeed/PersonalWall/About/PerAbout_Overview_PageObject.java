@@ -29,11 +29,11 @@ public class PerAbout_Overview_PageObject extends PerAbout_Common_PageObject {
     }
 
     public boolean checkWorkplaceSectionWithCaseNoData(){
-        return checkElementDisplay(driver, AboutCommonUI.BUTTON_ADD_WORKSPACE);
+        return checkElementIsDisplayed(driver, AboutCommonUI.BUTTON_ADD_WORKSPACE);
     }
 
     public boolean checkWorkplaceSectionWithCaseHaveoData(){
-       return checkElementDisplay(driver, AboutCommonUI.BUTTON_EDIT_WORKPLACE);
+       return checkElementIsDisplayed(driver, AboutCommonUI.BUTTON_EDIT_WORKPLACE);
     }
 
     public String getJobPositionOfWorkPlace(){
@@ -68,11 +68,11 @@ public class PerAbout_Overview_PageObject extends PerAbout_Common_PageObject {
     }
 
     public boolean checkEducationSectionWithCaseNoData(){
-        return checkElementDisplay(driver, AboutCommonUI.BUTTON_ADD_WORKSPACE);
+        return checkElementIsDisplayed(driver, AboutCommonUI.BUTTON_ADD_WORKSPACE);
     }
 
     public boolean checkEducationSectionWithCaseHaveoData(){
-        return checkElementDisplay(driver, AboutCommonUI.BUTTON_EDIT_EDUCATION);
+        return checkElementIsDisplayed(driver, AboutCommonUI.BUTTON_EDIT_EDUCATION);
     }
 
     public String getUniversityName(){
@@ -106,11 +106,11 @@ public class PerAbout_Overview_PageObject extends PerAbout_Common_PageObject {
     }
 
     public boolean checkHomeTownAndCurrentCitySectionWithCaseNoData(){
-        return checkElementDisplay(driver, AboutCommonUI.BUTTON_ADD_LIVING_PLACE);
+        return checkElementIsDisplayed(driver, AboutCommonUI.BUTTON_ADD_LIVING_PLACE);
     }
 
     public boolean checkHomeTownAndCurrentCitySectionWithCaseHaveoData(){
-        return checkElementDisplay(driver, AboutCommonUI.BUTTON_EDIT_PLACE_LIVING);
+        return checkElementIsDisplayed(driver, AboutCommonUI.BUTTON_EDIT_PLACE_LIVING);
     }
 
     public String getCurrentCity(){

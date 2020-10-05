@@ -34,7 +34,7 @@ public class Testcase_ComponentTest_SIgnUpAccount extends AbstractTest {
         driverManager = BrowserInitialization.getBrowser(urlPage);
 
         log.info("Precondition - Go to NewsFeed Login");
-        driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
+        driver = driverManager.getDriver(GlobalVariables.NEWSFEED_URL);
         newsfeedLoginPageObject = PageGeneration.createNewsfeedLoginPage(driver);
 
         log.info("Step 9. Change language to Vietnamese");

@@ -72,7 +72,7 @@ public class TourInfoTab extends TourCommon {
     }
 
     public boolean checkTourInfoTabDisplay() {
-        return checkElementDisplay(driver, TourInfoUI.TAB_INFORMATION);
+        return checkElementIsDisplayed(driver, TourInfoUI.TAB_INFORMATION);
     }
 
     public void chooseLanguage(WebDriver driver, String languageName) {

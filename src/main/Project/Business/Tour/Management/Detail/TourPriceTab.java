@@ -12,7 +12,7 @@ public class TourPriceTab extends TourCommon {
 
     public boolean checkPriceTabDisplaySuccess() {
         scrollToTopPage(driver);
-        return checkElementDisplay(driver,TourPriceUI.TOUR_PRICE);
+        return checkElementIsDisplayed(driver,TourPriceUI.TOUR_PRICE);
     }
 
     public void clickToCreateNewPrice(WebDriver driver) {
@@ -23,7 +23,7 @@ public class TourPriceTab extends TourCommon {
 
     public boolean checkPriceDetailIsDisplay() {
         scrollToTopPage(driver);
-        return checkElementDisplay(driver,TourPriceUI.TOUR_PRICE_DETAIL);
+        return checkElementIsDisplayed(driver,TourPriceUI.TOUR_PRICE_DETAIL);
     }
 
     public void chooseStartDateOfPrice(WebDriver driver, String dateTime) {
@@ -39,21 +39,21 @@ public class TourPriceTab extends TourCommon {
     }
 
     public void enterValueOfChildPrice(WebDriver driver, String priceChild) {
-        checkItemOnCheckBox(driver, TourPriceUI.CHILD_CHECKBOX);
+        clickToChooseCheckBox(driver, TourPriceUI.CHILD_CHECKBOX);
         waitElementToVisible(driver, TourPriceUI.CHILD_PRICE);
         sendKeyToElement(driver, TourPriceUI.CHILD_PRICE, priceChild);
         setTimeDelay(1);
     }
 
     public void enterValueOfYoungChildPrice(WebDriver driver, String priceYoungChild) {
-        checkItemOnCheckBox(driver, TourPriceUI.YOUNG_CHILD_CHECKBOX);
+        clickToChooseCheckBox(driver, TourPriceUI.YOUNG_CHILD_CHECKBOX);
         waitElementToVisible(driver, TourPriceUI.YOUNG_CHILD_PRICE);
         sendKeyToElement(driver, TourPriceUI.YOUNG_CHILD_PRICE, priceYoungChild);
         setTimeDelay(1);
     }
 
     public void enterValueOfInfantPrice(WebDriver driver, String priceBaby) {
-        checkItemOnCheckBox(driver, TourPriceUI.BABY_CHECKBOX);
+        clickToChooseCheckBox(driver, TourPriceUI.BABY_CHECKBOX);
         waitElementToVisible(driver, TourPriceUI.BABY_PRICE);
         sendKeyToElement(driver, TourPriceUI.BABY_PRICE, priceBaby);
         setTimeDelay(1);

@@ -13,7 +13,7 @@ public class ChangeCurrency_PageObject extends HeaderPage {
     }
 
     public boolean checkModelChangeCurrencyIsDisplay(){
-        return checkElementDisplay(driver, Model_Currency_PageUI.MODEL_CURRENCY);
+        return checkElementIsDisplayed(driver, Model_Currency_PageUI.MODEL_CURRENCY);
     }
 
     public String getTextOfModelChangeCurrency(){

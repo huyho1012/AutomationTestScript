@@ -39,7 +39,7 @@ public class TestcaseFunctionUpdateUsername extends AbstractTest {
         driverManager = BrowserInitialization.getBrowser(browserName);
 
         log.info("Open Hahalolo Newsfeed login");
-        driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
+        driver = driverManager.getDriver(GlobalVariables.NEWSFEED_URL);
         loginNewsfeedPage = PageGeneration.createNewsfeedLoginPage(driver);
 
         log.info("Change language of system to VI");

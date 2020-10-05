@@ -30,7 +30,7 @@ public class ChangeCurrencyOnNewfeed extends AbstractTest {
         driverManager = BrowserInitialization.getBrowser(browserName);
 
         log.info("Open Hahalolo newsfeed login");
-        driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
+        driver = driverManager.getDriver(GlobalVariables.NEWSFEED_URL);
         newsfeedLoginPage = PageGeneration.createNewsfeedLoginPage(driver);
 
         log.info("Change language system to Vietnamese");

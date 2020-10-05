@@ -45,7 +45,7 @@ public class Testcase_ComponentTest_FavoriteQuotes extends AbstractTest {
         driverManager = BrowserInitialization.getBrowser(browserName);
 
         log.info("Open browser and go to Newsfeed Login");
-        driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
+        driver = driverManager.getDriver(GlobalVariables.NEWSFEED_URL);
         newsfeedLoginPage = PageGeneration.createNewsfeedLoginPage(driver);
 
         log.info("Change language system to VI");

@@ -1,10 +1,6 @@
 package Project.Newsfeed.PersonalWall.About;
 
-import Common.HelperFunction.PageGeneration;
 import Interfaces.hahalolo_newsfeed.PersonaWall.About.PerAbout_ContactAndBasicInfo_PageUI;
-import Project.Newsfeed.PersonalWall.PersonalCommon;
-import com.fasterxml.jackson.databind.util.CompactStringObjectMap;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class PerAbout_BasicInfoAndContact_PageObject extends PerAbout_Common_PageObject {
@@ -15,7 +11,7 @@ public class PerAbout_BasicInfoAndContact_PageObject extends PerAbout_Common_Pag
 
     public boolean checkContactAndBasicInfoTabIsDisplay(){
         waitElementToVisible(driver, PerAbout_ContactAndBasicInfo_PageUI.CONTACT_AND_BASIC_INFO_TAB);
-        return checkElementDisplay(driver, PerAbout_ContactAndBasicInfo_PageUI.TITLE_PAGE);
+        return checkElementIsDisplayed(driver, PerAbout_ContactAndBasicInfo_PageUI.TITLE_PAGE);
     }
 
     public boolean checkContactAndBasicInfoCaseCreateAccountByEmail(){
@@ -236,11 +232,11 @@ public class PerAbout_BasicInfoAndContact_PageObject extends PerAbout_Common_Pag
 
     public boolean checkAddressSectionNotHaveData() {
         waitElementToVisible(driver, PerAbout_ContactAndBasicInfo_PageUI.TITLE_PAGE);
-        return checkElementDisplay(driver, PerAbout_ContactAndBasicInfo_PageUI.BUTTON_ADD_ADDRESSS);
+        return checkElementIsDisplayed(driver, PerAbout_ContactAndBasicInfo_PageUI.BUTTON_ADD_ADDRESSS);
     }
 
     public boolean checkFormUpdateBirthdayIsDisplay() {
-        return checkElementDisplay(driver, PerAbout_ContactAndBasicInfo_PageUI.BUTTON_SAVE_BIRTHDAY);
+        return checkElementIsDisplayed(driver, PerAbout_ContactAndBasicInfo_PageUI.BUTTON_SAVE_BIRTHDAY);
     }
 
     public void changeScopeOfBirthday(String valueScope) {
@@ -257,9 +253,9 @@ public class PerAbout_BasicInfoAndContact_PageObject extends PerAbout_Common_Pag
     }
 
     public boolean checkFormEditGenderOfUserIsDisplay() {
-        return checkElementDisplay(driver,PerAbout_ContactAndBasicInfo_PageUI.GENDER_DROPDOWN)
-                && checkElementDisplay(driver, PerAbout_ContactAndBasicInfo_PageUI.BUTTON_SAVE_GENDER)
-                    && checkElementDisplay(driver, PerAbout_ContactAndBasicInfo_PageUI.BUTTON_CANCEL_SAVE_GENDER);
+        return checkElementIsDisplayed(driver,PerAbout_ContactAndBasicInfo_PageUI.GENDER_DROPDOWN)
+                && checkElementIsDisplayed(driver, PerAbout_ContactAndBasicInfo_PageUI.BUTTON_SAVE_GENDER)
+                    && checkElementIsDisplayed(driver, PerAbout_ContactAndBasicInfo_PageUI.BUTTON_CANCEL_SAVE_GENDER);
     }
 
 

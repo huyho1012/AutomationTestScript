@@ -20,9 +20,9 @@ public class GeneralAccountSetting extends AccountCommon {
     }
 
     public boolean checkUpdateFullNameFormIsDisplay() {
-        return checkElementDisplay(driver, AccountGeneralSetting_PageUI.FIRSTNAME_FIELD)
-                && checkElementDisplay(driver, AccountGeneralSetting_PageUI.MIDDLENAME_FIELD)
-                && checkElementDisplay(driver, AccountGeneralSetting_PageUI.LASTNAME_FIELD);
+        return checkElementIsDisplayed(driver, AccountGeneralSetting_PageUI.FIRSTNAME_FIELD)
+                && checkElementIsDisplayed(driver, AccountGeneralSetting_PageUI.MIDDLENAME_FIELD)
+                && checkElementIsDisplayed(driver, AccountGeneralSetting_PageUI.LASTNAME_FIELD);
     }
 
     public void enterDataToFirstNameField(String firstName) {
@@ -61,7 +61,7 @@ public class GeneralAccountSetting extends AccountCommon {
     }
 
     public boolean checkConfirmPasswordPopupIsDisplay() {
-        return checkElementDisplay(driver, AccountGeneralSetting_PageUI.FORM_CONFIRM_PASS_FOR_CHANGING);
+        return checkElementIsDisplayed(driver, AccountGeneralSetting_PageUI.FORM_CONFIRM_PASS_FOR_CHANGING);
     }
 
     public void enterDataToPasswordConfirm(String confirmPwd) {
@@ -112,7 +112,7 @@ public class GeneralAccountSetting extends AccountCommon {
 
     public boolean checkButtonSaveChangeOfUsername() {
         waitElementToVisible(driver, AccountGeneralSetting_PageUI.BUTTON_CANCEL_CHANGE_USERNAME);
-        return checkIsElementIsEnable(driver, AccountGeneralSetting_PageUI.BUTTON_SAVE_USERNAME);
+        return checkElementIsEnabled(driver, AccountGeneralSetting_PageUI.BUTTON_SAVE_USERNAME);
     }
 
     public void clickToButtonSaveChangeUserName() {
@@ -128,11 +128,11 @@ public class GeneralAccountSetting extends AccountCommon {
 
 
     public boolean checkIconSuccessIsDisplay() {
-        return checkElementDisplay(driver, AccountGeneralSetting_PageUI.ICON_SUCCESS_CHANGE_USERNAME);
+        return checkElementIsDisplayed(driver, AccountGeneralSetting_PageUI.ICON_SUCCESS_CHANGE_USERNAME);
     }
 
     public boolean checkIconErrorIsDisplay() {
-        return checkElementDisplay(driver, AccountGeneralSetting_PageUI.ICON_ERROR_CHANGE_USERNAME);
+        return checkElementIsDisplayed(driver, AccountGeneralSetting_PageUI.ICON_ERROR_CHANGE_USERNAME);
     }
 
 
@@ -144,7 +144,7 @@ public class GeneralAccountSetting extends AccountCommon {
         waitElementToVisible(driver, AccountGeneralSetting_PageUI.FULL_NAME);
         return getPageTitle(driver).contains("Cài đặt tài khoản | Hahalolo")
                 && getTextElement(driver, AccountGeneralSetting_PageUI.FULL_NAME).contains(fullName)
-                && checkElementDisplay(driver, AccountGeneralSetting_PageUI.TITLE_PAGE,"setting_general");
+                && checkElementIsDisplayed(driver, AccountGeneralSetting_PageUI.TITLE_PAGE,"setting_general");
     }
 
     public void enterDataToUsernameField(String userName) {

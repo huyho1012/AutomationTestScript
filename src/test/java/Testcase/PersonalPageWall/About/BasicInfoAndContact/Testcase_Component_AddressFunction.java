@@ -31,7 +31,7 @@ public class Testcase_Component_AddressFunction extends AbstractTest {
         data = DataHelper.getData();
         driverManager = BrowserInitialization.getBrowser(browserName);
         log.info("Open browser and go to Newsfeed Login page");
-        driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
+        driver = driverManager.getDriver(GlobalVariables.NEWSFEED_URL);
         newsfeedLoginPage = PageGeneration.createNewsfeedLoginPage(driver);
 
         log.info("Change language to VI");

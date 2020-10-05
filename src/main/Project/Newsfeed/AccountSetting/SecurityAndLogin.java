@@ -16,7 +16,7 @@ public class SecurityAndLogin extends AccountCommon{
     }
 
     public boolean checkConfirmLogOutAllSessionIsDisplay(){
-        return checkElementDisplay(driver, AccountSecurityAndLogin_PageUI.POPUP_CONFIRM_LOGOUT_ALL_SESSION);
+        return checkElementIsDisplayed(driver, AccountSecurityAndLogin_PageUI.POPUP_CONFIRM_LOGOUT_ALL_SESSION);
     }
 
     public void clickToConfirmActionLogoutAll(){

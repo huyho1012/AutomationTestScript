@@ -1,6 +1,5 @@
 package Project.Business.Tour.Management.Detail;
 
-import Interfaces.hahalolo_business.Tour.Management.Detail.TourServicePriceUI;
 import Interfaces.hahalolo_business.Tour.Management.Detail.TourServiceUI;
 import Project.Business.Tour.Management.TourCommon;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +11,7 @@ public class TourServiceTab extends TourCommon {
     }
 
     public boolean checkTourServiceTabDisplaySuccess() {
-        return checkElementDisplay(driver, TourServiceUI.SERVICE_TAB);
+        return checkElementIsDisplayed(driver, TourServiceUI.SERVICE_TAB);
     }
 
     public void addServicesApply(WebDriver driver , int numberService) {

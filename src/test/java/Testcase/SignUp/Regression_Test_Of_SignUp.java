@@ -62,7 +62,7 @@ public class Regression_Test_Of_SignUp extends AbstractTest {
         log.info("Create Driver ");
         driverManager = BrowserInitialization.getBrowser(browserName);
         log.info("Open Browser and Go to Newsfeed login");
-        driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
+        driver = driverManager.getDriver(GlobalVariables.NEWSFEED_URL);
         loginNewsfeedPage = PageGeneration.createNewsfeedLoginPage(driver);
         log.info("Check Hahalolo login page display");
         verifyTrue(loginNewsfeedPage.checkNewsfeedLoginPageDisplay());

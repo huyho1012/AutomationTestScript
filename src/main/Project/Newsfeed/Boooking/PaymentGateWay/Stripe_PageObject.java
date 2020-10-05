@@ -11,7 +11,7 @@ public class Stripe_PageObject extends BookingCommon {
         driver = webDriver;
     }
     public boolean checkStripeSectionIsDisplay(){
-        return checkElementDisplay(driver, StripeGatewayUI.STRIPE_PAGE);
+        return checkElementIsDisplayed(driver, StripeGatewayUI.STRIPE_PAGE);
     }
 
     public void enterCardnumber(WebDriver driver, String cardNum){

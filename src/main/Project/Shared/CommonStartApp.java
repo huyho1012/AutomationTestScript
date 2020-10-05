@@ -29,11 +29,11 @@ public class CommonStartApp extends AbstractTest {
     }
     public boolean checkGooglePlayIconIsDisplay(WebDriver driver){
         waitElementToVisible(driver, LoginUI.LOGIN_BUTTON);
-        return checkElementDisplay(driver, StartingCommonUI.GOOGLE_PLAY);
+        return checkElementIsDisplayed(driver, StartingCommonUI.GOOGLE_PLAY);
     }
     public boolean checkAppStoreIconIsDisplay(WebDriver driver){
         waitElementToVisible(driver, LoginUI.LOGIN_BUTTON);
-        return checkElementDisplay(driver, StartingCommonUI.APP_STORE);
+        return checkElementIsDisplayed(driver, StartingCommonUI.APP_STORE);
     }
     public void clickToAppStoreLink(WebDriver driver){
         waitForElementClickable(driver, StartingCommonUI.APP_STORE);

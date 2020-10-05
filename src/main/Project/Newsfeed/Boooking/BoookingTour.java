@@ -1,9 +1,7 @@
 package Project.Newsfeed.Boooking;
 
-import Interfaces.hahalolo_business.Tour.Management.TourCommonUI;
 import Interfaces.hahalolo_newsfeed.Booking.BookingCommonUI;
 import Interfaces.hahalolo_newsfeed.Booking.BookingTourUI;
-import Project.Business.Tour.Management.TourCommon;
 import org.openqa.selenium.WebDriver;
 
 public class BoookingTour extends BookingCommon {
@@ -13,7 +11,7 @@ public class BoookingTour extends BookingCommon {
     }
 
     public boolean checkTourBookingStep1IsDisplay(WebDriver driver){
-        return checkElementDisplay(driver, BookingCommonUI.TITLE_BOOKING_STEP,"Thông tin chuyến đi");
+        return checkElementIsDisplayed(driver, BookingCommonUI.TITLE_BOOKING_STEP,"Thông tin chuyến đi");
     }
 
     public String getBasicPriceDisplayOnStep1(WebDriver driver) {
@@ -41,9 +39,8 @@ public class BoookingTour extends BookingCommon {
         return getTextElement(driver, BookingTourUI.PRICE_OF_TYPE_AGE,typeAge);
     }
 
-
     public boolean checkTourBookingStep2IsDisplay(WebDriver driver){
-        return checkElementDisplay(driver, BookingCommonUI.TITLE_BOOKING_STEP,"Chi tiết khách du lịch");
+        return checkElementIsDisplayed(driver, BookingCommonUI.TITLE_BOOKING_STEP,"Chi tiết khách du lịch");
     }
 
     public void choosePerTitleOfTourLeader(WebDriver driver) {
@@ -76,39 +73,32 @@ public class BoookingTour extends BookingCommon {
     }
 
     public void chooseNumberChild(WebDriver driver, int numberChild) {
-        if(checkElementDisplay(driver,BookingTourUI.DROPDOWN_CHOOSE_PERSON_BY_TYPE,"Trẻ em")) {
+        if(checkElementIsDisplayed(driver,BookingTourUI.DROPDOWN_CHOOSE_PERSON_BY_TYPE,"Trẻ em")) {
             waitElementToVisible(driver, BookingTourUI.NUMBER_PER_BY_TYPE_AGE,"Trẻ em");
             sendKeyToElement(driver, BookingTourUI.NUMBER_PER_BY_TYPE_AGE,String.valueOf(numberChild),"Trẻ em");
         }
     }
 
     public void chooseNumberYoungChild(WebDriver driver,int numberYoungChild) {
-        if(checkElementDisplay(driver,BookingTourUI.DROPDOWN_CHOOSE_PERSON_BY_TYPE,"Trẻ nhỏ")) {
+        if(checkElementIsDisplayed(driver,BookingTourUI.DROPDOWN_CHOOSE_PERSON_BY_TYPE,"Trẻ nhỏ")) {
             waitElementToVisible(driver, BookingTourUI.NUMBER_PER_BY_TYPE_AGE, "Trẻ nhỏ");
             sendKeyToElement(driver, BookingTourUI.NUMBER_PER_BY_TYPE_AGE, String.valueOf(numberYoungChild), "Trẻ nhỏ");
         }
     }
 
     public void chooseNumberOfInfant(WebDriver driver , int numberYoungChild) {
-        if(checkElementDisplay(driver,BookingTourUI.DROPDOWN_CHOOSE_PERSON_BY_TYPE,"Em bé")) {
+        if(checkElementIsDisplayed(driver,BookingTourUI.DROPDOWN_CHOOSE_PERSON_BY_TYPE,"Em bé")) {
             waitElementToVisible(driver, BookingTourUI.NUMBER_PER_BY_TYPE_AGE, "Em bé");
             sendKeyToElement(driver, BookingTourUI.NUMBER_PER_BY_TYPE_AGE, String.valueOf(numberYoungChild), "Em bé");
         }
-    }
-
-    public void clickToButtonContinueToStep3() {
     }
 
     public boolean checBookingTourStep3IsDisplay() {
         return true;
     }
 
-    public void clickToButtonContinueToStep4() {
-    }
-
-
     public void enterValueOfAdullInfo(WebDriver driver,int numberAdult, String fullname, String bithday, String gender, String address) {
-        if(checkIsElementIsSelected(driver, BookingTourUI.CHECKBOX_TRAVEL_LEADER)){
+        if(checkElementIsSelected(driver, BookingTourUI.CHECKBOX_TRAVEL_LEADER)){
             for(int i = 1; i<= numberAdult; i++){
                 // Enter fullname
                 waitElementToVisible(driver, BookingTourUI.DYNAMIC_FIELD_ON_ADULT_INFO,"Người lớn",String.valueOf(i+1), "ov402");
@@ -137,7 +127,6 @@ public class BoookingTour extends BookingCommon {
                 waitElementToVisible(driver, BookingTourUI.DYNAMIC_FIELD_ON_ADULT_INFO,"Người lớn", String.valueOf(i), "ov405");
                 sendKeyToElement(driver, BookingTourUI.DYNAMIC_FIELD_ON_ADULT_INFO,address,"Người lớn", String.valueOf(i),"ov405");
             }
-
         }
     }
 
@@ -152,7 +141,7 @@ public class BoookingTour extends BookingCommon {
             // Choose gender
             selectItemInCustomDropdown(driver, BookingTourUI.GENDER_DROPDOWN_ON_TRAVELLER, BookingTourUI.GENDER_ITEM_ON_ADULT_INFO,gender,"Trẻ em" , String.valueOf(i));
             // Enter address
-            waitElementToVisible(driver, BookingTourUI.DYNAMIC_FIELD_ON_ADULT_INFO,"Trẻ em", String.valueOf(i),"ov405");
+            waitElementToVisible(driver, BookingTourUI.DYNAMIC_FIELD_ON_ADULT_INFO,"Trẻ em", String.valueOf(i), "ov405");
             sendKeyToElement(driver, BookingTourUI.DYNAMIC_FIELD_ON_ADULT_INFO,address,"Trẻ em",String.valueOf(i), "ov405");
         }
     }
@@ -216,21 +205,27 @@ public class BoookingTour extends BookingCommon {
     public Object getCurrencySymbolChildPriceDisplayOnPriceTable() {
         return null;
     }
+
     public Object getCurrencySymbolYoungChildPriceDisplayOnPriceTable() {
         return null;
     }
+
     public Object getCurrencySymbolBabyPriceDisplayOnPriceTable() {
         return null;
     }
+
     public Object getCurrencySymbolChildPriceDisplayOnSidebar() {
         return null;
     }
+
     public Object getCurrencySymbolAdultPriceDisplayOnSidebar() {
         return null;
     }
+
     public Object getCurrencySymbolYoungChildPriceDisplayOnSidebar() {
         return null;
     }
+
     public Object getCurrencySymbolBabyPriceDisplayOnSidebar() {
         return null;
     }
@@ -238,12 +233,15 @@ public class BoookingTour extends BookingCommon {
     public Object getCurSymbolTotalPriceOfAdultItemOnTravellerInfo() {
         return null;
     }
+
     public Object getCurSymbolTotalPriceOfChildItemOnTravellerInfo() {
         return null;
     }
+
     public Object getCurSymbolTotalPriceOfYoungChildItemOnTravellerInfo() {
         return null;
     }
+
     public Object getCurSymbolTotalPriceOfBabyItemOnTravellerInfo() {
         return null;
     }

@@ -36,7 +36,7 @@ public class Testcase_PersonalAbout_DetailsAboutYou extends AbstractTest {
         driverManager = BrowserInitialization.getBrowser(browserName);
 
         log.info("Precondition step 2 - Go to Newsfeed hahalolo");
-        driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
+        driver = driverManager.getDriver(GlobalVariables.NEWSFEED_URL);
         newsfeedLoginPageObject = PageGeneration.createNewsfeedLoginPage(driver);
         log.info("Precondition step 3 - Check Newsfeed Login display successfully");
         verifyTrue(newsfeedLoginPageObject.checkNewsfeedLoginPageDisplay());

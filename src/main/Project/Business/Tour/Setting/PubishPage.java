@@ -12,7 +12,7 @@ public class PubishPage extends HeaderPage {
     }
 
     public boolean checkPublishPageIsDisplay(WebDriver driver){
-        return checkElementDisplay(driver, PublishPageUI.TITLE_PAGE) && checkElementDisplay(driver, PublishPageUI.BUTTON_PUBLISH_PAGE);
+        return checkElementIsDisplayed(driver, PublishPageUI.TITLE_PAGE) && checkElementIsDisplayed(driver, PublishPageUI.BUTTON_PUBLISH_PAGE);
     }
 
     public void publishPage(WebDriver driver){
@@ -29,7 +29,7 @@ public class PubishPage extends HeaderPage {
 
 
     public Boolean checkStatusOfPage (WebDriver driver) {
-        String rgb = Color.fromString(getAttributeColorOfClassAfter(driver, ".custom-control-label","background-color")).asHex();
+        String rgb = Color.fromString(getAttributeClassWithAfter(driver, ".custom-control-label","background-color")).asHex();
         if(rgb.equals("#166986")){
             System.out.println("Page publish");
             return true;

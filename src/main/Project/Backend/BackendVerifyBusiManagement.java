@@ -64,6 +64,6 @@ public class BackendVerifyBusiManagement extends AbstractPage {
     }
 
     public boolean checkConfirmPopupDisplay(WebDriver driver) {
-        return checkElementDisplay(driver, BackendVerifyBusiManagementUI.POPUP_CONFIRM_VERIFICATION);
+        return checkElementIsDisplayed(driver, BackendVerifyBusiManagementUI.POPUP_CONFIRM_VERIFICATION);
     }
 }

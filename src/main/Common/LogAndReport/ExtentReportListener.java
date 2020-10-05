@@ -29,7 +29,6 @@ public class ExtentReportListener implements IReporter {
 
         for (ISuite suite : suites) {
             Map<String, ISuiteResult> result = suite.getResults();
-
             for (ISuiteResult r : result.values()) {
                 ITestContext context = r.getTestContext();
 
@@ -38,16 +37,14 @@ public class ExtentReportListener implements IReporter {
                 buildTestNodes(context.getPassedTests(), Status.PASS);
             }
         }
-
         for (String s : Reporter.getOutput()) {
             extent.setTestRunnerOutput(s);
         }
-
         extent.flush();
     }
+
     private void buildTestNodes(IResultMap tests, Status status) {
         ExtentTest test;
-
         if (tests.size() > 0) {
             for (ITestResult result : tests.getAllResults()) {
                 test = extent.createTest(result.getMethod().getMethodName());
@@ -66,6 +63,7 @@ public class ExtentReportListener implements IReporter {
             }
         }
     }
+
     private Date getTime(long millis) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(millis);

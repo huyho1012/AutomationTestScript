@@ -12,25 +12,24 @@ import org.testng.internal.Utils;
 import java.util.List;
 
 public class MethodListener implements IInvokedMethodListener {
+    private static final Log log = LogFactory.getLog(MethodListener.class);
+
     @Override
     public void beforeInvocation(IInvokedMethod method, ITestResult result) {
         log.debug("Before invocation of " + method.getTestMethod().getMethodName());
     }
+
     @Override
     public void afterInvocation(IInvokedMethod method, ITestResult result) {
         log.debug("After invocation of " + method.getTestMethod().getMethodName());
         Reporter.setCurrentTestResult(result);
         if (method.isTestMethod()) {
             VerificationFailures allFailures = VerificationFailures.getFailures();
-
-            // Add an existing failure for the result to the failure list.
             if (result.getThrowable() != null) {
                 allFailures.addFailureForTest(result, result.getThrowable());
             }
-
             List<Throwable> failures = allFailures.getFailuresForTest(result);
             int size = failures.size() - 1;
-
             if (size > 0) {
                 result.setStatus(ITestResult.FAILURE);
                 if (size == 1) {
@@ -51,6 +50,4 @@ public class MethodListener implements IInvokedMethodListener {
             }
         }
     }
-
-    private static final Log log = LogFactory.getLog(MethodListener.class);
 }

@@ -194,6 +194,7 @@ public class PageGeneration {
     public static PerAbout_PlacesYouLived_PageObject createPerAboutPlaceLivingTab(WebDriver driver){
         return new PerAbout_PlacesYouLived_PageObject(driver);
     }
+
     public static PerAbout_BasicInfoAndContact_PageObject createperBasicInfoAndContactPage(WebDriver driver) {
         return new PerAbout_BasicInfoAndContact_PageObject(driver);
     }
@@ -205,6 +206,4 @@ public class PageGeneration {
     public static ChangeCurrency_PageObject openModelChangeCurrency(WebDriver driver) {
         return new ChangeCurrency_PageObject(driver);
     }
-
-
 }

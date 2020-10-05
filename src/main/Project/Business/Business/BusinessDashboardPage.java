@@ -26,8 +26,8 @@ public class BusinessDashboardPage extends HeaderPage {
     public boolean checkPageIsDisplaySuccessfully() {
        waitElementToVisible(driver, BusinessDashboardPageUI.DASBOARD_PAGE);
         return getTextElement(driver, BusinessDashboardPageUI.DASBOARD_TITLE).equalsIgnoreCase("Quản lý tài khoản kinh doanh")
-                && checkElementDisplay(driver, BusinessDashboardPageUI.FORM_BUSI_INFO) && checkElementDisplay(driver, BusinessDashboardPageUI.FORM_BUSI_PAGE)
-                && checkElementDisplay(driver, BusinessDashboardPageUI.FORM_BUSI_STAFF);
+                && checkElementIsDisplayed(driver, BusinessDashboardPageUI.FORM_BUSI_INFO) && checkElementIsDisplayed(driver, BusinessDashboardPageUI.FORM_BUSI_PAGE)
+                && checkElementIsDisplayed(driver, BusinessDashboardPageUI.FORM_BUSI_STAFF);
     }
 
     public void clickCreatePageNowButton() {

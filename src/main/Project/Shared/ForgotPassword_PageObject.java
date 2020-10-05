@@ -31,7 +31,7 @@ public class ForgotPassword_PageObject extends AbstractPage {
     }
 
     public boolean checkMessageNoResultAccount(WebDriver driver){
-        return checkElementDisplay(driver, ForgotPasswor_PageUI.NO_RESULT);
+        return checkElementIsDisplayed(driver, ForgotPasswor_PageUI.NO_RESULT);
     }
 
     public String getHeaderNoResultAccount(WebDriver driver){

@@ -17,16 +17,16 @@ public class PerAbout_PlacesYouLived_PageObject extends PerAbout_Common_PageObje
 
     public boolean checkDisplayOfPerAboutWithCaseCreateNewAccount(){
         return checkPerAboutPlacesYouLivedIsDisplay()
-                && checkElementDisplay(driver,PerAbout_PlacesYouLived_PageUI.ADD_NEW_CURRENT_CITY)
-                 && checkElementDisplay(driver, PerAbout_PlacesYouLived_PageUI.ADD_NEW_HOMETOWN);
+                && checkElementIsDisplayed(driver,PerAbout_PlacesYouLived_PageUI.ADD_NEW_CURRENT_CITY)
+                 && checkElementIsDisplayed(driver, PerAbout_PlacesYouLived_PageUI.ADD_NEW_HOMETOWN);
     }
 
     public boolean checkPerAboutPlacesYouLivedDisplayWithcaseNoHometown(){
-        return checkPerAboutPlacesYouLivedIsDisplay() && checkElementDisplay(driver,PerAbout_PlacesYouLived_PageUI.ADD_NEW_HOMETOWN);
+        return checkPerAboutPlacesYouLivedIsDisplay() && checkElementIsDisplayed(driver,PerAbout_PlacesYouLived_PageUI.ADD_NEW_HOMETOWN);
     }
 
     public boolean checkPerAboutPlacesYouLivedDisplayWithcaseHaveHometown(){
-        return checkPerAboutPlacesYouLivedIsDisplay() && checkElementDisplay(driver,PerAbout_PlacesYouLived_PageUI.HOME_TOWN_DATA);
+        return checkPerAboutPlacesYouLivedIsDisplay() && checkElementIsDisplayed(driver,PerAbout_PlacesYouLived_PageUI.HOME_TOWN_DATA);
     }
 
 

@@ -34,7 +34,7 @@ public class Testcase_ChangeFullName extends AbstractTest {
         driverManager = BrowserInitialization.getBrowser(browserName);
 
         log.info("Pre step 2 - Go to Newsfeed");
-        driver = driverManager.getDriver(GlobalVariables.newsfeedURL);
+        driver = driverManager.getDriver(GlobalVariables.NEWSFEED_URL);
         newsfeedLoginPageObject = PageGeneration.createNewsfeedLoginPage(driver);
 
         log.info("Pre step 3 - Change language system to VI");

@@ -32,7 +32,7 @@ public class TourManagementPage extends TourCommon {
     }
 
     public boolean checkPageWithCaseNoTourDisplay() {
-        return checkElementDisplay(driver,TourManagementUI.BUTTON_START_CREATE_TOUR);
+        return checkElementIsDisplayed(driver,TourManagementUI.BUTTON_START_CREATE_TOUR);
     }
 
     public void clickStartCreateTourButtonOnCenterListPage(WebDriver driver) {
@@ -53,7 +53,7 @@ public class TourManagementPage extends TourCommon {
 
     public boolean checkPageWithCaseHaveTourDisplay(WebDriver driver) {
         waitElementToVisible(driver, TourManagementUI.TOUR_TOPIC_DROP_DOWN);
-        return checkElementDisplay(driver, TourManagementUI.TOUR_LIST);
+        return checkElementIsDisplayed(driver, TourManagementUI.TOUR_LIST);
     }
 
     public void clickEditButtonOfDirectTour(WebDriver driver) {

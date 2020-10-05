@@ -14,6 +14,7 @@ import java.util.Random;
 public abstract class AbstractTest extends AbstractPage {
 
     protected final Log log;
+
     protected AbstractTest(){
         log = LogFactory.getLog(getClass());
     }
@@ -22,8 +23,6 @@ public abstract class AbstractTest extends AbstractPage {
         try {
             // get ra tên của OS và convert qua chữ thường
             String osName = System.getProperty("os.name").toLowerCase();
-            log.info("OS name = " + osName);
-
             // Khai báo 1 biến command line để thực thi
             String cmd = "";
             if (driver != null) {
@@ -47,16 +46,13 @@ public abstract class AbstractTest extends AbstractPage {
                     cmd = "taskkill /F /FI \"IMAGENAME eq geckodriver*\"";
                 }
             }
-
             Process process = Runtime.getRuntime().exec(cmd);
             process.waitFor();
 
-            log.info("---------- QUIT BROWSER SUCCESS ----------");
         } catch (Exception e) {
             log.info(e.getMessage());
         }
     }
-
 
     protected int randomNumber(int number){
         Random rd = new Random();
@@ -73,6 +69,7 @@ public abstract class AbstractTest extends AbstractPage {
         }
         return text;
     }
+
     protected String randomName(int numPassChar) {
         String text = null;
         String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "" + "abcdefghijklmnopqrstuvxyz";
@@ -90,13 +87,16 @@ public abstract class AbstractTest extends AbstractPage {
         Random random = new Random();
         return userName + random.nextInt(2000000) + domainEmail;
     }
+
     protected String getEmailWithoutDomain(String email) {
         String[] splits = email.split("@");
         return splits[0];
     }
+
     protected String getFullName(String firstName, String lastName) {
         return lastName.trim() + " " + firstName.trim();
     }
+
     protected String getFullName(String firstName,String middleName, String lastName) {
        if(firstName.trim() == ""){
            return middleName.trim() + " " + lastName.trim();
@@ -110,6 +110,7 @@ public abstract class AbstractTest extends AbstractPage {
        else
            return firstName.trim() + middleName.trim() + lastName.trim();
     }
+
     private boolean checkTrue(boolean condition) {
         boolean pass = true;
         try {
@@ -128,9 +129,11 @@ public abstract class AbstractTest extends AbstractPage {
         }
         return pass;
     }
+
     protected boolean verifyTrue(boolean condition) {
         return checkTrue(condition);
     }
+
     private boolean checkFailed(boolean condition) {
         boolean pass = true;
         try {
@@ -147,9 +150,11 @@ public abstract class AbstractTest extends AbstractPage {
         }
         return pass;
     }
+
     protected boolean verifyFalse(boolean condition) {
         return checkFailed(condition);
     }
+
     private boolean checkEquals(Object actual, Object expected) {
         boolean pass = true;
         try {
@@ -163,6 +168,7 @@ public abstract class AbstractTest extends AbstractPage {
         }
         return pass;
     }
+
     protected boolean verifyEquals(Object actual, Object expected) {
         return checkEquals(actual, expected);
     }
@@ -180,6 +186,7 @@ public abstract class AbstractTest extends AbstractPage {
         }
         return day + "";
     }
+
     protected String getCurrentMonth() {
         DateTime now = new DateTime();
         int month = now.getMonthOfYear();
@@ -189,25 +196,24 @@ public abstract class AbstractTest extends AbstractPage {
         }
         return month + "";
     }
+
     protected String getCurrentYear() {
         DateTime now = new DateTime();
         return now.getYear() + "";
     }
+
     protected String getToday() {
         return getCurrentDay() + "/" + getCurrentMonth() + "/" + getCurrentYear();
     }
+
     protected String getBirthdayOnHaLo(String day, String month, String year){
         return day+ "-" + month + "-" + year;
     }
 
-
-
-    // Xử lý trong chuỗi
     protected String removeAllWhitespace(String data){
         String sentence = data.trim();
         return sentence.replaceAll(" ", "");
     }
-
 
     protected String getCurrencySymbol(String currency){
         Currency cur = Currency.getInstance(currency);
